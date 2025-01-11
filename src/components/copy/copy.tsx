@@ -1,4 +1,4 @@
-import { Container } from "../container";
+/* import { Container } from "../container";
 import { Text } from "../text";
 
 import { Colors } from "../../utils/types";
@@ -43,4 +43,4 @@ export const Copy = () => {
       </Icon>
     </Container>
   );
-};
+}; */
