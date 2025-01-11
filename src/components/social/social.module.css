@@ -1,0 +1,8 @@
+.social {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  height: min-content;
+}

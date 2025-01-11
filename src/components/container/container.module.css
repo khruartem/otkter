@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: var(--flex-direction);
+  align-content: var(--align-content);
+  justify-content: var(--justify-content);
+  align-items: var(--align-items);
+  background-color: var(--background-color, #FDFDFD);
+  padding: var(--padding);
+  margin: var(--margin);
+  gap: var(--gap);
+  align-self: var(--align-self);
+  width: var(--width);
+  height: var(--height);
+  inset: var(--inset);
+  z-index: var(--z-index);
+}
+
+.container::after {
+  content: "";
+  display: var(--overlay-visibility);
+  background-color: #E6E6E6;
+  width: var(--width);
+  height: 100vh;
+  inset: 10px 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.container_bordered-full {
+  border-radius: var(--radii);
+}
+
+.container_bordered-bottom {
+  border-bottom-left-radius: var(--radii);
+  border-bottom-right-radius: var(--radii);
+}
+
+.container_positioned {
+  position: var(--position);
+}

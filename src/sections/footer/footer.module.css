@@ -1,0 +1,112 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--navy);
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+}
+
+.footer__upper {
+  display: flex;
+  margin-top: 60px;
+}
+
+.footer__upper_rowed {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 40px;
+}
+
+.footer__upper_columned {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 44px;
+  gap: 40px;
+}
+
+.footer__lower {
+  border-top: 1px solid var(--nephritis120);
+  width: 100%;
+  padding-top: 16px;
+}
+
+.footer__contact-info {
+  display: flex;
+}
+
+.footer__contact-info_rowed {
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer__contact-info_columned {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.footer__contact-info_columned a:first-child {
+  margin-left: 14px;
+}
+
+.footer__contact-info_small-gap {
+  gap: 30px;
+}
+
+.footer__contact-info_large-gap {
+  width: 100%;
+  justify-content: space-between;
+  padding-block: 2px;
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__lower {
+  display: flex;
+}
+
+/* Селекторы для разных разрешений экранов */
+.footer_large-screen {
+  margin-inline: 1.25vw;
+  margin-bottom: 1.25vw;
+  padding-inline: 6.88vw;
+  padding-bottom: 1.25vw;
+}
+
+.footer_desktop {
+  margin-inline: 1.76vw;
+  margin-bottom: 1.76vw;
+  padding-inline: 6.08vw;
+  padding-bottom: 1.76vw;
+}
+
+.footer_laptop {
+  margin-inline: 4.1vw;
+  margin-bottom: 2.34vw;
+  padding-inline: 7.81vw;
+  padding-bottom: 2.34vw;
+}
+
+.footer_tablet {
+  margin-inline: 3.91vw;
+  margin-bottom: 3.91vw;
+  padding-inline: 7.81vw;
+  padding-bottom: 3.13vw;
+}
+
+.footer_mobile {
+  margin-inline: 3.62vw;
+  margin-bottom: 7.25vw;
+  padding-inline: 5.80vw;
+  padding-bottom: 5.80vw;
+}
+

@@ -1,0 +1,21 @@
+.link {
+  font-family: var(--font-family);
+  text-align: center;
+  letter-spacing: 0.02em;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  text-transform: var(--text-transform);
+  display: var(--display);
+  color: var(--main-color);
+  margin: var(--margin);
+  padding: var(--padding);
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--hover-color);
+}
+
+.link:active {
+  border-bottom: 1px solid var(--active-color);
+}

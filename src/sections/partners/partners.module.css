@@ -1,0 +1,43 @@
+.partners {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.partners__icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.partners__icons_large-screen {
+  padding-block: 3.13vw;
+  gap: 2.92vw;
+}
+
+.partners__icons_desktop {
+  padding-block: 3.22vw;
+  gap: 4.10vw;
+}
+
+.partners__icons_laptop {
+  padding-block: 5.86vw;
+  gap: 5.47vw;
+}
+
+.partners__icons_tablet {
+  padding-block: 5.73vw;
+  column-gap: 10.42vw;
+  row-gap: 5.21vw;
+  padding-inline: 4.69vw;
+}
+
+.partners__icons_mobile {
+  padding-block: 10.63vw;
+  column-gap: 19.32vw;
+  row-gap: 9.66vw;
+  padding-inline: 3.62vw;
+}

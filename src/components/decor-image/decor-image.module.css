@@ -1,0 +1,20 @@
+.decor-image {
+  display: block;
+  height: var(--height);
+  width: var(--width);
+  background-color: var(--background-color);
+  background-image: var(--url);
+  background-position: 60% 10%;
+  background-size: cover;
+}
+
+.decor-image_full-bodered {
+  border-radius: var(--border-radius);
+}
+
+.decor-image_custom-bodered {
+  border-top-left-radius: var(--border-radius-top-left);
+  border-top-right-radius: var(--border-radius-top-right);
+  border-bottom-right-radius: var(--border-radius-bottom-right);
+  border-bottom-left-radius: var(--border-radius-bottom-left);
+}
