@@ -1,7 +1,7 @@
 import { Container } from "../../components/container";
-import { DecorImage } from "../../components/decor-image";
 import { Layout } from "../../components/layout";
 import { Text } from "../../components/text";
+import { Video } from "../../components/video";
 
 import { Colors } from "../../utils/types";
 
@@ -149,13 +149,7 @@ const LargeScreen = () => {
             </Container>
           </Container>
         </Container>
-        <DecorImage
-          height="43.13vw"
-          width="49.38vw"
-          backgroundColor={Colors.Light80}
-          borderRadiusTopLeft={800}
-          borderRadiusBottomLeft={800}
-        />
+        <Video />
       </Container>
     </Layout>
   );
@@ -281,13 +275,7 @@ const Desktop = () => {
             </Container>
           </Container>
         </Container>
-        <DecorImage
-          height="40.12vw"
-          width="49.12vw"
-          backgroundColor={Colors.Light80}
-          borderRadiusTopLeft={800}
-          borderRadiusBottomLeft={800}
-        />
+        <Video />
       </Container>
     </Layout>
   );
@@ -307,12 +295,8 @@ const Laptop = () => {
         position="relative"
         zIndex={-2}
       >
-        <DecorImage
-          height="58.59vw"
-          width="91.80vw"
-          backgroundColor={Colors.Light80}
-          borderRadius={800}
-        />
+        <Video />
+
         <Container
           flexDirection="column"
           gap="20px"
@@ -458,12 +442,8 @@ const Tablet = () => {
         position="relative"
         zIndex={-2}
       >
-        <DecorImage
-          height="58.85vw"
-          width="92.19vw"
-          backgroundColor={Colors.Light80}
-          borderRadius={800}
-        />
+        <Video />
+
         <Container
           flexDirection="column"
           gap="20px"
@@ -597,12 +577,8 @@ const Mobile = () => {
         position="relative"
         zIndex={-2}
       >
-        <DecorImage
-          height="58.94vw"
-          width="92.27vw"
-          backgroundColor={Colors.Light80}
-          borderRadius={800}
-        />
+        <Video />
+
         <Container
           flexDirection="column"
           gap="12px"

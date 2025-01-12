@@ -1,18 +1,16 @@
 import { ElementType, SyntheticEvent } from "react";
 
-enum Category {
+export enum Category {
   PLAY = "Спектакль",
   COMPETITION = "Конкурс",
   MASTER_CLASS = "Мастер класс",
   SHORT_FILM = "Короткий метр",
 }
 
-export type TCategory = Category;
-
 export type TCard = {
   id: number;
   title: string;
-  category?: TCategory[];
+  category?: Category[];
   attention?: boolean;
   image: string;
   text: string;

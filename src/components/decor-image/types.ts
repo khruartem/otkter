@@ -1,8 +1,8 @@
 import { Colors, TRadii } from "../../utils/types";
 
 export type TDecorImageProps = {
-  height: string | number;
-  width: string | number;
+  height: string;
+  width: string;
   backgroundColor?: Colors;
   backgroundUrl?: string;
   borderRadiusTopLeft?: TRadii;

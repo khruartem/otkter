@@ -1,0 +1,47 @@
+.video {
+  /* display: block;
+  background-position: 60% 10%;
+  background-size: cover; 
+  width: 100%;
+  height: 100%; */
+  object-fit: cover;
+}
+
+.video_bordered {
+  border-radius: 800px;
+}
+
+.video_half-bordered {
+  border-top-left-radius: 800px;
+  border-bottom-left-radius: 800px;
+}
+
+/* Стили для разных разрешений */
+.video_large-screen {
+  height: 43.13vw;
+  width: 49.38vw;
+}
+
+.video_desktop {
+  height: 40.12vw;
+  width: 49.12vw;
+}
+
+.video_laptop {
+  height: 58.59vw;
+  width: 91.80vw;
+}
+
+.video_tablet {
+  height: 58.85vw;
+  width: 92.19vw;
+}
+
+.video_mobile {
+  height: 58.94vw;
+  width: 92.27vw;
+}
+
+
+
+
