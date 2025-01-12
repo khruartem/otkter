@@ -12,7 +12,7 @@ import { useMobileMediaQuery } from "../../hooks/useMobileMediaQuery";
 import { Social } from "../../components/social";
 
 import styles from "./header.module.css";
-import { socials } from "../../utils/constants";
+//import { socials } from "../../utils/constants";
 
 export const Header = () => {
   return (
@@ -31,7 +31,7 @@ const LargeResolution = () => {
     <header className={styles.header}>
       <Logo mainColor={Colors.Navy} width={236} height={40} />
       <NavBar />
-      <Social socials={socials} />
+      <Social />
     </header>
   ) : null;
 };
@@ -65,7 +65,7 @@ const SmallResolution = () => {
             isLaptop && styles.header__icons_laptop,
             isTablet && styles.header__icons_tablet
           )}>
-            <Social socials={socials} />
+            <Social />
             <NavBar isOpen={isOpen} onOpen={setOpen} rootRef={rootRef} />
           </div>
         ) : (

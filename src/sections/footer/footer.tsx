@@ -10,7 +10,7 @@ import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
 import { Colors } from "../../utils/types";
 
 import styles from "./footer.module.css";
-import { socials } from "../../utils/constants";
+//import { socials } from "../../utils/constants";
 import { useTabletMediaQuery } from "../../hooks/useTabletMediaQuery";
 import { useMobileMediaQuery } from "../../hooks/useMobileMediaQuery";
 
@@ -76,7 +76,7 @@ const LargeResolution = () => {
               {"8 (916) 756-95-05"}
             </Link>
           </div>
-          <Social socials={socials} />
+          <Social />
         </div>
       </div>
       <div className={styles.footer__lower}>
@@ -148,7 +148,7 @@ const SmallResolution = () => {
               {"8 (916) 756-95-05"}
             </Link>
           </div>
-          <Social socials={socials} />
+          <Social />
         </div>
       </div>
       <div className={styles.footer__lower}>
