@@ -8,15 +8,15 @@
   height: 32px;
 }
 
-.social svg {
+.social {
   fill: var(--nephritis100);
 }
 
-.social:hover svg {
+.social:hover {
   fill: var(--nephritis120);
 }
 
-.social:active svg {
+.social:active {
   fill: var(--navy);
 }
 
@@ -25,6 +25,6 @@
   height: 32px;
 }
 
-.nav:hover svg {
+.nav:hover {
   fill: var(--nephritis120);
 }
