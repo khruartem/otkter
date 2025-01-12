@@ -5,8 +5,8 @@ import { useLaptopMediaQuery } from "../../hooks/useLaptopMediaQuery";
 import { useTabletMediaQuery } from "../../hooks/useTabletMediaQuery";
 import { useMobileMediaQuery } from "../../hooks/useMobileMediaQuery";
 
-import videoWEBm from "../../assets/video_hero_low.webm";
-import videoMP4 from "../../assets/video_hero.mp4";
+import videoWEBm from "../../assets/video_hero.webm";
+//import videoMP4 from "../../assets/video_hero.mp4";
 import videoPoster from "../../assets/video_poster.png";
 
 import styles from "./video.module.css";
@@ -23,6 +23,7 @@ export const Video = () => {
       src={videoWEBm}
       poster={videoPoster}
       autoPlay
+      preload="none"
       muted
       loop
       playsInline
@@ -39,7 +40,6 @@ export const Video = () => {
       )}
     >
       <source src={videoWEBm} type="video/webm" />
-      <source src={videoMP4} type="video/mp4" />
     </video>
   );
 };

@@ -65,6 +65,7 @@ const LargeResolution = () => {
                 mainColor={Colors.Navy}
                 hoverColor={Colors.Navy}
                 activeColor={Colors.Nephritis100}
+                padding="0 0 14px"
               >
                 {name}
               </Link>
