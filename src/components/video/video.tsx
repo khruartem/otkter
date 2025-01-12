@@ -25,7 +25,7 @@ export const Video = () => {
       autoPlay
       muted
       loop
-      preload="auto"
+      playsInline
       className={clsx(
         styles.video,
         isLarge || isDesktop

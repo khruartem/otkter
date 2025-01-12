@@ -83,6 +83,7 @@
 
 .navigation-bar_mobile {
   padding-top: 21.26vw;
+  height: calc(100dvh - 60px - 16px);
   padding-bottom: calc(7.25vw + 14px);
   justify-content: space-between;
 }
