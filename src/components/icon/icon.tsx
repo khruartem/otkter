@@ -136,7 +136,7 @@ const SVG = ({ mainColor, width, height, icon, id }: SVGProps) => {
       fill={mainColor}
       viewBox={`0 0 ${width} ${height}`}
     >
-      <use xlinkHref={`${icon}#${id}`}></use>
+      <use href={`${icon}#${id}`}></use>
     </svg>
   );
 };

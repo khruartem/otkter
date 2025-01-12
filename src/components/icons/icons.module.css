@@ -1,0 +1,30 @@
+.logo {
+  width: var(--width);
+  height: var(--height);
+}
+
+.social {
+  width: 32px;
+  height: 32px;
+}
+
+.social svg {
+  fill: var(--nephritis100);
+}
+
+.social:hover svg {
+  fill: var(--nephritis120);
+}
+
+.social:active svg {
+  fill: var(--navy);
+}
+
+.nav {
+  width: 32px;
+  height: 32px;
+}
+
+.nav:hover svg {
+  fill: var(--nephritis120);
+}

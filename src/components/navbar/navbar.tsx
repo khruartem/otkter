@@ -2,8 +2,9 @@
 import clsx from "clsx";
 
 import { Link } from "../link";
-import { Icon } from "../icon";
-import { navLinks, socials } from "../../utils/constants";
+//import { Icon } from "../icon";
+//import { navLinks, socials } from "../../utils/constants";
+import { navLinks } from "../../utils/constants";
 import { NavBarProps } from "./types";
 import { Social } from "../social";
 import { Colors } from "../../utils/types";
@@ -16,9 +17,10 @@ import { useMobileMediaQuery } from "../../hooks/useMobileMediaQuery";
 
 import styles from "./navbar.module.css";
 
-import menuSVG from "../../assets/menu.svg";
-import closeSVG from "../../assets/close.svg";
+//import menuSVG from "../../assets/menu.svg";
+//import closeSVG from "../../assets/close.svg";
 import ReactDOM from "react-dom";
+import { CloseNav, OpenNav } from "../icons/icons";
 
 export const NavBar = ({ isOpen, onOpen, rootRef }: NavBarProps) => {
   return (
@@ -75,6 +77,97 @@ const LargeResolution = () => {
 };
 
 const SmallResolution = ({
+  isOpen = undefined,
+  onOpen = undefined,
+  rootRef = undefined,
+}: NavBarProps) => {
+  const isLaptop = useLaptopMediaQuery();
+  const isTablet = useTabletMediaQuery();
+  const isMobile = useMobileMediaQuery();
+
+  return isLaptop || isTablet || isMobile ? (
+    <>
+      {!isOpen ? (
+        <OpenNav
+          onClick={
+            onOpen &&
+            (() => {
+              document.body.style.position = "fixed";
+              onOpen(!isOpen);
+            })
+          }
+        />
+      ) : (
+        <CloseNav
+          onClick={
+            onOpen &&
+            (() => {
+              document.body.style.position = "";
+              onOpen(!isOpen);
+            })
+          }
+        />
+      )}
+      {isOpen &&
+        ReactDOM.createPortal(
+          <nav
+            className={clsx(
+              styles["navigation-bar"],
+              styles["navigation-bar_columed"],
+              styles["navigation-bar_colored"],
+              styles["navigation-bar_bordered"],
+              isLaptop && styles["navigation-bar_laptop"],
+              isTablet && styles["navigation-bar_tablet"],
+              isMobile && styles["navigation-bar_mobile"]
+            )}
+          >
+            <ul
+              className={clsx(
+                styles["navigation-bar__link-list"],
+                styles["navigation-bar__link-list_columed"],
+                isLaptop && styles["navigation-bar__link-list_laptop"],
+                isTablet && styles["navigation-bar__link-list_tablet"],
+                isMobile && styles["navigation-bar__link-list_mobile"]
+              )}
+            >
+              {navLinks.map(({ id, name, url }) => {
+                return (
+                  <li key={id}>
+                    <Link
+                      url={url}
+                      fontFamily="Unbounded"
+                      fontSize={20}
+                      fontWeight={500}
+                      lineHeight={32}
+                      mainColor={Colors.Navy}
+                      hoverColor={Colors.Navy}
+                      activeColor={Colors.Nephritis100}
+                      padding="14px 0"
+                      onClick={
+                        onOpen &&
+                        (() => {
+                          isOpen
+                            ? (document.body.style.position = "")
+                            : (document.body.style.position = "fixed");
+                          onOpen(!isOpen);
+                        })
+                      }
+                    >
+                      {name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            {isMobile && <Social />}
+          </nav>,
+          rootRef!.current!
+        )}
+    </>
+  ) : null;
+};
+
+/* const SmallResolution = ({
   isOpen = undefined,
   onOpen = undefined,
   rootRef = undefined,
@@ -166,7 +259,7 @@ const SmallResolution = ({
         )}
     </>
   ) : null;
-};
+}; */
 
 /*import clsx from "clsx";
 

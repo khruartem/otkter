@@ -146,6 +146,6 @@ export type SocialTypes = "vk" | "telegram";
 export type Social = {
   id: number;
   url: string;
-  type: SocialTypes;
+  type: SocialTypes | string;
   icon: string;
 }
