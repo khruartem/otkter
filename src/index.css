@@ -19,6 +19,7 @@
   --light60: #FDFDFD;
   --light30: #E6E6E6;
   --light20: #BFBFBF;
+	--orange100: #FB8200;
 }
 
 *,
@@ -132,6 +133,7 @@ section {
 
 html {
 	scroll-behavior: smooth;
+	scrollbar-width: none;
 }
 
 a {

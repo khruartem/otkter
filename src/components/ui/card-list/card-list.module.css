@@ -1,0 +1,12 @@
+.card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Стили для разных разрешений экранов*/
+.card-list_large-screen {
+  gap: 1.25vw;
+}

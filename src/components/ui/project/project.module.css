@@ -1,0 +1,32 @@
+.card-link {
+  width: min-content;
+}
+
+.project {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project__top {
+  position: relative;
+}
+
+.project__bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Стили для разных разрешений экранов */
+.project_large-screen {
+  gap: 1.04vw;
+}
+
+.project__top_large-screen {
+  padding: 0.83vw 0.83vw 1.25vw;
+}
+
+.project__large-screen {
+  gap: 12px;
+  padding: 0 20px 36px;
+}

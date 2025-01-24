@@ -1,22 +1,19 @@
 import { ElementType, SyntheticEvent } from "react";
 
-export type CategoryName =
+export type Category =
   | "Спектакль"
   | "Конкурс"
   | "Мастер класс"
   | "Короткий метр";
 
-export type Category = {
-  name: CategoryName;
-  icon: string;
-  id: string;
-};
-
 export type TCard = {
   id: number;
   type: "projects" | "team";
   title: string;
-  categoryList?: Category[];
+  categoryList?: {
+    name: Category[];
+    icon: string;
+  };
   attention?: boolean;
   image: string;
   shortText: string;

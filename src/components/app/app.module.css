@@ -1,0 +1,9 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Стили для разных разрешений экранов */
+.main-content_large-screen {
+  gap: 6.88vw;
+}

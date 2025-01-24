@@ -1,0 +1,27 @@
+.category-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light60);
+  gap: 4px;
+  border-radius: 100px;
+  padding: 3.6px;
+}
+
+.category {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding-left: 12px;
+  padding-right: 16px;
+  padding-block: 6px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: var(--categoty-background-color);
+}
+
+.category_attention {
+  padding: 8px;
+}

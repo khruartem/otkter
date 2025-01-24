@@ -28,3 +28,8 @@
 .nav:hover {
   fill: var(--nephritis120);
 }
+
+.category {
+  width: 24px;
+  height: 24px;
+}

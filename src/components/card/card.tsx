@@ -1,27 +1,13 @@
-import clsx from "clsx";
-import { DecorImage } from "../decor-image";
-import styles from "./card.module.css";
-import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
+import { FC } from "react";
 
-export const Card = () => {
-  const isLarge = useLargeScreenMediaQuery();
-  
-  return (
-    <div className={styles.card}>
-      <div className={styles.card__top}>
-        <DecorImage
-          width={clsx(
-            isLarge && "25.42vw"
-          )}
-          height={clsx(
-            isLarge && "14.38vw"
-          )}
-          
-        />
-      </div>
-      <div className={styles.card__bottom}>
+import { CardProps } from "./types";
 
-      </div>
-    </div>
-  )
-} 
+import { ProjectUI } from "../ui/project";
+import { TeamUI } from "../ui/team";
+
+export const Card: FC<CardProps> = ({ card }) => {
+  const { type } = card
+
+  if (type === "projects") return <ProjectUI project={card} />
+  if (type === "team") return <TeamUI teammate={card} />
+};
