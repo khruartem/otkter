@@ -1,10 +1,10 @@
-import { LinkProps } from "./types";
+import { NavLinkProps } from "./types";
 import { Colors } from "../../utils/types";
 import { CSSProperties } from "react";
 
-import styles from "./link.module.css";
+import styles from "./navlink.module.css";
 
-export const Link = ({
+export const NavLink = ({
   children,
   display = "inline",
   url,
@@ -20,7 +20,7 @@ export const Link = ({
   margin = "0",
   padding = "0",
   onClick = undefined
-}: LinkProps) => {
+}: NavLinkProps) => {
   return (
     <a
       href={url}

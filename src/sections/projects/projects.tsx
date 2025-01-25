@@ -10,6 +10,8 @@ import { Colors } from "../../utils/types";
 import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
 
 import styles from "./projects.module.css";
+import { Button } from "../../components/button";
+import { Link } from "react-router-dom";
 
 export const Projects: FC = () => {
   const cardsValue: CardContextValue = {
@@ -45,6 +47,22 @@ export const Projects: FC = () => {
           {"проекты"}
         </Text>
         <CardList />
+        <div className={styles["projects__button-section"]}>
+          <Button
+            type="button"
+            onClick={() => {}}
+            disabled={false}
+            padding="16px 32px"
+          >
+            {"Предложить проект"}
+          </Button>
+          <Link
+          to={"/projects/archive"}
+          className={styles.projects__link}
+          >
+            {"Все проекты"}
+          </Link>
+        </div>
       </section>
     </CardContext.Provider>
   );

@@ -3,7 +3,7 @@ import { Colors, Fonts, FontSizes, FontWeights, lineHeights, TextTransforms } fr
 
 type DisplayType = "inline" | "block" | "inline-block";
 
-export type LinkProps = {
+export type NavLinkProps = {
   children: ReactNode;
   display?: DisplayType;
   url: string;

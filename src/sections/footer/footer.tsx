@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { Link } from "../../components/link";
 import { Logo } from "../../components/logo";
 import { Social } from "../../components/social";
 import { Text } from "../../components/text";
@@ -66,15 +65,12 @@ const LargeResolution = () => {
             >
               {"Позвоните нам"}
             </Text>
-            <Link
-              url={"tel:+79167569505"}
-              display="block"
-              fontSize={20}
-              fontWeight={500}
-              lineHeight={32}
+            <a
+              href={"tel:+79167569505"}
+              className={styles.footer__link}
             >
               {"8 (916) 756-95-05"}
-            </Link>
+            </a>
           </div>
           <Social />
         </div>
@@ -138,15 +134,12 @@ const SmallResolution = () => {
             >
               {"Позвоните нам"}
             </Text>
-            <Link
-              url={"tel:+79167569505"}
-              display="block"
-              fontSize={20}
-              fontWeight={500}
-              lineHeight={32}
+            <a
+              href={"tel:+79167569505"}
+              className={styles.footer__link}
             >
               {"8 (916) 756-95-05"}
-            </Link>
+            </a>
           </div>
           <Social />
         </div>
