@@ -1,8 +1,10 @@
 import { FC } from "react";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
 import { CardList } from "../../components/card-list";
 import { Text } from "../../components/text";
+import { Button } from "../../components/button";
 
 import { CardContextValue, CardContext } from "../../contexts/card-context";
 import { Cards } from "../../utils/constants";
@@ -10,8 +12,7 @@ import { Colors } from "../../utils/types";
 import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
 
 import styles from "./projects.module.css";
-import { Button } from "../../components/button";
-import { Link } from "react-router-dom";
+import stylesLink from "../../components/link/link.module.css";
 
 export const Projects: FC = () => {
   const cardsValue: CardContextValue = {
@@ -58,7 +59,7 @@ export const Projects: FC = () => {
           </Button>
           <Link
           to={"/projects/archive"}
-          className={styles.projects__link}
+          className={stylesLink.link}
           >
             {"Все проекты"}
           </Link>

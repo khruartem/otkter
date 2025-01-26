@@ -1,8 +1,7 @@
 import clsx from "clsx";
-import { FC } from "react";
+import { CSSProperties, FC } from "react";
 import { Link } from "react-router-dom";
 
-import { DecorImage } from "../../decor-image";
 import { Text } from "../../text";
 import { ProjectUIProps } from "./types";
 
@@ -16,33 +15,48 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project }) => {
   const isLarge = useLargeScreenMediaQuery();
 
   const { id, title, categoryList, attention, image, shortText } = project;
-  
+
   return (
-    <Link className={styles["card-link"]} to={`/projects/${id}`}>
-      <li className={clsx(
-        styles.project,
-        isLarge && styles["project_large-screen"]
-      )}>
-        <div className={clsx(
-          styles.project__top,
-          styles["project__top_large-screen"]
-        )}>
-          <DecorImage
-            width={clsx(
-              isLarge && "25.42vw"
+    <Link
+      className={styles["card-link"]}
+      to={`/projects/${id}`}
+      style={
+        {
+          "--project-color": attention ? Colors.Orange100 : Colors.Nephritis120,
+        } as CSSProperties
+      }
+    >
+      <li
+        className={clsx(
+          styles.project,
+          isLarge && styles["project_large-screen"]
+        )}
+      >
+        <div
+          className={clsx(
+            styles.project__top,
+            styles["project__top_large-screen"]
+          )}
+        >
+          <div
+            className={clsx(
+              styles.project__image,
+              isLarge && styles["project__image_large-screen"]
             )}
-            height={clsx(
-              isLarge && "14.38vw"
-            )}
-            backgroundUrl={image}
-            borderRadius={500}
-          />
+            style={
+              {
+                "--background-url": `url(${image})`,
+              } as CSSProperties
+            }
+          ></div>
           <CategoryList categoryList={categoryList!} attention={attention!} />
         </div>
-        <div className={clsx(
-          styles.project__bottom,
-          styles["project__large-screen"]
-        )}>
+        <div
+          className={clsx(
+            styles.project__bottom,
+            styles["project__large-screen"]
+          )}
+        >
           <Text
             as={"h3"}
             fontFamily="Unbounded"

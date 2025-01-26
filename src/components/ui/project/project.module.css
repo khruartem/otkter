@@ -2,6 +2,22 @@
   width: min-content;
 }
 
+.card-link:hover .project__image {
+  animation: backgroundZoomIn 0.2s linear forwards;
+}
+
+.card-link .project__image {
+  animation: backgroundZoomOut 0.2s linear forwards;
+}
+
+.card-link:hover h3 {
+  animation: textColorZoomIn 0.2s linear forwards;
+}
+
+.card-link h3 {
+  animation: textColorZoomOut 0.2s linear forwards;
+}
+
 .project {
   width: 100%;
   display: flex;
@@ -10,6 +26,14 @@
 
 .project__top {
   position: relative;
+}
+
+.project__image {
+  display: block;
+  background-image: var(--background-url);
+  background-position: 60% 40%;
+  background-size: cover;
+  border-radius: 500px;
 }
 
 .project__bottom {
@@ -26,7 +50,48 @@
   padding: 0.83vw 0.83vw 1.25vw;
 }
 
+.project__image_large-screen {
+  height: 14.38vw;
+  width: 25.42vw;
+}
+
 .project__large-screen {
   gap: 12px;
   padding: 0 20px 36px;
+}
+
+@keyframes backgroundZoomIn {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 120%;
+  }
+}
+
+@keyframes backgroundZoomOut {
+  0% {
+    background-size: 120%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+@keyframes textColorZoomIn {
+  0% {
+    color: var(--navy);
+  }
+  100% {
+    color: var(--project-color);
+  }
+}
+
+@keyframes textColorZoomOut {
+  0% {
+    background-size: var(--project-color);
+  }
+  100% {
+    background-size: var(--navy);
+  }
 }
