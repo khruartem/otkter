@@ -16,7 +16,9 @@ export const CategoryUI: FC<CategoryUIProps> = ({
   categotyTextColor,
 }) => {
   return (
-    <div className={styles["category-wrapper"]}>
+    <div className={clsx(
+      styles["category-wrapper"],
+      isAttention && styles["category-wrapper_attention"])}>
       <div
         className={clsx(
           styles.category,
