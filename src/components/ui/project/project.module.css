@@ -2,19 +2,19 @@
   width: min-content;
 }
 
-.card-link:hover .project__image {
+.project-link:hover .project__image {
   animation: backgroundZoomIn 0.2s linear forwards;
 }
 
-.card-link .project__image {
+.project-link .project__image {
   animation: backgroundZoomOut 0.2s linear forwards;
 }
 
-.card-link:hover h3 {
+.project-link:hover h3 {
   animation: textColorZoomIn 0.2s linear forwards;
 }
 
-.card-link h3 {
+.project-link h3 {
   animation: textColorZoomOut 0.2s linear forwards;
 }
 
