@@ -11,4 +11,12 @@
   color: var(--nephritis100);
 }
 
+.link:hover {
+  color: var(--nephritis120);
+}
+
+.link:active {
+  color: var(--navy);
+}
+
 /* Стили для разных разрешений экранов */

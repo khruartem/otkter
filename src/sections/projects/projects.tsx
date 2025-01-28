@@ -8,8 +8,8 @@ import { Button } from "../../components/button";
 
 import { CardContextValue, CardContext } from "../../contexts/card-context";
 import { Cards } from "../../utils/constants";
-import { Colors } from "../../utils/types";
-import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
+import { Colors, lineHeights } from "../../utils/types";
+import { useMediaQueryCustom } from "../../hooks/useMediaQueryCustom";
 
 import styles from "./projects.module.css";
 import stylesLink from "../../components/link/link.module.css";
@@ -22,7 +22,10 @@ export const Projects: FC = () => {
     categotyTextColor: Colors.None,
   };
 
-  const isLarge = useLargeScreenMediaQuery();
+  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
+    useMediaQueryCustom();
+  const largeResolution = isLarge || isDesktop || isLaptop;
+  const smallResolution = isTablet || isMobile;
 
   return (
     <CardContext.Provider value={cardsValue}>
@@ -30,20 +33,26 @@ export const Projects: FC = () => {
         id="projects"
         className={clsx(
           styles.projects,
-          isLarge && styles["projects_large-screen"]
+          largeResolution && styles["projects_bordered-large"],
+          smallResolution && styles["projects_bordered-small"],
+          isLarge && styles["projects_large-screen"],
+          isDesktop && styles.projects_desktop,
+          isLaptop && styles.projects_laptop,
+          isTablet && styles.projects_tablet,
+          isMobile && styles.projects_mobile
         )}
       >
         <Text
           as="h2"
           fontFamily="Unbounded"
           textAlign="center"
-          fontSize={56}
+          fontSize={isLarge || isDesktop ? 56 : 36}
           fontWeight={700}
-          lineHeight={80}
+          lineHeight={(isLarge || isDesktop ? 80 : 44) as lineHeights}
           textTransform="uppercase"
           color={Colors.Navy}
           decorated={true}
-          padding={"6.5px 26.2px"}
+          padding={isLarge || isDesktop ? "8px 28px" : "12px 24px"}
         >
           {"проекты"}
         </Text>
@@ -57,10 +66,7 @@ export const Projects: FC = () => {
           >
             {"Предложить проект"}
           </Button>
-          <Link
-          to={"/projects/archive"}
-          className={stylesLink.link}
-          >
+          <Link to={"/projects/archive"} className={stylesLink.link}>
             {"Все проекты"}
           </Link>
         </div>

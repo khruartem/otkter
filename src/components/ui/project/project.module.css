@@ -1,4 +1,4 @@
-.card-link {
+.project-link {
   width: min-content;
 }
 
@@ -39,15 +39,29 @@
 .project__bottom {
   display: flex;
   flex-direction: column;
+  gap: 12px;
 }
 
 /* Стили для разных разрешений экранов */
-.project_large-screen {
-  gap: 1.04vw;
+.project-link_small-resolution {
+  flex-grow: 1;
 }
 
-.project__top_large-screen {
-  padding: 0.83vw 0.83vw 1.25vw;
+.project_large-resolution {
+  gap: 20px;
+}
+
+.project_small-resolution {
+  gap: 12px;
+}
+
+.project__top_large-resolution {
+  padding: 16px 16px 24px;
+}
+
+.project__top_small-resolution {
+  display: flex;
+  padding-bottom: 24px;
 }
 
 .project__image_large-screen {
@@ -55,9 +69,33 @@
   width: 25.42vw;
 }
 
-.project__large-screen {
-  gap: 12px;
-  padding: 0 20px 36px;
+.project__image_desktop {
+  height: 20.20vw;
+  width: 38.87vw;
+}
+
+.project__image_laptop {
+  height: 26.95vw;
+  width: 41.80vw;
+}
+
+.project__image_tablet {
+  height: 31.25vw;
+  width: 69.14vw;
+  flex-grow: 1;
+}
+
+.project__image_mobile {
+  height: 57.97vw;
+  width: 92.27vw;
+}
+
+.project__bottom_large-resolution {
+  height: 192px;
+}
+
+.project__bottom_small-screen {
+  height: fit-content;
 }
 
 @keyframes backgroundZoomIn {
