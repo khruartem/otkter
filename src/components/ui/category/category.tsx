@@ -11,14 +11,21 @@ import { Icon } from "../../icon";
 export const CategoryUI: FC<CategoryUIProps> = ({
   category = undefined,
   isAttention = false,
+  wrapper = false,
   categoryIconColor,
   categotyBackgroundColor,
   categotyTextColor,
 }) => {
   return (
-    <div className={clsx(
-      styles["category-wrapper"],
-      isAttention && styles["category-wrapper_attention"])}>
+    <div
+      className={clsx(
+        styles["category-wrapper"],
+        isAttention && styles["category-wrapper_attention"],
+        wrapper
+          ? styles["category-wrapper_colored"]
+          : styles["category-wrapper_transparent"]
+      )}
+    >
       <div
         className={clsx(
           styles.category,

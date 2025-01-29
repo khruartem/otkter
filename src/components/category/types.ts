@@ -1,6 +1,6 @@
-import { Category } from "../../utils/types"
+import { TCategory } from "../../utils/types"
 
 export type CategoryProps = {
-  category?: Category;
+  category?: TCategory;
   isAttention?: boolean;
 }

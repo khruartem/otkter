@@ -16,6 +16,7 @@ export const Category: FC<CategoryProps> = ({
     <CategoryUI
       category={category}
       isAttention={isAttention}
+      wrapper
       categoryIconColor={categoryIconColor || Colors.Nephritis100}
       categotyBackgroundColor={categotyBackgroundColor || Colors.Navy}
       categotyTextColor={categotyTextColor || Colors.Light100}

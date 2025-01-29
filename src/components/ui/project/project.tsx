@@ -26,7 +26,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project }) => {
         styles["project-link"],
         smallResolution && styles["project-link_small-resolution"],
       )}
-      to={`/projects/${id}`}
+      to={`/otkter/projects/${id}`}
       style={
         {
           "--project-color": attention ? Colors.Orange100 : Colors.Nephritis120,

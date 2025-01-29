@@ -1,23 +1,21 @@
-import { About } from '../../sections/about';
-import { Footer } from '../../sections/footer';
-import { Header } from '../../sections/header';
-import { Hero } from '../../sections/hero';
-import { Partners } from '../../sections/partners';
-import { Projects } from '../../sections/projects';
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { Main } from "../../pages/main";
+import { Modal } from "../modal";
 
-export function App() {  
+export function App() {
+  const navigate = useNavigate();
+
   return (
     <>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-      </main>
-      <Partners />
-      <Footer />
+      <Routes>
+        <Route path={"/otkter"} element={<Main />} />
+        <Route
+          path={"/otkter/projects/:id"}
+          element={<Modal onClose={() => navigate("/otkter#projects")}>Test</Modal>}
+        />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

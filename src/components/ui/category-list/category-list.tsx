@@ -1,16 +1,29 @@
 import { FC } from "react";
+import clsx from "clsx";
+
 import { CategoryListUIProps } from "./types";
 import { Category } from "../../category";
+import { nanoid } from "@reduxjs/toolkit";
+import { useMediaQueryCustom } from "../../../hooks/useMediaQueryCustom";
 
 import styles from "./category-list.module.css";
-import { nanoid } from "@reduxjs/toolkit";
 
 export const CategoryListUI: FC<CategoryListUIProps> = ({
   categoryList,
   attention,
 }) => {
+  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
+    useMediaQueryCustom();
+  const largeResolution = isLarge || isDesktop || isLaptop;
+  const smallResolution = isTablet || isMobile;
   return (
-    <div className={styles["category-list"]}>
+    <div
+      className={clsx(
+        styles["category-list"],
+        largeResolution && styles["category-list_large-resolution"],
+        smallResolution && styles["category-list_small-resolution"]
+      )}
+    >
       {attention && <Category isAttention />}
       {categoryList.map((item) => {
         return <Category key={nanoid()} category={item} />;

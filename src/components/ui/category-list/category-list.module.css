@@ -3,7 +3,6 @@
   flex-direction: row;
   position: absolute;
   bottom: 0;
-  left: 0;
   z-index: 1;
 }
 
@@ -13,4 +12,13 @@
 
 .category-list div:last-child {
   margin-right: 0;
+}
+
+/* Стили для разных разрешений экранов */
+.category-list_large-resolution {
+  left: 16px;
+}
+
+.category-list_small-resolution {
+  left: 0;
 }

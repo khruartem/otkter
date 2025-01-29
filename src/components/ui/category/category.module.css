@@ -3,10 +3,17 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: var(--light60);
   gap: 4px;
   border-radius: 100px;
   padding: 4px;
+}
+
+.category-wrapper_colored {
+  background-color: var(--light60);
+}
+
+.category-wrapper_transparent {
+  background-color: transparent;
 }
 
 .category-wrapper_attention {

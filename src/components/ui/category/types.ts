@@ -1,8 +1,9 @@
-import { Category, Colors } from "../../../utils/types";
+import { TCategory, Colors } from "../../../utils/types";
 
 export type CategoryUIProps = {
-  category?: Category;
+  category?: TCategory;
   isAttention?: boolean;
+  wrapper?: boolean;
   categoryIconColor: Colors;
   categotyBackgroundColor: Colors;
   categotyTextColor: Colors;

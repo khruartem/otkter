@@ -1,36 +1,65 @@
 import { ElementType, SyntheticEvent } from "react";
 
-export type CategoryName =
+export type TCategoryName =
   | "Спектакль"
   | "Конкурс"
   | "Мастер класс"
   | "Короткий метр";
 
-export type Category = {
-  name: CategoryName;
+export type TCategory = {
+  name: TCategoryName;
   icon: string;
   id: string;
+};
+
+export type TControls = {
+  buttons: string[];
+  links: TLink[];
+}
+
+type TLink = {
+  name: string;
+  href: string;
+}
+
+type TEmployees = {
+  actors?: TEmployee[];
+  administrators?: TEmployee[];
+}
+
+type TEmployee = {
+  name: string;
+  occupation: string;
+  photo: string;
+};
+
+type TEventDetails = {
+  organizer?: string;
+  partners?: string[];
+  eventDate?: string;
+  address?: string;
+  price?: string;
+}
+
+export type TProjectInfo = {
+  role?: "admins" | "artists";
+  text?: string;
+  photos?: string[];
+  eventDetails: TEventDetails;
+  employees?: TEmployees;
+  controls?: TControls;
 };
 
 export type TCard = {
   id: number;
   type: "projects" | "team";
   title: string;
-  categoryList?: Category[];
+  categoryList?: TCategory[];
   attention?: boolean;
   image: string;
   shortText: string;
-  role?: "admins" | "artists";
-  text?: string;
   social?: string[];
-  photos?: string[];
-  organizer?: string;
-  partners?: string[];
-  address?: string;
-  dateTime?: string;
-  price?: string;
-  starring?: Actor[];
-  administrators?: Actor[];
+  projectInfo?: TProjectInfo;
 };
 
 export type TProject = Pick<
@@ -41,25 +70,13 @@ export type TProject = Pick<
   | "attention"
   | "categoryList"
   | "title"
-  | "shortText"
-  | "text"
-  | "photos"
-  | "organizer"
-  | "partners"
-  | "address"
-  | "dateTime"
-  | "administrators"
-  | "price"
-  | "starring"
+  | "projectInfo"
 >;
 
-export type TTeammate = Pick<TCard, "id" | "image" | "title" | "shortText">;
-
-type Actor = {
-  name: string;
-  role: string;
-  photo: string;
-};
+export type TTeammate = Pick<
+  TCard,
+  "id" | "image" | "title" | "shortText" | "social"
+>;
 
 export enum Colors {
   Navy = "#0B3954",
@@ -97,7 +114,7 @@ export type TRadii = 0 | 40 | 100 | 200 | 400 | 500 | 800 | "none";
 
 export type Fonts = "" | "Unbounded" | "Roboto" | "inherit";
 export type textAligns = "center" | "left" | "right";
-export type FontSizes = 0 | 14 | 16 | 18 | 20 | 28 | 36 | 56 | 72;
+export type FontSizes = 0 | 14 | 16 | 18 | 20 | 28 | 32 | 36 | 56 | 72;
 export type FontWeights = 0 | 400 | 500 | 700 | "inherit";
 export type lineHeights =
   | 0
@@ -108,6 +125,7 @@ export type lineHeights =
   | 36
   | 40
   | 44
+  | 48
   | 80
   | 100
   | "inherit";
