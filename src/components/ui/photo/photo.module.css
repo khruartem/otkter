@@ -1,0 +1,33 @@
+.photo {
+  aspect-ratio: 1 / 1;
+}
+
+.photo__link {
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  background-image: var(--url);
+  background-position: center;
+  background-size: contain;
+}
+
+/* Стили для разных разрешений экранов */
+.photo_large-screen {
+  width: 5.83vw;
+}
+
+.photo_desktop {
+  width: 5.42vw;
+}
+
+.photo_laptop {
+  width: 13.67vw;
+}
+
+.photo_tablet {
+  width: 14.06vw;
+}
+
+.photo_mobile {
+  width: 15.46vw;
+}

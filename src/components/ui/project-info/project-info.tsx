@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { Text } from "../../text";
-import { PhotoListUI } from "../photo-list";
+import { PhotoList } from "../../photo-list";
 import { ControlsUI } from "../controls";
 
 import { TProjectInfoProps } from "./types";
@@ -9,7 +9,7 @@ import { Colors } from "../../../utils/types";
 
 import styles from "./project-info.module.css";
 
-export const ProjectInfo: FC<TProjectInfoProps> = ({ projectInfo, title, categories }) => {
+export const ProjectInfo: FC<TProjectInfoProps> = ({ id, projectInfo, title, categories }) => {
   const {
     text,
     photos,
@@ -46,7 +46,7 @@ export const ProjectInfo: FC<TProjectInfoProps> = ({ projectInfo, title, categor
           >
             {text}
           </Text>
-          <PhotoListUI photos={photos!} />
+          <PhotoList list={photos!} projectId={id} />
         </div>
         <ControlsUI controls={controls!} />
       </div>

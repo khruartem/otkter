@@ -1,0 +1,18 @@
+.photo-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Стили для разных разшерений экранов */
+.photo-list_large-resolution {
+  gap: 24px;
+}
+
+.photo-list_middle-resolution {
+  gap: 20px;
+}
+
+.photo-list_small-resolution {
+  gap: 12px;
+}
