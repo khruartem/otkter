@@ -1,5 +1,13 @@
-import { TControls } from "../../../utils/types";
+import { TLink } from "../../../utils/types";
+
+type TButtonWithId = {
+  id: string;
+  label: string;
+}
+
+type TLinkWithId = { id: string } & TLink 
 
 export type TControlsUIProps = {
-  controls: TControls;
+  buttons: TButtonWithId[];
+  links: TLinkWithId[];
 }

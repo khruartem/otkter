@@ -25,7 +25,7 @@ export const PhotoUI: FC<TPhotoProps> = ({ photo }) => {
     >
       <Link
         to={`/otkter/projects/${projectId}/${id}`}
-        state={source}
+        state={{ currentImg: source }}
         className={styles.photo__link}
         style={
           {

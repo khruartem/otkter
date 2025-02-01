@@ -17,8 +17,8 @@ export type TControls = {
   links: TLink[];
 }
 
-type TLink = {
-  name: string;
+export type TLink = {
+  label: string;
   href: string;
 }
 
@@ -70,6 +70,7 @@ export type TProject = Pick<
   | "attention"
   | "categoryList"
   | "title"
+  | "shortText"
   | "projectInfo"
 >;
 

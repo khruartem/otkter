@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { Text } from "../../text";
 import { PhotoList } from "../../photo-list";
-import { ControlsUI } from "../controls";
+import { Controls } from "../../controls";
 
 import { TProjectInfoProps } from "./types";
 import { Colors } from "../../../utils/types";
@@ -48,7 +48,7 @@ export const ProjectInfo: FC<TProjectInfoProps> = ({ id, projectInfo, title, cat
           </Text>
           <PhotoList list={photos!} projectId={id} />
         </div>
-        <ControlsUI controls={controls!} />
+        <Controls controls={controls!} />
       </div>
       <div className={styles.project__extra}>
         <EventDetails info={eventDetails} categories={categories} />

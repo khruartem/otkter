@@ -1,0 +1,22 @@
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Стили для разных разрешений экранов */
+.controls_large-resolution {
+  flex-direction: row;
+}
+
+.controls_large-resolution button {
+  margin-left: 32px;
+}
+
+.controls_large-resolution button:first-child {
+  margin-left: 0;
+}
+
+.controls_small-resolution {
+  flex-direction: column;
+  margin-left: 0;
+}
