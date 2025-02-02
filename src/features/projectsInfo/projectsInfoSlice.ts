@@ -1,12 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { TControls } from "../../utils/types";
 
-import testPhoto1 from "../../assets/testPhoto1.png";
-import testPhoto2 from "../../assets/testPhoto2.png";
-import testPhoto3 from "../../assets/testPhoto3.png";
-import testPhoto4 from "../../assets/testPhoto4.png";
-import testPhoto5 from "../../assets/testPhoto5.png";
-
 import yakovlev from "../../assets/yakovlev.png";
 import LA from "../../assets/LA.png";
 import sinelnikova from "../../assets/sinelnikova.png";
@@ -15,15 +9,9 @@ import torzhkova from "../../assets/torzhkova.png";
 import murzukova from "../../assets/murzukova.png";
 import agafonov from "../../assets/agafonov.png";
 
-type TPhoto = {
-  id: number;
-  source: string;
-};
-
-type TModalProject = {
+type TInfo = {
   projectId: number;
   projectInfo: TProjectInfo;
-  photos: TPhoto[];
   controls?: TControls;
 };
 
@@ -53,11 +41,11 @@ type TEventDetails = {
 };
 
 type TProjectsInfoState = {
-  info: TModalProject[];
+  infos: TInfo[];
 };
 
 const initialState: TProjectsInfoState = {
-  info: [
+  infos: [
     {
       projectId: 1,
       projectInfo: {
@@ -93,28 +81,6 @@ const initialState: TProjectsInfoState = {
           ],
         },
       },
-      photos: [
-        {
-          id: 1,
-          source: testPhoto1,
-        },
-        {
-          id: 2,
-          source: testPhoto2,
-        },
-        {
-          id: 3,
-          source: testPhoto3,
-        },
-        {
-          id: 4,
-          source: testPhoto4,
-        },
-        {
-          id: 5,
-          source: testPhoto5,
-        },
-      ],
       controls: {
         buttons: ["Записаться"],
         links: [],
@@ -138,28 +104,6 @@ const initialState: TProjectsInfoState = {
           price: "Вход свободный",
         },
       },
-      photos: [
-        {
-          id: 1,
-          source: testPhoto1,
-        },
-        {
-          id: 2,
-          source: testPhoto2,
-        },
-        {
-          id: 3,
-          source: testPhoto3,
-        },
-        {
-          id: 4,
-          source: testPhoto4,
-        },
-        {
-          id: 5,
-          source: testPhoto5,
-        },
-      ],
       controls: {
         buttons: ["Подробнее"],
         links: [],
@@ -179,28 +123,6 @@ const initialState: TProjectsInfoState = {
           price: "3000 ₽",
         },
       },
-      photos: [
-        {
-          id: 1,
-          source: testPhoto1,
-        },
-        {
-          id: 2,
-          source: testPhoto2,
-        },
-        {
-          id: 3,
-          source: testPhoto3,
-        },
-        {
-          id: 4,
-          source: testPhoto4,
-        },
-        {
-          id: 5,
-          source: testPhoto5,
-        },
-      ],
       controls: {
         buttons: ["Подробнее"],
         links: [],
@@ -220,28 +142,6 @@ const initialState: TProjectsInfoState = {
           eventDate: "Каждую третью субботу месяца",
         },
       },
-      photos: [
-        {
-          id: 1,
-          source: testPhoto1,
-        },
-        {
-          id: 2,
-          source: testPhoto2,
-        },
-        {
-          id: 3,
-          source: testPhoto3,
-        },
-        {
-          id: 4,
-          source: testPhoto4,
-        },
-        {
-          id: 5,
-          source: testPhoto5,
-        },
-      ],
     },
     {
       projectId: 5,
@@ -274,28 +174,6 @@ const initialState: TProjectsInfoState = {
           ],
         },
       },
-      photos: [
-        {
-          id: 1,
-          source: testPhoto1,
-        },
-        {
-          id: 2,
-          source: testPhoto2,
-        },
-        {
-          id: 3,
-          source: testPhoto3,
-        },
-        {
-          id: 4,
-          source: testPhoto4,
-        },
-        {
-          id: 5,
-          source: testPhoto5,
-        },
-      ],
       controls: {
         buttons: ["Поддержать проект"],
         links: [
@@ -354,28 +232,6 @@ const initialState: TProjectsInfoState = {
           ],
         },
       },
-      photos: [
-        {
-          id: 1,
-          source: testPhoto1,
-        },
-        {
-          id: 2,
-          source: testPhoto2,
-        },
-        {
-          id: 3,
-          source: testPhoto3,
-        },
-        {
-          id: 4,
-          source: testPhoto4,
-        },
-        {
-          id: 5,
-          source: testPhoto5,
-        },
-      ],
       controls: {
         buttons: ["Поддержать проект"],
         links: [
@@ -393,7 +249,14 @@ const projectsInfoSlice = createSlice({
   name: "projectsInfo",
   initialState,
   reducers: {},
-  selectors: {},
+  selectors: {
+    getProjectInfoSelector: (state: TProjectsInfoState, id: number) => {
+      return state.infos.find((projectsInfo) => {
+        return projectsInfo.projectId === id;
+      });
+    },
+  },
 });
 
 export const reducer = projectsInfoSlice.reducer;
+export const { getProjectInfoSelector } = projectsInfoSlice.selectors;

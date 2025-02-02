@@ -8,11 +8,15 @@ import {
 
 import { reducer as projectsReducer } from '../features/projects/projectsSlice';
 import { reducer as projectsInfoReducer } from '../features/projectsInfo/projectsInfoSlice';
+import { reducer as photosReducer } from '../features/photos/photosSlice';
+import { reducer as categoriesReducer } from '../features/categories/categoriesSlice';
 
 const store = configureStore({
   reducer: {
     projects: projectsReducer,
     projectsInfo: projectsInfoReducer,
+    photos: photosReducer,
+    categories: categoriesReducer
   },
 });
 
