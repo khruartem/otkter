@@ -1,6 +1,6 @@
 import { useMediaQuery } from 'react-responsive';
 
-export const useMediaQueryCustom = () => ({
+export const useGetMediaQuery = () => ({
     isLarge: useMediaQuery({ minWidth: 1681 }),
     isDesktop: useMediaQuery({ minWidth: 1201, maxWidth: 1680.9 }),
     isLaptop: useMediaQuery({ minWidth: 1021, maxWidth: 1200.9 }),

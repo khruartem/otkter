@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { CategoryListUIProps } from "./types";
 import { Category } from "../../category";
 import { nanoid } from "@reduxjs/toolkit";
-import { useMediaQueryCustom } from "../../../hooks/useMediaQueryCustom";
+import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./category-list.module.css";
 
@@ -13,7 +13,7 @@ export const CategoryListUI: FC<CategoryListUIProps> = ({
   attention,
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
-    useMediaQueryCustom();
+    useGetMediaQuery();
   const largeResolution = isLarge || isDesktop || isLaptop;
   const smallResolution = isTablet || isMobile;
   return (

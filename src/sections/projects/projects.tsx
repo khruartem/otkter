@@ -9,7 +9,7 @@ import { Button } from "../../components/button";
 import { CardContextValue, CardContext } from "../../contexts/card-context";
 import { Cards } from "../../utils/constants";
 import { Colors, lineHeights } from "../../utils/types";
-import { useMediaQueryCustom } from "../../hooks/useMediaQueryCustom";
+import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 
 import styles from "./projects.module.css";
 import stylesLink from "../../components/link/link.module.css";
@@ -23,7 +23,7 @@ export const Projects: FC = () => {
   };
 
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
-    useMediaQueryCustom();
+    useGetMediaQuery();
   const largeResolution = isLarge || isDesktop || isLaptop;
   const smallResolution = isTablet || isMobile;
 

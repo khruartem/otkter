@@ -1,17 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import testPhoto1 from "../../assets/testPhoto1.png";
-import testPhoto2 from "../../assets/testPhoto2.png";
-import testPhoto3 from "../../assets/testPhoto3.png";
-import testPhoto4 from "../../assets/testPhoto4.png";
-import testPhoto5 from "../../assets/testPhoto5.png";
+import { findById } from "../../utils/findById";
+import { projectPhotos } from "../../utils/constants";
 
-type TPhoto = {
+export type TPhoto = {
   id: number;
   source: string;
 };
 
-type TProjectPhotos = {
+export type TProjectPhotos = {
   projectId: number;
   photos: TPhoto[];
 };
@@ -21,158 +18,7 @@ type TProjectPhotosState = {
 };
 
 const initialState: TProjectPhotosState = {
-  projectPhotos: [
-    {
-      projectId: 1,
-      photos: [
-        {
-          id: 1,
-          source: testPhoto1,
-        },
-        {
-          id: 2,
-          source: testPhoto2,
-        },
-        {
-          id: 3,
-          source: testPhoto3,
-        },
-        {
-          id: 4,
-          source: testPhoto4,
-        },
-        {
-          id: 5,
-          source: testPhoto5,
-        },
-      ],
-    },
-    {
-      projectId: 2,
-      photos: [
-        {
-          id: 1,
-          source: testPhoto1,
-        },
-        {
-          id: 2,
-          source: testPhoto2,
-        },
-        {
-          id: 3,
-          source: testPhoto3,
-        },
-        {
-          id: 4,
-          source: testPhoto4,
-        },
-        {
-          id: 5,
-          source: testPhoto5,
-        },
-      ],
-    },
-    {
-      projectId: 3,
-      photos: [
-        {
-          id: 1,
-          source: testPhoto1,
-        },
-        {
-          id: 2,
-          source: testPhoto2,
-        },
-        {
-          id: 3,
-          source: testPhoto3,
-        },
-        {
-          id: 4,
-          source: testPhoto4,
-        },
-        {
-          id: 5,
-          source: testPhoto5,
-        },
-      ],
-    },
-    {
-      projectId: 4,
-      photos: [
-        {
-          id: 1,
-          source: testPhoto1,
-        },
-        {
-          id: 2,
-          source: testPhoto2,
-        },
-        {
-          id: 3,
-          source: testPhoto3,
-        },
-        {
-          id: 4,
-          source: testPhoto4,
-        },
-        {
-          id: 5,
-          source: testPhoto5,
-        },
-      ],
-    },
-    {
-      projectId: 5,
-      photos: [
-        {
-          id: 1,
-          source: testPhoto1,
-        },
-        {
-          id: 2,
-          source: testPhoto2,
-        },
-        {
-          id: 3,
-          source: testPhoto3,
-        },
-        {
-          id: 4,
-          source: testPhoto4,
-        },
-        {
-          id: 5,
-          source: testPhoto5,
-        },
-      ],
-    },
-    {
-      projectId: 6,
-      photos: [
-        {
-          id: 1,
-          source: testPhoto1,
-        },
-        {
-          id: 2,
-          source: testPhoto2,
-        },
-        {
-          id: 3,
-          source: testPhoto3,
-        },
-        {
-          id: 4,
-          source: testPhoto4,
-        },
-        {
-          id: 5,
-          source: testPhoto5,
-        },
-      ],
-    },
-  ],
+  projectPhotos: projectPhotos
 };
 
 const photosSlice = createSlice({
@@ -180,10 +26,11 @@ const photosSlice = createSlice({
   initialState,
   reducers: {},
   selectors: {
+    getProjectPhotosSelector: (state: TProjectPhotosState, id: number) => {
+      return findById(state.projectPhotos, id) as TProjectPhotos;
+    },
     getPhotosSelector: (state: TProjectPhotosState, id: number) => {
-      return state.projectPhotos.find(({ projectId }) => {
-        return projectId === id;
-      })?.photos;
+      return (findById(state.projectPhotos, id) as TProjectPhotos).photos;
     },
     getPhotoSelector: (
       state: TProjectPhotosState,
@@ -193,7 +40,7 @@ const photosSlice = createSlice({
       return photosSlice
         .getSelectors()
         .getPhotosSelector(state, id)
-        ?.find(({ id }) => {
+        .find(({ id }) => {
           return photoId === id;
         });
     },
@@ -205,7 +52,7 @@ const photosSlice = createSlice({
       return photosSlice
         .getSelectors()
         .getPhotosSelector(state, id)
-        ?.findIndex(({ id }, index) => {
+        .findIndex(({ id }, index) => {
           return photoId === id && index;
         });
     },
@@ -222,6 +69,7 @@ const photosSlice = createSlice({
 
 export const reducer = photosSlice.reducer;
 export const {
+  getProjectPhotosSelector,
   getPhotosSelector,
   getPhotoSelector,
   getPhotoIndexSelector,

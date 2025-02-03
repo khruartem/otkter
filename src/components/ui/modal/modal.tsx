@@ -7,12 +7,12 @@ import { ArrowLeft } from "../../icons/icons";
 import { Colors } from "../../../utils/types";
 
 import styles from "./modal.module.css";
-import { useMediaQueryCustom } from "../../../hooks/useMediaQueryCustom";
+import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import clsx from "clsx";
 
 export const ModalUI: FC<TModalUIProps> = memo(({ onClose, children }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
-    useMediaQueryCustom();
+    useGetMediaQuery();
   return (
     <div
       className={clsx(

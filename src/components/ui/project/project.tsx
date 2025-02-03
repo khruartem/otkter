@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Text } from "../../text";
 import { CategoryList } from "../../category-list";
 
-import { useMediaQueryCustom } from "../../../hooks/useMediaQueryCustom";
+import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import { Colors } from "../../../utils/types";
 import { ProjectUIProps } from "./types";
 
@@ -15,7 +15,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project }) => {
   const { id, title, categoryList, attention, image, shortText } = project;
 
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
-        useMediaQueryCustom();
+        useGetMediaQuery();
     
   const largeResolution = isLarge || isDesktop || isLaptop;
   const smallResolution = isTablet || isMobile;

@@ -2,15 +2,16 @@ import { CSSProperties, FC } from "react";
 import clsx from "clsx";
 
 import { TPhotoProps } from "./types";
-import { useMediaQueryCustom } from "../../../hooks/useMediaQueryCustom";
+import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import { Link } from "react-router-dom";
 
 import styles from "./photo.module.css";
 
-export const PhotoUI: FC<TPhotoProps> = ({ photo }) => {
-  const { id, source, projectId } = photo;
+export const PhotoUI: FC<TPhotoProps> = ({ photo, projectId }) => {
+  const { id, source } = photo;
+
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
-    useMediaQueryCustom();
+    useGetMediaQuery();
 
   return (
     <li
@@ -25,7 +26,6 @@ export const PhotoUI: FC<TPhotoProps> = ({ photo }) => {
     >
       <Link
         to={`/otkter/projects/${projectId}/${id}`}
-        state={{ currentImg: source }}
         className={styles.photo__link}
         style={
           {

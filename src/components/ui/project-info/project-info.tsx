@@ -4,19 +4,19 @@ import { Text } from "../../text";
 import { PhotoList } from "../../photo-list";
 import { Controls } from "../../controls";
 
-import { TProjectInfoProps } from "./types";
 import { Colors } from "../../../utils/types";
+import { useGetTitle } from "../../../hooks/useGetTitle";
+import { useGetProjectInfo } from "../../../hooks/useGetProjectInfo";
+import { useGetProjectId } from "../../../hooks/useGetProjectId";
 
 import styles from "./project-info.module.css";
 
-export const ProjectInfo: FC<TProjectInfoProps> = ({ id, projectInfo, title, categories }) => {
-  const {
-    text,
-    photos,
-    eventDetails,
-    employees,
-    controls,
-  } = projectInfo;
+export const ProjectInfo: FC = () => {
+  const projectId = useGetProjectId();
+
+  const title = useGetTitle(projectId);
+
+  const { text } = useGetProjectInfo(projectId);
 
   return (
     <div className={styles.project}>
@@ -46,13 +46,13 @@ export const ProjectInfo: FC<TProjectInfoProps> = ({ id, projectInfo, title, cat
           >
             {text}
           </Text>
-          <PhotoList list={photos!} projectId={id} />
+          <PhotoList />
         </div>
-        <Controls controls={controls!} />
+        <Controls />
       </div>
       <div className={styles.project__extra}>
-        <EventDetails info={eventDetails} categories={categories} />
-        <EmployeeList employees={employees} />
+        <EventDetails />
+        <EmployeeList />
       </div>
     </div>
   );

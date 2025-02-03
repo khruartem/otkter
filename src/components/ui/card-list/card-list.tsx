@@ -5,13 +5,13 @@ import { nanoid } from "@reduxjs/toolkit";
 import { Card } from "../../card";
 import { CardListUIProps } from "./types";
 
-import { useMediaQueryCustom } from "../../../hooks/useMediaQueryCustom";
+import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./card-list.module.css";
 
 export const CardListUI: FC<CardListUIProps> = ({ cards }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
-    useMediaQueryCustom();
+    useGetMediaQuery();
 
   const largeResolution = isLarge || isDesktop;
   const mediumResolution = isLaptop;

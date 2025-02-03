@@ -1,13 +1,5 @@
-type TPhotosWithIds = {
-  photo: string;
-  id: string;
-}
-
-type TPhotos = {
-  photosWithIds: TPhotosWithIds[];
-  projectId: number;
-}
+import { TPhoto } from "../../../features/photos/photosSlice";
 
 export type TPhotoListUIProps = {
-  photos: TPhotos;
+  photos: TPhoto[];
 };

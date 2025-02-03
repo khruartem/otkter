@@ -1,17 +1,19 @@
 import { FC } from "react";
 import clsx from "clsx";
 
+import { PhotoUI } from "../photo/photo";
+
 import { TPhotoListUIProps } from "./types";
-import { useMediaQueryCustom } from "../../../hooks/useMediaQueryCustom";
-import { Photo } from "../../photo";
+import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
+import { useGetProjectId } from "../../../hooks/useGetProjectId";
 
 import styles from "./photo-list.module.css";
 
 export const PhotoListUI: FC<TPhotoListUIProps> = ({ photos }) => {
-  const { photosWithIds, projectId } = photos;
-
+  const projectId = useGetProjectId();
+  
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
-    useMediaQueryCustom();
+    useGetMediaQuery();
 
   const largeResolution = isLarge || isDesktop;
   const middleResolution = isLaptop;
@@ -26,9 +28,9 @@ export const PhotoListUI: FC<TPhotoListUIProps> = ({ photos }) => {
         smallResolution && styles["photo-list_small-resolution"]
       )}
     >
-      {photosWithIds.map(({ id, photo }) => {
+      {photos.map(photo => {
         return (
-          <Photo key={id} photoId={id} photo={photo} projectId={projectId} />
+          <PhotoUI key={photo.id} photo={photo} projectId={projectId} />
         );
       })}
     </ul>

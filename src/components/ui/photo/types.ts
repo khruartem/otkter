@@ -1,9 +1,6 @@
-type TPhoto = {
-  id: string
-  source: string;
-  projectId: number;
-}
+import { TPhoto } from "../../../features/photos/photosSlice";
 
 export type TPhotoProps = {
+  projectId: number;
   photo: TPhoto;
 }

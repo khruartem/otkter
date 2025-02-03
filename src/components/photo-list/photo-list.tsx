@@ -1,16 +1,13 @@
 import { FC } from "react";
-import { nanoid } from "@reduxjs/toolkit";
 
-import { TPhotoListProps } from "./types";
 import { PhotoListUI } from "../ui/photo-list";
+import { useGetPhotos } from "../../hooks/useGetPhotos";
+import { useGetProjectId } from "../../hooks/useGetProjectId";
 
-export const PhotoList: FC<TPhotoListProps> = ({ list, projectId }) => {
-  const photosWithIds = list.map((photo) => ({ photo, id: nanoid() }));
-
-  const photos = {
-    projectId,
-    photosWithIds,
-  };
+export const PhotoList: FC = () => {
+  const projectId = useGetProjectId();
+  
+  const photos = useGetPhotos(projectId);
 
   return <PhotoListUI photos={photos} />;
 };

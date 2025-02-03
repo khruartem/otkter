@@ -51,7 +51,8 @@ export type TProjectInfo = {
 };
 
 export type TCard = {
-  id: number;
+  projectId: number;
+  teamId: number;
   type: "projects" | "team";
   title: string;
   categoryList?: TCategory[];
@@ -64,7 +65,7 @@ export type TCard = {
 
 export type TProject = Pick<
   TCard,
-  | "id"
+  | "projectId"
   | "type"
   | "image"
   | "attention"
@@ -72,11 +73,11 @@ export type TProject = Pick<
   | "title"
   | "shortText"
   | "projectInfo"
->;
+>
 
 export type TTeammate = Pick<
   TCard,
-  "id" | "image" | "title" | "shortText" | "social"
+  "teamId" | "image" | "title" | "shortText" | "social"
 >;
 
 export enum Colors {
