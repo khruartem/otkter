@@ -1,21 +1,11 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
 import { CategoryListProps } from "./types";
 
-import { Colors } from "../../utils/types";
-import { CardContext } from "../../contexts/card-context";
 import { CategoryListUI } from "../ui/category-list";
+import { useGetCategories } from "../../hooks/useGetCategories";
 
-export const CategoryList: FC<CategoryListProps> = ({
-  categoryList,
-  attention,
-}) => {
-  const cardContext = useContext(CardContext);
+export const CategoryList: FC<CategoryListProps> = ({ projectId }) => {
+  const categories = useGetCategories(projectId);
 
-  cardContext.categoryIconColor = attention ? Colors.Navy : Colors.Nephritis100;
-  cardContext.categotyBackgroundColor = attention
-    ? Colors.Orange100
-    : Colors.Navy;
-  cardContext.categotyTextColor = attention ? Colors.Navy : Colors.Light100;
-
-  return <CategoryListUI categoryList={categoryList} attention={attention} />;
+  return <CategoryListUI categories={categories} />;
 };

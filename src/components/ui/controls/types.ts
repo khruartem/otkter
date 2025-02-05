@@ -8,6 +8,6 @@ type TButtonWithId = {
 type TLinkWithId = { id: string } & TLink 
 
 export type TControlsUIProps = {
-  buttons: TButtonWithId[];
-  links: TLinkWithId[];
+  buttons: TButtonWithId[] | undefined;
+  links: TLinkWithId[] | undefined;
 }

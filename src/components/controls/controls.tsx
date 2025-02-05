@@ -10,11 +10,11 @@ export const Controls: FC = () => {
 
   const controls = useGetControls(projectId);
 
-  const buttons = controls!.buttons.map((button) => ({
+  const buttons = controls?.buttons.map((button) => ({
     id: nanoid(),
     label: button,
   }));
-  const links = controls!.links.map(({ label, href }) => ({
+  const links = controls?.links.map(({ label, href }) => ({
     id: nanoid(),
     label,
     href,

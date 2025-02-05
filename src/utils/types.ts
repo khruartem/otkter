@@ -50,10 +50,12 @@ export type TProjectInfo = {
   controls?: TControls;
 };
 
+export type TCardType = "projects" | "team";
+
 export type TCard = {
-  projectId: number;
-  teamId: number;
-  type: "projects" | "team";
+  projectId?: number;
+  teamId?: number;
+  type: TCardType;
   title: string;
   categoryList?: TCategory[];
   attention?: boolean;

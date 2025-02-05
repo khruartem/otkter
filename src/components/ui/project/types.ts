@@ -1,5 +1,5 @@
-import { TCard } from "../../../utils/types";
+import { TProject } from "../../../utils/types";
 
 export type ProjectUIProps = {
-  project: Partial<TCard>;
+  project: TProject;
 };

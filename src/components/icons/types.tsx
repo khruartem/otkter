@@ -1,6 +1,6 @@
 import { Colors } from "../../utils/types"
 
-export type IconsProps = {
+export type TIconsProps = {
   mainColor: Colors;
   hoverColor?: Colors;
   activeColor?: Colors;
@@ -9,7 +9,8 @@ export type IconsProps = {
   height: number;
 }
 
-export type LogoProps = Pick<IconsProps, "mainColor" | "width" | "height">;
-export type NavProps = Pick<IconsProps, "onClick">;
-export type CategotyProps = Pick<IconsProps, "mainColor">;
-export type ArrowProps = Pick<IconsProps, "mainColor">;
+export type TLogoProps = Pick<TIconsProps, "mainColor" | "width" | "height">;
+export type TNavProps = Pick<TIconsProps, "onClick">;
+export type TCategotyProps = Pick<TIconsProps, "mainColor">;
+export type TArrowProps = Pick<TIconsProps, "mainColor">;
+export type TOrganizersProps = Pick<TIconsProps, "mainColor">;

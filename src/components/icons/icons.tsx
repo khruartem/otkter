@@ -1,11 +1,11 @@
-import { ArrowProps, CategotyProps, LogoProps, NavProps } from "./types";
+import { TArrowProps, TCategotyProps, TLogoProps, TNavProps, TOrganizersProps } from "./types";
 
 import styles from "./icons.module.css";
 import { CSSProperties } from "react";
 import { Colors } from "../../utils/types";
 import { telegramUrl, vkUrl } from "../../utils/constants";
 
-export const Logo = ({ mainColor, width, height }: LogoProps) => {
+export const Logo = ({ mainColor, width, height }: TLogoProps) => {
   return (
     <svg
       fill="none"
@@ -72,7 +72,7 @@ export const VK = () => {
   );
 };
 
-export const OpenNav = ({ onClick }: NavProps) => {
+export const OpenNav = ({ onClick }: TNavProps) => {
   return (
     <svg
       fill={Colors.Navy}
@@ -86,7 +86,7 @@ export const OpenNav = ({ onClick }: NavProps) => {
   );
 };
 
-export const CloseNav = ({ onClick }: NavProps) => {
+export const CloseNav = ({ onClick }: TNavProps) => {
   return (
     <svg
       fill={Colors.Navy}
@@ -100,7 +100,7 @@ export const CloseNav = ({ onClick }: NavProps) => {
   );
 };
 
-export const Play = ({ mainColor }: CategotyProps) => {
+export const Play = ({ mainColor }: TCategotyProps) => {
   return (
     <svg
       fill={mainColor}
@@ -113,7 +113,7 @@ export const Play = ({ mainColor }: CategotyProps) => {
   );
 };
 
-export const Contest = ({ mainColor }: CategotyProps) => {
+export const Contest = ({ mainColor }: TCategotyProps) => {
   return (
     <svg
       fill={mainColor}
@@ -130,7 +130,7 @@ export const Contest = ({ mainColor }: CategotyProps) => {
   );
 };
 
-export const MasterClass = ({ mainColor }: CategotyProps) => {
+export const MasterClass = ({ mainColor }: TCategotyProps) => {
   return (
     <svg
       fill={mainColor}
@@ -151,7 +151,7 @@ export const MasterClass = ({ mainColor }: CategotyProps) => {
   );
 };
 
-export const ShortFilm = ({ mainColor }: CategotyProps) => {
+export const ShortFilm = ({ mainColor }: TCategotyProps) => {
   return (
     <svg
       fill={mainColor}
@@ -164,7 +164,7 @@ export const ShortFilm = ({ mainColor }: CategotyProps) => {
   );
 };
 
-export const Attention = ({ mainColor }: CategotyProps) => {
+export const Attention = ({ mainColor }: TCategotyProps) => {
   return (
     <svg
       fill={mainColor}
@@ -177,7 +177,7 @@ export const Attention = ({ mainColor }: CategotyProps) => {
   );
 };
 
-export const ArrowLeft = ({ mainColor }: ArrowProps) => {
+export const ArrowLeft = ({ mainColor }: TArrowProps) => {
   return (
     <svg
       fill={mainColor}
@@ -186,6 +186,14 @@ export const ArrowLeft = ({ mainColor }: ArrowProps) => {
       className={styles.arrow}
     >
       <path d="m16.074 8.364-3.36 3.67-2.062 2.24c-.87.95-.87 2.493 0 3.442l5.422 5.922c.712.777 1.926.217 1.926-.869V9.233c0-1.097-1.214-1.646-1.926-.869Z" />
+    </svg>
+  );
+};
+
+export const Organizers = ({ mainColor }: TOrganizersProps) => {
+  return (
+    <svg fill={mainColor} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className={styles.organizers}>
+      <path d="M26.387 5.627c-3.947-3.934-10.347-3.934-14.267 0C9.36 8.36 8.533 12.293 9.6 15.76l-6.267 6.267c-.44.453-.746 1.346-.653 1.986l.4 2.907c.147.96 1.04 1.867 2 2l2.907.4c.64.093 1.533-.2 1.986-.667l1.094-1.093a.66.66 0 0 0 0-.947L8.48 24.027a1.006 1.006 0 0 1 0-1.414 1.006 1.006 0 0 1 1.413 0l2.6 2.6c.254.254.68.254.934 0l2.826-2.813a10.1 10.1 0 0 0 10.134-2.493c3.933-3.934 3.933-10.347 0-14.28ZM19.333 16a3.334 3.334 0 0 1 0-6.667 3.335 3.335 0 0 1 0 6.667Z" />
     </svg>
   );
 };

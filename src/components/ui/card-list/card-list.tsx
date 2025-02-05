@@ -1,10 +1,8 @@
 import { FC } from "react";
 import clsx from "clsx";
-import { nanoid } from "@reduxjs/toolkit";
 
 import { Card } from "../../card";
 import { CardListUIProps } from "./types";
-
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./card-list.module.css";
@@ -26,8 +24,8 @@ export const CardListUI: FC<CardListUIProps> = ({ cards }) => {
         smallResolution && styles["card-list_small-resolution"]
       )}
     >
-      {cards.map((card) => {
-        return <Card key={nanoid()} card={card!} />;
+      {cards?.map((card) => {
+        return <Card key={card.projectId || card.teamId} card={card} />;
       })}
     </ul>
   );

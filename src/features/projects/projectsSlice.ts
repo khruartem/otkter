@@ -1,15 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { TProject } from "../../utils/types";
+import { Colors, TProject } from "../../utils/types";
 import { findById } from "../../utils/findById";
 import { projects } from "../../utils/constants";
 
 type TProjectsState = {
   projects: TProject[];
+  colors: TProjectColors;
+};
+
+type TProjectColors = {
+  projectTitleColor: Colors;
+  projectTitleColorAttention: Colors;
 };
 
 const initialState: TProjectsState = {
-  projects: projects
+  projects: projects,
+  colors: {
+    projectTitleColor: Colors.Nephritis120,
+    projectTitleColorAttention: Colors.Orange100,
+  },
 };
 
 const projectsSlice = createSlice({
@@ -24,9 +34,14 @@ const projectsSlice = createSlice({
     getProjectSelector: (state: TProjectsState, id: number) => {
       return findById(state.projects, id) as TProject;
     },
+    getProjectColorsSelector: (state: TProjectsState) => state.colors,
   },
 });
 
 export const reducer = projectsSlice.reducer;
-export const { getProjectsSelector, getTitleSelector, getProjectSelector } =
-  projectsSlice.selectors;
+export const {
+  getProjectsSelector,
+  getTitleSelector,
+  getProjectSelector,
+  getProjectColorsSelector,
+} = projectsSlice.selectors;

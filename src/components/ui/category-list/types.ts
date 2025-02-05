@@ -1,6 +1,5 @@
-import { TCategory } from "../../../utils/types";
+import { TCategories } from "../../../features/categories/categoriesSlice";
 
 export type CategoryListUIProps = {
-  categoryList: TCategory[];
-  attention: boolean;
-} 
+  categories: TCategories;
+};

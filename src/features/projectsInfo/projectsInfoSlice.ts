@@ -1,18 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TControls } from "../../utils/types";
 
 import { findById } from "../../utils/findById";
 import { projectInfos } from "../../utils/constants";
 
 export type TInfo = {
   projectId: number;
-  projectInfo: TProjectInfo;
-  controls?: TControls;
-};
-
-type TProjectInfo = {
   text: string;
-  eventDetails: TEventDetails;
+  eventDetails: TEventDetails[];
   employees?: TEmployees;
 };
 
@@ -27,12 +21,9 @@ type TEmployee = {
   photo: string;
 };
 
-type TEventDetails = {
-  organizers?: string[];
-  partners?: string[];
-  eventDate?: string;
-  address?: string;
-  price?: string;
+export type TEventDetails = {
+  type: "organizers" | "partners" | "date" | "address" | "price";
+  value: string | string[];
 };
 
 type TProjectsInfoState = {
@@ -40,7 +31,7 @@ type TProjectsInfoState = {
 };
 
 const initialState: TProjectsInfoState = {
-  infos: projectInfos
+  infos: projectInfos,
 };
 
 const projectsInfoSlice = createSlice({
@@ -48,11 +39,21 @@ const projectsInfoSlice = createSlice({
   initialState,
   reducers: {},
   selectors: {
-    getProjectInfoSelector: (state: TProjectsInfoState, id: number) => {
-      return (findById(state.infos, id) as TInfo).projectInfo;
+    getTextSelector: (state: TProjectsInfoState, id: number) => {
+      return (findById(state.infos, id) as TInfo).text;
+    },
+    getEventDetailsSelector: (state: TProjectsInfoState, id: number) => {
+      return (findById(state.infos, id) as TInfo).eventDetails;
+    },
+    getEmployeesSelector: (state: TProjectsInfoState, id: number) => {
+      return (findById(state.infos, id) as TInfo).employees;
     },
   },
 });
 
 export const reducer = projectsInfoSlice.reducer;
-export const { getProjectInfoSelector } = projectsInfoSlice.selectors;
+export const {
+  getTextSelector,
+  getEventDetailsSelector,
+  getEmployeesSelector,
+} = projectsInfoSlice.selectors;

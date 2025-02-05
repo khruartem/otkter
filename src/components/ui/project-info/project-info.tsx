@@ -6,7 +6,7 @@ import { Controls } from "../../controls";
 
 import { Colors } from "../../../utils/types";
 import { useGetTitle } from "../../../hooks/useGetTitle";
-import { useGetProjectInfo } from "../../../hooks/useGetProjectInfo";
+import { useGetText } from "../../../hooks/useGetText";
 import { useGetProjectId } from "../../../hooks/useGetProjectId";
 
 import styles from "./project-info.module.css";
@@ -16,7 +16,7 @@ export const ProjectInfo: FC = () => {
 
   const title = useGetTitle(projectId);
 
-  const { text } = useGetProjectInfo(projectId);
+  const text = useGetText(projectId);
 
   return (
     <div className={styles.project}>

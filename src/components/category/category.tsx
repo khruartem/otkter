@@ -1,25 +1,23 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
 import { CategoryProps } from "./types";
 
-import { CardContext } from "../../contexts/card-context";
 import { CategoryUI } from "../ui/category";
-import { Colors } from "../../utils/types";
+import { useLocation } from "react-router-dom";
+import { useGetCategoryColors } from "../../hooks/useGetCategoryColors";
 
 export const Category: FC<CategoryProps> = ({
   category = undefined,
   isAttention = false,
 }) => {
-  const { categoryIconColor, categotyBackgroundColor, categotyTextColor } =
-    useContext(CardContext);
+  const location = useLocation();
+  const categoryColors = useGetCategoryColors();
 
   return (
     <CategoryUI
       category={category}
       isAttention={isAttention}
-      wrapper
-      categoryIconColor={categoryIconColor || Colors.Nephritis100}
-      categotyBackgroundColor={categotyBackgroundColor || Colors.Navy}
-      categotyTextColor={categotyTextColor || Colors.Light100}
+      wrapper={location.pathname === "/otkter" ? true : false}
+      colors={categoryColors}
     />
   );
 };

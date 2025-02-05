@@ -8,14 +8,15 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./category-list.module.css";
 
-export const CategoryListUI: FC<CategoryListUIProps> = ({
-  categoryList,
-  attention,
-}) => {
+export const CategoryListUI: FC<CategoryListUIProps> = ({ categories }) => {
+  const { attention, categoryList } = categories;
+
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
+
   const largeResolution = isLarge || isDesktop || isLaptop;
   const smallResolution = isTablet || isMobile;
+  
   return (
     <div
       className={clsx(
