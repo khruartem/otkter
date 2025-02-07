@@ -1,0 +1,82 @@
+.project {
+  display: grid;
+}
+
+.project_rowed {
+  flex-direction: row;
+}
+
+.project_columned {
+  flex-direction: column;
+}
+
+.project_overflowed-y {
+  overflow-y: scroll;
+}
+
+.project__main {
+  display: flex;
+  flex-direction: column;
+}
+
+.project__desc {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Стили для разных разрешений экранов */
+.project_lagre_screen {
+  grid-template-columns: 34.17vw 41.25vw;
+  column-gap: 8.33vw;
+  /* width: 34.17vw; */
+}
+
+.project_desktop {
+  grid-template-columns: 34.11vw 41.29vw;
+  column-gap: 8.93vw;
+  /* width: 34.11vw; */
+}
+
+.project_laptop {
+  gap: 7.81vw;
+}
+
+.project_tablet {
+  gap: 10.42vw;
+}
+
+.project_mobile {
+  gap: 19.32vw;
+}
+
+.project__main_lagre_screen {
+  gap: 3.54vw;
+  width: 52.17vw;
+}
+
+.project__main_desktop {
+  gap: 1.76vw;
+  width: 34.11vw;
+}
+
+.project__main_laptop {
+  gap: 5.86vw;
+}
+
+.project__main_tablet {
+  gap: 7.81vw;
+}
+
+.project__main_mobile {
+  gap: 7.73vw;
+}
+
+.project__desc_large-resolution {
+  gap: 24px;
+}
+
+.project__desc_small-resolution {
+  gap: 1.25vw;
+}
+
+

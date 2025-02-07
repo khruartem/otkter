@@ -4,17 +4,24 @@ export type TCategoryName =
   | "Спектакль"
   | "Конкурс"
   | "Мастер класс"
-  | "Короткий метр";
+  | "Короткий метр"
+  | "В ролях"
+  | "Руководители";
 
 export type TCategory = {
   name: TCategoryName;
   icon: string;
-  id: string;
+  id: "play" | "contest" | "master-class" | "short-film" | "employees";
 };
 
 export type TControls = {
-  buttons: string[];
+  buttons: TButton[];
   links: TLink[];
+}
+
+export type TButton = {
+  label: string;
+  onClick: () => void;
 }
 
 export type TLink = {

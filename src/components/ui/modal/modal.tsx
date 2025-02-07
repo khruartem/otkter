@@ -28,6 +28,7 @@ export const ModalUI: FC<TModalUIProps> = memo(({ onClose, children }) => {
       <button className={styles.modal__button} type="button" onClick={onClose}>
         <ArrowLeft mainColor={Colors.Light20} />
         <Text
+          as={"span"}
           fontFamily="Unbounded"
           fontSize={18}
           fontWeight={500}

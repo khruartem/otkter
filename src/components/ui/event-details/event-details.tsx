@@ -1,42 +1,44 @@
 import { FC } from "react";
+import clsx from "clsx";
+import { nanoid } from "@reduxjs/toolkit";
 
 import { TEventDetailsUI } from "./types";
 import { CategoryList } from "../../category-list";
-
-import styles from "./event-details.module.css";
-import { Organizers } from "../../icons/icons";
+import { Address, Date, Organizers, Partners, Price } from "../../icons/icons";
 import { Colors } from "../../../utils/types";
 import { Text } from "../../text";
-import clsx from "clsx";
+import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
-export const EventDetailsUI: FC<TEventDetailsUI> = ({
-  projectId,
-  details,
-}) => {
+import styles from "./event-details.module.css";
+
+export const EventDetailsUI: FC<TEventDetailsUI> = ({ projectId, details }) => {
+  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
+    useGetMediaQuery();
+  const largeResolution = isLarge || isDesktop;
+  const smallResolution = isLaptop || isDesktop || isTablet || isMobile;
 
   return (
-    <div className={styles["event-details"]}>
+    <div
+      key={nanoid()}
+      className={clsx(
+        styles["event-details"],
+        largeResolution && styles["event-details_large-resolution"],
+        smallResolution && styles["event-details_small-resolution"]
+      )}
+    >
       <CategoryList projectId={projectId} />
-      {Object.entries(details).map(([key, value]) => {
+      {details.map(({ type, value }) => {
         return (
-          <div className={styles["event-details__info-block"]}>
-            {clsx(
-              key === "organizers" && (
-                <Organizers mainColor={Colors.Nephritis120} />
-              ),
-              key === "partners" && (
-                <Organizers mainColor={Colors.Nephritis120} />
-              ),
-              key === "eventDate" && (
-                <Organizers mainColor={Colors.Nephritis120} />
-              ),
-              key === "address" && (
-                <Organizers mainColor={Colors.Nephritis120} />
-              ),
-              key === "price" && (
-                <Organizers mainColor={Colors.Nephritis120} />
-              ),
+          <div key={nanoid()} className={styles["event-details__info-block"]}>
+            {type === "organizers" && (
+              <Organizers mainColor={Colors.Nephritis120} />
             )}
+            {type === "partners" && (
+              <Partners mainColor={Colors.Nephritis120} />
+            )}
+            {type === "date" && <Date mainColor={Colors.Nephritis120} />}
+            {type === "address" && <Address mainColor={Colors.Nephritis120} />}
+            {type === "price" && <Price mainColor={Colors.Nephritis120} />}
             <div className={styles["info-block__text"]}>
               <Text
                 as={"h4"}
@@ -48,20 +50,36 @@ export const EventDetailsUI: FC<TEventDetailsUI> = ({
                 textTransform={"none"}
                 color={Colors.Navy}
               >
-                Организатор
+                {clsx(
+                  type === "organizers" && "Организатор",
+                  type === "partners" && "Партнеры",
+                  type === "date" && "Дата проведения очного этапа:",
+                  type === "address" && "Адрес",
+                  type === "price" && "Цена"
+                )}
               </Text>
-              <Text
-                as={"p"}
-                fontFamily="Roboto"
-                textAlign="left"
-                fontSize={16}
-                fontWeight={400}
-                lineHeight={28}
-                textTransform={"none"}
-                color={Colors.Dark100}
-              >
-                {value}
-              </Text>
+              {Array.isArray(value) ? (
+                <ul className={styles["info-block__items"]}>
+                  {value.map((item) => (
+                    <li className={styles["info-block__item"]} key={nanoid()}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <Text
+                  as={"p"}
+                  fontFamily="Roboto"
+                  textAlign="left"
+                  fontSize={16}
+                  fontWeight={400}
+                  lineHeight={28}
+                  textTransform={"none"}
+                  color={Colors.Dark100}
+                >
+                  {value}
+                </Text>
+              )}
             </div>
           </div>
         );

@@ -1,6 +1,8 @@
 .controls {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  width: fit-content;
 }
 
 /* Стили для разных разрешений экранов */

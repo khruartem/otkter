@@ -8,9 +8,10 @@ import { useGetCategoryColors } from "../../hooks/useGetCategoryColors";
 export const Category: FC<CategoryProps> = ({
   category = undefined,
   isAttention = false,
+  projectId
 }) => {
   const location = useLocation();
-  const categoryColors = useGetCategoryColors();
+  const categoryColors = useGetCategoryColors(projectId);
 
   return (
     <CategoryUI

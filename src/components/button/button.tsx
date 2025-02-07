@@ -14,7 +14,7 @@ export const Button = ({
   disabled,
   onClick,
   children,
-  padding = "0",
+  padding = "16px 32px",
   margin = "0",
 }: ButtonProps) => {
   const className = styles.button;

@@ -1,6 +1,9 @@
 .category-list {
   display: flex;
   flex-direction: row;
+}
+
+.category-list_positioned {
   position: absolute;
   bottom: 0;
   z-index: 1;

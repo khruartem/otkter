@@ -52,7 +52,6 @@ export const Projects: FC = () => {
           type="button"
           onClick={() => {}}
           disabled={false}
-          padding="16px 32px"
         >
           {"Предложить проект"}
         </Button>

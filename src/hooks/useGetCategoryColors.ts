@@ -1,6 +1,6 @@
 import { getCategoryColorsSelector } from "../features/categories/categoriesSlice";
-import { useSelector } from "../services/store";
+import { RootState, useSelector } from "../services/store";
 
-export const useGetCategoryColors = () => {
-  return useSelector(getCategoryColorsSelector);
+export const useGetCategoryColors = (id: number) => {
+  return useSelector((state: RootState) => getCategoryColorsSelector(state, id));
 };

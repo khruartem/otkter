@@ -18,14 +18,12 @@ export type TCategoryColors = {
   categoryIconColor: Colors;
   categotyBackgroundColor: Colors;
   categotyTextColor: Colors;
-  categoryIconColorAttention: Colors;
-  categotyBackgroundColorAttention: Colors;
-  categotyTextColorAttention: Colors;
 };
 
 type TCategoriesState = {
   projectCategories: TProjectCategories[];
   colors: TCategoryColors;
+  colorsAttention: TCategoryColors;
 };
 
 const initialState: TCategoriesState = {
@@ -34,9 +32,11 @@ const initialState: TCategoriesState = {
     categoryIconColor: Colors.Nephritis100,
     categotyBackgroundColor: Colors.Navy,
     categotyTextColor: Colors.Light100,
-    categoryIconColorAttention: Colors.Navy,
-    categotyBackgroundColorAttention: Colors.Orange100,
-    categotyTextColorAttention: Colors.Navy,
+  },
+  colorsAttention: {
+    categoryIconColor: Colors.Navy,
+    categotyBackgroundColor: Colors.Orange100,
+    categotyTextColor: Colors.Navy,
   },
 };
 
@@ -46,11 +46,21 @@ const categoriesSlice = createSlice({
   reducers: {},
   selectors: {
     getProjectCategoriesSelector: (state: TCategoriesState, id: number) => {
-      return findById(state.projectCategories, id) as TCategories;
+      return findById(state.projectCategories, id) as TProjectCategories;
     },
-    getCategoryColorsSelector: (state: TCategoriesState) => state.colors,
+    getCategoriesSelector: (state: TCategoriesState, id: number) => {
+      return (findById(state.projectCategories, id) as TProjectCategories)
+        .categories;
+    },
+    getCategoryColorsSelector: (state: TCategoriesState, id: number) => {
+      return (findById(state.projectCategories, id) as TProjectCategories)
+        .categories.attention
+        ? state.colorsAttention
+        : state.colors;
+    },
     getCategotyAttentionSelector: (state: TCategoriesState, id: number) => {
-      return (findById(state.projectCategories, id) as TCategories).attention;
+      return (findById(state.projectCategories, id) as TProjectCategories)
+        .categories.attention;
     },
   },
 });
@@ -58,6 +68,7 @@ const categoriesSlice = createSlice({
 export const reducer = categoriesSlice.reducer;
 export const {
   getProjectCategoriesSelector,
+  getCategoriesSelector,
   getCategoryColorsSelector,
   getCategotyAttentionSelector,
 } = categoriesSlice.selectors;

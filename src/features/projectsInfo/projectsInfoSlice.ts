@@ -10,7 +10,7 @@ export type TInfo = {
   employees?: TEmployees;
 };
 
-type TEmployees = {
+export type TEmployees = {
   actors?: TEmployee[];
   administrators?: TEmployee[];
 };

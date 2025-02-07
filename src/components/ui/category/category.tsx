@@ -3,10 +3,9 @@ import { TCategoryUIProps } from "./types";
 import clsx from "clsx";
 
 import styles from "./category.module.css";
-import { Attention } from "../../icons";
+import { Attention, Contest, MasterClass, Play, ShortFilm } from "../../icons";
 import { Text } from "../../text";
 import { Colors } from "../../../utils/types";
-import { Icon } from "../../icon";
 
 export const CategoryUI: FC<TCategoryUIProps> = ({
   category = undefined,
@@ -31,7 +30,7 @@ export const CategoryUI: FC<TCategoryUIProps> = ({
         )}
         style={
           {
-            "--categoty-background-color": isAttention ?  colors.categotyBackgroundColorAttention : colors.categotyBackgroundColor,
+            "--categoty-background-color": colors.categotyBackgroundColor,
           } as CSSProperties
         }
       >
@@ -39,24 +38,28 @@ export const CategoryUI: FC<TCategoryUIProps> = ({
           <Attention mainColor={Colors.Navy} />
         ) : (
           <>
-            <Icon
-              width={24}
-              height={24}
-              icon={category!.icon}
-              id={category!.id}
-              mainColor={isAttention ? colors.categoryIconColorAttention : colors.categoryIconColor}
-              hoverColor={Colors.None}
-              activeColor={Colors.None}
-            />
+            {category?.id === "play" && (
+              <Play mainColor={colors.categoryIconColor} />
+            )}
+            {category?.id === "contest" && (
+              <Contest mainColor={colors.categoryIconColor} />
+            )}
+            {category?.id === "master-class" && (
+              <MasterClass mainColor={colors.categoryIconColor} />
+            )}
+            {category?.id === "short-film" && (
+              <ShortFilm mainColor={colors.categoryIconColor} />
+            )}
+            {category?.id === "employees" && null}
             <Text
               as={"label"}
-              fontFamily="Roboto"
+              fontFamily={category?.id === "employees" ? "Unbounded" :"Roboto"}
               textAlign="center"
               fontSize={16}
               fontWeight={400}
               lineHeight={28}
               textTransform="none"
-              color={isAttention ? colors.categotyTextColorAttention : colors.categotyTextColor}
+              color={colors.categotyTextColor}
             >
               {category!.name}
             </Text>

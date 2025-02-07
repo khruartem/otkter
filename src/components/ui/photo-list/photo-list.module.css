@@ -1,7 +1,6 @@
 .photo-list {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
 }
 
 /* Стили для разных разшерений экранов */

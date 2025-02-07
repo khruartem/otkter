@@ -93,7 +93,6 @@ const LargeScreen = () => {
               window.open(presentationUrl, "_blank");
             }}
             margin={"60px 0 0"}
-            padding={"16px 32px"}
           >
             {"Смотреть презентацию"}
           </Button>
@@ -181,7 +180,6 @@ const Desktop = () => {
               window.open(presentationUrl, "_blank");
             }}
             margin={"20px 0 0"}
-            padding={"16px 32px"}
           >
             {"Смотреть презентацию"}
           </Button>
@@ -274,7 +272,6 @@ const Laptop = () => {
               window.open(presentationUrl, "_blank");
             }}
             margin={"20px 0 0"}
-            padding={"16px 32px"}
           >
             {"Смотреть презентацию"}
           </Button>
@@ -384,6 +381,7 @@ const Tablet = () => {
               hoverColor={Colors.None}
               activeColor={Colors.None}
               textColor={Colors.None}
+              padding="14px"
               disabledColor={Colors.None}
             >
               <Icon
@@ -503,6 +501,7 @@ const Mobile = () => {
               hoverColor={Colors.None}
               activeColor={Colors.None}
               textColor={Colors.None}
+              padding="14px"
               disabledColor={Colors.None}
             >
               <Icon

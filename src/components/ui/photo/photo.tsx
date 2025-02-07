@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { FC } from "react";
 import clsx from "clsx";
 
 import { TPhotoProps } from "./types";
@@ -24,15 +24,9 @@ export const PhotoUI: FC<TPhotoProps> = ({ photo, projectId }) => {
         isMobile && styles.photo_mobile
       )}
     >
-      <Link
-        to={`/otkter/projects/${projectId}/${id}`}
-        className={styles.photo__link}
-        style={
-          {
-            "--url": `url(${source})`,
-          } as CSSProperties
-        }
-      />
+      <Link to={`/otkter/projects/${projectId}/${id}`}>
+        <img className={styles.photo__link} src={source} alt="Фото проекта" />
+      </Link>
     </li>
   );
 };
