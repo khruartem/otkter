@@ -5,5 +5,5 @@ export type TCategoryUIProps = {
   category?: TCategory;
   isAttention?: boolean;
   wrapper?: boolean;
-  colors: TCategoryColors;
+  colors: TCategoryColors | undefined;
 }

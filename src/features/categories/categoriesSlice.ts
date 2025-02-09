@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { Colors, TCategory } from "../../utils/types";
+import {
+  Colors,
+  TCategory,
+  TCategoryType,
+} from "../../utils/types";
 import { findById } from "../../utils/findById";
 import { projectCategories } from "../../utils/constants";
 
@@ -15,23 +19,28 @@ export type TCategories = {
 };
 
 export type TCategoryColors = {
-  categoryIconColor: Colors;
+  categoryIconColor?: Colors;
   categotyBackgroundColor: Colors;
   categotyTextColor: Colors;
 };
 
 type TCategoriesState = {
   projectCategories: TProjectCategories[];
-  colors: TCategoryColors;
+  colorsMain: TCategoryColors;
+  colorsExtra: TCategoryColors;
   colorsAttention: TCategoryColors;
 };
 
 const initialState: TCategoriesState = {
   projectCategories: projectCategories,
-  colors: {
+  colorsMain: {
     categoryIconColor: Colors.Nephritis100,
     categotyBackgroundColor: Colors.Navy,
     categotyTextColor: Colors.Light100,
+  },
+  colorsExtra: {
+    categotyBackgroundColor: Colors.Light100,
+    categotyTextColor: Colors.Dark100,
   },
   colorsAttention: {
     categoryIconColor: Colors.Navy,
@@ -52,11 +61,20 @@ const categoriesSlice = createSlice({
       return (findById(state.projectCategories, id) as TProjectCategories)
         .categories;
     },
-    getCategoryColorsSelector: (state: TCategoriesState, id: number) => {
-      return (findById(state.projectCategories, id) as TProjectCategories)
-        .categories.attention
-        ? state.colorsAttention
-        : state.colors;
+    getCategoryColorsSelector: (
+      state: TCategoriesState,
+      type: TCategoryType
+    ) => {
+      switch (type) {
+        case "main":
+          return state.colorsMain;
+        case "attention":
+          return state.colorsAttention;
+        case "extra":
+          return state.colorsExtra;
+        default:
+          return undefined;
+      }
     },
     getCategotyAttentionSelector: (state: TCategoriesState, id: number) => {
       return (findById(state.projectCategories, id) as TProjectCategories)

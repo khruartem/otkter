@@ -8,16 +8,18 @@ import { useGetCategoryColors } from "../../hooks/useGetCategoryColors";
 export const Category: FC<CategoryProps> = ({
   category = undefined,
   isAttention = false,
-  projectId
 }) => {
   const location = useLocation();
-  const categoryColors = useGetCategoryColors(projectId);
+  const isWrapper = location.pathname === "/otkter";
+  const categoryColors = useGetCategoryColors(
+    isAttention ? "attention" : category!.type 
+  );
 
   return (
     <CategoryUI
       category={category}
       isAttention={isAttention}
-      wrapper={location.pathname === "/otkter" ? true : false}
+      wrapper={isWrapper}
       colors={categoryColors}
     />
   );

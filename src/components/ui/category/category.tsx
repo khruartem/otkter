@@ -30,7 +30,7 @@ export const CategoryUI: FC<TCategoryUIProps> = ({
         )}
         style={
           {
-            "--categoty-background-color": colors.categotyBackgroundColor,
+            "--categoty-background-color": colors?.categotyBackgroundColor,
           } as CSSProperties
         }
       >
@@ -39,27 +39,28 @@ export const CategoryUI: FC<TCategoryUIProps> = ({
         ) : (
           <>
             {category?.id === "play" && (
-              <Play mainColor={colors.categoryIconColor} />
+              <Play mainColor={colors!.categoryIconColor!} />
             )}
             {category?.id === "contest" && (
-              <Contest mainColor={colors.categoryIconColor} />
+              <Contest mainColor={colors!.categoryIconColor!} />
             )}
             {category?.id === "master-class" && (
-              <MasterClass mainColor={colors.categoryIconColor} />
+              <MasterClass mainColor={colors!.categoryIconColor!} />
             )}
             {category?.id === "short-film" && (
-              <ShortFilm mainColor={colors.categoryIconColor} />
+              <ShortFilm mainColor={colors!.categoryIconColor!} />
             )}
-            {category?.id === "employees" && null}
+            {category?.id === "artists" && null}
+            {category?.id === "admins" && null}
             <Text
               as={"label"}
-              fontFamily={category?.id === "employees" ? "Unbounded" :"Roboto"}
+              fontFamily={category?.id === "artists" || category?.id === "admins" ? "Unbounded" :"Roboto"}
               textAlign="center"
               fontSize={16}
               fontWeight={400}
               lineHeight={28}
               textTransform="none"
-              color={colors.categotyTextColor}
+              color={colors!.categotyTextColor}
             >
               {category!.name}
             </Text>

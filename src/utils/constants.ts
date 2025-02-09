@@ -6,10 +6,10 @@ import { TProjectPhotos } from "../features/photos/photosSlice";
 
 import telegramSVG from "../assets/telegram.svg";
 import vkSVG from "../assets/vk.svg";
-import playSVG from "../../public/projects_play.svg";
-import masterClassSVG from "../../public/projects_master-class.svg";
-import contestSVG from "../../public/project_contest.svg";
-import shortFilmSVG from "../../public/projets_short-film.svg";
+// import playSVG from "../../public/projects_play.svg";
+// import masterClassSVG from "../../public/projects_master-class.svg";
+// import contestSVG from "../../public/project_contest.svg";
+// import shortFilmSVG from "../../public/projets_short-film.svg";
 import uniqueChronicle from "../assets/project_unique_chronicle.png";
 import friendship from "../assets/project_friendship.png";
 import openPlay from "../assets/project_open_play.png";
@@ -134,24 +134,27 @@ export const projectInfos: TInfo[] = [
     eventDetails: [
       {
         type: "organizers",
+        label: "Организатор",
         value: "Творческое объединение «Открытая Территория»",
       },
       {
         type: "partners",
-        value: [
-          "ГБУ культуры г. Москвы «Объединение культурных центров Центрального административного округа»",
-        ],
+        label: "Партнеры",
+        value: "ГБУ культуры г. Москвы «Объединение культурных центров Центрального административного округа»",
       },
       {
         type: "address",
+        label: "Адрес",
         value: "г. Москва, Сибирский пр., 2, стр. 5",
       },
       {
         type: "date",
+        label: "Дата и время",
         value: "3 декабря 19:00",
       },
       {
         type: "price",
+        label: "Цена",
         value: "Вход свободный"
       }
     ],
@@ -183,10 +186,12 @@ export const projectInfos: TInfo[] = [
     eventDetails: [
       {
         type: "organizers",
+        label: "Организатор",
         value: "Федеральное государственное автономное образовательное учреждение высшего образования «Государственный университет просвещения»",
       },
       {
         type: "partners",
+        label: "Партнеры",
         value: [
           "Министерство просвещения Российской Федерации",
           "Государственный фонд поддержки участников СВО «Защитники Отечества»",
@@ -195,14 +200,17 @@ export const projectInfos: TInfo[] = [
       },
       {
         type: "address",
+        label: "Адрес",
         value: "г. Москва, ул. Радио, 10А, стр. 1",
       },
       {
         type: "date",
+        label: "Дата проведения очного этапа",
         value: "-",
       },
       {
         type: "price",
+        label: "Цена",
         value: "Вход свободный"
       }
     ],
@@ -213,22 +221,27 @@ export const projectInfos: TInfo[] = [
     eventDetails: [
       {
         type: "organizers",
+        label: "Организатор",
         value: "ГБУ культуры г. Москвы «Объединение культурных центров Южного административного округа»",
       },
       {
         type: "partners",
+        label: "Партнеры",
         value: "Творческое объединение «Открытая Территория»",
       },
       {
         type: "address",
+        label: "Адрес",
         value: "г. Москва, ул. Судостроительная, д. 31, к 1",
       },
       {
         type: "date",
+        label: "Дата проведения очного питчинга",
         value: "1 декабря 2024",
       },
       {
         type: "price",
+        label: "Цена участия",
         value: "3000 ₽",
       }
     ],
@@ -239,6 +252,7 @@ export const projectInfos: TInfo[] = [
     eventDetails: [
       {
         type: "organizers",
+        label: "Организаторы",
         value: [
           "ФГАОУ ВО «Государственный университет просвещения»",
           "Центр военно-патриотического воспитания «Вершина»",
@@ -246,14 +260,17 @@ export const projectInfos: TInfo[] = [
       },
       {
         type: "partners",
+        label: "Партнеры",
         value: "Творческое объединение «Открытая Территория»",
       },
       {
         type: "address",
+        label: "Адрес",
         value: "г. Москва, ул. Радио, 10А, стр. 1",
       },
       {
         type: "date",
+        label: "Дата",
         value: "Каждую третью субботу месяца"
       },
     ],
@@ -264,14 +281,17 @@ export const projectInfos: TInfo[] = [
     eventDetails: [
       {
         type: "organizers",
+        label: "Организатор",
         value: "Творческое объединение «Открытая Территория»",
       },
       {
         type: "partners",
+        label: "Партнеры",
         value: "Музей памяти семьи Императора Николая ll, усадьба «Белая Дача»",
       },
       {
         type: "date",
+        label: "Дата премьеры",
         value: "Весна 2025",
       }
     ],
@@ -301,15 +321,18 @@ export const projectInfos: TInfo[] = [
     eventDetails: [
       {
         type: "organizers",
+        label: "Организатор",
         value: "Творческое объединение «Открытая Территория»",
       },
       {
         type: "partners",
+        label: "Партнеры",
         value: "Музей памяти семьи Императора Николая ll, усадьба «Белая Дача»",
       },
       {
         type: "date",
-        value: "Весна 2025"
+        label: "Дата премьеры",
+        value: "Весна 2025",
       }
     ],
     employees: {
@@ -430,26 +453,13 @@ export const projectControls: TProjectControls[] = [
 
 export const projectCategories: TProjectCategories[] = [
   {
-    projectId: 0,
-    categories: {
-      attention: false,
-      categoryList: [
-        {
-          name: "Спектакль",
-          icon: "",
-          id: "employees",
-        },
-      ],
-    },
-  },
-  {
     projectId: 1,
     categories: {
       attention: false,
       categoryList: [
         {
           name: "Спектакль",
-          icon: playSVG,
+          type: "main",
           id: "play",
         },
       ],
@@ -462,7 +472,7 @@ export const projectCategories: TProjectCategories[] = [
       categoryList: [
         {
           name: "Конкурс",
-          icon: contestSVG,
+          type: "main",
           id: "contest",
         },
       ],
@@ -475,7 +485,7 @@ export const projectCategories: TProjectCategories[] = [
       categoryList: [
         {
           name: "Конкурс",
-          icon: contestSVG,
+          type: "main",
           id: "contest",
         },
       ],
@@ -488,7 +498,7 @@ export const projectCategories: TProjectCategories[] = [
       categoryList: [
         {
           name: "Мастер класс",
-          icon: masterClassSVG,
+          type: "main",
           id: "master-class",
         },
       ],
@@ -501,7 +511,7 @@ export const projectCategories: TProjectCategories[] = [
       categoryList: [
         {
           name: "Короткий метр",
-          icon: shortFilmSVG,
+          type: "attention",
           id: "short-film",
         },
       ],
@@ -514,7 +524,7 @@ export const projectCategories: TProjectCategories[] = [
       categoryList: [
         {
           name: "Спектакль",
-          icon: playSVG,
+          type: "main",
           id: "play",
         },
       ],

@@ -24,6 +24,17 @@
   flex-direction: column;
 }
 
+.project__extra_blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.project__extra_single {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Стили для разных разрешений экранов */
 .project_lagre_screen {
   grid-template-columns: 34.17vw 41.25vw;

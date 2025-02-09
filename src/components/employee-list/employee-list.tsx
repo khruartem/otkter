@@ -3,7 +3,7 @@ import { FC } from "react";
 import { EmployeeListUI } from "../ui/employee-list";
 
 import { useGetProjectId } from "../../hooks/useGetProjectId";
-import { useGetEmployees } from "../../hooks/useGetEmployees";
+import { useGetEmployees } from "../../hooks/useGetIsEmployees";
 
 export const EmployeeList: FC = () => {
   const projectId = useGetProjectId();

@@ -8,7 +8,7 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./category-list.module.css";
 
-export const CategoryListUI: FC<CategoryListUIProps> = ({ categories, projectId, positioned = false }) => {
+export const CategoryListUI: FC<CategoryListUIProps> = ({ categories, positioned = false }) => {
   const { attention, categoryList } = categories;
 
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
@@ -26,9 +26,9 @@ export const CategoryListUI: FC<CategoryListUIProps> = ({ categories, projectId,
         smallResolution && styles["category-list_small-resolution"]
       )}
     >
-      {attention && <Category projectId={projectId} isAttention />}
+      {attention && <Category isAttention />}
       {categoryList.map((item) => {
-        return <Category key={nanoid()} category={item} projectId={projectId} />;
+        return <Category key={nanoid()} category={item} />;
       })}
     </div>
   );

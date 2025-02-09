@@ -10,29 +10,44 @@ export type TCategoryName =
 
 export type TCategory = {
   name: TCategoryName;
-  icon: string;
-  id: "play" | "contest" | "master-class" | "short-film" | "employees";
+  type: TCategoryType;
+  id: TCategoryId;
 };
+
+export type TCategoryType =
+  | "main"
+  | "attention"
+  | "extra";
+
+export type TCategoryId =
+  | "play"
+  | "contest"
+  | "master-class"
+  | "short-film"
+  | "admins"
+  | "artists";
+
+export type TDetails = "events" | "employees";
 
 export type TControls = {
   buttons: TButton[];
   links: TLink[];
-}
+};
 
 export type TButton = {
   label: string;
   onClick: () => void;
-}
+};
 
 export type TLink = {
   label: string;
   href: string;
-}
+};
 
 type TEmployees = {
   actors?: TEmployee[];
   administrators?: TEmployee[];
-}
+};
 
 type TEmployee = {
   name: string;
@@ -46,7 +61,7 @@ type TEventDetails = {
   eventDate?: string;
   address?: string;
   price?: string;
-}
+};
 
 export type TProjectInfo = {
   role?: "admins" | "artists";
@@ -82,7 +97,7 @@ export type TProject = Pick<
   | "title"
   | "shortText"
   | "projectInfo"
->
+>;
 
 export type TTeammate = Pick<
   TCard,

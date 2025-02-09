@@ -4,8 +4,8 @@ import clsx from "clsx";
 import { Text } from "../../text";
 import { PhotoList } from "../../photo-list";
 import { Controls } from "../../controls";
-import { EventDetails } from "../../event-details";
-import { EmployeeList } from "../../employee-list";
+import { Details } from "../../details";
+//import { EmployeeList } from "../../employee-list";
 
 import { Colors } from "../../../utils/types";
 import { useGetTitle } from "../../../hooks/useGetTitle";
@@ -16,6 +16,7 @@ import { useGetProjectColors } from "../../../hooks/useGetProjectColors";
 import { useGetAttention } from "../../../hooks/useGetAttention";
 
 import styles from "./project-info.module.css";
+import { useGetIsEmployees } from "../../../hooks/useGetIsEmployees";
 
 export const ProjectInfoUI: FC = () => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
@@ -28,6 +29,7 @@ export const ProjectInfoUI: FC = () => {
   const text = useGetText(projectId);
   const attention = useGetAttention(projectId);
   const { projectTitleColorAttention } = useGetProjectColors();
+  const isEmployees = useGetIsEmployees(projectId);
 
   return (
     <div
@@ -38,7 +40,7 @@ export const ProjectInfoUI: FC = () => {
         isLaptop && styles.project_laptop,
         isTablet && styles.project_tablet,
         isMobile && styles.project_mobile,
-        !largeResolution && styles["project_overflowed-y"],
+        !largeResolution && styles["project_overflowed-y"]
       )}
     >
       <div
@@ -67,11 +69,7 @@ export const ProjectInfoUI: FC = () => {
             fontWeight={500}
             lineHeight={largeResolution ? 48 : 40}
             textTransform={"none"}
-            color={
-              attention
-                ? projectTitleColorAttention
-                : Colors.Navy
-            }
+            color={attention ? projectTitleColorAttention : Colors.Navy}
             padding={largeResolution ? undefined : "40px 0 0 0"}
           >
             {title}
@@ -99,9 +97,15 @@ export const ProjectInfoUI: FC = () => {
         </div>
         <Controls />
       </div>
-      <div className={styles.project__extra}>
-        <EventDetails />
-        <EmployeeList />
+      <div
+        className={clsx(
+          isEmployees
+            ? styles.project__extra_blocks
+            : styles.project__extra_single
+        )}
+      >
+        <Details type="events" />
+        {isEmployees && <Details type="employees" />}
       </div>
     </div>
   );
