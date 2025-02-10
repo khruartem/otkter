@@ -9,8 +9,8 @@ export const Category: FC<CategoryProps> = ({
   category = undefined,
   isAttention = false,
 }) => {
-  const location = useLocation();
-  const isWrapper = location.pathname === "/otkter";
+  const { pathname } = useLocation();
+  const isWrapper = pathname === "/otkter" || pathname === "/otkter/";
   const categoryColors = useGetCategoryColors(
     isAttention ? "attention" : category!.type 
   );

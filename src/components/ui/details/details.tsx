@@ -19,8 +19,8 @@ import { Category } from "../../category";
 export const DetailsUI: FC<TDetailsUI> = ({ projectId, details, type }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
-  const largeResolution = isLarge || isDesktop;
-  const smallResolution = isLaptop || isDesktop || isTablet || isMobile;
+  const largeResolution = isLarge;
+  const smallResolution = isDesktop || isLaptop || isTablet || isMobile;
 
   return (
     <div
@@ -28,7 +28,10 @@ export const DetailsUI: FC<TDetailsUI> = ({ projectId, details, type }) => {
       className={clsx(
         styles["event-details"],
         largeResolution && styles["event-details_large-resolution"],
-        smallResolution && styles["event-details_small-resolution"]
+        smallResolution && styles["event-details_small-resolution"],
+        isDesktop 
+          ? styles["event-details_small-gap"]
+          : styles["event-details_large-gap"],
       )}
     >
       {type === "events" && (

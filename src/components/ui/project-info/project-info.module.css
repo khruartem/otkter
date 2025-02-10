@@ -34,6 +34,10 @@
   flex-direction: column;
 }
 
+.project__extra_overflowed-y {
+  overflow-y: auto;
+}
+
 /* Стили для разных разрешений экранов */
 .project_lagre_screen {
   grid-template-columns: 34.17vw 41.25vw;
@@ -94,7 +98,6 @@
 
 .project__extra_desktop {
   gap: 24px;
-  overflow-y: scroll;
 }
 
 .project__extra_laptop {

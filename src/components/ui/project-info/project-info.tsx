@@ -102,12 +102,13 @@ export const ProjectInfoUI: FC = () => {
           isEmployees
             ? styles.project__extra_blocks
             : styles.project__extra_single,
+          isDesktop && styles["project__extra_overflowed-y"],
           isLarge && styles["project__extra_large-screen"],
-          isDesktop && styles.project__extra_desktop, 
+          isDesktop && styles.project__extra_desktop,
           (isDesktop || isTablet || isMobile) && styles.project__extra_single,
           isLaptop && styles.project__extra_laptop,
           isTablet && styles.project__extra_tablet,
-          isMobile && styles.project__extra_mobile,
+          isMobile && styles.project__extra_mobile
         )}
       >
         <Details type="events" />

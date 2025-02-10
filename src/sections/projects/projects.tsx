@@ -55,7 +55,7 @@ export const Projects: FC = () => {
         >
           {"Предложить проект"}
         </Button>
-        <Link to={"/projects/archive"} className={stylesLink.link}>
+        <Link to={"/otkter/projects/archive"} className={stylesLink.link}>
           {"Все проекты"}
         </Link>
       </div>

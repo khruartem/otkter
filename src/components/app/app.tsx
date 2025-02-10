@@ -12,7 +12,7 @@ export function App() {
         <Route path={"/otkter"} element={<Main />} />
         <Route
           path={"/otkter/projects/:id"}
-          element={<Modal onClose={() => navigate("/otkter#projects")}><ProjectInfoUI /></Modal>}
+          element={<Modal onClose={() => navigate("/otkter")}><ProjectInfoUI /></Modal>}
         />
       </Routes>
     </>
