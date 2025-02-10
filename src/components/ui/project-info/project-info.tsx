@@ -40,7 +40,7 @@ export const ProjectInfoUI: FC = () => {
         isLaptop && styles.project_laptop,
         isTablet && styles.project_tablet,
         isMobile && styles.project_mobile,
-        !largeResolution && styles["project_overflowed-y"]
+        !isDesktop && styles["project_overflowed-y"]
       )}
     >
       <div
@@ -101,7 +101,13 @@ export const ProjectInfoUI: FC = () => {
         className={clsx(
           isEmployees
             ? styles.project__extra_blocks
-            : styles.project__extra_single
+            : styles.project__extra_single,
+          isLarge && styles["project__extra_large-screen"],
+          isDesktop && styles.project__extra_desktop, 
+          (isDesktop || isTablet || isMobile) && styles.project__extra_single,
+          isLaptop && styles.project__extra_laptop,
+          isTablet && styles.project__extra_tablet,
+          isMobile && styles.project__extra_mobile,
         )}
       >
         <Details type="events" />

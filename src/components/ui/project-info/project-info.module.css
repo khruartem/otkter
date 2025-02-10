@@ -27,7 +27,6 @@
 .project__extra_blocks {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
 }
 
 .project__extra_single {
@@ -39,13 +38,12 @@
 .project_lagre_screen {
   grid-template-columns: 34.17vw 41.25vw;
   column-gap: 8.33vw;
-  /* width: 34.17vw; */
 }
 
 .project_desktop {
   grid-template-columns: 34.11vw 41.29vw;
   column-gap: 8.93vw;
-  /* width: 34.11vw; */
+  overflow-y: hidden;
 }
 
 .project_laptop {
@@ -88,6 +86,27 @@
 
 .project__desc_small-resolution {
   gap: 1.25vw;
+}
+
+.project__extra_large-screen {
+  gap: 24px;
+}
+
+.project__extra_desktop {
+  gap: 24px;
+  overflow-y: scroll;
+}
+
+.project__extra_laptop {
+  gap: 1.95vw;
+}
+
+.project__extra_tablet {
+  gap: 1.56vw;
+}
+
+.project__extra_mobile {
+  gap: 2.90vw;
 }
 
 

@@ -46,11 +46,13 @@
 /* Стили для разных разрешений экранов */
 .modal_large-screen {
   padding-top: 2.50vw;
+  padding-bottom: 3.54vw;
   padding-inline: 8.13vw;
 }
 
 .modal_desktop {
   padding-top: 2.34vw;
+  padding-bottom: 0.88vw;
   padding-inline: 7.83vw;
 }
 
