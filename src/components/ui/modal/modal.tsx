@@ -23,6 +23,7 @@ export const ModalUI: FC<TModalUIProps> = memo(({ onClose, children }) => {
         isTablet && styles.modal_tablet,
         isMobile && styles.modal_mobile,
         isDesktop ? styles["modal_small-gap"] : styles["modal_large-gap"],
+        (isTablet || isMobile) ? styles["modal_height-mobile"] : styles["modal_height-regular"],
       )}
     >
       <button className={styles.modal__button} type="button" onClick={onClose}>

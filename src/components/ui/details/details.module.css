@@ -17,10 +17,6 @@
 }
 
 /* Стили для разных разрешений экранов */
-.event-details_large-resolution {
-  width: fit-content;
-}
-
 .event-details_small-resolution {
   width: 100%;
 }

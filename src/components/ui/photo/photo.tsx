@@ -7,9 +7,12 @@ import { Link } from "react-router-dom";
 
 import styles from "./photo.module.css";
 
-export const PhotoUI: FC<TPhotoProps> = ({ photo, projectId }) => {
-  const { id, source } = photo;
-
+export const PhotoUI: FC<TPhotoProps> = ({
+  photo,
+  label = null,
+  nextPhotoId = null,
+  projectId,
+}) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
@@ -24,9 +27,21 @@ export const PhotoUI: FC<TPhotoProps> = ({ photo, projectId }) => {
         isMobile && styles.photo_mobile
       )}
     >
-      <Link to={`/otkter/projects/${projectId}/${id}`}>
-        <img className={styles.photo__link} src={source} alt="Фото проекта" />
-      </Link>
+      {photo && !label && !nextPhotoId ? (
+        <Link to={`/otkter/projects/${projectId}/${photo.id}`}>
+          <img
+            className={styles.photo__link}
+            src={photo.source}
+            alt="Фото проекта"
+          />
+        </Link>
+      ) : (
+        <Link to={`/otkter/projects/${projectId}/${nextPhotoId}`}>
+          <div className={clsx(styles.photo__link, styles.photo__link_more)}>
+            {label}
+          </div>
+        </Link>
+      )}
     </li>
   );
 };

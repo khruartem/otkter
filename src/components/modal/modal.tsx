@@ -8,6 +8,10 @@ const modalRoot = document.getElementById('root-modal');
 
 export const Modal: FC<TModalProps> = memo(({ onClose, children }) => {
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };

@@ -6,7 +6,7 @@
 }
 
 /* Стили для разных разрешений экранов */
-.controls_large-resolution {
+/* .controls_large-resolution {
   flex-direction: row;
 }
 
@@ -21,4 +21,12 @@
 .controls_small-resolution {
   flex-direction: column;
   margin-left: 0;
+} */
+
+.controls_mobile {
+  width: 100%;
+}
+
+.button_mobile {
+  width: 100%;
 }

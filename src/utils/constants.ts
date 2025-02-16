@@ -29,7 +29,6 @@ import testPhoto3 from "../assets/testPhoto3.png";
 import testPhoto4 from "../assets/testPhoto4.png";
 import testPhoto5 from "../assets/testPhoto5.png";
 
-export const presentationUrl: string = "https://doka.guide/";
 export const telegramUrl: string = "https://t.me/otkterr";
 export const vkUrl: string = "https://vk.com/otkter";
 

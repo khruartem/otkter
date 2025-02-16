@@ -5,7 +5,6 @@ import { Text } from "../../text";
 import { PhotoList } from "../../photo-list";
 import { Controls } from "../../controls";
 import { Details } from "../../details";
-//import { EmployeeList } from "../../employee-list";
 
 import { Colors } from "../../../utils/types";
 import { useGetTitle } from "../../../hooks/useGetTitle";
@@ -40,7 +39,7 @@ export const ProjectInfoUI: FC = () => {
         isLaptop && styles.project_laptop,
         isTablet && styles.project_tablet,
         isMobile && styles.project_mobile,
-        !isDesktop && styles["project_overflowed-y"]
+        !isDesktop && styles["project_overflowed-y"],
       )}
     >
       <div

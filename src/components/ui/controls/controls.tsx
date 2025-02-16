@@ -5,10 +5,12 @@ import { Button } from "../../button";
 import styles from "./controls.module.css";
 import stylesLink from "../../link/link.module.css";
 import { nanoid } from "@reduxjs/toolkit";
+import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 export const ControlsUI: FC<TControlsUIProps> = ({ buttons, links }) => {
+  const { isMobile } = useGetMediaQuery();
   return (
-    <div className={styles.controls}>
+    <div className={isMobile ? styles.controls_mobile : styles.controls}>
       {buttons &&
         buttons.map(({ label, onClick }) => {
           return (
@@ -17,6 +19,7 @@ export const ControlsUI: FC<TControlsUIProps> = ({ buttons, links }) => {
               type="button"
               disabled={false}
               onClick={onClick}
+              className={isMobile ? styles.button_mobile : undefined}
             >
               {label}
             </Button>

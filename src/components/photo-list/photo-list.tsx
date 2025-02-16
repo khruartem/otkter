@@ -6,8 +6,7 @@ import { useGetProjectId } from "../../hooks/useGetProjectId";
 
 export const PhotoList: FC = () => {
   const projectId = useGetProjectId();
-  
   const photos = useGetPhotos(projectId);
 
-  return <PhotoListUI photos={photos} />;
+  return <PhotoListUI projectId={projectId} photos={photos} />;
 };

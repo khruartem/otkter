@@ -11,6 +11,19 @@
   object-position: center;
 }
 
+.photo__link_more {
+  background-color: var(--light80);
+  color: var(--nephritis100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Unbounded";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+
 /* Стили для разных разрешений экранов */
 .photo_large-screen {
   width: 5.83vw;
