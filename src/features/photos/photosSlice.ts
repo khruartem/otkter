@@ -52,8 +52,8 @@ const photosSlice = createSlice({
       return photosSlice
         .getSelectors()
         .getPhotosSelector(state, id)
-        .findIndex(({ id }, index) => {
-          return photoId === id && index;
+        .findIndex(({ id }) => {
+          return photoId === id;
         });
     },
     getPhotoSourceSelector: (

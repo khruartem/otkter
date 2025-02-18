@@ -1,13 +1,10 @@
 .modal {
   width: 100vw;
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   background-color: var(--light60);
-  /* position: sticky; */
-  /* overflow-y: hidden; */
 }
 
 .modal_large-gap {
@@ -26,16 +23,38 @@
   height: 100%;
 }
 
+.modal_positioned {
+  position: relative;
+}
+
 .modal__button {
-  padding: 14px 0;
   background-color: transparent;
   color: var(--light20);
   display: flex;
+  cursor: pointer;
+  /* position: sticky; */
+}
+
+.modal__button_back {
+  padding-block: 14px;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  cursor: pointer;
-  position: sticky;
+}
+
+.modal__button_close {
+  padding: 9px;
+  position: absolute;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  top: 48px;
+  right: 48px;
+  margin: 18px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--light20);
+  border-radius: 40px;
 }
 
 .modal__button:hover span {
@@ -58,7 +77,7 @@
 .modal_large-screen {
   padding-top: 2.50vw;
   padding-bottom: 3.54vw;
-  padding-inline: 8.13vw;
+  padding-inline: 4.17vw;
 }
 
 .modal_desktop {

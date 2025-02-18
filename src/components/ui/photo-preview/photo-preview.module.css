@@ -1,0 +1,17 @@
+.slider__photo {
+  border-radius: 40px;
+  height: 100%;
+}
+
+.slider__photo_full-width {
+  width: 100%;
+}
+
+/* Стили для разных разрешений экранов */
+.slider__photo_large-screen {
+  width: 71.15vw;
+}
+
+.slider__photo_desktop {
+  width: 69.99vw;
+}

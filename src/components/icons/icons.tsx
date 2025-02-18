@@ -4,12 +4,14 @@ import {
   TLogoProps,
   TNavProps,
   TEventsProps,
+  TModalsProps,
 } from "./types";
 
 import styles from "./icons.module.css";
 import { CSSProperties } from "react";
 import { Colors } from "../../utils/types";
 import { telegramUrl, vkUrl } from "../../utils/constants";
+import clsx from "clsx";
 
 export const Logo = ({ mainColor, extraColor, width, height }: TLogoProps) => {
   return (
@@ -106,6 +108,71 @@ export const CloseNav = ({ onClick }: TNavProps) => {
   );
 };
 
+export const CloseModal = ({ mainColor }: TModalsProps) => {
+  return (
+    <svg
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      className={styles.close}
+    >
+      <path d="M27.414 7.414a2 2 0 1 0-2.828-2.828L16 13.172 7.414 4.586a2 2 0 1 0-2.828 2.828L13.172 16l-8.586 8.586a2 2 0 1 0 2.828 2.828L16 18.828l8.586 8.586a2 2 0 1 0 2.828-2.828L18.828 16l8.586-8.586Z" />
+    </svg>
+  );
+};
+
+export const ArrowLeft = ({
+  mainColor,
+  hoverColor = undefined,
+  activeColor = undefined,
+  onClick = undefined,
+  className = undefined,
+}: TArrowProps) => {
+  return (
+    <svg
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      className={clsx(styles.arrow, className)}
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+      onClick={onClick}
+    >
+      <path d="m16.074 8.364-3.36 3.67-2.062 2.24c-.87.95-.87 2.493 0 3.442l5.422 5.922c.712.777 1.926.217 1.926-.869V9.233c0-1.097-1.214-1.646-1.926-.869Z" />
+    </svg>
+  );
+};
+
+export const ArrowRight = ({
+  mainColor,
+  hoverColor = undefined,
+  activeColor = undefined,
+  onClick = undefined,
+  className = undefined,
+}: TArrowProps) => {
+  return (
+    <svg
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      className={clsx(styles.arrow, className)}
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+      onClick={onClick}
+    >
+      <path d="m21.348 14.276-2.062-2.251-3.36-3.669C15.214 7.591 14 8.14 14 9.236V22.767c0 1.097 1.214 1.646 1.926.869l5.422-5.92c.87-.937.87-2.491 0-3.44Z" />
+    </svg>
+  );
+};
+
 export const Play = ({ mainColor }: TCategotyProps) => {
   return (
     <svg
@@ -179,19 +246,6 @@ export const Attention = ({ mainColor }: TCategotyProps) => {
       className={styles.category}
     >
       <path d="M11.049 2.707c.289-.943 1.613-.943 1.902 0L14.603 8.1c.129.42.515.707.951.707h5.449c.952 0 1.36 1.219.604 1.802l-4.492 3.46c-.332.256-.47.693-.347 1.095l1.695 5.532c.286.934-.785 1.688-1.555 1.094l-4.304-3.315a.989.989 0 0 0-1.208 0l-4.304 3.315c-.77.594-1.841-.16-1.555-1.094l1.88-4.528c.123-.402 2.415.255 2.083 0l-7.107-5.56c-.757-.582-.348-1.8.604-1.8h5.449a.996.996 0 0 0 .95-.708l1.653-5.392Z" />
-    </svg>
-  );
-};
-
-export const ArrowLeft = ({ mainColor }: TArrowProps) => {
-  return (
-    <svg
-      fill={mainColor}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 32 32"
-      className={styles.arrow}
-    >
-      <path d="m16.074 8.364-3.36 3.67-2.062 2.24c-.87.95-.87 2.493 0 3.442l5.422 5.922c.712.777 1.926.217 1.926-.869V9.233c0-1.097-1.214-1.646-1.926-.869Z" />
     </svg>
   );
 };

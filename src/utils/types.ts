@@ -104,6 +104,10 @@ export type TTeammate = Pick<
   "teamId" | "image" | "title" | "shortText" | "social"
 >;
 
+export type TModalType = "back" | "close";
+
+export type TPhotoType = "small" | "large";
+
 export enum Colors {
   Navy = "#0B3954",
   Nephritis100 = "#2ECC71",
