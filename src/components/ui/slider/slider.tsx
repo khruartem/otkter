@@ -7,10 +7,13 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import { ArrowLeft, ArrowRight } from "../../icons/icons";
 import { PhotoPreviewUI } from "../photo-preview";
+import { Paginator } from "../../paginator";
 
 import styles from "./slider.module.css";
 
 export const SliderUI: FC<TSliderUIProps> = ({
+  photos,
+  currentIndex,
   currentPhoto,
   onMoveLeft,
   onMoveRight,
@@ -63,6 +66,7 @@ export const SliderUI: FC<TSliderUIProps> = ({
           )}
         />
       </div>
+      <Paginator index={currentIndex} length={photos.length} />
     </div>
   );
 };

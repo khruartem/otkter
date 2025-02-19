@@ -31,13 +31,13 @@ export const Slider: FC = () => {
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/projects/${projectId}/${newPhoto.id}`);
+      navigate(`/otkter/projects/${projectId}/${newPhoto.id}`, {state: {projectId}});
     } else {
       const newPhoto = photos[newIndex];
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/projects/${projectId}/${newPhoto.id}`);
+      navigate(`/otkter/projects/${projectId}/${newPhoto.id}`, {state: {projectId}});
     };
   };
 
@@ -49,13 +49,13 @@ export const Slider: FC = () => {
 
       setCurrentIndex(0);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/projects/${projectId}/${newPhoto.id}`);
+      navigate(`/otkter/projects/${projectId}/${newPhoto.id}`, {state: {projectId}});
     } else {
       const newPhoto = photos[newIndex];
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/projects/${projectId}/${newPhoto.id}`);
+      navigate(`/otkter/projects/${projectId}/${newPhoto.id}`, {state: {projectId}});
     };
   };
 

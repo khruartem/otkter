@@ -24,12 +24,10 @@
 }
 
 .slider__button_positioned_left {
-  top: 50%;
   left: 0;
 }
 
 .slider__button_positioned_right {
-  top: 50%;
   right: 0;
 }
 

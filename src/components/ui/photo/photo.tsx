@@ -28,7 +28,7 @@ export const PhotoUI: FC<TPhotoProps> = ({
       )}
     >
       {photo && !label && !nextPhotoId ? (
-        <Link to={`/otkter/projects/${projectId}/${photo.id}`}>
+        <Link to={`/otkter/projects/${projectId}/${photo.id}`} state={{projectId}}>
           <img
             className={styles.photo__link}
             src={photo.source}
