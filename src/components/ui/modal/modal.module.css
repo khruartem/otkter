@@ -27,12 +27,15 @@
   position: relative;
 }
 
+.modal_overflowed-y {
+  overflow-y: auto;
+}
+
 .modal__button {
   background-color: transparent;
   color: var(--light20);
   display: flex;
   cursor: pointer;
-  /* position: sticky; */
 }
 
 .modal__button_back {

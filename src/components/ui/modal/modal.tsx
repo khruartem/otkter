@@ -26,7 +26,8 @@ export const ModalUI: FC<TModalUIProps> = memo(
           isDesktop ? styles["modal_small-gap"] : styles["modal_large-gap"],
           isTablet || isMobile
             ? styles["modal_height-mobile"]
-            : styles["modal_height-regular"]
+            : styles["modal_height-regular"],
+          type === "close" && styles["modal_overflowed-y"]
         )}
       >
         {type === "back" && (

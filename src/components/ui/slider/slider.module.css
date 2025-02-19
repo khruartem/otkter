@@ -17,6 +17,7 @@
 
 .slider__button {
   padding: 14px;
+  cursor: pointer;
 }
 
 .slider__button_positioned {
