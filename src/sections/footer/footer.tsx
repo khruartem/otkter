@@ -1,6 +1,5 @@
 import clsx from "clsx";
-import { Link } from "../../components/link";
-import { Logo } from "../../components/logo";
+import { Logo } from "../../components/icons";
 import { Social } from "../../components/social";
 import { Text } from "../../components/text";
 import { useDesktopMediaQuery } from "../../hooks/useDesktopMediaQuery";
@@ -37,18 +36,20 @@ const LargeResolution = () => {
         isLaptop && styles.footer_laptop
       )}
     >
-      <div
-        className={clsx(
-          styles.footer__upper,
-          styles.footer__upper_rowed
-        )}
-      >
-        <Logo mainColor={Colors.Light100} width={239} height={40} />
-        <div className={clsx(
-          styles["footer__contact-info"],
-          styles["footer__contact-info_rowed"],
-          styles["footer__contact-info_small-gap"]
-        )}>
+      <div className={clsx(styles.footer__upper, styles.footer__upper_rowed)}>
+        <Logo
+          mainColor={Colors.Light100}
+          extraColor={Colors.Nephritis120}
+          width={239}
+          height={40}
+        />
+        <div
+          className={clsx(
+            styles["footer__contact-info"],
+            styles["footer__contact-info_rowed"],
+            styles["footer__contact-info_small-gap"]
+          )}
+        >
           <div
             className={clsx(
               styles.footer__contacts,
@@ -66,15 +67,9 @@ const LargeResolution = () => {
             >
               {"Позвоните нам"}
             </Text>
-            <Link
-              url={"tel:+79167569505"}
-              display="block"
-              fontSize={20}
-              fontWeight={500}
-              lineHeight={32}
-            >
+            <a href={"tel:+79167569505"} className={styles.footer__link}>
               {"8 (916) 756-95-05"}
-            </Link>
+            </a>
           </div>
           <Social />
         </div>
@@ -109,21 +104,25 @@ const SmallResolution = () => {
       )}
     >
       <div
-        className={clsx(
-          styles.footer__upper,
-          styles.footer__upper_columned
-        )}
+        className={clsx(styles.footer__upper, styles.footer__upper_columned)}
       >
-        <Logo mainColor={Colors.Light100} width={239} height={40} />
-        <div className={clsx(
-          styles["footer__contact-info"],
-          isTablet && styles["footer__contact-info_rowed"],
-          isTablet && styles["footer__contact-info_large-gap"],
-          isMobile && styles["footer__contact-info_columned"]
-        )}>
+        <Logo
+          mainColor={Colors.Light100}
+          extraColor={Colors.Nephritis120}
+          width={239}
+          height={40}
+        />
+        <div
+          className={clsx(
+            styles["footer__contact-info"],
+            isTablet && styles["footer__contact-info_rowed"],
+            isTablet && styles["footer__contact-info_large-gap"],
+            isMobile && styles["footer__contact-info_columned"]
+          )}
+        >
           <div
             className={clsx(
-              styles.footer__contacts,
+              styles.footer__contacts
               //isLarge && styles["footer__contacts_large-screen"]
             )}
           >
@@ -138,15 +137,9 @@ const SmallResolution = () => {
             >
               {"Позвоните нам"}
             </Text>
-            <Link
-              url={"tel:+79167569505"}
-              display="block"
-              fontSize={20}
-              fontWeight={500}
-              lineHeight={32}
-            >
+            <a href={"tel:+79167569505"} className={styles.footer__link}>
               {"8 (916) 756-95-05"}
-            </Link>
+            </a>
           </div>
           <Social />
         </div>

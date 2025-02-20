@@ -1,0 +1,106 @@
+.modal {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: var(--light60);
+}
+
+.modal_large-gap {
+ gap: 24px;
+}
+
+.modal_small-gap {
+  gap: 12px;
+}
+
+.modal_height-regular {
+  height: 100vh;
+}
+
+.modal_height-mobile {
+  height: 100%;
+}
+
+.modal_positioned {
+  position: relative;
+}
+
+.modal_overflowed-y {
+  overflow-y: auto;
+}
+
+.modal__button {
+  background-color: transparent;
+  color: var(--light20);
+  display: flex;
+  cursor: pointer;
+}
+
+.modal__button_back {
+  padding-block: 14px;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.modal__button_close {
+  padding: 9px;
+  position: absolute;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  top: 48px;
+  right: 48px;
+  margin: 18px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--light20);
+  border-radius: 40px;
+}
+
+.modal__button:hover span {
+  color: var(--dark80);
+}
+
+.modal__button:hover svg {
+  fill: var(--dark80);
+}
+
+.modal__button:active span {
+  color: var(--navy);
+}
+
+.modal__button:active svg {
+  fill: var(--navy);
+}
+
+/* Стили для разных разрешений экранов */
+.modal_large-screen {
+  padding-top: 2.50vw;
+  padding-bottom: 3.54vw;
+  padding-inline: 4.17vw;
+}
+
+.modal_desktop {
+  padding-top: 2.34vw;
+  padding-bottom: 0.88vw;
+  padding-inline: 7.83vw;
+}
+
+.modal_laptop {
+  padding-top: 3.13vw;
+  padding-bottom: 4.30vw;
+  padding-inline: 4.10vw;
+}
+
+.modal_tablet {
+  padding-block: 4.17vw;
+  padding-inline: 3.91vw;
+}
+
+.modal_mobile {
+  padding-block: 3.86vw;
+  padding-inline: 3.86vw;
+}

@@ -3,14 +3,12 @@ import { Text } from "../../components/text";
 import { Container } from "../../components/container";
 import { Button } from "../../components/button";
 import { Layout } from "../../components/layout";
-import { Icon } from "../../components/icon";
 
 import aboutOval1 from "../../assets/about_oval_1.png";
 import aboutOval2 from "../../assets/about_oval_2.png";
 import aboutOrb from "../../assets/about_orb.png";
 import { Colors } from "../../utils/types";
-import { presentationUrl } from "../../utils/constants";
-import copyButtonSVG from "../../assets/copy_button.svg";
+import presentation from "../../assets/presentation.pdf";
 
 export const About = () => {
   return (
@@ -90,10 +88,9 @@ const LargeScreen = () => {
             type="button"
             disabled={false}
             onClick={() => {
-              window.open(presentationUrl, "_blank");
+              window.open(presentation, "_blank");
             }}
             margin={"60px 0 0"}
-            padding={"16px 32px"}
           >
             {"Смотреть презентацию"}
           </Button>
@@ -178,10 +175,9 @@ const Desktop = () => {
             type="button"
             disabled={false}
             onClick={() => {
-              window.open(presentationUrl, "_blank");
+              window.open(presentation, "_blank");
             }}
             margin={"20px 0 0"}
-            padding={"16px 32px"}
           >
             {"Смотреть презентацию"}
           </Button>
@@ -271,10 +267,9 @@ const Laptop = () => {
             type="button"
             disabled={false}
             onClick={() => {
-              window.open(presentationUrl, "_blank");
+              window.open(presentation, "_blank");
             }}
             margin={"20px 0 0"}
-            padding={"16px 32px"}
           >
             {"Смотреть презентацию"}
           </Button>
@@ -353,50 +348,16 @@ const Tablet = () => {
               "«Открытая Территория» — объединение творческих людей из разных сфер. Наша миссия — дать шанс всем реализовать свои идеи. Мы соединяем образ желаемого проекта с реальными людьми — нашими резидентами. Широкая сеть контактов помогает организовать мероприятия любой сложности и собрать команду, подходящую для конкретного проекта."
             }
           </Text>
-          <Container
-            flexDirection="column"
-            alignItems="center"
-            margin="20px 0 0"
-            gap="14px"
+          <Button
+            type="button"
+            disabled={false}
+            onClick={() => {
+              window.open(presentation, "_blank");
+            }}
+            margin={"20px 0 0"}
           >
-            <Text
-              as={"p"}
-              fontFamily="Roboto"
-              textAlign="center"
-              fontSize={14}
-              fontWeight={400}
-              lineHeight={24}
-              textTransform="none"
-              color={Colors.Navy}
-              padding="0 27.34vw"
-            >
-              {
-                "Чтобы посмотреть нашу презентацию, отправьте ссылку на свой компьютер или ноутбук"
-              }
-            </Text>
-            <Button
-              type="button"
-              disabled={false}
-              onClick={() => {
-                navigator.clipboard.writeText(presentationUrl);
-              }}
-              mainColor={Colors.None}
-              hoverColor={Colors.None}
-              activeColor={Colors.None}
-              textColor={Colors.None}
-              disabledColor={Colors.None}
-            >
-              <Icon
-                width={28}
-                height={28}
-                mainColor={Colors.Nephritis100}
-                hoverColor={Colors.Nephritis120}
-                activeColor={Colors.Navy}
-                icon={copyButtonSVG}
-                id="copy_button"
-              />
-            </Button>
-          </Container>
+            {"Смотреть презентацию"}
+          </Button>
         </Container>
       </Container>
     </Layout>
@@ -472,50 +433,16 @@ const Mobile = () => {
               "«Открытая Территория» — объединение творческих людей из разных сфер. Наша миссия — дать шанс всем реализовать свои идеи. Мы соединяем образ желаемого проекта с реальными людьми — нашими резидентами. Широкая сеть контактов помогает организовать мероприятия любой сложности и собрать команду, подходящую для конкретного проекта."
             }
           </Text>
-          <Container
-            flexDirection="column"
-            alignItems="center"
-            margin="20px 0 0"
-            gap="14px"
+          <Button
+            type="button"
+            disabled={false}
+            onClick={() => {
+              window.open(presentation, "_blank");
+            }}
+            margin={"20px 0 0"}
           >
-            <Text
-              as={"p"}
-              fontFamily="Roboto"
-              textAlign="center"
-              fontSize={14}
-              fontWeight={400}
-              lineHeight={24}
-              textTransform="none"
-              color={Colors.Navy}
-              padding="0 3.86vw"
-            >
-              {
-                "Чтобы посмотреть нашу презентацию, отправьте ссылку на свой компьютер или ноутбук"
-              }
-            </Text>
-            <Button
-              type="button"
-              disabled={false}
-              onClick={() => {
-                navigator.clipboard.writeText(presentationUrl);
-              }}
-              mainColor={Colors.None}
-              hoverColor={Colors.None}
-              activeColor={Colors.None}
-              textColor={Colors.None}
-              disabledColor={Colors.None}
-            >
-              <Icon
-                width={28}
-                height={28}
-                mainColor={Colors.Nephritis100}
-                hoverColor={Colors.Nephritis120}
-                activeColor={Colors.Navy}
-                icon={copyButtonSVG}
-                id="copy_button"
-              />
-            </Button>
-          </Container>
+            {"Смотреть презентацию"}
+          </Button>
         </Container>
       </Container>
     </Layout>

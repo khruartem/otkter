@@ -46,7 +46,7 @@
   align-items: center;
 }
 
-/* Селекторы для разных разрешений экрана */
+/* Стили для разных разрешений экранов */
 .navigation-bar_large-screen {
   margin-right: 20.89vw;
   margin-left: 14.11vw;

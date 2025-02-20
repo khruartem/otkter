@@ -1,0 +1,53 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light60);
+}
+
+.projects_bordered-large {
+  border-radius: 200px;
+}
+
+.projects_bordered-small {
+  border-radius: 100px;
+}
+
+.projects__button-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Стили для разных разрешений экранов */
+.projects_large-screen {
+  gap: 3.13vw;
+  padding-block: 6.88vw;
+  padding-inline: calc(8.13vw - 24px / 2);
+}
+
+.projects_desktop {
+  gap: 3.22vw;
+  padding-block: 5.86vw;
+  padding-inline: calc(7.83vw - 24px / 2);
+}
+
+.projects_laptop {
+  gap: 5.86vw;
+  padding-block: 7.81vw;
+  padding-inline: calc(4.10vw - 20px / 2);
+}
+
+.projects_tablet {
+  gap: 5.73vw;
+  padding-block: 10.42vw;
+  padding-inline: 3.91vw;
+}
+
+.projects_mobile {
+  gap: 10.63vw;
+  padding-block: 19.32vw;
+  padding-inline: 3.86vw;
+}

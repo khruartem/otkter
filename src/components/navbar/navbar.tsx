@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import clsx from "clsx";
 
-import { Link } from "../link";
+import { NavLink } from "../navlink";
 //import { Icon } from "../icon";
 //import { navLinks, socials } from "../../utils/constants";
 import { navLinks } from "../../utils/constants";
@@ -55,7 +55,7 @@ const LargeResolution = () => {
         {navLinks.map(({ id, name, url }) => {
           return (
             <li key={id}>
-              <Link
+              <NavLink
                 key={id}
                 url={url}
                 fontFamily="Unbounded"
@@ -68,7 +68,7 @@ const LargeResolution = () => {
                 padding="0 0 14px"
               >
                 {name}
-              </Link>
+              </NavLink>
             </li>
           );
         })}
@@ -134,7 +134,7 @@ const SmallResolution = ({
               {navLinks.map(({ id, name, url }) => {
                 return (
                   <li key={id}>
-                    <Link
+                    <NavLink
                       url={url}
                       fontFamily="Unbounded"
                       fontSize={20}
@@ -155,7 +155,7 @@ const SmallResolution = ({
                       }
                     >
                       {name}
-                    </Link>
+                    </NavLink>
                   </li>
                 );
               })}
@@ -228,7 +228,7 @@ const SmallResolution = ({
               {navLinks.map(({ id, name, url }) => {
                 return (
                   <li key={id}>
-                    <Link
+                    <NavLink
                       url={url}
                       fontFamily="Unbounded"
                       fontSize={20}
@@ -249,7 +249,7 @@ const SmallResolution = ({
                       }
                     >
                       {name}
-                    </Link>
+                    </NavLink>
                   </li>
                 );
               })}
@@ -264,7 +264,7 @@ const SmallResolution = ({
 
 /*import clsx from "clsx";
 
-import { Link } from "../link";
+import { NavLink } from "../link";
 import { Icon } from "../icon";
 
 import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
@@ -317,7 +317,7 @@ export const NavBar = ({ isOpen, onOpen }: NavBarProps) => {
     >
       {(isLarge || isDesktop) && navLinks.map(({ id, name, url }) => {
         return (
-          <Link
+          <NavLink
             key={id}
             url={url}
             fontFamily="Unbounded"
@@ -333,7 +333,7 @@ export const NavBar = ({ isOpen, onOpen }: NavBarProps) => {
             })}
           >
             {name}
-          </Link>
+          </NavLink>
         );
       })}
       {}
@@ -359,7 +359,7 @@ const LargeResolution = () => {
     >
       {navLinks.map(({ id, name, url }) => {
         return (
-          <Link
+          <NavLink
             key={id}
             url={url}
             fontFamily="Unbounded"
@@ -375,7 +375,7 @@ const LargeResolution = () => {
             })}
           >
             {name}
-          </Link>
+          </NavLink>
         );
       })}
     </nav>
@@ -427,7 +427,7 @@ const SmallResolution = ({
         >
           {navLinks.map(({ id, name, url }) => {
             return (
-              <Link
+              <NavLink
                 key={id}
                 url={url}
                 fontFamily="Unbounded"
@@ -441,7 +441,7 @@ const SmallResolution = ({
                 onClick={onOpen && (() => onOpen(!isOpen))}
               >
                 {name}
-              </Link>
+              </NavLink>
             );
           })}
           {isMobile && (

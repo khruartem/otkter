@@ -14,5 +14,6 @@ export type ButtonProps = {
   disabledColor?: Colors,
   onClick: () => void,
   margin?: string,
-  padding?: string
+  padding?: string,
+  className?: string,
 }

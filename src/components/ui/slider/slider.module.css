@@ -1,0 +1,50 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__content_positioned {
+  position: relative;
+}
+
+.slider__button {
+  padding: 14px;
+  cursor: pointer;
+}
+
+.slider__button_positioned {
+  position: absolute;
+}
+
+.slider__button_positioned_left {
+  left: 0;
+}
+
+.slider__button_positioned_right {
+  right: 0;
+}
+
+/* Стили для разных разрешений экранов */
+.slider_large-screen {
+  gap: 48px;
+}
+
+.slider_small-resolution {
+  gap: 24px;
+}
+
+.slider__content_large-screen {
+  gap: 7.92vw;
+}
+
+.slider__content_desktop {
+  gap: 2.78vw;
+}

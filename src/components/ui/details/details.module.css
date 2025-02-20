@@ -1,0 +1,22 @@
+.event-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: min-content;
+  padding: 24px;
+  border-radius: 40px;
+  background-color: var(--light80);
+}
+
+.event-details_large-gap {
+  gap: 28px;
+}
+
+.event-details_small-gap {
+  gap: 18px;
+}
+
+/* Стили для разных разрешений экранов */
+.event-details_small-resolution {
+  width: 100%;
+}

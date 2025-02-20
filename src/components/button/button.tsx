@@ -14,14 +14,14 @@ export const Button = ({
   disabled,
   onClick,
   children,
-  padding = "0",
+  padding = "16px 32px",
   margin = "0",
+  className
 }: ButtonProps) => {
-  const className = styles.button;
 
   return (
     <button
-      className={className}
+      className={`${styles.button} ${className}`}
       disabled={disabled}
       type={type}
       onClick={onClick}

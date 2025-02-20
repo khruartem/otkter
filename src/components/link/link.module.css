@@ -1,21 +1,22 @@
 .link {
-  font-family: var(--font-family);
-  text-align: center;
+  font-family: "Unbounded", sans-serif;
+  width: fit-content;
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
   letter-spacing: 0.02em;
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
-  line-height: var(--line-height);
-  text-transform: var(--text-transform);
-  display: var(--display);
-  color: var(--main-color);
-  margin: var(--margin);
-  padding: var(--padding);
+  padding-block: 16px;
+  padding-inline: 32px;
+  color: var(--nephritis100);
 }
 
 .link:hover {
-  border-bottom: 1px solid var(--hover-color);
+  color: var(--nephritis120);
 }
 
 .link:active {
-  border-bottom: 1px solid var(--active-color);
+  color: var(--navy);
 }
+
+/* Стили для разных разрешений экранов */

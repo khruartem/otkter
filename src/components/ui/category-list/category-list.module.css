@@ -1,0 +1,27 @@
+.category-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.category-list_positioned {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+.category-list div:not(:first-child) {
+  margin-right: 3px;
+}
+
+.category-list div:last-child {
+  margin-right: 0;
+}
+
+/* Стили для разных разрешений экранов */
+.category-list_large-resolution {
+  left: 16px;
+}
+
+.category-list_small-resolution {
+  left: 0;
+}

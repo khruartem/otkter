@@ -7,6 +7,7 @@
   background-color: var(--light60);
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 .header_mobile {
@@ -24,7 +25,7 @@
   position: relative;
 }
 
-.header_overlayed::after {
+/* .header_overlayed::after {
   content: "";
   display: var(--overlay-visibility);
   background-color: var(--light30);
@@ -33,7 +34,7 @@
   inset: 0;
   position: absolute;
   z-index: -1;
-}
+} */
 
 .header__icons {
   display: flex;
