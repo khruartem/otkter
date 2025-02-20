@@ -154,7 +154,7 @@ const SmallResolution = () => {
           textTransform="none"
           color={Colors.Light100}
         >
-          {"©2024 Творческое объединение «Открытая Территория»"}
+          {"©2025 Творческое объединение «Открытая Территория»"}
         </Text>
       </div>
     </footer>
