@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: var(--light60);
 }
 
@@ -33,12 +33,12 @@
 
 .modal__button {
   background-color: transparent;
-  color: var(--light20);
   display: flex;
   cursor: pointer;
 }
 
 .modal__button_back {
+  color: var(--light20);
   padding-block: 14px;
   flex-direction: row;
   justify-content: flex-end;
@@ -46,33 +46,35 @@
 }
 
 .modal__button_close {
-  padding: 9px;
   position: absolute;
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  top: 48px;
-  right: 48px;
-  margin: 18px;
-  width: 24px;
-  height: 24px;
-  border: 2px solid var(--light20);
-  border-radius: 40px;
+  width: 60px;
+  height: 60px;
 }
 
-.modal__button:hover span {
+.modal__button_back:hover span {
   color: var(--dark80);
 }
 
-.modal__button:hover svg {
+.modal__button_back:hover svg {
   fill: var(--dark80);
 }
 
-.modal__button:active span {
+.modal__button_back:active span {
   color: var(--navy);
 }
 
-.modal__button:active svg {
+.modal__button_back:active svg {
+  fill: var(--navy);
+}
+
+.modal__button_close:hover svg {
+  fill: var(--nephritis120);
+}
+
+.modal__button_close:active svg {
   fill: var(--navy);
 }
 
@@ -103,4 +105,34 @@
 .modal_mobile {
   padding-block: 3.86vw;
   padding-inline: 3.86vw;
+}
+
+.modal__button_close_large-screen {
+  top: 48px;
+  right: 48px;
+}
+
+.modal__button_close_large-screen {
+  top: 48px;
+  right: 48px;
+}
+
+.modal__button_close_desktop {
+  top: 32px;
+  right: 32px;
+}
+
+.modal__button_close_laptop {
+  top: 42px;
+  right: 42px;
+}
+
+.modal__button_close_tablet {
+  top: 30px;
+  right: 30px;
+}
+
+.modal__button_close_mobile {
+  top: 16px;
+  right: 16px;
 }

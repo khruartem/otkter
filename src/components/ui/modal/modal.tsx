@@ -14,6 +14,7 @@ export const ModalUI: FC<TModalUIProps> = memo(
   ({ type, onClose, children }) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
       useGetMediaQuery();
+    
     return (
       <div
         className={clsx(
@@ -24,10 +25,10 @@ export const ModalUI: FC<TModalUIProps> = memo(
           isTablet && styles.modal_tablet,
           isMobile && styles.modal_mobile,
           isDesktop ? styles["modal_small-gap"] : styles["modal_large-gap"],
-          isTablet || isMobile
+          ((isTablet || isMobile) && type === "back")
             ? styles["modal_height-mobile"]
             : styles["modal_height-regular"],
-          type === "close" && styles["modal_overflowed-y"]
+          type === "close" && styles["modal_overflowed-y"],
         )}
       >
         {type === "back" && (
@@ -53,11 +54,19 @@ export const ModalUI: FC<TModalUIProps> = memo(
         )}
         {type === "close" && (
           <button
-            className={clsx(styles.modal__button, styles.modal__button_close)}
+            className={clsx(
+              styles.modal__button,
+              styles.modal__button_close,
+              isLarge && styles["modal__button_close_large-screen"],
+              isDesktop && styles.modal__button_close_desktop,
+              isLaptop && styles.modal__button_close_laptop,
+              isTablet && styles.modal__button_close_tablet,
+              isMobile && styles.modal__button_close_mobile,
+            )}
             type="button"
             onClick={onClose}
           >
-            <CloseModal mainColor={Colors.Light20} />
+            <CloseModal mainColor={Colors.Nephritis100} />
           </button>
         )}
         {children}

@@ -19,7 +19,6 @@ export function App() {
         <Route
           path={"/otkter/projects/:id/:photoId"}
           element={<Modal type="close" onClose={() => {
-            console.log(location.state);
             navigate(`otkter/projects/${location.state?.projectId}`);
           }}><Slider /></Modal>}
         />
