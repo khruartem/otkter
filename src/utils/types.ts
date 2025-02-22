@@ -14,10 +14,7 @@ export type TCategory = {
   id: TCategoryId;
 };
 
-export type TCategoryType =
-  | "main"
-  | "attention"
-  | "extra";
+export type TCategoryType = "main" | "attention" | "extra";
 
 export type TCategoryId =
   | "play"
@@ -107,6 +104,15 @@ export type TTeammate = Pick<
 export type TModalType = "back" | "close";
 
 export type TPhotoType = "small" | "large";
+
+export type TServicesTabMode =
+  | "open-sea"
+  | "events"
+  | "design"
+  | "content"
+  | "master-class"
+  | "lamp"
+  | "smm";
 
 export enum Colors {
   Navy = "#0B3954",

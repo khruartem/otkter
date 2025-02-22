@@ -14,15 +14,29 @@ export function App() {
         <Route path={"/otkter"} element={<Main />} />
         <Route
           path={"/otkter/projects/:id"}
-          element={<Modal type="back" onClose={() => {
-            navigate(`/otkter/#projects-${location.state?.projectId}`)
-          }}><ProjectInfoUI /></Modal>}
+          element={
+            <Modal
+              type="back"
+              onClose={() => {
+                navigate(`/otkter/#projects-${location.state?.projectId}`);
+              }}
+            >
+              <ProjectInfoUI />
+            </Modal>
+          }
         />
         <Route
           path={"/otkter/projects/:id/:photoId"}
-          element={<Modal type="close" onClose={() => {
-            navigate(`otkter/projects/${location.state?.projectId}`);
-          }}><Slider /></Modal>}
+          element={
+            <Modal
+              type="close"
+              onClose={() => {
+                navigate(`otkter/projects/${location.state?.projectId}`);
+              }}
+            >
+              <Slider />
+            </Modal>
+          }
         />
       </Routes>
     </>

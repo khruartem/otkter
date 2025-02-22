@@ -5,6 +5,7 @@ import { CardProps } from "./types";
 import { ProjectUI } from "../ui/project";
 import { TeamUI } from "../ui/team";
 import { useLocation } from "react-router-dom";
+import { scrollIntoElementView } from "../../utils/scrollIntoElementView";
 
 export const Card: FC<CardProps> = ({ card }) => {
   const location = useLocation();
@@ -15,11 +16,7 @@ export const Card: FC<CardProps> = ({ card }) => {
     useEffect(() => {
       switch (location.hash) {
         case `#projects-${projectId}`:
-          cardRef.current?.scrollIntoView({ behavior: "instant" });
-          window.scrollTo({
-            top: window.scrollY - 70,
-            behavior: "instant",
-          });
+          scrollIntoElementView(cardRef);
           break;
         default:
           break;

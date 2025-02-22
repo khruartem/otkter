@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 
 import { TModalProps } from './types';
 import { ModalUI } from '../ui/modal';
-import { renderToTop } from '../../utils/renderToTop';
+import { scrollToTop } from '../../utils/scrollToTop';
 
 const modalRoot = document.getElementById('root-modal');
 
 export const Modal: FC<TModalProps> = memo(({ type, onClose, children }) => {
   useEffect(() => {
-    renderToTop();
+    scrollToTop("instant");
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
