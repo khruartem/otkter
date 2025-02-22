@@ -11,8 +11,9 @@ import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 
 import styles from "./projects.module.css";
 import stylesLink from "../../components/link/link.module.css";
+import { TSectionProps } from "../types";
 
-export const Projects: FC = () => {
+export const Projects: FC<TSectionProps> = ({ sectionRef }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
   const largeResolution = isLarge || isDesktop || isLaptop;
@@ -31,6 +32,7 @@ export const Projects: FC = () => {
         isTablet && styles.projects_tablet,
         isMobile && styles.projects_mobile
       )}
+      ref={sectionRef}
     >
       <Text
         as="h2"

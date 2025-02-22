@@ -1,27 +1,37 @@
-import { FC, useEffect } from "react";
-import { About } from "../../sections/about";
-import { Footer } from "../../sections/footer";
-import { Header } from "../../sections/header";
-import { Hero } from "../../sections/hero";
-import { Partners } from "../../sections/partners";
-import { Projects } from "../../sections/projects";
+import { FC, useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+
+import { MainUI } from "../../components/ui/pages/main";
 import { renderToTop } from "../../utils/renderToTop";
+import { Preloader } from "../../components/ui/preloader";
 
 export const Main: FC = () => {
+  const location = useLocation();
+  const [docReadyState, setDocReadyState] = useState("");
+
+  const aboutRef = useRef<HTMLElement>(null);
+  const servicesRef = useRef<HTMLElement>(null);
+  const projectsRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
-    renderToTop();
-  });
-  
-  return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-      </main>
-      <Partners />
-      <Footer />
-    </>
+    switch (location.hash) {
+      case "#projects":
+        projectsRef.current?.scrollIntoView({ behavior: "instant" });
+        break;
+      default:
+        renderToTop();
+        break;
+    }
+    setDocReadyState(document.readyState);
+  }, [docReadyState, location.hash]);
+
+  return docReadyState ? (
+    <MainUI
+      servicesRef={servicesRef}
+      projectsRef={projectsRef}
+      aboutRef={aboutRef}
+    />
+  ) : (
+    <Preloader />
   );
 };
