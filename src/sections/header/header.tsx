@@ -12,6 +12,7 @@ import { useMobileMediaQuery } from "../../hooks/useMobileMediaQuery";
 import { Social } from "../../components/social";
 
 import styles from "./header.module.css";
+import { Link } from "react-router-dom";
 //import { socials } from "../../utils/constants";
 
 export const Header = () => {
@@ -29,12 +30,14 @@ const LargeResolution = () => {
 
   return isLarge || isDesktop ? (
     <header className={styles.header}>
-      <Logo
-        mainColor={Colors.Navy}
-        extraColor={Colors.Nephritis100}
-        width={236}
-        height={40}
-      />
+      <Link to="/otkter">
+        <Logo
+          mainColor={Colors.Navy}
+          extraColor={Colors.Nephritis100}
+          width={236}
+          height={40}
+        />
+      </Link>
       <NavBar />
       <Social />
     </header>
@@ -59,12 +62,14 @@ const SmallResolution = () => {
           isOpen && styles.header_bordered
         )}
       >
-        <Logo
-          mainColor={Colors.Navy}
-          extraColor={Colors.Nephritis100}
-          width={isMobile ? 192 : 236}
-          height={isMobile ? 32 : 40}
-        />
+        <Link to="/otkter">
+          <Logo
+            mainColor={Colors.Navy}
+            extraColor={Colors.Nephritis100}
+            width={isMobile ? 192 : 236}
+            height={isMobile ? 32 : 40}
+          />
+        </Link>
         {!isMobile ? (
           <div
             className={clsx(

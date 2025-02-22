@@ -2,7 +2,7 @@ import { FC, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import { MainUI } from "../../components/ui/pages/main";
-import { renderToTop } from "../../utils/renderToTop";
+//import { renderToTop } from "../../utils/renderToTop";
 import { Preloader } from "../../components/ui/preloader";
 
 export const Main: FC = () => {
@@ -14,16 +14,17 @@ export const Main: FC = () => {
   const projectsRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    switch (location.hash) {
-      case "#projects":
-        projectsRef.current?.scrollIntoView({ behavior: "instant" });
-        break;
-      default:
-        renderToTop();
-        break;
-    }
+    // console.log(location.state);
+    // switch (location.hash) {
+    //   case "#projects":
+    //     projectsRef.current?.scrollIntoView({ behavior: "instant" });
+    //     break;
+    //   default:
+    //     renderToTop();
+    //     break;
+    // }
     setDocReadyState(document.readyState);
-  }, [docReadyState, location.hash]);
+  }, [docReadyState, location.hash, location.state]);
 
   return docReadyState ? (
     <MainUI

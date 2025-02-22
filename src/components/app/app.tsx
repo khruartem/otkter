@@ -14,10 +14,8 @@ export function App() {
         <Route path={"/otkter"} element={<Main />} />
         <Route
           path={"/otkter/projects/:id"}
-          //element={<Modal type="back" onClose={() => navigate("/otkter")}><ProjectInfoUI /></Modal>}
           element={<Modal type="back" onClose={() => {
-            // window.location.pathname = '/'
-            window.location.assign('/#projects');
+            navigate(`/otkter/#projects-${location.state?.projectId}`)
           }}><ProjectInfoUI /></Modal>}
         />
         <Route
