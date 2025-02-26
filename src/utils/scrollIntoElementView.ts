@@ -1,11 +1,9 @@
 import React from "react";
 
 export const scrollIntoElementView = (
-  cardRef: React.RefObject<HTMLAnchorElement | HTMLElement>
+  elementRef: React.RefObject<HTMLAnchorElement | HTMLElement>,
+  behavior: ScrollBehavior,
+  block: ScrollLogicalPosition
 ) => {
-  cardRef.current?.scrollIntoView({ behavior: "instant" });
-  window.scrollTo({
-    top: window.scrollY - 70,
-    behavior: "instant",
-  });
+  elementRef.current?.scrollIntoView({ block, behavior });
 };

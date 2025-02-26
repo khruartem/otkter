@@ -85,7 +85,7 @@
 .project_desktop {
   grid-template-columns: 34.11vw 41.29vw;
   column-gap: 8.93vw;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .project_laptop {

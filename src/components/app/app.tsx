@@ -3,10 +3,16 @@ import { Main } from "../../pages/main";
 import { Modal } from "../modal";
 import { ProjectInfoUI } from "../ui/project-info";
 import { Slider } from "../slider";
+//import { useEffect } from "react";
+//import { clearHash } from "../../utils/clearHash";
 
 export function App() {
   const navigate = useNavigate();
   const location = useLocation();
+
+  // useEffect(() => {
+  //   window.onload = clearHash;
+  // });
 
   return (
     <>

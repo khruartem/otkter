@@ -1,0 +1,67 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.wrapper_widthed {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.content-slider {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+/* Стили для разных разрешений экранов */
+/* wrapper */
+.wrapper_large-screen {
+  gap: 2.08vw;
+}
+
+.wrapper_desktop {
+  gap: 1.17vw;
+}
+
+.wrapper_desktop {
+  gap: 1.17vw;
+}
+
+.wrapper_laptop {
+  gap: 1.56vw;
+}
+
+/* content-slider */
+.content-slider_large-screen {
+  gap: 0.83vw;
+}
+
+.content-slider_desktop {
+  gap: 0.29vw;
+}
+
+.content-slider_laptop {
+  gap: 0;
+}
+
+.content-slider_tablet {
+  gap: 2px;
+}
+
+.content-slider_mobile {
+  display: block;
+  width: calc(100% - 120px);
+  /* scrollbar-width: none; */
+}
+
+.content-slider_mobile div {
+  width: max-content;
+  max-width: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  padding-left: 8px;
+}

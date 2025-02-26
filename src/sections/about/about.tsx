@@ -9,8 +9,10 @@ import aboutOval2 from "../../assets/about_oval_2.png";
 import aboutOrb from "../../assets/about_orb.png";
 import { Colors } from "../../utils/types";
 import presentation from "../../assets/presentation.pdf";
+import { FC } from "react";
+import { TSectionProps } from "../types";
 
-export const About = () => {
+export const About: FC<TSectionProps> = () => {
   return (
     <>
       <LargeScreen />

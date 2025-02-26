@@ -1,0 +1,5 @@
+.service_active {
+  fill: var(--active-color);
+  border-radius: 100px;
+  background-color: var(--light100);
+}

@@ -1,0 +1,53 @@
+.services {
+  display: flex;
+  flex-direction: column;
+  padding-block: 80px;
+  background-color: transparent;
+}
+
+.services_large-gap {
+  gap: 60px;
+}
+
+.services_small-gap {
+  gap: 44px;
+}
+
+.services__header {
+  width: 100%;
+  display: flex;
+}
+
+.services__header_rowed {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.services__header_columned {
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Стили для разных разрешений экранов */
+.services_large-screen {
+  padding-inline: 8.13vw;
+  padding-block: 6.88vw;
+}
+
+.services_desktop {
+  padding-inline: 7.83vw;
+}
+
+.services_laptop {
+  padding-inline: 4.10vw;
+}
+
+.services_tablet {
+  padding-inline: 3.91vw;
+}
+
+.services_mobile {
+  padding-inline: 3.86vw;
+}

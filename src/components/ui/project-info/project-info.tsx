@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import clsx from "clsx";
 
 import { Text } from "../../text";
@@ -16,8 +16,11 @@ import { useGetAttention } from "../../../hooks/useGetAttention";
 
 import styles from "./project-info.module.css";
 import { useGetIsEmployees } from "../../../hooks/useGetIsEmployees";
+import { useLocation } from "react-router-dom";
 
 export const ProjectInfoUI: FC = () => {
+  const location = useLocation();
+
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
   const largeResolution = isLarge || isDesktop;
@@ -30,6 +33,10 @@ export const ProjectInfoUI: FC = () => {
   const { projectTitleColorAttention } = useGetProjectColors();
   const isEmployees = useGetIsEmployees(projectId);
 
+  useEffect(() => {
+    location.state = { projectId };
+  });
+
   return (
     <div
       className={clsx(
@@ -39,7 +46,7 @@ export const ProjectInfoUI: FC = () => {
         isLaptop && styles.project_laptop,
         isTablet && styles.project_tablet,
         isMobile && styles.project_mobile,
-        !isDesktop && styles["project_overflowed-y"],
+        !isDesktop && styles["project_overflowed-y"]
       )}
     >
       <div

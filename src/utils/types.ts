@@ -1,4 +1,4 @@
-import { ElementType, SyntheticEvent } from "react";
+import React, { ElementType, SyntheticEvent } from "react";
 
 export type TCategoryName =
   | "Спектакль"
@@ -69,11 +69,12 @@ export type TProjectInfo = {
   controls?: TControls;
 };
 
-export type TCardType = "projects" | "team";
+export type TCardType = "projects" | "team" | "services";
 
 export type TCard = {
   projectId?: number;
   teamId?: number;
+  serviceId?: number;
   type: TCardType;
   title: string;
   categoryList?: TCategory[];
@@ -101,6 +102,8 @@ export type TTeammate = Pick<
   "teamId" | "image" | "title" | "shortText" | "social"
 >;
 
+export type TService = Pick<TCard, "serviceId" | "type" | "title" | "image" | "shortText">
+
 export type TModalType = "back" | "close";
 
 export type TPhotoType = "small" | "large";
@@ -113,6 +116,16 @@ export type TServicesTabMode =
   | "master-class"
   | "lamp"
   | "smm";
+
+export type TTitleServiceRef = {
+  ref: React.RefObject<HTMLHeadElement>;
+  type: TServicesTabMode;
+};
+
+export type TServiceRef = {
+  ref: (node?: Element | null) => void;
+  type: TServicesTabMode;
+};
 
 export enum Colors {
   Navy = "#0B3954",

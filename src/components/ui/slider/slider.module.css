@@ -15,20 +15,15 @@
   position: relative;
 }
 
-.slider__button {
-  padding: 14px;
-  cursor: pointer;
-}
-
-.slider__button_positioned {
+.arrow_positioned {
   position: absolute;
 }
 
-.slider__button_positioned_left {
+.arrow_positioned_left {
   left: 0;
 }
 
-.slider__button_positioned_right {
+.arrow_positioned_right {
   right: 0;
 }
 

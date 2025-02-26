@@ -48,7 +48,7 @@ export const ModalUI: FC<TModalUIProps> = memo(
               textTransform="none"
               color={Colors.Light20}
             >
-              Назад
+              {"Назад"}
             </Text>
           </button>
         )}

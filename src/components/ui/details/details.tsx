@@ -48,7 +48,7 @@ export const DetailsUI: FC<TDetailsUI> = ({ projectId, details, type }) => {
           {(details as TEmployees).actors?.map(
             ({ name, occupation, photo }) => {
               return (
-                <EmployeeUI name={name} occupation={occupation} photo={photo} />
+                <EmployeeUI key={nanoid()} name={name} occupation={occupation} photo={photo} />
               );
             }
           )}
@@ -62,7 +62,7 @@ export const DetailsUI: FC<TDetailsUI> = ({ projectId, details, type }) => {
           {(details as TEmployees).administrators?.map(
             ({ name, occupation, photo }) => {
               return (
-                <EmployeeUI name={name} occupation={occupation} photo={photo} />
+                <EmployeeUI key={nanoid()} name={name} occupation={occupation} photo={photo} />
               );
             }
           )}

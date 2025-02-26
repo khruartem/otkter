@@ -23,3 +23,7 @@ export type TArrowProps = Pick<
   "mainColor" | "hoverColor" | "activeColor" | "className" | "onClick"
 >;
 export type TEventsProps = Pick<TIconsProps, "mainColor">;
+export type TServicesProps = Pick<
+TIconsProps,
+"mainColor" | "hoverColor" | "activeColor" | "className" | "onClick"
+>;

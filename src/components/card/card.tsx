@@ -16,9 +16,7 @@ export const Card: FC<CardProps> = ({ card }) => {
     useEffect(() => {
       switch (location.hash) {
         case `#projects-${projectId}`:
-          scrollIntoElementView(cardRef);
-          break;
-        default:
+          scrollIntoElementView(cardRef, "instant", "center");
           break;
       }
     }, [location.hash, projectId]);

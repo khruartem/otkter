@@ -49,6 +49,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef }) => {
           largeResolution && styles["project_large-resolution"],
           smallResolution && styles["project_small-resolution"]
         )}
+        key={projectId}
       >
         <div
           className={clsx(

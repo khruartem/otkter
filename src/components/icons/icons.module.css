@@ -44,6 +44,8 @@
   box-sizing: content-box;
   width: 32px;
   height: 32px;
+  padding: 14px;
+  cursor: pointer;
 }
 
 .arrow:hover {
@@ -60,4 +62,22 @@
   align-self: start;
   width: 20px;
   height: 20px;
+}
+
+.service {
+  box-sizing: content-box;
+  width: 32px;
+  height: 32px;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.service:hover {
+  fill: var(--hover-color);
+}
+
+.service:active {
+  fill: var(--active-color);
+  border-radius: 100px;
+  background-color: var(--light100);
 }

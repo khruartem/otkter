@@ -44,10 +44,9 @@ export const SliderUI: FC<TSliderUIProps> = ({
           activeColor={Colors.Navy}
           onClick={onMoveLeft}
           className={clsx(
-            styles.slider__button,
             smallResolution && [
-              styles.slider__button_positioned,
-              styles.slider__button_positioned_left,
+              styles.arrow_positioned,
+              styles.arrow_positioned_left,
             ]
           )}
         />
@@ -58,10 +57,9 @@ export const SliderUI: FC<TSliderUIProps> = ({
           activeColor={Colors.Navy}
           onClick={onMoveRight}
           className={clsx(
-            styles.slider__button,
             smallResolution && [
-              styles.slider__button_positioned,
-              styles.slider__button_positioned_right,
+              styles.arrow_positioned,
+              styles.arrow_positioned_right,
             ]
           )}
         />

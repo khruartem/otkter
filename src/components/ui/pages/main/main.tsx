@@ -8,14 +8,16 @@ import { Partners } from "../../../../sections/partners";
 import { Projects } from "../../../../sections/projects";
 
 import { TMainUIProps } from "./types";
+import { Services } from "../../../../sections/services";
 
-export const MainUI: FC<TMainUIProps> = ({ projectsRef }) => {
+export const MainUI: FC<TMainUIProps> = ({ projectsRef, servicesRef, aboutRef }) => {
   return (
     <>
       <Header />
       <main>
         <Hero />
-        <About />
+        <About sectionRef={aboutRef} />
+        <Services sectionRef={servicesRef} />
         <Projects sectionRef={projectsRef} />
       </main>
       <Partners />
