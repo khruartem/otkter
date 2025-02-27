@@ -19,6 +19,7 @@ export const Text = ({
   margin = "0",
   padding = "0",
   width = 0,
+  ref = undefined
 }: TextProps) => {
   const className = clsx(styles["text"], {
     [styles["text_decorated"]]: decorated,
@@ -44,6 +45,7 @@ export const Text = ({
           "--width": width ? width : null,
         } as CSSProperties
       }
+      ref={ref}
     >
       {children}
     </Tag>

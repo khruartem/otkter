@@ -69,7 +69,7 @@ export type TProjectInfo = {
   controls?: TControls;
 };
 
-export type TCardType = "projects" | "team" | "services";
+export type TCardType = "projects" | "team" | "services" | TServicesTabMode;
 
 export type TCard = {
   projectId?: number;
@@ -118,7 +118,7 @@ export type TServicesTabMode =
   | "smm";
 
 export type TTitleServiceRef = {
-  ref: React.RefObject<HTMLHeadElement>;
+  ref: React.RefObject<HTMLHeadingElement>;
   type: TServicesTabMode;
 };
 

@@ -108,18 +108,25 @@ export const Services: FC<TSectionProps> = ({ sectionRef }) => {
   useEffect(() => {
     if (inViewOpenSea) {
       setCurrentTab("open-sea");
+      //console.log("open-sea")
     } else if (inViewEvents) {
       setCurrentTab("events");
+      // console.log("events")
     } else if (inViewDesign) {
       setCurrentTab("design");
+      // console.log("design")
     } else if (inViewContent) {
       setCurrentTab("content");
+      // console.log("content")
     } else if (inViewMasterClass) {
       setCurrentTab("master-class");
+      // console.log("master-class")
     } else if (inViewLamp) {
       setCurrentTab("lamp");
+      // console.log("lamp")
     } else if (inViewSmm) {
       setCurrentTab("smm");
+      // console.log("smm")
     }
   }, [
     inViewOpenSea,
