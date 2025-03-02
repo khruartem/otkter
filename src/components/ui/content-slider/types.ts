@@ -1,4 +1,4 @@
-import { TServicesTabMode } from "../../../utils/types";
+import { TServiceIconRef, TServicesTabMode } from "../../../utils/types";
 
 export type TContentSliderUIPros = {
   onTabClick: (tab: TServicesTabMode) => void;
@@ -6,5 +6,6 @@ export type TContentSliderUIPros = {
   tabs: TServicesTabMode[];
   onMoveLeft: () => void;
   onMoveRight: () => void;
+  serviceIconRefs: TServiceIconRef[];
   ref: React.RefObject<HTMLDivElement>;
 }

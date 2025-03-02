@@ -15,8 +15,9 @@ export const ServicesUI: FC<TServicesUIProps> = ({
   currentTab,
   onTabClick,
   sectionRef,
-  titleRefs,
-  refs,
+  servicesRefs,
+  servicesViewRefs,
+  serviceIconRefs
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
@@ -56,9 +57,9 @@ export const ServicesUI: FC<TServicesUIProps> = ({
         >
           {"услуги"}
         </Text>
-        <ContentSlider onTabClick={onTabClick} currentTab={currentTab} />
+        <ContentSlider onTabClick={onTabClick} currentTab={currentTab} serviceIconRefs={serviceIconRefs} />
       </div>
-      <ServiceList titleRefs={titleRefs} refs={refs} />
+      <ServiceList servicesRefs={servicesRefs} servicesViewRefs={servicesViewRefs} />
     </section>
   );
 };

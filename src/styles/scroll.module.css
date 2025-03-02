@@ -1,4 +1,4 @@
-.service-list::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   border-radius: 14px;
   /* background-color: var(--light30); */
   box-shadow: inset 0 0 14px 14px var(--light30);
@@ -6,26 +6,18 @@
 }
 
 /* 4px scroll thumb. 10px margin from right margin */
-.service-list::-webkit-scrollbar-track
+::-webkit-scrollbar-track
 {
   box-shadow: inset 0 0 14px 14px transparent;
   border: solid 4px transparent;
 }
 
-.service-list::-webkit-scrollbar
+::-webkit-scrollbar
 {
   width: 14px;
 }
 
-.service-list::-webkit-scrollbar:corner-present 
+::-webkit-scrollbar:corner-present 
 {
   display: none;
-}
-
-.service-list {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  gap: 40px;
 }

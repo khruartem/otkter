@@ -1,4 +1,3 @@
-import { CSSProperties } from "react";
 import clsx from "clsx";
 
 import { Text } from "../../text";
@@ -10,7 +9,10 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import styles from "./service.module.css";
 import React from "react";
 
-export const ServiceUI = React.forwardRef<HTMLDivElement, TServiceUIProps>(({ service, titleRef }, ref) => {
+export const ServiceUI = React.forwardRef<
+  HTMLDivElement & HTMLImageElement,
+  TServiceUIProps
+>(({ service, serviceRef }, ref) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
   const { title, shortText, image } = service;
@@ -35,10 +37,21 @@ export const ServiceUI = React.forwardRef<HTMLDivElement, TServiceUIProps>(({ se
         (isLarge || isDesktop) && styles.service_rowed,
         (isLaptop || isTablet || isMobile) && styles.service_columned
       )}
-      ref={ref}
+      ref={serviceRef}
     >
-      <div className={styles.service__info}>
-        {/* <Text
+      {(isLaptop || isTablet || isMobile) && (
+        <img
+          className={styles.service__image}
+          src={image}
+          alt="Изображение услуги"
+          ref={ref}
+        />
+      )}
+      <div
+        className={styles.service__info}
+        ref={isLaptop || isTablet || isMobile ? undefined : ref}
+      >
+        <Text
           as={"h3"}
           fontFamily="Unbounded"
           textAlign="left"
@@ -47,22 +60,9 @@ export const ServiceUI = React.forwardRef<HTMLDivElement, TServiceUIProps>(({ se
           lineHeight={isLarge ? 48 : 40}
           textTransform={"none"}
           color={Colors.Navy}
-          ref={titleRef}
         >
           {title}
-        </Text> */}
-        <h3
-          className={styles.text}
-          style={
-            {
-              "--font-size": `${isLarge ? 32 : 28}px`,
-              "--line-height": `${isLarge ? 48 : 40}px`,
-            } as CSSProperties
-          }
-          ref={titleRef}
-        >
-          {title}
-        </h3>
+        </Text>
         <Text
           as={"p"}
           fontFamily="Roboto"
@@ -76,24 +76,13 @@ export const ServiceUI = React.forwardRef<HTMLDivElement, TServiceUIProps>(({ se
           {shortText}
         </Text>
       </div>
-      <div
-        className={clsx(
-          styles.service__image,
-          (isLarge || isDesktop) && styles["service__image_full-height"],
-          (isLaptop || isTablet || isMobile) &&
-            styles["service__image_full-weight"],
-          isLarge && styles["service__image_large-screen"],
-          isDesktop && styles.service__image_desktop,
-          isLaptop && styles.service__image_laptop,
-          isTablet && styles.service__image_tablet,
-          isMobile && styles.service__image_mobile
-        )}
-        style={
-          {
-            "--background-url": `url(${image})`,
-          } as CSSProperties
-        }
-      ></div>
+      {(isLarge || isDesktop) && (
+        <img
+          className={styles.service__image}
+          src={image}
+          alt="Изображение услуги"
+        />
+      )}
     </div>
   );
 });

@@ -23,5 +23,4 @@ export type TextProps = {
   margin?: string;
   padding?: string;
   width?: number | string;
-  ref?: React.RefObject<HTMLHeadElement> | undefined;
 };

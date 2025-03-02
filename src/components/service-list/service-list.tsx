@@ -6,8 +6,17 @@ import { TServiceListProps } from "./types";
 import { TService } from "../../utils/types";
 import { useGetServices } from "../../hooks/useGetServices";
 
-export const ServiceList: FC<TServiceListProps> = ({titleRefs, refs}) => {
+export const ServiceList: FC<TServiceListProps> = ({
+  servicesRefs,
+  servicesViewRefs,
+}) => {
   const services: TService[] = useGetServices();
 
-  return <ServiceListUI services={services} titleRefs={titleRefs} refs={refs} />;
+  return (
+    <ServiceListUI
+      services={services}
+      servicesRefs={servicesRefs}
+      servicesViewRefs={servicesViewRefs}
+    />
+  );
 };

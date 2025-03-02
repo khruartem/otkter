@@ -9,13 +9,14 @@ import { useGetTabs } from "../../hooks/useGetTabs";
 export const ContentSlider: FC<TContentSliderProps> = ({
   onTabClick,
   currentTab,
+  serviceIconRefs
 }) => {
   const tabs: TServicesTabMode[] = useGetTabs();
   const contenSliderRef = useRef<HTMLDivElement>(null);
 
   const onMoveLeft = () => {
     if (contenSliderRef.current)
-      contenSliderRef.current.scrollTo({
+      contenSliderRef.current.scroll({
         left: window.scrollX + 100,
         behavior: "smooth",
       });
@@ -23,7 +24,7 @@ export const ContentSlider: FC<TContentSliderProps> = ({
 
   const onMoveRight = () => {
     if (contenSliderRef.current)
-      contenSliderRef.current.scrollTo({
+      contenSliderRef.current.scroll({
         left: window.scrollX - 100,
         behavior: "smooth",
       });
@@ -36,6 +37,7 @@ export const ContentSlider: FC<TContentSliderProps> = ({
       tabs={tabs}
       onMoveLeft={onMoveLeft}
       onMoveRight={onMoveRight}
+      serviceIconRefs={serviceIconRefs}
       ref={contenSliderRef}
     />
   );

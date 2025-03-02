@@ -102,7 +102,10 @@ export type TTeammate = Pick<
   "teamId" | "image" | "title" | "shortText" | "social"
 >;
 
-export type TService = Pick<TCard, "serviceId" | "type" | "title" | "image" | "shortText">
+export type TService = Pick<
+  TCard,
+  "serviceId" | "type" | "title" | "image" | "shortText"
+>;
 
 export type TModalType = "back" | "close";
 
@@ -117,14 +120,19 @@ export type TServicesTabMode =
   | "lamp"
   | "smm";
 
-export type TTitleServiceRef = {
-  ref: React.RefObject<HTMLHeadingElement>;
+export type TServiceRef = {
   type: TServicesTabMode;
+  ref: React.RefObject<HTMLDivElement>;
 };
 
-export type TServiceRef = {
-  ref: (node?: Element | null) => void;
+export type TServiceViewRef = {
   type: TServicesTabMode;
+  ref: (node?: Element | null) => void;
+};
+
+export type TServiceIconRef = {
+  type: TServicesTabMode;
+  ref: React.RefObject<HTMLLIElement>;
 };
 
 export enum Colors {

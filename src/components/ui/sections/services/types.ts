@@ -1,5 +1,5 @@
 //import React from "react";
-import { TServiceRef, TServicesTabMode, TTitleServiceRef } from "../../../../utils/types";
+import { TServiceIconRef, TServiceRef, TServicesTabMode, TServiceViewRef } from "../../../../utils/types";
 
 export type TServicesUIProps = {
   currentTab: TServicesTabMode;
@@ -19,6 +19,7 @@ export type TServicesUIProps = {
   // lampRef: (node?: Element | null) => void;
   // smmRef: (node?: Element | null) => void;
   sectionRef: React.RefObject<HTMLElement>;
-  titleRefs: TTitleServiceRef[];
-  refs: TServiceRef[];
+  servicesRefs: TServiceRef[];
+  servicesViewRefs: TServiceViewRef[];
+  serviceIconRefs: TServiceIconRef[];
 };

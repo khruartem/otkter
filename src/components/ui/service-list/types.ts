@@ -1,7 +1,7 @@
-import { TService, TServiceRef, TTitleServiceRef } from "../../../utils/types"
+import { TService, TServiceRef, TServiceViewRef } from "../../../utils/types"
 
 export type TServiceListUIProps = {
   services: TService[];
-  titleRefs: TTitleServiceRef[];
-  refs: TServiceRef[];
+  servicesRefs: TServiceRef[];
+  servicesViewRefs: TServiceViewRef[];
 }

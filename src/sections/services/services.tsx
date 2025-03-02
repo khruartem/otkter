@@ -2,79 +2,37 @@ import { FC, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 import {
+  TServiceIconRef,
   TServiceRef,
   TServicesTabMode,
-  TTitleServiceRef,
+  TServiceViewRef,
 } from "../../utils/types";
 import { scrollIntoElementView } from "../../utils/scrollIntoElementView";
 
 import { ServicesUI } from "../../components/ui/sections/services";
 import { TSectionProps } from "../types";
+import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+//import clsx from "clsx";
+import { lockScroll } from "../../utils/lockScroll";
 
 export const Services: FC<TSectionProps> = ({ sectionRef }) => {
+  // const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
+  //   useGetMediaQuery();
+  const { isLaptop, isTablet, isMobile } =
+  useGetMediaQuery();
+  const smallResolution = isLaptop || isTablet || isMobile;
+
   const [currentTab, setCurrentTab] = useState<TServicesTabMode>("open-sea");
 
-  const titleOpenSeaRef = useRef<HTMLHeadingElement>(null);
-  const titleEventsRef = useRef<HTMLHeadingElement>(null);
-  const titleDesignRef = useRef<HTMLHeadingElement>(null);
-  const titleContenRef = useRef<HTMLHeadingElement>(null);
-  const titleMasterClassRef = useRef<HTMLHeadingElement>(null);
-  const titleLampRef = useRef<HTMLHeadingElement>(null);
-  const titleSmmRef = useRef<HTMLHeadingElement>(null);
+  const openSeaRef = useRef<HTMLDivElement>(null);
+  const eventsRef = useRef<HTMLDivElement>(null);
+  const designRef = useRef<HTMLDivElement>(null);
+  const contenRef = useRef<HTMLDivElement>(null);
+  const masterClassRef = useRef<HTMLDivElement>(null);
+  const lampRef = useRef<HTMLDivElement>(null);
+  const smmRef = useRef<HTMLDivElement>(null);
 
-  const titleServiceRefs: TTitleServiceRef[] = [
-    {
-      ref: titleOpenSeaRef,
-      type: "open-sea",
-    },
-    {
-      ref: titleEventsRef,
-      type: "events",
-    },
-    {
-      ref: titleDesignRef,
-      type: "design",
-    },
-    {
-      ref: titleContenRef,
-      type: "content",
-    },
-    {
-      ref: titleMasterClassRef,
-      type: "master-class",
-    },
-    {
-      ref: titleLampRef,
-      type: "lamp",
-    },
-    {
-      ref: titleSmmRef,
-      type: "smm",
-    },
-  ];
-
-  const [openSeaRef, inViewOpenSea] = useInView({
-    threshold: 0,
-  });
-  const [eventsRef, inViewEvents] = useInView({
-    threshold: 0,
-  });
-  const [designRef, inViewDesign] = useInView({
-    threshold: 0,
-  });
-  const [contenRef, inViewContent] = useInView({
-    threshold: 0,
-  });
-  const [masterClassRef, inViewMasterClass] = useInView({
-    threshold: 0,
-  });
-  const [lampRef, inViewLamp] = useInView({
-    threshold: 0,
-  });
-  const [smmRef, inViewSmm] = useInView({
-    threshold: 0,
-  });
-  const serviceRefs: TServiceRef[] = [
+  const servicesRefs: TServiceRef[] = [
     {
       ref: openSeaRef,
       type: "open-sea",
@@ -105,27 +63,127 @@ export const Services: FC<TSectionProps> = ({ sectionRef }) => {
     },
   ];
 
+  const [openSeaViewRef, inViewOpenSea] = useInView({
+    threshold: smallResolution ? 0.5 : 1,
+  });
+  const [eventsViewRef, inViewEvents] = useInView({
+    threshold: smallResolution ? 0.5 : [0, 1],
+  });
+  const [designViewRef, inViewDesign] = useInView({
+    threshold: smallResolution ? 0.5 : [0, 1],
+  });
+  const [contenViewRef, inViewContent] = useInView({
+    threshold: smallResolution ? 0.5 : [0, 1],
+  });
+  const [masterClassViewRef, inViewMasterClass] = useInView({
+    threshold: smallResolution ? 0.5 : 1,
+  });
+  const [lampViewRef, inViewLamp] = useInView({
+    threshold: smallResolution ? 0.5 : [0, 1],
+  });
+  const [smmViewRef, inViewSmm] = useInView({
+    threshold: smallResolution ? 0.5 : 1,
+  });
+
+  const servicesViewRefs: TServiceViewRef[] = [
+    {
+      ref: openSeaViewRef,
+      type: "open-sea",
+    },
+    {
+      ref: eventsViewRef,
+      type: "events",
+    },
+    {
+      ref: designViewRef,
+      type: "design",
+    },
+    {
+      ref: contenViewRef,
+      type: "content",
+    },
+    {
+      ref: masterClassViewRef,
+      type: "master-class",
+    },
+    {
+      ref: lampViewRef,
+      type: "lamp",
+    },
+    {
+      ref: smmViewRef,
+      type: "smm",
+    },
+  ];
+
+  const openSeaIconRef = useRef<HTMLLIElement>(null);
+  const eventsIconRef = useRef<HTMLLIElement>(null);
+  const designIconRef = useRef<HTMLLIElement>(null);
+  const contenIconRef = useRef<HTMLLIElement>(null);
+  const masterClassIconRef = useRef<HTMLLIElement>(null);
+  const lampIconRef = useRef<HTMLLIElement>(null);
+  const smmIconRef = useRef<HTMLLIElement>(null);
+
+  const serviceIconRefs: TServiceIconRef[] = [
+    {
+      ref: openSeaIconRef,
+      type: "open-sea",
+    },
+    {
+      ref: eventsIconRef,
+      type: "events",
+    },
+    {
+      ref: designIconRef,
+      type: "design",
+    },
+    {
+      ref: contenIconRef,
+      type: "content",
+    },
+    {
+      ref: masterClassIconRef,
+      type: "master-class",
+    },
+    {
+      ref: lampIconRef,
+      type: "lamp",
+    },
+    {
+      ref: smmIconRef,
+      type: "smm",
+    },
+  ];
+
   useEffect(() => {
     if (inViewOpenSea) {
       setCurrentTab("open-sea");
+      if (isMobile) scrollIntoElementView(openSeaIconRef, "smooth", "nearest");
       //console.log("open-sea")
     } else if (inViewEvents) {
       setCurrentTab("events");
+      if (isMobile) scrollIntoElementView(eventsIconRef, "smooth", "nearest");
       // console.log("events")
     } else if (inViewDesign) {
       setCurrentTab("design");
+      if (isMobile) scrollIntoElementView(designIconRef, "smooth", "nearest");
       // console.log("design")
     } else if (inViewContent) {
       setCurrentTab("content");
+      if (isMobile) scrollIntoElementView(contenIconRef, "smooth", "nearest");
       // console.log("content")
     } else if (inViewMasterClass) {
       setCurrentTab("master-class");
+      if (isMobile)
+        scrollIntoElementView(masterClassIconRef, "smooth", "nearest");
       // console.log("master-class")
     } else if (inViewLamp) {
       setCurrentTab("lamp");
+      if (isMobile) scrollIntoElementView(lampIconRef, "smooth", "nearest");
       // console.log("lamp")
     } else if (inViewSmm) {
       setCurrentTab("smm");
+      if (isMobile) scrollIntoElementView(smmIconRef, "smooth", "nearest");
       // console.log("smm")
     }
   }, [
@@ -136,31 +194,48 @@ export const Services: FC<TSectionProps> = ({ sectionRef }) => {
     inViewMasterClass,
     inViewLamp,
     inViewSmm,
+    isMobile,
+    isLaptop,
   ]);
 
   const onTabClick = (tab: TServicesTabMode) => {
     setCurrentTab(tab);
     switch (tab) {
       case "open-sea":
-        scrollIntoElementView(titleOpenSeaRef, "smooth", "center");
+        scrollIntoElementView(
+          openSeaRef,
+          "smooth",
+          isMobile ? "center" : "end"
+        );
+        lockScroll();
         break;
       case "events":
-        scrollIntoElementView(titleEventsRef, "smooth", "center");
+        scrollIntoElementView(eventsRef, "smooth", isMobile ? "center" : "end");
+        lockScroll();
         break;
       case "design":
-        scrollIntoElementView(titleDesignRef, "smooth", "center");
+        scrollIntoElementView(designRef, "smooth", isMobile ? "center" : "end");
+        lockScroll();
         break;
       case "content":
-        scrollIntoElementView(titleContenRef, "smooth", "center");
+        scrollIntoElementView(contenRef, "smooth", isMobile ? "center" : "end");
+        lockScroll();
         break;
       case "master-class":
-        scrollIntoElementView(titleMasterClassRef, "smooth", "center");
+        scrollIntoElementView(
+          masterClassRef,
+          "smooth",
+          isMobile ? "center" : "end"
+        );
+        lockScroll();
         break;
       case "lamp":
-        scrollIntoElementView(titleLampRef, "smooth", "center");
+        scrollIntoElementView(lampRef, "smooth", isMobile ? "center" : "end");
+        lockScroll();
         break;
       case "smm":
-        scrollIntoElementView(titleSmmRef, "smooth", "center");
+        scrollIntoElementView(smmRef, "smooth", isMobile ? "center" : "end");
+        lockScroll();
         break;
     }
   };
@@ -188,8 +263,9 @@ export const Services: FC<TSectionProps> = ({ sectionRef }) => {
       currentTab={currentTab}
       onTabClick={onTabClick}
       sectionRef={sectionRef}
-      titleRefs={titleServiceRefs}
-      refs={serviceRefs}
+      servicesRefs={servicesRefs}
+      servicesViewRefs={servicesViewRefs}
+      serviceIconRefs={serviceIconRefs}
     />
   );
 };

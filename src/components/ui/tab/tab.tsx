@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React from "react";
 
 import {
   Content,
@@ -16,9 +16,9 @@ import { Colors } from "../../../utils/types";
 import styles from "./tab.module.css";
 import clsx from "clsx";
 
-export const TabUI: FC<TTabUIProps> = ({ tab, current, onClick }) => {
+export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(({ tab, current, onClick }, ref) => {
   return (
-    <>
+    <li ref={ref}>
       {tab === "open-sea" && (
         <OpenSea
           className={clsx(current && styles.service_active)}
@@ -82,6 +82,6 @@ export const TabUI: FC<TTabUIProps> = ({ tab, current, onClick }) => {
           onClick={onClick}
         />
       )}
-    </>
+    </li>
   );
-};
+});
