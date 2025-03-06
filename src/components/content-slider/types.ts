@@ -1,7 +1,6 @@
-import { TServiceIconRef, TServicesTabMode } from "../../utils/types";
+import { TServiceRef, TServiceViewRef } from "../../utils/types";
 
 export type TContentSliderProps = {
-  onTabClick: (tab: TServicesTabMode) => void;
-  currentTab: TServicesTabMode;
-  serviceIconRefs: TServiceIconRef[];
-}
+  servicesRefs: TServiceRef[];
+  servicesViewRefs: TServiceViewRef[];
+};

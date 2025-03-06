@@ -1,12 +1,12 @@
 import { FC } from "react";
 
 import { PhotoListUI } from "../ui/photo-list";
+
+import { TPhotoListProps } from "./types";
 import { useGetPhotos } from "../../hooks/useGetPhotos";
-import { useGetProjectId } from "../../hooks/useGetProjectId";
 
-export const PhotoList: FC = () => {
-  const projectId = useGetProjectId();
-  const photos = useGetPhotos(projectId);
+export const PhotoList: FC<TPhotoListProps> = ({ id, type }) => {
+  const photos = useGetPhotos(id, type);
 
-  return <PhotoListUI projectId={projectId} photos={photos} />;
+  return <PhotoListUI id={id} photos={photos!} type={type} />;
 };

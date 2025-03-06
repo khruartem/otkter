@@ -32,22 +32,25 @@
 
 /* Стили для разных разрешений экранов */
 .services_large-screen {
-  padding-inline: 8.13vw;
   padding-block: 6.88vw;
 }
 
-.services_desktop {
+.services__header_large-screen {
+  padding-inline: 8.13vw;
+}
+
+.services__header_desktop {
   padding-inline: 7.83vw;
 }
 
-.services_laptop {
+.services__header_laptop {
   padding-inline: 4.10vw;
 }
 
-.services_tablet {
+.services__header_tablet {
   padding-inline: 3.91vw;
 }
 
-.services_mobile {
+.services__header_mobile {
   padding-inline: 3.86vw;
 }

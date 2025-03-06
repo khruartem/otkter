@@ -8,6 +8,7 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./service.module.css";
 import React from "react";
+import { Controls } from "../../controls";
 
 export const ServiceUI = React.forwardRef<
   HTMLDivElement & HTMLImageElement,
@@ -48,39 +49,55 @@ export const ServiceUI = React.forwardRef<
         />
       )}
       <div
-        className={styles.service__info}
-        ref={isLaptop || isTablet || isMobile ? undefined : ref}
+        className={clsx(
+          styles.service__info,
+          isLarge && styles["service__info_large-screen"],
+          isDesktop && styles.service__info_desktop,
+          isLaptop && styles.service__info_laptop,
+          isTablet && styles.service__info_tablet,
+          isMobile && styles.service__info_mobile,
+        )}
+        // ref={isLaptop || isTablet || isMobile ? undefined : ref}
       >
-        <Text
-          as={"h3"}
-          fontFamily="Unbounded"
-          textAlign="left"
-          fontSize={isLarge ? 32 : 28}
-          fontWeight={500}
-          lineHeight={isLarge ? 48 : 40}
-          textTransform={"none"}
-          color={Colors.Navy}
-        >
-          {title}
-        </Text>
-        <Text
-          as={"p"}
-          fontFamily="Roboto"
-          textAlign="left"
-          fontSize={shortTextFontSize}
-          fontWeight={400}
-          lineHeight={shortTextLineHeight}
-          color={Colors.Dark100}
-          textTransform={"none"}
-        >
-          {shortText}
-        </Text>
+        <div className={clsx(
+          styles.service__text,
+          isLarge && styles["service__text_large-gap"],
+          !isLarge && styles["service__text_small-gap"]
+        )}>
+          <Text
+            as={"h3"}
+            fontFamily="Unbounded"
+            textAlign="left"
+            fontSize={isLarge ? 32 : 28}
+            fontWeight={500}
+            lineHeight={isLarge ? 48 : 40}
+            textTransform={"none"}
+            color={Colors.Navy}
+            padding={clsx(isTablet || isMobile && "40px 0 0 0")}
+          >
+            {title}
+          </Text>
+          <Text
+            as={"p"}
+            fontFamily="Roboto"
+            textAlign="left"
+            fontSize={shortTextFontSize}
+            fontWeight={400}
+            lineHeight={shortTextLineHeight}
+            color={Colors.Dark100}
+            textTransform={"none"}
+          >
+            {shortText}
+          </Text>
+        </div>
+        <Controls id={service.serviceId!} type="services" />
       </div>
       {(isLarge || isDesktop) && (
         <img
           className={styles.service__image}
           src={image}
           alt="Изображение услуги"
+          ref={ref}
         />
       )}
     </div>

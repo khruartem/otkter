@@ -1,5 +1,7 @@
-import { TDetails } from "../../utils/types";
+import { TSectionType, TDetails } from "../../utils/types";
 
 export type TDetailsProps = {
-  type: TDetails;
+  id: number;
+  infosType: TSectionType;
+  detailsType: TDetails;
 };

@@ -3,7 +3,7 @@ import { Colors } from "../../utils/types";
 export type TIconsProps = {
   mainColor: Colors;
   extraColor: Colors;
-  hoverColor?: Colors;
+  hoverColor?: Colors | string;
   activeColor?: Colors;
   onClick?: (() => void) | undefined;
   width: number;

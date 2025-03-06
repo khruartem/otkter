@@ -8,6 +8,7 @@ import {
 
 import { reducer as projectsReducer } from "../features/projects/projectsSlice";
 import { reducer as projectsInfoReducer } from "../features/projectsInfo/projectsInfoSlice";
+import { reducer as infosReducer } from "../features/projectsInfo/infosSlice";
 import { reducer as photosReducer } from "../features/photos/photosSlice";
 import { reducer as categoriesReducer } from "../features/categories/categoriesSlice";
 import { reducer as controlsReducer } from "../features/controls/controlsSlice";
@@ -18,6 +19,7 @@ const store = configureStore({
   reducer: {
     projects: projectsReducer,
     projectsInfo: projectsInfoReducer,
+    infos: infosReducer,
     photos: photosReducer,
     categories: categoriesReducer,
     controls: controlsReducer,

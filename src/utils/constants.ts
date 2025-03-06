@@ -1,8 +1,8 @@
 import { Social, TNavLinks, TProject, TService, TServicesTabMode } from "./types";
-import { TInfo } from "../features/projectsInfo/projectsInfoSlice";
-import { TProjectControls } from "../features/controls/controlsSlice";
+import { TProjectInfo } from "../features/projectsInfo/projectsInfoSlice";
+import { TProjectControls, TServiceControls } from "../features/controls/controlsSlice";
 import { TProjectCategories } from "../features/categories/categoriesSlice";
-import { TProjectPhotos } from "../features/photos/photosSlice";
+import { TProjectPhotos, TServicePhotos } from "../features/photos/photosSlice";
 
 import telegramSVG from "../assets/telegram.svg";
 import vkSVG from "../assets/vk.svg";
@@ -35,6 +35,7 @@ import content from "../assets/services_img_content.png";
 import masterClasses from "../assets/services_img_master_classes.png";
 import lamp from "../assets/services_img_lamp.png";
 import smm from "../assets/services_img_smm.png";
+import { TServiceInfo } from "../features/projectsInfo/infosSlice";
 
 export const telegramUrl: string = "https://t.me/otkterr";
 export const vkUrl: string = "https://vk.com/otkter";
@@ -133,7 +134,7 @@ export const projects: TProject[] = [
   },
 ];
 
-export const projectInfos: TInfo[] = [
+export const projectInfos: TProjectInfo[] = [
   {
     projectId: 1,
     text: "В центре вечера - восстановленная плёнка, которая оживёт для вас и, как мы верим и надеемся, натолкнёт на размышления о Великой Отечественной войне. Серьёзные и важные темы дискуссии воссоединятся с песнями военных лет и стихами, посвящёнными войне.",
@@ -754,4 +755,163 @@ export const services: TService[] = [
     image: smm,
     type: "smm",
   },
-]
+];
+
+export const serviceControls: TServiceControls[] = [
+  {
+    serviceId: 1,
+    controls: {
+      buttons: [
+        {
+          label: "Записаться",
+          onClick: () => {},
+        },
+      ],
+      links: [
+        {
+          label: "Подробнее",
+          href: "/otkter/services/1",
+          state: {id: 1}
+        },
+      ],
+    },
+  },
+  {
+    serviceId: 2,
+    controls: {
+      buttons: [
+        {
+          label: "Заказать",
+          onClick: () => {},
+        },
+      ],
+      links: [],
+    },
+  },
+  {
+    serviceId: 3,
+    controls: {
+      buttons: [
+        {
+          label: "Заказать",
+          onClick: () => {},
+        },
+      ],
+      links: [],
+    },
+  },
+  {
+    serviceId: 4,
+    controls: {
+      buttons: [
+        {
+          label: "Заказать",
+          onClick: () => {},
+        },
+      ],
+      links: [],
+    },
+  },
+  {
+    serviceId: 5,
+    controls: {
+      buttons: [
+        {
+          label: "Заказать",
+          onClick: () => {},
+        },
+      ],
+      links: [],
+    },
+  },
+  {
+    serviceId: 6,
+    controls: {
+      buttons: [
+        {
+          label: "Записаться",
+          onClick: () => {},
+        },
+      ],
+      links: [],
+    },
+  },
+  {
+    serviceId: 7,
+    controls: {
+      buttons: [
+        {
+          label: "Заказать",
+          onClick: () => {},
+        },
+      ],
+      links: [],
+    },
+  },
+];
+
+export const serviceInfos: TServiceInfo[] = [
+  {
+    serviceId: 1,
+    text: "«Открытое море» - студия с огромным багажом опыта в 30 лет, наши спектакли являются многократными победителями и лауреатами множества фестивалей и конкурсов, наши выпускники работают в различных творческих индустриях и являются как известными актерами театра и кино, так и писателями, драматургами, художниками, дизайнерами, кинорежиссерами, операторами и т.д.",
+    serviceDetails: [
+      {
+        type: "address",
+        label: "Адрес",
+        value: "м. Новокосино, г. Реутов, ул. Юбилейный проспект 38",
+      },
+      {
+        type: "contacts",
+        label: "Телефон",
+        value: "8 (916) 117-90-92",
+      },
+      {
+        type: "price",
+        label: "Цена",
+        value: "6500 ₽ (8 занятий в месяц)",
+      },
+    ],
+    employees: {
+      administrators: [
+        {
+          name: "Сергей Яковлев",
+          occupation: "Директор",
+          photo: yakovlev,
+        },
+        {
+          name: "Людмила Яковлева",
+          occupation: "Худрук и педагог",
+          photo: LA,
+        },
+      ],
+    },
+  },
+];
+
+export const servicePhotos: TServicePhotos[] = [
+  {
+    serviceId: 1,
+    photos: [
+      {
+        id: 31,
+        source: testPhoto1,
+      },
+      {
+        id: 32,
+        source: testPhoto2,
+      },
+      {
+        id: 33,
+        source: testPhoto3,
+      },
+      {
+        id: 34,
+        source: testPhoto4,
+      },
+      {
+        id: 35,
+        source: testPhoto5,
+      },
+    ],
+  },
+];

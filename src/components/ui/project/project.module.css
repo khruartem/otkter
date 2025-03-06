@@ -92,6 +92,7 @@
 
 .project__bottom_large-resolution {
   height: 192px;
+  padding-left: 20px;
 }
 
 .project__bottom_small-screen {

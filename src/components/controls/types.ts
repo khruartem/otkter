@@ -1,5 +1,6 @@
-import { TControls } from "../../utils/types"
+import { TControlsType } from "../../features/controls/controlsSlice";
 
 export type TControlsProps = {
-  controls: TControls;
+  id: number;
+  type: TControlsType;
 }

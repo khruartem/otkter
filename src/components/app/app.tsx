@@ -1,18 +1,13 @@
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { Main } from "../../pages/main";
 import { Modal } from "../modal";
-import { ProjectInfoUI } from "../ui/project-info";
 import { Slider } from "../slider";
-//import { useEffect } from "react";
-//import { clearHash } from "../../utils/clearHash";
+import { ProjectInfo } from "../project-info";
+import { ServiceInfo } from "../service-info";
 
 export function App() {
   const navigate = useNavigate();
   const location = useLocation();
-
-  // useEffect(() => {
-  //   window.onload = clearHash;
-  // });
 
   return (
     <>
@@ -24,10 +19,23 @@ export function App() {
             <Modal
               type="back"
               onClose={() => {
-                navigate(`/otkter/#projects-${location.state?.projectId}`);
+                navigate(`/otkter/#projects-${location.state?.id}`);
               }}
             >
-              <ProjectInfoUI />
+              <ProjectInfo />
+            </Modal>
+          }
+        />
+        <Route
+          path={"/otkter/services/:id"}
+          element={
+            <Modal
+              type="back"
+              onClose={() => {
+                navigate("/otkter/#services", {state: {from: "services"}});
+              }}
+            >
+              <ServiceInfo />
             </Modal>
           }
         />
@@ -37,10 +45,23 @@ export function App() {
             <Modal
               type="close"
               onClose={() => {
-                navigate(`otkter/projects/${location.state?.projectId}`);
+                navigate(`otkter/projects/${location.state?.id}`);
               }}
             >
-              <Slider />
+              <Slider type="projects" />
+            </Modal>
+          }
+        />
+        <Route
+          path={"/otkter/services/:id/:photoId"}
+          element={
+            <Modal
+              type="close"
+              onClose={() => {
+                navigate(`otkter/services/${location.state?.id}`);
+              }}
+            >
+              <Slider type="services" />
             </Modal>
           }
         />

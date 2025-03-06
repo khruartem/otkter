@@ -1,3 +1,6 @@
+import clsx from "clsx";
+import { CSSProperties, useRef } from "react";
+
 import {
   TArrowProps,
   TCategotyProps,
@@ -7,12 +10,10 @@ import {
   TModalsProps,
   TServicesProps,
 } from "./types";
-
-import styles from "./icons.module.css";
-import { CSSProperties } from "react";
 import { Colors } from "../../utils/types";
 import { telegramUrl, vkUrl } from "../../utils/constants";
-import clsx from "clsx";
+
+import styles from "./icons.module.css";
 
 export const Logo = ({ mainColor, extraColor, width, height }: TLogoProps) => {
   return (
@@ -322,6 +323,19 @@ export const Price = ({ mainColor }: TEventsProps) => {
   );
 };
 
+export const Phone = ({ mainColor }: TEventsProps) => {
+  return (
+    <svg
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      className={styles.events}
+    >
+      <path d="m12.267 22.4 2.466-2.466a1.336 1.336 0 0 0-.013-1.907c-.067-.067-.137-.133-.207-.2-.07-.067-.14-.133-.207-.2a45.607 45.607 0 0 1-1.933-2.107c-.586-.693-1-1.266-1.24-1.706a1.87 1.87 0 0 0-.053-.134c-.017-.04-.035-.084-.053-.133a1.21 1.21 0 0 1-.04-.307c0-.213.066-.386.213-.533l1.013-1.053c.32-.32.574-.64.747-.947a1.81 1.81 0 0 0 .28-.947c0-.253-.067-.533-.187-.813-.12-.293-.293-.6-.533-.933l-3.093-4.36a2.173 2.173 0 0 0-.894-.747 2.506 2.506 0 0 0-1.08-.24c-.987 0-1.92.413-2.773 1.253-.707.667-1.213 1.414-1.533 2.227-.32.8-.48 1.667-.48 2.573 0 1.387.32 2.84.946 4.36.64 1.507 1.52 3.027 2.613 4.547a37.888 37.888 0 0 0 3.72 4.36l.22.213c.074.07.147.14.22.214a1.34 1.34 0 0 0 1.88-.014ZM29.093 25.574c.134-.374.2-.76.2-1.134 0-.373-.08-.706-.213-1.04-.147-.333-.387-.613-.733-.853l-4.414-3.133c-.333-.227-.64-.4-.933-.52a2.128 2.128 0 0 0-.814-.174c-.333 0-.64.094-.946.28-.307.16-.627.414-.96.747l-1.014 1a.734.734 0 0 1-.546.227.92.92 0 0 1-.333-.054l-.12-.053a2.646 2.646 0 0 0-.12-.053 7.492 7.492 0 0 1-.987-.64l-4.36 4.36c.493.413 1.013.8 1.533 1.186 1.52 1.107 3.054 1.987 4.587 2.64 1.533.654 2.986.974 4.346.974.92 0 1.774-.174 2.56-.494.007 0 .014-.003.02-.006a.046.046 0 0 1 .02-.007c.814-.333 1.534-.853 2.187-1.573.387-.427.68-.88.907-1.36.053-.107.093-.214.133-.32Z" />
+    </svg>
+  );
+};
+
 export const OpenSea = ({
   mainColor,
   hoverColor = undefined,
@@ -329,6 +343,8 @@ export const OpenSea = ({
   onClick = undefined,
   className = undefined,
 }: TServicesProps) => {
+  const ref = useRef<SVGSVGElement>(null);
+
   return (
     <svg
       className={clsx(styles.service, className)}
@@ -336,12 +352,21 @@ export const OpenSea = ({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
+      onMouseEnter={() => {
+        if (!ref.current?.classList.contains(styles["service_active"]))
+          ref.current?.classList.add(styles["service_hover"]);
+      }}
+      onMouseLeave={() => {
+        if (ref.current?.classList.contains(styles["service_hover"]))
+          ref.current?.classList.remove(styles["service_hover"]);
+      }}
       style={
         {
           "--hover-color": hoverColor,
           "--active-color": activeColor,
         } as CSSProperties
       }
+      ref={ref}
     >
       <path d="M16 1.714c-3.01 0-5.866.913-8.3 2.655A14.333 14.333 0 0 0 1.713 16c0 7.878 6.408 14.286 14.286 14.286 7.878 0 14.286-6.408 14.286-14.286 0-7.878-6.408-14.286-14.286-14.286ZM20.6 24.571A8.572 8.572 0 0 1 12.027 16a4.603 4.603 0 0 0-4.598-4.598 4.596 4.596 0 0 0-4.599 4.564v.017c0-4.412 2.181-8.335 5.512-10.718A13.167 13.167 0 0 1 16 2.813c7.27 0 13.17 5.9 13.17 13.17 0 .152 0 .304-.017.44A8.565 8.565 0 0 1 20.6 24.57Z" />
       <path
@@ -362,6 +387,8 @@ export const Events = ({
   onClick = undefined,
   className = undefined,
 }: TServicesProps) => {
+  const ref = useRef<SVGSVGElement>(null);
+
   return (
     <svg
       className={clsx(styles.service, className)}
@@ -369,12 +396,21 @@ export const Events = ({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
+      onMouseEnter={() => {
+        if (!ref.current?.classList.contains(styles["service_active"]))
+          ref.current?.classList.add(styles["service_hover"]);
+      }}
+      onMouseLeave={() => {
+        if (ref.current?.classList.contains(styles["service_hover"]))
+          ref.current?.classList.remove(styles["service_hover"]);
+      }}
       style={
         {
           "--hover-color": hoverColor,
           "--active-color": activeColor,
         } as CSSProperties
       }
+      ref={ref}
     >
       <path
         fillRule="evenodd"
@@ -393,6 +429,8 @@ export const Design = ({
   onClick = undefined,
   className = undefined,
 }: TServicesProps) => {
+  const ref = useRef<SVGSVGElement>(null);
+
   return (
     <svg
       className={clsx(styles.service, className)}
@@ -400,12 +438,21 @@ export const Design = ({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
+      onMouseEnter={() => {
+        if (!ref.current?.classList.contains(styles["service_active"]))
+          ref.current?.classList.add(styles["service_hover"]);
+      }}
+      onMouseLeave={() => {
+        if (ref.current?.classList.contains(styles["service_hover"]))
+          ref.current?.classList.remove(styles["service_hover"]);
+      }}
       style={
         {
           "--hover-color": hoverColor,
           "--active-color": activeColor,
         } as CSSProperties
       }
+      ref={ref}
     >
       <path d="M27.973 14.267A11.212 11.212 0 0 0 18.68 3.853 2.005 2.005 0 0 0 16.693 2H15.36c-1.053 0-1.893.813-1.987 1.84-5.173.853-9.053 5.2-9.346 10.427a1.991 1.991 0 0 0-1.667 1.96v1.333c0 1.107.893 2 2 2h1.333c1.107 0 2-.893 2-2v-1.333c0-.987-.72-1.8-1.666-1.96a9.214 9.214 0 0 1 7.413-8.414c.226.854 1 1.48 1.92 1.48h1.333c.92 0 1.68-.626 1.92-1.466 4.053.813 7.08 4.266 7.36 8.4a1.991 1.991 0 0 0-1.666 1.96v1.333c0 1.107.893 2 2 2h1.333c1.107 0 2-.893 2-2v-1.333a1.98 1.98 0 0 0-1.667-1.96Z" />
       <path d="M21.026 22.067 18.84 24h-5.667l-2.187-1.933C9.72 21.027 9.72 20.227 10.68 19l3.853-4.88c.267-.333.573-.56.92-.68.36-.12.747-.12 1.12 0 .333.12.64.347.92.68l3.84 4.867c.973 1.226.92 1.986-.307 3.08ZM14.306 29.333h3.454c1.306 0 2.16-.933 1.906-2.066l-.413-1.854a.81.81 0 0 0-.787-.626H13.6a.8.8 0 0 0-.787.626l-.413 1.854c-.24 1.066.68 2.066 1.906 2.066Z" />
@@ -420,6 +467,8 @@ export const Content = ({
   onClick = undefined,
   className = undefined,
 }: TServicesProps) => {
+  const ref = useRef<SVGSVGElement>(null);
+
   return (
     <svg
       className={clsx(styles.service, className)}
@@ -427,12 +476,21 @@ export const Content = ({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
+      onMouseEnter={() => {
+        if (!ref.current?.classList.contains(styles["service_active"]))
+          ref.current?.classList.add(styles["service_hover"]);
+      }}
+      onMouseLeave={() => {
+        if (ref.current?.classList.contains(styles["service_hover"]))
+          ref.current?.classList.remove(styles["service_hover"]);
+      }}
       style={
         {
           "--hover-color": hoverColor,
           "--active-color": activeColor,
         } as CSSProperties
       }
+      ref={ref}
     >
       <path d="M28.2 8.226c-.546-.293-1.693-.6-3.253.494l-1.96 1.386c-.147-4.146-1.947-5.773-6.32-5.773h-8c-4.56 0-6.333 1.773-6.333 6.333v10.667c0 3.067 1.666 6.333 6.333 6.333h8c4.373 0 6.173-1.626 6.32-5.773l1.96 1.387c.826.586 1.547.773 2.12.773.493 0 .88-.147 1.133-.28.547-.28 1.467-1.04 1.467-2.947v-9.653c0-1.907-.92-2.667-1.467-2.947Zm-13.533 6.947a2.512 2.512 0 0 1-2.507-2.507 2.512 2.512 0 0 1 2.507-2.506 2.512 2.512 0 0 1 2.507 2.506 2.512 2.512 0 0 1-2.507 2.507Z" />
     </svg>
@@ -446,6 +504,8 @@ export const MasterClasses = ({
   onClick = undefined,
   className = undefined,
 }: TServicesProps) => {
+  const ref = useRef<SVGSVGElement>(null);
+
   return (
     <svg
       className={clsx(styles.service, className)}
@@ -453,12 +513,21 @@ export const MasterClasses = ({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
+      onMouseEnter={() => {
+        if (!ref.current?.classList.contains(styles["service_active"]))
+          ref.current?.classList.add(styles["service_hover"]);
+      }}
+      onMouseLeave={() => {
+        if (ref.current?.classList.contains(styles["service_hover"]))
+          ref.current?.classList.remove(styles["service_hover"]);
+      }}
       style={
         {
           "--hover-color": hoverColor,
           "--active-color": activeColor,
         } as CSSProperties
       }
+      ref={ref}
     >
       <path
         fillRule="evenodd"
@@ -476,6 +545,8 @@ export const Lamp = ({
   onClick = undefined,
   className = undefined,
 }: TServicesProps) => {
+  const ref = useRef<SVGSVGElement>(null);
+
   return (
     <svg
       className={clsx(styles.service, className)}
@@ -483,12 +554,21 @@ export const Lamp = ({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
+      onMouseEnter={() => {
+        if (!ref.current?.classList.contains(styles["service_active"]))
+          ref.current?.classList.add(styles["service_hover"]);
+      }}
+      onMouseLeave={() => {
+        if (ref.current?.classList.contains(styles["service_hover"]))
+          ref.current?.classList.remove(styles["service_hover"]);
+      }}
       style={
         {
           "--hover-color": hoverColor,
           "--active-color": activeColor,
         } as CSSProperties
       }
+      ref={ref}
     >
       <path d="M23.88 14.294h-4.12v-9.6c0-2.24-1.213-2.693-2.693-1.013L16 4.894 6.973 15.16c-1.24 1.4-.72 2.546 1.147 2.546h4.12v9.6c0 2.24 1.213 2.694 2.693 1.014L16 27.107l9.027-10.267c1.24-1.4.72-2.546-1.147-2.546Z" />
     </svg>
@@ -502,6 +582,8 @@ export const SMM = ({
   onClick = undefined,
   className = undefined,
 }: TServicesProps) => {
+  const ref = useRef<SVGSVGElement>(null);
+
   return (
     <svg
       className={clsx(styles.service, className)}
@@ -509,15 +591,36 @@ export const SMM = ({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
+      onMouseEnter={() => {
+        if (!ref.current?.classList.contains(styles["service_active"]))
+          ref.current?.classList.add(styles["service_hover"]);
+      }}
+      onMouseLeave={() => {
+        if (ref.current?.classList.contains(styles["service_hover"]))
+          ref.current?.classList.remove(styles["service_hover"]);
+      }}
       style={
         {
           "--hover-color": hoverColor,
           "--active-color": activeColor,
         } as CSSProperties
       }
+      ref={ref}
     >
       <path d="M5.667 9A6.34 6.34 0 0 1 12 2.667 6.34 6.34 0 0 1 18.333 9a6.318 6.318 0 0 1-6.106 6.32h-.094a1.079 1.079 0 0 0-.293 0C8.347 15.2 5.667 12.427 5.667 9ZM5.24 18.867c3.747-2.48 9.813-2.48 13.533 0 1.68 1.12 2.6 2.64 2.614 4.28 0 1.653-.934 3.173-2.614 4.307-1.866 1.253-4.32 1.88-6.773 1.88-2.453 0-4.907-.627-6.773-1.88-1.68-1.12-2.614-2.64-2.614-4.28 0-1.64.934-3.174 2.627-4.307ZM26.653 9.787c.213 2.587-1.627 4.853-4.173 5.16h-.067c-.08 0-.16 0-.227.027-1.293.066-2.48-.347-3.373-1.107 1.373-1.227 2.16-3.067 2-5.067a6.187 6.187 0 0 0-1.027-2.906 4.79 4.79 0 0 1 6.867 3.893Z" />
       <path d="M27 25.294c1.387-.76 2.214-1.88 2.32-3.174.12-1.28-.506-2.52-1.733-3.506-2.28-1.84-5.986-2.414-8.933-1.56 1.133.413 2.173.973 3.067 1.68 1.573 1.266 2.36 2.853 2.226 4.506-.107 1.147-.666 2.227-1.627 3.094 1.667.04 3.347-.307 4.68-1.04Z" />
+    </svg>
+  );
+};
+
+export const TrickCircle = () => {
+  return (
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 24" className={styles["trick-circle"]}>
+      <circle cx="12.5" cy="12" r="8" fill={Colors.Navy} />
+      <path
+        d="M12.5 2c-5.51 0-10 4.49-10 10s4.49 10 10 10 10-4.49 10-10-4.49-10-10-10Zm4.78 7.7-5.67 5.67a.75.75 0 0 1-1.06 0l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.76 0 1.06Z"
+        fill={Colors.Orange100}
+      />
     </svg>
   );
 };

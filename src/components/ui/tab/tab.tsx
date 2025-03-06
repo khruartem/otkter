@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 
 import {
   Content,
@@ -12,18 +13,20 @@ import {
 
 import { TTabUIProps } from "./types";
 import { Colors } from "../../../utils/types";
+import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
-import styles from "./tab.module.css";
-import clsx from "clsx";
+import styles from "../../icons/icons.module.css";
 
 export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(({ tab, current, onClick }, ref) => {
+  const { isTablet, isMobile } = useGetMediaQuery();
+  
   return (
     <li ref={ref}>
       {tab === "open-sea" && (
         <OpenSea
           className={clsx(current && styles.service_active)}
           mainColor={Colors.Nephritis100}
-          hoverColor={Colors.Nephritis120}
+          hoverColor={(isTablet || isMobile) ? Colors.Nephritis100 : Colors.Nephritis120}
           activeColor={Colors.Navy}
           onClick={onClick}
         />
@@ -32,7 +35,7 @@ export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(({ tab, curren
         <Events
           className={clsx(current && styles.service_active)}
           mainColor={Colors.Nephritis100}
-          hoverColor={Colors.Nephritis120}
+          hoverColor={(isTablet || isMobile) ? Colors.Nephritis100 : Colors.Nephritis120}
           activeColor={Colors.Navy}
           onClick={onClick}
         />
@@ -41,7 +44,7 @@ export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(({ tab, curren
         <Design
           className={clsx(current && styles.service_active)}
           mainColor={Colors.Nephritis100}
-          hoverColor={Colors.Nephritis120}
+          hoverColor={(isTablet || isMobile) ? Colors.Nephritis100 : Colors.Nephritis120}
           activeColor={Colors.Navy}
           onClick={onClick}
         />
@@ -50,7 +53,7 @@ export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(({ tab, curren
         <Content
           className={clsx(current && styles.service_active)}
           mainColor={Colors.Nephritis100}
-          hoverColor={Colors.Nephritis120}
+          hoverColor={(isTablet || isMobile) ? Colors.Nephritis100 : Colors.Nephritis120}
           activeColor={Colors.Navy}
           onClick={onClick}
         />
@@ -59,7 +62,7 @@ export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(({ tab, curren
         <MasterClasses
           className={clsx(current && styles.service_active)}
           mainColor={Colors.Nephritis100}
-          hoverColor={Colors.Nephritis120}
+          hoverColor={(isTablet || isMobile) ? Colors.Nephritis100 : Colors.Nephritis120}
           activeColor={Colors.Navy}
           onClick={onClick}
         />
@@ -68,7 +71,7 @@ export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(({ tab, curren
         <Lamp
           className={clsx(current && styles.service_active)}
           mainColor={Colors.Nephritis100}
-          hoverColor={Colors.Nephritis120}
+          hoverColor={(isTablet || isMobile) ? Colors.Nephritis100 : Colors.Nephritis120}
           activeColor={Colors.Navy}
           onClick={onClick}
         />
@@ -77,7 +80,7 @@ export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(({ tab, curren
         <SMM
           className={clsx(current && styles.service_active)}
           mainColor={Colors.Nephritis100}
-          hoverColor={Colors.Nephritis120}
+          hoverColor={(isTablet || isMobile) ? Colors.Nephritis100 : Colors.Nephritis120}
           activeColor={Colors.Navy}
           onClick={onClick}
         />

@@ -9,8 +9,9 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import styles from "./photo-list.module.css";
 
 export const PhotoListUI: FC<TPhotoListUIProps> = ({
-  projectId,
-  photos
+  id,
+  photos,
+  type
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
@@ -30,15 +31,16 @@ export const PhotoListUI: FC<TPhotoListUIProps> = ({
     >
       {photos.map((photo, index) => {
         if (index < 4)
-          return <PhotoUI key={photo.id} photo={photo} projectId={projectId} />;
+          return <PhotoUI key={photo.id} photo={photo} id={id} type={type} />;
       })}
       {photos.length > 4 && (
         <PhotoUI
           key={photos.length + 1}
           photo={null}
           label={`+${photos.length - 4}`}
-          projectId={projectId}
+          id={id}
           nextPhotoId={photos[4].id}
+          type={type}
         />
       )}
     </ul>

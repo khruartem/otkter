@@ -7,5 +7,4 @@ export type TContentSliderUIPros = {
   onMoveLeft: () => void;
   onMoveRight: () => void;
   serviceIconRefs: TServiceIconRef[];
-  ref: React.RefObject<HTMLDivElement>;
-}
+};

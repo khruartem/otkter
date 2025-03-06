@@ -40,7 +40,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef }) => {
             : projectTitleColor,
         } as CSSProperties
       }
-      state={{projectId}}
+      state={{ id: projectId }}
       ref={projectRef}
     >
       <li

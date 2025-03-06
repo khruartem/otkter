@@ -6,7 +6,8 @@ export type TCategoryName =
   | "Мастер класс"
   | "Короткий метр"
   | "В ролях"
-  | "Руководители";
+  | "Руководители"
+  | "Информация";
 
 export type TCategory = {
   name: TCategoryName;
@@ -22,9 +23,26 @@ export type TCategoryId =
   | "master-class"
   | "short-film"
   | "admins"
-  | "artists";
+  | "artists"
+  | "info";
 
-export type TDetails = "events" | "employees";
+export type TDetails = "events" | "employees" | "services";
+
+export type TEventType =
+  | "organizers"
+  | "partners"
+  | "date"
+  | "address"
+  | "price"
+  | "contacts";
+
+export type TSectionType = Extract<TCardType, "services" | "projects">;
+
+export type TEventDetails = {
+  type: TEventType;
+  label: string;
+  value: string | string[];
+};
 
 export type TControls = {
   buttons: TButton[];
@@ -39,9 +57,11 @@ export type TButton = {
 export type TLink = {
   label: string;
   href: string;
+  target?: React.HTMLAttributeAnchorTarget;
+  state?: object;
 };
 
-type TEmployees = {
+export type TEmployees = {
   actors?: TEmployee[];
   administrators?: TEmployee[];
 };
@@ -50,14 +70,6 @@ type TEmployee = {
   name: string;
   occupation: string;
   photo: string;
-};
-
-type TEventDetails = {
-  organizer?: string;
-  partners?: string[];
-  eventDate?: string;
-  address?: string;
-  price?: string;
 };
 
 export type TProjectInfo = {
@@ -127,6 +139,7 @@ export type TServiceRef = {
 
 export type TServiceViewRef = {
   type: TServicesTabMode;
+  inView: boolean;
   ref: (node?: Element | null) => void;
 };
 

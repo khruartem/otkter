@@ -72,12 +72,23 @@
   cursor: pointer;
 }
 
-.service:hover {
-  fill: var(--hover-color);
-}
-
 .service:active {
   fill: var(--active-color);
   border-radius: 100px;
   background-color: var(--light100);
+}
+
+.service_active {
+  fill: var(--active-color);
+  border-radius: 100px;
+  background-color: var(--light100);
+}
+
+.service_hover {
+  fill: var(--hover-color);
+}
+
+.trick-circle {
+  width: 24px;
+  height: 24px;
 }

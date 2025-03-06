@@ -1,44 +1,23 @@
 import { FC } from "react";
-import clsx from "clsx";
 
 import { TServiceListUIProps } from "./types";
-//import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./service-list.module.css";
-import { ServiceUI } from "../service/service";
+import { Service } from "../../service";
 
 export const ServiceListUI: FC<TServiceListUIProps> = ({
   services,
   servicesRefs,
   servicesViewRefs,
 }) => {
-  // const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
-  //   useGetMediaQuery();
-
   return (
-    <div
-      className={clsx(
-        styles["service-list"],
-        // isLarge && styles["service-list_large-screen"],
-        // isDesktop && styles["service-list_desktop"],
-        // isLaptop && styles["service-list_laptop"],
-        // isTablet && styles["service-list_tablet"],
-        // isMobile && styles["service-list_mobile"]
-      )}
-    >
+    <div className={styles["service-list"]}>
       {services.map((service) => {
-        const serviceRef = servicesRefs.find(
-          (value) => value.type === service.type
-        )?.ref;
-        const serviceViewRef = servicesViewRefs.find(
-          (value) => value.type === service.type
-        )?.ref;
-
         return (
-          <ServiceUI
+          <Service
             service={service}
-            serviceRef={serviceRef}
-            ref={serviceViewRef}
+            servicesRefs={servicesRefs}
+            servicesViewRefs={servicesViewRefs}
           />
         );
       })}

@@ -52,9 +52,16 @@ export const CategoryUI: FC<TCategoryUIProps> = ({
             )}
             {category?.id === "artists" && null}
             {category?.id === "admins" && null}
+            {category?.id === "info" && null}
             <Text
               as={"label"}
-              fontFamily={category?.id === "artists" || category?.id === "admins" ? "Unbounded" :"Roboto"}
+              fontFamily={
+                category?.id === "artists" ||
+                category?.id === "admins" ||
+                category?.id === "info"
+                  ? "Unbounded"
+                  : "Roboto"
+              }
               textAlign="center"
               fontSize={16}
               fontWeight={400}

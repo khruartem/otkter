@@ -2,7 +2,14 @@ import { FC } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 
 import { Text } from "../../text";
-import { Address, Date, Organizers, Partners, Price } from "../../icons/icons";
+import {
+  Address,
+  Date,
+  Organizers,
+  Partners,
+  Phone,
+  Price,
+} from "../../icons/icons";
 
 import { Colors } from "../../../utils/types";
 import { TEventUIProps } from "./types";
@@ -17,6 +24,7 @@ export const EventUI: FC<TEventUIProps> = ({ type, label, value }) => {
       {type === "date" && <Date mainColor={Colors.Nephritis120} />}
       {type === "address" && <Address mainColor={Colors.Nephritis120} />}
       {type === "price" && <Price mainColor={Colors.Nephritis120} />}
+      {type === "contacts" && <Phone mainColor={Colors.Nephritis120} />}
       <div>
         <Text
           as={"h4"}

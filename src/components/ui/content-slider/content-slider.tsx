@@ -8,18 +8,16 @@ import { Colors } from "../../../utils/types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./content-slider.module.css";
-//import { TabUI } from "../tab";
 import { TabListUI } from "../tab-list";
 
 export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
   ({
+    tabs,
     currentTab,
     onTabClick,
     onMoveLeft,
     onMoveRight,
-    tabs,
     serviceIconRefs,
-    ref,
   }) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
       useGetMediaQuery();
@@ -49,7 +47,6 @@ export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
             isTablet && styles["content-slider_tablet"],
             isMobile && styles["content-slider_mobile"]
           )}
-          ref={ref}
         >
           <TabListUI
             tabs={tabs}

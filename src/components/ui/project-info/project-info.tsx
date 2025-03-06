@@ -9,7 +9,7 @@ import { Details } from "../../details";
 import { Colors } from "../../../utils/types";
 import { useGetTitle } from "../../../hooks/useGetTitle";
 import { useGetText } from "../../../hooks/useGetText";
-import { useGetProjectId } from "../../../hooks/useGetProjectId";
+import { useGetId } from "../../../hooks/useGetId";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import { useGetProjectColors } from "../../../hooks/useGetProjectColors";
 import { useGetAttention } from "../../../hooks/useGetAttention";
@@ -26,7 +26,7 @@ export const ProjectInfoUI: FC = () => {
   const largeResolution = isLarge || isDesktop;
   const smallResolution = isDesktop || isTablet || isMobile;
 
-  const projectId = useGetProjectId();
+  const projectId = useGetId();
   const title = useGetTitle(projectId!);
   const text = useGetText(projectId);
   const attention = useGetAttention(projectId);
@@ -34,7 +34,8 @@ export const ProjectInfoUI: FC = () => {
   const isEmployees = useGetIsEmployees(projectId);
 
   useEffect(() => {
-    location.state = { projectId };
+    location.state = {id: projectId};
+    console.log(location);
   });
 
   return (
@@ -99,9 +100,9 @@ export const ProjectInfoUI: FC = () => {
           >
             {text}
           </Text>
-          <PhotoList />
+          <PhotoList id={projectId} type="projects" />
         </div>
-        <Controls />
+        <Controls id={projectId} type="projects" />
       </div>
       <div
         className={clsx(

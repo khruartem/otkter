@@ -5,6 +5,7 @@ import { MainUI } from "../../components/ui/pages/main";
 import { scrollToTop } from "../../utils/scrollToTop";
 import { Preloader } from "../../components/ui/preloader";
 import { scrollIntoElementView } from "../../utils/scrollIntoElementView";
+//import { lockScroll } from "../../utils/lockScroll";
 //import { clearHash } from "../../utils/clearHash";
 
 export const Main: FC = () => {
@@ -20,9 +21,7 @@ export const Main: FC = () => {
 
   useEffect(() => {
     // window.onload = () => {
-    //   SetReloadState(true);
-    //   //location.hash = "";
-    //   // scrollToTop("instant");
+    //   location.state = null;
     // };
 
     switch (location.hash) {
@@ -30,15 +29,19 @@ export const Main: FC = () => {
         scrollIntoElementView(projectsRef, "smooth", "start");
         break;
       case "#services":
-        scrollIntoElementView(servicesRef, "smooth", "start");
+        scrollIntoElementView(
+          servicesRef,
+          location.state?.from === "services" ? "instant" : "smooth",
+          "start"
+        );
         break;
       case "":
-        scrollToTop("smooth");
+        scrollToTop("instant");
         break;
     }
 
     setDocReadyState(document.readyState);
-  }, [docReadyState, location.hash]);
+  }, [docReadyState, location, location.hash, location.state?.from]);
 
   return docReadyState ? (
     <MainUI
