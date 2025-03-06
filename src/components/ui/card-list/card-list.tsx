@@ -6,6 +6,7 @@ import { CardListUIProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./card-list.module.css";
+import { nanoid } from "@reduxjs/toolkit";
 
 export const CardListUI: FC<CardListUIProps> = ({ cards }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
@@ -25,7 +26,7 @@ export const CardListUI: FC<CardListUIProps> = ({ cards }) => {
       )}
     >
       {cards?.map((card) => {
-        return <Card key={card.projectId || card.teamId} card={card} />;
+        return <Card key={nanoid()} card={card} />;
       })}
     </ul>
   );

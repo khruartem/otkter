@@ -3,65 +3,68 @@ import { useNavigate } from "react-router-dom";
 
 import { SliderUI } from "../ui/slider";
 
-import { useGetProjectId } from "../../hooks/useGetProjectId";
 import { useGetPhotoId } from "../../hooks/useGetPhotoId";
 import { useGetPhotos } from "../../hooks/useGetPhotos";
 import { useGetPhoto } from "../../hooks/useGetPhoto";
 import { useGetPhotoIndex } from "../../hooks/useGetPhotoIndex";
+import { TSliderProps } from "./types";
+import { useGetId } from "../../hooks/useGetId";
 
-export const Slider: FC = () => {
+export const Slider: FC<TSliderProps> = ({ type }) => {
   const navigate = useNavigate();
   
-  const projectId = useGetProjectId();
+  const id = useGetId();
   const photoId = useGetPhotoId();
 
-  const photos = useGetPhotos(projectId);
-  const photo = useGetPhoto(projectId, photoId);
-  const photoIndex = useGetPhotoIndex(projectId, photoId);
+  const photos = useGetPhotos(id, type);
+  const photo = useGetPhoto(id, photoId, type);
+  const photoIndex = useGetPhotoIndex(id, photoId, type);
 
-  const [currentPhoto, setCurrentPhoto] = useState(photo);
-  const [currentIndex, setCurrentIndex] = useState(photoIndex);
+  console.log(id, type, photoId, photos, photo, photoIndex)
+
+  const [currentPhoto, setCurrentPhoto] = useState(photo!);
+  const [currentIndex, setCurrentIndex] = useState(photoIndex!);
 
   const handlerMoveLeft = () => {
     const newIndex = currentIndex - 1;
     
     if (newIndex < 0) {
-      const newIndex = photos.length - 1;
-      const newPhoto = photos[newIndex];
+      const newIndex = photos!.length - 1;
+      const newPhoto = photos![newIndex];
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/projects/${projectId}/${newPhoto.id}`, {state: {projectId}});
+      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type}});
     } else {
-      const newPhoto = photos[newIndex];
+      const newPhoto = photos![newIndex];
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/projects/${projectId}/${newPhoto.id}`, {state: {projectId}});
+      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type}});
     };
   };
 
   const handlerMoveRight = () => {
     const newIndex = currentIndex + 1;
     
-    if (newIndex === photos.length) {
-      const newPhoto = photos[0];
+    if (newIndex === photos!.length) {
+      const newPhoto = photos![0];
 
       setCurrentIndex(0);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/projects/${projectId}/${newPhoto.id}`, {state: {projectId}});
+      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type}});
     } else {
-      const newPhoto = photos[newIndex];
+      const newPhoto = photos![newIndex];
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/projects/${projectId}/${newPhoto.id}`, {state: {projectId}});
+      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type}});
     };
   };
 
   return (
     <SliderUI
-      photos={photos}
+      photos={photos!}
       currentPhoto={currentPhoto?.source || ""}
       currentIndex={currentIndex}
       onMoveLeft={handlerMoveLeft}

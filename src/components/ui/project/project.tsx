@@ -13,7 +13,7 @@ import styles from "./project.module.css";
 import { useGetAttention } from "../../../hooks/useGetAttention";
 import { useGetProjectColors } from "../../../hooks/useGetProjectColors";
 
-export const ProjectUI: FC<ProjectUIProps> = ({ project }) => {
+export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef }) => {
   const { projectId, title, image, shortText } = project;
 
   const attention = useGetAttention(projectId!);
@@ -40,6 +40,8 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project }) => {
             : projectTitleColor,
         } as CSSProperties
       }
+      state={{ id: projectId }}
+      ref={projectRef}
     >
       <li
         className={clsx(
@@ -47,6 +49,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project }) => {
           largeResolution && styles["project_large-resolution"],
           smallResolution && styles["project_small-resolution"]
         )}
+        key={projectId}
       >
         <div
           className={clsx(

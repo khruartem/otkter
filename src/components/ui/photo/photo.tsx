@@ -11,7 +11,8 @@ export const PhotoUI: FC<TPhotoProps> = ({
   photo,
   label = null,
   nextPhotoId = null,
-  projectId,
+  id,
+  type
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
@@ -28,7 +29,7 @@ export const PhotoUI: FC<TPhotoProps> = ({
       )}
     >
       {photo && !label && !nextPhotoId ? (
-        <Link to={`/otkter/projects/${projectId}/${photo.id}`} state={{projectId}}>
+        <Link to={`/otkter/${type}/${id}/${photo.id}`} state={{ id, type }}>
           <img
             className={styles.photo__link}
             src={photo.source}
@@ -36,7 +37,7 @@ export const PhotoUI: FC<TPhotoProps> = ({
           />
         </Link>
       ) : (
-        <Link to={`/otkter/projects/${projectId}/${nextPhotoId}`}>
+        <Link to={`/otkter/${type}/${id}/${nextPhotoId}`} state={{ id, type }}>
           <div className={clsx(styles.photo__link, styles.photo__link_more)}>
             {label}
           </div>

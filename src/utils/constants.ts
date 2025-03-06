@@ -1,8 +1,8 @@
-import { Social, TNavLinks, TProject } from "./types";
-import { TInfo } from "../features/projectsInfo/projectsInfoSlice";
-import { TProjectControls } from "../features/controls/controlsSlice";
+import { Social, TNavLinks, TProject, TService, TServicesTabMode } from "./types";
+import { TProjectInfo } from "../features/projectsInfo/projectsInfoSlice";
+import { TProjectControls, TServiceControls } from "../features/controls/controlsSlice";
 import { TProjectCategories } from "../features/categories/categoriesSlice";
-import { TProjectPhotos } from "../features/photos/photosSlice";
+import { TProjectPhotos, TServicePhotos } from "../features/photos/photosSlice";
 
 import telegramSVG from "../assets/telegram.svg";
 import vkSVG from "../assets/vk.svg";
@@ -28,6 +28,14 @@ import testPhoto2 from "../assets/testPhoto2.png";
 import testPhoto3 from "../assets/testPhoto3.png";
 import testPhoto4 from "../assets/testPhoto4.png";
 import testPhoto5 from "../assets/testPhoto5.png";
+import OT from "../assets/services_img_ot.png";
+import events from "../assets/services_img_events.png";
+import design from "../assets/services_img_design.png";
+import content from "../assets/services_img_content.png";
+import masterClasses from "../assets/services_img_master_classes.png";
+import lamp from "../assets/services_img_lamp.png";
+import smm from "../assets/services_img_smm.png";
+import { TServiceInfo } from "../features/projectsInfo/infosSlice";
 
 export const telegramUrl: string = "https://t.me/otkterr";
 export const vkUrl: string = "https://vk.com/otkter";
@@ -126,7 +134,7 @@ export const projects: TProject[] = [
   },
 ];
 
-export const projectInfos: TInfo[] = [
+export const projectInfos: TProjectInfo[] = [
   {
     projectId: 1,
     text: "В центре вечера - восстановленная плёнка, которая оживёт для вас и, как мы верим и надеемся, натолкнёт на размышления о Великой Отечественной войне. Серьёзные и важные темы дискуссии воссоединятся с песнями военных лет и стихами, посвящёнными войне.",
@@ -139,7 +147,8 @@ export const projectInfos: TInfo[] = [
       {
         type: "partners",
         label: "Партнеры",
-        value: "ГБУ культуры г. Москвы «Объединение культурных центров Центрального административного округа»",
+        value:
+          "ГБУ культуры г. Москвы «Объединение культурных центров Центрального административного округа»",
       },
       {
         type: "address",
@@ -154,8 +163,8 @@ export const projectInfos: TInfo[] = [
       {
         type: "price",
         label: "Цена",
-        value: "Вход свободный"
-      }
+        value: "Вход свободный",
+      },
     ],
     employees: {
       actors: [
@@ -186,7 +195,8 @@ export const projectInfos: TInfo[] = [
       {
         type: "organizers",
         label: "Организатор",
-        value: "Федеральное государственное автономное образовательное учреждение высшего образования «Государственный университет просвещения»",
+        value:
+          "Федеральное государственное автономное образовательное учреждение высшего образования «Государственный университет просвещения»",
       },
       {
         type: "partners",
@@ -210,8 +220,8 @@ export const projectInfos: TInfo[] = [
       {
         type: "price",
         label: "Цена",
-        value: "Вход свободный"
-      }
+        value: "Вход свободный",
+      },
     ],
   },
   {
@@ -221,7 +231,8 @@ export const projectInfos: TInfo[] = [
       {
         type: "organizers",
         label: "Организатор",
-        value: "ГБУ культуры г. Москвы «Объединение культурных центров Южного административного округа»",
+        value:
+          "ГБУ культуры г. Москвы «Объединение культурных центров Южного административного округа»",
       },
       {
         type: "partners",
@@ -242,7 +253,7 @@ export const projectInfos: TInfo[] = [
         type: "price",
         label: "Цена участия",
         value: "3000 ₽",
-      }
+      },
     ],
   },
   {
@@ -270,7 +281,7 @@ export const projectInfos: TInfo[] = [
       {
         type: "date",
         label: "Дата",
-        value: "Каждую третью субботу месяца"
+        value: "Каждую третью субботу месяца",
       },
     ],
   },
@@ -292,7 +303,7 @@ export const projectInfos: TInfo[] = [
         type: "date",
         label: "Дата премьеры",
         value: "Весна 2025",
-      }
+      },
     ],
     employees: {
       administrators: [
@@ -332,7 +343,7 @@ export const projectInfos: TInfo[] = [
         type: "date",
         label: "Дата премьеры",
         value: "Весна 2025",
-      }
+      },
     ],
     employees: {
       actors: [
@@ -678,6 +689,227 @@ export const projectPhotos: TProjectPhotos[] = [
       },
       {
         id: 30,
+        source: testPhoto5,
+      },
+    ],
+  },
+];
+
+export const serviceTabs: TServicesTabMode[] = [
+  "open-sea",
+  "events",
+  "design",
+  "content",
+  "master-class",
+  "lamp",
+  "smm",
+];
+
+export const services: TService[] = [
+  {
+    serviceId: 1,
+    title: "Театральная студия «Открытое Море»",
+    shortText: "Театральная студия «Открытое Море» для детей и подростков дает возможность расширить свои горизонты через театр. Мы не слепо делаем из студийцев профессиональных актеров, а помогаем ребятам понять себя в этом мире. Наши ученики развивают личностные и индивидуальные качества, избавляясь от комплексов и зажимов через методы изучения актерского мастерства. ",
+    image: OT,
+    type: "open-sea",
+  },
+  {
+    serviceId: 2,
+    title: "Организация мероприятий",
+    shortText: "Организуем и проведем мероприятия любой сложности. Концерты, городские мероприятия, творческие вечера, фестивали, конкурсы, спектакли т. п.",
+    image: events,
+    type: "events",
+  },
+  {
+    serviceId: 3,
+    title: "Студия дизайна «Открытый Глаз»",
+    shortText: "Берем в работу задачи по графическому дизайну, айдентике, полиграфии, UX/UI и разработке сайтов.",
+    image: design,
+    type: "design",
+  },
+  {
+    serviceId: 4,
+    title: "Контент и производство видеоматериалов",
+    shortText: "Организация съемки мероприятий, в том числе интервью, подкастов, рилсов, репортажей, бэкстейджей, документальных фильмов, коротких метров или иных съемок. Обеспечивается полный цикл производства, от подготовительного до монтажно-тонировочного периода, и команда профессионалов (режиссер-постановщик, оператор-постановщик, гафер, звукорежиссёр, актеры и т.д.).",
+    image: content,
+    type: "content",
+  },
+  {
+    serviceId: 5,
+    title: "Проведение мастер-классов",
+    shortText: "Проведем мастер-классы и треннинги по актерскому мастерству, ораторскому искусству.",
+    image: masterClasses,
+    type: "master-class",
+  },
+  {
+    serviceId: 6,
+    title: "Театр «ЛАМП»",
+    shortText: "Театр «ЛАМП» (Любители, Актеры, Музыканты, Писатели) собирает на сцене разных творческих людей. Здесь не важно, есть ли соответствующее образование или нет. Подойдёт для всех, кто хочет стать частью команды театра в любом проявлении. При театре есть семейные группы для совместного творчества родителей и их детей. ",
+    image: lamp,
+    type: "lamp",
+  },
+  {
+    serviceId: 7,
+    title: "SMM, PR и продвижение",
+    shortText: "Менеджмент социальных сетей (SMM - создание и управление контентом на платформах социальных медиа) и связи с общественностью (PR - формирование и поддержание положительного имиджа компании через взаимодействие с общественностью и медиа). ",
+    image: smm,
+    type: "smm",
+  },
+];
+
+export const serviceControls: TServiceControls[] = [
+  {
+    serviceId: 1,
+    controls: {
+      buttons: [
+        {
+          label: "Записаться",
+          onClick: () => {},
+        },
+      ],
+      links: [
+        {
+          label: "Подробнее",
+          href: "/otkter/services/1",
+          state: {id: 1}
+        },
+      ],
+    },
+  },
+  {
+    serviceId: 2,
+    controls: {
+      buttons: [
+        {
+          label: "Заказать",
+          onClick: () => {},
+        },
+      ],
+      links: [],
+    },
+  },
+  {
+    serviceId: 3,
+    controls: {
+      buttons: [
+        {
+          label: "Заказать",
+          onClick: () => {},
+        },
+      ],
+      links: [],
+    },
+  },
+  {
+    serviceId: 4,
+    controls: {
+      buttons: [
+        {
+          label: "Заказать",
+          onClick: () => {},
+        },
+      ],
+      links: [],
+    },
+  },
+  {
+    serviceId: 5,
+    controls: {
+      buttons: [
+        {
+          label: "Заказать",
+          onClick: () => {},
+        },
+      ],
+      links: [],
+    },
+  },
+  {
+    serviceId: 6,
+    controls: {
+      buttons: [
+        {
+          label: "Записаться",
+          onClick: () => {},
+        },
+      ],
+      links: [],
+    },
+  },
+  {
+    serviceId: 7,
+    controls: {
+      buttons: [
+        {
+          label: "Заказать",
+          onClick: () => {},
+        },
+      ],
+      links: [],
+    },
+  },
+];
+
+export const serviceInfos: TServiceInfo[] = [
+  {
+    serviceId: 1,
+    text: "«Открытое море» - студия с огромным багажом опыта в 30 лет, наши спектакли являются многократными победителями и лауреатами множества фестивалей и конкурсов, наши выпускники работают в различных творческих индустриях и являются как известными актерами театра и кино, так и писателями, драматургами, художниками, дизайнерами, кинорежиссерами, операторами и т.д.",
+    serviceDetails: [
+      {
+        type: "address",
+        label: "Адрес",
+        value: "м. Новокосино, г. Реутов, ул. Юбилейный проспект 38",
+      },
+      {
+        type: "contacts",
+        label: "Телефон",
+        value: "8 (916) 117-90-92",
+      },
+      {
+        type: "price",
+        label: "Цена",
+        value: "6500 ₽ (8 занятий в месяц)",
+      },
+    ],
+    employees: {
+      administrators: [
+        {
+          name: "Сергей Яковлев",
+          occupation: "Директор",
+          photo: yakovlev,
+        },
+        {
+          name: "Людмила Яковлева",
+          occupation: "Худрук и педагог",
+          photo: LA,
+        },
+      ],
+    },
+  },
+];
+
+export const servicePhotos: TServicePhotos[] = [
+  {
+    serviceId: 1,
+    photos: [
+      {
+        id: 31,
+        source: testPhoto1,
+      },
+      {
+        id: 32,
+        source: testPhoto2,
+      },
+      {
+        id: 33,
+        source: testPhoto3,
+      },
+      {
+        id: 34,
+        source: testPhoto4,
+      },
+      {
+        id: 35,
         source: testPhoto5,
       },
     ],

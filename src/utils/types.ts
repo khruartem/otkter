@@ -1,4 +1,4 @@
-import { ElementType, SyntheticEvent } from "react";
+import React, { ElementType, SyntheticEvent } from "react";
 
 export type TCategoryName =
   | "Спектакль"
@@ -6,7 +6,8 @@ export type TCategoryName =
   | "Мастер класс"
   | "Короткий метр"
   | "В ролях"
-  | "Руководители";
+  | "Руководители"
+  | "Информация";
 
 export type TCategory = {
   name: TCategoryName;
@@ -14,10 +15,7 @@ export type TCategory = {
   id: TCategoryId;
 };
 
-export type TCategoryType =
-  | "main"
-  | "attention"
-  | "extra";
+export type TCategoryType = "main" | "attention" | "extra";
 
 export type TCategoryId =
   | "play"
@@ -25,9 +23,26 @@ export type TCategoryId =
   | "master-class"
   | "short-film"
   | "admins"
-  | "artists";
+  | "artists"
+  | "info";
 
-export type TDetails = "events" | "employees";
+export type TDetails = "events" | "employees" | "services";
+
+export type TEventType =
+  | "organizers"
+  | "partners"
+  | "date"
+  | "address"
+  | "price"
+  | "contacts";
+
+export type TSectionType = Extract<TCardType, "services" | "projects">;
+
+export type TEventDetails = {
+  type: TEventType;
+  label: string;
+  value: string | string[];
+};
 
 export type TControls = {
   buttons: TButton[];
@@ -42,9 +57,11 @@ export type TButton = {
 export type TLink = {
   label: string;
   href: string;
+  target?: React.HTMLAttributeAnchorTarget;
+  state?: object;
 };
 
-type TEmployees = {
+export type TEmployees = {
   actors?: TEmployee[];
   administrators?: TEmployee[];
 };
@@ -53,14 +70,6 @@ type TEmployee = {
   name: string;
   occupation: string;
   photo: string;
-};
-
-type TEventDetails = {
-  organizer?: string;
-  partners?: string[];
-  eventDate?: string;
-  address?: string;
-  price?: string;
 };
 
 export type TProjectInfo = {
@@ -72,11 +81,12 @@ export type TProjectInfo = {
   controls?: TControls;
 };
 
-export type TCardType = "projects" | "team";
+export type TCardType = "projects" | "team" | "services" | TServicesTabMode;
 
 export type TCard = {
   projectId?: number;
   teamId?: number;
+  serviceId?: number;
   type: TCardType;
   title: string;
   categoryList?: TCategory[];
@@ -104,9 +114,39 @@ export type TTeammate = Pick<
   "teamId" | "image" | "title" | "shortText" | "social"
 >;
 
+export type TService = Pick<
+  TCard,
+  "serviceId" | "type" | "title" | "image" | "shortText"
+>;
+
 export type TModalType = "back" | "close";
 
 export type TPhotoType = "small" | "large";
+
+export type TServicesTabMode =
+  | "open-sea"
+  | "events"
+  | "design"
+  | "content"
+  | "master-class"
+  | "lamp"
+  | "smm";
+
+export type TServiceRef = {
+  type: TServicesTabMode;
+  ref: React.RefObject<HTMLDivElement>;
+};
+
+export type TServiceViewRef = {
+  type: TServicesTabMode;
+  inView: boolean;
+  ref: (node?: Element | null) => void;
+};
+
+export type TServiceIconRef = {
+  type: TServicesTabMode;
+  ref: React.RefObject<HTMLLIElement>;
+};
 
 export enum Colors {
   Navy = "#0B3954",

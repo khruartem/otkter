@@ -5,18 +5,15 @@ import { nanoid } from "@reduxjs/toolkit";
 import { CategoryList } from "../../category-list";
 import { EventUI } from "../event";
 import { EmployeeUI } from "../../ui/employee";
+import { Category } from "../../category";
 
 import { TDetailsUI } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
-import {
-  TEmployees,
-  TEventDetails,
-} from "../../../features/projectsInfo/projectsInfoSlice";
+import { TEmployees, TEventDetails } from "../../../utils/types";
 
 import styles from "./details.module.css";
-import { Category } from "../../category";
 
-export const DetailsUI: FC<TDetailsUI> = ({ projectId, details, type }) => {
+export const DetailsUI: FC<TDetailsUI> = ({ id, details, detailsType }) => {
   const { isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
   const smallResolution = isDesktop || isLaptop || isTablet || isMobile;
@@ -32,15 +29,25 @@ export const DetailsUI: FC<TDetailsUI> = ({ projectId, details, type }) => {
           : styles["event-details_large-gap"],
       )}
     >
-      {type === "events" && (
+      {detailsType === "events" && (
         <>
-          <CategoryList projectId={projectId} />
+          <CategoryList projectId={id} />
           {(details as TEventDetails[]).map(({ type, label, value }) => {
             return <EventUI key={nanoid()} type={type} value={value} label={label} />;
           })}
         </>
       )}
-      {(type === "employees" && (details as TEmployees)?.actors) && (
+      {detailsType === "services" && (
+        <>
+           <Category
+            category={{ name: "Информация", type: "extra", id: "info" }}
+          />
+          {(details as TEventDetails[]).map(({ type, label, value }) => {
+            return <EventUI key={nanoid()} type={type} value={value} label={label} />;
+          })}
+        </>
+      )}
+      {(detailsType === "employees" && (details as TEmployees)?.actors) && (
         <>
           <Category
             category={{ name: "В ролях", type: "extra", id: "artists" }}
@@ -48,13 +55,13 @@ export const DetailsUI: FC<TDetailsUI> = ({ projectId, details, type }) => {
           {(details as TEmployees).actors?.map(
             ({ name, occupation, photo }) => {
               return (
-                <EmployeeUI name={name} occupation={occupation} photo={photo} />
+                <EmployeeUI key={nanoid()} name={name} occupation={occupation} photo={photo} />
               );
             }
           )}
         </>
       )}
-      {(type === "employees" && (details as TEmployees)?.administrators) && (
+      {(detailsType === "employees" && (details as TEmployees)?.administrators) && (
         <>
           <Category
             category={{ name: "Руководители", type: "extra", id: "admins" }}
@@ -62,7 +69,7 @@ export const DetailsUI: FC<TDetailsUI> = ({ projectId, details, type }) => {
           {(details as TEmployees).administrators?.map(
             ({ name, occupation, photo }) => {
               return (
-                <EmployeeUI name={name} occupation={occupation} photo={photo} />
+                <EmployeeUI key={nanoid()} name={name} occupation={occupation} photo={photo} />
               );
             }
           )}

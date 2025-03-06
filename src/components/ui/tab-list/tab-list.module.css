@@ -1,0 +1,12 @@
+.tab-list {
+  width: max-content;
+  max-width: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+
+/* Стили для разных разрешений экранов */
+.tab-list_mobile {
+  padding-left: 8px;
+}

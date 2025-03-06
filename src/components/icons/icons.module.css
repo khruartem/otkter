@@ -30,8 +30,8 @@
 }
 
 .close {
-  width: 8px;
-  height: 8px;
+  width: 32px;
+  height: 32px;
   position: absolute;
 }
 
@@ -44,6 +44,8 @@
   box-sizing: content-box;
   width: 32px;
   height: 32px;
+  padding: 14px;
+  cursor: pointer;
 }
 
 .arrow:hover {
@@ -60,4 +62,33 @@
   align-self: start;
   width: 20px;
   height: 20px;
+}
+
+.service {
+  box-sizing: content-box;
+  width: 32px;
+  height: 32px;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.service:active {
+  fill: var(--active-color);
+  border-radius: 100px;
+  background-color: var(--light100);
+}
+
+.service_active {
+  fill: var(--active-color);
+  border-radius: 100px;
+  background-color: var(--light100);
+}
+
+.service_hover {
+  fill: var(--hover-color);
+}
+
+.trick-circle {
+  width: 24px;
+  height: 24px;
 }

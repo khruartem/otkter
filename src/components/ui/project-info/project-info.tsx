@@ -1,34 +1,42 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import clsx from "clsx";
 
 import { Text } from "../../text";
 import { PhotoList } from "../../photo-list";
 import { Controls } from "../../controls";
-import { Details } from "../../details";
+//import { Details } from "../../details";
 
 import { Colors } from "../../../utils/types";
 import { useGetTitle } from "../../../hooks/useGetTitle";
 import { useGetText } from "../../../hooks/useGetText";
-import { useGetProjectId } from "../../../hooks/useGetProjectId";
+import { useGetId } from "../../../hooks/useGetId";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import { useGetProjectColors } from "../../../hooks/useGetProjectColors";
 import { useGetAttention } from "../../../hooks/useGetAttention";
 
 import styles from "./project-info.module.css";
 import { useGetIsEmployees } from "../../../hooks/useGetIsEmployees";
+import { useLocation } from "react-router-dom";
 
 export const ProjectInfoUI: FC = () => {
+  const location = useLocation();
+
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
   const largeResolution = isLarge || isDesktop;
   const smallResolution = isDesktop || isTablet || isMobile;
 
-  const projectId = useGetProjectId();
+  const projectId = useGetId();
   const title = useGetTitle(projectId!);
   const text = useGetText(projectId);
   const attention = useGetAttention(projectId);
   const { projectTitleColorAttention } = useGetProjectColors();
   const isEmployees = useGetIsEmployees(projectId);
+
+  useEffect(() => {
+    location.state = {id: projectId};
+    console.log(location);
+  });
 
   return (
     <div
@@ -39,7 +47,7 @@ export const ProjectInfoUI: FC = () => {
         isLaptop && styles.project_laptop,
         isTablet && styles.project_tablet,
         isMobile && styles.project_mobile,
-        !isDesktop && styles["project_overflowed-y"],
+        !isDesktop && styles["project_overflowed-y"]
       )}
     >
       <div
@@ -92,9 +100,9 @@ export const ProjectInfoUI: FC = () => {
           >
             {text}
           </Text>
-          <PhotoList />
+          <PhotoList id={projectId} type="projects" />
         </div>
-        <Controls />
+        <Controls id={projectId} type="projects" />
       </div>
       <div
         className={clsx(
@@ -110,8 +118,8 @@ export const ProjectInfoUI: FC = () => {
           isMobile && styles.project__extra_mobile
         )}
       >
-        <Details type="events" />
-        {isEmployees && <Details type="employees" />}
+        {/* <Details type="events" />
+        {isEmployees && <Details type="employees" />} */}
       </div>
     </div>
   );

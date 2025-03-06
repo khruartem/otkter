@@ -1,11 +1,8 @@
-import {
-  TEmployees,
-  TEventDetails,
-} from "../../../features/projectsInfo/projectsInfoSlice";
+import { TEmployees, TEventDetails } from "../../../utils/types";
 import { TDetails } from "../../../utils/types";
 
 export type TDetailsUI = {
-  projectId: number;
+  id: number;
   details: TEventDetails[] | TEmployees;
-  type: TDetails;
+  detailsType: TDetails;
 };

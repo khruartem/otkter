@@ -1,0 +1,94 @@
+/* :not(.content-slider_mobile)::-webkit-scrollbar-thumb {
+  border-radius: 14px;
+  /* background-color: var(--light30); */
+  /* box-shadow: inset 0 0 14px 14px var(--light30);
+  border: solid 4px transparent;
+}
+
+/* 4px scroll thumb. 10px margin from right margin */
+/* :not(.content-slider_mobile)::-webkit-scrollbar-track
+{
+  box-shadow: inset 0 0 14px 14px transparent;
+  border: solid 4px transparent;
+}
+
+:not(.content-slider_mobile)::-webkit-scrollbar
+{
+  width: 14px;
+}
+
+:not(.content-slider_mobile)::-webkit-scrollbar:corner-present
+{
+  display: none;
+} */
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  scrollbar-width: none;
+}
+
+.wrapper_widthed {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.content-slider {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+/* Стили для разных разрешений экранов */
+/* wrapper */
+.wrapper_large-screen {
+  gap: 2.08vw;
+  width: 41.25vw;
+}
+
+.wrapper_desktop {
+  gap: 1.17vw;
+}
+
+.wrapper_desktop {
+  gap: 1.17vw;
+}
+
+.wrapper_laptop {
+  gap: 1.56vw;
+}
+
+/* content-slider */
+.content-slider_large-screen {
+  gap: 0.83vw;
+}
+
+.content-slider_desktop {
+  gap: 0.29vw;
+}
+
+.content-slider_laptop {
+  gap: 0;
+}
+
+.content-slider_tablet {
+  gap: 2px;
+}
+
+.content-slider_mobile {
+  display: block;
+  width: calc(100% - 120px);
+}
+
+/* .content-slider_mobile div {
+  width: max-content;
+  max-width: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  padding-left: 8px;
+} */

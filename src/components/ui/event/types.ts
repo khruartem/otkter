@@ -1,3 +1,3 @@
-import { TEventDetails } from "../../../features/projectsInfo/projectsInfoSlice"
+import { TEventDetails } from "../../../utils/types"
 
 export type TEventUIProps = TEventDetails;

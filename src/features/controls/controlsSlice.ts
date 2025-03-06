@@ -1,19 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TControls } from "../../utils/types";
+import { TCardType, TControls } from "../../utils/types";
 import { findById } from "../../utils/findById";
-import { projectControls } from "../../utils/constants";
+import { projectControls, serviceControls } from "../../utils/constants";
+
+export type TControlsType = Extract<TCardType, "services" | "projects">;
 
 export type TProjectControls = {
   projectId: number;
   controls: TControls | null;
 };
 
+export type TServiceControls = {
+  serviceId: number;
+  controls: TControls | null;
+};
+
 type TControlsState = {
   projectControls: TProjectControls[];
+  serviceControls: TServiceControls[];
 };
 
 const initialState: TControlsState = {
-  projectControls: projectControls
+  projectControls: projectControls,
+  serviceControls: serviceControls,
 };
 
 const controlsSlice = createSlice({
@@ -21,11 +30,48 @@ const controlsSlice = createSlice({
   initialState,
   reducers: {},
   selectors: {
-    getControlsSelector: (state: TControlsState, id: number) => {
-      return (findById(state.projectControls, id) as TProjectControls).controls;
+    getProjectControlsSelector: (state: TControlsState, id: number) => {
+      const foundElement = findById(
+        state.projectControls,
+        id
+      ) as TProjectControls;
+      return foundElement
+        ? (findById(state.projectControls, id) as TProjectControls).controls
+        : undefined;
+    },
+    getServiceControlsSelector: (state: TControlsState, id: number) => {
+      const foundElement = findById(
+        state.serviceControls,
+        id
+      ) as TServiceControls;
+      return foundElement
+        ? (findById(state.serviceControls, id) as TServiceControls).controls
+        : undefined;
+    },
+    getControlsSelector: (state: TControlsState, id: number, type: TControlsType) => {
+      let controlsArray: TProjectControls[] | TServiceControls[] = [];
+      
+      switch (type) {
+        case "services":
+          controlsArray = state.serviceControls;
+          break;
+        case "projects":
+          controlsArray = state.projectControls;
+          break;
+      };
+
+      const foundElement = findById(
+        controlsArray,
+        id
+      ) as TProjectControls | TServiceControls;
+
+      return foundElement
+        ? foundElement.controls
+        : undefined;
     },
   },
 });
 
 export const reducer = controlsSlice.reducer;
-export const { getControlsSelector } = controlsSlice.selectors;
+export const { getProjectControlsSelector, getServiceControlsSelector, getControlsSelector } =
+  controlsSlice.selectors;
