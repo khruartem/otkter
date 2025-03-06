@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { Text } from "../../text";
 import { PhotoList } from "../../photo-list";
 import { Controls } from "../../controls";
-import { Details } from "../../details";
+//import { Details } from "../../details";
 
 import { Colors } from "../../../utils/types";
 import { useGetTitle } from "../../../hooks/useGetTitle";
@@ -118,8 +118,8 @@ export const ProjectInfoUI: FC = () => {
           isMobile && styles.project__extra_mobile
         )}
       >
-        <Details type="events" />
-        {isEmployees && <Details type="employees" />}
+        {/* <Details type="events" />
+        {isEmployees && <Details type="employees" />} */}
       </div>
     </div>
   );

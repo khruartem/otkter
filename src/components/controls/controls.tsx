@@ -7,7 +7,7 @@ import { useGetId } from "../../hooks/useGetId";
 
 export const Controls: FC<TControlsProps> = ({ id, type }) => {
   const controls = useGetControls(id, type);
-  const isExtraLink = useGetId() ? true : false;
+  const isExtraLink = (useGetId() && type === "services") ? true : false;
 
   return (
     <ControlsUI
