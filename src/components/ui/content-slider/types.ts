@@ -1,10 +1,10 @@
-import { TServiceIconRef, TServicesTabMode } from "../../../utils/types";
+import { TServiceIconRef, TServicesTabMode, TTeamIconRef, TTeamTabMode } from "../../../utils/types";
 
 export type TContentSliderUIPros = {
-  onTabClick: (tab: TServicesTabMode) => void;
-  currentTab: TServicesTabMode;
-  tabs: TServicesTabMode[];
+  onTabClick: (tab: TServicesTabMode & TTeamTabMode) => void;
+  currentTab: TServicesTabMode | TTeamTabMode;
+  tabs: TServicesTabMode[] | TTeamTabMode[];
   onMoveLeft: () => void;
   onMoveRight: () => void;
-  serviceIconRefs: TServiceIconRef[];
+  iconRefs: TServiceIconRef[] | TTeamIconRef[];
 };

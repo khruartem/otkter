@@ -57,6 +57,7 @@
   justify-content: center;
   width: 60px;
   height: 60px;
+  z-index: 1;
 }
 
 .modal__button_back:hover span {

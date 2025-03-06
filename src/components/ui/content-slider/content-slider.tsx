@@ -17,7 +17,7 @@ export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
     onTabClick,
     onMoveLeft,
     onMoveRight,
-    serviceIconRefs,
+    iconRefs,
   }) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
       useGetMediaQuery();
@@ -52,7 +52,7 @@ export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
             tabs={tabs}
             currentTab={currentTab}
             onTabClick={onTabClick}
-            serviceIconRefs={serviceIconRefs}
+            iconRefs={iconRefs}
           />
         </div>
         <ArrowRight

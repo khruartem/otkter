@@ -1,8 +1,8 @@
-import { TServiceIconRef, TServicesTabMode } from "../../../utils/types"
+import { TServiceIconRef, TServicesTabMode, TTeamIconRef, TTeamTabMode } from "../../../utils/types"
 
 export type TTabListUIProps = {
-  tabs: TServicesTabMode[];
-  currentTab: TServicesTabMode;
-  onTabClick: (tab: TServicesTabMode) => void;
-  serviceIconRefs: TServiceIconRef[];
+  tabs: TServicesTabMode[] | TTeamTabMode[];
+  currentTab: TServicesTabMode | TTeamTabMode;
+  onTabClick: (tab: TServicesTabMode & TTeamTabMode) => void;
+  iconRefs: TServiceIconRef[] | TTeamIconRef[];
 }

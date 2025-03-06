@@ -64,7 +64,7 @@
   height: 20px;
 }
 
-.service {
+.tab {
   box-sizing: content-box;
   width: 32px;
   height: 32px;
@@ -72,19 +72,19 @@
   cursor: pointer;
 }
 
-.service:active {
+.tab:active {
   fill: var(--active-color);
   border-radius: 100px;
   background-color: var(--light100);
 }
 
-.service_active {
+.tab_active {
   fill: var(--active-color);
   border-radius: 100px;
   background-color: var(--light100);
 }
 
-.service_hover {
+.tab_hover {
   fill: var(--hover-color);
 }
 

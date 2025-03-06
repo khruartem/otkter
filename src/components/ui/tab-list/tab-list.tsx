@@ -8,12 +8,13 @@ import { TabUI } from "../tab";
 
 import styles from "./tab-list.module.css";
 import clsx from "clsx";
+import { TServicesTabMode, TTeamTabMode } from "../../../utils/types";
 
 export const TabListUI: FC<TTabListUIProps> = memo(({
   tabs,
   currentTab,
   onTabClick,
-  serviceIconRefs,
+  iconRefs,
 }) => {
   const { isMobile } = useGetMediaQuery();
 
@@ -25,14 +26,14 @@ export const TabListUI: FC<TTabListUIProps> = memo(({
       )}
     >
       {tabs.map((tab) => {
-        const iconRef = serviceIconRefs.find(
-          (serviceRef) => serviceRef.type === tab
+        const iconRef = iconRefs.find(
+          (icon) => icon.type === tab
         )?.ref;
         return (
           <TabUI
             tab={tab}
             current={tab === currentTab ? true : false}
-            onClick={() => onTabClick(tab)}
+            onClick={() => onTabClick(tab as TServicesTabMode & TTeamTabMode)}
             key={nanoid()}
             ref={iconRef}
           />

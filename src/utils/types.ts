@@ -36,7 +36,9 @@ export type TEventType =
   | "price"
   | "contacts";
 
-export type TSectionType = Extract<TCardType, "services" | "projects">;
+  export type TSectionType = Extract<TCardType, "services" | "projects">;
+  
+  export type TSliderSectionType = Extract<TCardType, "services" | "team">;
 
 export type TEventDetails = {
   type: TEventType;
@@ -62,7 +64,7 @@ export type TLink = {
 };
 
 export type TEmployees = {
-  actors?: TEmployee[];
+  artists?: TEmployee[];
   administrators?: TEmployee[];
 };
 
@@ -72,8 +74,10 @@ type TEmployee = {
   photo: string;
 };
 
+export type TRole = "admins" | "artists";
+
 export type TProjectInfo = {
-  role?: "admins" | "artists";
+  role?: TRole;
   text?: string;
   photos?: string[];
   eventDetails: TEventDetails;
@@ -145,6 +149,24 @@ export type TServiceViewRef = {
 
 export type TServiceIconRef = {
   type: TServicesTabMode;
+  ref: React.RefObject<HTMLLIElement>;
+};
+
+export type TTeamTabMode = "admins" | "artists";
+
+export type TTeamRef = {
+  type: TTeamTabMode;
+  ref: React.RefObject<HTMLDivElement>;
+};
+
+export type TTeamViewRef = {
+  type: TTeamTabMode;
+  inView: boolean;
+  ref: (node?: Element | null) => void;
+};
+
+export type TTeamIconRef = {
+  type: TTeamTabMode;
   ref: React.RefObject<HTMLLIElement>;
 };
 

@@ -8,7 +8,7 @@ import {
   TNavProps,
   TEventsProps,
   TModalsProps,
-  TServicesProps,
+  TTabProps,
 } from "./types";
 import { Colors } from "../../utils/types";
 import { telegramUrl, vkUrl } from "../../utils/constants";
@@ -342,23 +342,23 @@ export const OpenSea = ({
   activeColor = undefined,
   onClick = undefined,
   className = undefined,
-}: TServicesProps) => {
+}: TTabProps) => {
   const ref = useRef<SVGSVGElement>(null);
 
   return (
     <svg
-      className={clsx(styles.service, className)}
+      className={clsx(styles.tab, className)}
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
       onMouseEnter={() => {
-        if (!ref.current?.classList.contains(styles["service_active"]))
-          ref.current?.classList.add(styles["service_hover"]);
+        if (!ref.current?.classList.contains(styles["tab_active"]))
+          ref.current?.classList.add(styles["tab_hover"]);
       }}
       onMouseLeave={() => {
-        if (ref.current?.classList.contains(styles["service_hover"]))
-          ref.current?.classList.remove(styles["service_hover"]);
+        if (ref.current?.classList.contains(styles["tab_hover"]))
+          ref.current?.classList.remove(styles["tab_hover"]);
       }}
       style={
         {
@@ -386,23 +386,23 @@ export const Events = ({
   activeColor = undefined,
   onClick = undefined,
   className = undefined,
-}: TServicesProps) => {
+}: TTabProps) => {
   const ref = useRef<SVGSVGElement>(null);
 
   return (
     <svg
-      className={clsx(styles.service, className)}
+      className={clsx(styles.tab, className)}
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
       onMouseEnter={() => {
-        if (!ref.current?.classList.contains(styles["service_active"]))
-          ref.current?.classList.add(styles["service_hover"]);
+        if (!ref.current?.classList.contains(styles["tab_active"]))
+          ref.current?.classList.add(styles["tab_hover"]);
       }}
       onMouseLeave={() => {
-        if (ref.current?.classList.contains(styles["service_hover"]))
-          ref.current?.classList.remove(styles["service_hover"]);
+        if (ref.current?.classList.contains(styles["tab_hover"]))
+          ref.current?.classList.remove(styles["tab_hover"]);
       }}
       style={
         {
@@ -428,23 +428,23 @@ export const Design = ({
   activeColor = undefined,
   onClick = undefined,
   className = undefined,
-}: TServicesProps) => {
+}: TTabProps) => {
   const ref = useRef<SVGSVGElement>(null);
 
   return (
     <svg
-      className={clsx(styles.service, className)}
+      className={clsx(styles.tab, className)}
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
       onMouseEnter={() => {
-        if (!ref.current?.classList.contains(styles["service_active"]))
-          ref.current?.classList.add(styles["service_hover"]);
+        if (!ref.current?.classList.contains(styles["tab_active"]))
+          ref.current?.classList.add(styles["tab_hover"]);
       }}
       onMouseLeave={() => {
-        if (ref.current?.classList.contains(styles["service_hover"]))
-          ref.current?.classList.remove(styles["service_hover"]);
+        if (ref.current?.classList.contains(styles["tab_hover"]))
+          ref.current?.classList.remove(styles["tab_hover"]);
       }}
       style={
         {
@@ -466,23 +466,23 @@ export const Content = ({
   activeColor = undefined,
   onClick = undefined,
   className = undefined,
-}: TServicesProps) => {
+}: TTabProps) => {
   const ref = useRef<SVGSVGElement>(null);
 
   return (
     <svg
-      className={clsx(styles.service, className)}
+      className={clsx(styles.tab, className)}
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
       onMouseEnter={() => {
-        if (!ref.current?.classList.contains(styles["service_active"]))
-          ref.current?.classList.add(styles["service_hover"]);
+        if (!ref.current?.classList.contains(styles["tab_active"]))
+          ref.current?.classList.add(styles["tab_hover"]);
       }}
       onMouseLeave={() => {
-        if (ref.current?.classList.contains(styles["service_hover"]))
-          ref.current?.classList.remove(styles["service_hover"]);
+        if (ref.current?.classList.contains(styles["tab_hover"]))
+          ref.current?.classList.remove(styles["tab_hover"]);
       }}
       style={
         {
@@ -503,23 +503,23 @@ export const MasterClasses = ({
   activeColor = undefined,
   onClick = undefined,
   className = undefined,
-}: TServicesProps) => {
+}: TTabProps) => {
   const ref = useRef<SVGSVGElement>(null);
 
   return (
     <svg
-      className={clsx(styles.service, className)}
+      className={clsx(styles.tab, className)}
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
       onMouseEnter={() => {
-        if (!ref.current?.classList.contains(styles["service_active"]))
-          ref.current?.classList.add(styles["service_hover"]);
+        if (!ref.current?.classList.contains(styles["tab_active"]))
+          ref.current?.classList.add(styles["tab_hover"]);
       }}
       onMouseLeave={() => {
-        if (ref.current?.classList.contains(styles["service_hover"]))
-          ref.current?.classList.remove(styles["service_hover"]);
+        if (ref.current?.classList.contains(styles["tab_hover"]))
+          ref.current?.classList.remove(styles["tab_hover"]);
       }}
       style={
         {
@@ -544,23 +544,23 @@ export const Lamp = ({
   activeColor = undefined,
   onClick = undefined,
   className = undefined,
-}: TServicesProps) => {
+}: TTabProps) => {
   const ref = useRef<SVGSVGElement>(null);
 
   return (
     <svg
-      className={clsx(styles.service, className)}
+      className={clsx(styles.tab, className)}
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
       onMouseEnter={() => {
-        if (!ref.current?.classList.contains(styles["service_active"]))
-          ref.current?.classList.add(styles["service_hover"]);
+        if (!ref.current?.classList.contains(styles["tab_active"]))
+          ref.current?.classList.add(styles["tab_hover"]);
       }}
       onMouseLeave={() => {
-        if (ref.current?.classList.contains(styles["service_hover"]))
-          ref.current?.classList.remove(styles["service_hover"]);
+        if (ref.current?.classList.contains(styles["tab_hover"]))
+          ref.current?.classList.remove(styles["tab_hover"]);
       }}
       style={
         {
@@ -581,23 +581,23 @@ export const SMM = ({
   activeColor = undefined,
   onClick = undefined,
   className = undefined,
-}: TServicesProps) => {
+}: TTabProps) => {
   const ref = useRef<SVGSVGElement>(null);
 
   return (
     <svg
-      className={clsx(styles.service, className)}
+      className={clsx(styles.tab, className)}
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
       onClick={onClick}
       onMouseEnter={() => {
-        if (!ref.current?.classList.contains(styles["service_active"]))
-          ref.current?.classList.add(styles["service_hover"]);
+        if (!ref.current?.classList.contains(styles["tab_active"]))
+          ref.current?.classList.add(styles["tab_hover"]);
       }}
       onMouseLeave={() => {
-        if (ref.current?.classList.contains(styles["service_hover"]))
-          ref.current?.classList.remove(styles["service_hover"]);
+        if (ref.current?.classList.contains(styles["tab_hover"]))
+          ref.current?.classList.remove(styles["tab_hover"]);
       }}
       style={
         {
@@ -615,12 +615,96 @@ export const SMM = ({
 
 export const TrickCircle = () => {
   return (
-    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 24" className={styles["trick-circle"]}>
+    <svg
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 25 24"
+      className={styles["trick-circle"]}
+    >
       <circle cx="12.5" cy="12" r="8" fill={Colors.Navy} />
       <path
         d="M12.5 2c-5.51 0-10 4.49-10 10s4.49 10 10 10 10-4.49 10-10-4.49-10-10-10Zm4.78 7.7-5.67 5.67a.75.75 0 0 1-1.06 0l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.76 0 1.06Z"
         fill={Colors.Orange100}
       />
+    </svg>
+  );
+};
+
+export const Admins = ({
+  mainColor,
+  hoverColor = undefined,
+  activeColor = undefined,
+  onClick = undefined,
+  className = undefined,
+}: TTabProps) => {
+  const ref = useRef<SVGSVGElement>(null);
+
+  return (
+    <svg
+      className={clsx(styles.tab, className)}
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      onClick={onClick}
+      onMouseEnter={() => {
+        if (!ref.current?.classList.contains(styles["tab_active"]))
+          ref.current?.classList.add(styles["tab_hover"]);
+      }}
+      onMouseLeave={() => {
+        if (ref.current?.classList.contains(styles["tab_hover"]))
+          ref.current?.classList.remove(styles["tab_hover"]);
+      }}
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+      ref={ref}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M22.187 7.829c2.679 0 4.525.597 5.63 1.792 1.223 1.321 1.248 3.075 1.145 4.358-.007.043-.01.08-.013.114-.003.039-.007.075-.014.115l-.064.598-.021.18a.624.624 0 0 1-.261.44c-.488.345-1.023.696-1.539.98a2.255 2.255 0 0 0-.062.039c-.04.025-.08.05-.133.076a22.21 22.21 0 0 1-7.528 2.643c-.091 1.233-.65 2.618-3.498 2.618-2.847 0-3.38-1.398-3.497-2.592A22.67 22.67 0 0 1 5.18 16.8a8.159 8.159 0 0 1-.572-.317c-.313-.17-.835-.499-1.147-.698a.626.626 0 0 1-.287-.467l-.1-1.034-.014-.089c-.13-1.283-.169-3.164 1.118-4.562C5.285 8.44 7.118 7.842 9.81 7.842h.312v-.064c0-2.122 0-4.778 4.89-4.778h1.976c4.888 0 4.888 2.643 4.888 4.778v.051h.312Zm-6.37 12.047c1.599 0 1.599-.203 1.599-1.55v-1.589h-3.199v1.601c0 1.296 0 1.538 1.6 1.538ZM11.98 7.778v.064h8.035v-.064c0-2.147 0-2.96-3.03-2.96H15.01c-3.03 0-3.03.8-3.03 2.96Z"
+      />
+      <path d="M28.479 18.842c.046-.496-.484-.852-.943-.638-1.55.72-4.46 2.02-6.254 2.48a.74.74 0 0 0-.48.4c-.793 1.654-2.526 2.566-4.973 2.566-2.472 0-4.183-.878-4.972-2.527a.737.737 0 0 0-.48-.4c-1.69-.432-4.424-1.595-5.905-2.25-.459-.203-.976.153-.93.643l.442 4.763C4.257 26.408 5.324 29 11.044 29h9.908c5.72 0 6.787-2.592 7.06-5.134l.467-5.024Z" />
+    </svg>
+  );
+};
+
+export const Artists = ({
+  mainColor,
+  hoverColor = undefined,
+  activeColor = undefined,
+  onClick = undefined,
+  className = undefined,
+}: TTabProps) => {
+  const ref = useRef<SVGSVGElement>(null);
+
+  return (
+    <svg
+      className={clsx(styles.tab, className)}
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      onClick={onClick}
+      onMouseEnter={() => {
+        if (!ref.current?.classList.contains(styles["tab_active"]))
+          ref.current?.classList.add(styles["tab_hover"]);
+      }}
+      onMouseLeave={() => {
+        if (ref.current?.classList.contains(styles["tab_hover"]))
+          ref.current?.classList.remove(styles["tab_hover"]);
+      }}
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+      ref={ref}
+    >
+      <path d="M18.715 25.678c-1.003 1.039-2.112 1.933-3.042 2.611-.642.47-1.41.711-2.19.711-.441 0-.886-.077-1.317-.235-2.78-1.016-7.524-3.254-8.042-6.817l-1.082-7.44c-.28-1.933.871-3.811 2.739-4.467a29.234 29.234 0 0 1 3.259-.939l-.67 4.605a6.72 6.72 0 0 0-.07 1.056c-.775.12-1.336.871-1.546 1.857-.07.33.21.627.542.58L8.682 17c.37 1.128.985 2.197 1.74 3.19-1.183.594-2.028 1.724-2.405 3.057-.14.5.427.898.858.61 1.21-.808 2.33-1.288 3.535-1.478a27 27 0 0 0 2.606 2.155 5.91 5.91 0 0 0 3.699 1.145v-.002Zm-2.96-15.284 2.673.383a.484.484 0 0 0 .543-.58c-.211-.99-.777-1.745-1.559-1.859-.783-.112-1.536.455-2.017 1.348-.16.296.027.66.36.708Zm13.203-1.369-1.083 7.44c-.52 3.563-5.26 5.8-8.041 6.817a3.796 3.796 0 0 1-1.308.231 3.77 3.77 0 0 1-2.232-.73c-2.381-1.743-6.3-5.198-5.78-8.766l1.081-7.44c.281-1.928 1.918-3.411 3.893-3.526 1.906-.108 3.738-.045 5.446.195 1.709.24 3.487.68 5.284 1.31 1.869.656 3.02 2.536 2.74 4.47Zm-6.484 5.344c-2.45.569-4.308.304-6.5-.925-.466-.262-1.022.191-.835.693.604 1.615 1.903 2.857 3.606 3.097 1.703.241 3.3-.586 4.333-1.97.319-.427-.085-1.015-.604-.895Zm1.553-3.45c-.21-.99-.776-1.745-1.559-1.86-.783-.112-1.536.456-2.017 1.348-.16.296.026.661.359.709l2.674.382a.485.485 0 0 0 .543-.58Z" />
     </svg>
   );
 };

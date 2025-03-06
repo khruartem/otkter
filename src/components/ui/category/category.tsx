@@ -3,9 +3,10 @@ import { TCategoryUIProps } from "./types";
 import clsx from "clsx";
 
 import styles from "./category.module.css";
-import { Attention, Contest, MasterClass, Play, ShortFilm } from "../../icons";
+import { Attention, Contest, MasterClass, ShortFilm } from "../../icons";
 import { Text } from "../../text";
 import { Colors } from "../../../utils/types";
+import { Play } from "../../icons/icons";
 
 export const CategoryUI: FC<TCategoryUIProps> = ({
   category = undefined,

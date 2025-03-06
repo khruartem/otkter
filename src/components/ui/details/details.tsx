@@ -47,12 +47,12 @@ export const DetailsUI: FC<TDetailsUI> = ({ id, details, detailsType }) => {
           })}
         </>
       )}
-      {(detailsType === "employees" && (details as TEmployees)?.actors) && (
+      {(detailsType === "employees" && (details as TEmployees)?.artists) && (
         <>
           <Category
             category={{ name: "В ролях", type: "extra", id: "artists" }}
           />
-          {(details as TEmployees).actors?.map(
+          {(details as TEmployees).artists?.map(
             ({ name, occupation, photo }) => {
               return (
                 <EmployeeUI key={nanoid()} name={name} occupation={occupation} photo={photo} />

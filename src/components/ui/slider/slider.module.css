@@ -1,8 +1,29 @@
+::-webkit-scrollbar-thumb {
+  border-radius: 14px;
+  /* background-color: var(--light30); */
+  box-shadow: inset 0 0 14px 14px var(--light30);
+  border: solid 4px transparent;
+}
+
+/* 4px scroll thumb. 10px margin from right margin */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 14px 14px transparent;
+  border: solid 4px transparent;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar:corner-present {
+  display: none;
+}
+
 .slider {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .slider__content {
@@ -10,7 +31,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .slider__content_positioned {
@@ -19,6 +40,10 @@
 
 .arrow_positioned {
   position: absolute;
+}
+
+.arrow_positioned_top {
+  top: 50%;
 }
 
 .arrow_positioned_left {
@@ -32,6 +57,7 @@
 /* Стили для разных разрешений экранов */
 .slider_large-screen {
   gap: 48px;
+  overflow-y: auto;
 }
 
 .slider_small-resolution {
@@ -44,4 +70,20 @@
 
 .slider__content_desktop {
   gap: 2.78vw;
+}
+
+.arrow_positioned_left_large-screen {
+  left: 4.17vw;
+}
+
+.arrow_positioned_right_large-screen {
+  right: 4.17vw;
+}
+
+.arrow_positioned_left_desktop {
+  left: 7.83vw;
+}
+
+.arrow_positioned_right_desktop {
+  right: 7.83vw;
 }

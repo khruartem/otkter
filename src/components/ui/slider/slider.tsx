@@ -20,7 +20,8 @@ export const SliderUI: FC<TSliderUIProps> = ({
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
-  const smallResolution = isLaptop || isTablet || isMobile;
+    const largeResolution = isLarge || isDesktop;
+    const smallResolution = isLaptop || isTablet || isMobile;
 
   return (
     <div
@@ -44,10 +45,11 @@ export const SliderUI: FC<TSliderUIProps> = ({
           activeColor={Colors.Navy}
           onClick={onMoveLeft}
           className={clsx(
-            smallResolution && [
-              styles.arrow_positioned,
-              styles.arrow_positioned_left,
-            ]
+            largeResolution && styles.arrow_positioned_top,
+            isLarge && styles["arrow_positioned_left_large-screen"],
+            isDesktop && styles.arrow_positioned_left_desktop,
+            styles.arrow_positioned,
+            styles.arrow_positioned_left
           )}
         />
         <PhotoPreviewUI photo={currentPhoto} />
@@ -57,10 +59,11 @@ export const SliderUI: FC<TSliderUIProps> = ({
           activeColor={Colors.Navy}
           onClick={onMoveRight}
           className={clsx(
-            smallResolution && [
-              styles.arrow_positioned,
-              styles.arrow_positioned_right,
-            ]
+            largeResolution && styles.arrow_positioned_top,
+            isLarge && styles["arrow_positioned_right_large-screen"],
+            isDesktop && styles.arrow_positioned_right_desktop,
+            styles.arrow_positioned,
+            styles.arrow_positioned_right
           )}
         />
       </div>

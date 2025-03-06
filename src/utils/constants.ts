@@ -1,4 +1,4 @@
-import { Social, TNavLinks, TProject, TService, TServicesTabMode } from "./types";
+import { Social, TNavLinks, TProject, TService, TServicesTabMode, TTeamTabMode } from "./types";
 import { TProjectInfo } from "../features/projectsInfo/projectsInfoSlice";
 import { TProjectControls, TServiceControls } from "../features/controls/controlsSlice";
 import { TProjectCategories } from "../features/categories/categoriesSlice";
@@ -167,7 +167,7 @@ export const projectInfos: TProjectInfo[] = [
       },
     ],
     employees: {
-      actors: [
+      artists: [
         {
           name: "Марат Рудницкий",
           occupation: "Журналист времен войны",
@@ -346,7 +346,7 @@ export const projectInfos: TProjectInfo[] = [
       },
     ],
     employees: {
-      actors: [
+      artists: [
         {
           name: "Марат Рудницкий",
           occupation: "Роль",
@@ -915,3 +915,5 @@ export const servicePhotos: TServicePhotos[] = [
     ],
   },
 ];
+
+export const teamsTabs: TTeamTabMode[] = ["admins", "artists"];

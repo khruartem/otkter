@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { TServicesTabMode } from "../../utils/types";
-import { serviceTabs } from "../../utils/constants";
+import { TServicesTabMode, TSliderSectionType, TTeamTabMode } from "../../utils/types";
+import { serviceTabs, teamsTabs } from "../../utils/constants";
 
 type TTabsState = {
-  tabs: TServicesTabMode[];
+  servicesTabs: TServicesTabMode[];
+  teamsTabs: TTeamTabMode[];
 };
 
 const initialState: TTabsState = {
-  tabs: serviceTabs,
+  servicesTabs: serviceTabs,
+  teamsTabs: teamsTabs,
 };
 
 const tabsSlice = createSlice({
@@ -16,7 +18,14 @@ const tabsSlice = createSlice({
   initialState,
   reducers: {},
   selectors: {
-    getTabsSelector: (state: TTabsState) => state.tabs,
+    getTabsSelector: (state: TTabsState, type: TSliderSectionType) => {
+      switch (type) {
+        case "team":
+          return state.teamsTabs
+        case "services":
+          return state.servicesTabs
+      }
+    },
   },
 });
 
