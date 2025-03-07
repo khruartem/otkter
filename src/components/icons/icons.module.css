@@ -78,7 +78,7 @@
   background-color: var(--light100);
 }
 
-.tab_active {
+/* .tab_active {
   fill: var(--active-color);
   border-radius: 100px;
   background-color: var(--light100);
@@ -86,7 +86,7 @@
 
 .tab_hover {
   fill: var(--hover-color);
-}
+} */
 
 .trick-circle {
   width: 24px;

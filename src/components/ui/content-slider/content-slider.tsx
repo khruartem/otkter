@@ -17,6 +17,8 @@ export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
     onTabClick,
     onMoveLeft,
     onMoveRight,
+    onMouseEnter,
+    onMouseLeave,
     iconRefs,
   }) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
@@ -52,6 +54,8 @@ export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
             tabs={tabs}
             currentTab={currentTab}
             onTabClick={onTabClick}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
             iconRefs={iconRefs}
           />
         </div>

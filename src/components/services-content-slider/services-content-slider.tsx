@@ -8,6 +8,8 @@ import { useGetTabs } from "../../hooks/useGetTabs";
 import { lockScroll } from "../../utils/lockScroll";
 import { scrollIntoElementView } from "../../utils/scrollIntoElementView";
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+import { useGetIconOnMouseEnter } from "../../hooks/useGetIconOnMouseEnter";
+import { useGetIconOnMouseLeave } from "../../hooks/useGetIconOnMouseLeave";
 
 export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
   servicesRefs,
@@ -134,6 +136,7 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
 
   const onTabClick = (tab: TServicesTabMode) => {
     setCurrentTab(tab);
+    setCurrentIndex(tabs.findIndex((el) => el === tab));
     switch (tab) {
       case "open-sea":
         scrollIntoElementView(
@@ -202,6 +205,9 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
     }
   };
 
+  const onMouseEnter = useGetIconOnMouseEnter();
+  const onMouseLeave = useGetIconOnMouseLeave();
+
   const onMoveLeft = () => {
     const newIndex = currentIndex - 1;
 
@@ -244,6 +250,8 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
       onTabClick={onTabClick}
       currentTab={currentTab}
       tabs={tabs}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       onMoveLeft={onMoveLeft}
       onMoveRight={onMoveRight}
       iconRefs={serviceIconRefs}

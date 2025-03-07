@@ -3,11 +3,47 @@
   flex-direction: row;
   align-items: center;
   padding: 16px 24px 16px 16px;
+  cursor: pointer;
+}
+
+.tab-wrapper label {
+  cursor: pointer;
+}
+
+.tab-wrapper:active {
+  border-radius: 100px;
+  background-color: var(--light100);
+}
+
+.tab-wrapper:active label {
+  color: var(--navy);
+}
+
+.tab-wrapper:active svg {
+  fill: var(--navy);
 }
 
 .tab-wrapper_active {
   border-radius: 100px;
   background-color: var(--light100);
+}
+
+.tab-wrapper_hover label {
+  color: var(--nephritis120);
+}
+
+.tab-wrapper_hover svg {
+  fill: var(--nephritis120);
+}
+
+.tab_active {
+  fill: var(--active-color);
+  border-radius: 100px;
+  background-color: var(--light100);
+}
+
+.tab_hover {
+  fill: var(--hover-color);
 }
 
 .tab_labeled {

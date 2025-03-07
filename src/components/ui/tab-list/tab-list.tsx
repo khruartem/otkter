@@ -14,6 +14,8 @@ export const TabListUI: FC<TTabListUIProps> = memo(({
   tabs,
   currentTab,
   onTabClick,
+  onMouseEnter,
+  onMouseLeave,
   iconRefs,
 }) => {
   const { isMobile } = useGetMediaQuery();
@@ -34,6 +36,8 @@ export const TabListUI: FC<TTabListUIProps> = memo(({
             tab={tab}
             current={tab === currentTab ? true : false}
             onClick={() => onTabClick(tab as TServicesTabMode & TTeamTabMode)}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
             key={nanoid()}
             ref={iconRef}
           />
