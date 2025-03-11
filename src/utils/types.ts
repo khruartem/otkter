@@ -68,7 +68,8 @@ export type TEmployees = {
   administrators?: TEmployee[];
 };
 
-type TEmployee = {
+export type TEmployee = {
+  id?: number;
   name: string;
   occupation: string;
   photo: string;
@@ -97,7 +98,7 @@ export type TCard = {
   attention?: boolean;
   image: string;
   shortText: string;
-  social?: string[];
+  social?: Social[];
   projectInfo?: TProjectInfo;
 };
 
@@ -113,10 +114,10 @@ export type TProject = Pick<
   | "projectInfo"
 >;
 
-export type TTeammate = Pick<
-  TCard,
-  "teamId" | "image" | "title" | "shortText" | "social"
->;
+// export type TTeammate = Pick<
+//   TCard,
+//   "teamId" | "image" | "title" | "shortText" | "social"
+// >;
 
 export type TService = Pick<
   TCard,
@@ -156,7 +157,7 @@ export type TTeamTabMode = "admins" | "artists";
 
 export type TTeamRef = {
   type: TTeamTabMode;
-  ref: React.RefObject<HTMLDivElement>;
+  ref: React.RefObject<HTMLUListElement>;
 };
 
 export type TTeamViewRef = {
@@ -308,6 +309,5 @@ export type SocialTypes = "vk" | "telegram";
 export type Social = {
   id: number;
   url: string;
-  type: SocialTypes | string;
-  icon: string;
+  type: SocialTypes;
 };

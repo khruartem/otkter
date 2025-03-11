@@ -1,6 +1,7 @@
 import clsx from "clsx";
+
 import { Logo } from "../../components/icons";
-import { Social } from "../../components/social";
+import { MainSocial } from "../../components/main-social";
 import { Text } from "../../components/text";
 import { useDesktopMediaQuery } from "../../hooks/useDesktopMediaQuery";
 import { useLaptopMediaQuery } from "../../hooks/useLaptopMediaQuery";
@@ -71,7 +72,7 @@ const LargeResolution = () => {
               {"8 (916) 756-95-05"}
             </a>
           </div>
-          <Social />
+          <MainSocial />
         </div>
       </div>
       <div className={styles.footer__lower}>
@@ -141,7 +142,7 @@ const SmallResolution = () => {
               {"8 (916) 756-95-05"}
             </a>
           </div>
-          <Social />
+          <MainSocial />
         </div>
       </div>
       <div className={styles.footer__lower}>

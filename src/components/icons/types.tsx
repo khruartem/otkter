@@ -12,12 +12,14 @@ export type TIconsProps = {
   width: number;
   height: number;
   className?: string;
+  url?: string;
 };
 
 export type TLogoProps = Pick<
   TIconsProps,
   "mainColor" | "width" | "height" | "extraColor"
 >;
+export type TSocialProps = Pick<TIconsProps, "url">;
 export type TNavProps = Pick<TIconsProps, "onClick">;
 export type TModalsProps = Pick<TIconsProps, "mainColor">;
 export type TCategotyProps = Pick<TIconsProps, "mainColor">;

@@ -2,16 +2,12 @@ import { FC, useRef } from "react";
 
 import { TTeamRef, TTeamViewRef } from "../../utils/types";
 import { useInView } from "react-intersection-observer";
-import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 import { TSectionProps } from "../types";
 import { SliderSectionUI } from "../../components/ui/sections/slider-section";
 
 export const Teams: FC<TSectionProps> = ({ sectionRef }) => {
-  const { isLaptop, isTablet, isMobile } = useGetMediaQuery();
-  const smallResolution = isLaptop || isTablet || isMobile;
-
-  const adminsRef = useRef<HTMLDivElement>(null);
-  const artistsRef = useRef<HTMLDivElement>(null);
+  const adminsRef = useRef<HTMLUListElement>(null);
+  const artistsRef = useRef<HTMLUListElement>(null);
 
   const teamsRefs: TTeamRef[] = [
     {
@@ -25,10 +21,11 @@ export const Teams: FC<TSectionProps> = ({ sectionRef }) => {
   ];
 
   const [adminsViewRef, inViewAdmins] = useInView({
-    threshold: smallResolution ? 0.5 : 1,
+    threshold: 0.5,
+    trackVisibility: false,
   });
   const [artistsViewRef, inViewArtists] = useInView({
-    threshold: smallResolution ? 0.5 : 1,
+    threshold: 0.5,
   });
 
   const teamsViewRefs: TTeamViewRef[] = [

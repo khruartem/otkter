@@ -12,6 +12,7 @@ import { TabListUI } from "../tab-list";
 
 export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
   ({
+    type,
     tabs,
     currentTab,
     onTabClick,
@@ -28,7 +29,8 @@ export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
       <div
         className={clsx(
           styles.wrapper,
-          isLarge && styles["wrapper_large-screen"],
+          isLarge && type === "team" && styles["wrapper_large-screen"],
+          isLarge && type === "services" && styles["wrapper_large-screen_services"],
           isDesktop && styles.wrapper_desktop,
           isLaptop && styles.wrapper_laptop,
           (isTablet || isMobile) && styles.wrapper_widthed

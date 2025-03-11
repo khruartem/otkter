@@ -1,11 +1,11 @@
-import { Social, TNavLinks, TProject, TService, TServicesTabMode, TTeamTabMode } from "./types";
+import { Social, TEmployees, TNavLinks, TProject, TService, TServicesTabMode, TTeamTabMode } from "./types";
 import { TProjectInfo } from "../features/projectsInfo/projectsInfoSlice";
 import { TProjectControls, TServiceControls } from "../features/controls/controlsSlice";
 import { TProjectCategories } from "../features/categories/categoriesSlice";
 import { TProjectPhotos, TServicePhotos } from "../features/photos/photosSlice";
+import { TServiceInfo } from "../features/projectsInfo/infosSlice";
+import { TTeamSocials } from "../features/socials/socialsSlice";
 
-import telegramSVG from "../assets/telegram.svg";
-import vkSVG from "../assets/vk.svg";
 // import playSVG from "../../public/projects_play.svg";
 // import masterClassSVG from "../../public/projects_master-class.svg";
 // import contestSVG from "../../public/project_contest.svg";
@@ -23,6 +23,18 @@ import rudnitskiy from "../assets/rudnitskiy.png";
 import torzhkova from "../assets/torzhkova.png";
 import murzukova from "../assets/murzukova.png";
 import agafonov from "../assets/agafonov.png";
+import sokolovskiy from "../assets/sokolovskiy.png";
+import aspek from "../assets/aspek.png";
+import ivanova from "../assets/ivanova.png";
+import avramenko from "../assets/avramenko.png";
+import maltcev from "../assets/maltcev.png";
+import bondareva from "../assets/bondareva.png";
+import knysh from "../assets/knysh.png";
+import strelnikov from "../assets/strelnikov.png";
+import maslovskaya from "../assets/maslovskaya.png";
+import karaya from "../assets/karaya.png";
+import hvostikova from "../assets/hvostikova.png";
+import tensik from "../assets/tensik.png";
 import testPhoto1 from "../assets/testPhoto1.png";
 import testPhoto2 from "../assets/testPhoto2.png";
 import testPhoto3 from "../assets/testPhoto3.png";
@@ -35,10 +47,6 @@ import content from "../assets/services_img_content.png";
 import masterClasses from "../assets/services_img_master_classes.png";
 import lamp from "../assets/services_img_lamp.png";
 import smm from "../assets/services_img_smm.png";
-import { TServiceInfo } from "../features/projectsInfo/infosSlice";
-
-export const telegramUrl: string = "https://t.me/otkterr";
-export const vkUrl: string = "https://vk.com/otkter";
 
 export const navLinks: TNavLinks = [
   {
@@ -68,20 +76,101 @@ export const navLinks: TNavLinks = [
   },
 ];
 
-export const socials: Social[] = [
+export const mainSocials: Social[] = [
   {
     id: 1,
-    url: telegramUrl,
+    url: "https://t.me/otkterr",
     type: "telegram",
-    icon: telegramSVG,
   },
   {
     id: 2,
-    url: vkUrl,
+    url: "https://vk.com/otkter",
     type: "vk",
-    icon: vkSVG,
   },
 ];
+
+export const teamsSocials: TTeamSocials[] = [
+  {
+    teamType: "admins",
+    teamSocials: [
+      {
+        employeeId: 1,
+        socials: [
+          {
+            id: 1,
+            url: "https://t.me/yakovlevsergeyy1",
+            type: "telegram"
+          },
+          {
+            id: 2,
+            url: "https://vk.com/seryoga_yakovlev",
+            type: "vk"
+          },
+        ]
+      },
+      {
+        employeeId: 2,
+        socials: [
+          {
+            id: 3,
+            url: "https://t.me/otkmore",
+            type: "telegram"
+          },
+          {
+            id: 4,
+            url: "https://vk.com/id58249512",
+            type: "vk"
+          },
+        ]
+      },
+      {
+        employeeId: 3,
+        socials: [
+          {
+            id: 5,
+            url: "https://t.me/Chronostheone",
+            type: "telegram"
+          },
+          {
+            id: 6,
+            url: "https://vk.com/kronosas",
+            type: "vk"
+          },
+        ]
+      },
+      {
+        employeeId: 4,
+        socials: [
+          {
+            id: 7,
+            url: "https://t.me/si_alyo",
+            type: "telegram"
+          },
+          {
+            id: 8,
+            url: "https://vk.com/blessedbyamisteryoflove",
+            type: "vk"
+          },
+        ]
+      },
+      {
+        employeeId: 5,
+        socials: [
+          {
+            id: 9,
+            url: "#",
+            type: "telegram"
+          },
+          {
+            id: 10,
+            url: "#",
+            type: "vk"
+          },
+        ]
+      }
+    ]
+  }
+]
 
 export const projects: TProject[] = [
   {
@@ -917,3 +1006,109 @@ export const servicePhotos: TServicePhotos[] = [
 ];
 
 export const teamsTabs: TTeamTabMode[] = ["admins", "artists"];
+
+export const teams: TEmployees = {
+  administrators: [
+    {
+      id: 1,
+      name: "Сергей Яковлев",
+      occupation: "Актер театра «Ленком» Марка Захарова и театра Наций",
+      photo: yakovlev,
+    },
+    {
+      id: 2,
+      name: "Людмила Яковлева",
+      occupation: "Режиссер и художественный руководитель театральной студии «Открытое Море»",
+      photo: LA,
+    },
+    {
+      id: 3, 
+      name: "Арсений Аспек",
+      occupation: "Графический и UX/UI дизайнер",
+      photo: aspek,
+    },
+    {
+      id: 4,
+      name: "Алёна Синельникова",
+      occupation: "Специалист по SMM и PR-менеджер креативных проектов",
+      photo: sinelnikova,
+    },
+  ],
+  artists: [
+    {
+      name: "Кирилл Соколовский",
+      occupation: "Поэт",
+      photo: sokolovskiy,
+    },
+    {
+      name: "Екатерина Иванова",
+      occupation: "Певица, артистка театра «Ленком Марка Захарова»",
+      photo: ivanova,
+    },
+    {
+      name: "Анастасия Авраменко",
+      occupation: "Режиссёр, фотограф",
+      photo: avramenko,
+    },
+    {
+      name: "Дмитрий Мальцев",
+      occupation: "Актёр театра «Ленком Марка Захарова»",
+      photo: maltcev,
+    },
+    {
+      name: "Анастасия Бондарева",
+      occupation: "Поэт",
+      photo: bondareva,
+    },
+    {
+      name: "Марк Агафонов",
+      occupation: "Режиссёр, фотограф, видеограф",
+      photo: agafonov,
+    },
+    {
+      name: "Олег Кныш",
+      occupation: "Актёр театра «Ленком Марка Захарова»",
+      photo: knysh,
+    },
+    {
+      name: "Марат Рудницкий",
+      occupation: "Актёр, звукорежиссер, инженер телецентра «Останкино»",
+      photo: rudnitskiy,
+    },
+    {
+      name: "Леонид Стрельников",
+      occupation: "Актёр театра у Никитских ворот и театра «Ленком Марка Захарова»",
+      photo: strelnikov,
+    },
+    {
+      name: "Ольга Масловская",
+      occupation: "Драматург",
+      photo: maslovskaya,
+    },
+    {
+      name: "Мария Карая",
+      occupation: "Актриса театра «Ленком Марка Захарова»",
+      photo: karaya,
+    },
+    {
+      name: "Дарья Торжкова",
+      occupation: "Актриса",
+      photo: torzhkova,
+    },
+    {
+      name: "Настя Мурзюкова",
+      occupation: "Актриса, выпускница Московской Духовной Академии, педагог",
+      photo: murzukova,
+    },
+    {
+      name: "Юлия Хвостикова",
+      occupation: "Актриса",
+      photo: hvostikova,
+    },
+    {
+      name: "Елена Тенсик",
+      occupation: "Журналист, радиоведущая, театральный критик, педагог, арт-терапевт и актриса",
+      photo: tensik,
+    },
+  ]
+}

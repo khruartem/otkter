@@ -14,6 +14,8 @@ import { reducer as categoriesReducer } from "../features/categories/categoriesS
 import { reducer as controlsReducer } from "../features/controls/controlsSlice";
 import { reducer as tabsReducer } from "../features/tabs/tabsSlice";
 import { reducer as servicesReducer } from "../features/services/servicesSlice";
+import { reducer as socialsReducer } from "../features/socials/socialsSlice";
+import { reducer as teamsReducer } from "../features/teams/teamsSlice";
 
 const store = configureStore({
   reducer: {
@@ -25,6 +27,8 @@ const store = configureStore({
     controls: controlsReducer,
     tabs: tabsReducer,
     services: servicesReducer,
+    socials: socialsReducer,
+    teams: teamsReducer,
   },
 });
 

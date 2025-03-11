@@ -6,7 +6,7 @@ import { NavLink } from "../navlink";
 //import { navLinks, socials } from "../../utils/constants";
 import { navLinks } from "../../utils/constants";
 import { NavBarProps } from "./types";
-import { Social } from "../social";
+import { MainSocial } from "../main-social";
 import { Colors } from "../../utils/types";
 
 import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
@@ -160,7 +160,7 @@ const SmallResolution = ({
                 );
               })}
             </ul>
-            {isMobile && <Social />}
+            {isMobile && <MainSocial />}
           </nav>,
           rootRef!.current!
         )}

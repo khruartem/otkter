@@ -1,5 +1,7 @@
+import { Social, TCardType, TEmployee } from "../../../utils/types";
+
 export type TEmployeeUIProps = {
-  name: string;
-  occupation: string;
-  photo: string;
+  type: Extract<TCardType, "projects" | "team">;
+  employee: TEmployee;
+  socials?: Social[];
 }

@@ -1,17 +1,13 @@
-/* import { Icon } from "../icon";
-import { Colors } from "../../utils/types";
-import { SocialProps } from "./types"; */
-import { Telegram, VK } from "../icons/icons";
+import { FC } from "react";
 
-import styles from "./social.module.css";
+import { SocialUI } from "../ui/social";
 
-export const Social = () => {
-  return (
-    <div className={styles.socialbar}>
-      <Telegram />
-      <VK />
-    </div>
-  );
+import { useGetMainSocials } from "../../hooks/useGetMainSocials";
+
+export const MainSocial: FC = () => {
+  const socials = useGetMainSocials();
+
+  return <SocialUI socials={socials} />;
 };
 
 /* export const Social = ({ socials }: SocialProps) => {

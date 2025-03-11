@@ -24,7 +24,8 @@ export const TabListUI: FC<TTabListUIProps> = memo(({
     <ul
       className={clsx(
         styles["tab-list"],
-        isMobile && styles["tab-list_mobile"]
+        isMobile && tabs.length >= 4 && styles["tab-list_paddinged"],
+        isMobile && styles["tab-list_margined"]
       )}
     >
       {tabs.map((tab) => {

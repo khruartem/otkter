@@ -1,19 +1,19 @@
 import clsx from "clsx";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { Logo } from "../../components/icons";
 import { NavBar } from "../../components/navbar";
+import { MainSocial } from "../../components/main-social";
+
 import { useDesktopMediaQuery } from "../../hooks/useDesktopMediaQuery";
 import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
 import { Colors } from "../../utils/types";
 import { useLaptopMediaQuery } from "../../hooks/useLaptopMediaQuery";
 import { useTabletMediaQuery } from "../../hooks/useTabletMediaQuery";
 import { useMobileMediaQuery } from "../../hooks/useMobileMediaQuery";
-import { Social } from "../../components/social";
 
 import styles from "./header.module.css";
-import { Link } from "react-router-dom";
-//import { socials } from "../../utils/constants";
 
 export const Header = () => {
   return (
@@ -39,7 +39,7 @@ const LargeResolution = () => {
         />
       </Link>
       <NavBar />
-      <Social />
+      <MainSocial />
     </header>
   ) : null;
 };
@@ -78,7 +78,7 @@ const SmallResolution = () => {
               isTablet && styles.header__icons_tablet
             )}
           >
-            <Social />
+            <MainSocial />
             <NavBar isOpen={isOpen} onOpen={setOpen} rootRef={rootRef} />
           </div>
         ) : (

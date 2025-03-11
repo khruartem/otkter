@@ -9,9 +9,10 @@ import {
   TEventsProps,
   TModalsProps,
   TTabProps,
+  TSocialProps,
 } from "./types";
 import { Colors } from "../../utils/types";
-import { telegramUrl, vkUrl } from "../../utils/constants";
+//import { telegramUrl, vkUrl } from "../../utils/constants";
 
 import styles from "./icons.module.css";
 
@@ -48,9 +49,9 @@ export const Logo = ({ mainColor, extraColor, width, height }: TLogoProps) => {
   );
 };
 
-export const Telegram = () => {
+export const Telegram = ({url}: TSocialProps) => {
   return (
-    <a href={telegramUrl} target="_blank">
+    <a href={url} target="_blank">
       <svg
         fill={Colors.Nephritis100}
         xmlns="http://www.w3.org/2000/svg"
@@ -67,9 +68,9 @@ export const Telegram = () => {
   );
 };
 
-export const VK = () => {
+export const VK = ({url}: TSocialProps) => {
   return (
-    <a href={vkUrl} target="_blank">
+    <a href={url} target="_blank">
       <svg
         fill={Colors.Nephritis100}
         xmlns="http://www.w3.org/2000/svg"

@@ -117,6 +117,7 @@ export const TeamsContentSlider: FC<TTeamsContentSliderProps> = ({
 
   return (
     <ContentSliderUI
+      type="team"
       onTabClick={onTabClick}
       currentTab={currentTab}
       onMouseEnter={onMouseEnter}

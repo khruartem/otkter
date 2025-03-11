@@ -247,6 +247,7 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
 
   return (
     <ContentSliderUI
+      type="services"
       onTabClick={onTabClick}
       currentTab={currentTab}
       tabs={tabs}
