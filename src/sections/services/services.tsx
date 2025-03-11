@@ -3,9 +3,10 @@ import { useInView } from "react-intersection-observer";
 
 import { TServiceRef, TServiceViewRef } from "../../utils/types";
 
-import { ServicesUI } from "../../components/ui/sections/services";
+//import { ServicesUI } from "../../components/ui/sections/services";
 import { TSectionProps } from "../types";
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+import { SliderSectionUI } from "../../components/ui/sections/slider-section";
 
 export const Services: FC<TSectionProps> = ({ sectionRef }) => {
   const { isLaptop, isTablet, isMobile } = useGetMediaQuery();
@@ -111,10 +112,16 @@ export const Services: FC<TSectionProps> = ({ sectionRef }) => {
   ];
 
   return (
-    <ServicesUI
+    // <ServicesUI
+    //   ref={sectionRef}
+    //   servicesRefs={servicesRefs}
+    //   servicesViewRefs={servicesViewRefs}
+    // />
+    <SliderSectionUI
+      type={"services"}
+      sectionRefs={servicesRefs}
+      sectionViewRefs={servicesViewRefs}
       ref={sectionRef}
-      servicesRefs={servicesRefs}
-      servicesViewRefs={servicesViewRefs}
     />
   );
 };

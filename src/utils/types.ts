@@ -36,7 +36,9 @@ export type TEventType =
   | "price"
   | "contacts";
 
-export type TSectionType = Extract<TCardType, "services" | "projects">;
+  export type TSectionType = Extract<TCardType, "services" | "projects">;
+  
+  export type TSliderSectionType = Extract<TCardType, "services" | "team">;
 
 export type TEventDetails = {
   type: TEventType;
@@ -62,18 +64,21 @@ export type TLink = {
 };
 
 export type TEmployees = {
-  actors?: TEmployee[];
+  artists?: TEmployee[];
   administrators?: TEmployee[];
 };
 
-type TEmployee = {
+export type TEmployee = {
+  id?: number;
   name: string;
   occupation: string;
   photo: string;
 };
 
+export type TRole = "admins" | "artists";
+
 export type TProjectInfo = {
-  role?: "admins" | "artists";
+  role?: TRole;
   text?: string;
   photos?: string[];
   eventDetails: TEventDetails;
@@ -93,7 +98,7 @@ export type TCard = {
   attention?: boolean;
   image: string;
   shortText: string;
-  social?: string[];
+  social?: Social[];
   projectInfo?: TProjectInfo;
 };
 
@@ -109,10 +114,10 @@ export type TProject = Pick<
   | "projectInfo"
 >;
 
-export type TTeammate = Pick<
-  TCard,
-  "teamId" | "image" | "title" | "shortText" | "social"
->;
+// export type TTeammate = Pick<
+//   TCard,
+//   "teamId" | "image" | "title" | "shortText" | "social"
+// >;
 
 export type TService = Pick<
   TCard,
@@ -145,6 +150,24 @@ export type TServiceViewRef = {
 
 export type TServiceIconRef = {
   type: TServicesTabMode;
+  ref: React.RefObject<HTMLLIElement>;
+};
+
+export type TTeamTabMode = "admins" | "artists";
+
+export type TTeamRef = {
+  type: TTeamTabMode;
+  ref: React.RefObject<HTMLUListElement>;
+};
+
+export type TTeamViewRef = {
+  type: TTeamTabMode;
+  inView: boolean;
+  ref: (node?: Element | null) => void;
+};
+
+export type TTeamIconRef = {
+  type: TTeamTabMode;
   ref: React.RefObject<HTMLLIElement>;
 };
 
@@ -286,6 +309,5 @@ export type SocialTypes = "vk" | "telegram";
 export type Social = {
   id: number;
   url: string;
-  type: SocialTypes | string;
-  icon: string;
+  type: SocialTypes;
 };

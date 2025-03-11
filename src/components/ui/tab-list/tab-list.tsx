@@ -8,12 +8,15 @@ import { TabUI } from "../tab";
 
 import styles from "./tab-list.module.css";
 import clsx from "clsx";
+import { TServicesTabMode, TTeamTabMode } from "../../../utils/types";
 
 export const TabListUI: FC<TTabListUIProps> = memo(({
   tabs,
   currentTab,
   onTabClick,
-  serviceIconRefs,
+  onMouseEnter,
+  onMouseLeave,
+  iconRefs,
 }) => {
   const { isMobile } = useGetMediaQuery();
 
@@ -21,18 +24,21 @@ export const TabListUI: FC<TTabListUIProps> = memo(({
     <ul
       className={clsx(
         styles["tab-list"],
-        isMobile && styles["tab-list_mobile"]
+        isMobile && tabs.length >= 4 && styles["tab-list_paddinged"],
+        isMobile && styles["tab-list_margined"]
       )}
     >
       {tabs.map((tab) => {
-        const iconRef = serviceIconRefs.find(
-          (serviceRef) => serviceRef.type === tab
+        const iconRef = iconRefs.find(
+          (icon) => icon.type === tab
         )?.ref;
         return (
           <TabUI
             tab={tab}
             current={tab === currentTab ? true : false}
-            onClick={() => onTabClick(tab)}
+            onClick={() => onTabClick(tab as TServicesTabMode & TTeamTabMode)}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
             key={nanoid()}
             ref={iconRef}
           />

@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 
 import { Text } from "../../../text";
-import { ContentSlider } from "../../../content-slider";
+import { ServicesContentSlider } from "../../../services-content-slider";
 import { ServiceList } from "../../../service-list";
 
 import { TServicesUIProps } from "./types";
@@ -52,7 +52,7 @@ export const ServicesUI = React.forwardRef<HTMLElement, TServicesUIProps>(
           >
             {"услуги"}
           </Text>
-          <ContentSlider
+          <ServicesContentSlider
             servicesRefs={servicesRefs}
             servicesViewRefs={servicesViewRefs}
           />

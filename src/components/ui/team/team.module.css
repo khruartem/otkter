@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.team {
+  width: fit-content;
+  height: var(--height);
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns: var(--columns-count);
+  grid-auto-flow: row;
+  scroll-snap-align: center;
+  scrollbar-width: none;
+}
+
+.team_large-gap {
+  gap: 24px;
+}
+
+.team_small-gap {
+  gap: 12px;
+}
+
+.team_overflowed-y {
+  overflow-y: auto;
+}

@@ -25,8 +25,6 @@ export const InfoUI: FC<TInfoUIProps> = ({
     useGetMediaQuery();
   const largeResolution = isLarge || isDesktop;
   const smallResolution = isDesktop || isTablet || isMobile;
-  
-  console.log()
 
   return (
     <div

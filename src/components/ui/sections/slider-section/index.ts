@@ -1,0 +1,1 @@
+export { SliderSectionUI } from "./slider-section";

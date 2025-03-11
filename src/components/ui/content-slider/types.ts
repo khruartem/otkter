@@ -1,10 +1,23 @@
-import { TServiceIconRef, TServicesTabMode } from "../../../utils/types";
+import {
+  TCardType,
+  TServiceIconRef,
+  TServicesTabMode,
+  TTeamIconRef,
+  TTeamTabMode,
+} from "../../../utils/types";
 
 export type TContentSliderUIPros = {
-  onTabClick: (tab: TServicesTabMode) => void;
-  currentTab: TServicesTabMode;
-  tabs: TServicesTabMode[];
+  type: Extract<TCardType, "team" | "services">;
+  onTabClick: (tab: TServicesTabMode & TTeamTabMode) => void;
+  currentTab: TServicesTabMode | TTeamTabMode;
+  tabs: TServicesTabMode[] | TTeamTabMode[];
   onMoveLeft: () => void;
   onMoveRight: () => void;
-  serviceIconRefs: TServiceIconRef[];
+  onMouseEnter: (
+    e: React.SyntheticEvent,
+    styleActive: string,
+    styleHover: string
+  ) => void;
+  onMouseLeave: (e: React.SyntheticEvent, styleHover: string) => void;
+  iconRefs: TServiceIconRef[] | TTeamIconRef[];
 };

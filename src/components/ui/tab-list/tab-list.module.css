@@ -6,7 +6,10 @@
   gap: 2px;
 }
 
-/* Стили для разных разрешений экранов */
-.tab-list_mobile {
+.tab-list_paddinged {
   padding-left: 8px;
+}
+
+.tab-list_margined {
+  margin-inline: auto;
 }

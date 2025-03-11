@@ -1,6 +1,6 @@
 import { TServiceRef, TServiceViewRef } from "../../utils/types";
 
-export type TContentSliderProps = {
+export type TServicesContentSliderProps = {
   servicesRefs: TServiceRef[];
   servicesViewRefs: TServiceViewRef[];
 };

@@ -1,3 +1,4 @@
+import { SyntheticEvent } from "react";
 import { Colors } from "../../utils/types";
 
 export type TIconsProps = {
@@ -6,15 +7,19 @@ export type TIconsProps = {
   hoverColor?: Colors | string;
   activeColor?: Colors;
   onClick?: (() => void) | undefined;
+  onMouseEnter?: ((e: SyntheticEvent) => void) | undefined;
+  onMouseLeave?: ((e: SyntheticEvent) => void) | undefined;
   width: number;
   height: number;
   className?: string;
+  url?: string;
 };
 
 export type TLogoProps = Pick<
   TIconsProps,
   "mainColor" | "width" | "height" | "extraColor"
 >;
+export type TSocialProps = Pick<TIconsProps, "url">;
 export type TNavProps = Pick<TIconsProps, "onClick">;
 export type TModalsProps = Pick<TIconsProps, "mainColor">;
 export type TCategotyProps = Pick<TIconsProps, "mainColor">;
@@ -23,7 +28,24 @@ export type TArrowProps = Pick<
   "mainColor" | "hoverColor" | "activeColor" | "className" | "onClick"
 >;
 export type TEventsProps = Pick<TIconsProps, "mainColor">;
-export type TServicesProps = Pick<
-TIconsProps,
-"mainColor" | "hoverColor" | "activeColor" | "className" | "onClick"
+// export type TTabProps = Pick<
+//   TIconsProps,
+//   "mainColor" | "hoverColor" | "activeColor" | "className" | "onClick"
+// > & {
+//   onMouseEnter?: (
+//     e: React.SyntheticEvent,
+//     styleActive: string,
+//     styleHover: string
+//   ) => void;
+//   onMouseLeave?: (e: React.SyntheticEvent, styleHover: string) => void;
+// };
+export type TTabProps = Pick<
+  TIconsProps,
+  | "mainColor"
+  | "hoverColor"
+  | "activeColor"
+  | "className"
+  | "onClick"
+  | "onMouseEnter"
+  | "onMouseLeave"
 >;

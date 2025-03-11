@@ -47,6 +47,9 @@
 /* wrapper */
 .wrapper_large-screen {
   gap: 2.08vw;
+}
+
+.wrapper_large-screen_services {
   width: 41.25vw;
 }
 

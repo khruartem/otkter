@@ -1,19 +1,68 @@
 .employee {
   display: flex;
-  flex-direction: row;
+}
+
+.employee_projects {
   gap: 16px;
   align-items: flex-start;
 }
 
-.employee_photo {
-  aspect-ratio: 1 / 1;
-  width: 52px;
+.employee_team {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 486px;
+}
+
+.employee__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee__info_team {
+  align-items: center;
+  padding-top: 16px;
+  gap: 20px;
+}
+
+.employee__photo {
   border-radius: 200px;
   object-position: center;
   object-fit: contain;
 }
 
-.employee__info {
+.employee__photo_projects {
+  width: 52px;
+  height: 52px;
+}
+
+.employee__photo_team {
+  width: 270px;
+}
+
+.employee__desc {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Стили для разных разрещений экранов */
+.employee_team_large-screen {
+  width: 15.73vw;
+}
+
+.employee_team_desktop {
+  width: 26.94vw;
+}
+
+.employee_team_laptop {
+  width: 29.30vw;
+}
+
+.employee_team_tablet {
+  width: 45.31vw;
+}
+
+.employee_team_mobile {
+  width: 92.27vw;
 }

@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef, useState } from "react";
 
-import { TContentSliderProps } from "./types";
+import { TServicesContentSliderProps } from "./types";
 
 import { ContentSliderUI } from "../ui/content-slider";
 import { TServiceIconRef, TServicesTabMode } from "../../utils/types";
@@ -8,14 +8,16 @@ import { useGetTabs } from "../../hooks/useGetTabs";
 import { lockScroll } from "../../utils/lockScroll";
 import { scrollIntoElementView } from "../../utils/scrollIntoElementView";
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+import { useGetIconOnMouseEnter } from "../../hooks/useGetIconOnMouseEnter";
+import { useGetIconOnMouseLeave } from "../../hooks/useGetIconOnMouseLeave";
 
-export const ContentSlider: FC<TContentSliderProps> = ({
+export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
   servicesRefs,
   servicesViewRefs,
 }) => {
   const { isMobile } = useGetMediaQuery();
 
-  const tabs: TServicesTabMode[] = useGetTabs();
+  const tabs = useGetTabs("services") as TServicesTabMode[];
 
   const [currentTab, setCurrentTab] = useState<TServicesTabMode>(tabs[0]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -94,38 +96,31 @@ export const ContentSlider: FC<TContentSliderProps> = ({
       setCurrentTab("open-sea");
       setCurrentIndex(tabs.findIndex((tab) => tab === "open-sea"));
       if (isMobile) scrollIntoElementView(openSeaIconRef, "smooth", "nearest");
-      //console.log("open-sea")
     } else if (inViewEvents) {
       setCurrentTab("events");
       setCurrentIndex(tabs.findIndex((tab) => tab === "events"));
       if (isMobile) scrollIntoElementView(eventsIconRef, "smooth", "nearest");
-      // console.log("events")
     } else if (inViewDesign) {
       setCurrentTab("design");
       setCurrentIndex(tabs.findIndex((tab) => tab === "design"));
       if (isMobile) scrollIntoElementView(designIconRef, "smooth", "nearest");
-      // console.log("design")
     } else if (inViewContent) {
       setCurrentTab("content");
       setCurrentIndex(tabs.findIndex((tab) => tab === "content"));
       if (isMobile) scrollIntoElementView(contenIconRef, "smooth", "nearest");
-      // console.log("content")
     } else if (inViewMasterClass) {
       setCurrentTab("master-class");
       setCurrentIndex(tabs.findIndex((tab) => tab === "master-class"));
       if (isMobile)
         scrollIntoElementView(masterClassIconRef, "smooth", "nearest");
-      // console.log("master-class")
     } else if (inViewLamp) {
       setCurrentTab("lamp");
       setCurrentIndex(tabs.findIndex((tab) => tab === "lamp"));
       if (isMobile) scrollIntoElementView(lampIconRef, "smooth", "nearest");
-      // console.log("lamp")
     } else if (inViewSmm) {
       setCurrentTab("smm");
       setCurrentIndex(tabs.findIndex((tab) => tab === "smm"));
       if (isMobile) scrollIntoElementView(smmIconRef, "smooth", "nearest");
-      // console.log("smm")
     }
   }, [
     inViewOpenSea,
@@ -141,6 +136,7 @@ export const ContentSlider: FC<TContentSliderProps> = ({
 
   const onTabClick = (tab: TServicesTabMode) => {
     setCurrentTab(tab);
+    setCurrentIndex(tabs.findIndex((el) => el === tab));
     switch (tab) {
       case "open-sea":
         scrollIntoElementView(
@@ -209,6 +205,9 @@ export const ContentSlider: FC<TContentSliderProps> = ({
     }
   };
 
+  const onMouseEnter = useGetIconOnMouseEnter();
+  const onMouseLeave = useGetIconOnMouseLeave();
+
   const onMoveLeft = () => {
     const newIndex = currentIndex - 1;
 
@@ -248,12 +247,15 @@ export const ContentSlider: FC<TContentSliderProps> = ({
 
   return (
     <ContentSliderUI
+      type="services"
       onTabClick={onTabClick}
       currentTab={currentTab}
       tabs={tabs}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       onMoveLeft={onMoveLeft}
       onMoveRight={onMoveRight}
-      serviceIconRefs={serviceIconRefs}
+      iconRefs={serviceIconRefs}
     />
   );
 };

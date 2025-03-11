@@ -1,0 +1,1 @@
+export { TeamMateUI } from "./team-mate";

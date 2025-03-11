@@ -12,12 +12,15 @@ import { TabListUI } from "../tab-list";
 
 export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
   ({
+    type,
     tabs,
     currentTab,
     onTabClick,
     onMoveLeft,
     onMoveRight,
-    serviceIconRefs,
+    onMouseEnter,
+    onMouseLeave,
+    iconRefs,
   }) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
       useGetMediaQuery();
@@ -26,7 +29,8 @@ export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
       <div
         className={clsx(
           styles.wrapper,
-          isLarge && styles["wrapper_large-screen"],
+          isLarge && type === "team" && styles["wrapper_large-screen"],
+          isLarge && type === "services" && styles["wrapper_large-screen_services"],
           isDesktop && styles.wrapper_desktop,
           isLaptop && styles.wrapper_laptop,
           (isTablet || isMobile) && styles.wrapper_widthed
@@ -52,7 +56,9 @@ export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
             tabs={tabs}
             currentTab={currentTab}
             onTabClick={onTabClick}
-            serviceIconRefs={serviceIconRefs}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            iconRefs={iconRefs}
           />
         </div>
         <ArrowRight
