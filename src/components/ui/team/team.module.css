@@ -25,3 +25,8 @@
 .team_overflowed-y {
   overflow-y: auto;
 }
+
+/* Стили для разных разрешений экранов */
+.team_mobile {
+  height: 100%;
+}

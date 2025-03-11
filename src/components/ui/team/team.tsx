@@ -9,7 +9,7 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./team.module.css";
 
-export const TeamUI = React.forwardRef<HTMLDivElement, TTeamUIProps>(
+export const TeamUI = React.forwardRef<HTMLUListElement, TTeamUIProps>(
   ({ team, type, teamRef, cardsCount, containerHeight }, ref) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } = useGetMediaQuery();
     const largeResolution = isLarge || isDesktop || isLaptop;
@@ -18,7 +18,7 @@ export const TeamUI = React.forwardRef<HTMLDivElement, TTeamUIProps>(
     return (
       <div
         className={styles.wrapper}
-        ref={ref}
+        ref={teamRef}
       >
         <ul
           className={clsx(
@@ -26,8 +26,9 @@ export const TeamUI = React.forwardRef<HTMLDivElement, TTeamUIProps>(
             type === "artists" && styles["team_overflowed-y"],
             largeResolution && styles["team_large-gap"],
             smallResolution && styles["team_small-gap"],
+            //isMobile && styles["team_mobile"]
           )}
-          ref={teamRef}
+          ref={ref}
           style={{
             "--columns-count": `repeat(${cardsCount}, 1fr)`,
             "--height": containerHeight

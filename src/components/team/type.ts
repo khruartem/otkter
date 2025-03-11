@@ -4,6 +4,6 @@ export type TTeamProps = {
   team: TEmployee[];
   type: TRole;
   teamsViewRefs: TTeamViewRef[];
-  teamRef: React.RefObject<HTMLUListElement>;
+  teamRef: React.RefObject<HTMLDivElement>;
   gridRowsCount?: number;
 }

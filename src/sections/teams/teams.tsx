@@ -6,8 +6,8 @@ import { TSectionProps } from "../types";
 import { SliderSectionUI } from "../../components/ui/sections/slider-section";
 
 export const Teams: FC<TSectionProps> = ({ sectionRef }) => {
-  const adminsRef = useRef<HTMLUListElement>(null);
-  const artistsRef = useRef<HTMLUListElement>(null);
+  const adminsRef = useRef<HTMLDivElement>(null);
+  const artistsRef = useRef<HTMLDivElement>(null);
 
   const teamsRefs: TTeamRef[] = [
     {
@@ -21,11 +21,10 @@ export const Teams: FC<TSectionProps> = ({ sectionRef }) => {
   ];
 
   const [adminsViewRef, inViewAdmins] = useInView({
-    threshold: 0.5,
-    trackVisibility: false,
+    threshold: 0,
   });
   const [artistsViewRef, inViewArtists] = useInView({
-    threshold: 0.5,
+    threshold: 0,
   });
 
   const teamsViewRefs: TTeamViewRef[] = [

@@ -157,7 +157,7 @@ export type TTeamTabMode = "admins" | "artists";
 
 export type TTeamRef = {
   type: TTeamTabMode;
-  ref: React.RefObject<HTMLUListElement>;
+  ref: React.RefObject<HTMLDivElement>;
 };
 
 export type TTeamViewRef = {
