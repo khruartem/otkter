@@ -1,4 +1,4 @@
-::-webkit-scrollbar-thumb {
+.scrolled::-webkit-scrollbar-thumb {
   border-radius: 14px;
   /* background-color: var(--light30); */
   box-shadow: inset 0 0 14px 14px var(--light30);
@@ -6,18 +6,15 @@
 }
 
 /* 4px scroll thumb. 10px margin from right margin */
-::-webkit-scrollbar-track
-{
+.scrolled::-webkit-scrollbar-track {
   box-shadow: inset 0 0 14px 14px transparent;
   border: solid 4px transparent;
 }
 
-::-webkit-scrollbar
-{
+.scrolled::-webkit-scrollbar {
   width: 14px;
 }
 
-::-webkit-scrollbar:corner-present 
-{
+.scrolled::-webkit-scrollbar:corner-present {
   display: none;
 }

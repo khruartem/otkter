@@ -8,5 +8,5 @@ export const TeamEmployee: FC<TTeamEmployeeProps> = ({ employee }) => {
 
   return (
     <EmployeeUI type={"team"} employee={employee} socials={socials?.socials} />
-  )
-}
+  );
+};

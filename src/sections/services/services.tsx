@@ -112,11 +112,6 @@ export const Services: FC<TSectionProps> = ({ sectionRef }) => {
   ];
 
   return (
-    // <ServicesUI
-    //   ref={sectionRef}
-    //   servicesRefs={servicesRefs}
-    //   servicesViewRefs={servicesViewRefs}
-    // />
     <SliderSectionUI
       type={"services"}
       sectionRefs={servicesRefs}

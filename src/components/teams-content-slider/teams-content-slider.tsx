@@ -57,12 +57,13 @@ export const TeamsContentSlider: FC<TTeamsContentSliderProps> = ({
   }, [inViewAdmins, inViewArtists, tabs]);
 
   const onTabClick = (tab: TTeamTabMode) => {
-    setCurrentTab(tab);
+    //setCurrentTab(tab);
     setCurrentIndex(tabs.findIndex((el) => el === tab));
     switch (tab) {
       case "admins":
         scrollIntoElementView(adminsRef, "smooth", isMobile ? "center" : "end");
         lockScroll();
+        if (inViewAdmins) setCurrentTab(tab);
         break;
       case "artists":
         scrollIntoElementView(
@@ -71,6 +72,7 @@ export const TeamsContentSlider: FC<TTeamsContentSliderProps> = ({
           isMobile ? "center" : "end"
         );
         lockScroll();
+        if (inViewArtists) setCurrentTab(tab);
         break;
     }
   };
@@ -87,13 +89,13 @@ export const TeamsContentSlider: FC<TTeamsContentSliderProps> = ({
 
       onTabClick(newTab);
       setCurrentIndex(newIndex);
-      setCurrentTab(newTab);
+      //setCurrentTab(newTab);
     } else {
       const newTab = tabs[newIndex];
 
       onTabClick(newTab);
       setCurrentIndex(newIndex);
-      setCurrentTab(newTab);
+      //setCurrentTab(newTab);
     }
   };
 
@@ -105,13 +107,13 @@ export const TeamsContentSlider: FC<TTeamsContentSliderProps> = ({
 
       onTabClick(newTab);
       setCurrentIndex(0);
-      setCurrentTab(newTab);
+      //setCurrentTab(newTab);
     } else {
       const newTab = tabs[newIndex];
 
       onTabClick(newTab);
       setCurrentIndex(newIndex);
-      setCurrentTab(newTab);
+      //setCurrentTab(newTab);
     }
   };
 
