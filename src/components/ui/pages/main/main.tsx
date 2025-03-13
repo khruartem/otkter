@@ -10,12 +10,14 @@ import { Projects } from "../../../../sections/projects";
 import { TMainUIProps } from "./types";
 import { Services } from "../../../../sections/services";
 import { Teams } from "../../../../sections/teams";
+import { ContactsUI } from "../../sections/contacts";
 
 export const MainUI: FC<TMainUIProps> = ({
   projectsRef,
   servicesRef,
   aboutRef,
   teamsRef,
+  contactsRef
 }) => {
   return (
     <>
@@ -26,6 +28,7 @@ export const MainUI: FC<TMainUIProps> = ({
         <Services sectionRef={servicesRef} />
         <Projects sectionRef={projectsRef} />
         <Teams sectionRef={teamsRef} />
+        <ContactsUI ref={contactsRef} />
       </main>
       <Partners />
       <Footer />
