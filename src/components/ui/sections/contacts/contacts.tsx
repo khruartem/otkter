@@ -8,9 +8,9 @@ import { Colors } from "../../../../utils/types";
 
 import styles from "./contacts.module.css";
 import { Button } from "../../../button";
-import { teamsSocials } from "../../../../utils/constants";
+import { TContactsUIProps } from "./types";
 
-export const ContactsUI = React.forwardRef<HTMLElement>((_: unknown, ref) => {
+export const ContactsUI = React.forwardRef<HTMLElement, TContactsUIProps>(({onContact}, ref) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
@@ -51,9 +51,7 @@ export const ContactsUI = React.forwardRef<HTMLElement>((_: unknown, ref) => {
       <Button
         type={"button"}
         disabled={false}
-        onClick={() => {
-          window.open(teamsSocials[0].teamSocials[0].socials[0].url, "_blank");
-        }}
+        onClick={onContact}
       >
         {"Связаться с нами"}
       </Button>
