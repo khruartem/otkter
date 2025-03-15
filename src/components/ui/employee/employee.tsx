@@ -1,4 +1,3 @@
-import { FC } from "react";
 import clsx from "clsx";
 
 import { Text } from "../../text";
@@ -9,6 +8,7 @@ import { Colors } from "../../../utils/types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./employee.module.css";
+import { FC } from "react";
 
 export const EmployeeUI: FC<TEmployeeUIProps> = ({
   type,
@@ -17,7 +17,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
-  
+
   const { name, occupation, photo } = employee;
 
   return (

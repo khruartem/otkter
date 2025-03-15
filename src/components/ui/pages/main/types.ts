@@ -5,4 +5,5 @@ export type TMainUIProps = {
   servicesRef: React.RefObject<HTMLElement>;
   projectsRef: React.RefObject<HTMLElement>;
   teamsRef: React.RefObject<HTMLElement>;
+  contactsRef: React.RefObject<HTMLElement>;
 };

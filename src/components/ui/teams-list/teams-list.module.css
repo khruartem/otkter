@@ -1,12 +1,8 @@
 .teams-list {
-  /* display: flex;
-  flex-direction: row; */
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
-  /* gap: 40px; */
   scrollbar-width: none;
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, 100vw); */
   grid-template-columns: var(--tabs-count);
   grid-auto-flow: column;
 }

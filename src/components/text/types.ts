@@ -16,7 +16,7 @@ export type TextProps = {
   textAlign: textAligns;
   fontSize: FontSizes | string;
   fontWeight: FontWeights;
-  lineHeight: lineHeights;
+  lineHeight: lineHeights | string;
   textTransform: TextTransforms;
   color: Colors;
   decorated?: boolean;

@@ -34,7 +34,8 @@ export const Text = ({
           "--font-size":
             typeof fontSize === "number" ? `${fontSize}px` : fontSize,
           "--font-weight": fontWeight,
-          "--line-height": `${lineHeight}px`,
+          "--line-height":
+            typeof lineHeight === "number" ? `${lineHeight}px` : lineHeight,
           "--text-transform": textTransform,
           "--color": color,
           "--radius": "200px",

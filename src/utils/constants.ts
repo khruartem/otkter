@@ -47,6 +47,7 @@ import content from "../assets/services_img_content.png";
 import masterClasses from "../assets/services_img_master_classes.png";
 import lamp from "../assets/services_img_lamp.png";
 import smm from "../assets/services_img_smm.png";
+import { contactFunction } from "./contactFunction";
 
 export const navLinks: TNavLinks = [
   {
@@ -480,7 +481,7 @@ export const projectControls: TProjectControls[] = [
       buttons: [
         {
           label: "Записаться",
-          onClick: () => {},
+          onClick: contactFunction,
         },
       ],
       links: [],
@@ -492,7 +493,7 @@ export const projectControls: TProjectControls[] = [
       buttons: [
         {
           label: "Подробнее",
-          onClick: () => {},
+          onClick: contactFunction,
         },
       ],
       links: [],
@@ -504,7 +505,7 @@ export const projectControls: TProjectControls[] = [
       buttons: [
         {
           label: "Подробнее",
-          onClick: () => {},
+          onClick: contactFunction,
         },
       ],
       links: [],
@@ -853,7 +854,7 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Записаться",
-          onClick: () => {},
+          onClick: contactFunction,
         },
       ],
       links: [
@@ -871,7 +872,7 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Заказать",
-          onClick: () => {},
+          onClick: contactFunction,
         },
       ],
       links: [],
@@ -883,7 +884,7 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Заказать",
-          onClick: () => {},
+          onClick: contactFunction,
         },
       ],
       links: [],
@@ -895,7 +896,7 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Заказать",
-          onClick: () => {},
+          onClick: contactFunction,
         },
       ],
       links: [],
@@ -907,7 +908,7 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Заказать",
-          onClick: () => {},
+          onClick: contactFunction,
         },
       ],
       links: [],
@@ -919,7 +920,7 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Записаться",
-          onClick: () => {},
+          onClick: contactFunction,
         },
       ],
       links: [],
@@ -931,7 +932,7 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Заказать",
-          onClick: () => {},
+          onClick: contactFunction,
         },
       ],
       links: [],

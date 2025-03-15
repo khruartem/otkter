@@ -19,6 +19,7 @@ export const Main: FC = () => {
   const servicesRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLElement>(null);
   const teamsRef = useRef<HTMLElement>(null);
+  const contactsRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     // window.onload = () => {
@@ -39,6 +40,9 @@ export const Main: FC = () => {
       case "#team":
         scrollIntoElementView(teamsRef, "smooth", "start");
         break;
+      case "#contacts":
+        scrollIntoElementView(contactsRef, "smooth", "center");
+        break;
       case "":
         scrollToTop("instant");
         break;
@@ -53,6 +57,7 @@ export const Main: FC = () => {
       projectsRef={projectsRef}
       aboutRef={aboutRef}
       teamsRef={teamsRef}
+      contactsRef={contactsRef}
     />
   ) : (
     <Preloader />

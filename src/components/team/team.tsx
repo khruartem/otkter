@@ -25,7 +25,7 @@ export const Team: FC<TTeamProps> = ({
     : undefined;
 
   useEffect(() => {
-    if (cardsCount < 5) {
+    if (team.length < 5) {
       if (isLarge) setCardsCount(team.length);
       else if (isMobile) setCardsCount(1);
       else setCardsCount(2);
@@ -36,16 +36,16 @@ export const Team: FC<TTeamProps> = ({
       else if (isTablet) setCardsCount(2);
       else if (isMobile) setCardsCount(1);
     }
-  }, [isLarge, isMobile, isDesktop, isLaptop, isTablet]);
+  }, [isLarge, isMobile, isDesktop, isLaptop, isTablet, team.length]);
 
   return (
     <TeamUI
       team={team}
       type={type}
       teamRef={teamRef}
-      ref={teamViewRef}
       cardsCount={cardsCount}
       containerHeight={containerHeight}
+      ref={teamViewRef}
     />
   );
 };
