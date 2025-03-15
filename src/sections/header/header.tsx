@@ -30,7 +30,7 @@ const LargeResolution = () => {
 
   return isLarge || isDesktop ? (
     <header className={styles.header}>
-      <Link to="/otkter">
+      <Link to="/otkter/">
         <Logo
           mainColor={Colors.Navy}
           extraColor={Colors.Nephritis100}
@@ -62,7 +62,7 @@ const SmallResolution = () => {
           isOpen && styles.header_bordered
         )}
       >
-        <Link to="/otkter">
+        <Link to="/otkter/">
           <Logo
             mainColor={Colors.Navy}
             extraColor={Colors.Nephritis100}

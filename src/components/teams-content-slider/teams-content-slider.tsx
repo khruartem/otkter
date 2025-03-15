@@ -63,7 +63,7 @@ export const TeamsContentSlider: FC<TTeamsContentSliderProps> = ({
       case "admins":
         scrollIntoElementView(adminsRef, "smooth", isMobile ? "center" : "end");
         lockScroll();
-        if (inViewAdmins) setCurrentTab(tab);
+        //if (inViewAdmins) setCurrentTab(tab);
         break;
       case "artists":
         scrollIntoElementView(
@@ -72,7 +72,7 @@ export const TeamsContentSlider: FC<TTeamsContentSliderProps> = ({
           isMobile ? "center" : "end"
         );
         lockScroll();
-        if (inViewArtists) setCurrentTab(tab);
+        //if (inViewArtists) setCurrentTab(tab);
         break;
     }
   };

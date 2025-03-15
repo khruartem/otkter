@@ -8,9 +8,9 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 80px;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .contacts button {
@@ -48,7 +48,7 @@
 }
 
 .constants_mobile {
-  background-image: url(../../../../assets/banner_mobile.png);
+  background-image: url(../../../../assets/banner_tablet.png);
   padding-top: 67.19vw;
   padding-inline: 3.86vw;
   border-radius: 100px;

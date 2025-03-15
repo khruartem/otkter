@@ -27,7 +27,7 @@ export const TeamUI = React.forwardRef<HTMLUListElement, TTeamUIProps>(
             largeResolution && styles["team_large-gap"],
             smallResolution && styles["team_small-gap"],
             isMobile && styles["team_mobile"],
-            scrollStyle.scrolled
+            !isMobile && scrollStyle.scrolled
           )}
           style={
             {
