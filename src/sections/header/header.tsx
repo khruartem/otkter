@@ -1,9 +1,11 @@
 import clsx from "clsx";
-import { useRef, useState } from "react";
+//import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 import { Logo } from "../../components/icons";
-import { NavBar } from "../../components/navbar";
+//import { NavBar } from "../../components/navbar";
+import { Menu } from "../../components/menu/menu";
 import { MainSocial } from "../../components/main-social";
 
 import { useDesktopMediaQuery } from "../../hooks/useDesktopMediaQuery";
@@ -38,7 +40,8 @@ const LargeResolution = () => {
           height={40}
         />
       </Link>
-      <NavBar />
+      {/* <NavBar /> */}
+      <Menu />
       <MainSocial />
     </header>
   ) : null;
@@ -49,7 +52,7 @@ const SmallResolution = () => {
   const isTablet = useTabletMediaQuery();
   const isMobile = useMobileMediaQuery();
 
-  const [isOpen, setOpen] = useState(false);
+  //const [isOpen, setOpen] = useState(false);
   const rootRef = useRef(null);
 
   return isLaptop || isTablet || isMobile ? (
@@ -58,8 +61,8 @@ const SmallResolution = () => {
         className={clsx(
           styles.header,
           isMobile && styles.header_mobile,
-          isOpen && styles.header_overlayed,
-          isOpen && styles.header_bordered
+          //isOpen && styles.header_overlayed,
+          //isOpen && styles.header_bordered
         )}
       >
         <Link to="/otkter/">
@@ -79,10 +82,12 @@ const SmallResolution = () => {
             )}
           >
             <MainSocial />
-            <NavBar isOpen={isOpen} onOpen={setOpen} rootRef={rootRef} />
+            {/* <NavBar isOpen={isOpen} onOpen={setOpen} rootRef={rootRef} /> */}
+            <Menu rootRef={rootRef}/>
           </div>
         ) : (
-          <NavBar isOpen={isOpen} onOpen={setOpen} rootRef={rootRef} />
+          // <NavBar isOpen={isOpen} onOpen={setOpen} rootRef={rootRef} />
+          <Menu rootRef={rootRef}/>
         )}
       </header>
       <div ref={rootRef} id="react-navigation"></div>

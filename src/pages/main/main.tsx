@@ -27,6 +27,9 @@ export const Main: FC = () => {
     // };
 
     switch (location.hash) {
+      case "#about":
+        scrollIntoElementView(aboutRef, "smooth", "start");
+        break;
       case "#projects":
         scrollIntoElementView(projectsRef, "smooth", "start");
         break;

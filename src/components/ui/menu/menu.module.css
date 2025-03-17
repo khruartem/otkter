@@ -1,0 +1,52 @@
+.menu {
+  display: flex;
+  background-color: transparent;
+}
+
+.menu_rowed {
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu_columed {
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 60px - 16px);
+  width: 100vw;
+  margin-top: 16px;
+}
+
+.menu_colored {
+  background-color: var(--light100);
+}
+
+.menu_bordered {
+  border-radius: 40px;
+}
+
+/* Стили для разных разрешений экранов */
+.menu_large-screen {
+  margin-right: 20.89vw;
+  margin-left: 14.11vw;
+}
+
+.menu_desktop {
+  margin-right: 16.76vw;
+  margin-left: 7.25vw;
+}
+
+.menu_laptop {
+  justify-content: center;
+}
+
+.menu_tablet {
+  justify-content: center;
+}
+
+.menu_mobile {
+  padding-top: 21.26vw;
+  height: calc(100dvh - 60px - 16px);
+  padding-bottom: calc(7.25vw + 14px);
+  justify-content: space-between;
+}
+

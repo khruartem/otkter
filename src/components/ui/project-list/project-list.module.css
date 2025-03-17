@@ -1,0 +1,20 @@
+.project-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Стили для разных разрешений экранов */
+.project-list_large-resolution {
+  gap: 24px;
+}
+
+.project-list_medium-resolution {
+  gap: 20px;
+}
+
+.project-list_small-resolution {
+  gap: 80px;
+  flex-grow: 1;
+}

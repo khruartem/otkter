@@ -1,0 +1,34 @@
+.menu__link-list {
+  display: flex;
+}
+
+.menu__link-list_rowed {
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu__link-list_columed {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Стили для разных разрешений экранов */
+.menu__link-list_large-screen {
+  gap: 3.13vw;
+}
+
+.menu__link-list_desktop {
+  gap: 2.34vw;
+}
+
+.menu__link-list_laptop {
+  gap: calc(14px + 3.13vw + 14px);
+}
+
+.menu__link-list_tablet {
+  gap: calc(14px + 4.17vw + 14px);
+}
+
+.menu__link-list_mobile {
+  gap: calc(14px + 2.9vw + 14px);
+}

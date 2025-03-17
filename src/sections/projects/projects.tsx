@@ -2,7 +2,8 @@ import { FC } from "react";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
 
-import { CardList } from "../../components/card-list";
+//import { CardList } from "../../components/card-list";
+import { ProjectList } from "../../components/project-list";
 import { Text } from "../../components/text";
 import { Button } from "../../components/button";
 
@@ -48,7 +49,7 @@ export const Projects: FC<TSectionProps> = ({ sectionRef }) => {
       >
         {"проекты"}
       </Text>
-      <CardList type="projects" />
+      <ProjectList />
       <div className={styles["projects__button-section"]}>
         <Button
           type="button"
@@ -57,7 +58,7 @@ export const Projects: FC<TSectionProps> = ({ sectionRef }) => {
         >
           {"Предложить проект"}
         </Button>
-        <Link to={"/otkter/projects/archive"} className={stylesLink.link}>
+        <Link to={"/otkter/projects/all"} className={stylesLink.link}>
           {"Все проекты"}
         </Link>
       </div>
