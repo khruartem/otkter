@@ -6,7 +6,7 @@ import { useGetProjects } from "../../hooks/useGetProjects";
 
 export const CardList: FC<TCardListProps> = ({ type }) => {
   let cards;
-  const projects = useGetProjects();
+  const projects = useGetProjects("main");
   const team = undefined;
 
   switch (type) {

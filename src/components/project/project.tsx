@@ -8,6 +8,7 @@ import { scrollIntoElementView } from "../../utils/scrollIntoElementView";
 
 export const Project: FC<TProjectProps> = ({ project }) => {
   const location = useLocation();
+  const locationFrom = location.pathname;
   const { projectId } = project;
 
   const projectRef = useRef<HTMLAnchorElement>(null);
@@ -20,5 +21,5 @@ export const Project: FC<TProjectProps> = ({ project }) => {
     }
   }, [location.hash, projectId]);
 
-  return <ProjectUI project={project} projectRef={projectRef} />;
+  return <ProjectUI project={project} projectRef={projectRef} locationFrom={locationFrom} />;
 };

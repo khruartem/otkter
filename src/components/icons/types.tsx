@@ -13,6 +13,7 @@ export type TIconsProps = {
   height: number;
   className?: string;
   url?: string;
+  iconType?: "tab" | "category";
 };
 
 export type TLogoProps = Pick<
@@ -22,30 +23,20 @@ export type TLogoProps = Pick<
 export type TSocialProps = Pick<TIconsProps, "url">;
 export type TNavProps = Pick<TIconsProps, "onClick">;
 export type TModalsProps = Pick<TIconsProps, "mainColor">;
-export type TCategotyProps = Pick<TIconsProps, "mainColor">;
 export type TArrowProps = Pick<
-  TIconsProps,
-  "mainColor" | "hoverColor" | "activeColor" | "className" | "onClick"
+TIconsProps,
+"mainColor" | "hoverColor" | "activeColor" | "className" | "onClick"
 >;
 export type TEventsProps = Pick<TIconsProps, "mainColor">;
-// export type TTabProps = Pick<
-//   TIconsProps,
-//   "mainColor" | "hoverColor" | "activeColor" | "className" | "onClick"
-// > & {
-//   onMouseEnter?: (
-//     e: React.SyntheticEvent,
-//     styleActive: string,
-//     styleHover: string
-//   ) => void;
-//   onMouseLeave?: (e: React.SyntheticEvent, styleHover: string) => void;
-// };
 export type TTabProps = Pick<
-  TIconsProps,
-  | "mainColor"
-  | "hoverColor"
-  | "activeColor"
-  | "className"
-  | "onClick"
-  | "onMouseEnter"
-  | "onMouseLeave"
+TIconsProps,
+| "mainColor"
+| "hoverColor"
+| "activeColor"
+| "className"
+| "onClick"
+| "onMouseEnter"
+| "onMouseLeave"
+| "iconType"
 >;
+export type TCategotyProps = TTabProps;

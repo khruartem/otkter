@@ -4,6 +4,6 @@ export type TTeamUIProps = {
   team: TEmployee[];
   type: TRole;
   teamRef: React.RefObject<HTMLDivElement>;
-  cardsCount: number;
+  columnsCount: number;
   containerHeight?: string;
 };

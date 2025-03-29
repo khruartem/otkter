@@ -1,9 +1,11 @@
-import { TTeamViewRef, TEmployees } from "../../../utils/types";
+import { TTeamViewRef, TEmployee } from "../../../utils/types";
 
 export type TTeamsListUIProps = {
   adminsRef: React.RefObject<HTMLDivElement> | undefined;
   artistsRef: React.RefObject<HTMLDivElement> | undefined;
   teamsViewRefs: TTeamViewRef[];
-  teams: TEmployees;
+  admins: TEmployee[];
+  artists: TEmployee[];
   tabsCount: number;
+  minTeamLength: number;
 }

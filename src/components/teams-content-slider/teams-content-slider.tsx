@@ -10,6 +10,8 @@ import { lockScroll } from "../../utils/lockScroll";
 import { ContentSliderUI } from "../ui/content-slider";
 import { useGetIconOnMouseEnter } from "../../hooks/useGetIconOnMouseEnter";
 import { useGetIconOnMouseLeave } from "../../hooks/useGetIconOnMouseLeave";
+import { useGetTeamRefs } from "../../hooks/useGetTeamRefs";
+import { useGetTeamViews } from "../../hooks/useGetTeamViews";
 
 export const TeamsContentSlider: FC<TTeamsContentSliderProps> = ({
   teamsRefs,
@@ -22,8 +24,7 @@ export const TeamsContentSlider: FC<TTeamsContentSliderProps> = ({
   const [currentTab, setCurrentTab] = useState<TTeamTabMode>(tabs[0]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  const adminsRef = teamsRefs.find(({ type }) => type === "admins")?.ref;
-  const artistsRef = teamsRefs.find(({ type }) => type === "artists")?.ref;
+  const { adminsRef, artistsRef } = useGetTeamRefs(teamsRefs);
 
   const adminsIconRef = useRef<HTMLLIElement>(null);
   const artistsIconRef = useRef<HTMLLIElement>(null);
@@ -39,12 +40,7 @@ export const TeamsContentSlider: FC<TTeamsContentSliderProps> = ({
     },
   ];
 
-  const inViewAdmins = teamsViewRefs.find(
-    ({ type }) => type === "admins"
-  )?.inView;
-  const inViewArtists = teamsViewRefs.find(
-    ({ type }) => type === "artists"
-  )?.inView;
+  const { inViewAdmins, inViewArtists } = useGetTeamViews(teamsViewRefs);
 
   useEffect(() => {
     if (inViewAdmins) {

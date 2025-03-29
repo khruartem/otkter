@@ -1,5 +1,7 @@
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+
 import { Main } from "../../pages/main";
+import { AllProjects } from "../../pages/all-projects";
 import { Modal } from "../modal";
 import { Slider } from "../slider";
 import { ProjectInfo } from "../project-info";
@@ -12,14 +14,19 @@ export function App() {
   return (
     <>
       <Routes>
-        <Route path={"/otkter"} element={<Main />} />
+        <Route path={"/otkter/"} element={<Main />} />
+        <Route path="/otkter/projects/all/" element={<AllProjects />} />
         <Route
           path={"/otkter/projects/:id"}
           element={
             <Modal
               type="back"
               onClose={() => {
-                navigate(`/otkter/#projects-${location.state?.id}`);
+                navigate(
+                  location.state?.from === "/otkter/"
+                    ? `${location.state?.from}#projects-${location.state?.id}`
+                    : `${location.state?.from}`
+                );
               }}
             >
               <ProjectInfo />
@@ -32,7 +39,7 @@ export function App() {
             <Modal
               type="back"
               onClose={() => {
-                navigate("/otkter/#services", {state: {from: "services"}});
+                navigate("/otkter/#services", { state: { from: "services" } });
               }}
             >
               <ServiceInfo />
@@ -45,7 +52,7 @@ export function App() {
             <Modal
               type="close"
               onClose={() => {
-                navigate(`otkter/projects/${location.state?.id}`);
+                navigate(`otkter/projects/${location.state?.id}`, { state: {...location.state }});
               }}
             >
               <Slider type="projects" />

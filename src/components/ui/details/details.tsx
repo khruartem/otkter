@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Fragment } from "react";
 import clsx from "clsx";
 import { nanoid } from "@reduxjs/toolkit";
 
@@ -52,29 +52,41 @@ export const DetailsUI: FC<TDetailsUI> = ({ id, details, detailsType }) => {
       )}
       {detailsType === "employees" && (details as TEmployees)?.artists && (
         <>
-          <Category
-            category={{ name: "В ролях", type: "extra", id: "artists" }}
-          />
-          {(details as TEmployees).artists?.map(
-            (employee) => {
-              return (
-                <EmployeeUI
-                  key={nanoid()}
-                  type="projects"
-                  employee={employee}
+          {(details as TEmployees).artists?.map((group) => {
+            return (
+              <Fragment key={nanoid()}>
+                <Category
+                  category={{
+                    name: group.name || "",
+                    type: "extra",
+                    id: "artists",
+                  }}
                 />
-              );
-            }
-          )}
+                {group.employees.map((employee) => {
+                  return (
+                    <EmployeeUI
+                      key={nanoid()}
+                      type="projects"
+                      employee={employee}
+                    />
+                  );
+                })}
+              </Fragment>
+            );
+          })}
         </>
       )}
       {detailsType === "employees" &&
         (details as TEmployees)?.administrators && (
-          <>
+          <Fragment key={nanoid()}>
             <Category
-              category={{ name: "Руководители", type: "extra", id: "admins" }}
+              category={{
+                name: (details as TEmployees)?.administrators?.name || "",
+                type: "extra",
+                id: "admins",
+              }}
             />
-            {(details as TEmployees).administrators?.map(
+            {(details as TEmployees).administrators?.employees.map(
               (employee) => {
                 return (
                   <EmployeeUI
@@ -85,7 +97,7 @@ export const DetailsUI: FC<TDetailsUI> = ({ id, details, detailsType }) => {
                 );
               }
             )}
-          </>
+          </Fragment>
         )}
     </div>
   );

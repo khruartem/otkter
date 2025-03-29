@@ -1,13 +1,16 @@
 import { FC } from "react";
-import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
-import { TMenuUIProps } from "./types";
-import { CloseNav, OpenNav } from "../../icons";
 import clsx from "clsx";
 import ReactDOM from "react-dom";
-import { navLinks } from "../../../utils/constants";
-import { MainSocial } from "../../main-social";
-import styles from "./menu.module.css";
+
+import { CloseNav, OpenNav } from "../../icons";
 import { MenuLinkListUI } from "../menu-link-list";
+import { MainSocial } from "../../main-social";
+
+import { TMenuUIProps } from "./types";
+import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
+import { navLinks } from "../../../utils/constants";
+
+import styles from "./menu.module.css";
 
 export const MenuUI: FC<TMenuUIProps> = ({
   isOpen,

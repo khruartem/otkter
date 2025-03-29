@@ -1,5 +1,7 @@
 import { FC, useState } from "react";
+
 import { TMenuProps } from "./types";
+
 import { MenuUI } from "../ui/menu";
 
 export const Menu: FC<TMenuProps> = ({ rootRef }) => {

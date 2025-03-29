@@ -1,14 +1,14 @@
 import { FC, memo } from "react";
 import clsx from "clsx";
 
-import { TContentSliderUIPros } from "./types";
-
 import { ArrowLeft, ArrowRight } from "../../icons/icons";
+import { TabList } from "../../tab-list";
+
+import { TContentSliderUIPros } from "./types";
 import { Colors } from "../../../utils/types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./content-slider.module.css";
-import { TabListUI } from "../tab-list";
 
 export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
   ({
@@ -29,10 +29,15 @@ export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
       <div
         className={clsx(
           styles.wrapper,
-          isLarge && type === "team" && styles["wrapper_large-screen"],
+          isLarge && type === "team" && styles["wrapper_large-screen_team"],
           isLarge && type === "services" && styles["wrapper_large-screen_services"],
-          isDesktop && styles.wrapper_desktop,
-          isLaptop && styles.wrapper_laptop,
+          isLarge && type === "projects" && styles["wrapper_large-screen_projects"],
+          isDesktop && type === "team" && styles["wrapper_desktop_team"],
+          isDesktop && type === "services" && styles["wrapper_desktop_services"],
+          isDesktop && type === "projects" && styles["wrapper_desktop_projects"],
+          isLaptop && type === "team" && styles["wrapper_laptop_team"],
+          isLaptop && type === "services" && styles["wrapper_laptop_services"],
+          isLaptop && type === "projects" && styles["wrapper_laptop_projects"],
           (isTablet || isMobile) && styles.wrapper_widthed
         )}
       >
@@ -52,7 +57,7 @@ export const ContentSliderUI: FC<TContentSliderUIPros> = memo(
             isMobile && styles["content-slider_mobile"]
           )}
         >
-          <TabListUI
+          <TabList
             tabs={tabs}
             currentTab={currentTab}
             onTabClick={onTabClick}

@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { SliderUI } from "../ui/slider";
 
@@ -12,6 +12,7 @@ import { useGetId } from "../../hooks/useGetId";
 
 export const Slider: FC<TSliderProps> = ({ type }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   
   const id = useGetId();
   const photoId = useGetPhotoId();
@@ -19,8 +20,6 @@ export const Slider: FC<TSliderProps> = ({ type }) => {
   const photos = useGetPhotos(id, type);
   const photo = useGetPhoto(id, photoId, type);
   const photoIndex = useGetPhotoIndex(id, photoId, type);
-
-  console.log(id, type, photoId, photos, photo, photoIndex)
 
   const [currentPhoto, setCurrentPhoto] = useState(photo!);
   const [currentIndex, setCurrentIndex] = useState(photoIndex!);
@@ -34,13 +33,13 @@ export const Slider: FC<TSliderProps> = ({ type }) => {
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type}});
+      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
     } else {
       const newPhoto = photos![newIndex];
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type}});
+      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
     };
   };
 
@@ -52,13 +51,13 @@ export const Slider: FC<TSliderProps> = ({ type }) => {
 
       setCurrentIndex(0);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type}});
+      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
     } else {
       const newPhoto = photos![newIndex];
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type}});
+      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
     };
   };
 

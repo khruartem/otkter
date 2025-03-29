@@ -7,7 +7,11 @@
   grid-auto-flow: column;
 }
 
-/* Стили для разных разрешений жкранов */
+/* .teams-list_faded {
+  background: linear-gradient(180deg, red 0%, rgba(247, 247, 247, 0) 10%, rgba(247, 247, 247, 0) 50%, rgba(247, 247, 247, 0) 90%, red 100%);
+} */
+
+/* Стили для разных разрешений экранов */
 .teams-list_mobile {
   padding-right: 3.86vw;
 }

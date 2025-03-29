@@ -26,7 +26,7 @@ export const MainUI: FC<TMainUIProps> = ({
         <Hero />
         <About sectionRef={aboutRef} />
         <Services sectionRef={servicesRef} />
-        <Projects sectionRef={projectsRef} />
+        <Projects sectionRef={projectsRef} type="main" />
         <Teams sectionRef={teamsRef} />
         <Contacts sectionRef={contactsRef} />
       </main>

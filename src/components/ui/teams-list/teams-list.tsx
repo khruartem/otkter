@@ -9,11 +9,13 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import styles from "./teams-list.module.css";
 
 export const TeamsListUI: FC<TTeamsListUIProps> = ({
-  teams,
+  admins,
+  artists,
   tabsCount,
   adminsRef,
   artistsRef,
   teamsViewRefs,
+  minTeamLength
 }) => {
   const { isMobile } = useGetMediaQuery();
 
@@ -21,6 +23,7 @@ export const TeamsListUI: FC<TTeamsListUIProps> = ({
     <div
       className={clsx(
         styles["teams-list"],
+        // styles["teams-list_faded"],
         isMobile && styles["teams-list_mobile"]
       )}
       style={
@@ -29,22 +32,22 @@ export const TeamsListUI: FC<TTeamsListUIProps> = ({
         } as CSSProperties
       }
     >
-      {teams.administrators && adminsRef && (
+      {admins && adminsRef && (
         <Team
-          team={teams.administrators}
+          team={admins}
           type={"admins"}
           teamsViewRefs={teamsViewRefs}
           teamRef={adminsRef}
-          gridRowsCount={teams.administrators.length}
+          minTeamLength={minTeamLength}
         />
       )}
-      {teams.artists && artistsRef && (
+      {artists && artistsRef && (
         <Team
-          team={teams.artists}
+          team={artists}
           type={"artists"}
           teamsViewRefs={teamsViewRefs}
           teamRef={artistsRef}
-          gridRowsCount={teams.administrators!.length}
+          minTeamLength={minTeamLength}
         />
       )}
     </div>

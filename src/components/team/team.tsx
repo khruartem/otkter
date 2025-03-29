@@ -2,39 +2,41 @@ import { FC, useEffect, useState } from "react";
 import { TeamUI } from "../ui/team";
 import { TTeamProps } from "./type";
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+import { useGetViewRefByType } from "../../hooks/useGetViewRefByType";
 
 export const Team: FC<TTeamProps> = ({
   team,
   teamRef,
   teamsViewRefs,
   type,
-  gridRowsCount,
+  minTeamLength,
 }) => {
-  const teamViewRef = teamsViewRefs.find(
-    (viewRef) => viewRef.type === type
-  )?.ref;
+  // const teamViewRef = teamsViewRefs.find(
+  //   (viewRef) => viewRef.type === type
+  // )?.ref;
+  const teamViewRef = useGetViewRefByType(teamsViewRefs, type);
 
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
-  const [cardsCount, setCardsCount] = useState(team.length);
+  const [columnsCount, setColumnsCount] = useState(0);
 
-  const containerHeight = gridRowsCount
-    ? `calc(${Math.ceil(gridRowsCount / cardsCount)} * 486px + ${
-        Math.ceil(gridRowsCount / cardsCount) - 1
+  const containerHeight = minTeamLength
+    ? `calc(${Math.ceil(minTeamLength / columnsCount)} * 486px + ${
+        Math.ceil(minTeamLength / columnsCount) - 1
       } * 24px)`
     : undefined;
 
   useEffect(() => {
     if (team.length < 5) {
-      if (isLarge) setCardsCount(team.length);
-      else if (isMobile) setCardsCount(1);
-      else setCardsCount(2);
+      if (isLarge) setColumnsCount(team.length);
+      else if (isMobile) setColumnsCount(1);
+      else setColumnsCount(2);
     } else {
-      if (isLarge) setCardsCount(5);
-      else if (isDesktop) setCardsCount(3);
-      else if (isLaptop) setCardsCount(3);
-      else if (isTablet) setCardsCount(2);
-      else if (isMobile) setCardsCount(1);
+      if (isLarge) setColumnsCount(5);
+      else if (isDesktop) setColumnsCount(3);
+      else if (isLaptop) setColumnsCount(3);
+      else if (isTablet) setColumnsCount(2);
+      else if (isMobile) setColumnsCount(1);
     }
   }, [isLarge, isMobile, isDesktop, isLaptop, isTablet, team.length]);
 
@@ -43,7 +45,7 @@ export const Team: FC<TTeamProps> = ({
       team={team}
       type={type}
       teamRef={teamRef}
-      cardsCount={cardsCount}
+      columnsCount={columnsCount}
       containerHeight={containerHeight}
       ref={teamViewRef}
     />

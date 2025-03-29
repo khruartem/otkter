@@ -3,13 +3,17 @@ import clsx from "clsx";
 
 import {
   Admins,
+  All,
   Artists,
   Content,
+  Contest,
   Design,
   Events,
   Lamp,
-  MasterClasses,
+  MasterClass,
   OpenSea,
+  Play,
+  ShortFilm,
   SMM,
 } from "../../icons/icons";
 import { Text } from "../../text";
@@ -21,8 +25,8 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import styles from "./tab.module.css";
 
 export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(
-  ({ tab, current, onClick, onMouseEnter, onMouseLeave }, ref) => {
-    const { isTablet, isMobile } = useGetMediaQuery();
+  ({ tab, isMainPage, current, onClick, onMouseEnter, onMouseLeave }, ref) => {
+    const { isLarge, isTablet, isMobile } = useGetMediaQuery();
 
     return (
       <li ref={ref}>
@@ -94,9 +98,10 @@ export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(
             }}
           />
         )}
-        {tab === "master-class" && (
-          <MasterClasses
+        {tab === "master-class" && isMainPage && (
+          <MasterClass
             className={clsx(current && styles.tab_active)}
+            iconType="tab"
             mainColor={Colors.Nephritis100}
             hoverColor={
               isTablet || isMobile ? Colors.Nephritis100 : Colors.Nephritis120
@@ -111,6 +116,66 @@ export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(
             }}
           />
         )}
+        {tab === "master-class" &&
+          !isMainPage &&
+          (!isLarge ? (
+            <MasterClass
+              className={clsx(current && styles.tab_active)}
+              iconType="tab"
+              mainColor={Colors.Nephritis100}
+              hoverColor={
+                isTablet || isMobile ? Colors.Nephritis100 : Colors.Nephritis120
+              }
+              activeColor={Colors.Navy}
+              onClick={onClick}
+              onMouseEnter={(e: SyntheticEvent) => {
+                onMouseEnter(e, styles["tab_active"], styles["tab_hover"]);
+              }}
+              onMouseLeave={(e: SyntheticEvent) => {
+                onMouseLeave(e, styles["tab_hover"]);
+              }}
+            />
+          ) : (
+            <div
+              className={clsx(
+                styles["tab-wrapper"],
+                current && styles["tab-wrapper_active"]
+              )}
+              onClick={onClick}
+              onMouseEnter={(e: SyntheticEvent) => {
+                onMouseEnter(
+                  e,
+                  styles["tab-wrapper_active"],
+                  styles["tab-wrapper_hover"]
+                );
+              }}
+              onMouseLeave={(e: SyntheticEvent) => {
+                onMouseLeave(e, styles["tab-wrapper_hover"]);
+              }}
+            >
+              <MasterClass
+                className={clsx(
+                  styles.tab_labeled,
+                  current && styles.tab_active
+                )}
+                iconType="tab"
+                mainColor={Colors.Nephritis100}
+              />
+              <Text
+                as="label"
+                fontFamily="Unbounded"
+                textAlign="center"
+                fontSize={18}
+                fontWeight={500}
+                lineHeight={28}
+                textTransform="none"
+                color={current ? Colors.Navy : Colors.Nephritis100}
+                decorated={false}
+              >
+                {"Мастер-класс"}
+              </Text>
+            </div>
+          ))}
         {tab === "lamp" && (
           <Lamp
             className={clsx(current && styles.tab_active)}
@@ -170,7 +235,11 @@ export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(
               )}
               onClick={onClick}
               onMouseEnter={(e: SyntheticEvent) => {
-                onMouseEnter(e, styles["tab-wrapper_active"], styles["tab-wrapper_hover"]);
+                onMouseEnter(
+                  e,
+                  styles["tab-wrapper_active"],
+                  styles["tab-wrapper_hover"]
+                );
               }}
               onMouseLeave={(e: SyntheticEvent) => {
                 onMouseLeave(e, styles["tab-wrapper_hover"]);
@@ -198,7 +267,7 @@ export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(
               </Text>
             </div>
           ))}
-          {tab === "artists" &&
+        {tab === "artists" &&
           (isMobile ? (
             <Artists
               className={clsx(current && styles.tab_active)}
@@ -206,9 +275,6 @@ export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(
               hoverColor={
                 isTablet || isMobile ? Colors.Nephritis100 : Colors.Nephritis120
               }
-              // hoverColor={
-              //   Colors.Nephritis120
-              // }
               activeColor={Colors.Navy}
               onClick={onClick}
               onMouseEnter={(e: SyntheticEvent) => {
@@ -226,7 +292,11 @@ export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(
               )}
               onClick={onClick}
               onMouseEnter={(e: SyntheticEvent) => {
-                onMouseEnter(e, styles["tab-wrapper_active"], styles["tab-wrapper_hover"]);
+                onMouseEnter(
+                  e,
+                  styles["tab-wrapper_active"],
+                  styles["tab-wrapper_hover"]
+                );
               }}
               onMouseLeave={(e: SyntheticEvent) => {
                 onMouseLeave(e, styles["tab-wrapper_hover"]);
@@ -258,6 +328,246 @@ export const TabUI = React.forwardRef<HTMLLIElement, TTabUIProps>(
                 decorated={false}
               >
                 {"Творцы"}
+              </Text>
+            </div>
+          ))}
+        {tab === "all" &&
+          !isMainPage &&
+          (!isLarge ? (
+            <All
+              className={clsx(current && styles.tab_active)}
+              iconType="tab"
+              mainColor={Colors.Nephritis100}
+              hoverColor={
+                isTablet || isMobile ? Colors.Nephritis100 : Colors.Nephritis120
+              }
+              activeColor={Colors.Navy}
+              onClick={onClick}
+              onMouseEnter={(e: SyntheticEvent) => {
+                onMouseEnter(e, styles["tab_active"], styles["tab_hover"]);
+              }}
+              onMouseLeave={(e: SyntheticEvent) => {
+                onMouseLeave(e, styles["tab_hover"]);
+              }}
+            />
+          ) : (
+            <div
+              className={clsx(
+                styles["tab-wrapper"],
+                current && styles["tab-wrapper_active"]
+              )}
+              onClick={onClick}
+              onMouseEnter={(e: SyntheticEvent) => {
+                onMouseEnter(
+                  e,
+                  styles["tab-wrapper_active"],
+                  styles["tab-wrapper_hover"]
+                );
+              }}
+              onMouseLeave={(e: SyntheticEvent) => {
+                onMouseLeave(e, styles["tab-wrapper_hover"]);
+              }}
+            >
+              <All
+                className={clsx(
+                  styles.tab_labeled,
+                  current && styles.tab_active
+                )}
+                iconType="tab"
+                mainColor={Colors.Nephritis100}
+              />
+              <Text
+                as="label"
+                fontFamily="Unbounded"
+                textAlign="center"
+                fontSize={18}
+                fontWeight={500}
+                lineHeight={28}
+                textTransform="none"
+                color={current ? Colors.Navy : Colors.Nephritis100}
+                decorated={false}
+              >
+                {"Все"}
+              </Text>
+            </div>
+          ))}
+        {tab === "play" &&
+          !isMainPage &&
+          (!isLarge ? (
+            <Play
+              className={clsx(current && styles.tab_active)}
+              iconType="tab"
+              mainColor={Colors.Nephritis100}
+              hoverColor={
+                isTablet || isMobile ? Colors.Nephritis100 : Colors.Nephritis120
+              }
+              activeColor={Colors.Navy}
+              onClick={onClick}
+              onMouseEnter={(e: SyntheticEvent) => {
+                onMouseEnter(e, styles["tab_active"], styles["tab_hover"]);
+              }}
+              onMouseLeave={(e: SyntheticEvent) => {
+                onMouseLeave(e, styles["tab_hover"]);
+              }}
+            />
+          ) : (
+            <div
+              className={clsx(
+                styles["tab-wrapper"],
+                current && styles["tab-wrapper_active"]
+              )}
+              onClick={onClick}
+              onMouseEnter={(e: SyntheticEvent) => {
+                onMouseEnter(
+                  e,
+                  styles["tab-wrapper_active"],
+                  styles["tab-wrapper_hover"]
+                );
+              }}
+              onMouseLeave={(e: SyntheticEvent) => {
+                onMouseLeave(e, styles["tab-wrapper_hover"]);
+              }}
+            >
+              <Play
+                className={clsx(
+                  styles.tab_labeled,
+                  current && styles.tab_active
+                )}
+                iconType="tab"
+                mainColor={Colors.Nephritis100}
+              />
+              <Text
+                as="label"
+                fontFamily="Unbounded"
+                textAlign="center"
+                fontSize={18}
+                fontWeight={500}
+                lineHeight={28}
+                textTransform="none"
+                color={current ? Colors.Navy : Colors.Nephritis100}
+                decorated={false}
+              >
+                {"Спектакль"}
+              </Text>
+            </div>
+          ))}
+        {tab === "contest" &&
+          !isMainPage &&
+          (!isLarge ? (
+            <Contest
+              className={clsx(current && styles.tab_active)}
+              iconType="tab"
+              mainColor={Colors.Nephritis100}
+              hoverColor={
+                isTablet || isMobile ? Colors.Nephritis100 : Colors.Nephritis120
+              }
+              activeColor={Colors.Navy}
+              onClick={onClick}
+              onMouseEnter={(e: SyntheticEvent) => {
+                onMouseEnter(e, styles["tab_active"], styles["tab_hover"]);
+              }}
+              onMouseLeave={(e: SyntheticEvent) => {
+                onMouseLeave(e, styles["tab_hover"]);
+              }}
+            />
+          ) : (
+            <div
+              className={clsx(
+                styles["tab-wrapper"],
+                current && styles["tab-wrapper_active"]
+              )}
+              onClick={onClick}
+              onMouseEnter={(e: SyntheticEvent) => {
+                onMouseEnter(
+                  e,
+                  styles["tab-wrapper_active"],
+                  styles["tab-wrapper_hover"]
+                );
+              }}
+              onMouseLeave={(e: SyntheticEvent) => {
+                onMouseLeave(e, styles["tab-wrapper_hover"]);
+              }}
+            >
+              <Contest
+                className={clsx(
+                  styles.tab_labeled,
+                  current && styles.tab_active
+                )}
+                iconType="tab"
+                mainColor={Colors.Nephritis100}
+              />
+              <Text
+                as="label"
+                fontFamily="Unbounded"
+                textAlign="center"
+                fontSize={18}
+                fontWeight={500}
+                lineHeight={28}
+                textTransform="none"
+                color={current ? Colors.Navy : Colors.Nephritis100}
+                decorated={false}
+              >
+                {"Конкурс"}
+              </Text>
+            </div>
+          ))}
+        {tab === "short-film" &&
+          !isMainPage &&
+          (!isLarge ? (
+            <ShortFilm
+              className={clsx(current && styles.tab_active)}
+              iconType="tab"
+              mainColor={Colors.Nephritis100}
+              hoverColor={
+                isTablet || isMobile ? Colors.Nephritis100 : Colors.Nephritis120
+              }
+              activeColor={Colors.Navy}
+              onClick={onClick}
+              onMouseEnter={(e: SyntheticEvent) => {
+                onMouseEnter(e, styles["tab_active"], styles["tab_hover"]);
+              }}
+              onMouseLeave={(e: SyntheticEvent) => {
+                onMouseLeave(e, styles["tab_hover"]);
+              }}
+            />
+          ) : (
+            <div
+              className={clsx(
+                styles["tab-wrapper"],
+                current && styles["tab-wrapper_active"]
+              )}
+              onClick={onClick}
+              onMouseEnter={(e: SyntheticEvent) => {
+                onMouseEnter(
+                  e,
+                  styles["tab-wrapper_active"],
+                  styles["tab-wrapper_hover"]
+                );
+              }}
+              onMouseLeave={(e: SyntheticEvent) => {
+                onMouseLeave(e, styles["tab-wrapper_hover"]);
+              }}
+            >
+              <ShortFilm
+                className={clsx(
+                  styles.tab_labeled,
+                  current && styles.tab_active
+                )}
+                iconType="tab"
+                mainColor={Colors.Nephritis100}
+              />
+              <Text
+                as="label"
+                fontFamily="Unbounded"
+                textAlign="center"
+                fontSize={18}
+                fontWeight={500}
+                lineHeight={28}
+                textTransform="none"
+                color={current ? Colors.Navy : Colors.Nephritis100}
+                decorated={false}
+              >
+                {"Короткий метр"}
               </Text>
             </div>
           ))}
