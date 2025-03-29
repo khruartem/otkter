@@ -49,7 +49,7 @@ export const Logo = ({ mainColor, extraColor, width, height }: TLogoProps) => {
   );
 };
 
-export const Telegram = ({url}: TSocialProps) => {
+export const Telegram = ({ url }: TSocialProps) => {
   return (
     <a href={url} target="_blank">
       <svg
@@ -68,7 +68,7 @@ export const Telegram = ({url}: TSocialProps) => {
   );
 };
 
-export const VK = ({url}: TSocialProps) => {
+export const VK = ({ url }: TSocialProps) => {
   return (
     <a href={url} target="_blank">
       <svg
@@ -176,26 +176,70 @@ export const ArrowRight = ({
   );
 };
 
-export const Play = ({ mainColor }: TCategotyProps) => {
+export const Play = ({
+  mainColor,
+  iconType = "tab",
+  hoverColor = undefined,
+  activeColor = undefined,
+  onClick = undefined,
+  onMouseEnter = undefined,
+  onMouseLeave = undefined,
+  className = undefined,
+}: TCategotyProps) => {
   return (
     <svg
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
-      className={styles.category}
+      className={clsx(
+        iconType === "tab" && styles.tab,
+        iconType === "category" && styles.category,
+        className
+      )}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
     >
       <path d="M18.715 25.678c-1.003 1.039-2.112 1.933-3.042 2.611-.642.47-1.41.711-2.19.711-.441 0-.886-.077-1.317-.235-2.78-1.016-7.524-3.254-8.042-6.817l-1.082-7.44c-.28-1.933.871-3.811 2.739-4.467a29.234 29.234 0 0 1 3.259-.939l-.67 4.605a6.72 6.72 0 0 0-.07 1.056c-.775.12-1.336.871-1.546 1.857-.07.33.21.627.542.58L8.682 17c.37 1.128.985 2.197 1.74 3.19-1.183.594-2.028 1.724-2.405 3.057-.14.5.427.898.858.61 1.21-.808 2.33-1.288 3.535-1.478a27 27 0 0 0 2.606 2.155 5.91 5.91 0 0 0 3.699 1.145v-.002Zm-2.96-15.284 2.673.383a.484.484 0 0 0 .543-.58c-.211-.99-.777-1.745-1.559-1.859-.783-.112-1.536.455-2.017 1.348-.16.296.027.66.36.708Zm13.203-1.369-1.083 7.44c-.52 3.563-5.26 5.8-8.041 6.817a3.796 3.796 0 0 1-1.308.231 3.77 3.77 0 0 1-2.232-.73c-2.381-1.743-6.3-5.198-5.78-8.766l1.081-7.44c.281-1.928 1.918-3.411 3.893-3.526 1.906-.108 3.738-.045 5.446.195 1.709.24 3.487.68 5.284 1.31 1.869.656 3.02 2.536 2.74 4.47Zm-6.484 5.344c-2.45.569-4.308.304-6.5-.925-.466-.262-1.022.191-.835.693.604 1.615 1.903 2.857 3.606 3.097 1.703.241 3.3-.586 4.333-1.97.319-.427-.085-1.015-.604-.895Zm1.553-3.45c-.21-.99-.776-1.745-1.559-1.86-.783-.112-1.536.456-2.017 1.348-.16.296.026.661.359.709l2.674.382a.485.485 0 0 0 .543-.58Z" />
     </svg>
   );
 };
 
-export const Contest = ({ mainColor }: TCategotyProps) => {
+export const Contest = ({
+  mainColor,
+  iconType = "tab",
+  hoverColor = undefined,
+  activeColor = undefined,
+  onClick = undefined,
+  onMouseEnter = undefined,
+  onMouseLeave = undefined,
+  className = undefined,
+}: TCategotyProps) => {
   return (
     <svg
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      className={styles.category}
+      className={clsx(
+        iconType === "tab" && styles.tab,
+        iconType === "category" && styles.category,
+        className
+      )}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
     >
       <path
         fillRule="evenodd"
@@ -206,34 +250,56 @@ export const Contest = ({ mainColor }: TCategotyProps) => {
   );
 };
 
-export const MasterClass = ({ mainColor }: TCategotyProps) => {
-  return (
-    <svg
-      fill={mainColor}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      className={styles.category}
-    >
-      <g>
-        <path d="M15.93 21.643a.631.631 0 0 1-.563.357.626.626 0 0 1-.278-.07L12 20.34l-3.09 1.59a.626.626 0 0 1-.277.07.631.631 0 0 1-.564-.357.653.653 0 0 1 .286-.878l3.014-1.556V17h1.262v2.209l3.014 1.556c.32.157.446.548.286.878ZM4 3v11.293C4 16.067 4.889 17 6.578 17h10.844c1.69 0 2.578-.933 2.578-2.707V3H4Zm12.427 6.141-2.8 2.455a1.08 1.08 0 0 1-.898.261 1.103 1.103 0 0 1-.765-.56l-.933-1.633-2.604 2.277A.626.626 0 0 1 8 12.1a.662.662 0 0 1-.516-.252.723.723 0 0 1 .09-.99l2.8-2.454a1.08 1.08 0 0 1 .897-.261c.32.056.596.261.765.56l.933 1.633 2.604-2.277a.645.645 0 0 1 .943.093.732.732 0 0 1-.09.99Z" />
-        <path d="M21.302 3.5H2.698C2.316 3.5 2 3.16 2 2.75S2.316 2 2.698 2h18.604c.382 0 .698.34.698.75s-.316.75-.698.75Z" />
-      </g>
-      <defs>
-        <clipPath id="a">
-          <path d="M0 0h24v24H0z" />
-        </clipPath>
-      </defs>
-    </svg>
-  );
-};
+// export const MasterClass = ({ mainColor }: TCategotyProps) => {
+//   return (
+//     <svg
+//       fill={mainColor}
+//       xmlns="http://www.w3.org/2000/svg"
+//       viewBox="0 0 24 24"
+//       className={styles.category}
+//     >
+//       <g>
+//         <path d="M15.93 21.643a.631.631 0 0 1-.563.357.626.626 0 0 1-.278-.07L12 20.34l-3.09 1.59a.626.626 0 0 1-.277.07.631.631 0 0 1-.564-.357.653.653 0 0 1 .286-.878l3.014-1.556V17h1.262v2.209l3.014 1.556c.32.157.446.548.286.878ZM4 3v11.293C4 16.067 4.889 17 6.578 17h10.844c1.69 0 2.578-.933 2.578-2.707V3H4Zm12.427 6.141-2.8 2.455a1.08 1.08 0 0 1-.898.261 1.103 1.103 0 0 1-.765-.56l-.933-1.633-2.604 2.277A.626.626 0 0 1 8 12.1a.662.662 0 0 1-.516-.252.723.723 0 0 1 .09-.99l2.8-2.454a1.08 1.08 0 0 1 .897-.261c.32.056.596.261.765.56l.933 1.633 2.604-2.277a.645.645 0 0 1 .943.093.732.732 0 0 1-.09.99Z" />
+//         <path d="M21.302 3.5H2.698C2.316 3.5 2 3.16 2 2.75S2.316 2 2.698 2h18.604c.382 0 .698.34.698.75s-.316.75-.698.75Z" />
+//       </g>
+//       <defs>
+//         <clipPath id="a">
+//           <path d="M0 0h24v24H0z" />
+//         </clipPath>
+//       </defs>
+//     </svg>
+//   );
+// };
 
-export const ShortFilm = ({ mainColor }: TCategotyProps) => {
+export const ShortFilm = ({
+  mainColor,
+  iconType = "tab",
+  hoverColor = undefined,
+  activeColor = undefined,
+  onClick = undefined,
+  onMouseEnter = undefined,
+  onMouseLeave = undefined,
+  className = undefined,
+}: TCategotyProps) => {
   return (
     <svg
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      className={styles.category}
+      className={clsx(
+        iconType === "tab" && styles.tab,
+        iconType === "category" && styles.category,
+        className
+      )}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
     >
       <path d="m19.98 7.739-2.26 1.614v-.858C17.72 6.553 16.18 5 14.3 5H5.74C3.68 4.98 2 6.697 2 8.802v6.703C2 17.263 2.86 19 5.42 19h8.86c1.9 0 3.42-1.574 3.42-3.495v-.879l2.26 1.615c1.14.797 2.04.306 2.04-1.083V8.822c0-1.39-.9-1.86-2.02-1.083Z" />
     </svg>
@@ -346,7 +412,6 @@ export const OpenSea = ({
   onMouseLeave = undefined,
   className = undefined,
 }: TTabProps) => {
-
   return (
     <svg
       className={clsx(styles.tab, className)}
@@ -384,7 +449,6 @@ export const Events = ({
   onMouseLeave = undefined,
   className = undefined,
 }: TTabProps) => {
-
   return (
     <svg
       className={clsx(styles.tab, className)}
@@ -420,7 +484,6 @@ export const Design = ({
   onMouseLeave = undefined,
   className = undefined,
 }: TTabProps) => {
-
   return (
     <svg
       className={clsx(styles.tab, className)}
@@ -452,7 +515,6 @@ export const Content = ({
   onMouseLeave = undefined,
   className = undefined,
 }: TTabProps) => {
-
   return (
     <svg
       className={clsx(styles.tab, className)}
@@ -474,7 +536,7 @@ export const Content = ({
   );
 };
 
-export const MasterClasses = ({
+export const MasterClass = ({
   mainColor,
   hoverColor = undefined,
   activeColor = undefined,
@@ -482,11 +544,15 @@ export const MasterClasses = ({
   onMouseEnter = undefined,
   onMouseLeave = undefined,
   className = undefined,
+  iconType = "tab",
 }: TTabProps) => {
-
   return (
     <svg
-      className={clsx(styles.tab, className)}
+      className={clsx(
+        iconType === "tab" && styles.tab,
+        iconType === "category" && styles.category,
+        className
+      )}
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
@@ -518,7 +584,6 @@ export const Lamp = ({
   onMouseLeave = undefined,
   className = undefined,
 }: TTabProps) => {
-
   return (
     <svg
       className={clsx(styles.tab, className)}
@@ -549,7 +614,6 @@ export const SMM = ({
   onMouseLeave = undefined,
   className = undefined,
 }: TTabProps) => {
-
   return (
     <svg
       className={clsx(styles.tab, className)}
@@ -598,7 +662,6 @@ export const Admins = ({
   onMouseLeave = undefined,
   className = undefined,
 }: TTabProps) => {
-
   return (
     <svg
       className={clsx(styles.tab, className)}
@@ -634,7 +697,6 @@ export const Artists = ({
   onMouseLeave = undefined,
   className = undefined,
 }: TTabProps) => {
-
   return (
     <svg
       className={clsx(styles.tab, className)}
@@ -652,6 +714,36 @@ export const Artists = ({
       }
     >
       <path d="M18.715 25.678c-1.003 1.039-2.112 1.933-3.042 2.611-.642.47-1.41.711-2.19.711-.441 0-.886-.077-1.317-.235-2.78-1.016-7.524-3.254-8.042-6.817l-1.082-7.44c-.28-1.933.871-3.811 2.739-4.467a29.234 29.234 0 0 1 3.259-.939l-.67 4.605a6.72 6.72 0 0 0-.07 1.056c-.775.12-1.336.871-1.546 1.857-.07.33.21.627.542.58L8.682 17c.37 1.128.985 2.197 1.74 3.19-1.183.594-2.028 1.724-2.405 3.057-.14.5.427.898.858.61 1.21-.808 2.33-1.288 3.535-1.478a27 27 0 0 0 2.606 2.155 5.91 5.91 0 0 0 3.699 1.145v-.002Zm-2.96-15.284 2.673.383a.484.484 0 0 0 .543-.58c-.211-.99-.777-1.745-1.559-1.859-.783-.112-1.536.455-2.017 1.348-.16.296.027.66.36.708Zm13.203-1.369-1.083 7.44c-.52 3.563-5.26 5.8-8.041 6.817a3.796 3.796 0 0 1-1.308.231 3.77 3.77 0 0 1-2.232-.73c-2.381-1.743-6.3-5.198-5.78-8.766l1.081-7.44c.281-1.928 1.918-3.411 3.893-3.526 1.906-.108 3.738-.045 5.446.195 1.709.24 3.487.68 5.284 1.31 1.869.656 3.02 2.536 2.74 4.47Zm-6.484 5.344c-2.45.569-4.308.304-6.5-.925-.466-.262-1.022.191-.835.693.604 1.615 1.903 2.857 3.606 3.097 1.703.241 3.3-.586 4.333-1.97.319-.427-.085-1.015-.604-.895Zm1.553-3.45c-.21-.99-.776-1.745-1.559-1.86-.783-.112-1.536.456-2.017 1.348-.16.296.026.661.359.709l2.674.382a.485.485 0 0 0 .543-.58Z" />
+    </svg>
+  );
+};
+
+export const All = ({
+  mainColor,
+  hoverColor = undefined,
+  activeColor = undefined,
+  onClick = undefined,
+  onMouseEnter = undefined,
+  onMouseLeave = undefined,
+  className = undefined,
+}: TTabProps) => {
+  return (
+    <svg
+      className={clsx(styles.tab, className)}
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+    >
+      <path d="M16 2.667C8.64 2.667 2.666 8.64 2.666 16S8.64 29.334 16 29.334c7.36 0 13.333-5.974 13.333-13.334C29.333 8.64 23.36 2.667 16 2.667Zm0 16.667a3.335 3.335 0 0 1 0-6.667 3.335 3.335 0 0 1 0 6.667Z" />
     </svg>
   );
 };

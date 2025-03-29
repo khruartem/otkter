@@ -11,6 +11,7 @@ import { Colors, TDetails } from "../../../utils/types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./info.module.css";
+import stylesScroll from "../../../styles/scroll.module.css";
 
 export const InfoUI: FC<TInfoUIProps> = ({
   id,
@@ -19,7 +20,8 @@ export const InfoUI: FC<TInfoUIProps> = ({
   attention,
   colorAttention,
   isEmployees,
-  type
+  type,
+  isControls
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
@@ -30,9 +32,9 @@ export const InfoUI: FC<TInfoUIProps> = ({
     <div
       className={clsx(
         styles.info,
-        isLarge && styles["info_lagre_screen"],
-        isDesktop && styles.info_desktop,
-        isLaptop && styles.info_laptop,
+        isLarge && [styles["info_lagre_screen"], stylesScroll.scrolled],
+        isDesktop && [styles.info_desktop, stylesScroll.scrolled],
+        isLaptop && [styles.info_laptop, stylesScroll.scrolled],
         isTablet && styles.info_tablet,
         isMobile && styles.info_mobile,
         !isDesktop && styles["info_overflowed-y"]
@@ -42,8 +44,8 @@ export const InfoUI: FC<TInfoUIProps> = ({
         className={clsx(
           styles.info__main,
           isLarge && styles["info__main_lagre_screen"],
-          isDesktop && styles.info__main_desktop,
-          isLaptop && styles.info__main_laptop,
+          isDesktop && [styles.info__main_desktop, stylesScroll.scrolled],
+          isLaptop && isControls && styles.info__main_laptop,
           isTablet && styles.info__main_tablet,
           isMobile && styles.info__main_mobile
         )}
@@ -66,7 +68,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
             textTransform={"none"}
             color={attention ? colorAttention! : Colors.Navy}
             padding={clsx(
-              smallResolution && type === "projects" && "40px 0 0 0",
+              smallResolution && type === "projects" && "39px 0 0 0",
               isLaptop && type === "services" && "0 55% 0 0",
               isTablet && type === "services" && "40px 40% 0 0"
             )}
@@ -99,26 +101,33 @@ export const InfoUI: FC<TInfoUIProps> = ({
           </Text>
           <PhotoList id={id} type={type} />
         </div>
-        <Controls id={id} type={type} />
+        {isControls && <Controls id={id} type={type} />}
       </div>
       <div
         className={clsx(
-          isEmployees
-            ? styles.info__extra_blocks
-            : styles.info__extra_single,
+          isEmployees ? styles.info__extra_blocks : styles.info__extra_single,
           isDesktop && styles["info__extra_overflowed-y"],
           isLarge && styles["info__extra_large-screen"],
-          isDesktop && styles.info__extra_desktop,
+          isDesktop && [styles.info__extra_desktop, stylesScroll.scrolled],
           (isDesktop || isTablet || isMobile) && styles.info__extra_single,
           isLaptop && styles.info__extra_laptop,
           isTablet && styles.info__extra_tablet,
           isMobile && styles.info__extra_mobile
         )}
       >
-        <Details id={id} infosType={type} detailsType={clsx(
-          type === "projects" && "events",
-          type === "services" && "services") as TDetails} />
-        {isEmployees && <Details id={id} infosType={type} detailsType="employees" />}
+        <Details
+          id={id}
+          infosType={type}
+          detailsType={
+            clsx(
+              type === "projects" && "events",
+              type === "services" && "services"
+            ) as TDetails
+          }
+        />
+        {isEmployees && (
+          <Details id={id} infosType={type} detailsType="employees" />
+        )}
       </div>
     </div>
   );

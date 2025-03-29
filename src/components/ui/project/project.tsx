@@ -13,8 +13,8 @@ import styles from "./project.module.css";
 import { useGetAttention } from "../../../hooks/useGetAttention";
 import { useGetProjectColors } from "../../../hooks/useGetProjectColors";
 
-export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef }) => {
-  const { projectId, title, image, shortText } = project;
+export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef, locationFrom }) => {
+  const { projectId, title, image, shortText, isActive } = project;
 
   const attention = useGetAttention(projectId!);
   const { projectTitleColor, projectTitleColorAttention } =
@@ -30,7 +30,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef }) => {
     <Link
       className={clsx(
         styles["project-link"],
-        smallResolution && styles["project-link_small-resolution"]
+        isTablet && styles["project-link_tablet"]
       )}
       to={`/otkter/projects/${projectId}`}
       style={
@@ -40,12 +40,13 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef }) => {
             : projectTitleColor,
         } as CSSProperties
       }
-      state={{ id: projectId }}
+      state={{ id: projectId, from: locationFrom }}
       ref={projectRef}
     >
       <li
         className={clsx(
           styles.project,
+          !isActive && styles.project_inactive,
           largeResolution && styles["project_large-resolution"],
           smallResolution && styles["project_small-resolution"]
         )}
@@ -103,6 +104,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef }) => {
             lineHeight={28}
             textTransform={"none"}
             color={Colors.Dark100}
+            //classNameExtra={styles["project__text-overflowed"]}
           >
             {shortText}
           </Text>

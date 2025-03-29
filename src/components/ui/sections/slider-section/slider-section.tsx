@@ -6,12 +6,16 @@ import { TeamsList } from "../../../teams-list";
 import { ServiceList } from "../../../service-list";
 import { TeamsContentSlider } from "../../../teams-content-slider";
 import { ServicesContentSlider } from "../../../services-content-slider";
+import { ProjectsContentSlider } from "../../../projects-content-slider";
+import { ProjectGroupsList } from "../../../project-groups-list";
 
 import { TSliderSectionUIProps } from "./types";
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 import {
   Colors,
   lineHeights,
+  TProjectRef,
+  TProjectViewRef,
   TServiceRef,
   TServiceViewRef,
   TTeamRef,
@@ -44,7 +48,21 @@ export const SliderSectionUI = React.forwardRef<
           styles["slider-section__header"],
           (isLarge || isDesktop || isLaptop) &&
             styles["slider-section__header_rowed"],
-          (isTablet || isMobile) && styles["slider-section__header_columned"],
+          (isTablet || isMobile) &&
+            type !== "projects" && [
+              styles["slider-section__header_columned"],
+              styles["slider-section__header_columned_small-gap"],
+            ],
+          (isLarge || isLaptop) &&
+            type === "projects" && [
+              styles["slider-section__header_columned"],
+              styles["slider-section__header_columned_large-gap"],
+            ],
+          (isDesktop || isTablet || isMobile) &&
+            type === "projects" && [
+              styles["slider-section__header_columned"],
+              styles["slider-section__header_columned_middle-gap"],
+            ],
           isLarge && styles["slider-section__header_large-screen"],
           isDesktop && styles["slider-section__header_desktop"],
           isLaptop && styles["slider-section__header_laptop"],
@@ -64,7 +82,11 @@ export const SliderSectionUI = React.forwardRef<
           decorated={true}
           padding={isLarge || isDesktop ? "8px 28px" : "12px 24px"}
         >
-          {clsx(type === "team" && "команда", type === "services" && "услуги")}
+          {clsx(
+            type === "team" && "команда",
+            type === "services" && "услуги",
+            type === "projects" && "проекты"
+          )}
         </Text>
         {type === "team" && (
           <TeamsContentSlider
@@ -78,6 +100,12 @@ export const SliderSectionUI = React.forwardRef<
             servicesViewRefs={sectionViewRefs as TServiceViewRef[]}
           />
         )}
+        {type === "projects" && (
+          <ProjectsContentSlider
+            projectsRefs={sectionRefs as TProjectRef[]}
+            projectsViewRefs={sectionViewRefs as TProjectViewRef[]}
+          />
+        )}
       </div>
       {type === "team" && (
         <TeamsList
@@ -89,6 +117,12 @@ export const SliderSectionUI = React.forwardRef<
         <ServiceList
           servicesRefs={sectionRefs as TServiceRef[]}
           servicesViewRefs={sectionViewRefs as TServiceViewRef[]}
+        />
+      )}
+      {type === "projects" && (
+        <ProjectGroupsList
+          projectsRefs={sectionRefs as TProjectRef[]}
+          projectsViewRefs={sectionViewRefs as TProjectViewRef[]}
         />
       )}
     </section>

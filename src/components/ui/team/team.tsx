@@ -12,26 +12,31 @@ import styles from "./team.module.css";
 import scrollStyle from "../../../styles/scroll.module.css";
 
 export const TeamUI = React.forwardRef<HTMLUListElement, TTeamUIProps>(
-  ({ team, type, teamRef, cardsCount, containerHeight }, ref) => {
+  ({ team, type, teamRef, columnsCount, containerHeight }, ref) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
       useGetMediaQuery();
     const largeResolution = isLarge || isDesktop || isLaptop;
     const smallResolution = isTablet || isMobile;
 
     return (
-      <div className={styles.wrapper} ref={teamRef}>
+      <div className={clsx(
+        styles.wrapper,
+        type === "artists" && styles.team_faded,
+      )} 
+      ref={teamRef}
+      >
         <ul
           className={clsx(
             styles.team,
             (type === "artists" || isMobile) && styles["team_overflowed-y"],
             largeResolution && styles["team_large-gap"],
             smallResolution && styles["team_small-gap"],
-            isMobile && styles["team_mobile"],
+            // isMobile && styles["team_mobile"],
             !isMobile && scrollStyle.scrolled
           )}
           style={
             {
-              "--columns-count": `repeat(${cardsCount}, 1fr)`,
+              "--columns-count": `repeat(${columnsCount}, 1fr)`,
               "--height": containerHeight,
             } as CSSProperties
           }

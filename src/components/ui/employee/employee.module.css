@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: space-between;
   height: 486px;
+  z-index: -1;
 }
 
 .employee__info {

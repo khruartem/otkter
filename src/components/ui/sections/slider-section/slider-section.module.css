@@ -25,9 +25,21 @@
 
 .slider-section__header_columned {
   flex-direction: column;
-  gap: 20px;
+  /* gap: 20px; */
   justify-content: center;
   align-items: center;
+}
+
+.slider-section__header_columned_large-gap {
+  gap: 60px;
+}
+
+.slider-section__header_columned_middle-gap {
+  gap: 44px;
+}
+
+.slider-section__header_columned_small-gap {
+  gap: 20px;
 }
 
 /* Стили для разных разрешений экранов */

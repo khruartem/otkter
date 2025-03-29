@@ -135,7 +135,7 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
   ]);
 
   const onTabClick = (tab: TServicesTabMode) => {
-    setCurrentTab(tab);
+    //setCurrentTab(tab);
     setCurrentIndex(tabs.findIndex((el) => el === tab));
     switch (tab) {
       case "open-sea":
@@ -217,13 +217,13 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
 
       onTabClick(newTab);
       setCurrentIndex(newIndex);
-      setCurrentTab(newTab);
+      //setCurrentTab(newTab);
     } else {
       const newTab = tabs[newIndex];
 
       onTabClick(newTab);
       setCurrentIndex(newIndex);
-      setCurrentTab(newTab);
+      //setCurrentTab(newTab);
     }
   };
 
@@ -235,13 +235,13 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
 
       onTabClick(newTab);
       setCurrentIndex(0);
-      setCurrentTab(newTab);
+      //setCurrentTab(newTab);
     } else {
       const newTab = tabs[newIndex];
 
       onTabClick(newTab);
       setCurrentIndex(newIndex);
-      setCurrentTab(newTab);
+      //setCurrentTab(newTab);
     }
   };
 

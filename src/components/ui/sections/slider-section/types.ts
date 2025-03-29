@@ -1,4 +1,6 @@
 import {
+  TProjectRef,
+  TProjectViewRef,
   TServiceRef,
   TServiceViewRef,
   TSliderSectionType,
@@ -8,6 +10,6 @@ import {
 
 export type TSliderSectionUIProps = {
   type: TSliderSectionType;
-  sectionRefs: TTeamRef[] | TServiceRef[];
-  sectionViewRefs: TTeamViewRef[] | TServiceViewRef[];
+  sectionRefs: TTeamRef[] | TServiceRef[] | TProjectRef[];
+  sectionViewRefs: TTeamViewRef[] | TServiceViewRef[] | TProjectViewRef[];
 };

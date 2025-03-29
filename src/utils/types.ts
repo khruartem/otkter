@@ -1,13 +1,15 @@
 import React, { ElementType, SyntheticEvent } from "react";
 
-export type TCategoryName =
-  | "Спектакль"
-  | "Конкурс"
-  | "Мастер класс"
-  | "Короткий метр"
-  | "В ролях"
-  | "Руководители"
-  | "Информация";
+// export type TCategoryName =
+//   | "Спектакль"
+//   | "Конкурс"
+//   | "Мастер класс"
+//   | "Короткий метр"
+//   | "В ролях"
+//   | "Руководители"
+//   | "Информация";
+
+export type TCategoryName = string;
 
 export type TCategory = {
   name: TCategoryName;
@@ -36,9 +38,9 @@ export type TEventType =
   | "price"
   | "contacts";
 
-  export type TSectionType = Extract<TCardType, "services" | "projects">;
-  
-  export type TSliderSectionType = Extract<TCardType, "services" | "team">;
+export type TSectionType = Extract<TCardType, "services" | "projects">;
+
+export type TSliderSectionType = Extract<TCardType, "services" | "team" | "projects">;
 
 export type TEventDetails = {
   type: TEventType;
@@ -63,10 +65,20 @@ export type TLink = {
   state?: object;
 };
 
+// export type TEmployees = {
+//   artists?: TEmployee[];
+//   administrators?: TEmployee[];
+// };
+
 export type TEmployees = {
-  artists?: TEmployee[];
-  administrators?: TEmployee[];
+  artists?: TEmployeeGroup[];
+  administrators?: TEmployeeGroup;
 };
+
+export type TEmployeeGroup = {
+  name?: string;
+  employees: TEmployee[];
+}
 
 export type TEmployee = {
   id?: number;
@@ -86,7 +98,7 @@ export type TProjectInfo = {
   controls?: TControls;
 };
 
-export type TCardType = "projects" | "team" | "services" | TServicesTabMode;
+export type TCardType = "projects" | "team" | "services" | TServicesTabMode | TProjectTabMode;
 
 export type TCard = {
   projectId?: number;
@@ -100,6 +112,8 @@ export type TCard = {
   shortText: string;
   social?: Social[];
   projectInfo?: TProjectInfo;
+  isMain?: boolean;
+  isActive?: boolean;
 };
 
 export type TProject = Pick<
@@ -112,6 +126,8 @@ export type TProject = Pick<
   | "title"
   | "shortText"
   | "projectInfo"
+  | "isMain"
+  | "isActive"
 >;
 
 // export type TTeammate = Pick<
@@ -168,6 +184,26 @@ export type TTeamViewRef = {
 
 export type TTeamIconRef = {
   type: TTeamTabMode;
+  ref: React.RefObject<HTMLLIElement>;
+};
+
+export type TProjectTabMode =
+  | "all"
+  | Extract<TCategoryId, "play" | "contest" | "master-class" | "short-film">;
+
+export type TProjectRef = {
+  type: TProjectTabMode;
+  ref: React.RefObject<HTMLDivElement>;
+};
+
+export type TProjectViewRef = {
+  type: TProjectTabMode;
+  inView: boolean;
+  ref: (node?: Element | null) => void;
+};
+
+export type TProjectsIconRef = {
+  type: TProjectTabMode;
   ref: React.RefObject<HTMLLIElement>;
 };
 

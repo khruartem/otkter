@@ -24,6 +24,10 @@
   flex-direction: column;
 }
 
+.project_inactive {
+  opacity: 0.5;
+}
+
 .project__top {
   position: relative;
 }
@@ -42,9 +46,16 @@
   gap: 12px;
 }
 
+/* .project__text-overflowed {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+} */
+
 /* Стили для разных разрешений экранов */
-.project-link_small-resolution {
-  flex-grow: 1;
+.project-link_tablet {
+  /* flex-grow: 1; */
+  width: 92.19vw;
 }
 
 .project_large-resolution {
@@ -93,6 +104,7 @@
 .project__bottom_large-resolution {
   height: 192px;
   padding-left: 20px;
+  overflow-y: hidden;
 }
 
 .project__bottom_small-screen {

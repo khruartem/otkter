@@ -1,0 +1,30 @@
+.menu__link {
+  font-family: "Unbounded", sans-serif;
+  color: var(--navy);
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.menu__link:hover {
+  border-bottom: 1px solid var(--navy);
+}
+
+.menu__link:active {
+  border-bottom: 1px solid var(--nephritis100);
+}
+
+/* Стили для разных разрешений экранов */
+.menu__link_large-resolution {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  padding-bottom: 14px;
+}
+
+.menu__link_small-resolution {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  padding-block: 14px;
+}

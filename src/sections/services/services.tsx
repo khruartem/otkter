@@ -5,12 +5,12 @@ import { TServiceRef, TServiceViewRef } from "../../utils/types";
 
 //import { ServicesUI } from "../../components/ui/sections/services";
 import { TSectionProps } from "../types";
-import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+//import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 import { SliderSectionUI } from "../../components/ui/sections/slider-section";
 
 export const Services: FC<TSectionProps> = ({ sectionRef }) => {
-  const { isLaptop, isTablet, isMobile } = useGetMediaQuery();
-  const smallResolution = isLaptop || isTablet || isMobile;
+  //const { isLaptop, isTablet, isMobile } = useGetMediaQuery();
+  //const smallResolution = isLaptop || isTablet || isMobile;
 
   const openSeaRef = useRef<HTMLDivElement>(null);
   const eventsRef = useRef<HTMLDivElement>(null);
@@ -52,25 +52,25 @@ export const Services: FC<TSectionProps> = ({ sectionRef }) => {
   ];
 
   const [openSeaViewRef, inViewOpenSea] = useInView({
-    threshold: smallResolution ? 0.5 : 1,
+    threshold: 0,
   });
   const [eventsViewRef, inViewEvents] = useInView({
-    threshold: smallResolution ? 0.5 : 1,
+    threshold: 0,
   });
   const [designViewRef, inViewDesign] = useInView({
-    threshold: smallResolution ? 0.5 : 1,
+    threshold: 0,
   });
   const [contenViewRef, inViewContent] = useInView({
-    threshold: smallResolution ? 0.5 : 1,
+    threshold: 0,
   });
   const [masterClassViewRef, inViewMasterClass] = useInView({
-    threshold: smallResolution ? 0.5 : 1,
+    threshold: 0,
   });
   const [lampViewRef, inViewLamp] = useInView({
-    threshold: smallResolution ? 0.5 : 1,
+    threshold: 0,
   });
   const [smmViewRef, inViewSmm] = useInView({
-    threshold: smallResolution ? 0.5 : 1,
+    threshold: 0,
   });
 
   const servicesViewRefs: TServiceViewRef[] = [

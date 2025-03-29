@@ -7,6 +7,7 @@ import { useGetId } from "../../hooks/useGetId";
 import { useGetServiceTitle } from "../../hooks/useGetServiceTitle";
 import { useGetInfosText } from "../../hooks/useGetInfosText";
 import { useGetInfosIsEmployees } from "../../hooks/useGetInfosIsEmployees";
+import { useGetControls } from "../../hooks/useGetControls";
 
 export const ServiceInfo: FC = () => {
   const location = useLocation();
@@ -15,6 +16,8 @@ export const ServiceInfo: FC = () => {
   const title = useGetServiceTitle(serviceId);
   const text = useGetInfosText(serviceId, "services");
   const isEmployees = useGetInfosIsEmployees(serviceId, "services");
+  const controls = useGetControls(serviceId, "services");
+  const isControls = controls?.buttons.length || controls?.links.length ? true : false;
 
   useEffect(() => {
     location.state = { id: serviceId };
@@ -28,6 +31,7 @@ export const ServiceInfo: FC = () => {
       text={text}
       attention={false}
       isEmployees={isEmployees}
+      isControls={isControls}
     />
   );
 };

@@ -12,20 +12,21 @@
   border-bottom-right-radius: 40px;
 }
 
+/* Стили для разных разрешений экранов */
 .header_mobile {
   justify-content: space-between;
   padding-left: 3.86vw;
   padding-right: 7.25vw;
 }
 
-.header_bordered {
+/* .header_bordered {
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-}
+} */
 
-.header_overlayed {
+/* .header_overlayed {
   position: relative;
-}
+} */
 
 /* .header_overlayed::after {
   content: "";

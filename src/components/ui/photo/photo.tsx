@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 import { TPhotoProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import styles from "./photo.module.css";
 
@@ -14,6 +14,7 @@ export const PhotoUI: FC<TPhotoProps> = ({
   id,
   type
 }) => {
+  const location = useLocation();
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
@@ -29,7 +30,7 @@ export const PhotoUI: FC<TPhotoProps> = ({
       )}
     >
       {photo && !label && !nextPhotoId ? (
-        <Link to={`/otkter/${type}/${id}/${photo.id}`} state={{ id, type }}>
+        <Link to={`/otkter/${type}/${id}/${photo.id}`} state={{ id, type, ...location.state }}>
           <img
             className={styles.photo__link}
             src={photo.source}
@@ -37,7 +38,7 @@ export const PhotoUI: FC<TPhotoProps> = ({
           />
         </Link>
       ) : (
-        <Link to={`/otkter/${type}/${id}/${nextPhotoId}`} state={{ id, type }}>
+        <Link to={`/otkter/${type}/${id}/${nextPhotoId}`} state={{ id, type, ...location.state }}>
           <div className={clsx(styles.photo__link, styles.photo__link_more)}>
             {label}
           </div>

@@ -40,16 +40,28 @@ export const CategoryUI: FC<TCategoryUIProps> = ({
         ) : (
           <>
             {category?.id === "play" && (
-              <Play mainColor={colors!.categoryIconColor!} />
+              <Play
+                mainColor={colors!.categoryIconColor!}
+                iconType="category"
+              />
             )}
             {category?.id === "contest" && (
-              <Contest mainColor={colors!.categoryIconColor!} />
+              <Contest
+                mainColor={colors!.categoryIconColor!}
+                iconType="category"
+              />
             )}
             {category?.id === "master-class" && (
-              <MasterClass mainColor={colors!.categoryIconColor!} />
+              <MasterClass
+                mainColor={colors!.categoryIconColor!}
+                iconType="category"
+              />
             )}
             {category?.id === "short-film" && (
-              <ShortFilm mainColor={colors!.categoryIconColor!} />
+              <ShortFilm
+                mainColor={colors!.categoryIconColor!}
+                iconType="category"
+              />
             )}
             {category?.id === "artists" && null}
             {category?.id === "admins" && null}

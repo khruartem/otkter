@@ -5,5 +5,5 @@ export type TTeamProps = {
   type: TRole;
   teamsViewRefs: TTeamViewRef[];
   teamRef: React.RefObject<HTMLDivElement>;
-  gridRowsCount?: number;
+  minTeamLength?: number;
 }
