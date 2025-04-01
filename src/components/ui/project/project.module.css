@@ -2,7 +2,7 @@
   width: min-content;
 }
 
-.project-link:hover .project__image {
+/* .project-link:hover .project__image {
   animation: backgroundZoomIn 0.2s linear forwards;
 }
 
@@ -15,6 +15,22 @@
 }
 
 .project-link h3 {
+  animation: textColorZoomOut 0.2s linear forwards;
+} */
+
+.project-link_animated:hover .project__image {
+  animation: backgroundZoomIn 0.2s linear forwards;
+}
+
+.project-link_animated .project__image {
+  animation: backgroundZoomOut 0.2s linear forwards;
+}
+
+.project-link_animated:hover h3 {
+  animation: textColorZoomIn 0.2s linear forwards;
+}
+
+.project-link_animated h3 {
   animation: textColorZoomOut 0.2s linear forwards;
 }
 

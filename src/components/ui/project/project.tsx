@@ -30,9 +30,11 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef, locationFro
     <Link
       className={clsx(
         styles["project-link"],
+        !isMobile && styles["project-link_animated"],
         isTablet && styles["project-link_tablet"]
       )}
-      to={`/otkter/projects/${projectId}`}
+      // to={`/otkter/projects/${projectId}`}
+      to={`/projects/${projectId}`}
       style={
         {
           "--project-color": attention

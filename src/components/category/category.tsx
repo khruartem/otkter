@@ -10,7 +10,8 @@ export const Category: FC<CategoryProps> = ({
   isAttention = false,
 }) => {
   const { pathname } = useLocation();
-  const isWrapper = pathname === "/otkter" || pathname === "/otkter/" || pathname === "/otkter/projects/all";
+  //const isWrapper = pathname === "/otkter" || pathname === "/otkter/" || pathname === "/otkter/projects/all";
+  const isWrapper = pathname === "/" || pathname === "/projects/all";
   const categoryColors = useGetCategoryColors(
     isAttention ? "attention" : category!.type 
   );

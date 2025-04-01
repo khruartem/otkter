@@ -30,6 +30,7 @@ import mastership from "../assets/project_mastership.png";
 import nikolayFilm from "../assets/project_nikolay_film.png";
 import twoInWorld from "../assets/project_nikolay_play.png";
 import amplitude from "../assets/projects/ampletuda.png";
+import esenin from "../assets/projects/esenin.png";
 
 import yakovlev from "../assets/yakovlev.png";
 import LA from "../assets/LA.png";
@@ -51,13 +52,17 @@ import karaya from "../assets/karaya.png";
 import hvostikova from "../assets/hvostikova.png";
 import tensik from "../assets/tensik.png";
 import larina from "../assets/team/larina.png";
-import unknown from "../assets/team/unknown.png";
+// import unknown from "../assets/team/unknown.png";
+import medvedev from "../assets/team/medvedev.png";
+import maksimova from "../assets/team/maksimova.png";
+import kizenkov from "../assets/team/kizenkov.png";
 
-import testPhoto1 from "../assets/testPhoto1.png";
-import testPhoto2 from "../assets/testPhoto2.png";
-import testPhoto3 from "../assets/testPhoto3.png";
-import testPhoto4 from "../assets/testPhoto4.png";
-import testPhoto5 from "../assets/testPhoto5.png";
+import openSeaPhoto1 from "../assets/services-photo/open-sea/openSeaPhoto1.png";
+import openSeaPhoto2 from "../assets/services-photo/open-sea/openSeaPhoto2.png";
+import openSeaPhoto3 from "../assets/services-photo/open-sea/openSeaPhoto3.png";
+import openSeaPhoto4 from "../assets/services-photo/open-sea/openSeaPhoto4.png";
+import openSeaPhoto5 from "../assets/services-photo/open-sea/openSeaPhoto5.png";
+
 import chronicsPhoto1 from "../assets/projects-photo/chronics/chronics_1.png";
 import chronicsPhoto2 from "../assets/projects-photo/chronics/chronics_2.png";
 import chronicsPhoto3 from "../assets/projects-photo/chronics/chronics_3.png";
@@ -77,8 +82,11 @@ import events from "../assets/services_img_events.png";
 import design from "../assets/services_img_design.png";
 import content from "../assets/services_img_content.png";
 import masterClasses from "../assets/services_img_master_classes.png";
-import lamp from "../assets/services_img_lamp.png";
+// import lamp from "../assets/services_img_lamp.png";
+import lamp from "../assets/services/lamp.png";
 import smm from "../assets/services_img_smm.png";
+import { buyTicketsEsenin } from "./buyTicketsEsenin";
+import { joinAmplitude } from "./joinAmplitude";
 
 export const navLinks: TNavLinks = [
   {
@@ -214,6 +222,7 @@ export const projects: TProject[] = [
     type: "play",
     isMain: true,
     isActive: true,
+    order: 2,
   },
   {
     projectId: 2,
@@ -254,6 +263,7 @@ export const projects: TProject[] = [
     type: "short-film",
     isMain: true,
     isActive: true,
+    order: 5,
   },
   {
     projectId: 6,
@@ -264,16 +274,18 @@ export const projects: TProject[] = [
     type: "play",
     isMain: true,
     isActive: true,
+    order: 4,
   },
   {
     projectId: 7,
     title: "Поэтический спектакль «Есенин. Жизнь в стихах»",
-    image: twoInWorld,
+    image: esenin,
     shortText:
       "В исполнении артистов прозвучат стихи Сергея Есенина, а песни сольются с партией фортепиано, повествуя о мыслях, метаниях и надеждах навеки молодого, но мудрого душой поэта.",
     type: "play",
     isMain: true,
     isActive: true,
+    order: 1,
   },
   {
     projectId: 8,
@@ -284,6 +296,7 @@ export const projects: TProject[] = [
     type: "play",
     isMain: true,
     isActive: true,
+    order: 3,
   },
 ];
 
@@ -311,7 +324,7 @@ export const projectInfos: TProjectInfo[] = [
       {
         type: "date",
         label: "Дата и время",
-        value: "Апрель 19:00",
+        value: "6 мая 19:00",
       },
       {
         type: "price",
@@ -473,7 +486,7 @@ export const projectInfos: TProjectInfo[] = [
       {
         type: "date",
         label: "Дата премьеры",
-        value: "Весна 2025",
+        value: "Зима 2025",
       },
     ],
     employees: {
@@ -563,7 +576,7 @@ export const projectInfos: TProjectInfo[] = [
           },
           {
             name: "Людмила Яковлева",
-            occupation: "Режиссер-постановщик",
+            occupation: "Режиссер",
             photo: LA,
           },
           {
@@ -612,13 +625,11 @@ export const projectInfos: TProjectInfo[] = [
       },
       {
         type: "price",
-        label: "Цена спектакля с эксурсией",
-        value: "2000 руб.",
-      },
-      {
-        type: "price",
         label: "Цена",
-        value: "700 руб.",
+        value: [
+          "2000 руб. с экскурсией в Литературном Музеи",
+          "700 руб. ДК «Стимул»",
+        ],
       },
     ],
     employees: {
@@ -722,7 +733,7 @@ export const projectInfos: TProjectInfo[] = [
             {
               name: "Андрей Медведев",
               occupation: "Поэт",
-              photo: unknown,
+              photo: medvedev,
             },
             {
               name: "Кирилл Соколовский",
@@ -743,7 +754,7 @@ export const projectInfos: TProjectInfo[] = [
             {
               name: "Арина Максимова",
               occupation: "Композитор, исполнитель",
-              photo: unknown,
+              photo: maksimova,
             },
           ],
         },
@@ -753,7 +764,7 @@ export const projectInfos: TProjectInfo[] = [
             {
               name: "Алексей Кизенков",
               occupation: "Актер театра «Ленком Марка Захарова»",
-              photo: unknown,
+              photo: kizenkov,
             },
           ],
         },
@@ -779,7 +790,7 @@ export const projectControls: TProjectControls[] = [
       buttons: [
         {
           label: "Записаться",
-          onClick: contactFunction,
+          onClick: () => contactFunction("admins", 1, "telegram"),
         },
       ],
       links: [],
@@ -791,7 +802,7 @@ export const projectControls: TProjectControls[] = [
       buttons: [
         {
           label: "Подробнее",
-          onClick: contactFunction,
+          onClick: () => contactFunction("admins", 1, "telegram"),
         },
       ],
       links: [],
@@ -803,7 +814,7 @@ export const projectControls: TProjectControls[] = [
       buttons: [
         {
           label: "Подробнее",
-          onClick: contactFunction,
+          onClick: () => contactFunction("admins", 1, "telegram"),
         },
       ],
       links: [],
@@ -815,37 +826,11 @@ export const projectControls: TProjectControls[] = [
   },
   {
     projectId: 5,
-    controls: {
-      buttons: [
-        {
-          label: "Поддержать проект",
-          onClick: contactFunction,
-        },
-      ],
-      links: [
-        {
-          href: "",
-          label: "Презентация проекта",
-        },
-      ],
-    },
+    controls: null,
   },
   {
     projectId: 6,
-    controls: {
-      buttons: [
-        {
-          label: "Поддержать проект",
-          onClick: contactFunction,
-        },
-      ],
-      links: [
-        {
-          href: "",
-          label: "Презентация проекта",
-        },
-      ],
-    },
+    controls: null,
   },
   {
     projectId: 7,
@@ -853,7 +838,7 @@ export const projectControls: TProjectControls[] = [
       buttons: [
         {
           label: "Купить билет",
-          onClick: contactFunction,
+          onClick: buyTicketsEsenin,
         },
       ],
       links: [],
@@ -862,7 +847,12 @@ export const projectControls: TProjectControls[] = [
   {
     projectId: 8,
     controls: {
-      buttons: [],
+      buttons: [
+        {
+          label: "Записаться",
+          onClick: joinAmplitude,
+        },
+      ],
       links: [],
     },
   },
@@ -1007,128 +997,23 @@ export const projectPhotos: TProjectPhotos[] = [
   },
   {
     projectId: 2,
-    photos: [
-      {
-        id: 7,
-        source: testPhoto1,
-      },
-      {
-        id: 8,
-        source: testPhoto2,
-      },
-      {
-        id: 9,
-        source: testPhoto3,
-      },
-      {
-        id: 10,
-        source: testPhoto4,
-      },
-      {
-        id: 11,
-        source: testPhoto5,
-      },
-    ],
+    photos: [],
   },
   {
     projectId: 3,
-    photos: [
-      {
-        id: 12,
-        source: testPhoto1,
-      },
-      {
-        id: 13,
-        source: testPhoto2,
-      },
-      {
-        id: 14,
-        source: testPhoto3,
-      },
-      {
-        id: 15,
-        source: testPhoto4,
-      },
-      {
-        id: 16,
-        source: testPhoto5,
-      },
-    ],
+    photos: [],
   },
   {
     projectId: 4,
-    photos: [
-      {
-        id: 17,
-        source: testPhoto1,
-      },
-      {
-        id: 18,
-        source: testPhoto2,
-      },
-      {
-        id: 19,
-        source: testPhoto3,
-      },
-      {
-        id: 20,
-        source: testPhoto4,
-      },
-      {
-        id: 21,
-        source: testPhoto5,
-      },
-    ],
+    photos: [],
   },
   {
     projectId: 5,
-    photos: [
-      {
-        id: 21,
-        source: testPhoto1,
-      },
-      {
-        id: 22,
-        source: testPhoto2,
-      },
-      {
-        id: 23,
-        source: testPhoto3,
-      },
-      {
-        id: 24,
-        source: testPhoto4,
-      },
-      {
-        id: 25,
-        source: testPhoto5,
-      },
-    ],
+    photos: [],
   },
   {
     projectId: 6,
-    photos: [
-      {
-        id: 26,
-        source: testPhoto1,
-      },
-      {
-        id: 27,
-        source: testPhoto2,
-      },
-      {
-        id: 28,
-        source: testPhoto3,
-      },
-      {
-        id: 29,
-        source: testPhoto4,
-      },
-      {
-        id: 30,
-        source: testPhoto5,
-      },
-    ],
+    photos: [],
   },
   {
     projectId: 7,
@@ -1165,38 +1050,17 @@ export const projectPhotos: TProjectPhotos[] = [
   },
   {
     projectId: 8,
-    photos: [
-      {
-        id: 38,
-        source: testPhoto1,
-      },
-      {
-        id: 39,
-        source: testPhoto2,
-      },
-      {
-        id: 40,
-        source: testPhoto3,
-      },
-      {
-        id: 41,
-        source: testPhoto4,
-      },
-      {
-        id: 42,
-        source: testPhoto5,
-      },
-    ],
+    photos: [],
   },
 ];
 
 export const serviceTabs: TServicesTabMode[] = [
   "open-sea",
+  "lamp",
   "events",
   "design",
   "content",
   "master-class",
-  "lamp",
   "smm",
 ];
 
@@ -1208,6 +1072,7 @@ export const services: TService[] = [
       "Театральная студия «Открытое Море» для детей и подростков дает возможность расширить свои горизонты через театр. Мы не слепо делаем из студийцев профессиональных актеров, а помогаем ребятам понять себя в этом мире. Наши ученики развивают личностные и индивидуальные качества, избавляясь от комплексов и зажимов через методы изучения актерского мастерства. ",
     image: OT,
     type: "open-sea",
+    order: 1,
   },
   {
     serviceId: 2,
@@ -1216,6 +1081,7 @@ export const services: TService[] = [
       "Организуем и проведем мероприятия любой сложности. Концерты, городские мероприятия, творческие вечера, фестивали, конкурсы, спектакли т. п.",
     image: events,
     type: "events",
+    order: 3,
   },
   {
     serviceId: 3,
@@ -1224,6 +1090,7 @@ export const services: TService[] = [
       "Берем в работу задачи по графическому дизайну, айдентике, полиграфии, UX/UI и разработке сайтов.",
     image: design,
     type: "design",
+    order: 4,
   },
   {
     serviceId: 4,
@@ -1232,6 +1099,7 @@ export const services: TService[] = [
       "Организация съемки мероприятий, в том числе интервью, подкастов, рилсов, репортажей, бэкстейджей, документальных фильмов, коротких метров или иных съемок. Обеспечивается полный цикл производства, от подготовительного до монтажно-тонировочного периода, и команда профессионалов (режиссер-постановщик, оператор-постановщик, гафер, звукорежиссёр, актеры и т.д.).",
     image: content,
     type: "content",
+    order: 5,
   },
   {
     serviceId: 5,
@@ -1240,6 +1108,7 @@ export const services: TService[] = [
       "Проведем мастер-классы и треннинги по актерскому мастерству, ораторскому искусству.",
     image: masterClasses,
     type: "master-class",
+    order: 6,
   },
   {
     serviceId: 6,
@@ -1248,6 +1117,7 @@ export const services: TService[] = [
       "Театр «ЛАМП» (Любители, Актеры, Музыканты, Писатели) собирает на сцене разных творческих людей. Здесь не важно, есть ли соответствующее образование или нет. Подойдёт для всех, кто хочет стать частью команды театра в любом проявлении. При театре есть семейные группы для совместного творчества родителей и их детей. ",
     image: lamp,
     type: "lamp",
+    order: 2,
   },
   {
     serviceId: 7,
@@ -1256,6 +1126,7 @@ export const services: TService[] = [
       "Менеджмент социальных сетей (SMM - создание и управление контентом на платформах социальных медиа) и связи с общественностью (PR - формирование и поддержание положительного имиджа компании через взаимодействие с общественностью и медиа). ",
     image: smm,
     type: "smm",
+    order: 7,
   },
 ];
 
@@ -1266,13 +1137,14 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Записаться",
-          onClick: contactFunction,
+          onClick: () => contactFunction("admins", 2, "telegram"),
         },
       ],
       links: [
         {
           label: "Подробнее",
-          href: "/otkter/services/1",
+          // href: "/otkter/services/1",
+          href: "/services/1",
           state: { id: 1 },
         },
       ],
@@ -1284,7 +1156,7 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Заказать",
-          onClick: contactFunction,
+          onClick: () => contactFunction("admins", 1, "telegram"),
         },
       ],
       links: [],
@@ -1296,7 +1168,7 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Заказать",
-          onClick: contactFunction,
+          onClick: () => contactFunction("admins", 1, "telegram"),
         },
       ],
       links: [],
@@ -1308,7 +1180,7 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Заказать",
-          onClick: contactFunction,
+          onClick: () => contactFunction("admins", 1, "telegram"),
         },
       ],
       links: [],
@@ -1320,7 +1192,7 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Заказать",
-          onClick: contactFunction,
+          onClick: () => contactFunction("admins", 1, "telegram"),
         },
       ],
       links: [],
@@ -1332,13 +1204,14 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Записаться",
-          onClick: contactFunction,
+          onClick: () => contactFunction("admins", 2, "telegram"),
         },
       ],
       links: [
         {
           label: "Подробнее",
-          href: "/otkter/services/6",
+          // href: "/otkter/services/6",
+          href: "/services/6",
           state: { id: 6 },
         },
       ],
@@ -1350,7 +1223,7 @@ export const serviceControls: TServiceControls[] = [
       buttons: [
         {
           label: "Заказать",
-          onClick: contactFunction,
+          onClick: () => contactFunction("admins", 4, "telegram"),
         },
       ],
       links: [],
@@ -1367,6 +1240,11 @@ export const serviceInfos: TServiceInfo[] = [
         type: "address",
         label: "Адрес",
         value: "м. Новокосино, г. Реутов, ул. Юбилейный проспект 38",
+      },
+      {
+        type: "date",
+        label: "Занятия",
+        value: "пн 18:00 - 20:00 и ср 18:00 - 20:00",
       },
       {
         type: "contacts",
@@ -1407,6 +1285,11 @@ export const serviceInfos: TServiceInfo[] = [
         value: "г.Москва, Шмитовский проезд, 2",
       },
       {
+        type: "date",
+        label: "Занятия",
+        value: "вт 19:00 - 21:00  и сб 14:00 - 16:00",
+      },
+      {
         type: "contacts",
         label: "Телефон",
         value: "8 (916) 117-90-92",
@@ -1438,50 +1321,29 @@ export const servicePhotos: TServicePhotos[] = [
     photos: [
       {
         id: 43,
-        source: testPhoto1,
+        source: openSeaPhoto1,
       },
       {
         id: 44,
-        source: testPhoto2,
+        source: openSeaPhoto2,
       },
       {
         id: 45,
-        source: testPhoto3,
+        source: openSeaPhoto3,
       },
       {
         id: 46,
-        source: testPhoto4,
+        source: openSeaPhoto4,
       },
       {
         id: 47,
-        source: testPhoto5,
+        source: openSeaPhoto5,
       },
     ],
   },
   {
     serviceId: 6,
-    photos: [
-      {
-        id: 48,
-        source: testPhoto1,
-      },
-      {
-        id: 49,
-        source: testPhoto2,
-      },
-      {
-        id: 50,
-        source: testPhoto3,
-      },
-      {
-        id: 51,
-        source: testPhoto4,
-      },
-      {
-        id: 52,
-        source: testPhoto5,
-      },
-    ],
+    photos: [],
   },
 ];
 

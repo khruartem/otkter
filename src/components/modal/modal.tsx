@@ -4,10 +4,15 @@ import ReactDOM from 'react-dom';
 import { TModalProps } from './types';
 import { ModalUI } from '../ui/modal';
 import { scrollToTop } from '../../utils/scrollToTop';
+import { useLocation } from 'react-router-dom';
 
 const modalRoot = document.getElementById('root-modal');
 
 export const Modal: FC<TModalProps> = memo(({ type, onClose, children }) => {
+  const location = useLocation();
+  console.log(location);
+  const isDirectLink = location.state ? false : true;
+  
   useEffect(() => {
     scrollToTop("instant");
     const handleEsc = (e: KeyboardEvent) => {
@@ -21,7 +26,7 @@ export const Modal: FC<TModalProps> = memo(({ type, onClose, children }) => {
   }, [onClose]);
 
   return ReactDOM.createPortal(
-    <ModalUI type={type} onClose={onClose}>
+    <ModalUI type={type} onClose={onClose} isDirectLink={isDirectLink}>
       {children}
     </ModalUI>,
     modalRoot as HTMLDivElement

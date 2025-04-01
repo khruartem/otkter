@@ -7,5 +7,5 @@ export type TTeamsListUIProps = {
   admins: TEmployee[];
   artists: TEmployee[];
   tabsCount: number;
-  minTeamLength: number;
+  minTeamLength?: number;
 }

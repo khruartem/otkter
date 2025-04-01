@@ -5,6 +5,7 @@ import { ProjectListUI } from "../ui/project-list";
 import { useGetProjects } from "../../hooks/useGetProjects";
 import { TProjectListProps } from "./types";
 import { useGetViewRefByType } from "../../hooks/useGetViewRefByType";
+import { useSortAsc } from "../../hooks/useSortAsc";
 
 export const ProjectList: FC<TProjectListProps> = ({
   type,
@@ -13,14 +14,16 @@ export const ProjectList: FC<TProjectListProps> = ({
 }) => {
   const projects = useGetProjects(type);
   const projectViewRef = useGetViewRefByType(projectsViewRefs || [], type);
-  const sortedProjects = [...projects].sort((a, b) => {
+  const sortedActiveProjects = [...projects].sort((a, b) => {
     return Number(b.isActive) - Number(a.isActive);
   });
+  const sortedOrderedProjects = useSortAsc(projects);
+  console.log(sortedOrderedProjects);
   //const projectViewRef = projectsViewRefs?.find(projectsViewRef => projectsViewRef.type === type)?.ref;
 
   return (
     <ProjectListUI
-      projects={sortedProjects}
+      projects={type === "main" ? sortedOrderedProjects : sortedActiveProjects}
       projectRef={projectRef}
       ref={projectViewRef}
     />

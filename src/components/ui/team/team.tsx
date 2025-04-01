@@ -22,6 +22,7 @@ export const TeamUI = React.forwardRef<HTMLUListElement, TTeamUIProps>(
       <div className={clsx(
         styles.wrapper,
         type === "artists" && styles.team_faded,
+        (type === "admins" && isMobile) && styles.team_faded,
       )} 
       ref={teamRef}
       >
@@ -31,7 +32,7 @@ export const TeamUI = React.forwardRef<HTMLUListElement, TTeamUIProps>(
             (type === "artists" || isMobile) && styles["team_overflowed-y"],
             largeResolution && styles["team_large-gap"],
             smallResolution && styles["team_small-gap"],
-            // isMobile && styles["team_mobile"],
+            isMobile && styles["team_mobile"],
             !isMobile && scrollStyle.scrolled
           )}
           style={

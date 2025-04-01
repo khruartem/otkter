@@ -52,12 +52,13 @@ export const ProjectsUI = React.forwardRef<HTMLElement, unknown>((_, ref) => {
       <div className={styles["projects__button-section"]}>
         <Button
           type="button"
-          onClick={contactFunction}
+          onClick={() => contactFunction("admins", 1, "telegram")}
           disabled={false}
         >
           {"Предложить проект"}
         </Button>
-        <Link to={"/otkter/projects/all"} className={stylesLink.link}>
+        {/* <Link to={"/otkter/projects/all"} className={stylesLink.link}> */}
+        <Link to={"/projects/all"} className={stylesLink.link}>
           {"Все проекты"}
         </Link>
       </div>

@@ -30,7 +30,8 @@ export const PhotoUI: FC<TPhotoProps> = ({
       )}
     >
       {photo && !label && !nextPhotoId ? (
-        <Link to={`/otkter/${type}/${id}/${photo.id}`} state={{ id, type, ...location.state }}>
+        // <Link to={`/otkter/${type}/${id}/${photo.id}`} state={{ id, type, ...location.state }}>
+        <Link to={`/${type}/${id}/${photo.id}`} state={{ id, type, ...location.state }}>
           <img
             className={styles.photo__link}
             src={photo.source}
@@ -38,7 +39,8 @@ export const PhotoUI: FC<TPhotoProps> = ({
           />
         </Link>
       ) : (
-        <Link to={`/otkter/${type}/${id}/${nextPhotoId}`} state={{ id, type, ...location.state }}>
+        // <Link to={`/otkter/${type}/${id}/${nextPhotoId}`} state={{ id, type, ...location.state }}>
+        <Link to={`/${type}/${id}/${nextPhotoId}`} state={{ id, type, ...location.state }}>
           <div className={clsx(styles.photo__link, styles.photo__link_more)}>
             {label}
           </div>

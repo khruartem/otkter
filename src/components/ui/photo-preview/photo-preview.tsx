@@ -8,8 +8,9 @@ import styles from "./photo-preview.module.css";
 
 export const PhotoPreviewUI: FC<TPhotoPreviewUIProps> = ({ photo }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
-      useGetMediaQuery();
-  const smallResolution = isLaptop ||  isTablet || isMobile;
+    useGetMediaQuery();
+  const largeResolution = isLarge || isDesktop;
+  const smallResolution = isLaptop || isTablet || isMobile;
 
   return photo ? (
     <img
@@ -17,9 +18,8 @@ export const PhotoPreviewUI: FC<TPhotoPreviewUIProps> = ({ photo }) => {
       alt="Фото проетка в режиме просмотра"
       className={clsx(
         styles.slider__photo,
-        isLarge && styles["slider__photo_large-screen"],
-        isDesktop && styles.slider__photo_desktop,
-        smallResolution && styles["slider__photo_full-width"]
+        largeResolution && styles["slider__photo_large-resolution"],
+        smallResolution && styles["slider__photo_small-resolution"],
       )}
     />
   ) : (

@@ -17,7 +17,8 @@ export const MenuLinkUI: FC<TMenuLinkUIProps> = ({ openNewTab, link, onClick }) 
   const { name, url } = link;
   return (
     <HashLink
-      to={openNewTab ? `/otkter${url}` : url}
+      // to={openNewTab ? `/otkter${url}` : url}
+      to={openNewTab ? `/${url}` : url}
       target={openNewTab ? "_blank" : undefined}
       className={clsx(
         styles["menu__link"],

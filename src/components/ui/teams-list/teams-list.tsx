@@ -23,7 +23,6 @@ export const TeamsListUI: FC<TTeamsListUIProps> = ({
     <div
       className={clsx(
         styles["teams-list"],
-        // styles["teams-list_faded"],
         isMobile && styles["teams-list_mobile"]
       )}
       style={

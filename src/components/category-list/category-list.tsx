@@ -20,10 +20,13 @@ export const CategoryList: FC<CategoryListProps> = ({ projectId }) => {
   // }
 
   const { pathname } = useLocation();
+  // const isPositioned =
+  //   pathname === "/otkter" ||
+  //   pathname === "/otkter/" ||
+  //   pathname === "/otkter/projects/all";
   const isPositioned =
-    pathname === "/otkter" ||
-    pathname === "/otkter/" ||
-    pathname === "/otkter/projects/all";
+    pathname === "/" ||
+    pathname === "/projects/all";
 
   return <CategoryListUI categories={categories} positioned={isPositioned} />;
 };

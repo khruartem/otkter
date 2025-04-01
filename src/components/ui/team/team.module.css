@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   justify-content: center;
+  /* --webkit-transform: translate3d(0,0,0); */
 }
 
 .team {
@@ -31,6 +32,6 @@
 }
 
 /* Стили для разных разрешений экранов */
-/* .team_mobile {
+.team_mobile {
   height: 486px;
-} */
+}

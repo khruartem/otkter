@@ -11,7 +11,7 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import clsx from "clsx";
 
 export const ModalUI: FC<TModalUIProps> = memo(
-  ({ type, onClose, children }) => {
+  ({ type, onClose, isDirectLink, children }) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
       useGetMediaQuery();
     
@@ -49,7 +49,10 @@ export const ModalUI: FC<TModalUIProps> = memo(
               textTransform="none"
               color={Colors.Light20}
             >
-              {"Назад"}
+              {clsx(
+                !isDirectLink && "Назад",
+                isDirectLink && "На главную",
+              )}
             </Text>
           </button>
         )}

@@ -114,6 +114,7 @@ export type TCard = {
   projectInfo?: TProjectInfo;
   isMain?: boolean;
   isActive?: boolean;
+  order?: number;
 };
 
 export type TProject = Pick<
@@ -128,6 +129,7 @@ export type TProject = Pick<
   | "projectInfo"
   | "isMain"
   | "isActive"
+  | "order"
 >;
 
 // export type TTeammate = Pick<
@@ -137,7 +139,7 @@ export type TProject = Pick<
 
 export type TService = Pick<
   TCard,
-  "serviceId" | "type" | "title" | "image" | "shortText"
+  "serviceId" | "type" | "title" | "image" | "shortText" | "order"
 >;
 
 export type TModalType = "back" | "close";

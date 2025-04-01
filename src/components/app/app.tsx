@@ -14,19 +14,27 @@ export function App() {
   return (
     <>
       <Routes>
-        <Route path={"/otkter/"} element={<Main />} />
-        <Route path="/otkter/projects/all/" element={<AllProjects />} />
+        <Route path={"/"} element={<Main />} />
+        {/* <Route path="/otkter/projects/all/" element={<AllProjects />} /> */}
+        <Route path="/projects/all/" element={<AllProjects />} />
         <Route
-          path={"/otkter/projects/:id"}
+          // path={"/otkter/projects/:id"}
+          path={"/projects/:id"}
           element={
             <Modal
               type="back"
               onClose={() => {
-                navigate(
-                  location.state?.from === "/otkter/"
-                    ? `${location.state?.from}#projects-${location.state?.id}`
-                    : `${location.state?.from}`
-                );
+                if (location.state?.from) {
+                  navigate(
+                    //location.state?.from === "/otkter/"
+                    location.state?.from === "/"
+                      ? `${location.state?.from}#projects-${location.state?.id}`
+                      : `${location.state?.from}`
+                  );
+                } else {
+                  navigate("/");
+                }
+                
               }}
             >
               <ProjectInfo />
@@ -34,12 +42,14 @@ export function App() {
           }
         />
         <Route
-          path={"/otkter/services/:id"}
+          // path={"/otkter/services/:id"}
+          path={"/services/:id"}
           element={
             <Modal
               type="back"
               onClose={() => {
-                navigate("/otkter/#services", { state: { from: "services" } });
+                // navigate("/otkter/#services", { state: { from: "services" } });
+                navigate("/#services", { state: { from: "services" } });
               }}
             >
               <ServiceInfo />
@@ -47,12 +57,18 @@ export function App() {
           }
         />
         <Route
-          path={"/otkter/projects/:id/:photoId"}
+          // path={"/otkter/projects/:id/:photoId"}
+          path={"/projects/:id/:photoId"}
           element={
             <Modal
               type="close"
               onClose={() => {
-                navigate(`otkter/projects/${location.state?.id}`, { state: {...location.state }});
+                // navigate(`otkter/projects/${location.state?.id}`, { state: {...location.state }});
+                if (location.state?.id) {
+                  navigate(`/projects/${location.state?.id}`, { state: {...location.state }});
+                } else {
+                  navigate("/");
+                }
               }}
             >
               <Slider type="projects" />
@@ -60,12 +76,18 @@ export function App() {
           }
         />
         <Route
-          path={"/otkter/services/:id/:photoId"}
+          // path={"/otkter/services/:id/:photoId"}
+          path={"/services/:id/:photoId"}
           element={
             <Modal
               type="close"
               onClose={() => {
-                navigate(`otkter/services/${location.state?.id}`);
+                //navigate(`otkter/services/${location.state?.id}`);
+                if (location.state?.id) {
+                  navigate(`/services/${location.state?.id}`, { state: {...location.state }});
+                } else {
+                  navigate("/")
+                }
               }}
             >
               <Slider type="services" />
