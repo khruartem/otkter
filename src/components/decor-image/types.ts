@@ -9,5 +9,6 @@ export type TDecorImageProps = {
   borderRadiusTopRight?: TRadii;
   borderRadiusBottomLeft?: TRadii;
   borderRadiusBottomRight?: TRadii;
-  borderRadius?: TRadii
+  borderRadius?: TRadii;
+  type: "orb" | "oval"
 }

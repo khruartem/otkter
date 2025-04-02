@@ -15,8 +15,11 @@ export const DecorImage = ({
   borderRadiusTopRight = 0,
   borderRadiusBottomLeft = 0,
   borderRadiusBottomRight = 0,
+  type
 }: TDecorImageProps) => {
-  const className = clsx(styles["decor-image"], {
+  const className = clsx(styles["decor-image"],
+    type === "orb" && styles["decor-image_orb"], 
+    type === "oval" && styles["decor-image_oval"], {
     [styles["decor-image_full-bodered"]]: borderRadius,
     [styles["decor-image_custom-bodered"]]: !borderRadius,
   });

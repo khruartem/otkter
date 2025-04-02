@@ -4,9 +4,9 @@ import { Container } from "../../components/container";
 import { Button } from "../../components/button";
 import { Layout } from "../../components/layout";
 
-import aboutOval1 from "../../assets/about_oval_1.png";
-import aboutOval2 from "../../assets/about_oval_2.png";
-import aboutOrb from "../../assets/about_orb.png";
+import aboutOval1 from "../../assets/sections-photo/about_oval_1.png";
+import aboutOval2 from "../../assets/sections-photo/about_oval_2.png";
+import aboutOrb from "../../assets/sections-photo/about_orb.png";
 import { Colors } from "../../utils/types";
 import presentation from "../../assets/presentation.pdf";
 import { FC } from "react";
@@ -49,12 +49,14 @@ const LargeScreen = () => {
             width={"20vw"}
             borderRadius={400}
             backgroundUrl={aboutOval1}
+            type="oval"
           />
           <DecorImage
             height={"12.92vw"}
             width={"12.92vw"}
             borderRadius={400}
             backgroundUrl={aboutOrb}
+            type="orb"
           />
         </Container>
         <Container flexDirection={"column"} gap={"40px"}>
@@ -103,6 +105,7 @@ const LargeScreen = () => {
             width={"20vw"}
             borderRadius={400}
             backgroundUrl={aboutOval2}
+            type="oval"
           />
         </Container>
       </Container>
@@ -135,12 +138,14 @@ const Desktop = () => {
             width={"19.77vw"}
             borderRadius={400}
             backgroundUrl={aboutOval1}
+            type="oval"
           />
           <DecorImage
             height={"12.59vw"}
             width={"12.59vw"}
             borderRadius={400}
             backgroundUrl={aboutOrb}
+            type="orb"
           />
         </Container>
         <Container flexDirection={"column"} gap={"40px"}>
@@ -190,6 +195,7 @@ const Desktop = () => {
             width={"19.77vw"}
             borderRadius={400}
             backgroundUrl={aboutOval2}
+            type="oval"
           />
         </Container>
       </Container>
@@ -219,6 +225,7 @@ const Laptop = () => {
               width={"16.80vw"}
               borderRadius={400}
               backgroundUrl={aboutOrb}
+              type="orb"
             />
           </Container>
           <Container flexDirection={"row"} gap={"20px"}>
@@ -227,12 +234,14 @@ const Laptop = () => {
               width={"29.30vw"}
               borderRadius={400}
               backgroundUrl={aboutOval2}
+              type="oval"
             />
             <DecorImage
               height={"43.75vw"}
               width={"29.30vw"}
               borderRadius={400}
               backgroundUrl={aboutOval1}
+              type="oval"
             />
           </Container>
         </Container>
@@ -303,6 +312,7 @@ const Tablet = () => {
               width={"22.40vw"}
               borderRadius={400}
               backgroundUrl={aboutOrb}
+              type="orb"
             />
           </Container>
           <Container flexDirection={"row"} gap={"20px"}>
@@ -311,12 +321,14 @@ const Tablet = () => {
               width={"37.50vw"}
               borderRadius={400}
               backgroundUrl={aboutOval2}
+              type="oval"
             />
             <DecorImage
               height={"55.99vw"}
               width={"37.50vw"}
               borderRadius={400}
               backgroundUrl={aboutOval1}
+              type="oval"
             />
           </Container>
         </Container>
@@ -388,6 +400,7 @@ const Mobile = () => {
               width={"41.55vw"}
               borderRadius={400}
               backgroundUrl={aboutOrb}
+              type="orb"
             />
           </Container>
           <Container flexDirection={"row"} gap={"20px"}>
@@ -396,12 +409,14 @@ const Mobile = () => {
               width={"44.69vw"}
               borderRadius={400}
               backgroundUrl={aboutOval2}
+              type="oval"
             />
             <DecorImage
               height={"66.67vw"}
               width={"44.69vw"}
               borderRadius={400}
               backgroundUrl={aboutOval1}
+              type="oval"
             />
           </Container>
         </Container>
