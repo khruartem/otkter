@@ -39,7 +39,7 @@ export const Team: FC<TTeamProps> = memo(({
     ? `calc(${Math.ceil(minTeamLength / columnsCount)} * 486px + ${
         Math.ceil(minTeamLength / columnsCount) - 1
       } * 24px)`
-    : undefined;
+    : "486px";
 
   useEffect(() => {
     if (team.length < 5) {
