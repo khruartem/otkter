@@ -5,6 +5,7 @@
   display: grid;
   grid-template-columns: var(--tabs-count);
   grid-auto-flow: column;
+  gap: 40px;
   /* --webkit-transform: translate3d(0,0,0); */
 }
 

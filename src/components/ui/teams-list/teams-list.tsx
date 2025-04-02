@@ -1,4 +1,5 @@
 import { CSSProperties, FC } from "react";
+// import { FC } from "react";
 import clsx from "clsx";
 
 import { Team } from "../../team";

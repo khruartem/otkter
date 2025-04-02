@@ -56,6 +56,7 @@ import larina from "../assets/team/larina.png";
 import medvedev from "../assets/team/medvedev.png";
 import maksimova from "../assets/team/maksimova.png";
 import kizenkov from "../assets/team/kizenkov.png";
+import hrustalev from "../assets/team/hrustalev.png";
 
 import openSeaPhoto1 from "../assets/services-photo/open-sea/openSeaPhoto1.png";
 import openSeaPhoto2 from "../assets/services-photo/open-sea/openSeaPhoto2.png";
@@ -73,7 +74,6 @@ import lampPhoto7 from "../assets/services-photo/lamp/lampPhoto7.jpg";
 import lampPhoto8 from "../assets/services-photo/lamp/lampPhoto8.jpg";
 import lampPhoto9 from "../assets/services-photo/lamp/lampPhoto9.jpg";
 import lampPhoto10 from "../assets/services-photo/lamp/lampPhoto10.jpg";
-
 
 import chronicsPhoto1 from "../assets/projects-photo/chronics/chronics_1.png";
 import chronicsPhoto2 from "../assets/projects-photo/chronics/chronics_2.png";
@@ -210,12 +210,12 @@ export const teamsSocials: TTeamSocials[] = [
         socials: [
           {
             id: 9,
-            url: "#",
+            url: "https://t.me/khruartem",
             type: "telegram",
           },
           {
             id: 10,
-            url: "#",
+            url: "https://vk.com/khruartem",
             type: "vk",
           },
         ],
@@ -1429,6 +1429,12 @@ export const teams: TEmployees = {
         name: "Алёна Синельникова",
         occupation: "Специалист по SMM и PR-менеджер креативных проектов",
         photo: sinelnikova,
+      },
+      {
+        id: 5,
+        name: "Артём Хрусталёв",
+        occupation: "Front-end разработчик",
+        photo: hrustalev,
       },
     ],
   },

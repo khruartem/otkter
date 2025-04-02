@@ -7,12 +7,16 @@
 .team {
   width: fit-content;
   height: var(--height);
-  display: grid;
+  scroll-snap-align: center;
+  /* display: grid;
   grid-template-rows: min-content;
   grid-template-columns: var(--columns-count);
-  grid-auto-flow: row;
-  scroll-snap-align: center;
+  grid-auto-flow: row; */
   /* scrollbar-width: none; */
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .team_large-gap {

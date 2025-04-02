@@ -12,7 +12,8 @@ import styles from "./team.module.css";
 import scrollStyle from "../../../styles/scroll.module.css";
 
 export const TeamUI = React.forwardRef<HTMLUListElement, TTeamUIProps>(
-  ({ team, type, teamRef, columnsCount, containerHeight }, ref) => {
+  ({ team, type, teamRef, containerHeight }, ref) => {
+    // ({ team, type, teamRef }, ref) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
       useGetMediaQuery();
     const largeResolution = isLarge || isDesktop || isLaptop;
@@ -37,7 +38,7 @@ export const TeamUI = React.forwardRef<HTMLUListElement, TTeamUIProps>(
           )}
           style={
             {
-              "--columns-count": `repeat(${columnsCount}, 1fr)`,
+              // "--columns-count": `repeat(${columnsCount}, 1fr)`,
               "--height": containerHeight,
             } as CSSProperties
           }

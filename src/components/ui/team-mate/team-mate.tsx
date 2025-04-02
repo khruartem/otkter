@@ -21,6 +21,7 @@ export const TeamMateUI: FC<TeamUIProps> = ({ teammate }) => {
             width={clsx(isLarge && "25.42vw")}
             height={clsx(isLarge && "14.38vw")}
             backgroundUrl={image}
+            type="oval"
           />
         <div className={styles.card__bottom}>
           <Text

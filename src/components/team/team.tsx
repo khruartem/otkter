@@ -60,7 +60,7 @@ export const Team: FC<TTeamProps> = memo(({
       team={team}
       type={type}
       teamRef={teamRef}
-      columnsCount={columnsCount}
+      // columnsCount={columnsCount}
       containerHeight={containerHeight}
       ref={teamViewRef}
     />
