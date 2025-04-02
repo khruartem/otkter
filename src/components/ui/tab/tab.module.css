@@ -28,6 +28,14 @@
   background-color: var(--light100);
 }
 
+.tab-wrapper_active label {
+  color: var(--navy);
+}
+
+.tab-wrapper_active svg {
+  fill: var(--navy);
+}
+
 .tab-wrapper_hover label {
   color: var(--nephritis120);
 }
