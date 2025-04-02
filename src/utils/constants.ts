@@ -63,6 +63,18 @@ import openSeaPhoto3 from "../assets/services-photo/open-sea/openSeaPhoto3.png";
 import openSeaPhoto4 from "../assets/services-photo/open-sea/openSeaPhoto4.png";
 import openSeaPhoto5 from "../assets/services-photo/open-sea/openSeaPhoto5.png";
 
+import lampPhoto1 from "../assets/services-photo/lamp/lampPhoto1.jpg";
+import lampPhoto2 from "../assets/services-photo/lamp/lampPhoto2.jpg";
+import lampPhoto3 from "../assets/services-photo/lamp/lampPhoto3.jpg";
+import lampPhoto4 from "../assets/services-photo/lamp/lampPhoto4.jpg";
+import lampPhoto5 from "../assets/services-photo/lamp/lampPhoto5.jpg";
+import lampPhoto6 from "../assets/services-photo/lamp/lampPhoto6.jpg";
+import lampPhoto7 from "../assets/services-photo/lamp/lampPhoto7.jpg";
+import lampPhoto8 from "../assets/services-photo/lamp/lampPhoto8.jpg";
+import lampPhoto9 from "../assets/services-photo/lamp/lampPhoto9.jpg";
+import lampPhoto10 from "../assets/services-photo/lamp/lampPhoto10.jpg";
+
+
 import chronicsPhoto1 from "../assets/projects-photo/chronics/chronics_1.png";
 import chronicsPhoto2 from "../assets/projects-photo/chronics/chronics_2.png";
 import chronicsPhoto3 from "../assets/projects-photo/chronics/chronics_3.png";
@@ -1343,7 +1355,48 @@ export const servicePhotos: TServicePhotos[] = [
   },
   {
     serviceId: 6,
-    photos: [],
+    photos: [
+      {
+        id: 48,
+        source: lampPhoto1,
+      },
+      {
+        id: 49,
+        source: lampPhoto2,
+      },
+      {
+        id: 50,
+        source: lampPhoto3,
+      },
+      {
+        id: 51,
+        source: lampPhoto4,
+      },
+      {
+        id: 52,
+        source: lampPhoto5,
+      },
+      {
+        id: 53,
+        source: lampPhoto6,
+      },
+      {
+        id: 54,
+        source: lampPhoto7,
+      },
+      {
+        id: 55,
+        source: lampPhoto8,
+      },
+      {
+        id: 56,
+        source: lampPhoto9,
+      },
+      {
+        id: 57,
+        source: lampPhoto10,
+      },
+    ],
   },
 ];
 
