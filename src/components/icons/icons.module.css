@@ -44,7 +44,16 @@
   box-sizing: content-box;
   width: 32px;
   height: 32px;
+  /* padding: 8px 14px 8px 10px; */
   padding: 14px;
+  cursor: pointer;
+}
+
+.share {
+  box-sizing: content-box;
+  width: 32px;
+  height: 32px;
+  /* padding: 5.5px 6.3px 5.91px 5.5px; */
   cursor: pointer;
 }
 

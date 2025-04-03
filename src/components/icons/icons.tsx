@@ -10,6 +10,7 @@ import {
   TModalsProps,
   TTabProps,
   TSocialProps,
+  TShareProps,
 } from "./types";
 import { Colors } from "../../utils/types";
 //import { telegramUrl, vkUrl } from "../../utils/constants";
@@ -146,6 +147,33 @@ export const ArrowLeft = ({
       onClick={onClick}
     >
       <path d="m16.074 8.364-3.36 3.67-2.062 2.24c-.87.95-.87 2.493 0 3.442l5.422 5.922c.712.777 1.926.217 1.926-.869V9.233c0-1.097-1.214-1.646-1.926-.869Z" />
+    </svg>
+  );
+};
+
+export const Share = ({
+  mainColor,
+  hoverColor = undefined,
+  activeColor = undefined,
+  onClick = undefined,
+  className = undefined,
+}: TShareProps) => {
+  return (
+    <svg
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      className={clsx(styles.share, className)}
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+      onClick={onClick}
+    >
+      <path d="M15.018 9.817c1.75-1.757 4.6-1.757 6.369.005a4.495 4.495 0 0 1 .715 5.43 1.5 1.5 0 1 0 2.6 1.497c1.652-2.868 1.267-6.598-1.199-9.053-2.93-2.919-7.68-2.939-10.61.004a7.519 7.519 0 0 0-1.196 9.048 1.5 1.5 0 0 0 2.6-1.496 4.519 4.519 0 0 1 .721-5.435Z" />
+      <path d="M9.051 16.743a1.5 1.5 0 1 0-2.606-1.486 7.26 7.26 0 0 0 1.176 8.71c2.83 2.843 7.42 2.823 10.25.004a7.237 7.237 0 0 0 1.18-8.714 1.5 1.5 0 1 0-2.606 1.487 4.237 4.237 0 0 1-.69 5.101c-1.669 1.662-4.359 1.662-6.008.005a4.261 4.261 0 0 1-.696-5.107Z" />
     </svg>
   );
 };

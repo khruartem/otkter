@@ -1,14 +1,14 @@
 import { FC, memo } from "react";
+import clsx from "clsx";
 
 import { Text } from "../../text";
+import { ArrowLeft, CloseModal, Share } from "../../icons/icons";
 
 import { TModalUIProps } from "./types";
-import { ArrowLeft, CloseModal } from "../../icons/icons";
 import { Colors } from "../../../utils/types";
+import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./modal.module.css";
-import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
-import clsx from "clsx";
 
 export const ModalUI: FC<TModalUIProps> = memo(
   ({ type, onClose, isDirectLink, children }) => {
@@ -33,12 +33,13 @@ export const ModalUI: FC<TModalUIProps> = memo(
         )}
       >
         {type === "back" && (
-          <button
+          <div className={styles.modal__buttons}>
+            <button
             className={clsx(styles.modal__button, styles.modal__button_back)}
             type="button"
             onClick={onClose}
           >
-            <ArrowLeft mainColor={Colors.Light20} />
+            <ArrowLeft mainColor={Colors.Light20} className={styles.modal__arrow} />
             <Text
               as={"span"}
               fontFamily="Unbounded"
@@ -55,6 +56,26 @@ export const ModalUI: FC<TModalUIProps> = memo(
               )}
             </Text>
           </button>
+            <button
+            className={clsx(styles.modal__button, styles.modal__button_share)}
+            type="button"
+            onClick={onClose}
+          >
+            <Share mainColor={Colors.Light20} />
+            <Text
+              as={"span"}
+              fontFamily="Unbounded"
+              fontSize={18}
+              fontWeight={500}
+              lineHeight={28}
+              textAlign="right"
+              textTransform="none"
+              color={Colors.Light20}
+            >
+              {"Поделиться"}
+            </Text>
+          </button>
+          </div>
         )}
         {type === "close" && (
           <button

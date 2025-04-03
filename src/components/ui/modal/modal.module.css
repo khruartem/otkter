@@ -36,6 +36,13 @@
   align-items: center;
 }
 
+.modal__buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .modal__button {
   background-color: transparent;
   display: flex;
@@ -43,6 +50,18 @@
 }
 
 .modal__button_back {
+  color: var(--light20);
+  padding-block: 14px;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.modal__arrow {
+  padding: 0;
+}
+
+.modal__button_share {
   color: var(--light20);
   padding-block: 14px;
   flex-direction: row;
@@ -73,6 +92,22 @@
 }
 
 .modal__button_back:active svg {
+  fill: var(--navy);
+}
+
+.modal__button_share:hover span {
+  color: var(--dark80);
+}
+
+.modal__button_share:hover svg {
+  fill: var(--dark80);
+}
+
+.modal__button_share:active span {
+  color: var(--navy);
+}
+
+.modal__button_share:active svg {
   fill: var(--navy);
 }
 
@@ -144,23 +179,23 @@
 }
 
 /* Стили для скролла */
-.modal::-webkit-scrollbar-thumb {
-  border-radius: 14px;
+/* .modal::-webkit-scrollbar-thumb {
+  border-radius: 14px; */
   /* background-color: var(--light30); */
-  box-shadow: inset 0 0 14px 14px var(--light30);
+  /* box-shadow: inset 0 0 14px 14px var(--light30);
   border: solid 4px transparent;
-}
+} */
 
 /* 4px scroll thumb. 10px margin from right margin */
-.modal::-webkit-scrollbar-track {
+/* .modal::-webkit-scrollbar-track {
   box-shadow: inset 0 0 14px 14px transparent;
   border: solid 4px transparent;
-}
+} */
 
-.modal::-webkit-scrollbar {
+/* .modal::-webkit-scrollbar {
   width: 14px;
-}
+} */
 
-.modal::-webkit-scrollbar:corner-present {
+/* .modal::-webkit-scrollbar:corner-present {
   display: none;
-}
+} */
