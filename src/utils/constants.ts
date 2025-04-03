@@ -23,15 +23,18 @@ import { contactFunction } from "./contactFunction";
 // import masterClassSVG from "../../public/projects_master-class.svg";
 // import contestSVG from "../../public/project_contest.svg";
 // import shortFilmSVG from "../../public/projets_short-film.svg";
-import uniqueChronicle from "../assets/project_unique_chronicle.png";
-import friendship from "../assets/project_friendship.png";
-import openPlay from "../assets/project_open_play.png";
-import mastership from "../assets/project_mastership.png";
-import nikolayFilm from "../assets/project_nikolay_film.png";
-import twoInWorld from "../assets/project_nikolay_play.png";
-import amplitude from "../assets/projects/ampletuda.png";
+
+// Обложки проектов
+import uniqueChronicle from "../assets/projects/chronicle.png";
+import friendship from "../assets/projects/friendship.png";
+import openPlay from "../assets/projects/play.png";
+import mastership from "../assets/projects/mastership.png";
+import nikolayFilm from "../assets/projects/nikolay.png";
+import twoInWorld from "../assets/projects/two.png";
+import amplitude from "../assets/projects/amplitude.png";
 import esenin from "../assets/projects/esenin.png";
 
+// Команда
 import yakovlev from "../assets/yakovlev.png";
 import LA from "../assets/LA.png";
 import sinelnikova from "../assets/sinelnikova.png";
