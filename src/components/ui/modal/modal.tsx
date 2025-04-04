@@ -2,7 +2,8 @@ import { FC, memo } from "react";
 import clsx from "clsx";
 
 import { Text } from "../../text";
-import { ArrowLeft, CloseModal, Share } from "../../icons/icons";
+// import { ArrowLeft, CloseModal, Share } from "../../icons/icons";
+import { ArrowLeft, CloseModal } from "../../icons/icons";
 
 import { TModalUIProps } from "./types";
 import { Colors } from "../../../utils/types";
@@ -56,7 +57,7 @@ export const ModalUI: FC<TModalUIProps> = memo(
                 {clsx(!isDirectLink && "Назад", isDirectLink && "На главную")}
               </Text>
             </button>
-            <button
+            {/* <button
               className={clsx(styles.modal__button, styles.modal__button_share)}
               type="button"
               onClick={() => {}}
@@ -74,7 +75,7 @@ export const ModalUI: FC<TModalUIProps> = memo(
               >
                 {"Поделиться"}
               </Text>
-            </button>
+            </button> */}
           </div>
         )}
         {type === "close" && (
