@@ -23,7 +23,7 @@ export const Video = () => {
       src={videoWEBm}
       poster={videoPoster}
       autoPlay
-      preload="none"
+      // preload="none"
       muted
       loop
       playsInline
