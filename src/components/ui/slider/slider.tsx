@@ -28,14 +28,14 @@ export const SliderUI: FC<TSliderUIProps> = ({
       className={clsx(
         styles.slider,
         isLarge && styles["slider_large-screen"],
-        !isLarge && styles["slider_small-resolution"]
+        // !isLarge && styles["slider_small-resolution"]
       )}
     >
       <div
         className={clsx(
           styles.slider__content,
-          isLarge && styles["slider__content_large-screen"],
-          isDesktop && styles.slider__content_desktop,
+          // isLarge && styles["slider__content_large-screen"],
+          // isDesktop && styles.slider__content_desktop,
           smallResolution && styles.slider__content_positioned
         )}
       >
