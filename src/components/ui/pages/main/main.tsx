@@ -6,11 +6,11 @@ import { Header } from "../../../../sections/header";
 import { Hero } from "../../../../sections/hero";
 import { Partners } from "../../../../sections/partners";
 import { Projects } from "../../../../sections/projects";
-
-import { TMainUIProps } from "./types";
 import { Services } from "../../../../sections/services";
 import { Teams } from "../../../../sections/teams";
 import { Contacts } from "../../../../sections/contacts";
+
+import { TMainUIProps } from "./types";
 
 export const MainUI: FC<TMainUIProps> = ({
   projectsRef,

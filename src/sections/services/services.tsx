@@ -120,3 +120,5 @@ export const Services: FC<TSectionProps> = ({ sectionRef }) => {
     />
   );
 };
+
+// export const Component = Services;

@@ -33,6 +33,7 @@ export const PhotoUI: FC<TPhotoProps> = ({
         // <Link to={`/otkter/${type}/${id}/${photo.id}`} state={{ id, type, ...location.state }}>
         <Link to={`/${type}/${id}/${photo.id}`} state={{ id, type, ...location.state }}>
           <img
+            loading="lazy"
             className={styles.photo__link}
             src={photo.source}
             alt="Фото проекта"

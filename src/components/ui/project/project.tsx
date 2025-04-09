@@ -13,7 +13,11 @@ import styles from "./project.module.css";
 import { useGetAttention } from "../../../hooks/useGetAttention";
 import { useGetProjectColors } from "../../../hooks/useGetProjectColors";
 
-export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef, locationFrom }) => {
+export const ProjectUI: FC<ProjectUIProps> = ({
+  project,
+  projectRef,
+  locationFrom,
+}) => {
   const { projectId, title, image, shortText, isActive } = project;
 
   const attention = useGetAttention(projectId!);
@@ -61,7 +65,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef, locationFro
             smallResolution && styles["project__top_small-resolution"]
           )}
         >
-          <div
+          {/* <div
             className={clsx(
               styles.project__image,
               isLarge && styles["project__image_large-screen"],
@@ -75,7 +79,29 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef, locationFro
                 "--background-url": `url(${image})`,
               } as CSSProperties
             }
-          ></div>
+          ></div> */}
+          <div className={clsx(
+                styles["project__image-container"],
+                isLarge && styles["project__image_large-screen"],
+                isDesktop && styles.project__image_desktop,
+                isLaptop && styles.project__image_laptop,
+                isTablet && styles.project__image_tablet,
+                isMobile && styles.project__image_mobile
+              )}>
+            <img
+              loading="lazy"
+              className={clsx(
+                styles.project__image,
+                isLarge && styles["project__image_large-screen"],
+                isDesktop && styles.project__image_desktop,
+                isLaptop && styles.project__image_laptop,
+                isTablet && styles.project__image_tablet,
+                isMobile && styles.project__image_mobile
+              )}
+              src={image}
+              alt="Изображение проекта"
+            />
+          </div>
           <CategoryList projectId={projectId!} />
         </div>
         <div

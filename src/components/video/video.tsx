@@ -1,22 +1,16 @@
 import clsx from "clsx";
-import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
-import { useDesktopMediaQuery } from "../../hooks/useDesktopMediaQuery";
-import { useLaptopMediaQuery } from "../../hooks/useLaptopMediaQuery";
-import { useTabletMediaQuery } from "../../hooks/useTabletMediaQuery";
-import { useMobileMediaQuery } from "../../hooks/useMobileMediaQuery";
 
-import videoWEBm from "../../assets/video_hero.webm";
-//import videoMP4 from "../../assets/video_hero.mp4";
-import videoPoster from "../../assets/video_poster.png";
+import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+
+import videoWEBm from "../../assets/video/video_hero.webm";
+import videoMP4 from "../../assets/video/video_hero.mp4";
+import videoPoster from "../../assets/video/video_poster.png";
 
 import styles from "./video.module.css";
 
 export const Video = () => {
-  const isLarge = useLargeScreenMediaQuery();
-  const isDesktop = useDesktopMediaQuery();
-  const isLaptop = useLaptopMediaQuery();
-  const isTablet = useTabletMediaQuery();
-  const isMobile = useMobileMediaQuery();
+  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
+    useGetMediaQuery();
 
   return (
     <video
@@ -40,6 +34,7 @@ export const Video = () => {
       )}
     >
       <source src={videoWEBm} type="video/webm" />
+      <source src={videoMP4} type="video/mp4" />
     </video>
   );
 };

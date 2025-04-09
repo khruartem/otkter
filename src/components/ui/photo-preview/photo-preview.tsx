@@ -14,6 +14,7 @@ export const PhotoPreviewUI: FC<TPhotoPreviewUIProps> = ({ photo }) => {
 
   return photo ? (
     <img
+      loading="lazy"
       src={photo}
       alt="Фото проетка в режиме просмотра"
       className={clsx(

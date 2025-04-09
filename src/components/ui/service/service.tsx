@@ -42,6 +42,7 @@ export const ServiceUI = React.forwardRef<
     >
       {(isLaptop || isTablet || isMobile) && (
         <img
+          loading="lazy"
           className={styles.service__image}
           src={image}
           alt="Изображение услуги"
@@ -55,15 +56,17 @@ export const ServiceUI = React.forwardRef<
           isDesktop && styles.service__info_desktop,
           isLaptop && styles.service__info_laptop,
           isTablet && styles.service__info_tablet,
-          isMobile && styles.service__info_mobile,
+          isMobile && styles.service__info_mobile
         )}
         // ref={isLaptop || isTablet || isMobile ? undefined : ref}
       >
-        <div className={clsx(
-          styles.service__text,
-          isLarge && styles["service__text_large-gap"],
-          !isLarge && styles["service__text_small-gap"]
-        )}>
+        <div
+          className={clsx(
+            styles.service__text,
+            isLarge && styles["service__text_large-gap"],
+            !isLarge && styles["service__text_small-gap"]
+          )}
+        >
           <Text
             as={"h3"}
             fontFamily="Unbounded"
@@ -73,7 +76,7 @@ export const ServiceUI = React.forwardRef<
             lineHeight={isLarge ? 48 : 40}
             textTransform={"none"}
             color={Colors.Navy}
-            padding={clsx(isTablet || isMobile && "40px 0 0 0")}
+            padding={clsx(isTablet || (isMobile && "40px 0 0 0"))}
           >
             {title}
           </Text>
@@ -94,6 +97,7 @@ export const ServiceUI = React.forwardRef<
       </div>
       {(isLarge || isDesktop) && (
         <img
+          loading="lazy"
           className={styles.service__image}
           src={image}
           alt="Изображение услуги"

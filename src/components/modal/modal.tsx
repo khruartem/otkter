@@ -10,7 +10,6 @@ const modalRoot = document.getElementById('root-modal');
 
 export const Modal: FC<TModalProps> = memo(({ type, onClose, children }) => {
   const location = useLocation();
-  console.log(location);
   const isDirectLink = location.state ? false : true;
   
   useEffect(() => {

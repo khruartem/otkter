@@ -25,6 +25,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
       {type === "projects" && (
         <div className={clsx(styles.employee, styles.employee_projects)}>
           <img
+            loading="lazy"
             className={clsx(
               styles.employee__photo,
               styles.employee__photo_projects
@@ -76,6 +77,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
             className={clsx(styles.employee__info, styles.employee__info_team)}
           >
             <img
+              loading="lazy"
               src={photo}
               alt={`Фото ${name}`}
               className={clsx(

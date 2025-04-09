@@ -18,7 +18,6 @@ export const ProjectList: FC<TProjectListProps> = ({
     return Number(b.isActive) - Number(a.isActive);
   });
   const sortedOrderedProjects = useSortAsc(projects);
-  console.log(sortedOrderedProjects);
   //const projectViewRef = projectsViewRefs?.find(projectsViewRef => projectsViewRef.type === type)?.ref;
 
   return (

@@ -34,16 +34,17 @@ export const Partners = () => {
           isMobile && styles.partners__icons_mobile
         )}
       >
-        <img src={nagatino} alt="Логотип Нагатино" />
-        <img src={uao} alt="Логотип ОКЦ ЮАО" />
-        <img src={cao} alt="Логотип ОКЦ ЦАО" />
-        <img src={vershyna} alt="Логотип Центра Вершина" />
-        <img src={nicolai} alt="Логотип музея Николая второго" />
+        <img loading="lazy" src={nagatino} alt="Логотип Нагатино" />
+        <img loading="lazy" src={uao} alt="Логотип ОКЦ ЮАО" />
+        <img loading="lazy" src={cao} alt="Логотип ОКЦ ЦАО" />
+        <img loading="lazy" src={vershyna} alt="Логотип Центра Вершина" />
+        <img loading="lazy" src={nicolai} alt="Логотип музея Николая второго" />
         <img
+          loading="lazy"
           src={prosvet}
           alt="Логотип Гос. университета просвещения (ПРОСВЕТ)"
         />
-        <img src={minpros} alt="Логотип Мин. просвещения РФ" />
+        <img loading="lazy" src={minpros} alt="Логотип Мин. просвещения РФ" />
       </div>
     </section>
   );

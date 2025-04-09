@@ -92,14 +92,14 @@ import eseninPhoto5 from "../assets/projects-photo/esenin/esenin_5.png";
 import eseninPhoto6 from "../assets/projects-photo/esenin/esenin_6.png";
 import eseninPhoto7 from "../assets/projects-photo/esenin/esenin_7.png";
 
-import OT from "../assets/services_img_ot.png";
-import events from "../assets/services_img_events.png";
-import design from "../assets/services_img_design.png";
-import content from "../assets/services_img_content.png";
-import masterClasses from "../assets/services_img_master_classes.png";
-// import lamp from "../assets/services_img_lamp.png";
+import OT from "../assets/services/ot.png";
+import events from "../assets/services/events.png";
+import design from "../assets/services/design.png";
+import content from "../assets/services/content.png";
+import masterClasses from "../assets/services/master_class.png";
 import lamp from "../assets/services/lamp.png";
-import smm from "../assets/services_img_smm.png";
+import smm from "../assets/services/smm.png";
+
 import { buyTicketsEsenin } from "./buyTicketsEsenin";
 import { joinAmplitude } from "./joinAmplitude";
 
