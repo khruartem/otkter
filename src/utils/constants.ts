@@ -61,12 +61,14 @@ import maksimova from "../assets/team/maksimova.png";
 import kizenkov from "../assets/team/kizenkov.png";
 import hrustalev from "../assets/team/hrustalev.png";
 
+// Фото ОТ
 import openSeaPhoto1 from "../assets/services-photo/open-sea/openSeaPhoto1.png";
 import openSeaPhoto2 from "../assets/services-photo/open-sea/openSeaPhoto2.png";
 import openSeaPhoto3 from "../assets/services-photo/open-sea/openSeaPhoto3.png";
 import openSeaPhoto4 from "../assets/services-photo/open-sea/openSeaPhoto4.png";
 import openSeaPhoto5 from "../assets/services-photo/open-sea/openSeaPhoto5.png";
 
+// Фото ЛАМП
 import lampPhoto1 from "../assets/services-photo/lamp/lampPhoto1.jpg";
 import lampPhoto2 from "../assets/services-photo/lamp/lampPhoto2.jpg";
 import lampPhoto3 from "../assets/services-photo/lamp/lampPhoto3.jpg";
@@ -78,12 +80,15 @@ import lampPhoto8 from "../assets/services-photo/lamp/lampPhoto8.jpg";
 import lampPhoto9 from "../assets/services-photo/lamp/lampPhoto9.jpg";
 import lampPhoto10 from "../assets/services-photo/lamp/lampPhoto10.jpg";
 
+// Фото Хроники
 import chronicsPhoto1 from "../assets/projects-photo/chronics/chronics_1.png";
 import chronicsPhoto2 from "../assets/projects-photo/chronics/chronics_2.png";
 import chronicsPhoto3 from "../assets/projects-photo/chronics/chronics_3.png";
 import chronicsPhoto4 from "../assets/projects-photo/chronics/chronics_4.png";
 import chronicsPhoto5 from "../assets/projects-photo/chronics/chronics_5.png";
 import chronicsPhoto6 from "../assets/projects-photo/chronics/chronics_6.png";
+
+// Фото Есенина
 import eseninPhoto1 from "../assets/projects-photo/esenin/esenin_1.png";
 import eseninPhoto2 from "../assets/projects-photo/esenin/esenin_2.png";
 import eseninPhoto3 from "../assets/projects-photo/esenin/esenin_3.png";
@@ -92,6 +97,7 @@ import eseninPhoto5 from "../assets/projects-photo/esenin/esenin_5.png";
 import eseninPhoto6 from "../assets/projects-photo/esenin/esenin_6.png";
 import eseninPhoto7 from "../assets/projects-photo/esenin/esenin_7.png";
 
+// Обложки услуг
 import OT from "../assets/services/ot.png";
 import events from "../assets/services/events.png";
 import design from "../assets/services/design.png";

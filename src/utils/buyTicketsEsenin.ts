@@ -1,4 +1,4 @@
-const buyTicketsLink = "https://www.goslitmuz.ru/poster/20822/";
+const buyTicketsLink = "https://bilet.mos.ru/event/338617257/";
 
 export const buyTicketsEsenin = () => {
   window.open(
