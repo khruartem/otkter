@@ -26,7 +26,7 @@
 
 /* Стили для разных разрешений экранов */
 .contacts_large-screen {
-  background-image: url(../../../../assets/banner_large-screen.png);
+  background-image: url(../../../../assets/banner/banner_large-screen.png);
   gap: 60px;
   padding-block: 6.88vw;
   padding-inline: 27.60vw;
@@ -34,28 +34,28 @@
 }
 
 .constants_desktop {
-  background-image: url(../../../../assets/banner_desktop.png);
+  background-image: url(../../../../assets/banner/banner_desktop.png);
   padding-block: 5.86vw;
   padding-inline: 22.18vw;
   border-radius: 200px;
 }
 
 .constants_laptop {
-  background-image: url(../../../../assets/banner_laptop.png);
+  background-image: url(../../../../assets/banner/banner_laptop.png);
   padding-top: 54.30vw;
   padding-inline: 12.89vw;
   border-radius: 200px;
 }
 
 .constants_tablet {
-  background-image: url(../../../../assets/banner_tablet.png);
+  background-image: url(../../../../assets/banner/banner_tablet.png);
   padding-top: 67.19vw;
   padding-inline: 3.91vw;
   border-radius: 100px;
 }
 
 .constants_mobile {
-  background-image: url(../../../../assets/banner_tablet.png);
+  background-image: url(../../../../assets/banner/banner_tablet.png);
   padding-top: 67.19vw;
   padding-inline: 3.86vw;
   border-radius: 100px;
