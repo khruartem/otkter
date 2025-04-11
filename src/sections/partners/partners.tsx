@@ -4,13 +4,13 @@ import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
 import { useMobileMediaQuery } from "../../hooks/useMobileMediaQuery";
 import { useTabletMediaQuery } from "../../hooks/useTabletMediaQuery";
 
-import nagatino from "../../assets/partner_nagatino.png";
-import uao from "../../assets/partner_uao.png";
-import cao from "../../assets/partner_cao.png";
-import nicolai from "../../assets/partner_nicolai.png";
-import prosvet from "../../assets/partner_prosvet.png";
-import vershyna from "../../assets/partner_vershyna.png";
-import minpros from "../../assets/partner_minpros.png";
+import nagatino from "../../assets/partners/nagatino.png";
+import uao from "../../assets/partners/uao.png";
+import cao from "../../assets/partners/cao.png";
+import nicolai from "../../assets/partners/nicolai.png";
+import prosvet from "../../assets/partners/prosvet.png";
+import vershyna from "../../assets/partners/vershyna.png";
+import minpros from "../../assets/partners/minpros.png";
 
 import styles from "./partners.module.css";
 import clsx from "clsx";
