@@ -41,3 +41,4 @@ TIconsProps,
 | "iconType"
 >;
 export type TCategotyProps = TTabProps;
+export type TErrorProps = Pick<TIconsProps, "className">;

@@ -6,6 +6,8 @@ import { Modal } from "../modal";
 import { Slider } from "../slider";
 import { ProjectInfo } from "../project-info";
 import { ServiceInfo } from "../service-info";
+import { ErrorUI } from "../ui/pages/error";
+import { toMain } from "../../utils/toMain";
 
 export function App() {
   const navigate = useNavigate();
@@ -34,7 +36,6 @@ export function App() {
                 } else {
                   navigate("/");
                 }
-                
               }}
             >
               <ProjectInfo />
@@ -65,7 +66,9 @@ export function App() {
               onClose={() => {
                 // navigate(`otkter/projects/${location.state?.id}`, { state: {...location.state }});
                 if (location.state?.id) {
-                  navigate(`/projects/${location.state?.id}`, { state: {...location.state }});
+                  navigate(`/projects/${location.state?.id}`, {
+                    state: { ...location.state },
+                  });
                 } else {
                   navigate("/");
                 }
@@ -84,14 +87,29 @@ export function App() {
               onClose={() => {
                 //navigate(`otkter/services/${location.state?.id}`);
                 if (location.state?.id) {
-                  navigate(`/services/${location.state?.id}`, { state: {...location.state }});
+                  navigate(`/services/${location.state?.id}`, {
+                    state: { ...location.state },
+                  });
                 } else {
-                  navigate("/")
+                  navigate("/");
                 }
               }}
             >
               <Slider type="services" />
             </Modal>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <ErrorUI
+              title={"Страница не найдена"}
+              text={
+                "Она была удалена или перемещена, либо её адрес набран неправильно"
+              }
+              buttonLabel={"Вернуться на главную"}
+              onButtonClick={() => toMain()}
+            />
           }
         />
       </Routes>

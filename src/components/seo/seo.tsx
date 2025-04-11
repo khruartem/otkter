@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { Helmet } from "react-helmet-async";
 
-import { SEOProps } from "./types";
+import { TSEOProps } from "./types";
 
-export const SEO: FC<SEOProps> = ({
+export const SEO: FC<TSEOProps> = ({
   title,
   ogTitle,
   description,

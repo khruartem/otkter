@@ -106,8 +106,13 @@ import masterClasses from "../assets/services/master_class.png";
 import lamp from "../assets/services/lamp.png";
 import smm from "../assets/services/smm.png";
 
-import { buyTicketsEsenin } from "./buyTicketsEsenin";
+// Функции по проектам
 import { joinAmplitude } from "./joinAmplitude";
+import { buyTickets } from "./buyTickets";
+
+// Ссылки по проектам
+const buyTicketsLinkChronics = "https://tickets.mos.ru/widget/visit?eventId=61367&agentId=museum56&date=2025-05-04";
+const buyTicketsLinkEsenin = "https://bilet.mos.ru/event/338617257/";
 
 export const navLinks: TNavLinks = [
   {
@@ -341,17 +346,17 @@ export const projectInfos: TProjectInfo[] = [
       {
         type: "address",
         label: "Адрес",
-        value: "г. Москва, Шмитовский проезд, 2",
+        value: "г. Москва, Сибирский пр., 2, стр. 5",
       },
       {
         type: "date",
         label: "Дата и время",
-        value: "6 мая 19:00",
+        value: "4 мая 19:00",
       },
       {
         type: "price",
         label: "Цена",
-        value: "Вход свободный",
+        value: "700 руб.",
       },
     ],
     employees: {
@@ -820,8 +825,8 @@ export const projectControls: TProjectControls[] = [
     controls: {
       buttons: [
         {
-          label: "Записаться",
-          onClick: () => contactFunction("admins", 1, "telegram"),
+          label: "Купить билет",
+          onClick: () => buyTickets(buyTicketsLinkChronics),
         },
       ],
       links: [],
@@ -869,7 +874,7 @@ export const projectControls: TProjectControls[] = [
       buttons: [
         {
           label: "Купить билет",
-          onClick: buyTicketsEsenin,
+          onClick: () => buyTickets(buyTicketsLinkEsenin),
         },
       ],
       links: [],

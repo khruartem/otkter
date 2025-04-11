@@ -1,4 +1,4 @@
-export type SEOProps = {
+export type TSEOProps = {
   title: string;
   ogTitle?: string;
   description: string;
