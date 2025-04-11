@@ -9,6 +9,7 @@ export type TProjectInfo = {
   text: string;
   eventDetails: TEventDetails[];
   employees?: TEmployees;
+  previewImg: string;
 };
 
 type TProjectsInfoState = {
@@ -27,6 +28,9 @@ const projectsInfoSlice = createSlice({
     getTextSelector: (state: TProjectsInfoState, id: number) => {
       return (findById(state.infos, id) as TProjectInfo).text;
     },
+    getPreviewImgSelector: (state: TProjectsInfoState, id: number) => {
+      return (findById(state.infos, id) as TProjectInfo).previewImg;
+    },
     getDetailsSelector: (
       state: TProjectsInfoState,
       id: number,
@@ -41,11 +45,17 @@ const projectsInfoSlice = createSlice({
       }
     },
     getIsEmployeesSelector: (state: TProjectsInfoState, id: number) => {
-      return (findById(state.infos, id) as TProjectInfo)?.employees ? true : false;
+      return (findById(state.infos, id) as TProjectInfo)?.employees
+        ? true
+        : false;
     },
   },
 });
 
 export const reducer = projectsInfoSlice.reducer;
-export const { getTextSelector, getDetailsSelector, getIsEmployeesSelector } =
-  projectsInfoSlice.selectors;
+export const {
+  getTextSelector,
+  getDetailsSelector,
+  getIsEmployeesSelector,
+  getPreviewImgSelector,
+} = projectsInfoSlice.selectors;

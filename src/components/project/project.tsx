@@ -21,5 +21,11 @@ export const Project: FC<TProjectProps> = ({ project }) => {
     }
   }, [location.hash, projectId]);
 
-  return <ProjectUI project={project} projectRef={projectRef} locationFrom={locationFrom} />;
+  return (
+    <ProjectUI
+      project={project}
+      projectRef={projectRef}
+      locationFrom={locationFrom}
+    />
+  );
 };

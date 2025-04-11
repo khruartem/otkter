@@ -16,6 +16,7 @@ export type TProjectInfo = {
   text: string;
   eventDetails: TEventDetails[];
   employees?: TEmployees;
+  previewImg: string;
 };
 
 export type TServiceInfo = {
