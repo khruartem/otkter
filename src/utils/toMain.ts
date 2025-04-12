@@ -1,5 +1,7 @@
-const mainLink = "https://otkter.ru/";
+const mainLink = "https://otkter.ru/"
 
 export const toMain = () => {
-  window.open(mainLink);
-};
+  window.open(
+    mainLink
+    );
+}

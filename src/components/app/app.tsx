@@ -6,8 +6,7 @@ import { Modal } from "../modal";
 import { Slider } from "../slider";
 import { ProjectInfo } from "../project-info";
 import { ServiceInfo } from "../service-info";
-import { ErrorUI } from "../ui/pages/error";
-import { toMain } from "../../utils/toMain";
+import { NotFound404 } from "../../pages/not-found-404";
 
 export function App() {
   const navigate = useNavigate();
@@ -101,16 +100,7 @@ export function App() {
         />
         <Route
           path="*"
-          element={
-            <ErrorUI
-              title={"Страница не найдена"}
-              text={
-                "Она была удалена или перемещена, либо её адрес набран неправильно"
-              }
-              buttonLabel={"Вернуться на главную"}
-              onButtonClick={() => toMain()}
-            />
-          }
+          element={<NotFound404 />}
         />
       </Routes>
     </>
