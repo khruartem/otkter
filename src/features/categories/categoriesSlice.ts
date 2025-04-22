@@ -9,7 +9,7 @@ import { findById } from "../../utils/findById";
 import { projectCategories } from "../../utils/constants";
 
 export type TProjectCategories = {
-  projectId: number;
+  id: number;
   categories: TCategories;
 };
 
@@ -78,7 +78,7 @@ const categoriesSlice = createSlice({
     },
     getCategotyAttentionSelector: (state: TCategoriesState, id: number) => {
       return (findById(state.projectCategories, id) as TProjectCategories)
-        .categories.attention;
+        ?.categories?.attention;
     },
   },
 });

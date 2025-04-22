@@ -19,7 +19,7 @@ const servicesSlice = createSlice({
   selectors: {
     getServicesSelector: (state: TServicesState) => state.services,
     getServiceTitleSelector: (state: TServicesState, id: number) => {
-      return (findById(state.services, id) as TService).title;
+      return (findById(state.services, id) as TService)?.title;
     },
     getServiceSelector: (state: TServicesState, id: number) => {
       return findById(state.services, id) as TService;

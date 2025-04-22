@@ -110,6 +110,11 @@ import smm from "../assets/services/smm.png";
 import { joinAmplitude } from "./joinAmplitude";
 import { buyTickets } from "./buyTickets";
 
+// Постеры по проектам
+import uniqueChroniclePoster from "../assets/projects/posters/chronicle.png";
+import eseninPoster from "../assets/projects/posters/esenin.png";
+ 
+
 // Ссылки по проектам
 const buyTicketsLinkChronics = "https://tickets.mos.ru/widget/visit?eventId=61367&agentId=museum56&date=2025-05-04";
 const buyTicketsLinkEsenin = "https://bilet.mos.ru/event/338617257/";
@@ -240,7 +245,7 @@ export const teamsSocials: TTeamSocials[] = [
 
 export const projects: TProject[] = [
   {
-    projectId: 1,
+    id: 1,
     title: "«Показ уникальной хроники. 1945»",
     image: uniqueChronicle,
     shortText:
@@ -251,7 +256,7 @@ export const projects: TProject[] = [
     order: 2,
   },
   {
-    projectId: 2,
+    id: 2,
     title: "«Нет уз святее товарищества»",
     image: friendship,
     shortText:
@@ -261,7 +266,7 @@ export const projects: TProject[] = [
     isActive: false,
   },
   {
-    projectId: 3,
+    id: 3,
     title: "«Открытая пьеса»",
     image: openPlay,
     shortText:
@@ -271,7 +276,7 @@ export const projects: TProject[] = [
     isActive: false,
   },
   {
-    projectId: 4,
+    id: 4,
     title: "«Ораторское мастерство как инструмент коммуникации»",
     image: mastership,
     shortText:
@@ -281,7 +286,7 @@ export const projects: TProject[] = [
     isActive: true,
   },
   {
-    projectId: 5,
+    id: 5,
     title: "«О Николае II»",
     image: nikolayFilm,
     shortText:
@@ -292,7 +297,7 @@ export const projects: TProject[] = [
     order: 5,
   },
   {
-    projectId: 6,
+    id: 6,
     title: "«Двое во всем мире»",
     image: twoInWorld,
     shortText:
@@ -303,7 +308,7 @@ export const projects: TProject[] = [
     order: 4,
   },
   {
-    projectId: 7,
+    id: 7,
     title: "Поэтический спектакль «Есенин. Жизнь в стихах»",
     image: esenin,
     shortText:
@@ -314,7 +319,7 @@ export const projects: TProject[] = [
     order: 1,
   },
   {
-    projectId: 8,
+    id: 8,
     title: "«Случительная амплитуда»",
     image: amplitude,
     shortText:
@@ -328,7 +333,7 @@ export const projects: TProject[] = [
 
 export const projectInfos: TProjectInfo[] = [
   {
-    projectId: 1,
+    id: 1,
     text: "В центре вечера - восстановленная плёнка, которая оживёт для вас и, как мы верим и надеемся, натолкнёт на размышления о Великой Отечественной войне. Серьёзные и важные темы дискуссии воссоединятся с песнями военных лет и стихами, посвящёнными войне.",
     // shortText: "В центре вечера — восстановленная плёнка, которая оживёт для вас и, как мы верим и надеемся, натолкнёт на размышления о Великой Отечественной войне.",
     eventDetails: [
@@ -398,10 +403,11 @@ export const projectInfos: TProjectInfo[] = [
         ],
       },
     },
-    previewImg: "/preview_chronics.png"
+    previewImg: "/preview_chronics.png",
+    poster: uniqueChroniclePoster,
   },
   {
-    projectId: 2,
+    id: 2,
     text: "Цель проведения конкурса - популяризация патриотизма средствами театрального искусства и сохранение социокультурных, духовно-нравственных, патриотических традиций российского народа в контексте исторических событий, сохранение исторической памяти, патриотических ценностей, прославление подвигов участников СВО.",
     // shortText: "Цель проведения конкурса — популяризация патриотизма средствами театрального искусства и сохранение социокультурных, духовно-нравственных, патриотических традиций.",
     eventDetails: [
@@ -436,10 +442,9 @@ export const projectInfos: TProjectInfo[] = [
         value: "Вход свободный",
       },
     ],
-    previewImg: "/preview.png"
   },
   {
-    projectId: 3,
+    id: 3,
     text: "Конкурс пьес молодых драматургов направлен на выявление и поддержку современных авторов, детских театральных студий, самодеятельных и профессиональных театров.",
     // shortText: "Конкурс пьес молодых драматургов направлен на выявление и поддержку современных авторов, детских театральных студий, самодеятельных и профессиональных театров.",
     eventDetails: [
@@ -470,10 +475,9 @@ export const projectInfos: TProjectInfo[] = [
         value: "3000 ₽",
       },
     ],
-    previewImg: "/preview.png"
   },
   {
-    projectId: 4,
+    id: 4,
     text: "В сотрудничестве с Центром военно-патриотического воспитания «Вершина» Людмила Яковлева проводит мастер-классы по теме «Ораторское мастерство как инструмент коммуникации» в рамках программы переобучения, переподготовки и повышения квалификации обучающихся из числа участников СВО.",
     // shortText: "Мастер-классы в рамках дополнительной общеобразовательной программы «Психология межличностного общения. Основы коммуникации» для ветеранов СВО.",
     eventDetails: [
@@ -501,10 +505,9 @@ export const projectInfos: TProjectInfo[] = [
         value: "Каждую третью субботу месяца",
       },
     ],
-    previewImg: "/preview.png"
   },
   {
-    projectId: 5,
+    id: 5,
     text: "Документальный короткометражный фильм о Николае ll. Проект находится в стадии разработки и написания сценария. Уже собрана полноценная съёмочная группа. Проект нуждается в финансировании.",
     // shortText: "Документальный короткометражный фильм о Николае ll. Проект находится в стадии разработки и написания сценария. Уже собрана полноценная съёмочная группа. Проект нуждается в финансировании.",
     eventDetails: [
@@ -549,7 +552,7 @@ export const projectInfos: TProjectInfo[] = [
     previewImg: "/preview_nikolai.png"
   },
   {
-    projectId: 6,
+    id: 6,
     text: "Героям суждено понять, что любовь - это великая сила, не знающая времени и расстояний, но требующая смелости. Спектакль-загадка о том, чему можно научиться у истории, как сложное становится простым и наоборот. По оригинальной пьесе Ольги Масловской.",
     // shortText: "Героям суждено понять, что любовь - это великая сила, не знающая времени и расстояний, но требующая смелости.",
     eventDetails: [
@@ -632,8 +635,8 @@ export const projectInfos: TProjectInfo[] = [
     previewImg: "/preview_two.png"
   },
   {
-    projectId: 7,
-    text: "В 2025 году исполнится 130 лет со дня рождения Сергея Есенина, а также 100 лет с момента его трагической кончины. Значимость творчества великого русского поэта неоспорима, и даже век спустя его стихи не теряют актуальности, продолжают вдохновлять и трогать сердца людей. Творческое объединение «Открытая Территория» приглашает всех жителей и гостей Москвы на литературно-музыкальную композицию «Есенин. Жизнь в стихах». В исполнении артистов прозвучат стихи Сергея Есенина, а песни сольются с партией фортепиано, повествуя о мыслях, метаниях и надеждах навеки молодого, но мудрого душой поэта. Этот поэтический спектакль не про смерть, а про жизнь и загадочную русскую душу, отражённую в стихах любимого народного поэта.",
+    id: 7,
+    text: "В 2025 году исполнится 130 лет со дня рождения Сергея Есенина. Творческое объединение «Открытая Территория» приглашает зрителей на поэтический спектакль «Есенин. Жизнь в стихах». В исполнении артистов прозвучат стихи, а песни сольются с партией фортепиано. Этот спектакль не про смерть, а про жизнь и загадочную русскую душу, отражённую в стихах Сергея Александровича.",
     // shortText: "В исполнении артистов прозвучат стихи Сергея Есенина, а песни сольются с партией фортепиано, повествуя о мыслях, метаниях и надеждах навеки молодого, но мудрого душой поэта.",
     eventDetails: [
       {
@@ -652,7 +655,7 @@ export const projectInfos: TProjectInfo[] = [
       {
         type: "address",
         label: "Адрес",
-        value: "г. Москва, Зубовский бульвар, стр. 1",
+        value: "г. Москва, Сибирский пр., 2, стр. 5",
       },
       {
         type: "date",
@@ -668,16 +671,18 @@ export const projectInfos: TProjectInfo[] = [
     employees: {
       artists: [
         {
-          name: "Стихи и песни",
+          name: "В ролях",
           employees: [
             {
               name: "Дмитрий Мальцев",
-              occupation: "Артист театра «Ленком Марка Захарова»",
+              occupation: "Сергей Есенин",
+              occupationExtra: "Артист театра «Ленком Марка Захарова»",
               photo: maltcev,
             },
             {
               name: "Олег Кныш",
-              occupation: "Артист театра «Ленком Марка Захарова»",
+              occupation: "Я",
+              occupationExtra: "Артист театра «Ленком Марка Захарова»",
               photo: knysh,
             },
           ],
@@ -704,10 +709,11 @@ export const projectInfos: TProjectInfo[] = [
         ],
       },
     },
-    previewImg: "/preview_esenin.png"
+    previewImg: "/preview_esenin.png",
+    poster: eseninPoster
   },
   {
-    projectId: 8,
+    id: 8,
     text: "Спектакль-перформанс по поэтическому сборнику Анастасии Бондаревой. В центре вечера - поэзия, переплетенная с человеческим миром и отраженная голосами артистов. Музыка, сопровождающая постановку, станет моментом уединения с собой и с тишиной города. Странная жизнь носит нас из стороны в сторону, крутит вокруг своей оси, возвращает на место. Мы теряем себя и находим. Поэзия — это то, что между двумя полюсами: тяжёлой потерей и неожиданной находкой, больной разлукой и светлой встречей, серым настоящим и вымышленным сиреневым будущим.",
     // shortText: "Спектакль-перформанс по поэтическому сборнику Анастасии Бондаревой.  В центре вечера - поэзия, переплетенная с человеческим миром и отраженная голосами артистов.",
     eventDetails: [
@@ -821,7 +827,7 @@ export const projectInfos: TProjectInfo[] = [
 
 export const projectControls: TProjectControls[] = [
   {
-    projectId: 1,
+    id: 1,
     controls: {
       buttons: [
         {
@@ -833,7 +839,7 @@ export const projectControls: TProjectControls[] = [
     },
   },
   {
-    projectId: 2,
+    id: 2,
     controls: {
       buttons: [
         {
@@ -845,7 +851,7 @@ export const projectControls: TProjectControls[] = [
     },
   },
   {
-    projectId: 3,
+    id: 3,
     controls: {
       buttons: [
         {
@@ -857,19 +863,19 @@ export const projectControls: TProjectControls[] = [
     },
   },
   {
-    projectId: 4,
+    id: 4,
     controls: null,
   },
   {
-    projectId: 5,
+    id: 5,
     controls: null,
   },
   {
-    projectId: 6,
+    id: 6,
     controls: null,
   },
   {
-    projectId: 7,
+    id: 7,
     controls: {
       buttons: [
         {
@@ -881,7 +887,7 @@ export const projectControls: TProjectControls[] = [
     },
   },
   {
-    projectId: 8,
+    id: 8,
     controls: {
       buttons: [
         {
@@ -896,7 +902,7 @@ export const projectControls: TProjectControls[] = [
 
 export const projectCategories: TProjectCategories[] = [
   {
-    projectId: 1,
+    id: 1,
     categories: {
       attention: false,
       categoryList: [
@@ -909,7 +915,7 @@ export const projectCategories: TProjectCategories[] = [
     },
   },
   {
-    projectId: 2,
+    id: 2,
     categories: {
       attention: false,
       categoryList: [
@@ -922,7 +928,7 @@ export const projectCategories: TProjectCategories[] = [
     },
   },
   {
-    projectId: 3,
+    id: 3,
     categories: {
       attention: false,
       categoryList: [
@@ -935,7 +941,7 @@ export const projectCategories: TProjectCategories[] = [
     },
   },
   {
-    projectId: 4,
+    id: 4,
     categories: {
       attention: false,
       categoryList: [
@@ -948,7 +954,7 @@ export const projectCategories: TProjectCategories[] = [
     },
   },
   {
-    projectId: 5,
+    id: 5,
     categories: {
       attention: true,
       categoryList: [
@@ -961,7 +967,7 @@ export const projectCategories: TProjectCategories[] = [
     },
   },
   {
-    projectId: 6,
+    id: 6,
     categories: {
       attention: false,
       categoryList: [
@@ -974,7 +980,7 @@ export const projectCategories: TProjectCategories[] = [
     },
   },
   {
-    projectId: 7,
+    id: 7,
     categories: {
       attention: false,
       categoryList: [
@@ -987,7 +993,7 @@ export const projectCategories: TProjectCategories[] = [
     },
   },
   {
-    projectId: 8,
+    id: 8,
     categories: {
       attention: false,
       categoryList: [
@@ -1003,7 +1009,7 @@ export const projectCategories: TProjectCategories[] = [
 
 export const projectPhotos: TProjectPhotos[] = [
   {
-    projectId: 1,
+    id: 1,
     photos: [
       {
         id: 1,
@@ -1032,27 +1038,27 @@ export const projectPhotos: TProjectPhotos[] = [
     ],
   },
   {
-    projectId: 2,
+    id: 2,
     photos: [],
   },
   {
-    projectId: 3,
+    id: 3,
     photos: [],
   },
   {
-    projectId: 4,
+    id: 4,
     photos: [],
   },
   {
-    projectId: 5,
+    id: 5,
     photos: [],
   },
   {
-    projectId: 6,
+    id: 6,
     photos: [],
   },
   {
-    projectId: 7,
+    id: 7,
     photos: [
       {
         id: 31,
@@ -1085,7 +1091,7 @@ export const projectPhotos: TProjectPhotos[] = [
     ],
   },
   {
-    projectId: 8,
+    id: 8,
     photos: [],
   },
 ];
@@ -1102,7 +1108,7 @@ export const serviceTabs: TServicesTabMode[] = [
 
 export const services: TService[] = [
   {
-    serviceId: 1,
+    id: 1,
     title: "Театральная студия «Открытое Море»",
     shortText:
       "Театральная студия «Открытое Море» для детей и подростков дает возможность расширить свои горизонты через театр. Мы не слепо делаем из студийцев профессиональных актеров, а помогаем ребятам понять себя в этом мире. Наши ученики развивают личностные и индивидуальные качества, избавляясь от комплексов и зажимов через методы изучения актерского мастерства. ",
@@ -1111,7 +1117,7 @@ export const services: TService[] = [
     order: 1,
   },
   {
-    serviceId: 2,
+    id: 2,
     title: "Организация мероприятий",
     shortText:
       "Организуем и проведем мероприятия любой сложности. Концерты, городские мероприятия, творческие вечера, фестивали, конкурсы, спектакли т. п.",
@@ -1120,7 +1126,7 @@ export const services: TService[] = [
     order: 3,
   },
   {
-    serviceId: 3,
+    id: 3,
     title: "Студия дизайна «Открытый Глаз»",
     shortText:
       "Берем в работу задачи по графическому дизайну, айдентике, полиграфии, UX/UI и разработке сайтов.",
@@ -1129,7 +1135,7 @@ export const services: TService[] = [
     order: 4,
   },
   {
-    serviceId: 4,
+    id: 4,
     title: "Контент и производство видеоматериалов",
     shortText:
       "Организация съемки мероприятий, в том числе интервью, подкастов, рилсов, репортажей, бэкстейджей, документальных фильмов, коротких метров или иных съемок. Обеспечивается полный цикл производства, от подготовительного до монтажно-тонировочного периода, и команда профессионалов (режиссер-постановщик, оператор-постановщик, гафер, звукорежиссёр, актеры и т.д.).",
@@ -1138,7 +1144,7 @@ export const services: TService[] = [
     order: 5,
   },
   {
-    serviceId: 5,
+    id: 5,
     title: "Проведение мастер-классов",
     shortText:
       "Проведем мастер-классы и треннинги по актерскому мастерству, ораторскому искусству.",
@@ -1147,7 +1153,7 @@ export const services: TService[] = [
     order: 6,
   },
   {
-    serviceId: 6,
+    id: 6,
     title: "Любительский театр «ЛАМП»",
     shortText:
       "Театр «ЛАМП» (Любители, Актеры, Музыканты, Писатели) собирает на сцене разных творческих людей. Здесь не важно, есть ли соответствующее образование или нет. Подойдёт для всех, кто хочет стать частью команды театра в любом проявлении. При театре есть семейные группы для совместного творчества родителей и их детей. ",
@@ -1156,7 +1162,7 @@ export const services: TService[] = [
     order: 2,
   },
   {
-    serviceId: 7,
+    id: 7,
     title: "SMM, PR и продвижение",
     shortText:
       "Менеджмент социальных сетей (SMM - создание и управление контентом на платформах социальных медиа) и связи с общественностью (PR - формирование и поддержание положительного имиджа компании через взаимодействие с общественностью и медиа). ",
@@ -1168,7 +1174,7 @@ export const services: TService[] = [
 
 export const serviceControls: TServiceControls[] = [
   {
-    serviceId: 1,
+    id: 1,
     controls: {
       buttons: [
         {
@@ -1187,7 +1193,7 @@ export const serviceControls: TServiceControls[] = [
     },
   },
   {
-    serviceId: 2,
+    id: 2,
     controls: {
       buttons: [
         {
@@ -1199,7 +1205,7 @@ export const serviceControls: TServiceControls[] = [
     },
   },
   {
-    serviceId: 3,
+    id: 3,
     controls: {
       buttons: [
         {
@@ -1211,7 +1217,7 @@ export const serviceControls: TServiceControls[] = [
     },
   },
   {
-    serviceId: 4,
+    id: 4,
     controls: {
       buttons: [
         {
@@ -1223,7 +1229,7 @@ export const serviceControls: TServiceControls[] = [
     },
   },
   {
-    serviceId: 5,
+    id: 5,
     controls: {
       buttons: [
         {
@@ -1235,7 +1241,7 @@ export const serviceControls: TServiceControls[] = [
     },
   },
   {
-    serviceId: 6,
+    id: 6,
     controls: {
       buttons: [
         {
@@ -1254,7 +1260,7 @@ export const serviceControls: TServiceControls[] = [
     },
   },
   {
-    serviceId: 7,
+    id: 7,
     controls: {
       buttons: [
         {
@@ -1269,7 +1275,7 @@ export const serviceControls: TServiceControls[] = [
 
 export const serviceInfos: TServiceInfo[] = [
   {
-    serviceId: 1,
+    id: 1,
     text: "«Открытое море» - студия с огромным багажом опыта в 30 лет, наши спектакли являются многократными победителями и лауреатами множества фестивалей и конкурсов, наши выпускники работают в различных творческих индустриях и являются как известными актерами театра и кино, так и писателями, драматургами, художниками, дизайнерами, кинорежиссерами, операторами и т.д.",
     serviceDetails: [
       {
@@ -1312,7 +1318,7 @@ export const serviceInfos: TServiceInfo[] = [
     },
   },
   {
-    serviceId: 6,
+    id: 6,
     text: "Театр «ЛАМП» (Любители, Актеры, Музыканты, Писатели) собирает на сцене разных творческих людей. Здесь не важно, есть ли соответствующее образование или нет. Подойдёт для всех, кто хочет стать частью команды театра в любом проявлении. При театре есть семейные группы для совместного творчества родителей и их детей. Ведется набор группы 18+ для занятий актёрским мастерством и постановки спектаклей.",
     serviceDetails: [
       {
@@ -1353,7 +1359,7 @@ export const serviceInfos: TServiceInfo[] = [
 
 export const servicePhotos: TServicePhotos[] = [
   {
-    serviceId: 1,
+    id: 1,
     photos: [
       {
         id: 43,
@@ -1378,7 +1384,7 @@ export const servicePhotos: TServicePhotos[] = [
     ],
   },
   {
-    serviceId: 6,
+    id: 6,
     photos: [
       {
         id: 48,

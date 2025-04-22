@@ -22,7 +22,7 @@ export const ServiceListUI: FC<TServiceListUIProps> = ({
         return (
           <Service
             service={service}
-            key={service.serviceId}
+            key={service.id}
             servicesRefs={servicesRefs}
             servicesViewRefs={servicesViewRefs}
           />

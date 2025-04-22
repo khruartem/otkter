@@ -12,7 +12,7 @@ export const ServiceList: FC<TServiceListProps> = ({
   servicesViewRefs,
 }) => {
   const services: TService[] = useGetServices();
-  const sortedServices = useSortAsc(services);
+  const sortedServices = useSortAsc(services, "order");
 
   return (
     <ServiceListUI

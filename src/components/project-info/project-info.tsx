@@ -16,7 +16,7 @@ export const ProjectInfo: FC = () => {
 
   const projectId = useGetId();
   const title = useGetTitle(projectId);
-  const text = useGetText(projectId);
+  const text = (useGetText(projectId) as string);
   const attention = useGetAttention(projectId);
   const { projectTitleColorAttention } = useGetProjectColors();
   const isEmployees = useGetIsEmployees(projectId);

@@ -4,7 +4,8 @@ import { Main } from "../../pages/main";
 import { AllProjects } from "../../pages/all-projects";
 import { Modal } from "../modal";
 import { Slider } from "../slider";
-import { ProjectInfo } from "../project-info";
+//import { ProjectInfo } from "../project-info";
+import { ProjectInfo } from "../../pages/project-info";
 import { ServiceInfo } from "../service-info";
 import { NotFound404 } from "../../pages/not-found-404";
 
@@ -22,23 +23,24 @@ export function App() {
           // path={"/otkter/projects/:id"}
           path={"/projects/:id"}
           element={
-            <Modal
-              type="back"
-              onClose={() => {
-                if (location.state?.from) {
-                  navigate(
-                    //location.state?.from === "/otkter/"
-                    location.state?.from === "/"
-                      ? `${location.state?.from}#projects-${location.state?.id}`
-                      : `${location.state?.from}`
-                  );
-                } else {
-                  navigate("/");
-                }
-              }}
-            >
-              <ProjectInfo />
-            </Modal>
+            // <Modal
+            //   type="back"
+            //   onClose={() => {
+            //     if (location.state?.from) {
+            //       navigate(
+            //         //location.state?.from === "/otkter/"
+            //         location.state?.from === "/"
+            //           ? `${location.state?.from}#projects-${location.state?.id}`
+            //           : `${location.state?.from}`
+            //       );
+            //     } else {
+            //       navigate("/");
+            //     }
+            //   }}
+            // >
+            //   <ProjectInfo />
+            // </Modal>
+            <ProjectInfo />
           }
         />
         <Route
@@ -98,10 +100,7 @@ export function App() {
             </Modal>
           }
         />
-        <Route
-          path="*"
-          element={<NotFound404 />}
-        />
+        <Route path="*" element={<NotFound404 />} />
       </Routes>
     </>
   );

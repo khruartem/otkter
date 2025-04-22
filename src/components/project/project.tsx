@@ -9,17 +9,17 @@ import { scrollIntoElementView } from "../../utils/scrollIntoElementView";
 export const Project: FC<TProjectProps> = ({ project }) => {
   const location = useLocation();
   const locationFrom = location.pathname;
-  const { projectId } = project;
+  const { id } = project;
 
   const projectRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     switch (location.hash) {
-      case `#projects-${projectId}`:
+      case `#projects-${id}`:
         scrollIntoElementView(projectRef, "instant", "center");
         break;
     }
-  }, [location.hash, projectId]);
+  }, [location.hash, id]);
 
   return (
     <ProjectUI

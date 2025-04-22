@@ -1,6 +1,6 @@
 //import { TCategoryType } from "../../utils/types";
 
 export type CategoryListProps = {
-  projectId: number;
+  id: number;
   //type: Omit<TCategoryType, "attention">;
 } 

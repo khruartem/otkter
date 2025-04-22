@@ -9,17 +9,17 @@ import { scrollIntoElementView } from "../../utils/scrollIntoElementView";
 
 export const Card: FC<CardProps> = ({ card }) => {
   const location = useLocation();
-  const { type, projectId } = card;
+  const { type, id } = card;
 
   const cardRef = useRef<HTMLAnchorElement>(null);
   
     useEffect(() => {
       switch (location.hash) {
-        case `#projects-${projectId}`:
+        case `#projects-${id}`:
           scrollIntoElementView(cardRef, "instant", "center");
           break;
       }
-    }, [location.hash, projectId]);
+    }, [location.hash, id]);
 
   if (type === "projects") return <ProjectUI project={card} projectRef={cardRef} />
   if (type === "team") return <TeamMateUI teammate={card} />

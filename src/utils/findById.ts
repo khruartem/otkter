@@ -19,7 +19,6 @@ export const findById = (
   currentId: number
 ) => {
   return array.find((element) => {
-    if ((element as TProject)?.projectId) return (element as TProject)?.projectId === currentId;
-    if ((element as TService)?.serviceId) return (element as TService)?.serviceId === currentId;
+    return element.id === currentId;
   });
 };

@@ -26,7 +26,8 @@ export type TCategoryId =
   | "short-film"
   | "admins"
   | "artists"
-  | "info";
+  | "info"
+  | "circle";
 
 export type TDetails = "events" | "employees" | "services";
 
@@ -84,6 +85,7 @@ export type TEmployee = {
   id?: number;
   name: string;
   occupation: string;
+  occupationExtra?: string;
   photo: string;
 };
 
@@ -91,7 +93,7 @@ export type TRole = "admins" | "artists";
 
 export type TProjectInfo = {
   role?: TRole;
-  text?: string;
+  text?: string | string[];
   photos?: string[];
   eventDetails: TEventDetails;
   employees?: TEmployees;
@@ -101,9 +103,8 @@ export type TProjectInfo = {
 export type TCardType = "projects" | "team" | "services" | TServicesTabMode | TProjectTabMode;
 
 export type TCard = {
-  projectId?: number;
+  id: number;
   teamId?: number;
-  serviceId?: number;
   type: TCardType;
   title: string;
   categoryList?: TCategory[];
@@ -119,7 +120,7 @@ export type TCard = {
 
 export type TProject = Pick<
   TCard,
-  | "projectId"
+  | "id"
   | "type"
   | "image"
   | "attention"
@@ -139,7 +140,7 @@ export type TProject = Pick<
 
 export type TService = Pick<
   TCard,
-  "serviceId" | "type" | "title" | "image" | "shortText" | "order"
+  "id" | "type" | "title" | "image" | "shortText" | "order"
 >;
 
 export type TModalType = "back" | "close";
@@ -208,6 +209,12 @@ export type TProjectsIconRef = {
   type: TProjectTabMode;
   ref: React.RefObject<HTMLLIElement>;
 };
+
+export type TTabItem = {
+  id: number;
+  type: TSectionType;
+  image: string;
+}
 
 export enum Colors {
   Navy = "#0B3954",
@@ -342,10 +349,11 @@ export type FontType = {
   decorated?: boolean;
 };
 
-export type SocialTypes = "vk" | "telegram";
+export type SocialTypes = "vk" | "telegram" | "copy";
 
 export type Social = {
   id: number;
   url: string;
   type: SocialTypes;
+  onClick?: (arg?: string) => void;
 };

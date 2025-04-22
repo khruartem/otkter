@@ -20,14 +20,17 @@ export type TLogoProps = Pick<
   TIconsProps,
   "mainColor" | "width" | "height" | "extraColor"
 >;
-export type TSocialProps = Pick<TIconsProps, "url">;
+export type TSocialProps = Pick<TIconsProps, "mainColor" | "hoverColor" | "activeColor" | "url">;
 export type TNavProps = Pick<TIconsProps, "onClick">;
 export type TModalsProps = Pick<TIconsProps, "mainColor">;
 export type TArrowProps = Pick<
 TIconsProps,
 "mainColor" | "hoverColor" | "activeColor" | "className" | "onClick"
 >;
-export type TShareProps = TArrowProps;
+export type TCopyLinkProps = Pick<
+TIconsProps,
+"mainColor" | "hoverColor" | "activeColor" | "className" | "onClick"
+>;
 export type TEventsProps = Pick<TIconsProps, "mainColor">;
 export type TTabProps = Pick<
 TIconsProps,
@@ -40,5 +43,5 @@ TIconsProps,
 | "onMouseLeave"
 | "iconType"
 >;
-export type TCategotyProps = TTabProps;
+export type TCategotyProps = TTabProps & Partial<Pick<TIconsProps, "extraColor">>;
 export type TErrorProps = Pick<TIconsProps, "className">;

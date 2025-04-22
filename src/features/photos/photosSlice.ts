@@ -12,12 +12,12 @@ export type TPhoto = {
 };
 
 export type TProjectPhotos = {
-  projectId: number;
+  id: number;
   photos: TPhoto[];
 };
 
 export type TServicePhotos = {
-  serviceId: number;
+  id: number;
   photos: TPhoto[];
 };
 

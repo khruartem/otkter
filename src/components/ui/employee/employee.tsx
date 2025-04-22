@@ -18,7 +18,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
-  const { name, occupation, photo } = employee;
+  const { name, occupation, occupationExtra, photo } = employee;
 
   return (
     <>
@@ -58,6 +58,20 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
             >
               {name}
             </Text>
+            {occupationExtra && (
+              <Text
+                as={"p"}
+                fontFamily="Roboto"
+                textAlign="left"
+                fontSize={16}
+                fontWeight={400}
+                lineHeight={28}
+                textTransform={"none"}
+                color={Colors.Dark100}
+              >
+                {occupationExtra}
+              </Text>
+            )}
           </div>
         </div>
       )}

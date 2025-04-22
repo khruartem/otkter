@@ -93,7 +93,7 @@ export const ServiceUI = React.forwardRef<
             {shortText}
           </Text>
         </div>
-        <Controls id={service.serviceId!} type="services" />
+        <Controls id={service.id} type="services" />
       </div>
       {(isLarge || isDesktop) && (
         <img

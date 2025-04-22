@@ -33,5 +33,5 @@ export const ServiceInfo: FC = () => {
       isEmployees={isEmployees}
       isControls={isControls}
     />
-  );
+  )
 };

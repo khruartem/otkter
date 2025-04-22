@@ -8,6 +8,7 @@ import { useGetCategoryColors } from "../../hooks/useGetCategoryColors";
 export const Category: FC<CategoryProps> = ({
   category = undefined,
   isAttention = false,
+  className,
 }) => {
   const { pathname } = useLocation();
   //const isWrapper = pathname === "/otkter" || pathname === "/otkter/" || pathname === "/otkter/projects/all";
@@ -22,6 +23,7 @@ export const Category: FC<CategoryProps> = ({
       isAttention={isAttention}
       wrapper={isWrapper}
       colors={categoryColors}
+      className={className}
     />
   );
 };

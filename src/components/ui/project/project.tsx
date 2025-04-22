@@ -18,9 +18,9 @@ export const ProjectUI: FC<ProjectUIProps> = ({
   projectRef,
   locationFrom,
 }) => {
-  const { projectId, title, image, shortText, isActive } = project;
+  const { id, title, image, shortText, isActive } = project;
 
-  const attention = useGetAttention(projectId!);
+  const attention = useGetAttention(id);
   const { projectTitleColor, projectTitleColorAttention } =
     useGetProjectColors();
 
@@ -31,6 +31,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({
   const smallResolution = isTablet || isMobile;
 
   return (
+    // TODO: заменить искусственное поднятие "наверх страницы" target="_top"
     <Link
       className={clsx(
         styles["project-link"],
@@ -38,7 +39,8 @@ export const ProjectUI: FC<ProjectUIProps> = ({
         isTablet && styles["project-link_tablet"]
       )}
       // to={`/otkter/projects/${projectId}`}
-      to={`/projects/${projectId}`}
+      to={`/projects/${id}`}
+      target="_top"
       style={
         {
           "--project-color": attention
@@ -46,7 +48,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({
             : projectTitleColor,
         } as CSSProperties
       }
-      state={{ id: projectId, from: locationFrom }}
+      state={{ id, from: locationFrom }}
       ref={projectRef}
     >
       <li
@@ -56,7 +58,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({
           largeResolution && styles["project_large-resolution"],
           smallResolution && styles["project_small-resolution"]
         )}
-        key={projectId}
+        key={id}
       >
         <div
           className={clsx(
@@ -102,7 +104,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({
               alt="Изображение проекта"
             />
           </div>
-          <CategoryList projectId={projectId!} />
+          <CategoryList id={id} />
         </div>
         <div
           className={clsx(

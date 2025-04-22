@@ -10,7 +10,7 @@ import {
   TModalsProps,
   TTabProps,
   TSocialProps,
-  TShareProps,
+  TCopyLinkProps,
   TErrorProps,
 } from "./types";
 import { Colors } from "../../utils/types";
@@ -51,14 +51,25 @@ export const Logo = ({ mainColor, extraColor, width, height }: TLogoProps) => {
   );
 };
 
-export const Telegram = ({ url }: TSocialProps) => {
+export const Telegram = ({
+  mainColor,
+  hoverColor,
+  activeColor,
+  url,
+}: TSocialProps) => {
   return (
-    <a href={url} target="_blank">
+    <a href={url} target="_blank" className={styles.social}>
       <svg
-        fill={Colors.Nephritis100}
+        fill={mainColor}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 32 32"
-        className={styles.social}
+        //className={styles.social}
+        style={
+          {
+            "--hover-color": hoverColor,
+            "--active-color": activeColor,
+          } as CSSProperties
+        }
       >
         <path
           fillRule="evenodd"
@@ -70,14 +81,25 @@ export const Telegram = ({ url }: TSocialProps) => {
   );
 };
 
-export const VK = ({ url }: TSocialProps) => {
+export const VK = ({
+  mainColor,
+  hoverColor,
+  activeColor,
+  url,
+}: TSocialProps) => {
   return (
-    <a href={url} target="_blank">
+    <a href={url} target="_blank" className={styles.social}>
       <svg
-        fill={Colors.Nephritis100}
+        fill={mainColor}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 32 32"
-        className={styles.social}
+        //className={styles.social}
+        style={
+          {
+            "--hover-color": hoverColor,
+            "--active-color": activeColor,
+          } as CSSProperties
+        }
       >
         <path d="M17.43 26C6.495 26 .26 18.492 0 6h5.477c.18 9.17 4.217 13.053 7.415 13.854V6h5.157v7.908c3.158-.34 6.475-3.944 7.595-7.908H30.8c-.86 4.885-4.458 8.489-7.016 9.97C26.343 17.17 30.44 20.314 32 26h-5.677c-1.219-3.804-4.257-6.747-8.274-7.147V26h-.62Z" />
       </svg>
@@ -152,19 +174,19 @@ export const ArrowLeft = ({
   );
 };
 
-export const Share = ({
+export const CopyLink = ({
   mainColor,
   hoverColor = undefined,
   activeColor = undefined,
   onClick = undefined,
   className = undefined,
-}: TShareProps) => {
+}: TCopyLinkProps) => {
   return (
     <svg
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
-      className={clsx(styles.share, className)}
+      className={clsx(styles.social, className)}
       style={
         {
           "--hover-color": hoverColor,
@@ -665,18 +687,21 @@ export const SMM = ({
   );
 };
 
-export const TrickCircle = () => {
+export const TrickCircle = ({mainColor, extraColor = Colors.Navy, className}: TCategotyProps) => {
   return (
     <svg
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 25 24"
-      className={styles["trick-circle"]}
+      className={clsx(
+        styles.category,
+        className
+      )}
     >
-      <circle cx="12.5" cy="12" r="8" fill={Colors.Navy} />
+      <circle cx="12.5" cy="12" r="8" fill={extraColor} />
       <path
         d="M12.5 2c-5.51 0-10 4.49-10 10s4.49 10 10 10 10-4.49 10-10-4.49-10-10-10Zm4.78 7.7-5.67 5.67a.75.75 0 0 1-1.06 0l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.76 0 1.06Z"
-        fill={Colors.Orange100}
+        fill={mainColor}
       />
     </svg>
   );

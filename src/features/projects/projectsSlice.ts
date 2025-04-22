@@ -62,7 +62,7 @@ const projectsSlice = createSlice({
       }
     },
     getTitleSelector: (state: TProjectsState, id: number) => {
-      return (findById(state.projects, id) as TProject).title;
+      return (findById(state.projects, id) as TProject)?.title;
     },
     getShortTextSelector: (state: TProjectsState, id: number) => {
       return (findById(state.projects, id) as TProject).shortText;

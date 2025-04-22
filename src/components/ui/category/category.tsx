@@ -6,13 +6,14 @@ import styles from "./category.module.css";
 import { Attention, Contest, MasterClass, ShortFilm } from "../../icons";
 import { Text } from "../../text";
 import { Colors } from "../../../utils/types";
-import { Play } from "../../icons/icons";
+import { Play, TrickCircle } from "../../icons/icons";
 
 export const CategoryUI: FC<TCategoryUIProps> = ({
   category = undefined,
   isAttention = false,
   wrapper = false,
   colors,
+  className
 }) => {
   return (
     <div
@@ -21,7 +22,9 @@ export const CategoryUI: FC<TCategoryUIProps> = ({
         isAttention && styles["category-wrapper_attention"],
         wrapper
           ? styles["category-wrapper_colored"]
-          : styles["category-wrapper_transparent"]
+          : styles["category-wrapper_transparent"],
+        category?.id === "circle" && styles["category-wrapper_copy"],
+        className
       )}
     >
       <div
@@ -66,6 +69,12 @@ export const CategoryUI: FC<TCategoryUIProps> = ({
             {category?.id === "artists" && null}
             {category?.id === "admins" && null}
             {category?.id === "info" && null}
+            {category?.id === "circle" && (
+              <TrickCircle
+                mainColor={Colors.Nephritis120}
+                className={styles["trick-circle"]}
+              />
+            )}
             <Text
               as={"label"}
               fontFamily={
@@ -76,7 +85,7 @@ export const CategoryUI: FC<TCategoryUIProps> = ({
                   : "Roboto"
               }
               textAlign="center"
-              fontSize={16}
+              fontSize={category?.id === "circle" ? 18 : 16}
               fontWeight={400}
               lineHeight={28}
               textTransform="none"
