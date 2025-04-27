@@ -9,5 +9,7 @@ export type TInfoUIProps = {
   attention: boolean;
   colorAttention?: Colors;
   isEmployees: boolean;
-  isControls?: boolean;
+  isControls: boolean;
+  isPhotos: boolean;
+  isDetails: boolean;
 };

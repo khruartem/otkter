@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  width: 100vw;
+  height: 60px;
+  align-items: center;
+  background-color: var(--light60);
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.header__navigation {
+  display: flex;
+  flex-direction: row;
+}
+
+.react-navigation {
+  height: 0;
+  overflow-y: hidden;
+  transition: height 1s;
+  interpolate-size: allow-keywords;
+  background-color: var(--light80);
+  /* position: absolute;
+  left: 0; */
+  /* position: sticky;
+  top: 0; */
+}
+
+/* Стили для разных разрешений экранов */
+/* header */
+.header_mobile {
+  justify-content: space-between;
+  padding-left: 3.86vw;
+  padding-right: 7.25vw;
+}
+
+/* header__navigation */
+.header__navigation_small-resolution {
+  align-items: center;
+  gap: 52px;
+  flex-direction: row-reverse;
+}
+
+.header__navigation_laptop {
+  margin-left: 50.20vw;
+}
+
+.header__navigation_tablet {
+  margin-left: 36.72vw;
+}

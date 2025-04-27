@@ -82,6 +82,7 @@ const infosSlice = createSlice({
         .getSelectors()
         .getInfosSelector(state, id, infosType) as TProjectInfo & TServiceInfo;
 
+      // TODO: Сейчас events относится к проектам - неочевидно 
       switch (detailsType) {
         case "events":
           return infosFound?.eventDetails;

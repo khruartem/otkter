@@ -6,7 +6,8 @@ import { Modal } from "../modal";
 import { Slider } from "../slider";
 //import { ProjectInfo } from "../project-info";
 import { ProjectInfo } from "../../pages/project-info";
-import { ServiceInfo } from "../service-info";
+import { ServiceInfo } from "../../pages/service-info";
+// import { ServiceInfo } from "../service-info";
 import { NotFound404 } from "../../pages/not-found-404";
 
 export function App() {
@@ -47,15 +48,16 @@ export function App() {
           // path={"/otkter/services/:id"}
           path={"/services/:id"}
           element={
-            <Modal
-              type="back"
-              onClose={() => {
-                // navigate("/otkter/#services", { state: { from: "services" } });
-                navigate("/#services", { state: { from: "services" } });
-              }}
-            >
-              <ServiceInfo />
-            </Modal>
+            // <Modal
+            //   type="back"
+            //   onClose={() => {
+            //     // navigate("/otkter/#services", { state: { from: "services" } });
+            //     navigate("/#services", { state: { from: "services" } });
+            //   }}
+            // >
+            //   <ServiceInfo />
+            // </Modal>
+            <ServiceInfo />
           }
         />
         <Route

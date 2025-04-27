@@ -11,7 +11,7 @@ export const ServiceList: FC<TServiceListProps> = ({
   servicesRefs,
   servicesViewRefs,
 }) => {
-  const services: TService[] = useGetServices();
+  const services: TService[] = useGetServices("all");
   const sortedServices = useSortAsc(services, "order");
 
   return (

@@ -19,7 +19,8 @@ export const TabBarUI: FC<TTabBarUIProps> = ({
   items,
   onSwitch,
   setCurrentItem,
-  setIndex
+  setIndex,
+  location
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
@@ -55,6 +56,7 @@ export const TabBarUI: FC<TTabBarUIProps> = ({
             <Link
               key={item.id}
               to={`/${type}/${item.id}`}
+              state={{ ...location?.state, id: item.id }}
               className={styles["tab-bar__item-link"]}
             >
               <li className={styles["tab-bar__item-link-item"]}>

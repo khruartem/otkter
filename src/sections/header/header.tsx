@@ -1,98 +1,37 @@
-import clsx from "clsx";
-//import { useRef, useState } from "react";
-import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { FC, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { HeaderUI } from "../../components/ui/sections/header";
 
-import { Logo } from "../../components/icons";
-//import { NavBar } from "../../components/navbar";
-import { Menu } from "../../components/menu/menu";
-import { MainSocial } from "../../components/main-social";
+export const Header: FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-import { useDesktopMediaQuery } from "../../hooks/useDesktopMediaQuery";
-import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
-import { Colors } from "../../utils/types";
-import { useLaptopMediaQuery } from "../../hooks/useLaptopMediaQuery";
-import { useTabletMediaQuery } from "../../hooks/useTabletMediaQuery";
-import { useMobileMediaQuery } from "../../hooks/useMobileMediaQuery";
+  const onClickLogo = () => {
+    if (location.state?.type) {
+      switch (location.state?.type) {
+        case "projects":
+          navigate(`/#projects-${location.state?.id}`);
+          break;
+        case "all-projects":
+          navigate("/projects/all");
+          break;
+        case "services":
+          navigate(`/#services`);
+          break;
+        default:
+          navigate("/");
+          window.scrollTo({ top: 0, behavior: "instant" });
+          break;
+      }
+    } else {
+      navigate("/");
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+  };
 
-import styles from "./header.module.css";
+  useEffect(() => {
+    location.state = { ...location.state };
+  });
 
-export const Header = () => {
-  return (
-    <>
-      <LargeResolution />
-      <SmallResolution />
-    </>
-  );
-};
-
-const LargeResolution = () => {
-  const isLarge = useLargeScreenMediaQuery();
-  const isDesktop = useDesktopMediaQuery();
-
-  return isLarge || isDesktop ? (
-    <header className={styles.header}>
-      {/* <Link to="/otkter/"> */}
-      <Link to="/">
-        <Logo
-          mainColor={Colors.Navy}
-          extraColor={Colors.Nephritis100}
-          width={236}
-          height={40}
-        />
-      </Link>
-      {/* <NavBar /> */}
-      <Menu />
-      <MainSocial />
-    </header>
-  ) : null;
-};
-
-const SmallResolution = () => {
-  const isLaptop = useLaptopMediaQuery();
-  const isTablet = useTabletMediaQuery();
-  const isMobile = useMobileMediaQuery();
-
-  //const [isOpen, setOpen] = useState(false);
-  const rootRef = useRef(null);
-
-  return isLaptop || isTablet || isMobile ? (
-    <>
-      <header
-        className={clsx(
-          styles.header,
-          isMobile && styles.header_mobile,
-          //isOpen && styles.header_overlayed,
-          //isOpen && styles.header_bordered
-        )}
-      >
-        {/* <Link to="/otkter/"> */}
-        <Link to="/">
-          <Logo
-            mainColor={Colors.Navy}
-            extraColor={Colors.Nephritis100}
-            width={isMobile ? 192 : 236}
-            height={isMobile ? 32 : 40}
-          />
-        </Link>
-        {!isMobile ? (
-          <div
-            className={clsx(
-              styles.header__icons,
-              isLaptop && styles.header__icons_laptop,
-              isTablet && styles.header__icons_tablet
-            )}
-          >
-            <MainSocial />
-            {/* <NavBar isOpen={isOpen} onOpen={setOpen} rootRef={rootRef} /> */}
-            <Menu rootRef={rootRef}/>
-          </div>
-        ) : (
-          // <NavBar isOpen={isOpen} onOpen={setOpen} rootRef={rootRef} />
-          <Menu rootRef={rootRef}/>
-        )}
-      </header>
-      <div ref={rootRef} id="react-navigation"></div>
-    </>
-  ) : null;
+  return <HeaderUI onClickLogo={onClickLogo} />;
 };

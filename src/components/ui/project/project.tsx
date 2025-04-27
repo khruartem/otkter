@@ -40,7 +40,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({
       )}
       // to={`/otkter/projects/${projectId}`}
       to={`/projects/${id}`}
-      target="_top"
+      // target="_top"
       style={
         {
           "--project-color": attention
@@ -48,7 +48,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({
             : projectTitleColor,
         } as CSSProperties
       }
-      state={{ id, from: locationFrom }}
+      state={{ id, type: locationFrom }}
       ref={projectRef}
     >
       <li

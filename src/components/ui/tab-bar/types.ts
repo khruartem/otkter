@@ -1,3 +1,4 @@
+import { Location } from "react-router-dom";
 import { TProject, TSectionType, TService } from "../../../utils/types";
 
 export type TTabBarUIProps = {
@@ -8,4 +9,6 @@ export type TTabBarUIProps = {
   items: TProject[] | TService[];
   onSwitch: (arg: number) => void;
   setCurrentItem: (value: React.SetStateAction<TProject | TService>) => void;
+  setIndex: (value: React.SetStateAction<number>) => void;
+  location?: Location;
 };

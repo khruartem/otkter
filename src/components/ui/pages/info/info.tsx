@@ -8,13 +8,15 @@ import { Details } from "../../../details";
 import { Header } from "../../../../sections/header";
 import { Footer } from "../../../../sections/footer";
 import { Share } from "../../../share";
+import { ProjectsTabBar } from "../../../projects-tab-bar";
+import { ServicesTabBar } from "../../../services-tab-bar";
 
 import { TInfoUIProps } from "./types";
 import { Colors, TDetails } from "../../../../utils/types";
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 
 import styles from "./info.module.css";
-import { ProjectsTabBar } from "../../../projects-tab-bar";
+// import { HeaderOLD } from "../../../../sections/header/header_old";
 
 export const InfoUI: FC<TInfoUIProps> = ({
   id,
@@ -26,6 +28,8 @@ export const InfoUI: FC<TInfoUIProps> = ({
   isEmployees,
   type,
   isControls,
+  isPhotos,
+  isDetails,
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
@@ -57,7 +61,8 @@ export const InfoUI: FC<TInfoUIProps> = ({
           )}
         >
           <Share id={id} />
-          <ProjectsTabBar />
+          {type === "projects" && <ProjectsTabBar />}
+          {type === "services" && <ServicesTabBar />}
         </div>
         <div
           className={clsx(
@@ -146,7 +151,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
                 >
                   {text}
                 </Text>
-                <PhotoList id={id} type={type} />
+                {isPhotos && <PhotoList id={id} type={type} />}
               </div>
               {isControls && <Controls id={id} type={type} />}
             </div>
@@ -166,34 +171,37 @@ export const InfoUI: FC<TInfoUIProps> = ({
               />
             )}
           </div>
-          <div
-            className={clsx(
-              isEmployees
-                ? styles.info__extra_blocks
-                : styles.info__extra_single,
-              isDesktop && styles["info__extra_overflowed-y"],
-              isLarge && styles["info__extra_large-screen"],
-              isDesktop && styles.info__extra_desktop,
-              (isDesktop || isTablet || isMobile) && styles.info__extra_single,
-              isLaptop && styles.info__extra_laptop,
-              isTablet && styles.info__extra_tablet,
-              isMobile && styles.info__extra_mobile
-            )}
-          >
-            <Details
-              id={id}
-              infosType={type}
-              detailsType={
-                clsx(
-                  type === "projects" && "events",
-                  type === "services" && "services"
-                ) as TDetails
-              }
-            />
-            {isEmployees && (
-              <Details id={id} infosType={type} detailsType="employees" />
-            )}
-          </div>
+          {isDetails && (
+            <div
+              className={clsx(
+                isEmployees
+                  ? styles.info__extra_blocks
+                  : styles.info__extra_single,
+                isDesktop && styles["info__extra_overflowed-y"],
+                isLarge && styles["info__extra_large-screen"],
+                isDesktop && styles.info__extra_desktop,
+                (isDesktop || isTablet || isMobile) &&
+                  styles.info__extra_single,
+                isLaptop && styles.info__extra_laptop,
+                isTablet && styles.info__extra_tablet,
+                isMobile && styles.info__extra_mobile
+              )}
+            >
+              <Details
+                id={id}
+                infosType={type}
+                detailsType={
+                  clsx(
+                    type === "projects" && "events",
+                    type === "services" && "services"
+                  ) as TDetails
+                }
+              />
+              {isEmployees && (
+                <Details id={id} infosType={type} detailsType="employees" />
+              )}
+            </div>
+          )}
         </div>
       </main>
       <Footer />

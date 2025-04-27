@@ -18,19 +18,27 @@ import { Colors } from "../../utils/types";
 
 import styles from "./icons.module.css";
 
-export const Logo = ({ mainColor, extraColor, width, height }: TLogoProps) => {
+export const Logo = ({
+  mainColor,
+  extraColor,
+  width,
+  height,
+  onClick,
+  className,
+}: TLogoProps) => {
   return (
     <svg
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 380 65"
-      className={styles.logo}
+      className={clsx(styles.logo, className)}
       style={
         {
           "--width": `${width}px`,
           "--height": `${height}px`,
         } as CSSProperties
       }
+      onClick={onClick}
     >
       <g>
         <path
@@ -687,16 +695,17 @@ export const SMM = ({
   );
 };
 
-export const TrickCircle = ({mainColor, extraColor = Colors.Navy, className}: TCategotyProps) => {
+export const TrickCircle = ({
+  mainColor,
+  extraColor = Colors.Navy,
+  className,
+}: TCategotyProps) => {
   return (
     <svg
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 25 24"
-      className={clsx(
-        styles.category,
-        className
-      )}
+      className={clsx(styles.category, className)}
     >
       <circle cx="12.5" cy="12" r="8" fill={extraColor} />
       <path

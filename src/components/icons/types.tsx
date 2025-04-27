@@ -18,7 +18,7 @@ export type TIconsProps = {
 
 export type TLogoProps = Pick<
   TIconsProps,
-  "mainColor" | "width" | "height" | "extraColor"
+  "mainColor" | "width" | "height" | "extraColor" | "onClick" | "className"
 >;
 export type TSocialProps = Pick<TIconsProps, "mainColor" | "hoverColor" | "activeColor" | "url">;
 export type TNavProps = Pick<TIconsProps, "onClick">;

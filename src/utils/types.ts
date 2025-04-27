@@ -140,7 +140,7 @@ export type TProject = Pick<
 
 export type TService = Pick<
   TCard,
-  "id" | "type" | "title" | "image" | "shortText" | "order"
+  "id" | "type" | "title" | "image" | "shortText" | "order" | "isMain"
 >;
 
 export type TModalType = "back" | "close";
