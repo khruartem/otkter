@@ -73,7 +73,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
             isLaptop && styles.info_laptop,
             isTablet && styles.info_tablet,
             isMobile && styles.info_mobile,
-            !isDesktop && styles["info_overflowed-y"]
+            // !isDesktop && styles["info_overflowed-y"]
           )}
         >
           <div

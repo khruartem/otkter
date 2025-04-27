@@ -44,9 +44,9 @@
   flex-direction: column;
 }
 
-.info_overflowed-y {
+/* .info_overflowed-y {
   overflow-y: scroll;
-}
+} */
 
 .info__content {
   display: flex;
