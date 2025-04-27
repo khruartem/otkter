@@ -8,13 +8,13 @@ export const Menu: FC<TMenuProps> = ({ rootRef }) => {
   const [isOpen, setOpen] = useState(false);
 
   const onOpen = () => {
-    document.body.style.position = "fixed";
+    // document.body.style.position = "fixed";
     rootRef!.current!.style.height = "calc(100dvh - 60px)";
     setOpen(!isOpen);
   };
 
   const onClose = () => {
-    document.body.style.position = "";
+    // document.body.style.position = "";
     rootRef!.current!.style.height = "0";
     setOpen(!isOpen);
   };

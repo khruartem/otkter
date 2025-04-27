@@ -24,11 +24,13 @@
 .react-navigation {
   height: 0;
   overflow-y: hidden;
-  transition: height 1s;
+  transition: height 0.5s;
   interpolate-size: allow-keywords;
   background-color: var(--light80);
   position: absolute;
   left: 0;
+  top: 59px;
+  z-index: 10;
   /* position: sticky;
   top: 0; */
 }
