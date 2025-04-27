@@ -27,10 +27,18 @@
   transition: height 1s;
   interpolate-size: allow-keywords;
   background-color: var(--light80);
-  /* position: absolute;
-  left: 0; */
+  position: absolute;
+  left: 0;
   /* position: sticky;
   top: 0; */
+}
+
+.react-navigation::after {
+  content: "";
+  display: block;
+  width: 100vw;
+  height: calc(100dvh - 60px);
+  background-color: var(--light80);
 }
 
 /* Стили для разных разрешений экранов */

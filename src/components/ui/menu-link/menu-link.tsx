@@ -23,16 +23,18 @@ export const MenuLinkUI: FC<TMenuLinkUIProps> = ({
     <HashLink
       // to={openNewTab ? `/otkter${url}` : url}
       to={openNewTab ? `/${url}` : url}
+      smooth
       target={openNewTab ? "_blank" : undefined}
-      scroll={(el) => {
-        el.scrollIntoView({
-          block: "start",
-          behavior: clsx(
-            largeResolution && "smooth",
-            smallResolution && "instant"
-          ) as ScrollBehavior,
-        });
-      }}
+      // scroll={(el) => {
+      //   el.scrollIntoView({
+      //     block: "start",
+      //     // behavior: clsx(
+      //     //   largeResolution && "smooth",
+      //     //   smallResolution && "smooth"
+      //     // ) as ScrollBehavior,
+      //     behavior: "smooth"
+      //   });
+      // }}
       className={clsx(
         styles["menu__link"],
         largeResolution && styles["menu__link_large-resolution"],
