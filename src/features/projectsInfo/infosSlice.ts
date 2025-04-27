@@ -26,6 +26,7 @@ export type TServiceInfo = {
   text: string;
   serviceDetails: TEventDetails[];
   employees?: TEmployees;
+  poster?: string;
 };
 
 type TInfosState = {

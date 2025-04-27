@@ -113,10 +113,11 @@ import { buyTickets } from "./buyTickets";
 // Постеры по проектам
 import uniqueChroniclePoster from "../assets/projects/posters/chronicle.png";
 import eseninPoster from "../assets/projects/posters/esenin.png";
- 
+import amplitudePoster from "../assets/projects/posters/amplitude.png";
 
 // Ссылки по проектам
-const buyTicketsLinkChronics = "https://tickets.mos.ru/widget/visit?eventId=61367&agentId=museum56&date=2025-05-04";
+const buyTicketsLinkChronics =
+  "https://tickets.mos.ru/widget/visit?eventId=61367&agentId=museum56&date=2025-05-04";
 const buyTicketsLinkEsenin = "https://bilet.mos.ru/event/338617257/";
 
 export const navLinks: TNavLinks = [
@@ -552,7 +553,7 @@ export const projectInfos: TProjectInfo[] = [
         ],
       },
     },
-    previewImg: "/preview_nikolai.png"
+    previewImg: "/preview_nikolai.png",
   },
   {
     id: 6,
@@ -635,7 +636,7 @@ export const projectInfos: TProjectInfo[] = [
         ],
       },
     },
-    previewImg: "/preview_two.png"
+    previewImg: "/preview_two.png",
   },
   {
     id: 7,
@@ -713,7 +714,7 @@ export const projectInfos: TProjectInfo[] = [
       },
     },
     previewImg: "/preview_esenin.png",
-    poster: eseninPoster
+    poster: eseninPoster,
   },
   {
     id: 8,
@@ -741,7 +742,7 @@ export const projectInfos: TProjectInfo[] = [
       {
         type: "date",
         label: "Дата и время",
-        value: "22 мая 20:00",
+        value: "1 июня 19:00",
       },
       {
         type: "price",
@@ -824,7 +825,8 @@ export const projectInfos: TProjectInfo[] = [
         ],
       },
     },
-    previewImg: "/preview_amplitude.png"
+    poster: amplitudePoster,
+    previewImg: "/preview_amplitude.png",
   },
 ];
 
@@ -1326,26 +1328,31 @@ export const serviceInfos: TServiceInfo[] = [
         ],
       },
     },
+    poster: OT,
   },
   {
     id: 2,
     text: "Организуем и проведем мероприятия любой сложности. Концерты, городские мероприятия, творческие вечера, фестивали, конкурсы, спектакли т. п.",
     serviceDetails: [],
+    poster: events,
   },
   {
     id: 3,
     text: "Берем в работу задачи по графическому дизайну, айдентике, полиграфии, UX/UI и разработке сайтов.",
     serviceDetails: [],
+    poster: design,
   },
   {
     id: 4,
     text: "Организация съемки мероприятий, в том числе интервью, подкастов, рилсов, репортажей, бэкстейджей, документальных фильмов, коротких метров или иных съемок. Обеспечивается полный цикл производства, от подготовительного до монтажно-тонировочного периода, и команда профессионалов (режиссер-постановщик, оператор-постановщик, гафер, звукорежиссёр, актеры и т.д.).",
     serviceDetails: [],
+    poster: content,
   },
   {
     id: 5,
     text: "Проведем мастер-классы и треннинги по актерскому мастерству, ораторскому искусству.",
     serviceDetails: [],
+    poster: masterClasses,
   },
   {
     id: 6,
@@ -1384,11 +1391,13 @@ export const serviceInfos: TServiceInfo[] = [
         ],
       },
     },
+    poster: lamp,
   },
   {
     id: 7,
     text: "Менеджмент социальных сетей (SMM - создание и управление контентом на платформах социальных медиа) и связи с общественностью (PR - формирование и поддержание положительного имиджа компании через взаимодействие с общественностью и медиа).",
     serviceDetails: [],
+    poster: smm,
   },
 ];
 

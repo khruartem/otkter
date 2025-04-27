@@ -76,6 +76,11 @@
   border-radius: 40px;
 }
 
+.info__poster_service {
+  object-fit: cover;
+  object-position: center;
+}
+
 .info__poster_margined {
   margin-bottom: 40px;
 }

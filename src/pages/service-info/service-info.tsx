@@ -13,6 +13,7 @@ import { useGetInfosText } from "../../hooks/useGetInfosText";
 import { useGetServiceTitle } from "../../hooks/useGetServiceTitle";
 import { useGetPhotos } from "../../hooks/useGetPhotos";
 import { useGetInfosDetails } from "../../hooks/useGetInfosDetails";
+import { useGetPoster } from "../../hooks/useGetPoster";
 
 export const ServiceInfo: FC = () => {
   const [docReadyState, setDocReadyState] = useState<DocumentReadyState | null>(
@@ -23,6 +24,7 @@ export const ServiceInfo: FC = () => {
   const serviceId = useGetId();
   const title = useGetServiceTitle(serviceId);
   const text = useGetInfosText(serviceId, "services");
+  const poster = useGetPoster(serviceId, "services");
   const isEmployees = useGetInfosIsEmployees(serviceId, "services");
   const controls = useGetControls(serviceId, "services");
   const isControls =
@@ -49,7 +51,7 @@ export const ServiceInfo: FC = () => {
         id={serviceId}
         title={title}
         text={text}
-        poster={undefined}
+        poster={poster}
         attention={false}
         colorAttention={undefined}
         isEmployees={isEmployees}

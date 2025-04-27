@@ -151,7 +151,8 @@ export const InfoUI: FC<TInfoUIProps> = ({
                   isLaptop && styles.info__poster_laptop,
                   isTablet && styles.info__poster_tablet,
                   isMobile && styles.info__poster_mobile,
-                  (isTablet || isMobile) && styles.info__poster_margined
+                  (isTablet || isMobile) && styles.info__poster_margined,
+                  type === "services" && styles.info__poster_service
                 )}
               />
             )}
