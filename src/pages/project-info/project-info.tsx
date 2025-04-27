@@ -34,7 +34,7 @@ export const ProjectInfo: FC = () => {
   const controls = useGetControls(projectId, "projects");
   const isControls =
     controls?.buttons.length || controls?.links.length ? true : false;
-  const isPhotos = useGetPhotos(projectId, "services") ? true : false;
+  const isPhotos = useGetPhotos(projectId, "projects") ? true : false;
   const isDetails = (
       useGetInfosDetails(projectId, "projects", "events") as TEventDetails[]
     ).length
@@ -42,8 +42,12 @@ export const ProjectInfo: FC = () => {
       : false;
 
   useEffect(() => {
-    // Проброс стейта дальше
-    location.state = { ...location.state };
+    // Проброс стейта дальше или формирование
+    if (location.state) {
+      location.state = { ...location.state };
+    } else {
+      location.state = { id: projectId, type: "projects" };
+    }
 
     document.body.style.backgroundColor = Colors.Light60;
 

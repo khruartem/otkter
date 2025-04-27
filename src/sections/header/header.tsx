@@ -7,25 +7,20 @@ export const Header: FC = () => {
   const location = useLocation();
 
   const onClickLogo = () => {
-    if (location.state?.type) {
-      switch (location.state?.type) {
-        case "projects":
-          navigate(`/#projects-${location.state?.id}`);
-          break;
-        case "all-projects":
-          navigate("/projects/all");
-          break;
-        case "services":
-          navigate(`/#services`);
-          break;
-        default:
-          navigate("/");
-          window.scrollTo({ top: 0, behavior: "instant" });
-          break;
-      }
-    } else {
-      navigate("/");
-      window.scrollTo({ top: 0, behavior: "instant" });
+    switch (location.state?.type) {
+      case "projects":
+        navigate(`/#projects-${location.state?.id}`);
+        break;
+      case "all-projects":
+        navigate("/projects/all");
+        break;
+      case "services":
+        navigate(`/#services`);
+        break;
+      default:
+        navigate("/");
+        window.scrollTo({ top: 0, behavior: "instant" });
+        break;
     }
   };
 

@@ -46,7 +46,8 @@ export const InfoUI: FC<TInfoUIProps> = ({
           isDesktop && styles.main_desktop,
           isLaptop && styles.main_laptop,
           isTablet && styles.main_tablet,
-          isMobile && styles.main_mobile
+          isMobile && styles.main_mobile,
+          !isDetails && styles.main_heighed
         )}
       >
         <div
@@ -110,11 +111,6 @@ export const InfoUI: FC<TInfoUIProps> = ({
                   lineHeight={largeResolution ? 48 : 40}
                   textTransform={"none"}
                   color={attention ? colorAttention! : Colors.Navy}
-                  padding={clsx(
-                    // smallResolution && type === "projects" && "39px 0 0 0",
-                    isLaptop && type === "services" && "0 55% 0 0",
-                    isTablet && type === "services" && "40px 40% 0 0"
-                  )}
                   classNameExtra={clsx(
                     (isLarge || isDesktop || isLaptop) && styles.info__title
                   )}
@@ -130,18 +126,6 @@ export const InfoUI: FC<TInfoUIProps> = ({
                   lineHeight={smallResolution ? 24 : 32}
                   textTransform={"none"}
                   color={Colors.Dark100}
-                  margin={clsx(
-                    // isLarge && type === "projects" && "0 0 6.67vw 0",
-                    isLarge && type === "services" && "0 0 3.33vw 0",
-                    // isDesktop && type === "projects" && "0 0 5.27vw 0",
-                    isDesktop && type === "services" && "0 0 1.76vw 0",
-                    // isLaptop && type === "projects" && "0 0 12.50vw 0",
-                    isLaptop && type === "services" && "0 0 6.25vw 0"
-                    // isTablet && type === "projects" && "0 0 9.38vw 0",
-                    // isTablet && type === "services" && "0 0 6.25vw 0",
-                    // isMobile && type === "projects" && "0 0 17.39vw 0",
-                    // isMobile && type === "services" && "0 0 5.80vw 0"
-                  )}
                   classNameExtra={clsx(
                     styles.info__text,
                     isLarge && styles["info__text_large-screen"],
@@ -158,6 +142,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
             {poster && (
               <img
                 src={poster}
+                loading="lazy"
                 alt={`Афиша для проекта ${title}`}
                 className={clsx(
                   styles.info__poster,
@@ -177,10 +162,10 @@ export const InfoUI: FC<TInfoUIProps> = ({
                 isEmployees
                   ? styles.info__extra_blocks
                   : styles.info__extra_single,
-                isDesktop && styles["info__extra_overflowed-y"],
+                // isDesktop && styles["info__extra_overflowed-y"],
                 isLarge && styles["info__extra_large-screen"],
                 isDesktop && styles.info__extra_desktop,
-                (isDesktop || isTablet || isMobile) &&
+                (isTablet || isMobile) &&
                   styles.info__extra_single,
                 isLaptop && styles.info__extra_laptop,
                 isTablet && styles.info__extra_tablet,
