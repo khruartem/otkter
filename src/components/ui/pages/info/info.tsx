@@ -61,7 +61,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
             isMobile && styles.navigation_mobile
           )}
         >
-          <Share id={id} />
+          <Share id={id} type={type} />
           {type === "projects" && <ProjectsTabBar />}
           {type === "services" && <ServicesTabBar />}
         </div>

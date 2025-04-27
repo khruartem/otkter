@@ -22,7 +22,7 @@ export const Main: FC = () => {
   const projectsRef = useRef<HTMLElement>(null);
   const teamsRef = useRef<HTMLElement>(null);
   const contactsRef = useRef<HTMLElement>(null);
-
+// TODO: Можно перенести логику прокрутки в комопнент секций
   // useEffect(() => {
   //   // window.onload = () => {
   //   //   location.state = null;

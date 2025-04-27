@@ -1,3 +1,6 @@
+import { TSectionType } from "../../utils/types";
+
 export type TShareProps = {
-  id: number; 
+  id: number;
+  type: TSectionType;
 }

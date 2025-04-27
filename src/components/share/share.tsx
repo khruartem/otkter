@@ -5,11 +5,16 @@ import { ShareUI } from "../ui/share";
 import { TShareProps } from "./types";
 import { useGetTitle } from "../../hooks/useGetTitle";
 import { Social, TCategory } from "../../utils/types";
+import clsx from "clsx";
 
-export const Share: FC<TShareProps> = ({ id }) => {
+export const Share: FC<TShareProps> = ({ id, type }) => {
   const href = window.location.href;
+
   // TODO: сделать useGetTitle универсальным для услуг и проектов, добавив тип
-  const title = `Поделиться проетком ${useGetTitle(id)}`;
+  const title = `${clsx(
+    type === "projects" && "Проект",
+    type === "services" && "Услуга"
+  )} ${useGetTitle(id)[0].toLocaleLowerCase() + useGetTitle(id).slice(1)}`;
 
   const telegramLink = `https://t.me/share/url?url=${href}&text=${title}`;
   const VKLink = `https://vk.com/share.php?url=${href}`;
