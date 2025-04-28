@@ -46,7 +46,7 @@ export const ProjectInfo: FC = () => {
     if (location.state) {
       location.state = { ...location.state };
     } else {
-      location.state = { id: projectId, type: "projects" };
+      location.state = { id: projectId, type: "project" };
     }
 
     document.body.style.backgroundColor = Colors.Light60;

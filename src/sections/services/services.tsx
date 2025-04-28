@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { TServiceRef, TServiceViewRef } from "../../utils/types";
@@ -110,6 +110,15 @@ export const Services: FC<TSectionProps> = ({ sectionRef }) => {
       type: "smm",
     },
   ];
+
+  useEffect(() => {
+    if (location.hash === "#services") {
+      sectionRef?.current?.scrollIntoView({
+        block: "start",
+        behavior: "instant",
+      });
+    }
+  }, [sectionRef]);
 
   return (
     <SliderSectionUI

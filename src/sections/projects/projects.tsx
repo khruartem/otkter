@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { ProjectsUI } from "../../components/ui/sections/projects";
@@ -6,8 +6,11 @@ import { SliderSectionUI } from "../../components/ui/sections/slider-section";
 
 import { TProjectRef, TProjectViewRef } from "../../utils/types";
 import { TProjectsProps } from "./types";
+import { useLocation } from "react-router-dom";
 
 export const Projects: FC<TProjectsProps> = ({ sectionRef, type }) => {
+  const location = useLocation();
+
   const allRef = useRef<HTMLDivElement>(null);
   const playRef = useRef<HTMLDivElement>(null);
   const contestRef = useRef<HTMLDivElement>(null);
@@ -80,6 +83,15 @@ export const Projects: FC<TProjectsProps> = ({ sectionRef, type }) => {
       ref: shortFilmViewRef,
     },
   ];
+
+  useEffect(() => {
+    if (type === "main" && location.hash === "#projects") {
+      sectionRef?.current?.scrollIntoView({
+        block: "start",
+        behavior: "instant",
+      });
+    }
+  }, [location, sectionRef, type]);
 
   return (
     <>

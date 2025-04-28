@@ -14,7 +14,7 @@ export const Project: FC<TProjectProps> = ({ project }) => {
   const projectRef = useRef<HTMLAnchorElement>(null);
 
   const locationFrom: string =
-    location.pathname === "/projects/all" ? "all-projects" : "projects";
+    location.pathname === "/projects/all" ? "all-projects" : "project";
 
   useEffect(() => {
     // switch (location.hash) {

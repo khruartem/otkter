@@ -8,14 +8,17 @@ export const Header: FC = () => {
 
   const onClickLogo = () => {
     switch (location.state?.type) {
-      case "projects":
+      case "project":
         navigate(`/#projects-${location.state?.id}`);
+        break;
+      case "projects":
+        navigate("/#projects");
         break;
       case "all-projects":
         navigate("/projects/all");
         break;
       case "services":
-        navigate(`/#services`);
+        navigate("/#services");
         break;
       default:
         navigate("/");
