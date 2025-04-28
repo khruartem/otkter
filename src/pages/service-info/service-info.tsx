@@ -32,7 +32,7 @@ export const ServiceInfo: FC = () => {
   const isPhotos = useGetPhotos(serviceId, "services") ? true : false;
   const isDetails = (
     useGetInfosDetails(serviceId, "services", "services") as TEventDetails[]
-  ).length
+  )?.length
     ? true
     : false;
 

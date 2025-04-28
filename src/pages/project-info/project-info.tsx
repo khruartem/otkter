@@ -37,7 +37,7 @@ export const ProjectInfo: FC = () => {
   const isPhotos = useGetPhotos(projectId, "projects") ? true : false;
   const isDetails = (
       useGetInfosDetails(projectId, "projects", "events") as TEventDetails[]
-    ).length
+    )?.length
       ? true
       : false;
 

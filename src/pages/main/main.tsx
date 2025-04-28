@@ -1,9 +1,9 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, useEffect, useState, useRef } from "react";
 // import { useLocation } from "react-router-dom";
 
 import { MainUI } from "../../components/ui/pages/main";
 // import { scrollToTop } from "../../utils/scrollToTop";
-// import { Preloader } from "../../components/ui/preloader";
+import { Preloader } from "../../components/ui/preloader";
 // import { scrollIntoElementView } from "../../utils/scrollIntoElementView";
 import { Colors } from "../../utils/types";
 //import { lockScroll } from "../../utils/lockScroll";
@@ -12,9 +12,9 @@ import { Colors } from "../../utils/types";
 export const Main: FC = () => {
   // const location = useLocation();
   // const hash = window.location.href.split("/");
-  // const [docReadyState, setDocReadyState] = useState<DocumentReadyState | null>(
-  //   null
-  // );
+  const [docReadyState, setDocReadyState] = useState<DocumentReadyState | null>(
+    null
+  );
   // const [isReloaded, SetReloadState] = useState<boolean>(false);
 
   const aboutRef = useRef<HTMLElement>(null);
@@ -22,7 +22,7 @@ export const Main: FC = () => {
   const projectsRef = useRef<HTMLElement>(null);
   const teamsRef = useRef<HTMLElement>(null);
   const contactsRef = useRef<HTMLElement>(null);
-// TODO: Можно перенести логику прокрутки в комопнент секций
+  // TODO: Можно перенести логику прокрутки в комопнент секций
   // useEffect(() => {
   //   // window.onload = () => {
   //   //   location.state = null;
@@ -65,13 +65,18 @@ export const Main: FC = () => {
   // );
   useEffect(() => {
     document.body.style.backgroundColor = Colors.Light80;
-  });
+    setDocReadyState(document.readyState);
+  }, []);
 
-  return <MainUI
+  return docReadyState === "complete" || docReadyState === "interactive" ? (
+    <MainUI
       servicesRef={servicesRef}
       projectsRef={projectsRef}
       aboutRef={aboutRef}
       teamsRef={teamsRef}
       contactsRef={contactsRef}
-    />;
+    />
+  ) : (
+    <Preloader />
+  );
 };
