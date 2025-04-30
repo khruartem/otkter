@@ -6,14 +6,16 @@
   /* background-color: var(--light60); */
   width: 100vw;
   height: 100vh;
+  /* opacity: 0.1; */
+  background: transparent;
 }
 
 .preloader_circle {
   display: block;
-  width: 74px;
-  height: 74px;
-  border: 1px solid;
-  border-color: #d1d2d6 #9fa0a5 #626368 #1a1b22;
+  width: 128px;
+  height: 128px;
+  border: 10px solid var(--light30);
+  border-color: var(--nephritis100) var(--light30) var(--light30) var(--light30);
 
   border-radius: 50%;
 

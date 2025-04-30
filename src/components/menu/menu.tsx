@@ -6,7 +6,7 @@ import { MenuUI } from "../ui/menu";
 
 export const Menu: FC<TMenuProps> = ({ rootRef }) => {
   const [isOpen, setOpen] = useState(false);
-
+// TODO: сделать затемнение body при открытии меню
   const onOpen = () => {
     // document.body.style.position = "fixed";
     rootRef!.current!.style.height = "calc(100dvh - 60px)";
