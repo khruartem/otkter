@@ -16,6 +16,7 @@ import { useGetControls } from "../../hooks/useGetControls";
 import { useGetPoster } from "../../hooks/useGetPoster";
 import { useGetPhotos } from "../../hooks/useGetPhotos";
 import { useGetInfosDetails } from "../../hooks/useGetInfosDetails";
+import { useGetProjectIsMain } from "../../hooks/useGetProjectIsMain";
 
 export const ProjectInfo: FC = () => {
   const [docReadyState, setDocReadyState] = useState<DocumentReadyState | null>(
@@ -40,20 +41,23 @@ export const ProjectInfo: FC = () => {
     )?.length
       ? true
       : false;
+  const isMain = useGetProjectIsMain(projectId);
+  console.log(isMain ? projectId : 0);
+  console.log(location);
 
   useEffect(() => {
     // Проброс стейта дальше или формирование
     if (location.state) {
-      location.state = { ...location.state };
+      location.state = { ...location.state, id: isMain ? projectId : 0 };
     } else {
-      location.state = { id: projectId, type: "project" };
+      location.state = { id: isMain ? projectId : 0, type: "project" };
     }
 
     document.body.style.backgroundColor = Colors.Light60;
 
     setDocReadyState(document.readyState);
 
-  }, [location, projectId]);
+  }, [isMain, location, projectId]);
 
   return docReadyState === "complete" || docReadyState === "interactive" ? (
     title ? (

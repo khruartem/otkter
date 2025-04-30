@@ -85,7 +85,7 @@ export const Projects: FC<TProjectsProps> = ({ sectionRef, type }) => {
   ];
 
   useEffect(() => {
-    if (type === "main" && location.hash === "#projects") {
+    if (type === "main" && location.hash === "#projects-0") {
       sectionRef?.current?.scrollIntoView({
         block: "start",
         behavior: "instant",

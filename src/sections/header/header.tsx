@@ -11,9 +11,6 @@ export const Header: FC = () => {
       case "project":
         navigate(`/#projects-${location.state?.id}`);
         break;
-      case "projects":
-        navigate("/#projects");
-        break;
       case "all-projects":
         navigate("/projects/all");
         break;

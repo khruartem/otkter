@@ -12,7 +12,7 @@ export const AllProjects: FC = () => {
   );
 
   useEffect(() => {
-    location.state = { ...{ type: "projects" } };
+    location.state = { id: 0, type: "project" };
     setDocReadyState(document.readyState);
     // window.onscroll = () => window.location.hash = "";
     document.body.style.backgroundColor = Colors.Light60;
