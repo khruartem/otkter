@@ -3,11 +3,25 @@
   width: 100vw;
   height: 60px;
   align-items: center;
-  background-color: var(--light60);
+  background-color: var(--header-bc-color, transparent);
   justify-content: center;
   position: sticky;
   top: 0;
   z-index: 10;
+  /* border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px; */
+}
+
+.header__wrapper {
+  display: flex;
+  width: 100vw;
+  height: 60px;
+  align-items: center;
+  background-color: var(--light60);
+  justify-content: center;
+  /* position: sticky;
+  top: 0;
+  z-index: 10; */
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
 }
@@ -22,15 +36,15 @@
 }
 
 .react-navigation {
-  height: 0;
+  height: var(--navigation-height, 0);
   overflow-y: hidden;
-  transition: height 0.5s;
+  transition: var(--navigation-transition, unset);
   interpolate-size: allow-keywords;
   background-color: var(--light80);
   position: absolute;
   left: 0;
-  top: 59px;
-  z-index: 10;
+  top: 60px;
+  /* z-index: 10; */
   /* position: sticky;
   top: 0; */
 }
@@ -39,13 +53,26 @@
   content: "";
   display: block;
   width: 100vw;
-  height: calc(100dvh - 60px);
+  /* height: calc(100dvh - 60px);
+  background-color: var(--light80); */
+  height: 100dvh;
   background-color: var(--light80);
+  position: relative;
+  top: -60px;
+  
+  z-index: 1;
 }
 
 /* Стили для разных разрешений экранов */
 /* header */
-.header_mobile {
+/* .header_mobile {
+  justify-content: space-between;
+  padding-left: 3.86vw;
+  padding-right: 7.25vw;
+} */
+
+/* header__wrapper */ 
+.header__wrapper_mobile {
   justify-content: space-between;
   padding-left: 3.86vw;
   padding-right: 7.25vw;

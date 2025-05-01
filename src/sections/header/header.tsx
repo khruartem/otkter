@@ -1,10 +1,12 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { HeaderUI } from "../../components/ui/sections/header";
 
 export const Header: FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const headerRef = useRef<HTMLHeadingElement>(null);
 
   const onClickLogo = () => {
     switch (location.state?.type) {
@@ -28,5 +30,5 @@ export const Header: FC = () => {
     location.state = { ...location.state };
   });
 
-  return <HeaderUI onClickLogo={onClickLogo} />;
+  return <HeaderUI onClickLogo={onClickLogo} headerRef={headerRef} />;
 };
