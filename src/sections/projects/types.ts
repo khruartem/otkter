@@ -1,5 +1,3 @@
-import { TSectionProps } from "../types";
-
-export type TProjectsProps = Partial<TSectionProps> & {
+export type TProjectsProps = {
   type: "main" | "all";
 };

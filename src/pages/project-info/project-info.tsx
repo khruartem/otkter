@@ -37,13 +37,11 @@ export const ProjectInfo: FC = () => {
     controls?.buttons.length || controls?.links.length ? true : false;
   const isPhotos = useGetPhotos(projectId, "projects") ? true : false;
   const isDetails = (
-      useGetInfosDetails(projectId, "projects", "events") as TEventDetails[]
-    )?.length
-      ? true
-      : false;
+    useGetInfosDetails(projectId, "projects", "events") as TEventDetails[]
+  )?.length
+    ? true
+    : false;
   const isMain = useGetProjectIsMain(projectId);
-  console.log(isMain ? projectId : 0);
-  console.log(location);
 
   useEffect(() => {
     // Проброс стейта дальше или формирование
@@ -56,7 +54,6 @@ export const ProjectInfo: FC = () => {
     document.body.style.backgroundColor = Colors.Light60;
 
     setDocReadyState(document.readyState);
-
   }, [isMain, location, projectId]);
 
   return docReadyState === "complete" || docReadyState === "interactive" ? (

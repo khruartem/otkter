@@ -10,9 +10,9 @@ import aboutOrb from "../../assets/sections-photo/about_orb.png";
 import { Colors } from "../../utils/types";
 import presentation from "../../assets/presentation.pdf";
 import { FC } from "react";
-import { TSectionProps } from "../types";
+// import { TSectionProps } from "../types";
 
-export const About: FC<TSectionProps> = () => {
+export const About: FC = () => {
   return (
     <>
       <LargeScreen />

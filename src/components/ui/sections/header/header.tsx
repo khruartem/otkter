@@ -10,8 +10,9 @@ import { Colors } from "../../../../utils/types";
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 
 import styles from "./header.module.css";
+import { HashLink } from "react-router-hash-link";
 
-export const HeaderUI: FC<THeaderUIProps> = ({ onClickLogo, headerRef }) => {
+export const HeaderUI: FC<THeaderUIProps> = ({ url, headerRef, onClickLogo }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
   const largeResolution = isLarge || isDesktop;
@@ -40,14 +41,24 @@ export const HeaderUI: FC<THeaderUIProps> = ({ onClickLogo, headerRef }) => {
           isMobile && styles.header__wrapper_mobile
         )}
       >
-        <Logo
-          mainColor={Colors.Navy}
-          extraColor={Colors.Nephritis100}
-          width={isMobile ? 192 : 236}
-          height={isMobile ? 32 : 40}
+        <HashLink
+          to={url}
+          scroll={(el) => {
+            el.scrollIntoView({
+              block: "start",
+              behavior: "instant",
+            });
+          }}
           onClick={onClickLogo}
-          className={styles.logo}
-        />
+        >
+          <Logo
+            mainColor={Colors.Navy}
+            extraColor={Colors.Nephritis100}
+            width={isMobile ? 192 : 236}
+            height={isMobile ? 32 : 40}
+            className={styles.logo}
+          />
+        </HashLink>
         {!isMobile ? (
           <div
             className={clsx(

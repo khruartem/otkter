@@ -31,16 +31,14 @@ export const ProjectUI: FC<ProjectUIProps> = ({
   const smallResolution = isTablet || isMobile;
 
   return (
-    // TODO: заменить искусственное поднятие "наверх страницы" target="_top"
     <Link
       className={clsx(
         styles["project-link"],
         !isMobile && styles["project-link_animated"],
         isTablet && styles["project-link_tablet"]
       )}
-      // to={`/otkter/projects/${projectId}`}
       to={`/projects/${id}`}
-      // target="_top"
+      target="_top"
       style={
         {
           "--project-color": attention
@@ -67,29 +65,16 @@ export const ProjectUI: FC<ProjectUIProps> = ({
             smallResolution && styles["project__top_small-resolution"]
           )}
         >
-          {/* <div
+          <div
             className={clsx(
-              styles.project__image,
+              styles["project__image-container"],
               isLarge && styles["project__image_large-screen"],
               isDesktop && styles.project__image_desktop,
               isLaptop && styles.project__image_laptop,
               isTablet && styles.project__image_tablet,
               isMobile && styles.project__image_mobile
             )}
-            style={
-              {
-                "--background-url": `url(${image})`,
-              } as CSSProperties
-            }
-          ></div> */}
-          <div className={clsx(
-                styles["project__image-container"],
-                isLarge && styles["project__image_large-screen"],
-                isDesktop && styles.project__image_desktop,
-                isLaptop && styles.project__image_laptop,
-                isTablet && styles.project__image_tablet,
-                isMobile && styles.project__image_mobile
-              )}>
+          >
             <img
               loading="lazy"
               className={clsx(
@@ -134,7 +119,6 @@ export const ProjectUI: FC<ProjectUIProps> = ({
             lineHeight={28}
             textTransform={"none"}
             color={Colors.Dark100}
-            //classNameExtra={styles["project__text-overflowed"]}
           >
             {shortText}
           </Text>

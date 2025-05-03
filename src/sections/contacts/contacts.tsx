@@ -1,12 +1,11 @@
 import { FC } from "react";
-import { TSectionProps } from "../types";
-import { useGetContactUs } from "../../hooks/useGetContactUs";
+
 import { ContactsUI } from "../../components/ui/sections/contacts";
 
-export const Contacts: FC<TSectionProps> = ({sectionRef}) => {
+import { useGetContactUs } from "../../hooks/useGetContactUs";
+
+export const Contacts: FC = () => {
   const onContact = useGetContactUs();
 
-  return (
-    <ContactsUI onContact={onContact} ref={sectionRef} />
-  )
-}
+  return <ContactsUI onContact={onContact} />;
+};

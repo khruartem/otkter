@@ -18,10 +18,8 @@ export function App() {
     <>
       <Routes>
         <Route path={"/"} element={<Main />} />
-        {/* <Route path="/otkter/projects/all/" element={<AllProjects />} /> */}
-        <Route path="/projects/all/" element={<AllProjects />} />
+        <Route path="/projects/all" element={<AllProjects />} />
         <Route
-          // path={"/otkter/projects/:id"}
           path={"/projects/:id"}
           element={
             // <Modal

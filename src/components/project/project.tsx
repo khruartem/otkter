@@ -7,9 +7,8 @@ import { TProjectProps } from "./types";
 
 export const Project: FC<TProjectProps> = ({ project }) => {
   const location = useLocation();
-  // const locationFrom = location.pathname;
   const { id } = project;
-  const hash = window.location.hash;
+  const hash = location.hash;
 
   const projectRef = useRef<HTMLAnchorElement>(null);
 
@@ -17,16 +16,6 @@ export const Project: FC<TProjectProps> = ({ project }) => {
     location.pathname === "/projects/all" ? "all-projects" : "project";
 
   useEffect(() => {
-    // switch (location.hash) {
-    //   case `#projects-${id}`:
-    //     scrollIntoElementView(projectRef, "instant");
-    //     break;
-    // }
-    // if (location.hash === `#projects-${id}`) {
-    // scrollIntoElementView(projectRef, "instant");
-    //scrollIntoElementView(projectRef, "smooth");
-    // projectRef.current?.scrollIntoView({block: "center", inline: "center", behavior: "smooth"})
-    // };
     if (hash === `#projects-${id}`) {
       projectRef.current?.scrollIntoView({
         block: "center",

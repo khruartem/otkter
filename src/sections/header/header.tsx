@@ -1,34 +1,43 @@
-import { FC, useEffect, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { FC, useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { HeaderUI } from "../../components/ui/sections/header";
 
 export const Header: FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const location = useLocation();
 
   const headerRef = useRef<HTMLHeadingElement>(null);
 
-  const onClickLogo = () => {
+  // const url: React.MutableRefObject<string | null> = useRef<string>(null);
+  const [url, setUrl] = useState("");
+
+  useEffect(() => {
+    // location.state = { ...location.state };
     switch (location.state?.type) {
       case "project":
-        navigate(`/#projects-${location.state?.id}`);
+        if (location.state?.id) {
+          setUrl(`/#projects-${location.state?.id}`);
+        } else {
+          setUrl(`/#projects`);
+        }
         break;
       case "all-projects":
-        navigate("/projects/all");
+        setUrl("/projects/all");
         break;
       case "services":
-        navigate("/#services");
+        setUrl("/#services");
         break;
       default:
-        navigate("/");
-        window.scrollTo({ top: 0, behavior: "instant" });
+        setUrl("/");
         break;
+    }
+  }, [location, url]);
+
+  const onClickLogo = () => {
+    if (url === "/" || url === "/projects/all" || url === "") {
+      window.scrollTo({ top: 0, behavior: "instant" });
     }
   };
 
-  useEffect(() => {
-    location.state = { ...location.state };
-  });
-
-  return <HeaderUI onClickLogo={onClickLogo} headerRef={headerRef} />;
+  return <HeaderUI url={url} headerRef={headerRef} onClickLogo={onClickLogo} />;
 };
