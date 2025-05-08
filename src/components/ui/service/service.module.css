@@ -18,6 +18,10 @@
   flex-direction: column;
 }
 
+.service__info_rows-ordered {
+  grid-row: 1;
+}
+
 .service__text {
   display: flex;
   flex-direction: column;

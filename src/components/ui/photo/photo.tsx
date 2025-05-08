@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { TPhotoProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import { Link, useLocation } from "react-router-dom";
+import { ImageUI } from "../../image";
 
 import styles from "./photo.module.css";
 
@@ -12,7 +13,7 @@ export const PhotoUI: FC<TPhotoProps> = ({
   label = null,
   nextPhotoId = null,
   id,
-  type
+  type,
 }) => {
   const location = useLocation();
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
@@ -30,18 +31,29 @@ export const PhotoUI: FC<TPhotoProps> = ({
       )}
     >
       {photo && !label && !nextPhotoId ? (
-        // <Link to={`/otkter/${type}/${id}/${photo.id}`} state={{ id, type, ...location.state }}>
-        <Link to={`/${type}/${id}/${photo.id}`} state={{ id, type, ...location.state }}>
-          <img
+        <Link
+          to={`/${type}/${id}/${photo.id}`}
+          state={{ id, type, ...location.state }}
+        >
+          {/* <img
             loading="lazy"
             className={styles.photo__link}
             src={photo.source}
             alt="Фото проекта"
+          /> */}
+          <ImageUI
+            src={photo.icon}
+            alt="Фото проекта"
+            width={"100%"}
+            height={"100%"}
+            className={styles.photo__link}
           />
         </Link>
       ) : (
-        // <Link to={`/otkter/${type}/${id}/${nextPhotoId}`} state={{ id, type, ...location.state }}>
-        <Link to={`/${type}/${id}/${nextPhotoId}`} state={{ id, type, ...location.state }}>
+        <Link
+          to={`/${type}/${id}/${nextPhotoId}`}
+          state={{ id, type, ...location.state }}
+        >
           <div className={clsx(styles.photo__link, styles.photo__link_more)}>
             {label}
           </div>

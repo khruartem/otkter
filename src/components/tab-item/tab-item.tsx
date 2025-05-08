@@ -25,7 +25,7 @@ export const TabItem: FC<TTabItemProps> = ({
 
   return (
     <TabItemUI
-      image={item.image}
+      image={item.icon}
       current={current}
       ref={iconRef}
       onClick={onClick}

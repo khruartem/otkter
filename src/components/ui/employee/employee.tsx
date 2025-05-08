@@ -1,14 +1,15 @@
+import { FC } from "react";
 import clsx from "clsx";
 
 import { Text } from "../../text";
 import { SocialUI } from "../social";
+import { ImageUI } from "../../image";
 
 import { TEmployeeUIProps } from "./types";
 import { Colors } from "../../../utils/types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./employee.module.css";
-import { FC } from "react";
 
 export const EmployeeUI: FC<TEmployeeUIProps> = ({
   type,
@@ -24,14 +25,24 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
     <>
       {type === "projects" && (
         <div className={clsx(styles.employee, styles.employee_projects)}>
-          <img
+          {/* <img
             loading="lazy"
             className={clsx(
               styles.employee__photo,
               styles.employee__photo_projects
             )}
             src={photo}
-            alt="Фотография резидента Открытой территории"
+            alt={`Фотография резидента Открытой территории ${name}`}
+          /> */}
+          <ImageUI
+            src={photo}
+            width={52}
+            height={52}
+            alt={`Фотография резидента Открытой территории ${name}`}
+            className={clsx(
+              styles.employee__photo,
+              styles.employee__photo_projects
+            )}
           />
           <div className={styles.employee__info}>
             <Text
@@ -90,10 +101,20 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
           <div
             className={clsx(styles.employee__info, styles.employee__info_team)}
           >
-            <img
+            {/* <img
               loading="lazy"
               src={photo}
               alt={`Фото ${name}`}
+              className={clsx(
+                styles.employee__photo,
+                styles.employee__photo_team
+              )}
+            /> */}
+            <ImageUI
+              src={photo}
+              width={270}
+              height={270}
+              alt={`Фотография резидента Открытой территории ${name}`}
               className={clsx(
                 styles.employee__photo,
                 styles.employee__photo_team

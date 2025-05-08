@@ -35,6 +35,7 @@
 .employee__photo_projects {
   width: 52px;
   height: 52px;
+  max-width: max-content;
 }
 
 .employee__photo_team {

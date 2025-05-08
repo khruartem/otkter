@@ -1,14 +1,15 @@
 import clsx from "clsx";
+import React from "react";
 
 import { Text } from "../../text";
+import { Controls } from "../../controls";
+import { ImageUI } from "../../image";
 
 import { Colors, FontSizes, lineHeights } from "../../../utils/types";
 import { TServiceUIProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./service.module.css";
-import React from "react";
-import { Controls } from "../../controls";
 
 export const ServiceUI = React.forwardRef<
   HTMLDivElement & HTMLImageElement,
@@ -40,15 +41,22 @@ export const ServiceUI = React.forwardRef<
       )}
       ref={serviceRef}
     >
-      {(isLaptop || isTablet || isMobile) && (
-        <img
-          loading="lazy"
-          className={styles.service__image}
+      {/* <img
+        loading="lazy"
+        className={styles.service__image}
+        src={image}
+        alt="Изображение услуги"
+        ref={ref}
+      /> */}
+      <div ref={ref} style={{ width: "100%", height: "100%" }}>
+        <ImageUI
           src={image}
-          alt="Изображение услуги"
-          ref={ref}
+          alt={`Изображение услуги ${title}`}
+          className={styles.service__image}
+          width={"100%"}
+          height={"100%"}
         />
-      )}
+      </div>
       <div
         className={clsx(
           styles.service__info,
@@ -56,9 +64,9 @@ export const ServiceUI = React.forwardRef<
           isDesktop && styles.service__info_desktop,
           isLaptop && styles.service__info_laptop,
           isTablet && styles.service__info_tablet,
-          isMobile && styles.service__info_mobile
+          isMobile && styles.service__info_mobile,
+          (isLarge || isDesktop) && styles["service__info_rows-ordered"]
         )}
-        // ref={isLaptop || isTablet || isMobile ? undefined : ref}
       >
         <div
           className={clsx(
@@ -95,15 +103,6 @@ export const ServiceUI = React.forwardRef<
         </div>
         <Controls id={service.id} type="services" />
       </div>
-      {(isLarge || isDesktop) && (
-        <img
-          loading="lazy"
-          className={styles.service__image}
-          src={image}
-          alt="Изображение услуги"
-          ref={ref}
-        />
-      )}
     </div>
   );
 });

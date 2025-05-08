@@ -6,6 +6,11 @@
   opacity: 0.3;
   transition: opacity 0.5s;
   border-radius: 100px;
+  background-color: var(--light30);
+}
+
+.tab-item:not(.tab-item_current):hover {
+  opacity: 0.8;
 }
 
 .tab-item_current {

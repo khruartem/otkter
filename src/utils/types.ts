@@ -41,7 +41,10 @@ export type TEventType =
 
 export type TSectionType = Extract<TCardType, "services" | "projects">;
 
-export type TSliderSectionType = Extract<TCardType, "services" | "team" | "projects">;
+export type TSliderSectionType = Extract<
+  TCardType,
+  "services" | "team" | "projects"
+>;
 
 export type TEventDetails = {
   type: TEventType;
@@ -79,7 +82,7 @@ export type TEmployees = {
 export type TEmployeeGroup = {
   name?: string;
   employees: TEmployee[];
-}
+};
 
 export type TEmployee = {
   id?: number;
@@ -100,7 +103,12 @@ export type TProjectInfo = {
   controls?: TControls;
 };
 
-export type TCardType = "projects" | "team" | "services" | TServicesTabMode | TProjectTabMode;
+export type TCardType =
+  | "projects"
+  | "team"
+  | "services"
+  | TServicesTabMode
+  | TProjectTabMode;
 
 export type TCard = {
   id: number;
@@ -110,6 +118,7 @@ export type TCard = {
   categoryList?: TCategory[];
   attention?: boolean;
   image: string;
+  icon: string;
   shortText: string;
   social?: Social[];
   projectInfo?: TProjectInfo;
@@ -131,6 +140,7 @@ export type TProject = Pick<
   | "isMain"
   | "isActive"
   | "order"
+  | "icon"
 >;
 
 // export type TTeammate = Pick<
@@ -140,7 +150,7 @@ export type TProject = Pick<
 
 export type TService = Pick<
   TCard,
-  "id" | "type" | "title" | "image" | "shortText" | "order" | "isMain"
+  "id" | "type" | "title" | "image" | "shortText" | "order" | "isMain" | "icon"
 >;
 
 export type TModalType = "back" | "close";
@@ -214,7 +224,7 @@ export type TTabItem = {
   id: number;
   type: TSectionType;
   image: string;
-}
+};
 
 export enum Colors {
   Navy = "#0B3954",

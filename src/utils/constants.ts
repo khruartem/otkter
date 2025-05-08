@@ -97,6 +97,42 @@ import eseninPhoto5 from "../assets/projects-photo/esenin/esenin_5.png";
 import eseninPhoto6 from "../assets/projects-photo/esenin/esenin_6.png";
 import eseninPhoto7 from "../assets/projects-photo/esenin/esenin_7.png";
 
+// Иконки фото ОТ
+import openSeaPhotoIcon1 from "../assets/services-photo/open-sea/icons/openSeaPhoto1.jpg";
+import openSeaPhotoIcon2 from "../assets/services-photo/open-sea/icons/openSeaPhoto2.jpg";
+import openSeaPhotoIcon3 from "../assets/services-photo/open-sea/icons/openSeaPhoto3.jpg";
+import openSeaPhotoIcon4 from "../assets/services-photo/open-sea/icons/openSeaPhoto4.jpg";
+import openSeaPhotoIcon5 from "../assets/services-photo/open-sea/icons/openSeaPhoto5.jpg";
+
+// Иконки фото ЛАМП
+import lampPhotoIcon1 from "../assets/services-photo/lamp/icons/lampPhoto1.webp";
+import lampPhotoIcon2 from "../assets/services-photo/lamp/icons/lampPhoto2.webp";
+import lampPhotoIcon3 from "../assets/services-photo/lamp/icons/lampPhoto3.webp";
+import lampPhotoIcon4 from "../assets/services-photo/lamp/icons/lampPhoto4.webp";
+import lampPhotoIcon5 from "../assets/services-photo/lamp/icons/lampPhoto5.webp";
+import lampPhotoIcon6 from "../assets/services-photo/lamp/icons/lampPhoto6.webp";
+import lampPhotoIcon7 from "../assets/services-photo/lamp/icons/lampPhoto7.webp";
+import lampPhotoIcon8 from "../assets/services-photo/lamp/icons/lampPhoto8.webp";
+import lampPhotoIcon9 from "../assets/services-photo/lamp/icons/lampPhoto9.webp";
+import lampPhotoIcon10 from "../assets/services-photo/lamp/icons/lampPhoto10.webp";
+
+// Иконки фото Хроники
+import chronicsPhotoIcon1 from "../assets/projects-photo/chronics/icons/chronics_1.webp";
+import chronicsPhotoIcon2 from "../assets/projects-photo/chronics/icons/chronics_2.webp";
+import chronicsPhotoIcon3 from "../assets/projects-photo/chronics/icons/chronics_3.webp";
+import chronicsPhotoIcon4 from "../assets/projects-photo/chronics/icons/chronics_4.webp";
+import chronicsPhotoIcon5 from "../assets/projects-photo/chronics/icons/chronics_5.webp";
+import chronicsPhotoIcon6 from "../assets/projects-photo/chronics/icons/chronics_6.webp";
+
+// Иконки фото Есенина
+import eseninPhotoIcon1 from "../assets/projects-photo/esenin/icons/esenin_1.webp";
+import eseninPhotoIcon2 from "../assets/projects-photo/esenin/icons/esenin_2.webp";
+import eseninPhotoIcon3 from "../assets/projects-photo/esenin/icons/esenin_3.webp";
+import eseninPhotoIcon4 from "../assets/projects-photo/esenin/icons/esenin_4.webp";
+import eseninPhotoIcon5 from "../assets/projects-photo/esenin/icons/esenin_5.webp";
+import eseninPhotoIcon6 from "../assets/projects-photo/esenin/icons/esenin_6.webp";
+import eseninPhotoIcon7 from "../assets/projects-photo/esenin/icons/esenin_7.webp";
+
 // Обложки услуг
 import OT from "../assets/services/ot.png";
 import events from "../assets/services/events.png";
@@ -114,6 +150,25 @@ import { buyTickets } from "./buyTickets";
 import uniqueChroniclePoster from "../assets/projects/posters/chronicle.png";
 import eseninPoster from "../assets/projects/posters/esenin.png";
 import amplitudePoster from "../assets/projects/posters/amplitude.png";
+
+// Иконки для таб бара по проектам
+import uniqueChronicleIcon from "../assets/projects/icons/chronicle.jpg";
+import friendshipIcon from "../assets/projects/icons/friendship.jpg";
+import openPlayIcon from "../assets/projects/icons/play.jpg";
+import mastershipIcon from "../assets/projects/icons/mastership.jpg";
+import nikolayFilmIcon from "../assets/projects/icons/nikolay.jpg";
+import twoInWorldIcon from "../assets/projects/icons/two.jpg";
+import amplitudeIcon from "../assets/projects/icons/amplitude.jpg";
+import eseninIcon from "../assets/projects/icons/esenin.jpg";
+
+// Иконки для таб бара по услугам
+import OTIcon from "../assets/services/icons/ot.jpg";
+import eventsIcon from "../assets/services/icons/events.jpg";
+import designIcon from "../assets/services/icons/design.jpg";
+import contentIcon from "../assets/services/icons/content.jpg";
+import masterClassesIcon from "../assets/services/icons/master_class.jpg";
+import lampIcon from "../assets/services/icons/lamp.jpg";
+import smmIcon from "../assets/services/icons/smm.jpg";
 
 // Ссылки по проектам
 const buyTicketsLinkChronics =
@@ -255,6 +310,7 @@ export const projects: TProject[] = [
     isMain: true,
     isActive: true,
     order: 2,
+    icon: uniqueChronicleIcon,
   },
   {
     id: 2,
@@ -266,6 +322,7 @@ export const projects: TProject[] = [
     isMain: false,
     isActive: false,
     order: 7,
+    icon: friendshipIcon,
   },
   {
     id: 3,
@@ -277,6 +334,7 @@ export const projects: TProject[] = [
     isMain: false,
     isActive: false,
     order: 8,
+    icon: openPlayIcon,
   },
   {
     id: 4,
@@ -288,6 +346,7 @@ export const projects: TProject[] = [
     isMain: false,
     isActive: true,
     order: 9,
+    icon: mastershipIcon,
   },
   {
     id: 5,
@@ -299,6 +358,7 @@ export const projects: TProject[] = [
     isMain: true,
     isActive: true,
     order: 5,
+    icon: nikolayFilmIcon,
   },
   {
     id: 6,
@@ -310,6 +370,7 @@ export const projects: TProject[] = [
     isMain: true,
     isActive: true,
     order: 4,
+    icon: twoInWorldIcon,
   },
   {
     id: 7,
@@ -321,6 +382,7 @@ export const projects: TProject[] = [
     isMain: true,
     isActive: true,
     order: 1,
+    icon: eseninIcon,
   },
   {
     id: 8,
@@ -332,6 +394,7 @@ export const projects: TProject[] = [
     isMain: true,
     isActive: true,
     order: 3,
+    icon: amplitudeIcon,
   },
 ];
 
@@ -1019,26 +1082,32 @@ export const projectPhotos: TProjectPhotos[] = [
       {
         id: 1,
         source: chronicsPhoto1,
+        icon: chronicsPhotoIcon1,
       },
       {
         id: 2,
         source: chronicsPhoto2,
+        icon: chronicsPhotoIcon2,
       },
       {
         id: 3,
         source: chronicsPhoto3,
+        icon: chronicsPhotoIcon3,
       },
       {
         id: 4,
         source: chronicsPhoto4,
+        icon: chronicsPhotoIcon4,
       },
       {
         id: 5,
         source: chronicsPhoto5,
+        icon: chronicsPhotoIcon5,
       },
       {
         id: 6,
         source: chronicsPhoto6,
+        icon: chronicsPhotoIcon6,
       },
     ],
   },
@@ -1068,30 +1137,37 @@ export const projectPhotos: TProjectPhotos[] = [
       {
         id: 31,
         source: eseninPhoto1,
+        icon: eseninPhotoIcon1,
       },
       {
         id: 32,
         source: eseninPhoto2,
+        icon: eseninPhotoIcon2,
       },
       {
         id: 33,
         source: eseninPhoto3,
+        icon: eseninPhotoIcon3,
       },
       {
         id: 34,
         source: eseninPhoto4,
+        icon: eseninPhotoIcon4,
       },
       {
         id: 35,
         source: eseninPhoto5,
+        icon: eseninPhotoIcon5,
       },
       {
         id: 36,
         source: eseninPhoto6,
+        icon: eseninPhotoIcon6,
       },
       {
         id: 37,
         source: eseninPhoto7,
+        icon: eseninPhotoIcon7,
       },
     ],
   },
@@ -1121,6 +1197,7 @@ export const services: TService[] = [
     type: "open-sea",
     isMain: true,
     order: 1,
+    icon: OTIcon,
   },
   {
     id: 2,
@@ -1131,6 +1208,7 @@ export const services: TService[] = [
     type: "events",
     isMain: false,
     order: 3,
+    icon: eventsIcon,
   },
   {
     id: 3,
@@ -1141,6 +1219,7 @@ export const services: TService[] = [
     type: "design",
     isMain: false,
     order: 4,
+    icon: designIcon,
   },
   {
     id: 4,
@@ -1151,6 +1230,7 @@ export const services: TService[] = [
     type: "content",
     isMain: false,
     order: 5,
+    icon: contentIcon,
   },
   {
     id: 5,
@@ -1161,6 +1241,7 @@ export const services: TService[] = [
     type: "master-class",
     isMain: false,
     order: 6,
+    icon: masterClassesIcon,
   },
   {
     id: 6,
@@ -1171,6 +1252,7 @@ export const services: TService[] = [
     type: "lamp",
     isMain: true,
     order: 2,
+    icon: lampIcon,
   },
   {
     id: 7,
@@ -1181,6 +1263,7 @@ export const services: TService[] = [
     type: "smm",
     isMain: false,
     order: 7,
+    icon: smmIcon,
   },
 ];
 
@@ -1408,22 +1491,27 @@ export const servicePhotos: TServicePhotos[] = [
       {
         id: 43,
         source: openSeaPhoto1,
+        icon: openSeaPhotoIcon1,
       },
       {
         id: 44,
         source: openSeaPhoto2,
+        icon: openSeaPhotoIcon2,
       },
       {
         id: 45,
         source: openSeaPhoto3,
+        icon: openSeaPhotoIcon3,
       },
       {
         id: 46,
         source: openSeaPhoto4,
+        icon: openSeaPhotoIcon4,
       },
       {
         id: 47,
         source: openSeaPhoto5,
+        icon: openSeaPhotoIcon5,
       },
     ],
   },
@@ -1433,42 +1521,52 @@ export const servicePhotos: TServicePhotos[] = [
       {
         id: 48,
         source: lampPhoto1,
+        icon: lampPhotoIcon1,
       },
       {
         id: 49,
         source: lampPhoto2,
+        icon: lampPhotoIcon2,
       },
       {
         id: 50,
         source: lampPhoto3,
+        icon: lampPhotoIcon3,
       },
       {
         id: 51,
         source: lampPhoto4,
+        icon: lampPhotoIcon4,
       },
       {
         id: 52,
         source: lampPhoto5,
+        icon: lampPhotoIcon5,
       },
       {
         id: 53,
         source: lampPhoto6,
+        icon: lampPhotoIcon6,
       },
       {
         id: 54,
         source: lampPhoto7,
+        icon: lampPhotoIcon7,
       },
       {
         id: 55,
         source: lampPhoto8,
+        icon: lampPhotoIcon8,
       },
       {
         id: 56,
         source: lampPhoto9,
+        icon: lampPhotoIcon9,
       },
       {
         id: 57,
         source: lampPhoto10,
+        icon: lampPhotoIcon10,
       },
     ],
   },

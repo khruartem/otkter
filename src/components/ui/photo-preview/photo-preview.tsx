@@ -1,6 +1,8 @@
 import { FC } from "react";
 import clsx from "clsx";
 
+// import { ImageUI } from "../../image";
+
 import { TPhotoPreviewUIProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
@@ -23,6 +25,20 @@ export const PhotoPreviewUI: FC<TPhotoPreviewUIProps> = ({ photo }) => {
         smallResolution && styles["slider__photo_small-resolution"],
       )}
     />
+    // <ImageUI
+    //   src={photo}
+    //   alt="Фото проетка в режиме просмотра"
+    //   width={"100%"}
+    //   height={clsx(
+    //     largeResolution && "calc(100% - 4px - 48px)",
+    //     smallResolution && "calc(100% - 4px - 24px)"
+    //   )}
+    //   className={clsx(
+    //     styles.slider__photo,
+    //     largeResolution && styles["slider__photo_large-resolution"],
+    //     smallResolution && styles["slider__photo_small-resolution"]
+    //   )}
+    // />
   ) : (
     <p>Ошибка загрузки фото</p>
   );

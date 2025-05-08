@@ -16,6 +16,7 @@ import { Colors, TDetails } from "../../../../utils/types";
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 
 import styles from "./info.module.css";
+import { ImageUI } from "../../../image";
 // import { HeaderOLD } from "../../../../sections/header/header_old";
 
 export const InfoUI: FC<TInfoUIProps> = ({
@@ -72,7 +73,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
             isDesktop && styles.info_desktop,
             isLaptop && styles.info_laptop,
             isTablet && styles.info_tablet,
-            isMobile && styles.info_mobile,
+            isMobile && styles.info_mobile
             // !isDesktop && styles["info_overflowed-y"]
           )}
         >
@@ -140,10 +141,37 @@ export const InfoUI: FC<TInfoUIProps> = ({
               {isControls && <Controls id={id} type={type} />}
             </div>
             {poster && (
-              <img
+              // <img
+              //   src={poster}
+              //   loading="lazy"
+              //   alt={`Афиша для проекта ${title}`}
+              //   className={clsx(
+              //     styles.info__poster,
+              //     isLarge && styles["info__poster_large-screen"],
+              //     isDesktop && styles.info__poster_desktop,
+              //     isLaptop && styles.info__poster_laptop,
+              //     isTablet && styles.info__poster_tablet,
+              //     isMobile && styles.info__poster_mobile,
+              //     (isTablet || isMobile) && styles.info__poster_margined,
+              //     type === "services" && styles.info__poster_service
+              //   )}
+              // />
+              <ImageUI
                 src={poster}
-                loading="lazy"
                 alt={`Афиша для проекта ${title}`}
+                width={clsx(
+                  isLarge && "27.08vw",
+                  isDesktop && "34.11vw",
+                  isLaptop && "37.11vw",
+                  (isTablet || isMobile) && "100%"
+                )}
+                height={clsx(
+                  isLarge && "34.38vw",
+                  isDesktop && "43.34vw",
+                  isLaptop && "347.07vw",
+                  isTablet && "116.93vw",
+                  isMobile && "117.15vw"
+                )}
                 className={clsx(
                   styles.info__poster,
                   isLarge && styles["info__poster_large-screen"],
@@ -166,8 +194,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
                 // isDesktop && styles["info__extra_overflowed-y"],
                 isLarge && styles["info__extra_large-screen"],
                 isDesktop && styles.info__extra_desktop,
-                (isTablet || isMobile) &&
-                  styles.info__extra_single,
+                (isTablet || isMobile) && styles.info__extra_single,
                 isLaptop && styles.info__extra_laptop,
                 isTablet && styles.info__extra_tablet,
                 isMobile && styles.info__extra_mobile
