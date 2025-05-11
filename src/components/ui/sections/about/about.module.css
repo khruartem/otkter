@@ -1,0 +1,180 @@
+/* about */
+.about {
+  display: grid;
+  background-color: var(--light60);
+  align-items: center;
+}
+
+.about_rowed {
+  grid-template-columns: max-content 1fr max-content;
+  justify-content: flex-start;
+}
+
+.about_columned {
+  grid-template-rows: max-content 1fr;
+  justify-items: center;
+}
+
+.about_border-radius-large {
+  border-bottom-left-radius: 200px;
+  border-bottom-right-radius: 200px;
+}
+
+.about_border-radius-small {
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+/* about__image-wrapper */
+.about__image-wrapper {
+  display: flex;
+}
+
+.about__image-wrapper_rowed {
+  flex-direction: row;
+}
+
+.about__image-wrapper_columned {
+  flex-direction: column;
+}
+
+/* .about__image-wrapper_justified {
+  justify-content: center;
+} */
+
+.about__image-wrapper_aligned-end {
+  align-items: flex-end;
+}
+
+.about__image-wrapper_aligned-center {
+  align-items: center;
+}
+
+.about__image-wrapper_large-gap {
+  gap: 20px;
+}
+
+.about__image-wrapper_small-gap {
+  gap: 12px;
+}
+
+/* about__image */
+.about__image {
+  border-radius: 400px;
+}
+
+.about__image_oval {
+  object-position: 60% 10%;
+  object-fit: cover;
+}
+
+.about__image_orb {
+  object-position: 46% 46%;
+  object-fit: cover;
+}
+
+/* about__text-wrapper */
+.about__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about__text-wrapper_small-gap {
+  gap: 20px;
+}
+
+.about__text-wrapper_large-gap {
+  gap: 40px;
+}
+
+.about__text-wrapper_aligned {
+  align-items: center;
+}
+
+/* about__button */
+.about__button {
+  width: 100%;
+}
+
+/* Стили для разных разрешений экранов */
+/* about */
+.about_large-screen {
+  padding: 0 8.13vw 4.79vw;
+  gap: 8.33vw;
+}
+
+.about_desktop {
+  padding: 0 7.83vw 1.46vw;
+  gap: 8.93vw;
+}
+
+.about_laptop {
+  padding: 7.81vw 11.91vw;
+  gap: 9.77vw;
+}
+
+.about_tablet {
+  padding-bottom: 5.21vw;
+  padding-inline: 11.72vw;
+  gap: 7.81vw;
+}
+
+.about_mobile {
+  padding-top: 9.66vw;
+  padding-bottom: 13.86vw;
+  padding-inline: 3.86vw;
+  gap: 14.49vw;
+}
+
+/* about__image_oval */
+.about__image_oval_large-screen {
+  width: 20vw;
+  height: 30.21vw;
+}
+
+.about__image_oval_desktop {
+  width: 19.77vw;
+  height: 29.87vw;
+}
+
+.about__image_oval_laptop {
+  width: 29.30vw;
+  height: 43.75vw;
+}
+
+.about__image_oval_tablet {
+  width: 37.50vw;
+  height: 55.99vw;
+}
+
+.about__image_oval_mobile {
+  width: 44.69vw;
+  height: 66.67vw;
+}
+
+/* about__image_orb */
+.about__image_orb_large-screen {
+  width: 12.92vw;
+  height: 12.92vw;
+}
+
+.about__image_orb_desktop {
+  width: 12.59vw;
+  height: 12.59vw;
+}
+
+.about__image_orb_laptop {
+  width: 16.80vw;
+  height: 16.80vw;
+}
+
+.about__image_orb_tablet {
+  width: 22.40vw;
+  height: 22.40vw;
+}
+
+.about__image_orb_mobile {
+  width: 41.55vw;
+  height: 41.55vw;
+}

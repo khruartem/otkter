@@ -14,7 +14,7 @@ export const Menu: FC<TMenuProps> = ({ rootRef, headerRef }) => {
       headerRef.current.style.cssText = `--header-bc-color: ${Colors.Light80}`;
     if (rootRef && rootRef.current)
       rootRef.current.style.cssText =
-        "--navigation-transition: height 0.5s; --navigation-height: calc(100dvh - 59px)";
+        "--navigation-transition: height 1.1s; --navigation-height: calc(100dvh - 59px)";
     setOpen(!isOpen);
   };
 
@@ -23,7 +23,7 @@ export const Menu: FC<TMenuProps> = ({ rootRef, headerRef }) => {
       headerRef.current.style.cssText = `--header-bc-color: ${Colors.Light60}`;
     if (rootRef && rootRef.current)
       rootRef.current.style.cssText =
-        "--navigation-transition: height 0.5s; --navigation-height: 0";
+        "--navigation-transition: height 1.1s; --navigation-height: 0";
     setOpen(!isOpen);
   };
 

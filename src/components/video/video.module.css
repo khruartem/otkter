@@ -18,28 +18,28 @@
 
 /* Стили для разных разрешений экранов */
 .video_large-screen {
-  height: 43.13vw;
   width: 49.38vw;
+  height: 43.13vw;
 }
 
 .video_desktop {
-  height: 40.12vw;
   width: 49.12vw;
+  height: 40.12vw;
 }
 
 .video_laptop {
-  height: 58.59vw;
   width: 91.80vw;
+  height: 58.59vw;
 }
 
 .video_tablet {
-  height: 58.85vw;
   width: 92.19vw;
+  height: 58.85vw;
 }
 
 .video_mobile {
-  height: 58.94vw;
   width: 92.27vw;
+  height: 58.94vw;
 }
 
 

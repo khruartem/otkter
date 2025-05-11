@@ -10,6 +10,7 @@ export const ImageUI: FC<TImageUIProps> = ({
   width,
   height,
   className,
+  wrapperClassName,
   src,
   alt,
 }) => {
@@ -45,6 +46,7 @@ export const ImageUI: FC<TImageUIProps> = ({
       height={height}
       alt={alt}
       className={className}
+      wrapperClassName={wrapperClassName}
     />
   );
 };
