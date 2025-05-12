@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 import { Text } from "../../text";
 import { SocialUI } from "../social";
-import { ImageUI } from "../../image";
+// import { ImageUI } from "../../image";
 
 import { TEmployeeUIProps } from "./types";
 import { Colors } from "../../../utils/types";
@@ -19,22 +19,24 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
-  const { name, occupation, occupationExtra, photo } = employee;
+  const { name, occupation, occupationExtra, photo, icon } = employee;
 
   return (
     <>
       {type === "projects" && (
         <div className={clsx(styles.employee, styles.employee_projects)}>
-          {/* <img
+          <img
             loading="lazy"
+            width={52}
+            height={52}
             className={clsx(
               styles.employee__photo,
               styles.employee__photo_projects
             )}
-            src={photo}
+            src={icon}
             alt={`Фотография резидента Открытой территории ${name}`}
-          /> */}
-          <ImageUI
+          />
+          {/* <ImageUI
             src={photo}
             width={52}
             height={52}
@@ -43,7 +45,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
               styles.employee__photo,
               styles.employee__photo_projects
             )}
-          />
+          /> */}
           <div className={styles.employee__info}>
             <Text
               as={"p"}
@@ -101,16 +103,18 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
           <div
             className={clsx(styles.employee__info, styles.employee__info_team)}
           >
-            {/* <img
+            <img
               loading="lazy"
+              width={270}
+              height={270}
               src={photo}
               alt={`Фото ${name}`}
               className={clsx(
                 styles.employee__photo,
                 styles.employee__photo_team
               )}
-            /> */}
-            <ImageUI
+            />
+            {/* <ImageUI
               src={photo}
               width={270}
               height={270}
@@ -119,7 +123,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
                 styles.employee__photo,
                 styles.employee__photo_team
               )}
-            />
+            /> */}
             <div className={styles.employee__desc}>
               <Text
                 as={"h3"}

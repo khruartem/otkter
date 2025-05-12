@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { LazyLoadComponent } from "react-lazy-load-image-component";
+// import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 import { Text } from "../../../text";
 
@@ -17,48 +17,45 @@ export const ContactsUI = React.forwardRef<HTMLDivElement, TContactsUIProps>(
       useGetMediaQuery();
 
     return (
-      <section id="contacts">
-        <LazyLoadComponent>
-          <div
-            className={clsx(
-              styles.contacts,
-              isLarge && styles["contacts_large-screen"],
-              isDesktop && styles.constants_desktop,
-              isLaptop && styles.constants_laptop,
-              isTablet && styles.constants_tablet,
-              isMobile && styles.constants_mobile,
-              isMobile
-                ? styles["contacts_background-contained"]
-                : styles["contacts_background-covered"]
-            )}
-            ref={ref}
-          >
-            <Text
-              fontFamily={"Unbounded"}
-              textAlign={"center"}
-              fontSize={clsx(
-                isLarge && "32px",
-                (isDesktop || isLaptop || isTablet) && "28px",
-                isMobile && "20px"
-              )}
-              fontWeight={500}
-              lineHeight={clsx(
-                isLarge && "48px",
-                (isDesktop || isLaptop || isTablet) && "40px",
-                isMobile && "32px"
-              )}
-              textTransform={"none"}
-              color={Colors.Navy}
-            >
-              {
-                "Свяжитесь с нами, если хотите посетить наши мероприятия, предложить свое, или стать нашим творцом"
-              }
-            </Text>
-            <Button type={"button"} disabled={false} onClick={onContact}>
-              {"Связаться с нами"}
-            </Button>
-          </div>
-        </LazyLoadComponent>
+      <section
+        id="contacts"
+        className={clsx(
+          styles.contacts,
+          isLarge && styles["contacts_large-screen"],
+          isDesktop && styles.constants_desktop,
+          isLaptop && styles.constants_laptop,
+          isTablet && styles.constants_tablet,
+          isMobile && styles.constants_mobile,
+          isMobile
+            ? styles["contacts_background-contained"]
+            : styles["contacts_background-covered"]
+        )}
+        ref={ref}
+      >
+        <Text
+          fontFamily={"Unbounded"}
+          textAlign={"center"}
+          fontSize={clsx(
+            isLarge && "32px",
+            (isDesktop || isLaptop || isTablet) && "28px",
+            isMobile && "20px"
+          )}
+          fontWeight={500}
+          lineHeight={clsx(
+            isLarge && "48px",
+            (isDesktop || isLaptop || isTablet) && "40px",
+            isMobile && "32px"
+          )}
+          textTransform={"none"}
+          color={Colors.Navy}
+        >
+          {
+            "Свяжитесь с нами, если хотите посетить наши мероприятия, предложить свое, или стать нашим творцом"
+          }
+        </Text>
+        <Button type={"button"} disabled={false} onClick={onContact}>
+          {"Связаться с нами"}
+        </Button>
       </section>
     );
   }

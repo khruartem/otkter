@@ -1,6 +1,7 @@
 import clsx from "clsx";
 
-import { ImageUI } from "../../components/image";
+// import { ImageUI } from "../../components/image";
+
 import nagatino from "../../assets/partners/nagatino.png";
 import uao from "../../assets/partners/uao.png";
 import cao from "../../assets/partners/cao.png";
@@ -14,7 +15,8 @@ import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 import styles from "./partners.module.css";
 
 export const Partners = () => {
-  const { isLarge, isDesktop, isLaptop, isTablet, isMobile} = useGetMediaQuery();
+  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
+    useGetMediaQuery();
 
   return (
     <section className={styles.partners}>
@@ -28,61 +30,99 @@ export const Partners = () => {
           isMobile && styles.partners__icons_mobile
         )}
       >
-        {/* <img loading="lazy" src={nagatino} alt="Логотип Нагатино" />
-        <img loading="lazy" src={uao} alt="Логотип ОКЦ ЮАО" />
-        <img loading="lazy" src={cao} alt="Логотип ОКЦ ЦАО" />
-        <img loading="lazy" src={vershyna} alt="Логотип Центра Вершина" />
-        <img loading="lazy" src={nicolai} alt="Логотип музея Николая второго" />
-        <img
-          loading="lazy"
-          src={prosvet}
-          alt="Логотип Гос. университета просвещения (ПРОСВЕТ)"
-        />
-        <img loading="lazy" src={minpros} alt="Логотип Мин. просвещения РФ" /> */}
         <li>
-          <ImageUI
+          {/* <ImageUI
             src={nagatino}
             alt="Логотип Нагатино"
             width={160}
             height={56}
+          /> */}
+          <img
+            loading="lazy"
+            width={160}
+            height={56}
+            src={nagatino}
+            alt="Логотип Нагатино"
           />
         </li>
         <li>
-          <ImageUI src={uao} alt="Логотип ОКЦ ЮАО" width={60} height={56} />
+          {/* <ImageUI src={uao} alt="Логотип ОКЦ ЮАО" width={60} height={56} /> */}
+          <img
+            loading="lazy"
+            width={60}
+            height={56}
+            src={uao}
+            alt="Логотип ОКЦ ЮАО"
+          />
         </li>
         <li>
-          <ImageUI src={cao} alt="Логотип ОКЦ ЦАО" width={60} height={56} />
+          {/* <ImageUI src={cao} alt="Логотип ОКЦ ЦАО" width={60} height={56} /> */}
+          <img
+            loading="lazy"
+            width={60}
+            height={56}
+            src={cao}
+            alt="Логотип ОКЦ ЦАО"
+          />
         </li>
         <li>
-          <ImageUI
+          {/* <ImageUI
             src={vershyna}
             alt="Логотип Центра Вершина"
             width={92}
             height={56}
+          /> */}
+          <img
+            loading="lazy"
+            width={92}
+            height={56}
+            src={vershyna}
+            alt="Логотип Центра Вершина"
           />
         </li>
         <li>
-          <ImageUI
+          {/* <ImageUI
             src={nicolai}
             alt="Логотип музея Николая второго"
             width={72}
             height={56}
+          /> */}
+          <img
+            loading="lazy"
+            width={72}
+            height={56}
+            src={nicolai}
+            alt="Логотип музея Николая второго"
           />
         </li>
         <li>
-          <ImageUI
+          {/* <ImageUI
             src={prosvet}
             alt="Логотип Гос. университета просвещения (ПРОСВЕТ)"
             width={68}
             height={56}
+          /> */}
+          <img
+            loading="lazy"
+            width={68}
+            height={56}
+            src={prosvet}
+            alt="Логотип Гос. университета просвещения (ПРОСВЕТ)"
           />
         </li>
         <li>
-          <ImageUI
+          {/* <ImageUI
             src={minpros}
             alt="Логотип Мин. просвещения РФ"
             width={73}
             height={56}
+          /> */}
+          <img
+            loading="lazy"
+            width={73}
+            height={56}
+            src={minpros}
+            alt="Логотип Мин. просвещения РФ"
           />
         </li>
       </ul>

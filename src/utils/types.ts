@@ -90,6 +90,7 @@ export type TEmployee = {
   occupation: string;
   occupationExtra?: string;
   photo: string;
+  icon: string;
 };
 
 export type TRole = "admins" | "artists";

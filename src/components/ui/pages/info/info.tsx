@@ -10,14 +10,13 @@ import { Footer } from "../../../../sections/footer";
 import { Share } from "../../../share";
 import { ProjectsTabBar } from "../../../projects-tab-bar";
 import { ServicesTabBar } from "../../../services-tab-bar";
+import { ImageUI } from "../../../image";
 
 import { TInfoUIProps } from "./types";
 import { Colors, TDetails } from "../../../../utils/types";
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 
 import styles from "./info.module.css";
-import { ImageUI } from "../../../image";
-// import { HeaderOLD } from "../../../../sections/header/header_old";
 
 export const InfoUI: FC<TInfoUIProps> = ({
   id,
@@ -144,6 +143,19 @@ export const InfoUI: FC<TInfoUIProps> = ({
               // <img
               //   src={poster}
               //   loading="lazy"
+              //   width={clsx(
+              //     isLarge && "27.08vw",
+              //     isDesktop && "34.11vw",
+              //     isLaptop && "37.11vw",
+              //     (isTablet || isMobile) && "100%"
+              //   )}
+              //   height={clsx(
+              //     isLarge && "34.38vw",
+              //     isDesktop && "43.34vw",
+              //     isLaptop && "347.07vw",
+              //     isTablet && "116.93vw",
+              //     isMobile && "117.15vw"
+              //   )}
               //   alt={`Афиша для проекта ${title}`}
               //   className={clsx(
               //     styles.info__poster,

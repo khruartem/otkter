@@ -3,7 +3,7 @@ import React from "react";
 
 import { Text } from "../../text";
 import { Controls } from "../../controls";
-import { ImageUI } from "../../image";
+// import { ImageUI } from "../../image";
 
 import { Colors, FontSizes, lineHeights } from "../../../utils/types";
 import { TServiceUIProps } from "./types";
@@ -41,14 +41,16 @@ export const ServiceUI = React.forwardRef<
       )}
       ref={serviceRef}
     >
-      {/* <img
+      <img
         loading="lazy"
+        width={"100%"}
+        height={"100%"}
         className={styles.service__image}
         src={image}
         alt="Изображение услуги"
         ref={ref}
-      /> */}
-      <div ref={ref} style={{ width: "100%", height: "100%" }}>
+      />
+      {/* <div ref={ref} style={{ width: "100%", height: "100%" }}>
         <ImageUI
           src={image}
           alt={`Изображение услуги ${title}`}
@@ -56,7 +58,7 @@ export const ServiceUI = React.forwardRef<
           width={"100%"}
           height={"100%"}
         />
-      </div>
+      </div> */}
       <div
         className={clsx(
           styles.service__info,

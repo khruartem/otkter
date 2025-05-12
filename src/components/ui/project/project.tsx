@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { Text } from "../../text";
 import { CategoryList } from "../../category-list";
-import { ImageUI } from "../../image";
+// import { ImageUI } from "../../image";
 
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import { Colors } from "../../../utils/types";
@@ -76,8 +76,22 @@ export const ProjectUI: FC<ProjectUIProps> = ({
               isMobile && styles.project__image_mobile
             )}
           >
-            {/* <img
+            <img
               loading="lazy"
+              width={clsx(
+                isLarge && "25.42vw",
+                isDesktop && "38.87vw",
+                isLaptop && "41.80vw",
+                isTablet && "100%",
+                isMobile && "92.27vw"
+              )}
+              height={clsx(
+                isLarge && "14.38vw",
+                isDesktop && "20.20vw",
+                isLaptop && "26.95vw",
+                isTablet && "31.25vw",
+                isMobile && "57.97vw"
+              )}
               className={clsx(
                 styles.project__image,
                 isLarge && styles["project__image_large-screen"],
@@ -88,8 +102,8 @@ export const ProjectUI: FC<ProjectUIProps> = ({
               )}
               src={image}
               alt="Изображение проекта"
-            /> */}
-            <ImageUI
+            />
+            {/* <ImageUI
               src={image}
               alt={`Изображение проекта ${title}`}
               width={clsx(
@@ -114,7 +128,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({
                 isTablet && styles.project__image_tablet,
                 isMobile && styles.project__image_mobile
               )}
-            />
+            /> */}
           </div>
           <CategoryList id={id} />
         </div>

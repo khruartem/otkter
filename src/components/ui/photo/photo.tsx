@@ -1,10 +1,11 @@
 import { FC } from "react";
 import clsx from "clsx";
 
+import { ImageUI } from "../../image";
+
 import { TPhotoProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import { Link, useLocation } from "react-router-dom";
-import { ImageUI } from "../../image";
 
 import styles from "./photo.module.css";
 
@@ -37,6 +38,8 @@ export const PhotoUI: FC<TPhotoProps> = ({
         >
           {/* <img
             loading="lazy"
+            width={"100%"}
+            height={"100%"}
             className={styles.photo__link}
             src={photo.source}
             alt="Фото проекта"

@@ -17,14 +17,20 @@ export const PhotoPreviewUI: FC<TPhotoPreviewUIProps> = ({ photo }) => {
   return photo ? (
     <img
       loading="lazy"
+      width={"100%"}
+      height={clsx(
+        largeResolution && "calc(100% - 4px - 48px)",
+        smallResolution && "calc(100% - 4px - 24px)"
+      )}
       src={photo}
       alt="Фото проетка в режиме просмотра"
       className={clsx(
         styles.slider__photo,
         largeResolution && styles["slider__photo_large-resolution"],
-        smallResolution && styles["slider__photo_small-resolution"],
+        smallResolution && styles["slider__photo_small-resolution"]
       )}
     />
+  ) : (
     // <ImageUI
     //   src={photo}
     //   alt="Фото проетка в режиме просмотра"
@@ -39,7 +45,6 @@ export const PhotoPreviewUI: FC<TPhotoPreviewUIProps> = ({ photo }) => {
     //     smallResolution && styles["slider__photo_small-resolution"]
     //   )}
     // />
-  ) : (
     <p>Ошибка загрузки фото</p>
   );
 };
