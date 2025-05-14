@@ -1,19 +1,21 @@
-import { CSSProperties, FC } from "react";
-import { TCategoryUIProps } from "./types";
 import clsx from "clsx";
+import { CSSProperties, FC } from "react";
 
-import styles from "./category.module.css";
+import { Play, TrickCircle } from "../../icons/icons";
 import { Attention, Contest, MasterClass, ShortFilm } from "../../icons";
 import { Text } from "../../text";
+
+import { TCategoryUIProps } from "./types";
 import { Colors } from "../../../utils/types";
-import { Play, TrickCircle } from "../../icons/icons";
+
+import styles from "./category.module.css";
 
 export const CategoryUI: FC<TCategoryUIProps> = ({
   category = undefined,
   isAttention = false,
   wrapper = false,
   colors,
-  className
+  className,
 }) => {
   return (
     <div

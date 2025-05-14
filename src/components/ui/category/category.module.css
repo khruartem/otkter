@@ -10,12 +10,12 @@
 
 .category-wrapper_copy {
   position: absolute;
+  z-index: 2;
   left: calc(50% - 131px);
   top: calc(100dvh - 60px - 47px);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s, visibility 0.4s;
-  /* display: none; */
 }
 
 .category-wrapper_colored {
