@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { FC, useState } from "react";
 
 import { ShareUI } from "../ui/share";
@@ -5,7 +6,6 @@ import { ShareUI } from "../ui/share";
 import { TShareProps } from "./types";
 import { useGetTitle } from "../../hooks/useGetTitle";
 import { Social, TCategory } from "../../utils/types";
-import clsx from "clsx";
 
 export const Share: FC<TShareProps> = ({ id, type }) => {
   const href = window.location.href;
