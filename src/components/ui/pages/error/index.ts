@@ -1,1 +1,0 @@
-export { ErrorUI } from "./error";

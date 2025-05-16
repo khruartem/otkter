@@ -1,1 +1,0 @@
-export { PointUI } from "./point";

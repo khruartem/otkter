@@ -1,1 +1,0 @@
-export { TeamsContentSlider } from "./teams-content-slider";

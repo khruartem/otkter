@@ -1,1 +1,0 @@
-export { TeamsListUI } from "./teams-list";

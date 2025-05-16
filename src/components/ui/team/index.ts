@@ -1,1 +1,0 @@
-export { TeamUI } from "./team";
