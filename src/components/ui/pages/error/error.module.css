@@ -1,0 +1,71 @@
+.error__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+}
+
+.error__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error__icon {
+  display: block;
+}
+
+.error__content_large-gap {
+  gap: 60px;
+}
+
+.error__content_small-gap {
+  gap: 44px;
+}
+
+.error__desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error__desc_large-gap {
+  gap: 24px;
+}
+
+.error__desc_small-gap {
+  gap: 12px;
+}
+
+/* Стили для разных разрешений экранов */
+/* error__icon */
+.error__icon_large-screen {
+  width: 27.08vw;
+  height: 16.15vw;
+}
+
+.error__icon_desktop {
+  width: 26.94vw;
+  height: 16.03vw;
+}
+
+.error__icon_laptop {
+  width: 76.17vw;
+  height: 45.61vw;
+}
+
+.error__icon_tablet {
+  width: 76.56vw;
+  height: 45.83vw;
+}
+
+.error__icon_mobile {
+  width: 92.27vw;
+  height: 55.31vw;
+}
+
+/* error__desc */
+.error__desc_mobile {
+  padding-inline: 16px;
+}

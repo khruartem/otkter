@@ -1,6 +1,8 @@
+import clsx from "clsx";
 import { CSSProperties } from "react";
-import { Colors } from "../../utils/types";
+
 import { ButtonProps } from "./type";
+import { Colors } from "../../utils/types";
 
 import styles from "./button.module.css";
 
@@ -21,7 +23,7 @@ export const Button = ({
 
   return (
     <button
-      className={`${styles.button} ${className}`}
+      className={clsx(styles.button, className)}
       disabled={disabled}
       type={type}
       onClick={onClick}

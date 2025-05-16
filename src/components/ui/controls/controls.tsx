@@ -60,7 +60,7 @@ export const ControlsUI: FC<TControlsUIProps> = ({
           isTablet && styles["extra-link_tablet"],
           isMobile && styles["extra-link_mobile"]
         )}>
-          <TrickCircle />
+          <TrickCircle mainColor={Colors.Orange100} />
           <Text
             as={"span"}
             fontFamily="Roboto"

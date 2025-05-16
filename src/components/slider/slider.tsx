@@ -33,13 +33,15 @@ export const Slider: FC<TSliderProps> = ({ type }) => {
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
+      // navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
+      navigate(`/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
     } else {
       const newPhoto = photos![newIndex];
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
+      // navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
+      navigate(`/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
     };
   };
 
@@ -51,13 +53,15 @@ export const Slider: FC<TSliderProps> = ({ type }) => {
 
       setCurrentIndex(0);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
+      // navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
+      navigate(`/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
     } else {
       const newPhoto = photos![newIndex];
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
-      navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
+      // navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
+      navigate(`/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
     };
   };
 

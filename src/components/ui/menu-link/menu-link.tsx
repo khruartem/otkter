@@ -8,21 +8,33 @@ import { TMenuLinkUIProps } from "./types";
 import styles from "./menu-link.module.css";
 import clsx from "clsx";
 
-export const MenuLinkUI: FC<TMenuLinkUIProps> = ({ openNewTab, link, onClick }) => {
+export const MenuLinkUI: FC<TMenuLinkUIProps> = ({
+  openNewTab,
+  link,
+  onClick,
+}) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
-      useGetMediaQuery();
-    const largeResolution = isLarge || isDesktop;
-    const smallResolution = isLaptop || isTablet || isMobile;
-  
+    useGetMediaQuery();
+  const largeResolution = isLarge || isDesktop;
+  const smallResolution = isLaptop || isTablet || isMobile;
+
   const { name, url } = link;
+
   return (
     <HashLink
-      to={openNewTab ? `/otkter${url}` : url}
-      target={openNewTab ? "_blank" : undefined}
+      to={openNewTab ? `/${url}` : url}
+      // smooth
+      // target={openNewTab ? "_blank" : undefined}
+      scroll={(el) => {
+        el.scrollIntoView({
+          block: "start",
+          behavior: openNewTab ? "instant" : "smooth"
+        });
+      }}
       className={clsx(
         styles["menu__link"],
         largeResolution && styles["menu__link_large-resolution"],
-        smallResolution && styles["menu__link_small-resolution"],
+        smallResolution && styles["menu__link_small-resolution"]
       )}
       onClick={onClick}
     >

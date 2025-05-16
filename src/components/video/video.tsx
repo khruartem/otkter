@@ -1,28 +1,35 @@
 import clsx from "clsx";
-import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
-import { useDesktopMediaQuery } from "../../hooks/useDesktopMediaQuery";
-import { useLaptopMediaQuery } from "../../hooks/useLaptopMediaQuery";
-import { useTabletMediaQuery } from "../../hooks/useTabletMediaQuery";
-import { useMobileMediaQuery } from "../../hooks/useMobileMediaQuery";
 
-import videoWEBm from "../../assets/video_hero.webm";
-//import videoMP4 from "../../assets/video_hero.mp4";
-import videoPoster from "../../assets/video_poster.png";
+import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+
+import videoWEBm from "../../assets/video/video_hero.webm";
+import videoMP4 from "../../assets/video/video_hero.mp4";
+// import videoPoster from "../../assets/video/video_poster.webp";
 
 import styles from "./video.module.css";
 
 export const Video = () => {
-  const isLarge = useLargeScreenMediaQuery();
-  const isDesktop = useDesktopMediaQuery();
-  const isLaptop = useLaptopMediaQuery();
-  const isTablet = useTabletMediaQuery();
-  const isMobile = useMobileMediaQuery();
+  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
+    useGetMediaQuery();
 
   return (
     <video
-      src={videoWEBm}
-      poster={videoPoster}
+      poster="/video_poster.webp"
       autoPlay
+      width={clsx(
+        isLarge && "49.38vw",
+        isDesktop && "49.12vw",
+        isLaptop && "91.80vw",
+        isTablet && "92.19vw",
+        isMobile && "92.27vw"
+      )}
+      height={clsx(
+        isLarge && "43.13vw",
+        isDesktop && "40.12vw",
+        isLaptop && "58.59vw",
+        isTablet && "58.85vw",
+        isMobile && "58.94vw"
+      )}
       preload="none"
       muted
       loop
@@ -40,6 +47,7 @@ export const Video = () => {
       )}
     >
       <source src={videoWEBm} type="video/webm" />
+      <source src={videoMP4} type="video/mp4" />
     </video>
   );
 };

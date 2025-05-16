@@ -6,12 +6,12 @@ import { projectControls, serviceControls } from "../../utils/constants";
 export type TControlsType = Extract<TCardType, "services" | "projects">;
 
 export type TProjectControls = {
-  projectId: number;
+  id: number;
   controls: TControls | null;
 };
 
 export type TServiceControls = {
-  serviceId: number;
+  id: number;
   controls: TControls | null;
 };
 
@@ -65,9 +65,7 @@ const controlsSlice = createSlice({
         id
       ) as TProjectControls | TServiceControls;
 
-      return foundElement
-        ? foundElement.controls
-        : undefined;
+      return foundElement?.controls;
     },
   },
 });

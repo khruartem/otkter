@@ -10,25 +10,35 @@ import {
   TModalsProps,
   TTabProps,
   TSocialProps,
+  TCopyLinkProps,
+  TErrorProps,
 } from "./types";
 import { Colors } from "../../utils/types";
 //import { telegramUrl, vkUrl } from "../../utils/constants";
 
 import styles from "./icons.module.css";
 
-export const Logo = ({ mainColor, extraColor, width, height }: TLogoProps) => {
+export const Logo = ({
+  mainColor,
+  extraColor,
+  width,
+  height,
+  onClick,
+  className,
+}: TLogoProps) => {
   return (
     <svg
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 380 65"
-      className={styles.logo}
+      className={clsx(styles.logo, className)}
       style={
         {
           "--width": `${width}px`,
           "--height": `${height}px`,
         } as CSSProperties
       }
+      onClick={onClick}
     >
       <g>
         <path
@@ -49,14 +59,25 @@ export const Logo = ({ mainColor, extraColor, width, height }: TLogoProps) => {
   );
 };
 
-export const Telegram = ({ url }: TSocialProps) => {
+export const Telegram = ({
+  mainColor,
+  hoverColor,
+  activeColor,
+  url,
+}: TSocialProps) => {
   return (
-    <a href={url} target="_blank">
+    <a href={url} target="_blank" className={styles.social}>
       <svg
-        fill={Colors.Nephritis100}
+        fill={mainColor}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 32 32"
-        className={styles.social}
+        //className={styles.social}
+        style={
+          {
+            "--hover-color": hoverColor,
+            "--active-color": activeColor,
+          } as CSSProperties
+        }
       >
         <path
           fillRule="evenodd"
@@ -68,14 +89,25 @@ export const Telegram = ({ url }: TSocialProps) => {
   );
 };
 
-export const VK = ({ url }: TSocialProps) => {
+export const VK = ({
+  mainColor,
+  hoverColor,
+  activeColor,
+  url,
+}: TSocialProps) => {
   return (
-    <a href={url} target="_blank">
+    <a href={url} target="_blank" className={styles.social}>
       <svg
-        fill={Colors.Nephritis100}
+        fill={mainColor}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 32 32"
-        className={styles.social}
+        //className={styles.social}
+        style={
+          {
+            "--hover-color": hoverColor,
+            "--active-color": activeColor,
+          } as CSSProperties
+        }
       >
         <path d="M17.43 26C6.495 26 .26 18.492 0 6h5.477c.18 9.17 4.217 13.053 7.415 13.854V6h5.157v7.908c3.158-.34 6.475-3.944 7.595-7.908H30.8c-.86 4.885-4.458 8.489-7.016 9.97C26.343 17.17 30.44 20.314 32 26h-5.677c-1.219-3.804-4.257-6.747-8.274-7.147V26h-.62Z" />
       </svg>
@@ -146,6 +178,33 @@ export const ArrowLeft = ({
       onClick={onClick}
     >
       <path d="m16.074 8.364-3.36 3.67-2.062 2.24c-.87.95-.87 2.493 0 3.442l5.422 5.922c.712.777 1.926.217 1.926-.869V9.233c0-1.097-1.214-1.646-1.926-.869Z" />
+    </svg>
+  );
+};
+
+export const CopyLink = ({
+  mainColor,
+  hoverColor = undefined,
+  activeColor = undefined,
+  onClick = undefined,
+  className = undefined,
+}: TCopyLinkProps) => {
+  return (
+    <svg
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      className={clsx(styles.social, className)}
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+      onClick={onClick}
+    >
+      <path d="M15.018 9.817c1.75-1.757 4.6-1.757 6.369.005a4.495 4.495 0 0 1 .715 5.43 1.5 1.5 0 1 0 2.6 1.497c1.652-2.868 1.267-6.598-1.199-9.053-2.93-2.919-7.68-2.939-10.61.004a7.519 7.519 0 0 0-1.196 9.048 1.5 1.5 0 0 0 2.6-1.496 4.519 4.519 0 0 1 .721-5.435Z" />
+      <path d="M9.051 16.743a1.5 1.5 0 1 0-2.606-1.486 7.26 7.26 0 0 0 1.176 8.71c2.83 2.843 7.42 2.823 10.25.004a7.237 7.237 0 0 0 1.18-8.714 1.5 1.5 0 1 0-2.606 1.487 4.237 4.237 0 0 1-.69 5.101c-1.669 1.662-4.359 1.662-6.008.005a4.261 4.261 0 0 1-.696-5.107Z" />
     </svg>
   );
 };
@@ -636,18 +695,22 @@ export const SMM = ({
   );
 };
 
-export const TrickCircle = () => {
+export const TrickCircle = ({
+  mainColor,
+  extraColor = Colors.Navy,
+  className,
+}: TCategotyProps) => {
   return (
     <svg
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 25 24"
-      className={styles["trick-circle"]}
+      className={clsx(styles.category, className)}
     >
-      <circle cx="12.5" cy="12" r="8" fill={Colors.Navy} />
+      <circle cx="12.5" cy="12" r="8" fill={extraColor} />
       <path
         d="M12.5 2c-5.51 0-10 4.49-10 10s4.49 10 10 10 10-4.49 10-10-4.49-10-10-10Zm4.78 7.7-5.67 5.67a.75.75 0 0 1-1.06 0l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.76 0 1.06Z"
-        fill={Colors.Orange100}
+        fill={mainColor}
       />
     </svg>
   );
@@ -744,6 +807,33 @@ export const All = ({
       }
     >
       <path d="M16 2.667C8.64 2.667 2.666 8.64 2.666 16S8.64 29.334 16 29.334c7.36 0 13.333-5.974 13.333-13.334C29.333 8.64 23.36 2.667 16 2.667Zm0 16.667a3.335 3.335 0 0 1 0-6.667 3.335 3.335 0 0 1 0 6.667Z" />
+    </svg>
+  );
+};
+
+export const Error = ({ className = undefined }: TErrorProps) => {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 520 310"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_718_7666)">
+        <path
+          d="M429.059 13.8818C409.556 4.99045 387.917 0 365.108 0H154.879C132.083 0 110.444 4.99045 90.9274 13.8818C37.3522 38.296 0 92.3436 0 155C0 217.656 37.3522 271.704 90.9409 296.118C110.444 305.01 132.083 310 154.892 310H365.121C387.917 310 409.556 305.01 429.073 296.118C482.648 271.704 520.013 217.656 520.013 155C520.013 142.934 518.952 131.191 516.331 119.919C505.349 72.6373 472.339 33.588 429.073 13.8818H429.059Z"
+          fill="#E6E6E6"
+        />
+        <path
+          d="M268.333 106.642C259.435 92.8275 247.003 82.0933 231.008 74.4395C215.013 66.7857 196.344 62.9655 174.973 62.9655C153.602 62.9655 134.919 66.7992 118.938 74.4395C102.943 82.0933 90.5106 92.8275 81.6128 106.642C72.7283 120.457 68.2794 136.585 68.2794 155C68.2794 173.415 72.7283 189.543 81.6128 203.357C90.5106 217.172 102.943 227.906 118.938 235.56C134.933 243.214 153.602 247.034 174.973 247.034C196.344 247.034 215.027 243.2 231.008 235.56C247.003 227.906 259.435 217.172 268.333 203.357C277.218 189.543 281.667 173.428 281.667 155C281.667 136.571 277.218 120.457 268.333 106.642Z"
+          fill="white"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_718_7666">
+          <rect width="520" height="310" fill="white" />
+        </clipPath>
+      </defs>
     </svg>
   );
 };

@@ -5,10 +5,12 @@ import { projectInfos } from "../../utils/constants";
 import { TDetails, TEmployees, TEventDetails } from "../../utils/types";
 
 export type TProjectInfo = {
-  projectId: number;
-  text: string;
+  id: number;
+  text: string | string[];
   eventDetails: TEventDetails[];
   employees?: TEmployees;
+  previewImg?: string;
+  poster?: string;
 };
 
 type TProjectsInfoState = {
@@ -25,7 +27,10 @@ const projectsInfoSlice = createSlice({
   reducers: {},
   selectors: {
     getTextSelector: (state: TProjectsInfoState, id: number) => {
-      return (findById(state.infos, id) as TProjectInfo).text;
+      return (findById(state.infos, id) as TProjectInfo)?.text;
+    },
+    getPreviewImgSelector: (state: TProjectsInfoState, id: number) => {
+      return (findById(state.infos, id) as TProjectInfo).previewImg;
     },
     getDetailsSelector: (
       state: TProjectsInfoState,
@@ -41,11 +46,17 @@ const projectsInfoSlice = createSlice({
       }
     },
     getIsEmployeesSelector: (state: TProjectsInfoState, id: number) => {
-      return (findById(state.infos, id) as TProjectInfo)?.employees ? true : false;
+      return (findById(state.infos, id) as TProjectInfo)?.employees
+        ? true
+        : false;
     },
   },
 });
 
 export const reducer = projectsInfoSlice.reducer;
-export const { getTextSelector, getDetailsSelector, getIsEmployeesSelector } =
-  projectsInfoSlice.selectors;
+export const {
+  getTextSelector,
+  getDetailsSelector,
+  getIsEmployeesSelector,
+  getPreviewImgSelector,
+} = projectsInfoSlice.selectors;

@@ -95,32 +95,34 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
     if (inViewOpenSea) {
       setCurrentTab("open-sea");
       setCurrentIndex(tabs.findIndex((tab) => tab === "open-sea"));
-      if (isMobile) scrollIntoElementView(openSeaIconRef, "smooth", "nearest");
+      if (isMobile && currentTab !== "open-sea")
+        scrollIntoElementView(openSeaIconRef, "smooth", "nearest");
     } else if (inViewEvents) {
       setCurrentTab("events");
       setCurrentIndex(tabs.findIndex((tab) => tab === "events"));
-      if (isMobile) scrollIntoElementView(eventsIconRef, "smooth", "nearest");
+      if (isMobile && currentTab !== "events") scrollIntoElementView(eventsIconRef, "smooth", "nearest");
     } else if (inViewDesign) {
       setCurrentTab("design");
       setCurrentIndex(tabs.findIndex((tab) => tab === "design"));
-      if (isMobile) scrollIntoElementView(designIconRef, "smooth", "nearest");
+      if (isMobile && currentTab !== "design") scrollIntoElementView(designIconRef, "smooth", "nearest");
     } else if (inViewContent) {
       setCurrentTab("content");
       setCurrentIndex(tabs.findIndex((tab) => tab === "content"));
-      if (isMobile) scrollIntoElementView(contenIconRef, "smooth", "nearest");
+      if (isMobile && currentTab !== "content") scrollIntoElementView(contenIconRef, "smooth", "nearest");
     } else if (inViewMasterClass) {
       setCurrentTab("master-class");
       setCurrentIndex(tabs.findIndex((tab) => tab === "master-class"));
-      if (isMobile)
+      if (isMobile && currentTab !== "master-class")
         scrollIntoElementView(masterClassIconRef, "smooth", "nearest");
     } else if (inViewLamp) {
       setCurrentTab("lamp");
       setCurrentIndex(tabs.findIndex((tab) => tab === "lamp"));
-      if (isMobile) scrollIntoElementView(lampIconRef, "smooth", "nearest");
+      if (isMobile && currentTab !== "lamp") scrollIntoElementView(lampIconRef, "smooth", "nearest");
     } else if (inViewSmm) {
       setCurrentTab("smm");
       setCurrentIndex(tabs.findIndex((tab) => tab === "smm"));
-      if (isMobile) scrollIntoElementView(smmIconRef, "smooth", "nearest");
+      if (isMobile && currentTab !== "smm")
+        scrollIntoElementView(smmIconRef, "smooth", "nearest");
     }
   }, [
     inViewOpenSea,
@@ -132,6 +134,7 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
     inViewSmm,
     isMobile,
     tabs,
+    currentTab,
   ]);
 
   const onTabClick = (tab: TServicesTabMode) => {
@@ -141,7 +144,7 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
       case "open-sea":
         scrollIntoElementView(
           openSeaRef,
-          currentTab === "events" ? "smooth" : "auto",
+          currentTab === "lamp" ? "smooth" : "auto",
           isMobile ? "center" : "end"
         );
         lockScroll();
@@ -149,7 +152,7 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
       case "events":
         scrollIntoElementView(
           eventsRef,
-          currentTab === "open-sea" || currentTab === "design"
+          currentTab === "lamp" || currentTab === "design"
             ? "smooth"
             : "auto",
           isMobile ? "center" : "end"
@@ -179,7 +182,7 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
       case "master-class":
         scrollIntoElementView(
           masterClassRef,
-          currentTab === "content" || currentTab === "lamp" ? "smooth" : "auto",
+          currentTab === "content" || currentTab === "smm" ? "smooth" : "auto",
           isMobile ? "center" : "end"
         );
         lockScroll();
@@ -187,7 +190,7 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
       case "lamp":
         scrollIntoElementView(
           lampRef,
-          currentTab === "master-class" || currentTab === "smm"
+          currentTab === "open-sea" || currentTab === "events"
             ? "smooth"
             : "auto",
           isMobile ? "center" : "end"
@@ -197,7 +200,7 @@ export const ServicesContentSlider: FC<TServicesContentSliderProps> = ({
       case "smm":
         scrollIntoElementView(
           smmRef,
-          currentTab === "lamp" ? "smooth" : "auto",
+          currentTab === "master-class" ? "smooth" : "auto",
           isMobile ? "center" : "end"
         );
         lockScroll();

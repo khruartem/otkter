@@ -26,7 +26,8 @@ export type TCategoryId =
   | "short-film"
   | "admins"
   | "artists"
-  | "info";
+  | "info"
+  | "circle";
 
 export type TDetails = "events" | "employees" | "services";
 
@@ -40,7 +41,10 @@ export type TEventType =
 
 export type TSectionType = Extract<TCardType, "services" | "projects">;
 
-export type TSliderSectionType = Extract<TCardType, "services" | "team" | "projects">;
+export type TSliderSectionType = Extract<
+  TCardType,
+  "services" | "team" | "projects"
+>;
 
 export type TEventDetails = {
   type: TEventType;
@@ -78,47 +82,55 @@ export type TEmployees = {
 export type TEmployeeGroup = {
   name?: string;
   employees: TEmployee[];
-}
+};
 
 export type TEmployee = {
   id?: number;
   name: string;
   occupation: string;
+  occupationExtra?: string;
   photo: string;
+  icon: string;
 };
 
 export type TRole = "admins" | "artists";
 
 export type TProjectInfo = {
   role?: TRole;
-  text?: string;
+  text?: string | string[];
   photos?: string[];
   eventDetails: TEventDetails;
   employees?: TEmployees;
   controls?: TControls;
 };
 
-export type TCardType = "projects" | "team" | "services" | TServicesTabMode | TProjectTabMode;
+export type TCardType =
+  | "projects"
+  | "team"
+  | "services"
+  | TServicesTabMode
+  | TProjectTabMode;
 
 export type TCard = {
-  projectId?: number;
+  id: number;
   teamId?: number;
-  serviceId?: number;
   type: TCardType;
   title: string;
   categoryList?: TCategory[];
   attention?: boolean;
   image: string;
+  icon: string;
   shortText: string;
   social?: Social[];
   projectInfo?: TProjectInfo;
   isMain?: boolean;
   isActive?: boolean;
+  order?: number;
 };
 
 export type TProject = Pick<
   TCard,
-  | "projectId"
+  | "id"
   | "type"
   | "image"
   | "attention"
@@ -128,6 +140,8 @@ export type TProject = Pick<
   | "projectInfo"
   | "isMain"
   | "isActive"
+  | "order"
+  | "icon"
 >;
 
 // export type TTeammate = Pick<
@@ -137,7 +151,7 @@ export type TProject = Pick<
 
 export type TService = Pick<
   TCard,
-  "serviceId" | "type" | "title" | "image" | "shortText"
+  "id" | "type" | "title" | "image" | "shortText" | "order" | "isMain" | "icon"
 >;
 
 export type TModalType = "back" | "close";
@@ -205,6 +219,12 @@ export type TProjectViewRef = {
 export type TProjectsIconRef = {
   type: TProjectTabMode;
   ref: React.RefObject<HTMLLIElement>;
+};
+
+export type TTabItem = {
+  id: number;
+  type: TSectionType;
+  image: string;
 };
 
 export enum Colors {
@@ -340,10 +360,11 @@ export type FontType = {
   decorated?: boolean;
 };
 
-export type SocialTypes = "vk" | "telegram";
+export type SocialTypes = "vk" | "telegram" | "copy";
 
 export type Social = {
   id: number;
   url: string;
   type: SocialTypes;
+  onClick?: (arg?: string) => void;
 };

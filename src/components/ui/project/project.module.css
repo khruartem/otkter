@@ -2,7 +2,7 @@
   width: min-content;
 }
 
-.project-link:hover .project__image {
+/* .project-link:hover .project__image {
   animation: backgroundZoomIn 0.2s linear forwards;
 }
 
@@ -15,6 +15,22 @@
 }
 
 .project-link h3 {
+  animation: textColorZoomOut 0.2s linear forwards;
+} */
+
+.project-link_animated:hover .project__image {
+  animation: backgroundZoomIn 0.2s linear forwards;
+}
+
+.project-link_animated .project__image {
+  animation: backgroundZoomOut 0.2s linear forwards;
+}
+
+.project-link_animated:hover h3 {
+  animation: textColorZoomIn 0.2s linear forwards;
+}
+
+.project-link_animated h3 {
   animation: textColorZoomOut 0.2s linear forwards;
 }
 
@@ -32,12 +48,24 @@
   position: relative;
 }
 
-.project__image {
+.project__image-container {
+  border-radius: 500px;
+  overflow: hidden;
+}
+
+/* .project__image {
   display: block;
   background-image: var(--background-url);
   background-position: 60% 40%;
   background-size: cover;
   border-radius: 500px;
+} */
+
+.project__image {
+  /* display: block; */
+  object-position: 60% 45%;
+  object-fit: cover;
+  /* border-radius: 500px; */
 }
 
 .project__bottom {
@@ -92,8 +120,9 @@
 
 .project__image_tablet {
   height: 31.25vw;
-  width: 69.14vw;
-  flex-grow: 1;
+  width: 100%;
+  object-position: 60% 50%;
+  /* flex-grow: 1; */
 }
 
 .project__image_mobile {
@@ -111,21 +140,39 @@
   height: fit-content;
 }
 
-@keyframes backgroundZoomIn {
+/* @keyframes backgroundZoomIn {
   0% {
     background-size: 100%;
   }
   100% {
     background-size: 120%;
+  }
+} */
+
+@keyframes backgroundZoomIn {
+  0% {
+    scale: 100%;
+  }
+  100% {
+    scale: 120%;
   }
 }
 
-@keyframes backgroundZoomOut {
+/* @keyframes backgroundZoomOut {
   0% {
     background-size: 120%;
   }
   100% {
     background-size: 100%;
+  }
+} */
+
+@keyframes backgroundZoomOut {
+  0% {
+    scale: 120%;
+  }
+  100% {
+    scale: 100%;
   }
 }
 

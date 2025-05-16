@@ -30,7 +30,7 @@ export const DetailsUI: FC<TDetailsUI> = ({ id, details, detailsType }) => {
     >
       {detailsType === "events" && (
         <>
-          <CategoryList projectId={id} />
+          <CategoryList id={id} />
           {(details as TEventDetails[]).map(({ type, label, value }) => {
             return (
               <EventUI key={nanoid()} type={type} value={value} label={label} />

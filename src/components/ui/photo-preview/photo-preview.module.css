@@ -1,17 +1,14 @@
 .slider__photo {
   border-radius: 40px;
-  /* height: 100%; */
-}
-
-.slider__photo_full-width {
   width: 100%;
+  object-fit: cover;
 }
 
 /* Стили для разных разрешений экранов */
-.slider__photo_large-screen {
-  width: 71.15vw;
+.slider__photo_large-resolution {
+  max-height: calc(100% - 4px - 48px);
 }
 
-.slider__photo_desktop {
-  width: 69.99vw;
+.slider__photo_small-resolution {
+  max-height: calc(100% - 4px - 24px);
 }

@@ -1,28 +1,38 @@
 import { FC, useState } from "react";
 
-import { TMenuProps } from "./types";
-
 import { MenuUI } from "../ui/menu";
 
-export const Menu: FC<TMenuProps> = ({ rootRef }) => {
+import { TMenuProps } from "./types";
+import { Colors } from "../../utils/types";
+
+export const Menu: FC<TMenuProps> = ({ rootRef, headerRef }) => {
   const [isOpen, setOpen] = useState(false);
 
+  // TODO: сделать затемнение body при открытии меню
   const onOpen = () => {
-    document.body.style.position = "fixed";
+    if (headerRef && headerRef.current)
+      headerRef.current.style.cssText = `--header-bc-color: ${Colors.Light80}`;
+    if (rootRef && rootRef.current)
+      rootRef.current.style.cssText =
+        "--navigation-transition: height 0.5s linear; --navigation-height: calc(100dvh - 59px)";
     setOpen(!isOpen);
   };
 
   const onClose = () => {
-    document.body.style.position = "";
+    if (headerRef && headerRef.current)
+      headerRef.current.style.cssText = `--header-bc-color: ${Colors.Light60}`;
+    if (rootRef && rootRef.current)
+      rootRef.current.style.cssText =
+        "--navigation-transition: height 0.5s linear; --navigation-height: 0";
     setOpen(!isOpen);
   };
 
   const onClickLink = () => {
-    if (isOpen) {
-      document.body.style.position = "";
-    } else {
-      document.body.style.position = "fixed";
-    }
+    if (headerRef && headerRef.current)
+      headerRef.current.style.cssText = `--header-bc-color: ${Colors.Light60}`;
+    if (rootRef && rootRef.current)
+      rootRef.current.style.cssText =
+        "--navigation-transition: unset; --navigation-height: 0";
     setOpen(!isOpen);
   };
 

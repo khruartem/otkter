@@ -4,11 +4,11 @@ import { getPhotoSelector } from "../features/photos/photosSlice";
 import { TSectionType } from "../utils/types";
 
 export const useGetPhoto = (
-  projectId: number,
+  id: number,
   imgId: number,
   type: TSectionType
 ) => {
   return useSelector((state: RootState) =>
-    getPhotoSelector(state, projectId, imgId, type)
+    getPhotoSelector(state, id, imgId, type)
   );
 };

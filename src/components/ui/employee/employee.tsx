@@ -1,14 +1,15 @@
+import { FC } from "react";
 import clsx from "clsx";
 
 import { Text } from "../../text";
 import { SocialUI } from "../social";
+// import { ImageUI } from "../../image";
 
 import { TEmployeeUIProps } from "./types";
 import { Colors } from "../../../utils/types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./employee.module.css";
-import { FC } from "react";
 
 export const EmployeeUI: FC<TEmployeeUIProps> = ({
   type,
@@ -18,20 +19,33 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
-  const { name, occupation, photo } = employee;
+  const { name, occupation, occupationExtra, photo, icon } = employee;
 
   return (
     <>
       {type === "projects" && (
         <div className={clsx(styles.employee, styles.employee_projects)}>
           <img
+            loading="lazy"
+            width={52}
+            height={52}
             className={clsx(
               styles.employee__photo,
               styles.employee__photo_projects
             )}
-            src={photo}
-            alt="Фотография резидента Открытой территории"
+            src={icon}
+            alt={`Фотография резидента Открытой территории ${name}`}
           />
+          {/* <ImageUI
+            src={photo}
+            width={52}
+            height={52}
+            alt={`Фотография резидента Открытой территории ${name}`}
+            className={clsx(
+              styles.employee__photo,
+              styles.employee__photo_projects
+            )}
+          /> */}
           <div className={styles.employee__info}>
             <Text
               as={"p"}
@@ -57,6 +71,20 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
             >
               {name}
             </Text>
+            {occupationExtra && (
+              <Text
+                as={"p"}
+                fontFamily="Roboto"
+                textAlign="left"
+                fontSize={16}
+                fontWeight={400}
+                lineHeight={28}
+                textTransform={"none"}
+                color={Colors.Dark100}
+              >
+                {occupationExtra}
+              </Text>
+            )}
           </div>
         </div>
       )}
@@ -76,6 +104,9 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
             className={clsx(styles.employee__info, styles.employee__info_team)}
           >
             <img
+              loading="lazy"
+              width={270}
+              height={270}
               src={photo}
               alt={`Фото ${name}`}
               className={clsx(
@@ -83,6 +114,16 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
                 styles.employee__photo_team
               )}
             />
+            {/* <ImageUI
+              src={photo}
+              width={270}
+              height={270}
+              alt={`Фотография резидента Открытой территории ${name}`}
+              className={clsx(
+                styles.employee__photo,
+                styles.employee__photo_team
+              )}
+            /> */}
             <div className={styles.employee__desc}>
               <Text
                 as={"h3"}

@@ -1,4 +1,5 @@
 import { CSSProperties, FC } from "react";
+// import { FC } from "react";
 import clsx from "clsx";
 
 import { Team } from "../../team";
@@ -23,7 +24,6 @@ export const TeamsListUI: FC<TTeamsListUIProps> = ({
     <div
       className={clsx(
         styles["teams-list"],
-        // styles["teams-list_faded"],
         isMobile && styles["teams-list_mobile"]
       )}
       style={

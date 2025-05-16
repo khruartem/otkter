@@ -5,8 +5,8 @@ import { CategoryListUI } from "../ui/category-list";
 import { useGetCategories } from "../../hooks/useGetCategories";
 import { useLocation } from "react-router-dom";
 
-export const CategoryList: FC<CategoryListProps> = ({ projectId }) => {
-  const categories = useGetCategories(projectId);
+export const CategoryList: FC<CategoryListProps> = ({ id }) => {
+  const categories = useGetCategories(id);
   // const { attention, categoryList } = categories;
   // const formattedCategoryList = categoryList.filter(category => {
   //   switch (type) {
@@ -20,10 +20,13 @@ export const CategoryList: FC<CategoryListProps> = ({ projectId }) => {
   // }
 
   const { pathname } = useLocation();
+  // const isPositioned =
+  //   pathname === "/otkter" ||
+  //   pathname === "/otkter/" ||
+  //   pathname === "/otkter/projects/all";
   const isPositioned =
-    pathname === "/otkter" ||
-    pathname === "/otkter/" ||
-    pathname === "/otkter/projects/all";
+    pathname === "/" ||
+    pathname === "/projects/all";
 
   return <CategoryListUI categories={categories} positioned={isPositioned} />;
 };

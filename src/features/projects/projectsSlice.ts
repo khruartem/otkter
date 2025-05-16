@@ -62,12 +62,18 @@ const projectsSlice = createSlice({
       }
     },
     getTitleSelector: (state: TProjectsState, id: number) => {
-      return (findById(state.projects, id) as TProject).title;
+      return (findById(state.projects, id) as TProject)?.title;
+    },
+    getShortTextSelector: (state: TProjectsState, id: number) => {
+      return (findById(state.projects, id) as TProject)?.shortText;
     },
     getProjectSelector: (state: TProjectsState, id: number) => {
       return findById(state.projects, id) as TProject;
     },
     getProjectColorsSelector: (state: TProjectsState) => state.colors,
+    getIsMainSelector: (state: TProjectsState, id: number) => {
+      return (findById(state.projects, id) as TProject)?.isMain;
+    }
   },
 });
 
@@ -83,4 +89,6 @@ export const {
   getTitleSelector,
   getProjectSelector,
   getProjectColorsSelector,
+  getShortTextSelector,
+  getIsMainSelector,
 } = projectsSlice.selectors;

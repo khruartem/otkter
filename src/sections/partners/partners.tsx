@@ -1,30 +1,26 @@
-import { useDesktopMediaQuery } from "../../hooks/useDesktopMediaQuery";
-import { useLaptopMediaQuery } from "../../hooks/useLaptopMediaQuery";
-import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
-import { useMobileMediaQuery } from "../../hooks/useMobileMediaQuery";
-import { useTabletMediaQuery } from "../../hooks/useTabletMediaQuery";
-
-import nagatino from "../../assets/partner_nagatino.png";
-import uao from "../../assets/partner_uao.png";
-import cao from "../../assets/partner_cao.png";
-import nicolai from "../../assets/partner_nicolai.png";
-import prosvet from "../../assets/partner_prosvet.png";
-import vershyna from "../../assets/partner_vershyna.png";
-import minpros from "../../assets/partner_minpros.png";
-
-import styles from "./partners.module.css";
 import clsx from "clsx";
 
+// import { ImageUI } from "../../components/image";
+
+import nagatino from "../../assets/partners/nagatino.png";
+import uao from "../../assets/partners/uao.png";
+import cao from "../../assets/partners/cao.png";
+import nicolai from "../../assets/partners/nicolai.png";
+import prosvet from "../../assets/partners/prosvet.png";
+import vershyna from "../../assets/partners/vershyna.png";
+import minpros from "../../assets/partners/minpros.png";
+
+import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+
+import styles from "./partners.module.css";
+
 export const Partners = () => {
-  const isLarge = useLargeScreenMediaQuery();
-  const isDesktop = useDesktopMediaQuery();
-  const isLaptop = useLaptopMediaQuery();
-  const isTablet = useTabletMediaQuery();
-  const isMobile = useMobileMediaQuery();
+  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
+    useGetMediaQuery();
 
   return (
     <section className={styles.partners}>
-      <div
+      <ul
         className={clsx(
           styles.partners__icons,
           isLarge && styles["partners__icons_large-screen"],
@@ -34,17 +30,102 @@ export const Partners = () => {
           isMobile && styles.partners__icons_mobile
         )}
       >
-        <img src={nagatino} alt="Логотип Нагатино" />
-        <img src={uao} alt="Логотип ОКЦ ЮАО" />
-        <img src={cao} alt="Логотип ОКЦ ЦАО" />
-        <img src={vershyna} alt="Логотип Центра Вершина" />
-        <img src={nicolai} alt="Логотип музея Николая второго" />
-        <img
-          src={prosvet}
-          alt="Логотип Гос. университета просвещения (ПРОСВЕТ)"
-        />
-        <img src={minpros} alt="Логотип Мин. просвещения РФ" />
-      </div>
+        <li>
+          {/* <ImageUI
+            src={nagatino}
+            alt="Логотип Нагатино"
+            width={160}
+            height={56}
+          /> */}
+          <img
+            loading="lazy"
+            width={160}
+            height={56}
+            src={nagatino}
+            alt="Логотип Нагатино"
+          />
+        </li>
+        <li>
+          {/* <ImageUI src={uao} alt="Логотип ОКЦ ЮАО" width={60} height={56} /> */}
+          <img
+            loading="lazy"
+            width={60}
+            height={56}
+            src={uao}
+            alt="Логотип ОКЦ ЮАО"
+          />
+        </li>
+        <li>
+          {/* <ImageUI src={cao} alt="Логотип ОКЦ ЦАО" width={60} height={56} /> */}
+          <img
+            loading="lazy"
+            width={60}
+            height={56}
+            src={cao}
+            alt="Логотип ОКЦ ЦАО"
+          />
+        </li>
+        <li>
+          {/* <ImageUI
+            src={vershyna}
+            alt="Логотип Центра Вершина"
+            width={92}
+            height={56}
+          /> */}
+          <img
+            loading="lazy"
+            width={92}
+            height={56}
+            src={vershyna}
+            alt="Логотип Центра Вершина"
+          />
+        </li>
+        <li>
+          {/* <ImageUI
+            src={nicolai}
+            alt="Логотип музея Николая второго"
+            width={72}
+            height={56}
+          /> */}
+          <img
+            loading="lazy"
+            width={72}
+            height={56}
+            src={nicolai}
+            alt="Логотип музея Николая второго"
+          />
+        </li>
+        <li>
+          {/* <ImageUI
+            src={prosvet}
+            alt="Логотип Гос. университета просвещения (ПРОСВЕТ)"
+            width={68}
+            height={56}
+          /> */}
+          <img
+            loading="lazy"
+            width={68}
+            height={56}
+            src={prosvet}
+            alt="Логотип Гос. университета просвещения (ПРОСВЕТ)"
+          />
+        </li>
+        <li>
+          {/* <ImageUI
+            src={minpros}
+            alt="Логотип Мин. просвещения РФ"
+            width={73}
+            height={56}
+          /> */}
+          <img
+            loading="lazy"
+            width={73}
+            height={56}
+            src={minpros}
+            alt="Логотип Мин. просвещения РФ"
+          />
+        </li>
+      </ul>
     </section>
   );
 };

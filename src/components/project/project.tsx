@@ -4,22 +4,33 @@ import { useLocation } from "react-router-dom";
 import { ProjectUI } from "../ui/project";
 
 import { TProjectProps } from "./types";
-import { scrollIntoElementView } from "../../utils/scrollIntoElementView";
 
 export const Project: FC<TProjectProps> = ({ project }) => {
   const location = useLocation();
-  const locationFrom = location.pathname;
-  const { projectId } = project;
+  const { id } = project;
+  const hash = location.hash;
 
   const projectRef = useRef<HTMLAnchorElement>(null);
 
-  useEffect(() => {
-    switch (location.hash) {
-      case `#projects-${projectId}`:
-        scrollIntoElementView(projectRef, "instant", "center");
-        break;
-    }
-  }, [location.hash, projectId]);
+  const locationFrom: string =
+    location.pathname === "/projects/all" ? "all-projects" : "project";
 
-  return <ProjectUI project={project} projectRef={projectRef} locationFrom={locationFrom} />;
+  useEffect(() => {
+    if (hash === `#projects-${id}`) {
+      projectRef.current?.scrollIntoView({
+        block: "center",
+        inline: "center",
+        behavior: "instant",
+      });
+      location.state = null;
+    }
+  });
+
+  return (
+    <ProjectUI
+      project={project}
+      projectRef={projectRef}
+      locationFrom={locationFrom}
+    />
+  );
 };

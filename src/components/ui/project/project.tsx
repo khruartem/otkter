@@ -4,19 +4,24 @@ import { Link } from "react-router-dom";
 
 import { Text } from "../../text";
 import { CategoryList } from "../../category-list";
+// import { ImageUI } from "../../image";
 
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import { Colors } from "../../../utils/types";
 import { ProjectUIProps } from "./types";
-
-import styles from "./project.module.css";
 import { useGetAttention } from "../../../hooks/useGetAttention";
 import { useGetProjectColors } from "../../../hooks/useGetProjectColors";
 
-export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef, locationFrom }) => {
-  const { projectId, title, image, shortText, isActive } = project;
+import styles from "./project.module.css";
 
-  const attention = useGetAttention(projectId!);
+export const ProjectUI: FC<ProjectUIProps> = ({
+  project,
+  projectRef,
+  locationFrom,
+}) => {
+  const { id, title, image, shortText, isActive } = project;
+
+  const attention = useGetAttention(id);
   const { projectTitleColor, projectTitleColorAttention } =
     useGetProjectColors();
 
@@ -30,9 +35,11 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef, locationFro
     <Link
       className={clsx(
         styles["project-link"],
+        !isMobile && styles["project-link_animated"],
         isTablet && styles["project-link_tablet"]
       )}
-      to={`/otkter/projects/${projectId}`}
+      to={`/projects/${id}`}
+      target="_top"
       style={
         {
           "--project-color": attention
@@ -40,7 +47,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef, locationFro
             : projectTitleColor,
         } as CSSProperties
       }
-      state={{ id: projectId, from: locationFrom }}
+      state={{ id, type: locationFrom }}
       ref={projectRef}
     >
       <li
@@ -50,7 +57,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef, locationFro
           largeResolution && styles["project_large-resolution"],
           smallResolution && styles["project_small-resolution"]
         )}
-        key={projectId}
+        key={id}
       >
         <div
           className={clsx(
@@ -61,20 +68,69 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef, locationFro
         >
           <div
             className={clsx(
-              styles.project__image,
+              styles["project__image-container"],
               isLarge && styles["project__image_large-screen"],
               isDesktop && styles.project__image_desktop,
               isLaptop && styles.project__image_laptop,
               isTablet && styles.project__image_tablet,
               isMobile && styles.project__image_mobile
             )}
-            style={
-              {
-                "--background-url": `url(${image})`,
-              } as CSSProperties
-            }
-          ></div>
-          <CategoryList projectId={projectId!} />
+          >
+            <img
+              loading="lazy"
+              width={clsx(
+                isLarge && "25.42vw",
+                isDesktop && "38.87vw",
+                isLaptop && "41.80vw",
+                isTablet && "100%",
+                isMobile && "92.27vw"
+              )}
+              height={clsx(
+                isLarge && "14.38vw",
+                isDesktop && "20.20vw",
+                isLaptop && "26.95vw",
+                isTablet && "31.25vw",
+                isMobile && "57.97vw"
+              )}
+              className={clsx(
+                styles.project__image,
+                isLarge && styles["project__image_large-screen"],
+                isDesktop && styles.project__image_desktop,
+                isLaptop && styles.project__image_laptop,
+                isTablet && styles.project__image_tablet,
+                isMobile && styles.project__image_mobile
+              )}
+              src={image}
+              alt="Изображение проекта"
+            />
+            {/* <ImageUI
+              src={image}
+              alt={`Изображение проекта ${title}`}
+              width={clsx(
+                isLarge && "25.42vw",
+                isDesktop && "38.87vw",
+                isLaptop && "41.80vw",
+                isTablet && "100%",
+                isMobile && "92.27vw"
+              )}
+              height={clsx(
+                isLarge && "14.38vw",
+                isDesktop && "20.20vw",
+                isLaptop && "26.95vw",
+                isTablet && "31.25vw",
+                isMobile && "57.97vw"
+              )}
+              className={clsx(
+                styles.project__image,
+                isLarge && styles["project__image_large-screen"],
+                isDesktop && styles.project__image_desktop,
+                isLaptop && styles.project__image_laptop,
+                isTablet && styles.project__image_tablet,
+                isMobile && styles.project__image_mobile
+              )}
+            /> */}
+          </div>
+          <CategoryList id={id} />
         </div>
         <div
           className={clsx(
@@ -104,7 +160,6 @@ export const ProjectUI: FC<ProjectUIProps> = ({ project, projectRef, locationFro
             lineHeight={28}
             textTransform={"none"}
             color={Colors.Dark100}
-            //classNameExtra={styles["project__text-overflowed"]}
           >
             {shortText}
           </Text>

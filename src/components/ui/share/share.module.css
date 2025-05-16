@@ -1,0 +1,12 @@
+.share {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.copied {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}

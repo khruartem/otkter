@@ -9,15 +9,16 @@ type TPhotosType = Extract<TCardType, "services" | "projects">;
 export type TPhoto = {
   id: number;
   source: string;
+  icon: string
 };
 
 export type TProjectPhotos = {
-  projectId: number;
+  id: number;
   photos: TPhoto[];
 };
 
 export type TServicePhotos = {
-  serviceId: number;
+  id: number;
   photos: TPhoto[];
 };
 

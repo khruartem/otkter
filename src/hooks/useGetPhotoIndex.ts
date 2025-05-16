@@ -4,11 +4,11 @@ import { getPhotoIndexSelector } from "../features/photos/photosSlice";
 import { TSectionType } from "../utils/types";
 
 export const useGetPhotoIndex = (
-  projectId: number,
+  id: number,
   imgId: number,
   type: TSectionType
 ) => {
   return useSelector((state: RootState) =>
-    getPhotoIndexSelector(state, projectId, imgId, type)
+    getPhotoIndexSelector(state, id, imgId, type)
   );
 };

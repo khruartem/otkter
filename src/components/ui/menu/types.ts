@@ -3,5 +3,5 @@ export type TMenuUIProps = {
   onOpen: () => void;
   onClose: () => void;
   onClickLink: () => void;
-  rootRef?: React.MutableRefObject<null>;
+  rootRef?: React.RefObject<HTMLDivElement>;
 };

@@ -27,13 +27,13 @@ import styles from "./slider-section.module.css";
 export const SliderSectionUI = React.forwardRef<
   HTMLElement,
   TSliderSectionUIProps
->(({ type, sectionRefs, sectionViewRefs }, ref) => {
+>(({ id, type, sectionRefs, sectionViewRefs }, ref) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
   return (
     <section
-      id={type}
+      id={id}
       className={clsx(
         styles["slider-section"],
         (isDesktop || isTablet || isMobile) &&

@@ -11,18 +11,22 @@ import {
 
 type TInfosType = Extract<TCardType, "services" | "projects">;
 
+// TODO: убрать дублирующиеся TProjectInfo
 export type TProjectInfo = {
-  projectId: number;
-  text: string;
+  id: number;
+  text: string | string[];
   eventDetails: TEventDetails[];
   employees?: TEmployees;
+  previewImg?: string;
+  poster?: string;
 };
 
 export type TServiceInfo = {
-  serviceId: number;
+  id: number;
   text: string;
   serviceDetails: TEventDetails[];
   employees?: TEmployees;
+  poster?: string;
 };
 
 type TInfosState = {
@@ -67,7 +71,7 @@ const infosSlice = createSlice({
       infosType: TInfosType
     ) => {
       return infosSlice.getSelectors().getInfosSelector(state, id, infosType)
-        .text;
+        ?.text;
     },
     getDetailsSelector: (
       state: TInfosState,
@@ -79,13 +83,14 @@ const infosSlice = createSlice({
         .getSelectors()
         .getInfosSelector(state, id, infosType) as TProjectInfo & TServiceInfo;
 
+      // TODO: Сейчас events относится к проектам - неочевидно 
       switch (detailsType) {
         case "events":
-          return infosFound.eventDetails;
+          return infosFound?.eventDetails;
         case "services":
-          return infosFound.serviceDetails;
+          return infosFound?.serviceDetails;
         case "employees":
-          return infosFound.employees;
+          return infosFound?.employees;
       }
     },
     getIsEmployeesSelector: (
@@ -99,9 +104,22 @@ const infosSlice = createSlice({
 
       return infosFound?.employees ? true : false;
     },
+    getPosterSelector: (
+      state: TInfosState,
+      id: number,
+      infosType: TInfosType
+    ) => {
+      return infosSlice.getSelectors().getInfosSelector(state, id, infosType)
+        ?.poster;
+    },
   },
 });
 
 export const reducer = infosSlice.reducer;
-export const { getTextSelector, getDetailsSelector, getIsEmployeesSelector } =
-  infosSlice.selectors;
+export const {
+  getInfosSelector,
+  getTextSelector,
+  getDetailsSelector,
+  getIsEmployeesSelector,
+  getPosterSelector
+} = infosSlice.selectors;

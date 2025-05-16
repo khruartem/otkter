@@ -8,6 +8,16 @@
   padding: 4px;
 }
 
+.category-wrapper_copy {
+  position: absolute;
+  z-index: 2;
+  left: calc(50% - 131px);
+  top: calc(100dvh - 60px - 47px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
 .category-wrapper_colored {
   background-color: var(--light60);
 }
@@ -35,4 +45,9 @@
 
 .category_attention {
   padding: 8px;
+}
+
+.trick-circle {
+  width: 32px;
+  height: 32px;
 }

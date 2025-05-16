@@ -11,7 +11,15 @@ import { TServicesTabMode, TTeamTabMode } from "../../../utils/types";
 import styles from "./tab-list.module.css";
 
 export const TabListUI: FC<TTabListUIProps> = memo(
-  ({ tabs, currentTab, onTabClick, onMouseEnter, onMouseLeave, iconRefs, isMainPage }) => {
+  ({
+    tabs,
+    currentTab,
+    onTabClick,
+    onMouseEnter,
+    onMouseLeave,
+    iconRefs,
+    isMainPage,
+  }) => {
     const { isMobile } = useGetMediaQuery();
 
     return (

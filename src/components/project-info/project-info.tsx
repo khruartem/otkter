@@ -15,13 +15,14 @@ export const ProjectInfo: FC = () => {
   const location = useLocation();
 
   const projectId = useGetId();
-  const title = useGetTitle(projectId!);
-  const text = useGetText(projectId);
+  const title = useGetTitle(projectId);
+  const text = (useGetText(projectId) as string);
   const attention = useGetAttention(projectId);
   const { projectTitleColorAttention } = useGetProjectColors();
   const isEmployees = useGetIsEmployees(projectId);
   const controls = useGetControls(projectId, "projects");
-  const isControls = controls?.buttons.length || controls?.links.length ? true : false;
+  const isControls =
+    controls?.buttons.length || controls?.links.length ? true : false;
 
   // Проброс стейта дальше
   useEffect(() => {

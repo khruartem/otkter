@@ -1,15 +1,13 @@
 import { FC, useRef } from "react";
 
+import { SliderSectionUI } from "../../components/ui/sections/slider-section";
+
 import { TTeamRef, TTeamViewRef } from "../../utils/types";
 import { useInView } from "react-intersection-observer";
-import { TSectionProps } from "../types";
-import { SliderSectionUI } from "../../components/ui/sections/slider-section";
-//import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 
-export const Teams: FC<TSectionProps> = ({ sectionRef }) => {
+export const Teams: FC = () => {
   const adminsRef = useRef<HTMLDivElement>(null);
   const artistsRef = useRef<HTMLDivElement>(null);
-  //const { isMobile } = useGetMediaQuery();
 
   const teamsRefs: TTeamRef[] = [
     {
@@ -44,10 +42,10 @@ export const Teams: FC<TSectionProps> = ({ sectionRef }) => {
 
   return (
     <SliderSectionUI
+      id={"team"}
       type={"team"}
       sectionRefs={teamsRefs}
       sectionViewRefs={teamsViewRefs}
-      ref={sectionRef}
     />
   );
 };

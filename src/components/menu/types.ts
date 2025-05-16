@@ -1,3 +1,4 @@
 export type TMenuProps = {
-  rootRef?: React.MutableRefObject<null>;
+  rootRef?: React.RefObject<HTMLDivElement>;
+  headerRef?: React.RefObject<HTMLHeadingElement> & React.ForwardedRef<HTMLHeadingElement>;
 }

@@ -1,14 +1,15 @@
 import clsx from "clsx";
+import React from "react";
 
 import { Text } from "../../text";
+import { Controls } from "../../controls";
+// import { ImageUI } from "../../image";
 
 import { Colors, FontSizes, lineHeights } from "../../../utils/types";
 import { TServiceUIProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./service.module.css";
-import React from "react";
-import { Controls } from "../../controls";
 
 export const ServiceUI = React.forwardRef<
   HTMLDivElement & HTMLImageElement,
@@ -40,14 +41,24 @@ export const ServiceUI = React.forwardRef<
       )}
       ref={serviceRef}
     >
-      {(isLaptop || isTablet || isMobile) && (
-        <img
-          className={styles.service__image}
+      <img
+        loading="lazy"
+        width={"100%"}
+        height={"100%"}
+        className={styles.service__image}
+        src={image}
+        alt="Изображение услуги"
+        ref={ref}
+      />
+      {/* <div ref={ref} style={{ width: "100%", height: "100%" }}>
+        <ImageUI
           src={image}
-          alt="Изображение услуги"
-          ref={ref}
+          alt={`Изображение услуги ${title}`}
+          className={styles.service__image}
+          width={"100%"}
+          height={"100%"}
         />
-      )}
+      </div> */}
       <div
         className={clsx(
           styles.service__info,
@@ -56,14 +67,16 @@ export const ServiceUI = React.forwardRef<
           isLaptop && styles.service__info_laptop,
           isTablet && styles.service__info_tablet,
           isMobile && styles.service__info_mobile,
+          (isLarge || isDesktop) && styles["service__info_rows-ordered"]
         )}
-        // ref={isLaptop || isTablet || isMobile ? undefined : ref}
       >
-        <div className={clsx(
-          styles.service__text,
-          isLarge && styles["service__text_large-gap"],
-          !isLarge && styles["service__text_small-gap"]
-        )}>
+        <div
+          className={clsx(
+            styles.service__text,
+            isLarge && styles["service__text_large-gap"],
+            !isLarge && styles["service__text_small-gap"]
+          )}
+        >
           <Text
             as={"h3"}
             fontFamily="Unbounded"
@@ -73,7 +86,7 @@ export const ServiceUI = React.forwardRef<
             lineHeight={isLarge ? 48 : 40}
             textTransform={"none"}
             color={Colors.Navy}
-            padding={clsx(isTablet || isMobile && "40px 0 0 0")}
+            padding={clsx(isTablet || (isMobile && "40px 0 0 0"))}
           >
             {title}
           </Text>
@@ -90,16 +103,8 @@ export const ServiceUI = React.forwardRef<
             {shortText}
           </Text>
         </div>
-        <Controls id={service.serviceId!} type="services" />
+        <Controls id={service.id} type="services" />
       </div>
-      {(isLarge || isDesktop) && (
-        <img
-          className={styles.service__image}
-          src={image}
-          alt="Изображение услуги"
-          ref={ref}
-        />
-      )}
     </div>
   );
 });
