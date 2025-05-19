@@ -19,7 +19,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({
   projectRef,
   locationFrom,
 }) => {
-  const { id, title, image, shortText, isActive } = project;
+  const { id, url, title, image, shortText, isActive } = project;
 
   const attention = useGetAttention(id);
   const { projectTitleColor, projectTitleColorAttention } =
@@ -38,7 +38,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({
         !isMobile && styles["project-link_animated"],
         isTablet && styles["project-link_tablet"]
       )}
-      to={`/projects/${id}`}
+      to={`/projects/${url}`}
       target="_top"
       style={
         {
@@ -47,7 +47,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({
             : projectTitleColor,
         } as CSSProperties
       }
-      state={{ id, type: locationFrom }}
+      state={{ id, url, type: locationFrom }}
       ref={projectRef}
     >
       <li

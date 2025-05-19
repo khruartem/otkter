@@ -3,6 +3,7 @@ import {
   TEmployees,
   TNavLinks,
   TProject,
+  TMapping,
   TProjectTabMode,
   TService,
   TServicesTabMode,
@@ -333,6 +334,7 @@ export const teamsSocials: TTeamSocials[] = [
 export const projects: TProject[] = [
   {
     id: 1,
+    url: "unique-chronicle",
     title: "«Показ уникальной хроники. 1945»",
     image: uniqueChronicle,
     shortText:
@@ -345,6 +347,7 @@ export const projects: TProject[] = [
   },
   {
     id: 2,
+    url: "friendship",
     title: "«Нет уз святее товарищества»",
     image: friendship,
     shortText:
@@ -357,6 +360,7 @@ export const projects: TProject[] = [
   },
   {
     id: 3,
+    url: "open-play",
     title: "«Открытая пьеса»",
     image: openPlay,
     shortText:
@@ -369,6 +373,7 @@ export const projects: TProject[] = [
   },
   {
     id: 4,
+    url: "mastership",
     title: "«Ораторское мастерство как инструмент коммуникации»",
     image: mastership,
     shortText:
@@ -381,6 +386,7 @@ export const projects: TProject[] = [
   },
   {
     id: 5,
+    url: "nikolay",
     title: "«О Николае II»",
     image: nikolayFilm,
     shortText:
@@ -393,6 +399,7 @@ export const projects: TProject[] = [
   },
   {
     id: 6,
+    url: "two-in-world",
     title: "«Двое во всем мире»",
     image: twoInWorld,
     shortText:
@@ -405,6 +412,7 @@ export const projects: TProject[] = [
   },
   {
     id: 7,
+    url: "esenin",
     title: "Поэтический спектакль «Есенин. Жизнь в стихах»",
     image: esenin,
     shortText:
@@ -417,6 +425,7 @@ export const projects: TProject[] = [
   },
   {
     id: 8,
+    url: "amplitude",
     title: "«Случительная амплитуда»",
     image: amplitude,
     shortText:
@@ -1250,6 +1259,7 @@ export const serviceTabs: TServicesTabMode[] = [
 export const services: TService[] = [
   {
     id: 1,
+    url: "open-sea",
     title: "Театральная студия «Открытое Море»",
     shortText:
       "Театральная студия «Открытое Море» для детей и подростков дает возможность расширить свои горизонты через театр. Мы не слепо делаем из студийцев профессиональных актеров, а помогаем ребятам понять себя в этом мире. Наши ученики развивают личностные и индивидуальные качества, избавляясь от комплексов и зажимов через методы изучения актерского мастерства.",
@@ -1261,6 +1271,7 @@ export const services: TService[] = [
   },
   {
     id: 2,
+    url: "events",
     title: "Организация мероприятий",
     shortText:
       "Организуем и проведем мероприятия любой сложности. Концерты, городские мероприятия, творческие вечера, фестивали, конкурсы, спектакли т. п.",
@@ -1272,6 +1283,7 @@ export const services: TService[] = [
   },
   {
     id: 3,
+    url: "design",
     title: "Студия дизайна «Открытый Глаз»",
     shortText:
       "Берем в работу задачи по графическому дизайну, айдентике, полиграфии, UX/UI и разработке сайтов.",
@@ -1283,6 +1295,7 @@ export const services: TService[] = [
   },
   {
     id: 4,
+    url: "content",
     title: "Контент и производство видеоматериалов",
     shortText:
       "Организация съемки мероприятий, в том числе интервью, подкастов, рилсов, репортажей, бэкстейджей, документальных фильмов, коротких метров или иных съемок. Обеспечивается полный цикл производства, от подготовительного до монтажно-тонировочного периода, и команда профессионалов (режиссер-постановщик, оператор-постановщик, гафер, звукорежиссёр, актеры и т.д.).",
@@ -1294,6 +1307,7 @@ export const services: TService[] = [
   },
   {
     id: 5,
+    url: "master-class",
     title: "Проведение мастер-классов",
     shortText:
       "Проведем мастер-классы и треннинги по актерскому мастерству, ораторскому искусству.",
@@ -1305,6 +1319,7 @@ export const services: TService[] = [
   },
   {
     id: 6,
+    url: "lamp",
     title: "Любительский театр «ЛАМП»",
     shortText:
       "Театр «ЛАМП» (Любители, Актеры, Музыканты, Писатели) собирает на сцене разных творческих людей. Здесь не важно, есть ли соответствующее образование или нет. Подойдёт для всех, кто хочет стать частью команды театра в любом проявлении. При театре есть семейные группы для совместного творчества родителей и их детей.",
@@ -1316,6 +1331,7 @@ export const services: TService[] = [
   },
   {
     id: 7,
+    url: "smm",
     title: "SMM, PR и продвижение",
     shortText:
       "Менеджмент социальных сетей (SMM - создание и управление контентом на платформах социальных медиа) и связи с общественностью (PR - формирование и поддержание положительного имиджа компании через взаимодействие с общественностью и медиа).",
@@ -1341,8 +1357,8 @@ export const serviceControls: TServiceControls[] = [
         {
           label: "Подробнее",
           // href: "/otkter/services/1",
-          href: "/services/1",
-          state: { id: 1 },
+          href: "/services/open-sea",
+          state: { id: 1, url: "open-sea" },
         },
       ],
     },
@@ -1408,8 +1424,8 @@ export const serviceControls: TServiceControls[] = [
         {
           label: "Подробнее",
           // href: "/otkter/services/6",
-          href: "/services/6",
-          state: { id: 6 },
+          href: "/services/lamp",
+          state: { id: 6, code: "lamp" },
         },
       ],
     },
@@ -1787,3 +1803,22 @@ export const projectsTabs: TProjectTabMode[] = [
   "master-class",
   "short-film",
 ];
+
+export const mapping: TMapping = {
+  "unique-chronicle": 1,
+  friendship: 2,
+  "open-play": 3,
+  mastership: 4,
+  nikolay: 5,
+  "two-in-world": 6,
+  esenin: 7,
+  amplitude: 8,
+  "open-sea": 1,
+  events: 2,
+  design: 3,
+  content: 4,
+  "master-class": 5,
+  lamp: 6,
+  smm: 7,
+  "not-found": 0
+};

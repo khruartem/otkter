@@ -104,6 +104,29 @@ export type TProjectInfo = {
   controls?: TControls;
 };
 
+export type TProjectsUrl =
+  | "unique-chronicle"
+  | "friendship"
+  | "open-play"
+  | "mastership"
+  | "nikolay"
+  | "two-in-world"
+  | "esenin"
+  | "amplitude";
+
+export type TMapping = {
+  [key in TProjectsUrl | TServicesUrl | "not-found"]: number;
+};
+
+export type TServicesUrl =
+  | "master-class"
+  | "open-sea"
+  | "events"
+  | "design"
+  | "content"
+  | "lamp"
+  | "smm";
+
 export type TCardType =
   | "projects"
   | "team"
@@ -113,7 +136,7 @@ export type TCardType =
 
 export type TCard = {
   id: number;
-  teamId?: number;
+  url: TProjectsUrl | TServicesUrl;
   type: TCardType;
   title: string;
   categoryList?: TCategory[];
@@ -131,6 +154,7 @@ export type TCard = {
 export type TProject = Pick<
   TCard,
   | "id"
+  | "url"
   | "type"
   | "image"
   | "attention"
@@ -151,7 +175,7 @@ export type TProject = Pick<
 
 export type TService = Pick<
   TCard,
-  "id" | "type" | "title" | "image" | "shortText" | "order" | "isMain" | "icon"
+  "id" | "url" | "type" | "title" | "image" | "shortText" | "order" | "isMain" | "icon"
 >;
 
 export type TModalType = "back" | "close";

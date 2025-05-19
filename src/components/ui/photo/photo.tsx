@@ -3,17 +3,18 @@ import clsx from "clsx";
 
 import { ImageUI } from "../../image";
 
-import { TPhotoProps } from "./types";
+import { TPhotoUIProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import { Link, useLocation } from "react-router-dom";
 
 import styles from "./photo.module.css";
 
-export const PhotoUI: FC<TPhotoProps> = ({
+export const PhotoUI: FC<TPhotoUIProps> = ({
   photo,
   label = null,
   nextPhotoId = null,
   id,
+  url,
   type,
 }) => {
   const location = useLocation();
@@ -33,8 +34,8 @@ export const PhotoUI: FC<TPhotoProps> = ({
     >
       {photo && !label && !nextPhotoId ? (
         <Link
-          to={`/${type}/${id}/${photo.id}`}
-          state={{ id, type, ...location.state }}
+          to={`/${type}/${url}/${photo.id}`}
+          state={{ id, type, url, ...location.state }}
         >
           {/* <img
             loading="lazy"
@@ -54,8 +55,8 @@ export const PhotoUI: FC<TPhotoProps> = ({
         </Link>
       ) : (
         <Link
-          to={`/${type}/${id}/${nextPhotoId}`}
-          state={{ id, type, ...location.state }}
+          to={`/${type}/${url}/${nextPhotoId}`}
+          state={{ id, type, url, ...location.state }}
         >
           <div className={clsx(styles.photo__link, styles.photo__link_more)}>
             {label}

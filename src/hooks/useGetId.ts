@@ -1,7 +1,10 @@
 import { useParams } from "react-router-dom";
 
-export const useGetId = () => {
-  const { id } = useParams<{ id: string }>();
+import { TProjectsUrl, TServicesUrl } from "../utils/types";
+import { mapping } from "../utils/constants";
 
-  return Number(id);
+export const useGetId = () => {
+  const { code } = useParams<{ code: TProjectsUrl | TServicesUrl | "not-found" }>();
+
+  return mapping[code || "not-found"];
 }
