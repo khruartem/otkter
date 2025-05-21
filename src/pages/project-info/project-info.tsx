@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { InfoUI } from "../../components/ui/pages/info";
 import { Preloader } from "../../components/ui/preloader";
 import { NotFound404 } from "../not-found-404";
+import { SEO } from "../../components/seo";
 
 import { Colors, TEventDetails } from "../../utils/types";
 import { useGetTitle } from "../../hooks/useGetTitle";
@@ -17,6 +18,10 @@ import { useGetPoster } from "../../hooks/useGetPoster";
 import { useGetPhotos } from "../../hooks/useGetPhotos";
 import { useGetInfosDetails } from "../../hooks/useGetInfosDetails";
 import { useGetProjectIsMain } from "../../hooks/useGetProjectIsMain";
+import { useGetUrlCode } from "../../hooks/useGetUrlCode";
+import { useGetPreviewImage } from "../../hooks/useGetPreviewImage";
+import { useGetProjectType } from "../../hooks/useGetProjectType";
+import { useGetProjectShortText } from "../../hooks/useGetProjectShortText";
 
 export const ProjectInfo: FC = () => {
   const [docReadyState, setDocReadyState] = useState<DocumentReadyState | null>(
@@ -26,9 +31,13 @@ export const ProjectInfo: FC = () => {
   const location = useLocation();
 
   const projectId = useGetId();
+  const url = useGetUrlCode();
   const title = useGetTitle(projectId);
   const text = useGetText(projectId);
+  const shortText = useGetProjectShortText(projectId);
+  const type = useGetProjectType(projectId);
   const poster = useGetPoster(projectId, "projects");
+  const previewImg = useGetPreviewImage(projectId, "projects");
   const attention = useGetAttention(projectId);
   const { projectTitleColorAttention } = useGetProjectColors();
   const isEmployees = useGetIsEmployees(projectId);
@@ -58,19 +67,29 @@ export const ProjectInfo: FC = () => {
 
   return docReadyState === "complete" || docReadyState === "interactive" ? (
     title ? (
-      <InfoUI
-        type="projects"
-        id={projectId}
-        title={title}
-        text={text}
-        poster={poster}
-        attention={attention}
-        colorAttention={projectTitleColorAttention}
-        isEmployees={isEmployees}
-        isControls={isControls}
-        isPhotos={isPhotos}
-        isDetails={isDetails}
-      />
+      <>
+        <SEO
+          title={title}
+          ogTitle={type}
+          description={shortText}
+          siteName={title}
+          url={`https://otkter.ru/projects/${url}`}
+          previewImg={previewImg}
+        />
+        <InfoUI
+          type="projects"
+          id={projectId}
+          title={title}
+          text={text}
+          poster={poster}
+          attention={attention}
+          colorAttention={projectTitleColorAttention}
+          isEmployees={isEmployees}
+          isControls={isControls}
+          isPhotos={isPhotos}
+          isDetails={isDetails}
+        />
+      </>
     ) : (
       <NotFound404 />
     )

@@ -6,10 +6,10 @@ import { TDetails, TEmployees, TEventDetails } from "../../utils/types";
 
 export type TProjectInfo = {
   id: number;
-  text: string | string[];
+  text: string;
   eventDetails: TEventDetails[];
   employees?: TEmployees;
-  previewImg?: string;
+  previewImg: string;
   poster?: string;
 };
 

@@ -515,7 +515,7 @@ export const projectInfos: TProjectInfo[] = [
         ],
       },
     },
-    previewImg: "/preview_chronics.png",
+    previewImg: "/preview/preview_chronics.png",
     poster: uniqueChroniclePoster,
   },
   {
@@ -554,6 +554,7 @@ export const projectInfos: TProjectInfo[] = [
         value: "Вход свободный",
       },
     ],
+    previewImg: "/preview/preview_friendship.png"
   },
   {
     id: 3,
@@ -587,6 +588,7 @@ export const projectInfos: TProjectInfo[] = [
         value: "3000 ₽",
       },
     ],
+    previewImg: "/preview/preview_play.png"
   },
   {
     id: 4,
@@ -617,6 +619,7 @@ export const projectInfos: TProjectInfo[] = [
         value: "Каждую третью субботу месяца",
       },
     ],
+    previewImg: "/preview/preview_mastership.png"
   },
   {
     id: 5,
@@ -664,7 +667,7 @@ export const projectInfos: TProjectInfo[] = [
         ],
       },
     },
-    previewImg: "/preview_nikolai.png",
+    previewImg: "/preview/preview_nikolai.png",
   },
   {
     id: 6,
@@ -755,7 +758,7 @@ export const projectInfos: TProjectInfo[] = [
         ],
       },
     },
-    previewImg: "/preview_two.png",
+    previewImg: "/preview/preview_two.png",
   },
   {
     id: 7,
@@ -836,8 +839,8 @@ export const projectInfos: TProjectInfo[] = [
         ],
       },
     },
-    previewImg: "/preview_esenin.png",
     poster: eseninPoster,
+    previewImg: "/preview/preview_esenin.png",
   },
   {
     id: 8,
@@ -958,7 +961,7 @@ export const projectInfos: TProjectInfo[] = [
       },
     },
     poster: amplitudePoster,
-    previewImg: "/preview_amplitude.png",
+    previewImg: "/preview/preview_amplitude.png",
   },
 ];
 
@@ -1490,30 +1493,35 @@ export const serviceInfos: TServiceInfo[] = [
       },
     },
     poster: OT,
+    previewImg: "/preview/preview_ot.png"
   },
   {
     id: 2,
     text: "Организуем и проведем мероприятия любой сложности. Концерты, городские мероприятия, творческие вечера, фестивали, конкурсы, спектакли т. п.",
     serviceDetails: [],
     poster: events,
+    previewImg: "/preview/preview_events.png"
   },
   {
     id: 3,
     text: "Берем в работу задачи по графическому дизайну, айдентике, полиграфии, UX/UI и разработке сайтов.",
     serviceDetails: [],
     poster: design,
+    previewImg: "/preview/preview_design.png"
   },
   {
     id: 4,
     text: "Организация съемки мероприятий, в том числе интервью, подкастов, рилсов, репортажей, бэкстейджей, документальных фильмов, коротких метров или иных съемок. Обеспечивается полный цикл производства, от подготовительного до монтажно-тонировочного периода, и команда профессионалов (режиссер-постановщик, оператор-постановщик, гафер, звукорежиссёр, актеры и т.д.).",
     serviceDetails: [],
     poster: content,
+    previewImg: "/preview/preview_content.png"
   },
   {
     id: 5,
     text: "Проведем мастер-классы и треннинги по актерскому мастерству, ораторскому искусству.",
     serviceDetails: [],
     poster: masterClasses,
+    previewImg: "/preview/preview_mc.png"
   },
   {
     id: 6,
@@ -1555,12 +1563,14 @@ export const serviceInfos: TServiceInfo[] = [
       },
     },
     poster: lamp,
+    previewImg: "/preview/preview_lamp.png"
   },
   {
     id: 7,
     text: "Менеджмент социальных сетей (SMM - создание и управление контентом на платформах социальных медиа) и связи с общественностью (PR - формирование и поддержание положительного имиджа компании через взаимодействие с общественностью и медиа).",
     serviceDetails: [],
     poster: smm,
+    previewImg: "/preview/preview_smm.png"
   },
 ];
 

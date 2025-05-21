@@ -28,10 +28,13 @@ const projectsSlice = createSlice({
   reducers: {},
   selectors: {
     getAll: (state: TProjectsState) => state.projects,
-    getProjectsSelector: (state: TProjectsState, type: TProjectTabMode | "main") => {
+    getProjectsSelector: (
+      state: TProjectsState,
+      type: TProjectTabMode | "main"
+    ) => {
       switch (type) {
         case "all":
-        //default:
+          //default:
           return projectsSlice.getSelectors().getAll(state);
         case "play":
           //return state.projects.filter((project) => project.type === "play");
@@ -73,15 +76,54 @@ const projectsSlice = createSlice({
     getProjectColorsSelector: (state: TProjectsState) => state.colors,
     getIsMainSelector: (state: TProjectsState, id: number) => {
       return (findById(state.projects, id) as TProject)?.isMain;
-    }
+    },
+    getTypeSelector: (state: TProjectsState, id: number) => {
+      const typeToFormat = (findById(state.projects, id) as TProject)?.type;
+      switch (typeToFormat) {
+        case "master-class":
+          return "Мастер-класс";
+        case "play":
+          return "Спектакль";
+        case "short-film":
+          return "Короткий метр";
+        case "contest":
+          return "Конкурс";
+        case "open-sea":
+        case "events":
+        case "design":
+        case "content":
+        case "lamp":
+        case "smm":
+        case "projects":
+        case "team":
+        case "services":
+        case "all":
+          return "Услуга";
+      }
+    },
   },
 });
 
-const getPlayProjects = createSelector(projectsSlice.getSelectors().getAll, projects => projects.filter((project) => project.type === "play"));
-const getContestProjects = createSelector(projectsSlice.getSelectors().getAll, projects => projects.filter((project) => project.type === "contest"));
-const getMasterClassProjects = createSelector(projectsSlice.getSelectors().getAll, projects => projects.filter((project) => project.type === "master-class"));;
-const getShortFilmProjects = createSelector(projectsSlice.getSelectors().getAll, projects => projects.filter((project) => project.type === "short-film"));
-const getMainProjects = createSelector(projectsSlice.getSelectors().getAll, projects => projects.filter((project) => project.isMain === true));
+const getPlayProjects = createSelector(
+  projectsSlice.getSelectors().getAll,
+  (projects) => projects.filter((project) => project.type === "play")
+);
+const getContestProjects = createSelector(
+  projectsSlice.getSelectors().getAll,
+  (projects) => projects.filter((project) => project.type === "contest")
+);
+const getMasterClassProjects = createSelector(
+  projectsSlice.getSelectors().getAll,
+  (projects) => projects.filter((project) => project.type === "master-class")
+);
+const getShortFilmProjects = createSelector(
+  projectsSlice.getSelectors().getAll,
+  (projects) => projects.filter((project) => project.type === "short-film")
+);
+const getMainProjects = createSelector(
+  projectsSlice.getSelectors().getAll,
+  (projects) => projects.filter((project) => project.isMain === true)
+);
 
 export const reducer = projectsSlice.reducer;
 export const {
@@ -91,4 +133,5 @@ export const {
   getProjectColorsSelector,
   getShortTextSelector,
   getIsMainSelector,
+  getTypeSelector,
 } = projectsSlice.selectors;

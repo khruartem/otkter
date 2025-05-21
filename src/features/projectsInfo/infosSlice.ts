@@ -14,10 +14,10 @@ type TInfosType = Extract<TCardType, "services" | "projects">;
 // TODO: убрать дублирующиеся TProjectInfo
 export type TProjectInfo = {
   id: number;
-  text: string | string[];
+  text: string;
   eventDetails: TEventDetails[];
   employees?: TEmployees;
-  previewImg?: string;
+  previewImg: string;
   poster?: string;
 };
 
@@ -26,6 +26,7 @@ export type TServiceInfo = {
   text: string;
   serviceDetails: TEventDetails[];
   employees?: TEmployees;
+  previewImg: string;
   poster?: string;
 };
 
@@ -72,6 +73,14 @@ const infosSlice = createSlice({
     ) => {
       return infosSlice.getSelectors().getInfosSelector(state, id, infosType)
         ?.text;
+    },
+    getPreviewImageSelector: (
+      state: TInfosState,
+      id: number,
+      infosType: TInfosType
+    ) => {
+      return infosSlice.getSelectors().getInfosSelector(state, id, infosType)
+        .previewImg;
     },
     getDetailsSelector: (
       state: TInfosState,
@@ -121,5 +130,6 @@ export const {
   getTextSelector,
   getDetailsSelector,
   getIsEmployeesSelector,
-  getPosterSelector
+  getPosterSelector,
+  getPreviewImageSelector
 } = infosSlice.selectors;

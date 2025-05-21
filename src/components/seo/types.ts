@@ -3,9 +3,7 @@ export type TSEOProps = {
   ogTitle?: string;
   description: string;
   ogDescription?: string;
-  name: string;
-  type: string;
+  siteName: string;
   url: string;
   previewImg: string;
-  locale?: string;
 };
