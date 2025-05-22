@@ -52,27 +52,18 @@ export type TEventDetails = {
   value: string | string[];
 };
 
-export type TControls = {
-  buttons: TButton[];
-  links: TLink[];
-};
+export type TControlsLocation = "main" | "info";
 
-export type TButton = {
+type TControlsType = "button" | "link";
+
+export type TControlsItem = {
   label: string;
+  type: TControlsType;
+  located: TControlsLocation;
   onClick: () => void;
-};
-
-export type TLink = {
-  label: string;
-  href: string;
-  target?: React.HTMLAttributeAnchorTarget;
+  url: string;
   state?: object;
 };
-
-// export type TEmployees = {
-//   artists?: TEmployee[];
-//   administrators?: TEmployee[];
-// };
 
 export type TEmployees = {
   artists?: TEmployeeGroup[];
@@ -101,7 +92,7 @@ export type TProjectInfo = {
   photos?: string[];
   eventDetails: TEventDetails;
   employees?: TEmployees;
-  controls?: TControls;
+  controls?: TControlsItem;
 };
 
 export type TProjectsUrl =
@@ -175,7 +166,15 @@ export type TProject = Pick<
 
 export type TService = Pick<
   TCard,
-  "id" | "url" | "type" | "title" | "image" | "shortText" | "order" | "isMain" | "icon"
+  | "id"
+  | "url"
+  | "type"
+  | "title"
+  | "image"
+  | "shortText"
+  | "order"
+  | "isMain"
+  | "icon"
 >;
 
 export type TModalType = "back" | "close";

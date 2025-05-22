@@ -41,9 +41,8 @@ export const ProjectInfo: FC = () => {
   const attention = useGetAttention(projectId);
   const { projectTitleColorAttention } = useGetProjectColors();
   const isEmployees = useGetIsEmployees(projectId);
-  const controls = useGetControls(projectId, "projects");
-  const isControls =
-    controls?.buttons.length || controls?.links.length ? true : false;
+  const controls = useGetControls(projectId, "projects", "info");
+  const isControls = controls?.length ? true : false;
   const isPhotos = useGetPhotos(projectId, "projects") ? true : false;
   const isDetails = (
     useGetInfosDetails(projectId, "projects", "events") as TEventDetails[]

@@ -103,7 +103,7 @@ export const ServiceUI = React.forwardRef<
             {shortText}
           </Text>
         </div>
-        <Controls id={service.id} type="services" />
+        <Controls id={service.id} type="services" located="main" />
       </div>
     </div>
   );

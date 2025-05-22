@@ -10,10 +10,7 @@ import {
   TTeamTabMode,
 } from "./types";
 import { TProjectInfo } from "../features/projectsInfo/projectsInfoSlice";
-import {
-  TProjectControls,
-  TServiceControls,
-} from "../features/controls/controlsSlice";
+import { TControls } from "../features/controls/controlsSlice";
 import { TProjectCategories } from "../features/categories/categoriesSlice";
 import { TProjectPhotos, TServicePhotos } from "../features/photos/photosSlice";
 import { TServiceInfo } from "../features/projectsInfo/infosSlice";
@@ -554,7 +551,7 @@ export const projectInfos: TProjectInfo[] = [
         value: "Вход свободный",
       },
     ],
-    previewImg: "/preview/preview_friendship.png"
+    previewImg: "/preview/preview_friendship.png",
   },
   {
     id: 3,
@@ -588,7 +585,7 @@ export const projectInfos: TProjectInfo[] = [
         value: "3000 ₽",
       },
     ],
-    previewImg: "/preview/preview_play.png"
+    previewImg: "/preview/preview_play.png",
   },
   {
     id: 4,
@@ -619,7 +616,7 @@ export const projectInfos: TProjectInfo[] = [
         value: "Каждую третью субботу месяца",
       },
     ],
-    previewImg: "/preview/preview_mastership.png"
+    previewImg: "/preview/preview_mastership.png",
   },
   {
     id: 5,
@@ -965,78 +962,78 @@ export const projectInfos: TProjectInfo[] = [
   },
 ];
 
-export const projectControls: TProjectControls[] = [
+export const projectControls: TControls[] = [
   {
     id: 1,
-    controls: {
-      buttons: [
-        {
-          label: "Купить билет",
-          onClick: () => buyTickets(buyTicketsLinkChronics),
-        },
-      ],
-      links: [],
-    },
+    controls: [
+      {
+        label: "Купить билет",
+        type: "button",
+        located: "info",
+        onClick: () => buyTickets(buyTicketsLinkChronics),
+        url: "#",
+      },
+    ],
   },
   {
     id: 2,
-    controls: {
-      buttons: [
-        {
-          label: "Подробнее",
-          onClick: () => contactFunction("admins", 1, "telegram"),
-        },
-      ],
-      links: [],
-    },
+    controls: [
+      {
+        label: "Подробнее",
+        type: "button",
+        located: "info",
+        onClick: () => contactFunction("admins", 1, "telegram"),
+        url: "#",
+      },
+    ],
   },
   {
     id: 3,
-    controls: {
-      buttons: [
-        {
-          label: "Подробнее",
-          onClick: () => contactFunction("admins", 1, "telegram"),
-        },
-      ],
-      links: [],
-    },
+    controls: [
+      {
+        label: "Подробнее",
+        type: "button",
+        located: "info",
+        onClick: () => contactFunction("admins", 1, "telegram"),
+        url: "#",
+      },
+    ],
   },
   {
     id: 4,
-    controls: null,
+    controls: undefined,
   },
   {
     id: 5,
-    controls: null,
+    controls: undefined,
   },
   {
     id: 6,
-    controls: null,
+    controls: undefined,
   },
   {
     id: 7,
-    controls: {
-      buttons: [
-        {
-          label: "Купить билет",
-          onClick: () => buyTickets(buyTicketsLinkEsenin),
-        },
-      ],
-      links: [],
-    },
+    controls: [
+      {
+        label: "Купить билет",
+        type: "button",
+        located: "info",
+        onClick: () => buyTickets(buyTicketsLinkEsenin),
+        url: "#",
+      },
+    ],
   },
   {
     id: 8,
-    controls: {
-      buttons: [
-        {
-          label: "Записаться",
-          onClick: joinAmplitude,
-        },
-      ],
-      links: [],
-    },
+    controls: [
+      {
+        label: "Записаться",
+        type: "button",
+        located: "info",
+        onClick: joinAmplitude,
+        url: "#",
+      },
+    ],
   },
 ];
 
@@ -1346,104 +1343,155 @@ export const services: TService[] = [
   },
 ];
 
-export const serviceControls: TServiceControls[] = [
+export const serviceControls: TControls[] = [
   {
     id: 1,
-    controls: {
-      buttons: [
-        {
-          label: "Записаться",
-          onClick: () => contactFunction("admins", 2, "telegram"),
-        },
-      ],
-      links: [
-        {
-          label: "Подробнее",
-          // href: "/otkter/services/1",
-          href: "/services/open-sea",
-          state: { id: 1, url: "open-sea" },
-        },
-      ],
-    },
+    controls: [
+      {
+        label: "Записаться",
+        type: "button",
+        located: "main",
+        onClick: () => contactFunction("admins", 2, "telegram"),
+        url: "#",
+      },
+      {
+        label: "Записаться",
+        type: "button",
+        located: "info",
+        onClick: () => contactFunction("admins", 2, "telegram"),
+        url: "#",
+      },
+      {
+        label: "Подробнее",
+        type: "link",
+        located: "main",
+        onClick: () => {},
+        url: "/services/open-sea",
+        state: { id: 1, url: "open-sea" },
+      },
+    ],
   },
   {
     id: 2,
-    controls: {
-      buttons: [
-        {
-          label: "Заказать",
-          onClick: () => contactFunction("admins", 1, "telegram"),
-        },
-      ],
-      links: [],
-    },
+    controls: [
+      {
+        label: "Заказать",
+        type: "button",
+        located: "main",
+        onClick: () => contactFunction("admins", 1, "telegram"),
+        url: "#",
+      },
+      {
+        label: "Заказать",
+        type: "button",
+        located: "info",
+        onClick: () => contactFunction("admins", 1, "telegram"),
+        url: "#",
+      },
+    ],
   },
   {
     id: 3,
-    controls: {
-      buttons: [
-        {
-          label: "Заказать",
-          onClick: () => contactFunction("admins", 1, "telegram"),
-        },
-      ],
-      links: [],
-    },
+    controls: [
+      {
+        label: "Заказать",
+        type: "button",
+        located: "main",
+        onClick: () => contactFunction("admins", 1, "telegram"),
+        url: "#",
+      },
+      {
+        label: "Заказать",
+        type: "button",
+        located: "info",
+        onClick: () => contactFunction("admins", 1, "telegram"),
+        url: "#",
+      },
+    ],
   },
   {
     id: 4,
-    controls: {
-      buttons: [
-        {
-          label: "Заказать",
-          onClick: () => contactFunction("admins", 1, "telegram"),
-        },
-      ],
-      links: [],
-    },
+    controls: [
+      {
+        label: "Заказать",
+        type: "button",
+        located: "main",
+        onClick: () => contactFunction("admins", 1, "telegram"),
+        url: "#",
+      },
+      {
+        label: "Заказать",
+        type: "button",
+        located: "info",
+        onClick: () => contactFunction("admins", 1, "telegram"),
+        url: "#",
+      },
+    ],
   },
   {
     id: 5,
-    controls: {
-      buttons: [
-        {
-          label: "Заказать",
-          onClick: () => contactFunction("admins", 1, "telegram"),
-        },
-      ],
-      links: [],
-    },
+    controls: [
+      {
+        label: "Заказать",
+        type: "button",
+        located: "main",
+        onClick: () => contactFunction("admins", 1, "telegram"),
+        url: "#",
+      },
+      {
+        label: "Заказать",
+        type: "button",
+        located: "info",
+        onClick: () => contactFunction("admins", 1, "telegram"),
+        url: "#",
+      },
+    ],
   },
   {
     id: 6,
-    controls: {
-      buttons: [
-        {
-          label: "Записаться",
-          onClick: () => contactFunction("admins", 2, "telegram"),
-        },
-      ],
-      links: [
-        {
-          label: "Подробнее",
-          // href: "/otkter/services/6",
-          href: "/services/lamp",
-          state: { id: 6, code: "lamp" },
-        },
-      ],
-    },
+    controls: [
+      {
+        label: "Записаться",
+        type: "button",
+        located: "main",
+        onClick: () => contactFunction("admins", 2, "telegram"),
+        url: "#",
+      },
+      {
+        label: "Записаться",
+        type: "button",
+        located: "info",
+        onClick: () => contactFunction("admins", 2, "telegram"),
+        url: "#",
+      },
+      {
+        label: "Подробнее",
+        type: "link",
+        located: "main",
+        onClick: () => {},
+        url: "/services/lamp",
+        state: { id: 6, code: "lamp" },
+      },
+    ],
   },
   {
     id: 7,
-    controls: {
-      buttons: [
-        {
-          label: "Заказать",
-          onClick: () => contactFunction("admins", 4, "telegram"),
-        },
-      ],
-      links: [],
-    },
+    controls: [
+      {
+        label: "Заказать",
+        type: "button",
+        located: "main",
+        onClick: () => contactFunction("admins", 4, "telegram"),
+        url: "#",
+      },
+      {
+        label: "Заказать",
+        type: "button",
+        located: "info",
+        onClick: () => contactFunction("admins", 4, "telegram"),
+        url: "#",
+      },
+    ],
   },
 ];
 
@@ -1493,35 +1541,35 @@ export const serviceInfos: TServiceInfo[] = [
       },
     },
     poster: OT,
-    previewImg: "/preview/preview_ot.png"
+    previewImg: "/preview/preview_ot.png",
   },
   {
     id: 2,
     text: "Организуем и проведем мероприятия любой сложности. Концерты, городские мероприятия, творческие вечера, фестивали, конкурсы, спектакли т. п.",
     serviceDetails: [],
     poster: events,
-    previewImg: "/preview/preview_events.png"
+    previewImg: "/preview/preview_events.png",
   },
   {
     id: 3,
     text: "Берем в работу задачи по графическому дизайну, айдентике, полиграфии, UX/UI и разработке сайтов.",
     serviceDetails: [],
     poster: design,
-    previewImg: "/preview/preview_design.png"
+    previewImg: "/preview/preview_design.png",
   },
   {
     id: 4,
     text: "Организация съемки мероприятий, в том числе интервью, подкастов, рилсов, репортажей, бэкстейджей, документальных фильмов, коротких метров или иных съемок. Обеспечивается полный цикл производства, от подготовительного до монтажно-тонировочного периода, и команда профессионалов (режиссер-постановщик, оператор-постановщик, гафер, звукорежиссёр, актеры и т.д.).",
     serviceDetails: [],
     poster: content,
-    previewImg: "/preview/preview_content.png"
+    previewImg: "/preview/preview_content.png",
   },
   {
     id: 5,
     text: "Проведем мастер-классы и треннинги по актерскому мастерству, ораторскому искусству.",
     serviceDetails: [],
     poster: masterClasses,
-    previewImg: "/preview/preview_mc.png"
+    previewImg: "/preview/preview_mc.png",
   },
   {
     id: 6,
@@ -1563,14 +1611,14 @@ export const serviceInfos: TServiceInfo[] = [
       },
     },
     poster: lamp,
-    previewImg: "/preview/preview_lamp.png"
+    previewImg: "/preview/preview_lamp.png",
   },
   {
     id: 7,
     text: "Менеджмент социальных сетей (SMM - создание и управление контентом на платформах социальных медиа) и связи с общественностью (PR - формирование и поддержание положительного имиджа компании через взаимодействие с общественностью и медиа).",
     serviceDetails: [],
     poster: smm,
-    previewImg: "/preview/preview_smm.png"
+    previewImg: "/preview/preview_smm.png",
   },
 ];
 
@@ -1814,7 +1862,7 @@ export const projectsTabs: TProjectTabMode[] = [
   "short-film",
 ];
 
-export const mapping: TMapping = {
+export const linkMapping: TMapping = {
   "unique-chronicle": 1,
   friendship: 2,
   "open-play": 3,
@@ -1830,5 +1878,5 @@ export const mapping: TMapping = {
   "master-class": 5,
   lamp: 6,
   smm: 7,
-  "not-found": 0
+  "not-found": 0,
 };

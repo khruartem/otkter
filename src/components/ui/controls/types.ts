@@ -1,7 +1,6 @@
-import { TButton, TLink } from "../../../utils/types";
+import { TControlsItem } from "../../../utils/types";
 
 export type TControlsUIProps = {
-  buttons: TButton[] | undefined;
-  links: TLink[] | undefined;
+  controls: TControlsItem[] | undefined;
   isExtraLink: boolean;
 }

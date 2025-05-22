@@ -33,9 +33,8 @@ export const ServiceInfo: FC = () => {
   const poster = useGetPoster(serviceId, "services");
   const previewImg = useGetPreviewImage(serviceId, "services");
   const isEmployees = useGetInfosIsEmployees(serviceId, "services");
-  const controls = useGetControls(serviceId, "services");
-  const isControls =
-    controls?.buttons.length || controls?.links.length ? true : false;
+  const controls = useGetControls(serviceId, "services", "info");
+  const isControls = controls?.length ? true : false;
   const isPhotos = useGetPhotos(serviceId, "services") ? true : false;
   const isDetails = (
     useGetInfosDetails(serviceId, "services", "services") as TEventDetails[]
