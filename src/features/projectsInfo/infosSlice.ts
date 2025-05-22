@@ -80,7 +80,7 @@ const infosSlice = createSlice({
       infosType: TInfosType
     ) => {
       return infosSlice.getSelectors().getInfosSelector(state, id, infosType)
-        .previewImg;
+        ?.previewImg;
     },
     getDetailsSelector: (
       state: TInfosState,
