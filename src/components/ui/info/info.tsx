@@ -101,7 +101,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
           </Text>
           <PhotoList id={id} type={type} />
         </div>
-        {isControls && <Controls id={id} type={type} />}
+        {isControls && <Controls id={id} type={type} located="info" />}
       </div>
       <div
         className={clsx(

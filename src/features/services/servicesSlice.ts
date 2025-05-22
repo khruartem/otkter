@@ -19,7 +19,7 @@ const servicesSlice = createSlice({
   selectors: {
     getAllServicesSelector: (state: TServicesState) => state.services,
     getMainServicesSelector: (state: TServicesState) => {
-      return state.services.filter(service => service.isMain === true)
+      return state.services.filter((service) => service.isMain === true);
     },
     getServicesSelector: (state: TServicesState, type: "all" | "main") => {
       switch (type) {
@@ -27,7 +27,6 @@ const servicesSlice = createSlice({
           return servicesSlice.getSelectors().getAllServicesSelector(state);
         case "main":
           return servicesSlice.getSelectors().getMainServicesSelector(state);
-
       }
     },
     getServiceTitleSelector: (state: TServicesState, id: number) => {
@@ -35,6 +34,9 @@ const servicesSlice = createSlice({
     },
     getServiceSelector: (state: TServicesState, id: number) => {
       return findById(state.services, id) as TService;
+    },
+    getServiceShortTextSelector: (state: TServicesState, id: number) => {
+      return (findById(state.services, id) as TService)?.shortText;
     },
   },
 });
@@ -44,4 +46,5 @@ export const {
   getServicesSelector,
   getServiceTitleSelector,
   getServiceSelector,
+  getServiceShortTextSelector,
 } = servicesSlice.selectors;

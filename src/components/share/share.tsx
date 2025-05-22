@@ -19,6 +19,7 @@ export const Share: FC<TShareProps> = ({ id, type }) => {
   const telegramLink = `https://t.me/share/url?url=${href}&text=${title}`;
   const VKLink = `https://vk.com/share.php?url=${href}`;
   const copyLink = href;
+  // const copyLink = `${href}/`;
 
   const [isCopied, setIsCopied] = useState(false);
 

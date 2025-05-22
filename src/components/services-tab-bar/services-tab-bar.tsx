@@ -27,23 +27,24 @@ export const ServicesTabBar: FC = () => {
     if (index > sortedServices.length - 1) {
       setIndex(0);
       setCurrenService(sortedServices[0]);
-      navigate(`/services/${sortedServices[0].id}`, {
-        state: { ...location.state, id: sortedServices[0].id },
+      navigate(`/services/${sortedServices[0].url}`, {
+        state: { ...location.state, id: sortedServices[0].id, url: sortedServices[0].url },
       });
     } else if (index < 0) {
       setIndex(sortedServices.length - 1);
       setCurrenService(sortedServices[sortedServices.length - 1]);
-      navigate(`/services/${sortedServices[sortedServices.length - 1].id}`, {
+      navigate(`/services/${sortedServices[sortedServices.length - 1].url}`, {
         state: {
           ...location.state,
           id: sortedServices[sortedServices.length - 1].id,
+          url: sortedServices[sortedServices.length - 1].url,
         },
       });
     } else {
       setIndex(index);
       setCurrenService(sortedServices[index]);
-      navigate(`/services/${sortedServices[index].id}`, {
-        state: { ...location.state, id: sortedServices[index].id },
+      navigate(`/services/${sortedServices[index].url}`, {
+        state: { ...location.state, id: sortedServices[index].id, url: sortedServices[index].url },
       });
     }
   };

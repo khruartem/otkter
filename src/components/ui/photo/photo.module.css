@@ -27,20 +27,25 @@
 /* Стили для разных разрешений экранов */
 .photo_large-screen {
   width: 5.83vw;
+  height: 5.83vw;
 }
 
 .photo_desktop {
   width: 5.42vw;
+  height: 5.42vw;
 }
 
 .photo_laptop {
   width: 13.67vw;
+  height: 13.67vw;
 }
 
 .photo_tablet {
   width: 14.06vw;
+  height: 14.06vw;
 }
 
 .photo_mobile {
   width: 15.46vw;
+  height: 15.46vw;
 }

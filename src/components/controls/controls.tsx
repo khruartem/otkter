@@ -5,15 +5,9 @@ import { useGetControls } from "../../hooks/useGetControls";
 import { TControlsProps } from "./types";
 import { useGetId } from "../../hooks/useGetId";
 
-export const Controls: FC<TControlsProps> = ({ id, type }) => {
-  const controls = useGetControls(id, type);
-  const isExtraLink = (useGetId() === 1 && type === "services") ? true : false;
+export const Controls: FC<TControlsProps> = ({ id, type, located }) => {
+  const controls = useGetControls(id, type, located);
+  const isExtraLink = useGetId() === 1 && type === "services" ? true : false;
 
-  return (
-    <ControlsUI
-      buttons={controls?.buttons}
-      links={controls?.links}
-      isExtraLink={isExtraLink}
-    />
-  );
+  return <ControlsUI controls={controls} isExtraLink={isExtraLink} />;
 };

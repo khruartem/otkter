@@ -14,52 +14,51 @@ import stylesLink from "../../link/link.module.css";
 import { Colors } from "../../../utils/types";
 import clsx from "clsx";
 
-export const ControlsUI: FC<TControlsUIProps> = ({
-  buttons,
-  links,
-  isExtraLink,
-}) => {
-  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } = useGetMediaQuery();
+export const ControlsUI: FC<TControlsUIProps> = ({ controls, isExtraLink }) => {
+  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
+    useGetMediaQuery();
 
   return (
     <div className={isMobile ? styles.controls_mobile : styles.controls}>
-      {buttons &&
-        buttons.map(({ label, onClick }) => {
-          return (
-            <Button
-              key={nanoid()}
-              type="button"
-              disabled={false}
-              onClick={onClick}
-              className={isMobile ? styles.button_mobile : undefined}
-            >
-              {label}
-            </Button>
-          );
-        })}
-      {!isExtraLink &&
-        links?.map(({ label, href, target, state }) => {
-          return (
-            <Link
-              key={nanoid()}
-              className={stylesLink.link}
-              to={href}
-              target={target}
-              state={state}
-            >
-              {label}
-            </Link>
-          );
+      {controls &&
+        controls.map(({ label, type, onClick, url, state }) => {
+          switch (type) {
+            case "link":
+              return (
+                <Link
+                  key={nanoid()}
+                  className={stylesLink.link}
+                  to={url}
+                  state={state}
+                >
+                  {label}
+                </Link>
+              );
+            case "button":
+              return (
+                <Button
+                  key={nanoid()}
+                  type="button"
+                  disabled={false}
+                  onClick={onClick}
+                  className={isMobile ? styles.button_mobile : undefined}
+                >
+                  {label}
+                </Button>
+              );
+          }
         })}
       {isExtraLink && (
-        <div className={clsx(
-          styles["extra-link"],
-          isLarge && styles["extra-link_large-screen"],
-          isDesktop && styles["extra-link_desktop"],
-          isLaptop && styles["extra-link_laptop"],
-          isTablet && styles["extra-link_tablet"],
-          isMobile && styles["extra-link_mobile"]
-        )}>
+        <div
+          className={clsx(
+            styles["extra-link"],
+            isLarge && styles["extra-link_large-screen"],
+            isDesktop && styles["extra-link_desktop"],
+            isLaptop && styles["extra-link_laptop"],
+            isTablet && styles["extra-link_tablet"],
+            isMobile && styles["extra-link_mobile"]
+          )}
+        >
           <TrickCircle mainColor={Colors.Orange100} />
           <Text
             as={"span"}

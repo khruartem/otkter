@@ -1,8 +1,9 @@
 import { TPhoto } from "../../../features/photos/photosSlice";
 import { TCardType } from "../../../utils/types";
 
-export type TPhotoProps = {
+export type TPhotoUIProps = {
   id: number;
+  url: string;
   photo: TPhoto | null;
   label?: string;
   nextPhotoId?: number;
