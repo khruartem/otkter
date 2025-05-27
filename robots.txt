@@ -1,1 +1,6 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /preview/
+Disallow: /not-found/index.html
+
 Sitemap: https://otkter.ru/6341888_5.xml
