@@ -16,6 +16,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         // Страницы проеков
+        all: resolve(__dirname, "projects/all/index.html"),
         uniqueChronicle: resolve(
           __dirname,
           "projects/unique-chronicle/index.html"
