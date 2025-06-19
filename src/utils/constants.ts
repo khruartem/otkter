@@ -110,21 +110,33 @@ import lampPhoto9 from "../assets/services-photo/lamp/lampPhoto9.jpg";
 import lampPhoto10 from "../assets/services-photo/lamp/lampPhoto10.jpg";
 
 // Фото Хроники
-import chronicsPhoto1 from "../assets/projects-photo/chronics/chronics_1.png";
-import chronicsPhoto2 from "../assets/projects-photo/chronics/chronics_2.png";
-import chronicsPhoto3 from "../assets/projects-photo/chronics/chronics_3.png";
-import chronicsPhoto4 from "../assets/projects-photo/chronics/chronics_4.png";
-import chronicsPhoto5 from "../assets/projects-photo/chronics/chronics_5.png";
-import chronicsPhoto6 from "../assets/projects-photo/chronics/chronics_6.png";
+import chronicsPhoto1 from "../assets/projects-photo/chronics/chronics_1.webp";
+import chronicsPhoto2 from "../assets/projects-photo/chronics/chronics_2.webp";
+import chronicsPhoto3 from "../assets/projects-photo/chronics/chronics_3.webp";
+import chronicsPhoto4 from "../assets/projects-photo/chronics/chronics_4.webp";
+import chronicsPhoto5 from "../assets/projects-photo/chronics/chronics_5.webp";
+import chronicsPhoto6 from "../assets/projects-photo/chronics/chronics_6.webp";
 
 // Фото Есенина
-import eseninPhoto1 from "../assets/projects-photo/esenin/esenin_1.png";
-import eseninPhoto2 from "../assets/projects-photo/esenin/esenin_2.png";
-import eseninPhoto3 from "../assets/projects-photo/esenin/esenin_3.png";
-import eseninPhoto4 from "../assets/projects-photo/esenin/esenin_4.png";
-import eseninPhoto5 from "../assets/projects-photo/esenin/esenin_5.png";
-import eseninPhoto6 from "../assets/projects-photo/esenin/esenin_6.png";
-import eseninPhoto7 from "../assets/projects-photo/esenin/esenin_7.png";
+import eseninPhoto1 from "../assets/projects-photo/esenin/esenin_1.webp";
+import eseninPhoto2 from "../assets/projects-photo/esenin/esenin_2.webp";
+import eseninPhoto3 from "../assets/projects-photo/esenin/esenin_3.webp";
+import eseninPhoto4 from "../assets/projects-photo/esenin/esenin_4.webp";
+import eseninPhoto5 from "../assets/projects-photo/esenin/esenin_5.webp";
+import eseninPhoto6 from "../assets/projects-photo/esenin/esenin_6.webp";
+import eseninPhoto7 from "../assets/projects-photo/esenin/esenin_7.webp";
+
+// Иконки фото Амплитуды
+import amplitudePhoto1 from "../assets/projects-photo/amplitude/amplitude_1.webp";
+import amplitudePhoto2 from "../assets/projects-photo/amplitude/amplitude_2.webp";
+import amplitudePhoto3 from "../assets/projects-photo/amplitude/amplitude_3.webp";
+import amplitudePhoto4 from "../assets/projects-photo/amplitude/amplitude_4.webp";
+import amplitudePhoto5 from "../assets/projects-photo/amplitude/amplitude_5.webp";
+import amplitudePhoto6 from "../assets/projects-photo/amplitude/amplitude_6.webp";
+import amplitudePhoto7 from "../assets/projects-photo/amplitude/amplitude_7.webp";
+import amplitudePhoto8 from "../assets/projects-photo/amplitude/amplitude_8.webp";
+import amplitudePhoto9 from "../assets/projects-photo/amplitude/amplitude_9.webp";
+import amplitudePhoto10 from "../assets/projects-photo/amplitude/amplitude_10.webp";
 
 // Иконки фото ОТ
 import openSeaPhotoIcon1 from "../assets/services-photo/open-sea/icons/openSeaPhoto1.jpg";
@@ -161,6 +173,18 @@ import eseninPhotoIcon4 from "../assets/projects-photo/esenin/icons/esenin_4.web
 import eseninPhotoIcon5 from "../assets/projects-photo/esenin/icons/esenin_5.webp";
 import eseninPhotoIcon6 from "../assets/projects-photo/esenin/icons/esenin_6.webp";
 import eseninPhotoIcon7 from "../assets/projects-photo/esenin/icons/esenin_7.webp";
+
+// Иконки фото Амплитуды
+import amplitudePhotoIcon1 from "../assets/projects-photo/amplitude/icons/amplitude_1.webp";
+import amplitudePhotoIcon2 from "../assets/projects-photo/amplitude/icons/amplitude_2.webp";
+import amplitudePhotoIcon3 from "../assets/projects-photo/amplitude/icons/amplitude_3.webp";
+import amplitudePhotoIcon4 from "../assets/projects-photo/amplitude/icons/amplitude_4.webp";
+import amplitudePhotoIcon5 from "../assets/projects-photo/amplitude/icons/amplitude_5.webp";
+import amplitudePhotoIcon6 from "../assets/projects-photo/amplitude/icons/amplitude_6.webp";
+import amplitudePhotoIcon7 from "../assets/projects-photo/amplitude/icons/amplitude_7.webp";
+import amplitudePhotoIcon8 from "../assets/projects-photo/amplitude/icons/amplitude_8.webp";
+import amplitudePhotoIcon9 from "../assets/projects-photo/amplitude/icons/amplitude_9.webp";
+import amplitudePhotoIcon10 from "../assets/projects-photo/amplitude/icons/amplitude_10.webp";
 
 // Обложки услуг
 import OT from "../assets/services/ot.webp";
@@ -202,7 +226,7 @@ import smmIcon from "../assets/services/icons/smm.webp";
 // Ссылки по проектам
 const buyTicketsLinkChronics =
   "https://tickets.mos.ru/widget/visit?eventId=61367&agentId=museum56&date=2025-05-04";
-const buyTicketsLinkEsenin = "https://bilet.mos.ru/event/338617257/";
+const buyTicketsLinkEsenin = "https://tickets.mos.ru/widget/visit?eventId=69990&agentId=museum24&date=2025-07-10";
 
 export const navLinks: TNavLinks = [
   {
@@ -460,7 +484,7 @@ export const projectInfos: TProjectInfo[] = [
       {
         type: "date",
         label: "Дата и время",
-        value: "4 мая 19:00",
+        value: "3 июля",
       },
       {
         type: "price",
@@ -773,22 +797,23 @@ export const projectInfos: TProjectInfo[] = [
         value: [
           "Государственный Литературный музей имени В. И. Даля",
           "ГБУ культуры г. Москвы «Объединение культурных центров Центрального административного округа»",
+          "Есенин-центр"
         ],
       },
       {
         type: "address",
         label: "Адрес",
-        value: "г. Москва, Сибирский пр., 2, стр. 5",
+        value: "г. Москва, пер. Чернышевского, 4, стр. 2",
       },
       {
         type: "date",
         label: "Дата",
-        value: "28 апреля 19:00",
+        value: "10 июля 19:00",
       },
       {
         type: "price",
         label: "Цена",
-        value: "700 руб. ДК «Стимул»",
+        value: "от 400 руб.",
       },
     ],
     employees: {
@@ -1242,7 +1267,58 @@ export const projectPhotos: TProjectPhotos[] = [
   },
   {
     id: 8,
-    photos: [],
+    photos: [
+      {
+        id: 7,
+        source: amplitudePhoto1,
+        icon: amplitudePhotoIcon1,
+      },
+      {
+        id: 8,
+        source: amplitudePhoto2,
+        icon: amplitudePhotoIcon2,
+      },
+      {
+        id: 9,
+        source: amplitudePhoto3,
+        icon: amplitudePhotoIcon3,
+      },
+      {
+        id: 10,
+        source: amplitudePhoto4,
+        icon: amplitudePhotoIcon4,
+      },
+      {
+        id: 11,
+        source: amplitudePhoto5,
+        icon: amplitudePhotoIcon5,
+      },
+      {
+        id: 12,
+        source: amplitudePhoto6,
+        icon: amplitudePhotoIcon6,
+      },
+      {
+        id: 13,
+        source: amplitudePhoto7,
+        icon: amplitudePhotoIcon7,
+      },
+      {
+        id: 14,
+        source: amplitudePhoto8,
+        icon: amplitudePhotoIcon8,
+      },
+      {
+        id: 15,
+        source: amplitudePhoto9,
+        icon: amplitudePhotoIcon9,
+      },
+      {
+        id: 15,
+        source: amplitudePhoto10,
+        icon: amplitudePhotoIcon10,
+      },
+    ],
   },
 ];
 
