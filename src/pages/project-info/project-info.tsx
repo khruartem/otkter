@@ -51,6 +51,7 @@ export const ProjectInfo: FC = () => {
     : false;
   const isMain = useGetProjectIsMain(projectId);
 
+  // Вывести в хук
   useEffect(() => {
     // Проброс стейта дальше или формирование
     if (location.state) {

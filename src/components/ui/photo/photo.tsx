@@ -34,7 +34,11 @@ export const PhotoUI: FC<TPhotoUIProps> = ({
     >
       {photo && !label && !nextPhotoId ? (
         <Link
-          to={`/${type}/${url}/${photo.id}`}
+          to={
+            type === "team"
+              ? `/${type}/admins/${url}/${photo.id}`
+              : `/${type}/${url}/${photo.id}`
+          }
           state={{ id, type, url, ...location.state }}
         >
           {/* <img
@@ -55,7 +59,11 @@ export const PhotoUI: FC<TPhotoUIProps> = ({
         </Link>
       ) : (
         <Link
-          to={`/${type}/${url}/${nextPhotoId}`}
+          to={
+            type === "team"
+              ? `/${type}/admins/${url}/${nextPhotoId}`
+              : `/${type}/${url}/${nextPhotoId}`
+          }
           state={{ id, type, url, ...location.state }}
         >
           <div className={clsx(styles.photo__link, styles.photo__link_more)}>

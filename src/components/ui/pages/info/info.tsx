@@ -17,10 +17,12 @@ import { Colors, TDetails } from "../../../../utils/types";
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 
 import styles from "./info.module.css";
+import { TeamTabBar } from "../../../team-tab-bar";
 
 export const InfoUI: FC<TInfoUIProps> = ({
   id,
   title,
+  extraTitle,
   text,
   poster,
   attention,
@@ -64,6 +66,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
           <Share id={id} type={type} />
           {type === "projects" && <ProjectsTabBar />}
           {type === "services" && <ServicesTabBar />}
+          {type === "team" && <TeamTabBar />}
         </div>
         <div
           className={clsx(
@@ -102,21 +105,62 @@ export const InfoUI: FC<TInfoUIProps> = ({
                     : styles["info__desc_small-resolution"]
                 )}
               >
-                <Text
-                  as={"h3"}
-                  fontFamily="Unbounded"
-                  textAlign="left"
-                  fontSize={largeResolution ? 32 : 28}
-                  fontWeight={500}
-                  lineHeight={largeResolution ? 48 : 40}
-                  textTransform={"none"}
-                  color={attention ? colorAttention! : Colors.Navy}
-                  classNameExtra={clsx(
-                    (isLarge || isDesktop || isLaptop) && styles.info__title
-                  )}
-                >
-                  {title}
-                </Text>
+                {extraTitle ? (
+                  <div
+                    className={clsx(
+                      styles["info__title-container"],
+                      isMobile && styles["info__title-container_mobile"]
+                    )}
+                  >
+                    <Text
+                      as={"h3"}
+                      fontFamily="Unbounded"
+                      textAlign="left"
+                      fontSize={largeResolution ? 32 : 28}
+                      fontWeight={500}
+                      lineHeight={largeResolution ? 48 : 40}
+                      textTransform={"none"}
+                      color={attention ? colorAttention! : Colors.Navy}
+                      classNameExtra={clsx(
+                        (isLarge || isDesktop || isLaptop) && styles.info__title
+                      )}
+                    >
+                      {title}
+                    </Text>
+                    <Text
+                      as={"h4"}
+                      fontFamily="Unbounded"
+                      textAlign="left"
+                      fontSize={largeResolution ? 20 : 14}
+                      fontWeight={400}
+                      lineHeight={largeResolution ? 32 : 20}
+                      textTransform={"none"}
+                      color={Colors.Nephritis100}
+                      classNameExtra={clsx(
+                        styles["info__extra-title"],
+                        isMobile && styles["info__extra-title_mobile"]
+                      )}
+                    >
+                      {extraTitle}
+                    </Text>
+                  </div>
+                ) : (
+                  <Text
+                    as={"h3"}
+                    fontFamily="Unbounded"
+                    textAlign="left"
+                    fontSize={largeResolution ? 32 : 28}
+                    fontWeight={500}
+                    lineHeight={largeResolution ? 48 : 40}
+                    textTransform={"none"}
+                    color={attention ? colorAttention! : Colors.Navy}
+                    classNameExtra={clsx(
+                      (isLarge || isDesktop || isLaptop) && styles.info__title
+                    )}
+                  >
+                    {title}
+                  </Text>
+                )}
                 <Text
                   as={"p"}
                   fontFamily="Roboto"
@@ -170,7 +214,12 @@ export const InfoUI: FC<TInfoUIProps> = ({
               // />
               <ImageUI
                 src={poster}
-                alt={`Афиша для проекта ${title}`}
+                alt={clsx(
+                  type === "projects" && `Афиша для проекта ${title}`,
+                  type === "services" && `Постер для услуги ${title}`,
+                  type === "team" &&
+                    `Фото резидента Открытой Территории ${title}`
+                )}
                 width={clsx(
                   isLarge && "27.08vw",
                   isDesktop && "34.11vw",

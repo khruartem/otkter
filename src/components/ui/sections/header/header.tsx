@@ -12,7 +12,12 @@ import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 import styles from "./header.module.css";
 import { HashLink } from "react-router-hash-link";
 
-export const HeaderUI: FC<THeaderUIProps> = ({ url, headerRef, onClickLogo }) => {
+export const HeaderUI: FC<THeaderUIProps> = ({
+  url,
+  headerRef,
+  onClickLogo,
+  location,
+}) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
   const largeResolution = isLarge || isDesktop;
@@ -50,6 +55,7 @@ export const HeaderUI: FC<THeaderUIProps> = ({ url, headerRef, onClickLogo }) =>
             });
           }}
           onClick={onClickLogo}
+          state={location?.state}
         >
           <Logo
             mainColor={Colors.Navy}

@@ -4,11 +4,10 @@ import { Main } from "../../pages/main";
 import { AllProjects } from "../../pages/all-projects";
 import { Modal } from "../modal";
 import { Slider } from "../slider";
-//import { ProjectInfo } from "../project-info";
 import { ProjectInfo } from "../../pages/project-info";
 import { ServiceInfo } from "../../pages/service-info";
-// import { ServiceInfo } from "../service-info";
 import { NotFound404 } from "../../pages/not-found-404";
+import { TeamInfo } from "../../pages/team-info";
 
 export function App() {
   const navigate = useNavigate();
@@ -100,8 +99,28 @@ export function App() {
             </Modal>
           }
         />
-        <Route path="*" element={<Navigate to={"/not-found"} />} />
-        <Route path="/not-found" element={<NotFound404 />} />
+        <Route path="/team/admins/:code" element={<TeamInfo />} />
+        <Route
+          path={"/team/admins/:code/:photoId"}
+          element={
+            <Modal
+              type="close"
+              onClose={() => {
+                if (location.state?.url) {
+                  navigate(`/team/admins/${location.state?.url}`, {
+                    state: { ...location.state },
+                  });
+                } else {
+                  navigate("/");
+                }
+              }}
+            >
+              <Slider type="team" />
+            </Modal>
+          }
+        />
+        <Route path="*" element={<Navigate to={"/404"} />} />
+        <Route path="/404" element={<NotFound404 />} />
       </Routes>
     </>
   );

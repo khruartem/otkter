@@ -1,9 +1,9 @@
 import { TProjectCategories } from "../features/categories/categoriesSlice";
 import { TControls } from "../features/controls/controlsSlice";
-import { TProjectPhotos, TServicePhotos } from "../features/photos/photosSlice";
+import { TPhotos } from "../features/photos/photosSlice";
 import { TProjectInfo } from "../features/projectsInfo/projectsInfoSlice";
 import { TServiceInfo } from "../features/projectsInfo/infosSlice";
-import { TProject, TService } from "./types";
+import { TEmployee, TProject, TService } from "./types";
 
 export const findById = <
   T extends
@@ -11,10 +11,10 @@ export const findById = <
     | TService[]
     | TProjectInfo[]
     | TProjectCategories[]
-    | TProjectPhotos[]
+    | TPhotos[]
     | TControls[]
-    | TServicePhotos[]
     | TServiceInfo[]
+    | TEmployee[]
 >(
   array: T,
   currentId: number

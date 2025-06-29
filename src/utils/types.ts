@@ -1,4 +1,4 @@
-import React, { ElementType, SyntheticEvent } from "react";
+import React, { SyntheticEvent } from "react";
 
 // export type TCategoryName =
 //   | "Спектакль"
@@ -39,7 +39,7 @@ export type TEventType =
   | "price"
   | "contacts";
 
-export type TSectionType = Extract<TCardType, "services" | "projects">;
+export type TSectionType = Extract<TCardType, "services" | "projects" | "team">;
 
 export type TSliderSectionType = Extract<
   TCardType,
@@ -63,6 +63,7 @@ export type TControlsItem = {
   onClick: () => void;
   url: string;
   state?: object;
+  icon?: string;
 };
 
 export type TEmployees = {
@@ -75,19 +76,10 @@ export type TEmployeeGroup = {
   employees: TEmployee[];
 };
 
-export type TEmployee = {
-  id?: number;
-  name: string;
-  occupation: string;
-  occupationExtra?: string;
-  photo: string;
-  icon: string;
-};
-
-export type TRole = "admins" | "artists";
+export type TEmployeesType = "admins" | "artists";
 
 export type TProjectInfo = {
-  role?: TRole;
+  role?: TEmployeesType;
   text?: string | string[];
   photos?: string[];
   eventDetails: TEventDetails;
@@ -106,7 +98,7 @@ export type TProjectsUrl =
   | "amplitude";
 
 export type TMapping = {
-  [key in TProjectsUrl | TServicesUrl | "not-found"]: number;
+  [key in TProjectsUrl | TServicesUrl | TAdminsUrl | "not-found"]: number;
 };
 
 export type TServicesUrl =
@@ -118,16 +110,24 @@ export type TServicesUrl =
   | "lamp"
   | "smm";
 
+export type TAdminsUrl =
+  | "yakovlev"
+  | "LA"
+  | "sinelnikova"
+  | "aspek"
+  | "hrustalev";
+
 export type TCardType =
   | "projects"
   | "team"
   | "services"
   | TServicesTabMode
-  | TProjectTabMode;
+  | TProjectTabMode
+  | TTeamTabMode;
 
 export type TCard = {
   id: number;
-  url: TProjectsUrl | TServicesUrl;
+  url: TProjectsUrl | TServicesUrl | TAdminsUrl | "not-found";
   type: TCardType;
   title: string;
   categoryList?: TCategory[];
@@ -140,6 +140,11 @@ export type TCard = {
   isMain?: boolean;
   isActive?: boolean;
   order?: number;
+  name: string;
+  photo: string;
+  occupation: string;
+  occupationExtra?: string;
+  biography?: string;
 };
 
 export type TProject = Pick<
@@ -159,10 +164,19 @@ export type TProject = Pick<
   | "icon"
 >;
 
-// export type TTeammate = Pick<
-//   TCard,
-//   "teamId" | "image" | "title" | "shortText" | "social"
-// >;
+export type TEmployee = Pick<
+  TCard,
+  | "id"
+  | "name"
+  | "occupation"
+  | "occupationExtra"
+  | "photo"
+  | "icon"
+  | "image"
+  | "url"
+  | "biography"
+  | "type"
+>;
 
 export type TService = Pick<
   TCard,
@@ -360,12 +374,40 @@ export type BorderType = {
   borderRadiusBottomRight?: TRadii;
 };
 
-export type IconType = {
-  as?: Extract<ElementType, "a" | "button">;
-  icon: string;
-  id: string;
-  url?: string;
-};
+export type TIconType =
+  | "logo"
+  | "telegram"
+  | "vk"
+  | "open-navigation"
+  | "close-navigation"
+  | "close-modal"
+  | "arrow-left"
+  | "arrow-right"
+  | "copy"
+  | "play"
+  | "contest"
+  | "master-class"
+  | "short-film"
+  | "admins"
+  | "artists"
+  | "all"
+  | "info"
+  | "circle"
+  | "attention"
+  | "organizers"
+  | "partners"
+  | "date"
+  | "address"
+  | "price"
+  | "contacts"
+  | "open-sea"
+  | "events"
+  | "design"
+  | "content"
+  | "master-class"
+  | "lamp"
+  | "smm"
+  | "error";
 
 export type LinkType = {
   url: string;

@@ -1,5 +1,5 @@
 import { TPhoto } from "../../../features/photos/photosSlice";
-import { TCardType } from "../../../utils/types";
+import { TSectionType } from "../../../utils/types";
 
 export type TPhotoUIProps = {
   id: number;
@@ -7,5 +7,5 @@ export type TPhotoUIProps = {
   photo: TPhoto | null;
   label?: string;
   nextPhotoId?: number;
-  type: Extract<TCardType, "projects" | "services">;
+  type: TSectionType;
 }

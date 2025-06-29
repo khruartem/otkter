@@ -8,7 +8,7 @@ import { TabItem } from "../../tab-item";
 
 import { TTabBarUIProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
-import { Colors } from "../../../utils/types";
+import { Colors, TEmployee, TProject, TService } from "../../../utils/types";
 
 import styles from "./tab-bar.module.css";
 
@@ -20,7 +20,7 @@ export const TabBarUI: FC<TTabBarUIProps> = ({
   onSwitch,
   setCurrentItem,
   setIndex,
-  location
+  location,
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
@@ -55,7 +55,11 @@ export const TabBarUI: FC<TTabBarUIProps> = ({
           return (
             <Link
               key={item.id}
-              to={`/${type}/${item.url}`}
+              to={
+                type === "team"
+                  ? `/${type}/admins/${item.url}`
+                  : `/${type}/${item.url}`
+              }
               state={{ ...location?.state, id: item.id, url: item.url }}
               className={styles["tab-bar__item-link"]}
             >
@@ -65,7 +69,13 @@ export const TabBarUI: FC<TTabBarUIProps> = ({
                   item={item}
                   index={index}
                   current={item.id === current.id}
-                  setCurrentItem={setCurrentItem}
+                  setCurrentItem={
+                    setCurrentItem as (
+                      value: React.SetStateAction<
+                        TProject | TService | TEmployee
+                      >
+                    ) => void
+                  }
                   setIndex={setIndex}
                 />
               </li>

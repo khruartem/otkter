@@ -1,9 +1,11 @@
 import { FC, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 
 import { SliderSectionUI } from "../../components/ui/sections/slider-section";
 
+import { useScrollOnMount } from "../../hooks/useScrollOnMount";
+
 import { TTeamRef, TTeamViewRef } from "../../utils/types";
-import { useInView } from "react-intersection-observer";
 
 export const Teams: FC = () => {
   const adminsRef = useRef<HTMLDivElement>(null);
@@ -39,6 +41,8 @@ export const Teams: FC = () => {
       type: "artists",
     },
   ];
+
+  useScrollOnMount();
 
   return (
     <SliderSectionUI

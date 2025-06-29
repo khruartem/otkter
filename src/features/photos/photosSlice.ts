@@ -2,34 +2,32 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { findById } from "../../utils/findById";
 import { projectPhotos, servicePhotos } from "../../utils/constants";
-import { TCardType } from "../../utils/types";
+import { TSectionType } from "../../utils/types";
+import { teamPhotos } from "../../utils/constants/team";
 
-type TPhotosType = Extract<TCardType, "services" | "projects">;
+type TPhotosType = TSectionType;
 
 export type TPhoto = {
   id: number;
   source: string;
-  icon: string
+  icon: string;
 };
 
-export type TProjectPhotos = {
-  id: number;
-  photos: TPhoto[];
-};
-
-export type TServicePhotos = {
+export type TPhotos = {
   id: number;
   photos: TPhoto[];
 };
 
 type TPhotosState = {
-  projectPhotos: TProjectPhotos[];
-  servicePhotos: TServicePhotos[];
+  projectPhotos: TPhotos[];
+  servicePhotos: TPhotos[];
+  teamPhotos: TPhotos[];
 };
 
 const initialState: TPhotosState = {
   projectPhotos: projectPhotos,
   servicePhotos: servicePhotos,
+  teamPhotos: teamPhotos,
 };
 
 const photosSlice = createSlice({
@@ -37,12 +35,8 @@ const photosSlice = createSlice({
   initialState,
   reducers: {},
   selectors: {
-    getPhotosSelector: (
-      state: TPhotosState,
-      id: number,
-      type: TPhotosType
-    ) => {
-      let photosArray: TProjectPhotos[] | TServicePhotos[] = [];
+    getPhotosSelector: (state: TPhotosState, id: number, type: TPhotosType) => {
+      let photosArray: TPhotos[] = [];
 
       switch (type) {
         case "services":
@@ -51,11 +45,12 @@ const photosSlice = createSlice({
         case "projects":
           photosArray = state.projectPhotos;
           break;
+        case "team":
+          photosArray = state.teamPhotos;
+          break;
       }
 
-      const foundElement = findById(photosArray, id) as
-        | TProjectPhotos
-        | TServicePhotos;
+      const foundElement = findById(photosArray, id) as TPhotos;
 
       return foundElement ? foundElement.photos : undefined;
     },

@@ -1,16 +1,17 @@
 import { FC, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import { TabBarUI } from "../ui/tab-bar";
 
 import { useGetId } from "../../hooks/useGetId";
 import { useGetProjects } from "../../hooks/useGetProjects";
 import { useSortAsc } from "../../hooks/useSortAsc";
-import { TProject } from "../../utils/types";
+import { useGetOnSwitch } from "../../hooks/useGetOnSwitch";
+
+import { TEmployee, TProject, TService } from "../../utils/types";
 import { findById } from "../../utils/findById";
 
 export const ProjectsTabBar: FC = () => {
-  const navigate = useNavigate();
   const location = useLocation();
 
   const id = useGetId();
@@ -24,39 +25,45 @@ export const ProjectsTabBar: FC = () => {
   );
 
   // TODO: Перенести в хук и использовать в слайдере
-  const onSwitch: (arg: number) => void = (index: number) => {
-    if (index > projects.length - 1) {
-      setIndex(0);
-      setCurrentProject(sortedProjects[0]);
-      navigate(`/projects/${sortedProjects[0].url}`, {
-        state: {
-          ...location.state,
-          id: sortedProjects[0].id,
-          url: sortedProjects[0].url,
-        },
-      });
-    } else if (index < 0) {
-      setIndex(projects.length - 1);
-      setCurrentProject(sortedProjects[projects.length - 1]);
-      navigate(`/projects/${sortedProjects[projects.length - 1].url}`, {
-        state: {
-          ...location.state,
-          id: sortedProjects[projects.length - 1].id,
-          url: sortedProjects[projects.length - 1].url,
-        },
-      });
-    } else {
-      setIndex(index);
-      setCurrentProject(sortedProjects[index]);
-      navigate(`/projects/${sortedProjects[index].url}`, {
-        state: {
-          ...location.state,
-          id: sortedProjects[index].id,
-          url: sortedProjects[index].url,
-        },
-      });
-    }
-  };
+  // const onSwitch: (arg: number) => void = (index: number) => {
+  //   if (index > projects.length - 1) {
+  //     setIndex(0);
+  //     setCurrentProject(sortedProjects[0]);
+  //     navigate(`/projects/${sortedProjects[0].url}`, {
+  //       state: {
+  //         ...location.state,
+  //         id: sortedProjects[0].id,
+  //         url: sortedProjects[0].url,
+  //       },
+  //     });
+  //   } else if (index < 0) {
+  //     setIndex(projects.length - 1);
+  //     setCurrentProject(sortedProjects[projects.length - 1]);
+  //     navigate(`/projects/${sortedProjects[projects.length - 1].url}`, {
+  //       state: {
+  //         ...location.state,
+  //         id: sortedProjects[projects.length - 1].id,
+  //         url: sortedProjects[projects.length - 1].url,
+  //       },
+  //     });
+  //   } else {
+  //     setIndex(index);
+  //     setCurrentProject(sortedProjects[index]);
+  //     navigate(`/projects/${sortedProjects[index].url}`, {
+  //       state: {
+  //         ...location.state,
+  //         id: sortedProjects[index].id,
+  //         url: sortedProjects[index].url,
+  //       },
+  //     });
+  //   }
+  // };
+  const onSwitch = useGetOnSwitch<TProject>(
+    sortedProjects,
+    setIndex,
+    setCurrentProject,
+    "projects"
+  );
 
   return (
     <TabBarUI
@@ -65,7 +72,11 @@ export const ProjectsTabBar: FC = () => {
       index={index}
       items={sortedProjects}
       onSwitch={onSwitch}
-      setCurrentItem={setCurrentProject}
+      setCurrentItem={
+        setCurrentProject as (
+          value: React.SetStateAction<TProject | TService | TEmployee>
+        ) => void
+      }
       setIndex={setIndex}
       location={location}
     />

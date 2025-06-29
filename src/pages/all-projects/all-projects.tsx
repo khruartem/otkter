@@ -29,7 +29,7 @@ export const AllProjects: FC = () => {
         description={"Все проекты Открытой территориии."}
         siteName={"Все проекты"}
         url={`https://otkter.ru/projects/all`}
-        previewImg={"/preview/preview.png"}
+        previewImg={"/preview/preview.webp"}
       />
       <AllProjectsUI />
     </>

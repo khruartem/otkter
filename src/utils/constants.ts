@@ -1,20 +1,17 @@
 import {
   Social,
-  TEmployees,
   TNavLinks,
   TProject,
   TMapping,
   TProjectTabMode,
   TService,
   TServicesTabMode,
-  TTeamTabMode,
 } from "./types";
 import { TProjectInfo } from "../features/projectsInfo/projectsInfoSlice";
 import { TControls } from "../features/controls/controlsSlice";
 import { TProjectCategories } from "../features/categories/categoriesSlice";
-import { TProjectPhotos, TServicePhotos } from "../features/photos/photosSlice";
+import { TPhotos } from "../features/photos/photosSlice";
 import { TServiceInfo } from "../features/projectsInfo/infosSlice";
-import { TTeamSocials } from "../features/socials/socialsSlice";
 import { contactFunction } from "./contactFunction";
 
 // import playSVG from "../../public/projects_play.svg";
@@ -34,61 +31,24 @@ import esenin from "../assets/projects/esenin.webp";
 
 // Команда
 // Админы
-import yakovlev from "../assets/team/yakovlev.webp";
-import LA from "../assets/team/LA.webp";
-import sinelnikova from "../assets/team/sinelnikova.webp";
-import aspek from "../assets/team/aspek.webp";
-import hrustalev from "../assets/team/hrustalev.webp";
+import { yakovlev } from "./constants/team";
+import { LA } from "./constants/team";
+import { sinelnikova } from "./constants/team";
 // Творцы
-import rudnitskiy from "../assets/team/rudnitskiy.webp";
-import torzhkova from "../assets/team/torzhkova.webp";
-import murzukova from "../assets/team/murzukova.webp";
-import agafonov from "../assets/team/agafonov.webp";
-import sokolovskiy from "../assets/team/sokolovskiy.webp";
-import ivanova from "../assets/team/ivanova.webp";
-import avramenko from "../assets/team/avramenko.webp";
-import maltcev from "../assets/team/maltcev.webp";
-import bondareva from "../assets/team/bondareva.webp";
-import knysh from "../assets/team/knysh.webp";
-import strelnikov from "../assets/team/strelnikov.webp";
-import maslovskaya from "../assets/team/maslovskaya.webp";
-import karaya from "../assets/team/karaya.webp";
-import hvostikova from "../assets/team/hvostikova.webp";
-import tensik from "../assets/team/tensik.webp";
-import larina from "../assets/team/larina.webp";
-// import unknown from "../assets/team/unknown.webp";
-import medvedev from "../assets/team/medvedev.webp";
-import maksimova from "../assets/team/maksimova.webp";
-import kizenkov from "../assets/team/kizenkov.webp";
-
-// Иконки команды
-// Иконки админов
-import yakovlevIcon from "../assets/team/icons/yakovlev.webp";
-import LAIcon from "../assets/team/icons/LA.webp";
-import sinelnikovaIcon from "../assets/team/icons/sinelnikova.webp";
-import aspekIcon from "../assets/team/icons/aspek.webp";
-import hrustalevIcon from "../assets/team/icons/hrustalev.webp";
-// Иконки творцов
-import rudnitskiyIcon from "../assets/team/icons/rudnitskiy.webp";
-import torzhkovaIcon from "../assets/team/icons/torzhkova.webp";
-import murzukovaIcon from "../assets/team/icons/murzukova.webp";
-import agafonovIcon from "../assets/team/icons/agafonov.webp";
-import sokolovskiyIcon from "../assets/team/icons/sokolovskiy.webp";
-import ivanovaIcon from "../assets/team/icons/ivanova.webp";
-import avramenkoIcon from "../assets/team/icons/avramenko.webp";
-import maltcevIcon from "../assets/team/icons/maltcev.webp";
-import bondarevaIcon from "../assets/team/icons/bondareva.webp";
-import knyshIcon from "../assets/team/icons/knysh.webp";
-import strelnikovIcon from "../assets/team/icons/strelnikov.webp";
-import maslovskayaIcon from "../assets/team/icons/maslovskaya.webp";
-import karayaIcon from "../assets/team/icons/karaya.webp";
-import hvostikovaIcon from "../assets/team/icons/hvostikova.webp";
-import tensikIcon from "../assets/team/icons/tensik.webp";
-import larinaIcon from "../assets/team/icons/larina.webp";
-// import unknownIcon from "../assets/team/icons/unknown.webp";
-import medvedevIcon from "../assets/team/icons/medvedev.webp";
-import maksimovaIcon from "../assets/team/icons/maksimova.webp";
-import kizenkovIcon from "../assets/team/icons/kizenkov.webp";
+import { rudnitskiy } from "./constants/team";
+import { torzhkova } from "./constants/team";
+import { murzukova } from "./constants/team";
+import { agafonov } from "./constants/team";
+import { sokolovskiy } from "./constants/team";
+import { maltcev } from "./constants/team";
+import { bondareva } from "./constants/team";
+import { knysh } from "./constants/team";
+import { strelnikov } from "./constants/team";
+import { maslovskaya } from "./constants/team";
+import { larina } from "./constants/team";
+import { medvedev } from "./constants/team";
+import { maksimova } from "./constants/team";
+import { kizenkov } from "./constants/team";
 
 // Фото ОТ
 import openSeaPhoto1 from "../assets/services-photo/open-sea/openSeaPhoto1.png";
@@ -226,7 +186,8 @@ import smmIcon from "../assets/services/icons/smm.webp";
 // Ссылки по проектам
 const buyTicketsLinkChronics =
   "https://tickets.mos.ru/widget/visit?eventId=61367&agentId=museum56&date=2025-05-04";
-const buyTicketsLinkEsenin = "https://tickets.mos.ru/widget/visit?eventId=69990&agentId=museum24&date=2025-07-10";
+const buyTicketsLinkEsenin =
+  "https://tickets.mos.ru/widget/visit?eventId=69990&agentId=museum24&date=2025-07-10";
 
 export const navLinks: TNavLinks = [
   {
@@ -266,89 +227,6 @@ export const mainSocials: Social[] = [
     id: 2,
     url: "https://vk.com/otkter",
     type: "vk",
-  },
-];
-
-export const teamsSocials: TTeamSocials[] = [
-  {
-    teamType: "admins",
-    teamSocials: [
-      {
-        employeeId: 1,
-        socials: [
-          {
-            id: 1,
-            url: "https://t.me/yakovlevsergeyy1",
-            type: "telegram",
-          },
-          {
-            id: 2,
-            url: "https://vk.com/seryoga_yakovlev",
-            type: "vk",
-          },
-        ],
-      },
-      {
-        employeeId: 2,
-        socials: [
-          {
-            id: 3,
-            url: "https://t.me/otkmore",
-            type: "telegram",
-          },
-          {
-            id: 4,
-            url: "https://vk.com/id58249512",
-            type: "vk",
-          },
-        ],
-      },
-      {
-        employeeId: 3,
-        socials: [
-          {
-            id: 5,
-            url: "https://t.me/Chronostheone",
-            type: "telegram",
-          },
-          {
-            id: 6,
-            url: "https://vk.com/kronosas",
-            type: "vk",
-          },
-        ],
-      },
-      {
-        employeeId: 4,
-        socials: [
-          {
-            id: 7,
-            url: "https://t.me/si_alyo",
-            type: "telegram",
-          },
-          {
-            id: 8,
-            url: "https://vk.com/blessedbyamisteryoflove",
-            type: "vk",
-          },
-        ],
-      },
-      {
-        employeeId: 5,
-        socials: [
-          {
-            id: 9,
-            url: "https://t.me/khruartem",
-            type: "telegram",
-          },
-          {
-            id: 10,
-            url: "https://vk.com/khruartem",
-            type: "vk",
-          },
-        ],
-      },
-    ],
   },
 ];
 
@@ -434,7 +312,7 @@ export const projects: TProject[] = [
   {
     id: 7,
     url: "esenin",
-    title: "Поэтический спектакль «Есенин. Жизнь в стихах»",
+    title: "«Есенин. Жизнь в стихах»",
     image: esenin,
     shortText:
       "В исполнении артистов прозвучат стихи Сергея Есенина, а песни сольются с партией фортепиано, повествуя о мыслях, метаниях и надеждах навеки молодого, но мудрого душой поэта.",
@@ -497,46 +375,21 @@ export const projectInfos: TProjectInfo[] = [
         {
           name: "В ролях",
           employees: [
-            {
-              name: "Марат Рудницкий",
-              occupation: "Журналист времен войны",
-              photo: rudnitskiy,
-              icon: rudnitskiyIcon,
-            },
-            {
-              name: "Людмила Яковлева",
-              occupation: "Журналист наших дней",
-              photo: LA,
-              icon: LAIcon,
-            },
-            {
-              name: "Дарья Торжкова",
-              occupation: "Журналист наших дней",
-              photo: torzhkova,
-              icon: torzhkovaIcon,
-            },
+            rudnitskiy.getEmployee("Журналист времен войны"),
+            LA.getEmployee("Журналист наших дней"),
+            torzhkova.getEmployee("Журналист наших дней"),
           ],
         },
       ],
       administrators: {
         name: "Руководители",
         employees: [
-          {
-            name: "Сергей Яковлев",
-            occupation: "Режиссер-постановщик",
-            photo: yakovlev,
-            icon: yakovlevIcon,
-          },
-          {
-            name: "Алена Синельникова",
-            occupation: "Продюсер",
-            photo: sinelnikova,
-            icon: sinelnikovaIcon,
-          },
+          yakovlev.getEmployee("Режиссер-постановщик"),
+          sinelnikova.getEmployee("Продюсер"),
         ],
       },
     },
-    previewImg: "/preview/preview_chronics.png",
+    previewImg: "/preview/preview_chronics.webp",
     poster: uniqueChroniclePoster,
   },
   {
@@ -575,7 +428,7 @@ export const projectInfos: TProjectInfo[] = [
         value: "Вход свободный",
       },
     ],
-    previewImg: "/preview/preview_friendship.png",
+    previewImg: "/preview/preview_friendship.webp",
   },
   {
     id: 3,
@@ -609,7 +462,7 @@ export const projectInfos: TProjectInfo[] = [
         value: "3000 ₽",
       },
     ],
-    previewImg: "/preview/preview_play.png",
+    previewImg: "/preview/preview_play.webp",
   },
   {
     id: 4,
@@ -640,7 +493,7 @@ export const projectInfos: TProjectInfo[] = [
         value: "Каждую третью субботу месяца",
       },
     ],
-    previewImg: "/preview/preview_mastership.png",
+    previewImg: "/preview/preview_mastership.webp",
   },
   {
     id: 5,
@@ -667,28 +520,13 @@ export const projectInfos: TProjectInfo[] = [
       administrators: {
         name: "Руководители",
         employees: [
-          {
-            name: "Сергей Яковлев",
-            occupation: "Режиссер",
-            photo: yakovlev,
-            icon: yakovlevIcon,
-          },
-          {
-            name: "Марк Агафонов",
-            occupation: "Второй режиссер",
-            photo: agafonov,
-            icon: agafonovIcon,
-          },
-          {
-            name: "Алёна Синельникова",
-            occupation: "Генеральный продюсер",
-            photo: sinelnikova,
-            icon: sinelnikovaIcon,
-          },
+          yakovlev.getEmployee("Режиссер"),
+          agafonov.getEmployee("Второй режиссер"),
+          sinelnikova.getEmployee("Генеральный продюсер"),
         ],
       },
     },
-    previewImg: "/preview/preview_nikolai.png",
+    previewImg: "/preview/preview_nikolai.webp",
   },
   {
     id: 6,
@@ -722,64 +560,24 @@ export const projectInfos: TProjectInfo[] = [
         {
           name: "В ролях",
           employees: [
-            {
-              name: "Леонид Стрельников",
-              occupation: "Актер",
-              photo: strelnikov,
-              icon: strelnikovIcon,
-            },
-            {
-              name: "Марат Рудницкий",
-              occupation: "Актер",
-              photo: rudnitskiy,
-              icon: rudnitskiyIcon,
-            },
-            {
-              name: "Дарья Торжкова",
-              occupation: "Актер",
-              photo: torzhkova,
-              icon: torzhkovaIcon,
-            },
-            {
-              name: "Анастасия Мурзюкова",
-              occupation: "Актер",
-              photo: murzukova,
-              icon: murzukovaIcon,
-            },
+            strelnikov.getEmployee("Актер"),
+            rudnitskiy.getEmployee("Актер"),
+            torzhkova.getEmployee("Актер"),
+            murzukova.getEmployee("Актер"),
           ],
         },
       ],
       administrators: {
         name: "Руководители",
         employees: [
-          {
-            name: "Сергей Яковлев",
-            occupation: "Режиссер-постановщик",
-            photo: yakovlev,
-            icon: yakovlevIcon,
-          },
-          {
-            name: "Людмила Яковлева",
-            occupation: "Режиссер",
-            photo: LA,
-            icon: LAIcon,
-          },
-          {
-            name: "Ольга Масловская",
-            occupation: "Драматург",
-            photo: maslovskaya,
-            icon: maslovskayaIcon,
-          },
-          {
-            name: "Алёна Синельникова",
-            occupation: "Продюсер",
-            photo: sinelnikova,
-            icon: sinelnikovaIcon,
-          },
+          yakovlev.getEmployee("Режиссер-постановщик"),
+          LA.getEmployee("Режиссер"),
+          maslovskaya.getEmployee("Драматург"),
+          sinelnikova.getEmployee("Продюсер"),
         ],
       },
     },
-    previewImg: "/preview/preview_two.png",
+    previewImg: "/preview/preview_two.webp",
   },
   {
     id: 7,
@@ -797,7 +595,7 @@ export const projectInfos: TProjectInfo[] = [
         value: [
           "Государственный Литературный музей имени В. И. Даля",
           "ГБУ культуры г. Москвы «Объединение культурных центров Центрального административного округа»",
-          "Есенин-центр"
+          "Есенин-центр",
         ],
       },
       {
@@ -821,48 +619,27 @@ export const projectInfos: TProjectInfo[] = [
         {
           name: "В ролях",
           employees: [
-            {
-              name: "Дмитрий Мальцев",
-              occupation: "Сергей Есенин",
-              occupationExtra: "Артист театра «Ленком Марка Захарова»",
-              photo: maltcev,
-              icon: maltcevIcon,
-            },
-            {
-              name: "Олег Кныш",
-              occupation: "Я",
-              occupationExtra: "Артист театра «Ленком Марка Захарова»",
-              photo: knysh,
-              icon: knyshIcon,
-            },
+            maltcev.getEmployee(
+              "Сергей Есенин",
+              "Артист театра «Ленком Марка Захарова»"
+            ),
+            knysh.getEmployee("Я", "Артист театра «Ленком Марка Захарова»"),
           ],
         },
         {
           name: "Фортепиано",
           employees: [
-            {
-              name: "Елена Ларина",
-              occupation: "Артистка хора театра «Ленком Марка Захарова»",
-              photo: larina,
-              icon: larinaIcon,
-            },
+            larina.getEmployee("Артистка хора театра «Ленком Марка Захарова»"),
           ],
         },
       ],
       administrators: {
         name: "Руководители",
-        employees: [
-          {
-            name: "Сергей Яковлев",
-            occupation: "Режиссер-постановщик",
-            photo: yakovlev,
-            icon: yakovlevIcon,
-          },
-        ],
+        employees: [yakovlev.getEmployee("Режиссер-постановщик")],
       },
     },
     poster: eseninPoster,
-    previewImg: "/preview/preview_esenin.png",
+    previewImg: "/preview/preview_esenin.webp",
   },
   {
     id: 8,
@@ -903,87 +680,39 @@ export const projectInfos: TProjectInfo[] = [
         {
           name: "Стихи",
           employees: [
-            {
-              name: "Анастасия Бондарева",
-              occupation: "Поэт",
-              photo: bondareva,
-              icon: bondarevaIcon,
-            },
-            {
-              name: "Леонид Стрельников",
-              occupation: "Актер театра у Никитских ворот",
-              photo: strelnikov,
-              icon: strelnikovIcon,
-            },
-            {
-              name: "Олег Кныш",
-              occupation: "Актер театра «Ленком Марка Захарова»",
-              photo: knysh,
-              icon: knyshIcon,
-            },
+            bondareva.getEmployee("Поэт"),
+            strelnikov.getEmployee("Актер театра у Никитских ворот"),
+            knysh.getEmployee("Актёр театра «Ленком Марка Захарова»"),
           ],
         },
         {
           name: "Поэты",
           employees: [
-            {
-              name: "Андрей Медведев",
-              occupation: "Поэт",
-              photo: medvedev,
-              icon: medvedevIcon,
-            },
-            {
-              name: "Кирилл Соколовский",
-              occupation: "Поэт",
-              photo: sokolovskiy,
-              icon: sokolovskiyIcon,
-            },
-            {
-              name: "Марат Рудницкий",
-              occupation:
-                "Актёр, звукорежиссер, инженер телецентра «Останкино»",
-              photo: rudnitskiy,
-              icon: rudnitskiyIcon,
-            },
+            medvedev.getEmployee("Поэт"),
+            sokolovskiy.getEmployee("Поэт"),
+            rudnitskiy.getEmployee(
+              "Актёр, звукорежиссер, инженер телецентра «Останкино»"
+            ),
           ],
         },
         {
           name: "Композитор, исполнитель",
-          employees: [
-            {
-              name: "Арина Максимова",
-              occupation: "Композитор, исполнитель",
-              photo: maksimova,
-              icon: maksimovaIcon,
-            },
-          ],
+          employees: [maksimova.getEmployee("Композитор, исполнитель")],
         },
         {
           name: "Вокал",
           employees: [
-            {
-              name: "Алексей Кизенков",
-              occupation: "Актер театра «Ленком Марка Захарова»",
-              photo: kizenkov,
-              icon: kizenkovIcon,
-            },
+            kizenkov.getEmployee("Актер театра «Ленком Марка Захарова»"),
           ],
         },
       ],
       administrators: {
         name: "Руководители",
-        employees: [
-          {
-            name: "Сергей Яковлев",
-            occupation: "Режиссер-постановщик",
-            photo: yakovlev,
-            icon: yakovlevIcon,
-          },
-        ],
+        employees: [yakovlev.getEmployee("Режиссер-постановщик")],
       },
     },
     poster: amplitudePoster,
-    previewImg: "/preview/preview_amplitude.png",
+    previewImg: "/preview/preview_amplitude.webp",
   },
 ];
 
@@ -1169,7 +898,7 @@ export const projectCategories: TProjectCategories[] = [
   },
 ];
 
-export const projectPhotos: TProjectPhotos[] = [
+export const projectPhotos: TPhotos[] = [
   {
     id: 1,
     photos: [
@@ -1229,37 +958,37 @@ export const projectPhotos: TProjectPhotos[] = [
     id: 7,
     photos: [
       {
-        id: 31,
+        id: 7,
         source: eseninPhoto1,
         icon: eseninPhotoIcon1,
       },
       {
-        id: 32,
+        id: 8,
         source: eseninPhoto2,
         icon: eseninPhotoIcon2,
       },
       {
-        id: 33,
+        id: 9,
         source: eseninPhoto3,
         icon: eseninPhotoIcon3,
       },
       {
-        id: 34,
+        id: 10,
         source: eseninPhoto4,
         icon: eseninPhotoIcon4,
       },
       {
-        id: 35,
+        id: 11,
         source: eseninPhoto5,
         icon: eseninPhotoIcon5,
       },
       {
-        id: 36,
+        id: 12,
         source: eseninPhoto6,
         icon: eseninPhotoIcon6,
       },
       {
-        id: 37,
+        id: 13,
         source: eseninPhoto7,
         icon: eseninPhotoIcon7,
       },
@@ -1269,52 +998,52 @@ export const projectPhotos: TProjectPhotos[] = [
     id: 8,
     photos: [
       {
-        id: 7,
+        id: 14,
         source: amplitudePhoto1,
         icon: amplitudePhotoIcon1,
       },
       {
-        id: 8,
+        id: 15,
         source: amplitudePhoto2,
         icon: amplitudePhotoIcon2,
       },
       {
-        id: 9,
+        id: 16,
         source: amplitudePhoto3,
         icon: amplitudePhotoIcon3,
       },
       {
-        id: 10,
+        id: 17,
         source: amplitudePhoto4,
         icon: amplitudePhotoIcon4,
       },
       {
-        id: 11,
+        id: 18,
         source: amplitudePhoto5,
         icon: amplitudePhotoIcon5,
       },
       {
-        id: 12,
+        id: 19,
         source: amplitudePhoto6,
         icon: amplitudePhotoIcon6,
       },
       {
-        id: 13,
+        id: 20,
         source: amplitudePhoto7,
         icon: amplitudePhotoIcon7,
       },
       {
-        id: 14,
+        id: 21,
         source: amplitudePhoto8,
         icon: amplitudePhotoIcon8,
       },
       {
-        id: 15,
+        id: 22,
         source: amplitudePhoto9,
         icon: amplitudePhotoIcon9,
       },
       {
-        id: 15,
+        id: 23,
         source: amplitudePhoto10,
         icon: amplitudePhotoIcon10,
       },
@@ -1601,51 +1330,41 @@ export const serviceInfos: TServiceInfo[] = [
       administrators: {
         name: "Руководители",
         employees: [
-          {
-            name: "Сергей Яковлев",
-            occupation: "Директор",
-            photo: yakovlev,
-            icon: yakovlevIcon,
-          },
-          {
-            name: "Людмила Яковлева",
-            occupation: "Худрук и педагог",
-            photo: LA,
-            icon: LAIcon,
-          },
+          yakovlev.getEmployee("Директор"),
+          LA.getEmployee("Худрук и педагог"),
         ],
       },
     },
     poster: OT,
-    previewImg: "/preview/preview_ot.png",
+    previewImg: "/preview/preview_ot.webp",
   },
   {
     id: 2,
     text: "Организуем и проведем мероприятия любой сложности. Концерты, городские мероприятия, творческие вечера, фестивали, конкурсы, спектакли т. п.",
     serviceDetails: [],
     poster: events,
-    previewImg: "/preview/preview_events.png",
+    previewImg: "/preview/preview_events.webp",
   },
   {
     id: 3,
     text: "Берем в работу задачи по графическому дизайну, айдентике, полиграфии, UX/UI и разработке сайтов.",
     serviceDetails: [],
     poster: design,
-    previewImg: "/preview/preview_design.png",
+    previewImg: "/preview/preview_design.webp",
   },
   {
     id: 4,
     text: "Организация съемки мероприятий, в том числе интервью, подкастов, рилсов, репортажей, бэкстейджей, документальных фильмов, коротких метров или иных съемок. Обеспечивается полный цикл производства, от подготовительного до монтажно-тонировочного периода, и команда профессионалов (режиссер-постановщик, оператор-постановщик, гафер, звукорежиссёр, актеры и т.д.).",
     serviceDetails: [],
     poster: content,
-    previewImg: "/preview/preview_content.png",
+    previewImg: "/preview/preview_content.webp",
   },
   {
     id: 5,
     text: "Проведем мастер-классы и треннинги по актерскому мастерству, ораторскому искусству.",
     serviceDetails: [],
     poster: masterClasses,
-    previewImg: "/preview/preview_mc.png",
+    previewImg: "/preview/preview_mc.webp",
   },
   {
     id: 6,
@@ -1671,59 +1390,49 @@ export const serviceInfos: TServiceInfo[] = [
       administrators: {
         name: "Руководители",
         employees: [
-          {
-            name: "Сергей Яковлев",
-            occupation: "Директор",
-            photo: yakovlev,
-            icon: yakovlevIcon,
-          },
-          {
-            name: "Людмила Яковлева",
-            occupation: "Худрук и педагог",
-            photo: LA,
-            icon: LAIcon,
-          },
+          yakovlev.getEmployee("Директор"),
+          LA.getEmployee("Худрук и педагог"),
         ],
       },
     },
     poster: lamp,
-    previewImg: "/preview/preview_lamp.png",
+    previewImg: "/preview/preview_lamp.webp",
   },
   {
     id: 7,
     text: "Менеджмент социальных сетей (SMM - создание и управление контентом на платформах социальных медиа) и связи с общественностью (PR - формирование и поддержание положительного имиджа компании через взаимодействие с общественностью и медиа).",
     serviceDetails: [],
     poster: smm,
-    previewImg: "/preview/preview_smm.png",
+    previewImg: "/preview/preview_smm.webp",
   },
 ];
 
-export const servicePhotos: TServicePhotos[] = [
+export const servicePhotos: TPhotos[] = [
   {
     id: 1,
     photos: [
       {
-        id: 43,
+        id: 24,
         source: openSeaPhoto1,
         icon: openSeaPhotoIcon1,
       },
       {
-        id: 44,
+        id: 25,
         source: openSeaPhoto2,
         icon: openSeaPhotoIcon2,
       },
       {
-        id: 45,
+        id: 26,
         source: openSeaPhoto3,
         icon: openSeaPhotoIcon3,
       },
       {
-        id: 46,
+        id: 27,
         source: openSeaPhoto4,
         icon: openSeaPhotoIcon4,
       },
       {
-        id: 47,
+        id: 28,
         source: openSeaPhoto5,
         icon: openSeaPhotoIcon5,
       },
@@ -1733,202 +1442,58 @@ export const servicePhotos: TServicePhotos[] = [
     id: 6,
     photos: [
       {
-        id: 48,
+        id: 29,
         source: lampPhoto1,
         icon: lampPhotoIcon1,
       },
       {
-        id: 49,
+        id: 30,
         source: lampPhoto2,
         icon: lampPhotoIcon2,
       },
       {
-        id: 50,
+        id: 31,
         source: lampPhoto3,
         icon: lampPhotoIcon3,
       },
       {
-        id: 51,
+        id: 32,
         source: lampPhoto4,
         icon: lampPhotoIcon4,
       },
       {
-        id: 52,
+        id: 33,
         source: lampPhoto5,
         icon: lampPhotoIcon5,
       },
       {
-        id: 53,
+        id: 34,
         source: lampPhoto6,
         icon: lampPhotoIcon6,
       },
       {
-        id: 54,
+        id: 35,
         source: lampPhoto7,
         icon: lampPhotoIcon7,
       },
       {
-        id: 55,
+        id: 36,
         source: lampPhoto8,
         icon: lampPhotoIcon8,
       },
       {
-        id: 56,
+        id: 37,
         source: lampPhoto9,
         icon: lampPhotoIcon9,
       },
       {
-        id: 57,
+        id: 38,
         source: lampPhoto10,
         icon: lampPhotoIcon10,
       },
     ],
   },
 ];
-
-export const teamsTabs: TTeamTabMode[] = ["admins", "artists"];
-
-export const teams: TEmployees = {
-  administrators: {
-    employees: [
-      {
-        id: 1,
-        name: "Сергей Яковлев",
-        occupation: "Актер театра «Ленком» Марка Захарова и театра Наций",
-        photo: yakovlev,
-        icon: yakovlevIcon,
-      },
-      {
-        id: 2,
-        name: "Людмила Яковлева",
-        occupation:
-          "Режиссер и художественный руководитель театральной студии «Открытое Море»",
-        photo: LA,
-        icon: LAIcon,
-      },
-      {
-        id: 3,
-        name: "Арсений Аспек",
-        occupation: "Графический и UX/UI дизайнер",
-        photo: aspek,
-        icon: aspekIcon,
-      },
-      {
-        id: 4,
-        name: "Алёна Синельникова",
-        occupation: "Специалист по SMM и PR-менеджер креативных проектов",
-        photo: sinelnikova,
-        icon: sinelnikovaIcon,
-      },
-      {
-        id: 5,
-        name: "Артём Хрусталёв",
-        occupation: "Front-end разработчик",
-        photo: hrustalev,
-        icon: hrustalevIcon,
-      },
-    ],
-  },
-  artists: [
-    {
-      employees: [
-        {
-          name: "Кирилл Соколовский",
-          occupation: "Поэт",
-          photo: sokolovskiy,
-          icon: sokolovskiyIcon,
-        },
-        {
-          name: "Екатерина Иванова",
-          occupation: "Певица, артистка театра «Ленком Марка Захарова»",
-          photo: ivanova,
-          icon: ivanovaIcon,
-        },
-        {
-          name: "Анастасия Авраменко",
-          occupation: "Режиссёр, фотограф",
-          photo: avramenko,
-          icon: avramenkoIcon,
-        },
-        {
-          name: "Дмитрий Мальцев",
-          occupation: "Актёр театра «Ленком Марка Захарова»",
-          photo: maltcev,
-          icon: maltcevIcon,
-        },
-        {
-          name: "Анастасия Бондарева",
-          occupation: "Поэт",
-          photo: bondareva,
-          icon: bondarevaIcon,
-        },
-        {
-          name: "Марк Агафонов",
-          occupation: "Режиссёр, фотограф, видеограф",
-          photo: agafonov,
-          icon: agafonovIcon,
-        },
-        {
-          name: "Олег Кныш",
-          occupation: "Актёр театра «Ленком Марка Захарова»",
-          photo: knysh,
-          icon: knyshIcon,
-        },
-        {
-          name: "Марат Рудницкий",
-          occupation: "Актёр, звукорежиссер, инженер телецентра «Останкино»",
-          photo: rudnitskiy,
-          icon: rudnitskiyIcon,
-        },
-        {
-          name: "Леонид Стрельников",
-          occupation:
-            "Актёр театра у Никитских ворот и театра «Ленком Марка Захарова»",
-          photo: strelnikov,
-          icon: strelnikovIcon,
-        },
-        {
-          name: "Ольга Масловская",
-          occupation: "Драматург",
-          photo: maslovskaya,
-          icon: maslovskayaIcon,
-        },
-        {
-          name: "Мария Карая",
-          occupation: "Актриса театра «Ленком Марка Захарова»",
-          photo: karaya,
-          icon: karayaIcon,
-        },
-        {
-          name: "Дарья Торжкова",
-          occupation: "Актриса",
-          photo: torzhkova,
-          icon: torzhkovaIcon,
-        },
-        {
-          name: "Настя Мурзюкова",
-          occupation:
-            "Актриса, выпускница Московской Духовной Академии, педагог",
-          photo: murzukova,
-          icon: murzukovaIcon,
-        },
-        {
-          name: "Юлия Хвостикова",
-          occupation: "Актриса",
-          photo: hvostikova,
-          icon: hvostikovaIcon,
-        },
-        {
-          name: "Елена Тенсик",
-          occupation:
-            "Журналист, радиоведущая, театральный критик, педагог, арт-терапевт и актриса",
-          photo: tensik,
-          icon: tensikIcon,
-        },
-      ],
-    },
-  ],
-};
 
 export const projectsTabs: TProjectTabMode[] = [
   "all",
@@ -1939,6 +1504,9 @@ export const projectsTabs: TProjectTabMode[] = [
 ];
 
 export const linkMapping: TMapping = {
+  // Не найдено
+  "not-found": 0,
+  // Проекты
   "unique-chronicle": 1,
   friendship: 2,
   "open-play": 3,
@@ -1947,6 +1515,7 @@ export const linkMapping: TMapping = {
   "two-in-world": 6,
   esenin: 7,
   amplitude: 8,
+  // Услуги
   "open-sea": 1,
   events: 2,
   design: 3,
@@ -1954,5 +1523,10 @@ export const linkMapping: TMapping = {
   "master-class": 5,
   lamp: 6,
   smm: 7,
-  "not-found": 0,
+  // Админы
+  yakovlev: 1,
+  LA: 2,
+  sinelnikova: 3,
+  aspek: 4,
+  hrustalev: 5,
 };

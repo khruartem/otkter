@@ -17,5 +17,6 @@ Disallow: /projects/5
 Disallow: /projects/6
 Disallow: /projects/7
 Disallow: /projects/8
+Disallow: /projects/unique-chronicle/2
 
 Sitemap: https://otkter.ru/6341888_5.xml

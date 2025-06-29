@@ -6,39 +6,61 @@
   width: fit-content;
 }
 
+.controls_rowed {
+  flex-direction: row;
+}
+
+.controls_columned {
+  flex-direction: column;
+}
+
+.controls_gapped {
+  gap: 20px;
+}
+
 .extra-link {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
 }
-/* Стили для разных разрешений экранов */
-/* .controls_large-resolution {
+
+.button_icon {
+  display: flex;
+  gap: 12px;
   flex-direction: row;
+  align-items: center;
+  padding-left: 20px;
+  padding-block: 14px;
 }
 
-.controls_large-resolution button {
-  margin-left: 32px;
+.button_icon a {
+  margin: 0;
 }
 
-.controls_large-resolution button:first-child {
-  margin-left: 0;
+.button_icon:hover a svg {
+  fill: currentColor;
 }
 
-.controls_small-resolution {
-  flex-direction: column;
-  margin-left: 0;
-} */
-
+/* Стили для разных разрешений экранов */
 .controls_mobile {
   width: 100%;
-  display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 .button_mobile {
   width: 100%;
+}
+
+.controls_mobile_group {
+  width: 100%;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.button_mobile_icon {
+  width: min-content;
 }
 
 .extra-link_large-screen {

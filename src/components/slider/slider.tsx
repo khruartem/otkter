@@ -14,10 +14,11 @@ import { useGetUrlCode } from "../../hooks/useGetUrlCode";
 export const Slider: FC<TSliderProps> = ({ type }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const id = useGetId();
   const photoId = useGetPhotoId();
   const url = useGetUrlCode();
+  const urlTo = type === "team" ? `/${type}/admins/${url}` : `/${type}/${url}`;
 
   const photos = useGetPhotos(id, type);
   const photo = useGetPhoto(id, photoId, type);
@@ -28,7 +29,7 @@ export const Slider: FC<TSliderProps> = ({ type }) => {
 
   const handlerMoveLeft = () => {
     const newIndex = currentIndex - 1;
-    
+
     if (newIndex < 0) {
       const newIndex = photos!.length - 1;
       const newPhoto = photos![newIndex];
@@ -36,35 +37,43 @@ export const Slider: FC<TSliderProps> = ({ type }) => {
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
       // navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
-      navigate(`/${type}/${url}/${newPhoto.id}`, {state: {id, type, url, ...location.state}});
+      navigate(`${urlTo}/${newPhoto.id}`, {
+        state: { id, type, url, ...location.state },
+      });
     } else {
       const newPhoto = photos![newIndex];
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
       // navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
-      navigate(`/${type}/${url}/${newPhoto.id}`, {state: {id, type, url, ...location.state}});
-    };
+      navigate(`${urlTo}/${newPhoto.id}`, {
+        state: { id, type, url, ...location.state },
+      });
+    }
   };
 
   const handlerMoveRight = () => {
     const newIndex = currentIndex + 1;
-    
+
     if (newIndex === photos!.length) {
       const newPhoto = photos![0];
 
       setCurrentIndex(0);
       setCurrentPhoto(newPhoto);
       // navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
-      navigate(`/${type}/${url}/${newPhoto.id}`, {state: {id, type, url, ...location.state}});
+      navigate(`${urlTo}/${newPhoto.id}`, {
+        state: { id, type, url, ...location.state },
+      });
     } else {
       const newPhoto = photos![newIndex];
 
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
       // navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
-      navigate(`/${type}/${url}/${newPhoto.id}`, {state: {id, type, url, ...location.state}});
-    };
+      navigate(`${urlTo}/${newPhoto.id}`, {
+        state: { id, type, url, ...location.state },
+      });
+    }
   };
 
   return (
