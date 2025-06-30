@@ -109,7 +109,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
                   <div
                     className={clsx(
                       styles["info__title-container"],
-                      isMobile && styles["info__title-container_mobile"]
+                      (isDesktop || isLaptop || isMobile) && styles["info__title-container_columned"]
                     )}
                   >
                     <Text
@@ -138,7 +138,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
                       color={Colors.Nephritis100}
                       classNameExtra={clsx(
                         styles["info__extra-title"],
-                        isMobile && styles["info__extra-title_mobile"]
+                        (isDesktop || isLaptop || isMobile) && styles["info__extra-title_not-bordered"]
                       )}
                     >
                       {extraTitle}

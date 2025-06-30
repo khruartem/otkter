@@ -25,6 +25,14 @@
   gap: 10px;
 }
 
+.button_max-width {
+  width: 100%;
+}
+
+.button_min-width {
+  width: min-content;
+}
+
 .button_icon {
   display: flex;
   gap: 12px;
@@ -49,9 +57,9 @@
   flex-direction: column;
 }
 
-.button_mobile {
+/* .button_mobile {
   width: 100%;
-}
+} */
 
 .controls_mobile_group {
   width: 100%;
@@ -59,9 +67,9 @@
   flex-direction: row;
 }
 
-.button_mobile_icon {
+/* .button_mobile_icon {
   width: min-content;
-}
+} */
 
 .extra-link_large-screen {
   margin-left: 2.08vw;

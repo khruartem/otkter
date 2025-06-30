@@ -23,7 +23,7 @@ export const ControlsUI: FC<TControlsUIProps> = ({ controls, isExtraLink }) => {
       className={clsx(
         styles.controls,
         isMobile && styles.controls_mobile,
-        (isMobile && controls?.length) && styles.controls_mobile_group,
+        isMobile && controls?.length && styles.controls_mobile_group,
         controls?.length && styles.controls_gapped
       )}
     >
@@ -49,8 +49,12 @@ export const ControlsUI: FC<TControlsUIProps> = ({ controls, isExtraLink }) => {
                   disabled={false}
                   onClick={onClick}
                   className={clsx(
-                    isMobile && styles.button_mobile,
-                    (isMobile && controls?.length) && styles.button_mobile_icon,
+                    isMobile &&
+                      controls?.length <= 1 &&
+                      styles["button_max-width"],
+                    isMobile &&
+                      controls?.length > 1 &&
+                      styles["button_min-width"],
                     icon && styles.button_icon
                   )}
                 >

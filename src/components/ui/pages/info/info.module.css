@@ -69,6 +69,12 @@
   gap: 32px;
 }
 
+.info__title-container_columned {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
 .info__title-container h3 {
   flex-shrink: 0;
 }
@@ -81,6 +87,11 @@
 .info__extra-title {
   padding-left: 12px;
   border-left: 1px solid var(--nephritis100);
+}
+
+.info__extra-title_not-bordered {
+  padding-left: 0;
+  border-left: none;
 }
 
 .info__text {
@@ -214,17 +225,17 @@
   gap: 12px;
 }
 
-/* info__title-container */
+/* info__title-container
 .info__title-container_mobile {
   flex-wrap: wrap;
   gap: 8px;
-}
+} */
 
 /* info__extra-title */
-.info__extra-title_mobile {
+/* .info__extra-title_mobile {
   padding-left: 0;
   border-left: none;
-}
+} */
 
 /* info__text */
 .info__text_large-screen {

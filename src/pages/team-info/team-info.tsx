@@ -28,7 +28,6 @@ export const TeamInfo: FC = () => {
   const title = admin.name;
   const extraTitle = admin.occupation;
   const text = admin?.biography || "";
-  const shortText = `Информация об администраторе Открытой Территории ${admin.name}`;
   const poster = admin.image;
   const previewImg = `/preview/preview_${url}.webp`;
   const isControls = useGetControls(admintId, "team", "info")?.length ? true : false;
@@ -53,7 +52,7 @@ export const TeamInfo: FC = () => {
       <>
         <SEO
           title={title}
-          description={shortText}
+          description={text}
           siteName={title}
           url={`https://otkter.ru/team/admins/${url}`}
           previewImg={previewImg}
