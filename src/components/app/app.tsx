@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 
 import { Main } from "../../pages/main";
 import { AllProjects } from "../../pages/all-projects";
@@ -119,8 +119,7 @@ export function App() {
             </Modal>
           }
         />
-        <Route path="*" element={<Navigate to={"/404"} />} />
-        <Route path="/404" element={<NotFound404 />} />
+        <Route path="*" element={<NotFound404 />} />
       </Routes>
     </>
   );

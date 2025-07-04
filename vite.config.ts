@@ -29,7 +29,7 @@ const pages = {
   aspek: resolve(__dirname, "team/admins/aspek/index.html"),
   hrustalev: resolve(__dirname, "team/admins/hrustalev/index.html"),
   // 404
-  notFound: resolve(__dirname, "404.html"),
+  notFound: resolve(__dirname, "errors/404.html"),
 };
 
 export default defineConfig({
