@@ -4,6 +4,7 @@ export type TInfoUIProps = {
   type: TSectionType;
   id: number;
   title: string;
+  extraTitle?: string;
   text: string | string[];
   poster?: string;
   attention: boolean;

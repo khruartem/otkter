@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { TProjectTabMode, TServicesTabMode, TSliderSectionType, TTeamTabMode } from "../../utils/types";
-import { serviceTabs, teamsTabs, projectsTabs } from "../../utils/constants";
+import { serviceTabs, projectsTabs } from "../../utils/constants";
+import { teamsTabs } from "../../utils/constants/team";
 
 type TTabsState = {
   servicesTabs: TServicesTabMode[];

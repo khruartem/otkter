@@ -1,4 +1,4 @@
-import { teamsSocials } from "../utils/constants";
+import { teamsSocials } from "../utils/constants/team";
 
 export const useGetContactUs = () => {
   return () => {

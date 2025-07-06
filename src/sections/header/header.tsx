@@ -1,14 +1,13 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
+
 import { HeaderUI } from "../../components/ui/sections/header";
 
 export const Header: FC = () => {
-  // const navigate = useNavigate();
   const location = useLocation();
 
   const headerRef = useRef<HTMLHeadingElement>(null);
 
-  // const url: React.MutableRefObject<string | null> = useRef<string>(null);
   const [url, setUrl] = useState("");
 
   useEffect(() => {
@@ -39,5 +38,12 @@ export const Header: FC = () => {
     }
   };
 
-  return <HeaderUI url={url} headerRef={headerRef} onClickLogo={onClickLogo} />;
+  return (
+    <HeaderUI
+      url={url}
+      headerRef={headerRef}
+      onClickLogo={onClickLogo}
+      location={location}
+    />
+  );
 };

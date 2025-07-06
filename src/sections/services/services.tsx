@@ -3,6 +3,8 @@ import { useInView } from "react-intersection-observer";
 
 import { SliderSectionUI } from "../../components/ui/sections/slider-section";
 
+import { useScrollOnMount } from "../../hooks/useScrollOnMount";
+
 import { TServiceRef, TServiceViewRef } from "../../utils/types";
 
 export const Services: FC = () => {
@@ -104,6 +106,8 @@ export const Services: FC = () => {
       type: "smm",
     },
   ];
+
+  useScrollOnMount();
 
   return (
     <SliderSectionUI

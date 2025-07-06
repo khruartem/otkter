@@ -3,7 +3,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import { Link } from "react-router-dom";
 
 import { Button } from "../../button";
-import { TrickCircle } from "../../icons/icons";
+import { Telegram, TrickCircle, VK } from "../../icons/icons";
 import { Text } from "../../text";
 
 import { TControlsUIProps } from "./types";
@@ -19,9 +19,16 @@ export const ControlsUI: FC<TControlsUIProps> = ({ controls, isExtraLink }) => {
     useGetMediaQuery();
 
   return (
-    <div className={isMobile ? styles.controls_mobile : styles.controls}>
+    <div
+      className={clsx(
+        styles.controls,
+        isMobile && styles.controls_mobile,
+        isMobile && controls?.length && styles.controls_mobile_group,
+        controls?.length && styles.controls_gapped
+      )}
+    >
       {controls &&
-        controls.map(({ label, type, onClick, url, state }) => {
+        controls.map(({ label, type, onClick, url, state, icon }) => {
           switch (type) {
             case "link":
               return (
@@ -41,8 +48,20 @@ export const ControlsUI: FC<TControlsUIProps> = ({ controls, isExtraLink }) => {
                   type="button"
                   disabled={false}
                   onClick={onClick}
-                  className={isMobile ? styles.button_mobile : undefined}
+                  className={clsx(
+                    isMobile &&
+                      controls?.length <= 1 &&
+                      styles["button_max-width"],
+                    isMobile &&
+                      controls?.length > 1 &&
+                      styles["button_min-width"],
+                    icon && styles.button_icon
+                  )}
                 >
+                  {icon === "telegram" && (
+                    <Telegram mainColor={Colors.Light100} />
+                  )}
+                  {icon === "vk" && <VK mainColor={Colors.Light100} />}
                   {label}
                 </Button>
               );

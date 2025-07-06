@@ -1,8 +1,8 @@
-import { TEmployee, TRole, TTeamViewRef } from "../../utils/types"
+import { TEmployee, TEmployeesType, TTeamViewRef } from "../../utils/types"
 
 export type TTeamProps = {
   team: TEmployee[];
-  type: TRole;
+  type: TEmployeesType;
   teamsViewRefs: TTeamViewRef[];
   teamRef: React.RefObject<HTMLDivElement>;
   minTeamLength?: number;

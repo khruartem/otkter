@@ -3,13 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 import { findById } from "../../utils/findById";
 import { projectInfos, serviceInfos } from "../../utils/constants";
 import {
-  TCardType,
   TDetails,
   TEmployees,
   TEventDetails,
+  TSectionType,
 } from "../../utils/types";
 
-type TInfosType = Extract<TCardType, "services" | "projects">;
+type TInfosType = TSectionType;
 
 // TODO: убрать дублирующиеся TProjectInfo
 export type TProjectInfo = {
@@ -80,7 +80,7 @@ const infosSlice = createSlice({
       infosType: TInfosType
     ) => {
       return infosSlice.getSelectors().getInfosSelector(state, id, infosType)
-        .previewImg;
+        ?.previewImg;
     },
     getDetailsSelector: (
       state: TInfosState,

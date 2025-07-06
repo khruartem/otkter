@@ -12,6 +12,7 @@ export const MenuLinkUI: FC<TMenuLinkUIProps> = ({
   openNewTab,
   link,
   onClick,
+  location
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
@@ -22,7 +23,7 @@ export const MenuLinkUI: FC<TMenuLinkUIProps> = ({
 
   return (
     <HashLink
-      to={openNewTab ? `/${url}` : url}
+      to={`/${url}`}
       // smooth
       // target={openNewTab ? "_blank" : undefined}
       scroll={(el) => {
@@ -31,6 +32,7 @@ export const MenuLinkUI: FC<TMenuLinkUIProps> = ({
           behavior: openNewTab ? "instant" : "smooth"
         });
       }}
+      state={location?.state}
       className={clsx(
         styles["menu__link"],
         largeResolution && styles["menu__link_large-resolution"],

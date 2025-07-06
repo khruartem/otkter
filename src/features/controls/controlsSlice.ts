@@ -2,8 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { TCardType, TControlsItem } from "../../utils/types";
 import { findById } from "../../utils/findById";
 import { projectControls, serviceControls } from "../../utils/constants";
+import { teamControls } from "../../utils/constants/team";
 
-export type TControlsType = Extract<TCardType, "services" | "projects">;
+export type TControlsType = Extract<
+  TCardType,
+  "services" | "projects" | "team"
+>;
 
 export type TControls = {
   id: number;
@@ -13,11 +17,13 @@ export type TControls = {
 type TControlsState = {
   projectControls: TControls[];
   serviceControls: TControls[];
+  teamControls: TControls[];
 };
 
 const initialState: TControlsState = {
   projectControls: projectControls,
   serviceControls: serviceControls,
+  teamControls: teamControls,
 };
 
 const controlsSlice = createSlice({
@@ -38,6 +44,9 @@ const controlsSlice = createSlice({
           break;
         case "projects":
           controlsArray = state.projectControls;
+          break;
+        case "team":
+          controlsArray = state.teamControls;
           break;
       }
 

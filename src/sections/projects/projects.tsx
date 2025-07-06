@@ -4,10 +4,12 @@ import { useInView } from "react-intersection-observer";
 import { ProjectsUI } from "../../components/ui/sections/projects";
 import { SliderSectionUI } from "../../components/ui/sections/slider-section";
 
+import { useScrollOnMount } from "../../hooks/useScrollOnMount";
+
 import { TProjectRef, TProjectViewRef } from "../../utils/types";
 import { TProjectsProps } from "./types";
 
-export const Projects: FC<TProjectsProps> = ({ type }) => {
+export const Projects: FC<TProjectsProps> = ({ type }) => {  
   const allRef = useRef<HTMLDivElement>(null);
   const playRef = useRef<HTMLDivElement>(null);
   const contestRef = useRef<HTMLDivElement>(null);
@@ -80,6 +82,8 @@ export const Projects: FC<TProjectsProps> = ({ type }) => {
       ref: shortFilmViewRef,
     },
   ];
+
+  useScrollOnMount();
 
   return (
     <>

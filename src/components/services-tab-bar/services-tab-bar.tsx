@@ -5,7 +5,7 @@ import { TabBarUI } from "../ui/tab-bar";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useGetId } from "../../hooks/useGetId";
 import { findById } from "../../utils/findById";
-import { TService } from "../../utils/types";
+import { TEmployee, TProject, TService } from "../../utils/types";
 import { useGetServices } from "../../hooks/useGetServices";
 import { useSortAsc } from "../../hooks/useSortAsc";
 
@@ -28,7 +28,11 @@ export const ServicesTabBar: FC = () => {
       setIndex(0);
       setCurrenService(sortedServices[0]);
       navigate(`/services/${sortedServices[0].url}`, {
-        state: { ...location.state, id: sortedServices[0].id, url: sortedServices[0].url },
+        state: {
+          ...location.state,
+          id: sortedServices[0].id,
+          url: sortedServices[0].url,
+        },
       });
     } else if (index < 0) {
       setIndex(sortedServices.length - 1);
@@ -44,7 +48,11 @@ export const ServicesTabBar: FC = () => {
       setIndex(index);
       setCurrenService(sortedServices[index]);
       navigate(`/services/${sortedServices[index].url}`, {
-        state: { ...location.state, id: sortedServices[index].id, url: sortedServices[index].url },
+        state: {
+          ...location.state,
+          id: sortedServices[index].id,
+          url: sortedServices[index].url,
+        },
       });
     }
   };
@@ -56,7 +64,11 @@ export const ServicesTabBar: FC = () => {
       index={index}
       items={sortedServices}
       onSwitch={onSwitch}
-      setCurrentItem={setCurrenService}
+      setCurrentItem={
+        setCurrenService as (
+          value: React.SetStateAction<TProject | TService | TEmployee>
+        ) => void
+      }
       setIndex={setIndex}
       location={location}
     />

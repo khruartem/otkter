@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { Social, TRole } from "../../utils/types";
-import { mainSocials, teamsSocials } from "../../utils/constants";
+import { Social, TEmployeesType } from "../../utils/types";
+import { mainSocials } from "../../utils/constants";
+import { teamsSocials } from "../../utils/constants/team";
 
 type TSocialsState = {
   main: Social[];
@@ -9,12 +10,12 @@ type TSocialsState = {
 };
 
 export type TTeamSocials = {
-  teamType: TRole;
+  teamType: TEmployeesType;
   teamSocials: TEmployeeSocials[];
 };
 
 export type TEmployeeSocials = {
-  employeeId: number;
+  id: number;
   socials: Social[];
 };
 
@@ -31,12 +32,12 @@ const socialsSlice = createSlice({
     getMainSocialsSelector: (state: TSocialsState) => state.main,
     getTeamsSocialsSelector: (
       state: TSocialsState,
-      type: TRole,
-      employeeId: number
+      type: TEmployeesType,
+      id: number
     ) => {
       return state.teams
         .find((team) => team.teamType === type)
-        ?.teamSocials.find((social) => social.employeeId === employeeId);
+        ?.teamSocials.find((social) => social.id === id);
     },
   },
 });
