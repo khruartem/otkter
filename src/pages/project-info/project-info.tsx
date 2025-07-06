@@ -22,6 +22,7 @@ import { useGetUrlCode } from "../../hooks/useGetUrlCode";
 import { useGetPreviewImage } from "../../hooks/useGetPreviewImage";
 import { useGetProjectType } from "../../hooks/useGetProjectType";
 import { useGetProjectShortText } from "../../hooks/useGetProjectShortText";
+import { useGetProject } from "../../hooks/useGetProject";
 
 export const ProjectInfo: FC = () => {
   const [docReadyState, setDocReadyState] = useState<DocumentReadyState | null>(
@@ -38,6 +39,7 @@ export const ProjectInfo: FC = () => {
   const type = useGetProjectType(projectId);
   const poster = useGetPoster(projectId, "projects");
   const previewImg = useGetPreviewImage(projectId, "projects");
+  const seoImg = useGetProject(projectId)?.icon;
   const attention = useGetAttention(projectId);
   const { projectTitleColorAttention } = useGetProjectColors();
   const isEmployees = useGetIsEmployees(projectId);
@@ -75,6 +77,7 @@ export const ProjectInfo: FC = () => {
           siteName={title}
           url={`https://otkter.ru/projects/${url}`}
           previewImg={previewImg}
+          seoImg={{name: title, src: seoImg || "", description: shortText}}
         />
         <InfoUI
           type="projects"
