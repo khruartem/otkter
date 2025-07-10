@@ -1,5 +1,5 @@
 import { TEmployee } from "../../utils/types";
 
-export type TTeamEmployeeProps = {
+export type TEmployeeProps = {
   employee: TEmployee;
 }

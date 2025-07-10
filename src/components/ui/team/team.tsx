@@ -3,7 +3,7 @@ import { CSSProperties } from "react";
 import clsx from "clsx";
 import { nanoid } from "@reduxjs/toolkit";
 
-import { TeamEmployee } from "../../team-employee";
+import { Employee } from "../../employee";
 
 import { TTeamUIProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
@@ -45,7 +45,7 @@ export const TeamUI = React.forwardRef<HTMLUListElement, TTeamUIProps>(
           ref={ref}
         >
           {team.map((employee) => {
-            return <TeamEmployee key={nanoid()} employee={employee} />;
+            return <Employee key={nanoid()} employee={employee} />;
           })}
         </ul>
       </div>

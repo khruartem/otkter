@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { TTeamEmployeeProps } from "./types";
+import { TEmployeeProps } from "./types";
 import { useGetTeamsSocials } from "../../hooks/useGetTeamsSocials";
 import { EmployeeUI } from "../ui/employee";
 
-export const TeamEmployee: FC<TTeamEmployeeProps> = ({ employee }) => {
+export const Employee: FC<TEmployeeProps> = ({ employee }) => {
   const socials = useGetTeamsSocials(employee.id || 0, "admins");
 
   return (

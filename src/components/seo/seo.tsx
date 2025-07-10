@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Helmet } from "react-helmet-async";
 
 import { TSEOProps } from "./types";
-import { SEOImage } from "../../seo-image";
+import { SEOImage } from "../seo-image";
 
 export const SEO: FC<TSEOProps> = ({
   title,

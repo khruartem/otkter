@@ -1,4 +1,4 @@
-import { TSEOImageProps } from "../../seo-image/types";
+import { TSEOImageProps } from "../seo-image/types";
 
 export type TSEOProps = {
   title: string;

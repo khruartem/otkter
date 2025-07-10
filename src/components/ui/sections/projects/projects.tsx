@@ -43,7 +43,7 @@ export const ProjectsUI = React.forwardRef<HTMLElement, unknown>((_, ref) => {
         lineHeight={(isLarge || isDesktop ? 80 : 44) as lineHeights}
         textTransform="uppercase"
         color={Colors.Navy}
-        decorated={true}
+        decorated
         padding={isLarge || isDesktop ? "8px 28px" : "12px 24px"}
       >
         {"проекты"}
