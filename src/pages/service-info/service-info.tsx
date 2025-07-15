@@ -18,7 +18,7 @@ import { useGetPoster } from "../../hooks/useGetPoster";
 import { useGetPreviewImage } from "../../hooks/useGetPreviewImage";
 import { useGetUrlCode } from "../../hooks/useGetUrlCode";
 import { useGetServiceShortText } from "../../hooks/useGetServiceShortText";
-import { useGetService } from "../../hooks/useGetService";
+// import { useGetService } from "../../hooks/useGetService";
 
 export const ServiceInfo: FC = () => {
   const [docReadyState, setDocReadyState] = useState<DocumentReadyState | null>(
@@ -33,7 +33,7 @@ export const ServiceInfo: FC = () => {
   const text = useGetInfosText(serviceId, "services");
   const poster = useGetPoster(serviceId, "services");
   const previewImg = useGetPreviewImage(serviceId, "services");
-  const seoImg = useGetService(serviceId)?.icon;
+  // const seoImg = useGetService(serviceId)?.icon;
   const isEmployees = useGetInfosIsEmployees(serviceId, "services");
   const controls = useGetControls(serviceId, "services", "info");
   const isControls = controls?.length ? true : false;
@@ -62,7 +62,7 @@ export const ServiceInfo: FC = () => {
           siteName={title}
           url={`https://otkter.ru/projects/${url}`}
           previewImg={previewImg}
-          seoImg={{name: title, src: seoImg || "", description: shortText}}
+          // seoImg={{name: title, src: seoImg || "", description: shortText}}
         />
         <InfoUI
           type="services"

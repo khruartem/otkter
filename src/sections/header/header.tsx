@@ -6,6 +6,7 @@ import { HeaderUI } from "../../components/ui/sections/header";
 export const Header: FC = () => {
   const location = useLocation();
 
+  console.log(location)
   const headerRef = useRef<HTMLHeadingElement>(null);
 
   const [url, setUrl] = useState("");
@@ -26,6 +27,9 @@ export const Header: FC = () => {
       case "services":
         setUrl("/#services");
         break;
+      case "team":
+        setUrl("/#team");
+        break;
       default:
         setUrl("/");
         break;
@@ -43,7 +47,6 @@ export const Header: FC = () => {
       url={url}
       headerRef={headerRef}
       onClickLogo={onClickLogo}
-      location={location}
     />
   );
 };

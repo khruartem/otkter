@@ -16,7 +16,6 @@ export const HeaderUI: FC<THeaderUIProps> = ({
   url,
   headerRef,
   onClickLogo,
-  location,
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
@@ -55,7 +54,7 @@ export const HeaderUI: FC<THeaderUIProps> = ({
             });
           }}
           onClick={onClickLogo}
-          state={location?.state}
+          // state={location?.state}
         >
           <Logo
             mainColor={Colors.Navy}
