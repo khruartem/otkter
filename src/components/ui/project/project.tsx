@@ -160,6 +160,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({
             lineHeight={28}
             textTransform={"none"}
             color={Colors.Dark100}
+            classNameExtra={styles["project__short-text"]}
           >
             {shortText}
           </Text>

@@ -28,7 +28,7 @@ export function App() {
               type="close"
               onClose={() => {
                 if (location.state?.url) {
-                  navigate(`/projects/${location.state?.url}`, {
+                  navigate(`/projects/${location.state?.url}/`, {
                     state: { ...location.state },
                   });
                 } else {
@@ -47,7 +47,7 @@ export function App() {
               type="close"
               onClose={() => {
                 if (location.state?.url) {
-                  navigate(`/services/${location.state?.url}`, {
+                  navigate(`/services/${location.state?.url}/`, {
                     state: { ...location.state },
                   });
                 } else {
@@ -66,7 +66,7 @@ export function App() {
               type="close"
               onClose={() => {
                 if (location.state?.url) {
-                  navigate(`/team/admins/${location.state?.url}`, {
+                  navigate(`/team/admins/${location.state?.url}/`, {
                     state: { ...location.state },
                   });
                 } else {
