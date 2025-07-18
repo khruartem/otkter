@@ -92,7 +92,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
       {type === "team" &&
         (employee.type === "admins" ? (
           <Link
-            to={`/team/admins/${url}`}
+            to={`/team/admins/${url}/`}
             target="_top"
             state={{ id, url, type: "team" }}
           >

@@ -25,39 +25,6 @@ export const ProjectsTabBar: FC = () => {
   );
 
   // TODO: Перенести в хук и использовать в слайдере
-  // const onSwitch: (arg: number) => void = (index: number) => {
-  //   if (index > projects.length - 1) {
-  //     setIndex(0);
-  //     setCurrentProject(sortedProjects[0]);
-  //     navigate(`/projects/${sortedProjects[0].url}`, {
-  //       state: {
-  //         ...location.state,
-  //         id: sortedProjects[0].id,
-  //         url: sortedProjects[0].url,
-  //       },
-  //     });
-  //   } else if (index < 0) {
-  //     setIndex(projects.length - 1);
-  //     setCurrentProject(sortedProjects[projects.length - 1]);
-  //     navigate(`/projects/${sortedProjects[projects.length - 1].url}`, {
-  //       state: {
-  //         ...location.state,
-  //         id: sortedProjects[projects.length - 1].id,
-  //         url: sortedProjects[projects.length - 1].url,
-  //       },
-  //     });
-  //   } else {
-  //     setIndex(index);
-  //     setCurrentProject(sortedProjects[index]);
-  //     navigate(`/projects/${sortedProjects[index].url}`, {
-  //       state: {
-  //         ...location.state,
-  //         id: sortedProjects[index].id,
-  //         url: sortedProjects[index].url,
-  //       },
-  //     });
-  //   }
-  // };
   const onSwitch = useGetOnSwitch<TProject>(
     sortedProjects,
     setIndex,

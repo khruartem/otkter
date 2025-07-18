@@ -57,8 +57,8 @@ export const TabBarUI: FC<TTabBarUIProps> = ({
               key={item.id}
               to={
                 type === "team"
-                  ? `/${type}/admins/${item.url}`
-                  : `/${type}/${item.url}`
+                  ? `/${type}/admins/${item.url}/`
+                  : `/${type}/${item.url}/`
               }
               state={{ ...location?.state, id: item.id, url: item.url }}
               className={styles["tab-bar__item-link"]}

@@ -8,7 +8,7 @@ import { Colors } from "../../utils/types";
 export const Menu: FC<TMenuProps> = ({ rootRef, headerRef }) => {
   const [isOpen, setOpen] = useState(false);
 
-  // TODO: сделать затемнение body при открытии меню
+  // TODO: переписать открытие меню из Доки
   const onOpen = () => {
     if (headerRef && headerRef.current)
       headerRef.current.style.cssText = `--header-bc-color: ${Colors.Light80}`;

@@ -1,1 +1,0 @@
-export { InfoUI } from "./info";

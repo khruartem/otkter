@@ -18,55 +18,17 @@ export function App() {
       <Routes>
         <Route path={"/"} element={<Main />} />
         <Route path="/projects/all" element={<AllProjects />} />
+        <Route path={"/projects/:code"} element={<ProjectInfo />} />
+        <Route path={"/services/:code"} element={<ServiceInfo />} />
+        <Route path={"/team/admins/:code"} element={<TeamInfo />} />
         <Route
-          path={"/projects/:code"}
-          element={
-            // <Modal
-            //   type="back"
-            //   onClose={() => {
-            //     if (location.state?.from) {
-            //       navigate(
-            //         //location.state?.from === "/otkter/"
-            //         location.state?.from === "/"
-            //           ? `${location.state?.from}#projects-${location.state?.id}`
-            //           : `${location.state?.from}`
-            //       );
-            //     } else {
-            //       navigate("/");
-            //     }
-            //   }}
-            // >
-            //   <ProjectInfo />
-            // </Modal>
-            <ProjectInfo />
-          }
-        />
-        <Route
-          // path={"/otkter/services/:id"}
-          path={"/services/:code"}
-          element={
-            // <Modal
-            //   type="back"
-            //   onClose={() => {
-            //     // navigate("/otkter/#services", { state: { from: "services" } });
-            //     navigate("/#services", { state: { from: "services" } });
-            //   }}
-            // >
-            //   <ServiceInfo />
-            // </Modal>
-            <ServiceInfo />
-          }
-        />
-        <Route
-          // path={"/otkter/projects/:id/:photoId"}
           path={"/projects/:code/:photoId"}
           element={
             <Modal
               type="close"
               onClose={() => {
-                // navigate(`otkter/projects/${location.state?.id}`, { state: {...location.state }});
                 if (location.state?.url) {
-                  navigate(`/projects/${location.state?.url}`, {
+                  navigate(`/projects/${location.state?.url}/`, {
                     state: { ...location.state },
                   });
                 } else {
@@ -79,15 +41,13 @@ export function App() {
           }
         />
         <Route
-          // path={"/otkter/services/:id/:photoId"}
           path={"/services/:code/:photoId"}
           element={
             <Modal
               type="close"
               onClose={() => {
-                //navigate(`otkter/services/${location.state?.id}`);
                 if (location.state?.url) {
-                  navigate(`/services/${location.state?.url}`, {
+                  navigate(`/services/${location.state?.url}/`, {
                     state: { ...location.state },
                   });
                 } else {
@@ -99,7 +59,6 @@ export function App() {
             </Modal>
           }
         />
-        <Route path="/team/admins/:code" element={<TeamInfo />} />
         <Route
           path={"/team/admins/:code/:photoId"}
           element={
@@ -107,7 +66,7 @@ export function App() {
               type="close"
               onClose={() => {
                 if (location.state?.url) {
-                  navigate(`/team/admins/${location.state?.url}`, {
+                  navigate(`/team/admins/${location.state?.url}/`, {
                     state: { ...location.state },
                   });
                 } else {

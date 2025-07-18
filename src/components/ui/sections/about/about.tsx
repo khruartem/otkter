@@ -132,7 +132,7 @@ const LargeResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
           lineHeight={80}
           textTransform="uppercase"
           color={Colors.Navy}
-          decorated={true}
+          decorated
           padding={"6.4px 26.4px"}
           width={"fit-content"}
         >
@@ -377,7 +377,7 @@ const SmallResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
           lineHeight={44}
           textTransform="uppercase"
           color={Colors.Navy}
-          decorated={true}
+          decorated
           padding={"10.4px 22.4px"}
           width={"fit-content"}
         >

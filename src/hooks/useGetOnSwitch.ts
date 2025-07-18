@@ -15,7 +15,7 @@ export const useGetOnSwitch = <T extends TProject | TService | TEmployee>(
     if (index > arr.length - 1) {
       setIndex(0);
       setCurrent(arr[0]);
-      navigate(`/${baseUrl}/${arr[0].url}`, {
+      navigate(`/${baseUrl}/${arr[0].url}/`, {
         state: {
           ...location.state,
           id: arr[0].id,
@@ -25,7 +25,7 @@ export const useGetOnSwitch = <T extends TProject | TService | TEmployee>(
     } else if (index < 0) {
       setIndex(arr.length - 1);
       setCurrent(arr[arr.length - 1]);
-      navigate(`/${baseUrl}/${arr[arr.length - 1].url}`, {
+      navigate(`/${baseUrl}/${arr[arr.length - 1].url}/`, {
         state: {
           ...location.state,
           id: arr[arr.length - 1].id,
@@ -35,7 +35,7 @@ export const useGetOnSwitch = <T extends TProject | TService | TEmployee>(
     } else {
       setIndex(index);
       setCurrent(arr[index]);
-      navigate(`/${baseUrl}/${arr[index].url}`, {
+      navigate(`/${baseUrl}/${arr[index].url}/`, {
         state: {
           ...location.state,
           id: arr[index].id,

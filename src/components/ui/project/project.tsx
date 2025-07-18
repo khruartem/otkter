@@ -38,7 +38,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({
         !isMobile && styles["project-link_animated"],
         isTablet && styles["project-link_tablet"]
       )}
-      to={`/projects/${url}`}
+      to={`/projects/${url}/`}
       target="_top"
       style={
         {
@@ -160,6 +160,7 @@ export const ProjectUI: FC<ProjectUIProps> = ({
             lineHeight={28}
             textTransform={"none"}
             color={Colors.Dark100}
+            classNameExtra={styles["project__short-text"]}
           >
             {shortText}
           </Text>

@@ -30,7 +30,10 @@ export const TeamInfo: FC = () => {
   const text = admin?.biography || "";
   const poster = admin.image;
   const previewImg = `/preview/preview_${url}.webp`;
-  const isControls = useGetControls(admintId, "team", "info")?.length ? true : false;
+  // const seoImg = admin.icon;
+  const isControls = useGetControls(admintId, "team", "info")?.length
+    ? true
+    : false;
   const isPhotos = useGetPhotos(admintId, "team") ? true : false;
 
   // Вывести в хук
@@ -56,6 +59,7 @@ export const TeamInfo: FC = () => {
           siteName={title}
           url={`https://otkter.ru/team/admins/${url}`}
           previewImg={previewImg}
+          // seoImg={{name: title, src: seoImg, description: title}}
         />
         <InfoUI
           type="team"
