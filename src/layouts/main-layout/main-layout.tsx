@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { FC } from "react";
 
 import { Header } from "../../sections/header";
@@ -5,11 +6,31 @@ import { Footer } from "../../sections/footer";
 
 import { TMainLayoutProps } from "./types";
 
-export const MainLayout: FC<TMainLayoutProps> = ({ children, className }) => {
+import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+
+import styles from "./main-layout.module.css";
+
+export const MainLayout: FC<TMainLayoutProps> = ({
+  children,
+  className,
+  withoutMediaQuery = false,
+}) => {
+  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
+    useGetMediaQuery();
   return (
     <>
       <Header />
-      <main className={className}>
+      <main
+        className={clsx(
+          styles.main,
+          isLarge && !withoutMediaQuery && styles["main_lagre_screen"],
+          isDesktop && !withoutMediaQuery && styles.main_desktop,
+          isLaptop && !withoutMediaQuery && styles.main_laptop,
+          isTablet && !withoutMediaQuery && styles.main_tablet,
+          isMobile && !withoutMediaQuery && styles.main_mobile,
+          className
+        )}
+      >
         {children}
       </main>
       <Footer />

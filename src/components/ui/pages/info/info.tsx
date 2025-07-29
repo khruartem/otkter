@@ -40,13 +40,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
   return (
     <MainLayout
       className={clsx(
-        styles.main,
-        isLarge && styles["main_lagre_screen"],
-        isDesktop && styles.main_desktop,
-        isLaptop && styles.main_laptop,
-        isTablet && styles.main_tablet,
-        isMobile && styles.main_mobile,
-        !isDetails && styles.main_heighed
+        !isDetails && (isLaptop || isDesktop) && styles.main_heighed
       )}
     >
       <div

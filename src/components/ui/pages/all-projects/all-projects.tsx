@@ -1,17 +1,13 @@
 import { FC } from "react";
 
-import { Footer } from "../../../../sections/footer";
+import { MainLayout } from "../../../../layouts/main-layout";
+
 import { Projects } from "../../../../sections/projects";
-import { Header } from "../../../../sections/header";
 
 export const AllProjectsUI: FC = () => {
   return (
-    <>
-      <Header />
-      <main>
-        <Projects type="all" />
-      </main>
-      <Footer />
-    </>
+    <MainLayout withoutMediaQuery>
+      <Projects type="all" />
+    </MainLayout>
   );
 };
