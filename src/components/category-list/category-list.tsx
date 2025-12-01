@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { CategoryListProps } from "./types";
 
-import { CategoryListUI } from "../ui/category-list";
-import { useGetCategories } from "../../hooks/useGetCategories";
+import { CategoryListUI } from "../ui/category-list copy";
+import { useGetCategories } from "../../hooks/delete/useGetCategories";
 import { useLocation } from "react-router-dom";
 
 export const CategoryList: FC<CategoryListProps> = ({ id }) => {

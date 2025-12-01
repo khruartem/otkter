@@ -1,0 +1,47 @@
+.info-navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info-navigation_columned {
+  flex-direction: column-reverse;
+}
+
+.info-navigation_padding-large {
+  padding-block: 36px;
+}
+
+.info-navigation_padding-small {
+  padding-block: 24px;
+}
+
+.tabs-bar_info {
+  gap: var(--tabs-gap);
+}
+
+/* Стили для разных разрешений экранов */
+/* info-navigation */
+.info-navigation_tablet {
+  gap: 7.81vw;
+}
+
+.info-navigation_mobile {
+  gap: 5.80vw;
+  padding-block-start: 0;
+  padding-block-end: 24px;
+}
+
+/* tabs-bar_info */
+.tabs-bar_info_large {
+  width: 27.08vw;
+}
+
+.tabs-bar_info_desktop {
+  width: 34.11vw;
+}
+
+.tabs-bar_info_laptop {
+  width: 44.92vw;
+}

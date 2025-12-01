@@ -1,0 +1,15 @@
+.show-history-item {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+}
+
+.show-history-item_aligned {
+  align-items: center;
+}
+
+.where {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

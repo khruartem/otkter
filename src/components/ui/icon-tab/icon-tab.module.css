@@ -1,0 +1,70 @@
+.tab-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 14px 24px 14px 16px;
+  cursor: pointer;
+  gap: 8px;
+  max-height: 60px;
+}
+
+.tab-wrapper label {
+  cursor: pointer;
+}
+
+.tab-wrapper svg {
+  padding: 0;
+}
+
+.tab-wrapper:active {
+  border-radius: 100px;
+  background-color: var(--light100);
+}
+
+.tab-wrapper:active label {
+  color: var(--navy);
+}
+
+.tab-wrapper:active svg {
+  fill: var(--navy);
+}
+
+.tab-wrapper_active {
+  border-radius: 100px;
+  background-color: var(--light100);
+}
+
+.tab-wrapper_active label {
+  color: var(--navy);
+}
+
+.tab-wrapper_active svg {
+  fill: var(--navy);
+}
+
+.tab-wrapper_hover label {
+  color: var(--nephritis120);
+}
+
+.tab-wrapper_hover svg {
+  fill: var(--nephritis120);
+}
+
+.tab {
+  min-width: 60px;
+  max-height: 60px;
+}
+
+.tab_active svg {
+  fill: var(--navy);
+  border-radius: 100px;
+  background-color: var(--light100);
+}
+
+.tab_hover svg {
+  fill: var(--nephritis120);
+}
+
+.tab_labeled {
+  padding: 0 8px 0 0;
+}

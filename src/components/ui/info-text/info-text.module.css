@@ -1,0 +1,18 @@
+.info-text {
+  overflow-y: hidden;
+}
+
+/* Стили для разных разрешений экранов */
+/* info-text */
+.info-text_large {
+  height: 14.38vw;
+}
+
+.info-text_desktop {
+  height: 11.86vw;
+  padding-right: 7.17vw;
+}
+
+.info-text_laptop {
+  height: 29.69vw;
+}

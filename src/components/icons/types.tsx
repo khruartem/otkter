@@ -6,7 +6,7 @@ export type TIconsProps = {
   extraColor: Colors;
   hoverColor?: Colors | string;
   activeColor?: Colors;
-  onClick?: (() => void) | undefined;
+  onClick?: () => void;
   onMouseEnter?: ((e: SyntheticEvent) => void) | undefined;
   onMouseLeave?: ((e: SyntheticEvent) => void) | undefined;
   width: number;
@@ -45,3 +45,4 @@ TIconsProps,
 >;
 export type TCategotyProps = TTabProps & Partial<Pick<TIconsProps, "extraColor">>;
 export type TErrorProps = Pick<TIconsProps, "className">;
+export type TTicketProps = Pick<TIconsProps, "mainColor" | "onClick">;

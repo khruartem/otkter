@@ -1,8 +1,8 @@
-import { TEmployee, TEmployeesType } from "../../../utils/types";
+import { TCardType, TEmployee } from "../../../utils/types";
 
 export type TTeamUIProps = {
   team: TEmployee[];
-  type: TEmployeesType;
+  type: TCardType;
   teamRef: React.RefObject<HTMLDivElement>;
   // columnsCount: number;
   containerHeight?: string;

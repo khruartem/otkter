@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { ProjectListUI } from "../ui/project-list";
 
-import { useGetProjects } from "../../hooks/useGetProjects";
+import { useGetProjects } from "../../hooks/delete/useGetProjects";
 import { TProjectListProps } from "./types";
 import { useGetViewRefByType } from "../../hooks/useGetViewRefByType";
 import { useSortAsc } from "../../hooks/useSortAsc";

@@ -1,9 +1,9 @@
 import { FC } from "react";
+import clsx from "clsx";
 
 import { TPointUIProps } from "./types";
 
 import styles from "./point.module.css";
-import clsx from "clsx";
 
 export const PointUI: FC<TPointUIProps> = ({ current = false }) => {
   return (

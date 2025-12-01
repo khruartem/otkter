@@ -9,8 +9,8 @@ import { CategoryList } from "../../category-list";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import { Colors } from "../../../utils/types";
 import { ProjectUIProps } from "./types";
-import { useGetAttention } from "../../../hooks/useGetAttention";
-import { useGetProjectColors } from "../../../hooks/useGetProjectColors";
+import { useGetAttention } from "../../../hooks/delete/useGetAttention";
+import { useGetProjectColors } from "../../../hooks/delete/useGetProjectColors";
 
 import styles from "./project.module.css";
 

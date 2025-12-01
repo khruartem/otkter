@@ -21,8 +21,8 @@ export const ServiceListUI: FC<TServiceListUIProps> = ({
       {services.map((service) => {
         return (
           <Service
-            service={service}
             key={service.id}
+            service={service}
             servicesRefs={servicesRefs}
             servicesViewRefs={servicesViewRefs}
           />

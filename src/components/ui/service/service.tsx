@@ -10,6 +10,7 @@ import { TServiceUIProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./service.module.css";
+import scrollStyle from "../../../styles/scroll.module.css";
 
 export const ServiceUI = React.forwardRef<
   HTMLDivElement & HTMLImageElement,
@@ -31,7 +32,7 @@ export const ServiceUI = React.forwardRef<
     <div
       className={clsx(
         styles.service,
-        isLarge && styles["service_large-screen"],
+        isLarge && styles["service_large"],
         isDesktop && styles.service_desktop,
         isLaptop && styles.service_laptop,
         isTablet && styles.service_tablet,
@@ -62,11 +63,9 @@ export const ServiceUI = React.forwardRef<
       <div
         className={clsx(
           styles.service__info,
-          isLarge && styles["service__info_large-screen"],
-          isDesktop && styles.service__info_desktop,
-          isLaptop && styles.service__info_laptop,
-          isTablet && styles.service__info_tablet,
-          isMobile && styles.service__info_mobile,
+          isLarge && styles["service__info_large"],
+          isDesktop && [styles.service__info_desktop, scrollStyle.scrolled],
+          (isLaptop || isTablet || isMobile) && styles.service__info_gapped,
           (isLarge || isDesktop) && styles["service__info_rows-ordered"]
         )}
       >
@@ -86,7 +85,12 @@ export const ServiceUI = React.forwardRef<
             lineHeight={isLarge ? 48 : 40}
             textTransform={"none"}
             color={Colors.Navy}
-            padding={clsx(isTablet || (isMobile && "40px 0 0 0"))}
+            classNameExtra={clsx(
+              styles["service__title"],
+              (isTablet || isMobile) && styles["service__title_paddinged"],
+              isTablet && styles["service__title_tablet"],
+              isMobile && styles["service__title_mobile"]
+            )}
           >
             {title}
           </Text>
@@ -99,6 +103,13 @@ export const ServiceUI = React.forwardRef<
             lineHeight={shortTextLineHeight}
             color={Colors.Dark100}
             textTransform={"none"}
+            classNameExtra={clsx(
+              (isLaptop || isTablet || isMobile) &&
+                styles["service__text_overflowed"],
+              isLaptop && styles["service__text_laptop"],
+              isTablet && styles["service__text_tablet"],
+              isMobile && styles["service__text_mobile"]
+            )}
           >
             {shortText}
           </Text>

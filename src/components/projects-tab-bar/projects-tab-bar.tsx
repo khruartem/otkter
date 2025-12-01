@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { TabBarUI } from "../ui/tab-bar";
 
 import { useGetId } from "../../hooks/useGetId";
-import { useGetProjects } from "../../hooks/useGetProjects";
+import { useGetProjects } from "../../hooks/delete/useGetProjects";
 import { useSortAsc } from "../../hooks/useSortAsc";
 import { useGetOnSwitch } from "../../hooks/useGetOnSwitch";
 

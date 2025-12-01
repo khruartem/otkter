@@ -1,0 +1,24 @@
+.cta {
+  gap: 40px;
+}
+
+.cta_columned {
+  display: flex;
+  flex-direction: column;
+}
+
+.cta_rowed {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+/* Стили для разных разрешений экранов */
+.cta_laptop {
+  grid-column: span 2;
+  justify-self: flex-start;
+}
+
+.cta_mobile {
+  gap: 16px;
+  align-items: center;
+}

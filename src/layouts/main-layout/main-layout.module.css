@@ -6,6 +6,14 @@
   margin: 0 auto;
 }
 
+.main_margined-large {
+  margin-top: calc(60px + 24px);
+}
+
+.main_margined-small {
+  margin-top: calc(60px + 12px);
+}
+
 /* Стили для разных разрешений экранов */
 /* main */
 .main_lagre_screen {

@@ -1,0 +1,124 @@
+.show-history {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  width: 100%;
+  height: 100%;
+}
+
+.past-shows-block {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.past-shows-block_limited-heigh {
+  height: 100%;
+}
+
+.past-shows-block_positioned {
+  position: relative;
+}
+
+.past-shows {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+
+.past-shows_column-gap-large {
+  column-gap: 24px;
+}
+
+.past-shows_column-gap-small {
+  column-gap: 20px;
+}
+
+.past-shows_row-gap-large {
+  row-gap: 60px;
+}
+
+.past-shows_row-gap-small {
+  row-gap: 32px;
+}
+
+.past-shows_faded::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 79%;
+  position: absolute;
+  background: linear-gradient(360deg, #FDFDFD 0%, rgba(253, 253, 253, 0) 100%);
+  top: 23%;
+  left: 0;
+}
+
+.show-history-item_width {
+  overflow-x: hidden;
+}
+
+/* Стили для разных разрешений экранов */
+/* modal_show-history */
+.modal_show-history_large {
+  padding-inline: 8.12vw;
+  padding-bottom: 5.21vw;
+}
+
+.modal_show-history_desktop {
+  padding-inline: 7.83vw;
+  padding-bottom: 4.39vw;
+}
+
+.modal_show-history_laptop {
+  padding: 4.10vw;
+}
+
+.modal_show-history_tablet {
+  padding: 3.91vw;
+}
+
+.modal_show-history_mobile {
+  padding-inline: 3.86vw;
+  padding-block: 5.80vw;
+}
+
+/* show-history */
+.show-history_large {
+  padding-block-start: 3.33vw;
+}
+
+.show-history_laptop {
+  height: 74.61vw;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.show-history_tablet {
+  height: 99.48vw;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+/* show-history-item */
+.show-history-item_large {
+  width: 20vw;
+}
+
+.show-history-item_desktop {
+  width: 19.76vw;
+}
+
+.show-history-item_laptop {
+  width: 29.29vw;
+}
+
+.show-history-item_tablet {
+  width: 44.66vw;
+}
+
+.show-history-item_mobile {
+  width: 100%;
+}

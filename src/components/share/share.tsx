@@ -4,7 +4,7 @@ import { FC, useState } from "react";
 import { ShareUI } from "../ui/share";
 
 import { TShareProps } from "./types";
-import { useGetTitle } from "../../hooks/useGetTitle";
+import { useGetTitle } from "../../hooks/delete/useGetTitle";
 import { Social, TCategory } from "../../utils/types";
 
 export const Share: FC<TShareProps> = ({ id, type }) => {

@@ -1,0 +1,16 @@
+.group-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.group-list_faded {
+  background: linear-gradient(
+    180deg,
+    var(--light80) 0%,
+    rgba(247, 247, 247, 0) 10%,
+    rgba(247, 247, 247, 0) 50%,
+    rgba(247, 247, 247, 0) 90%,
+    var(--light80) 100%
+  );
+}

@@ -187,7 +187,7 @@ import smmIcon from "../assets/services/icons/smm.webp";
 const buyTicketsLinkChronics =
   "https://tickets.mos.ru/widget/visit?eventId=61367&agentId=museum56&date=2025-05-04";
 const buyTicketsLinkEsenin =
-  "https://tickets.mos.ru/widget/visit?eventId=69990&agentId=museum24&date=2025-07-10";
+  "https://bilet.mos.ru/event/348685257/?ysclid=mggoo1slsl352616465";
 
 export const navLinks: TNavLinks = [
   {
@@ -592,25 +592,26 @@ export const projectInfos: TProjectInfo[] = [
         type: "partners",
         label: "Партнеры",
         value: [
-          "Государственный Литературный музей имени В. И. Даля",
           "ГБУ культуры г. Москвы «Объединение культурных центров Центрального административного округа»",
           "Есенин-центр",
+          "КЦ «Москвич»",
+          "Соворотка"
         ],
       },
       {
         type: "address",
         label: "Адрес",
-        value: "г. Москва, пер. Чернышевского, 4, стр. 2",
+        value: "Москва, пер. Чернышевского, д. 4, стр. 2",
       },
       {
         type: "date",
         label: "Дата",
-        value: "10 июля 19:00",
+        value: "20 октября, 19:00",
       },
       {
         type: "price",
         label: "Цена",
-        value: "от 400 руб.",
+        value: "От 400 р.",
       },
     ],
     employees: {

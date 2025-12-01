@@ -12,7 +12,7 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import styles from "./modal.module.css";
 
 export const ModalUI: FC<TModalUIProps> = memo(
-  ({ type, onClose, isDirectLink, children }) => {
+  ({ type, onClose, isDirectLink, children, className }) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
       useGetMediaQuery();
 
@@ -30,7 +30,8 @@ export const ModalUI: FC<TModalUIProps> = memo(
             ? styles["modal_height-mobile"]
             : styles["modal_height-regular"],
           type === "close" && styles.modal_centered,
-          type === "close" && styles["modal_overflowed-y"]
+          type === "close" && styles["modal_overflowed-y"],
+          className && className
         )}
       >
         {type === "back" && (
@@ -57,25 +58,6 @@ export const ModalUI: FC<TModalUIProps> = memo(
                 {clsx(!isDirectLink && "Назад", isDirectLink && "На главную")}
               </Text>
             </button>
-            {/* <button
-              className={clsx(styles.modal__button, styles.modal__button_share)}
-              type="button"
-              onClick={() => {}}
-            >
-              <Share mainColor={Colors.Light20} />
-              <Text
-                as={"span"}
-                fontFamily="Unbounded"
-                fontSize={18}
-                fontWeight={500}
-                lineHeight={28}
-                textAlign="right"
-                textTransform="none"
-                color={Colors.Light20}
-              >
-                {"Поделиться"}
-              </Text>
-            </button> */}
           </div>
         )}
         {type === "close" && (

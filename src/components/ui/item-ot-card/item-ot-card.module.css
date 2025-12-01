@@ -1,0 +1,156 @@
+/* item-card */
+.item-card {
+  width: min-content;
+}
+
+.item-card_animated .item-card__image {
+  transition: transform .2s;
+}
+
+.item-card_animated:hover .item-card__image {
+  transform: scale(1.2);
+}
+
+.item-card_animated h3 {
+  transition: color .2s;
+}
+
+.item-card_animated:hover h3 {
+  color: var(--item-color);
+}
+
+.item-card_inactive {
+  opacity: 0.5;
+}
+
+/* item-card__link */
+.item-card__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* item-card__top */
+.item-card__top {
+  position: relative;
+}
+
+.item-card__top_widthed {
+  width: 100%;
+}
+
+/* item-card__image-container */
+.item-card__image-container {
+  border-radius: 500px;
+  overflow: hidden;
+}
+
+/* item-card__image */
+.item-card__image {
+  object-fit: cover;
+  object-position: 60% 45%;
+}
+
+/* category-list */
+.category-list_projects {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 100px;
+  padding: 4px;
+  background-color: var(--light60);
+}
+
+.category-list_projects label {
+  font-family: Roboto, serif;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+/* item-card__bottom */
+.item-card__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* item-card__short-text */
+.item-card__short-text {
+  display: -webkit-box;
+  overflow: hidden;
+  line-clamp: 5;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+/* Стили для разных разрешений экранов */
+/* item-card */
+.item-card_large {
+  width: 26.19vw
+}
+
+.item-card_desktop {
+  width: 40vw;
+}
+
+.item-card_tablet {
+  width: 92.19vw;
+}
+
+/* item-card__link */
+.item-card__link_large-resolution {
+  gap: 20px;
+}
+
+.item-card__link_small-resolution {
+  gap: 12px;
+}
+
+/* item-card__top */
+.item-card__top_large-resolution {
+  padding: 16px 16px 24px;
+}
+
+.item-card__top_small-resolution {
+  display: flex;
+  padding-bottom: 24px;
+}
+
+/* item-card__image */
+.item-card__image_large {
+  width: 25.41vw;
+  height: 14.38vw;
+}
+
+.item-card__image_desktop {
+  width: 38.87vw;
+  height: 20.20vw;
+}
+
+.item-card__image_laptop {
+  width: 41.79vw;
+  height: 26.95vw;
+}
+
+.item-card__image_tablet {
+  width: 100%;
+  height: 31.25vw;
+  object-position: 60% 50%;
+}
+
+.item-card__image_mobile {
+  width: 92.27vw;
+  height: 57.97vw;
+}
+
+/* item-card__bottom */
+.item-card__bottom_large-resolution {
+  height: 192px;
+  padding-left: 20px;
+  overflow-y: hidden;
+}
+
+.item-card__bottom_small-resolution {
+  height: fit-content;
+}

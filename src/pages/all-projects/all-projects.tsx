@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 import { Preloader } from "../../components/ui/preloader";
 import { AllProjectsUI } from "../../components/ui/pages/all-projects";
-import { Colors } from "../../utils/types";
+// import { Colors } from "../../utils/types";
 import { SEO } from "../../components/seo";
 
 export const AllProjects: FC = () => {
@@ -15,7 +15,7 @@ export const AllProjects: FC = () => {
   useEffect(() => {
     location.state = { id: 0, type: "project" };
     setDocReadyState(document.readyState);
-    document.body.style.backgroundColor = Colors.Light60;
+    // document.body.style.backgroundColor = Colors.Light60;
   }, [docReadyState, location]);
 
   return docReadyState ? (

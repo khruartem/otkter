@@ -1,12 +1,13 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import { HeaderUI } from "../../components/ui/sections/header";
+// import { HeaderUI } from "../../components/ui/sections/header";
+import { HeaderUI } from "../../components/ui/sections/header copy";
+import { THeaderProps } from "./types";
 
-export const Header: FC = () => {
+export const Header: FC<THeaderProps> = ({ animation }) => {
   const location = useLocation();
 
-  console.log(location)
   const headerRef = useRef<HTMLHeadingElement>(null);
 
   const [url, setUrl] = useState("");
@@ -47,6 +48,7 @@ export const Header: FC = () => {
       url={url}
       headerRef={headerRef}
       onClickLogo={onClickLogo}
+      animation={animation}
     />
   );
 };

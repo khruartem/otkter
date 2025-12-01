@@ -1,0 +1,28 @@
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 232px;
+  border-radius: 40px;
+  padding: 20px;
+  justify-content: flex-end;
+  background-size: contain, cover;
+  background-repeat: no-repeat;
+  background-position: bottom, center;
+}
+
+.hero-card_regular-placer {
+  background-image: url(../../../assets/projects/backgrounds/placer.avif), var(--background-image);
+}
+
+.hero-card_ticket-placer {
+  background-image: url(../../../assets/projects/backgrounds/placer_ticket.avif), var(--background-image);
+}
+
+.hero-card_large-height {
+  height: 256px;
+}
+
+.hero-card_small-height {
+  height: 200px;
+}

@@ -7,22 +7,21 @@ import { NotFound404 } from "../not-found-404";
 import { SEO } from "../../components/seo";
 
 import { Colors, TEventDetails } from "../../utils/types";
-import { useGetTitle } from "../../hooks/useGetTitle";
-import { useGetText } from "../../hooks/useGetText";
+import { useGetTitle } from "../../hooks/delete/useGetTitle";
+import { useGetText } from "../../hooks/delete/useGetText";
 import { useGetId } from "../../hooks/useGetId";
-import { useGetProjectColors } from "../../hooks/useGetProjectColors";
-import { useGetAttention } from "../../hooks/useGetAttention";
-import { useGetIsEmployees } from "../../hooks/useGetIsEmployees";
-import { useGetControls } from "../../hooks/useGetControls";
-import { useGetPoster } from "../../hooks/useGetPoster";
-import { useGetPhotos } from "../../hooks/useGetPhotos";
-import { useGetInfosDetails } from "../../hooks/useGetInfosDetails";
-import { useGetProjectIsMain } from "../../hooks/useGetProjectIsMain";
+import { useGetProjectColors } from "../../hooks/delete/useGetProjectColors";
+import { useGetAttention } from "../../hooks/delete/useGetAttention";
+import { useGetIsEmployees } from "../../hooks/delete/useGetIsEmployees";
+import { useGetControls } from "../../hooks/delete/useGetControls";
+import { useGetPoster } from "../../hooks/delete/useGetPoster";
+import { useGetPhotos } from "../../hooks/delete/useGetPhotos";
+import { useGetInfosDetails } from "../../hooks/delete/useGetInfosDetails";
+import { useGetProjectIsMain } from "../../hooks/delete/useGetProjectIsMain";
 import { useGetUrlCode } from "../../hooks/useGetUrlCode";
-import { useGetPreviewImage } from "../../hooks/useGetPreviewImage";
-import { useGetProjectType } from "../../hooks/useGetProjectType";
-import { useGetProjectShortText } from "../../hooks/useGetProjectShortText";
-// import { useGetProject } from "../../hooks/useGetProject";
+import { useGetPreviewImage } from "../../hooks/delete/useGetPreviewImage";
+import { useGetProjectType } from "../../hooks/delete/useGetProjectType";
+import { useGetProjectShortText } from "../../hooks/delete/useGetProjectShortText";
 
 export const ProjectInfo: FC = () => {
   const [docReadyState, setDocReadyState] = useState<DocumentReadyState | null>(

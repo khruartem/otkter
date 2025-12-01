@@ -1,0 +1,15 @@
+.services-tab-bar_large {
+  width: 41.25vw;
+}
+
+.services-tab-bar_desktop {
+  gap: 16px;
+}
+
+.services-tab-bar_laptop {
+  gap: 16px;
+}
+
+/* .services-tab-bar_mobile {
+  gap: 0;
+} */

@@ -1,10 +1,10 @@
-import { TPhoto } from "../../features/photos/photosSlice";
-import { TSectionType } from "../../utils/types";
+import { TItemOTKind, TPhoto } from "../../utils/types/common";
 
 export type TPhotoProps = {
-  id: number;
-  photo: TPhoto | null;
+  itemId: number;
+  // photo: TPhoto | null;
+  photo: TPhoto;
   label?: string;
-  nextPhotoId?: number;
-  type: TSectionType;
-}
+  // nextPhotoId?: number;
+  itemKind: TItemOTKind;
+};

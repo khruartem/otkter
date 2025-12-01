@@ -1,15 +1,15 @@
 .contacts {
   width: 100vw;
-  background-color: var(--light60);
-  border-radius: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 44px;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 80px;
   background-position: top;
   background-repeat: no-repeat;
+}
+
+.contacts_large-gap {
+  gap: 60px;
+}
+
+.contacts_small-gap {
+  gap: 44px;
 }
 
 .contacts_background-covered {
@@ -20,45 +20,31 @@
   background-size: contain;
 }
 
-.contacts button {
-  width: fit-content;
-}
-
 /* Стили для разных разрешений экранов */
-.contacts_large-screen {
+.contacts_large {
   background-image: url(../../../../assets/banner/banner_large-screen.webp);
-  gap: 60px;
-  padding-block: 6.88vw;
   padding-inline: 27.60vw;
-  border-radius: 200px;
 }
 
 .constants_desktop {
   background-image: url(../../../../assets/banner/banner_desktop.webp);
-  padding-block: 5.86vw;
   padding-inline: 22.18vw;
-  border-radius: 200px;
 }
 
 .constants_laptop {
   background-image: url(../../../../assets/banner/banner_laptop.webp);
   padding-top: 54.30vw;
   padding-inline: 12.89vw;
-  border-radius: 200px;
 }
 
 .constants_tablet {
   background-image: url(../../../../assets/banner/banner_tablet.webp);
   padding-top: 67.19vw;
-  padding-inline: 3.91vw;
-  border-radius: 100px;
 }
 
 .constants_mobile {
   background-image: url(../../../../assets/banner/banner_tablet.webp);
-  padding-top: 67.19vw;
-  padding-inline: 3.86vw;
-  border-radius: 100px;
+  padding-top: 77.29vw;
 }
 
 .constants_mobile button {

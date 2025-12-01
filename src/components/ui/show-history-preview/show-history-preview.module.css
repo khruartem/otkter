@@ -1,0 +1,37 @@
+.show-history-preview {
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: row-reverse;
+  cursor: pointer;
+  gap: 24px;
+  position: relative;
+}
+
+.show-history-preview::after {
+  content: "";
+  display: block;
+  background: linear-gradient(270deg, rgba(253, 253, 253, 0) 0%, #FDFDFD 100%);
+  width: 65%;
+  left: -5px;
+  height: 60px;
+  position: absolute;
+}
+
+.show-history-preview-item {
+  width: calc(237px + 24px + 1px);
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.show-history-preview-item::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 48px;
+  background-color: var(--light30);
+}
+
+.show-history-preview-item span:first-child {
+  max-width: calc(100% - 24px);
+}

@@ -1,26 +1,29 @@
-.wrapper {
+/* .wrapper {
   display: flex;
   justify-content: center;
-  /* --webkit-transform: translate3d(0,0,0); */
-}
+} */
 
 .team {
-  width: fit-content;
-  height: var(--height);
-  scroll-snap-align: center;
+  /* scroll-snap-align: center; */
   /* display: grid;
   grid-template-rows: min-content;
   grid-template-columns: var(--columns-count);
   grid-auto-flow: row; */
   /* scrollbar-width: none; */
   display: flex;
-  justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  width: fit-content;
+  height: var(--height);
 }
 
 .team_large-gap {
   gap: 24px;
+}
+
+.team_middle-gap {
+  gap: 20px;
 }
 
 .team_small-gap {
@@ -31,9 +34,9 @@
   overflow-y: auto;
 }
 
-.team_faded {
+/* .team_faded {
   background: linear-gradient(180deg, var(--light80) 0%, rgba(247, 247, 247, 0) 10%, rgba(247, 247, 247, 0) 50%, rgba(247, 247, 247, 0) 90%, var(--light80) 100%);
-}
+} */
 
 /* Стили для разных разрешений экранов */
 /* .team_mobile {

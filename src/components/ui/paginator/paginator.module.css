@@ -1,7 +1,7 @@
 .paginator {
   display: flex;
   flex-direction: row;
-  gap: 6px;
-  position: absolute;
-  top: 97%;
+  gap: 4px;
+  /* position: absolute;
+  top: 97%; */
 }

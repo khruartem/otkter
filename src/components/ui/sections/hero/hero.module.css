@@ -1,155 +1,133 @@
-.hero {
-  display: flex;
-  background-color: var(--light60);
-  align-items: center;
+/* section */
+.section_justified {
+  justify-content: flex-end;
 }
 
-.hero_rowed {
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.hero_columned {
-  flex-direction: column-reverse;
-  justify-content: flex-start;
-}
-
-.hero__content {
-  display: flex;
-  flex-direction: column;
-}
-
-.hero__content_large-width {
-  width: 100%;
-}
-
-.hero__content_large-gap {
+.section_l-gap {
   gap: 80px;
 }
 
-.hero__content_small-gap {
+.section_m-gap {
+  gap: 60px;
+}
+
+.section_s-gap {
   gap: 40px;
 }
 
-.hero__main-info {
+.section_xs-gap {
+  gap: 24px;
+}
+
+.section_columned_reversed {
+  flex-direction: column-reverse;
+  padding-block-start: 0;
+}
+
+/* content */
+.content {
   display: flex;
   flex-direction: column;
 }
 
-.hero__main-info_large-gap {
+.content_large-width {
+  width: 100%;
+}
+
+.content_large-gap {
+  gap: 80px;
+}
+
+.content_small-gap {
+  gap: 40px;
+}
+
+/* main-info */
+.main-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-info_large-gap {
   gap: 20px;
 }
 
-.hero__main-info_small-gap {
+.main-info_small-gap {
   gap: 12px;
 }
 
-.hero__title {
-  width: 235px;
+/* title */
+.title {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 235px;
 }
 
-.hero__title_large-height {
+.title_large-height {
   height: 52px;
 }
 
-.hero__title_small-height {
+.title_small-height {
   height: 48px;
 }
 
-
-.hero__extra-info {
+/* extra-info */
+.extra-info {
   display: grid;
 }
 
-.hero__extra-info_large-gap {
+.extra-info_large-gap {
   gap: 24px;
 }
 
-.hero__extra-info_middle-gap {
+.extra-info_middle-gap {
   gap: 20px;
 }
 
-.hero__extra-info_small-gap {
+.extra-info_small-gap {
   gap: 12px;
 }
 
-.hero__stat {
+/* stat */
+.stat {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.hero__stat_gapped {
+.stat_gapped {
   gap: 4px;
 }
 
 /* Стили для разных разрешений экранов */
-/* hero */
-.hero_large-screen {
-  padding-left: 8.13vw;
+/* section */
+.section_tablet {
+  padding-block-end: 72px;
 }
 
-.hero_desktop {
-  padding-left: 7.83vw;
+.section_mobile {
+  padding-block-end: 16px;
 }
 
-.hero_laptop {
-  gap: 7.81vw;
-  padding: 12px 4.10vw 7.81vw;
-}
-
-.hero_tablet {
-  gap: 7.81vw;
-  padding: 12px 3.91vw 9.38vw;
-}
-
-.hero_mobile {
-  gap: 9.66vw;
-  padding: 12px 3.86vw 3.86vw;
-}
-
-/* hero__title */
-/* .hero__title_large-screen {
-  padding: 0.43vw 1.15vw;
-}
-
-.hero__title_desktop {
-  padding: 0.62vw 1.62vw;
-}
-
-.hero__title_laptop {
-  padding: 0.82vw 2.16vw;
-}
-
-.hero__title_tablet {
-  padding: 1.09vw 2.88vw;
-}
-
-.hero__title_mobile {
-  padding: 12px 3.86vw 3.86vw;
-} */
-
-/* hero__extra-info */
-.hero__extra-info_large-screen {
+/* extra-info */
+.extra-info_large-screen {
   grid-template-columns: repeat(3, 12.92vw);
 }
 
-.hero__extra-info_desktop {
+.extra-info_desktop {
   grid-template-columns: repeat(3, 12.59vw);
 }
 
-.hero__extra-info_laptop {
+.extra-info_laptop {
   grid-template-columns: repeat(3, 24.22vw);
 }
 
-.hero__extra-info_tablet {
+.extra-info_tablet {
   grid-template-columns: repeat(3, 29.69vw);
 }
 
-.hero__extra-info_mobile {
+.extra-info_mobile {
   grid-template-rows: repeat(3, 60px);
 }

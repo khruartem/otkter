@@ -1,11 +1,15 @@
 .point {
   width: 4px;
   height: 4px;
-  background-color: var(--light30);
+  margin: 2px;
   border-radius: 100px;
+  background-color: var(--color);
 }
 
 .point_current {
   width: 12px;
-  background-color: var(--light20);
+  height: 6px;
+  margin-inline: 0;
+  margin-block: 1px;
+  background-color: var(--current-color);
 }

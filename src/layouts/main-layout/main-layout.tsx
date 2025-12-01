@@ -24,7 +24,9 @@ export const MainLayout: FC<TMainLayoutProps> = ({
         className={clsx(
           styles.main,
           isLarge && !withoutMediaQuery && styles["main_lagre_screen"],
-          isDesktop && !withoutMediaQuery && styles.main_desktop,
+          isDesktop && !withoutMediaQuery
+            ? [styles.main_desktop, styles["main_margined-small"]]
+            : styles["main_margined-large"],
           isLaptop && !withoutMediaQuery && styles.main_laptop,
           isTablet && !withoutMediaQuery && styles.main_tablet,
           isMobile && !withoutMediaQuery && styles.main_mobile,

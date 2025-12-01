@@ -30,7 +30,10 @@ export const ShareUI: FC<TShareUIProps> = ({ socials, copy, isCopied }) => {
         color={Colors.Light20}
         hoverColor={Colors.Dark80}
       />
-      <Category category={copy} className={clsx(isCopied && styles.copied)} />
+      <Category
+        category={copy}
+        className={clsx(styles.copy, isCopied && styles.copied)}
+      />
     </div>
   );
 };

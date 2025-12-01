@@ -1,0 +1,30 @@
+.category {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: var(--categoty-background-color);
+}
+
+.category_with-text {
+  padding-left: 12px;
+  padding-right: 16px;
+  padding-block: 6px;
+}
+
+.category_without-text {
+  padding: 8px;
+}
+
+.category__text {
+  letter-spacing: .02em;
+  display: block;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: var(--categoty-text-color);
+  font-weight: 400;
+  text-transform: none;
+}

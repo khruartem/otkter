@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { ArrowLeft, ArrowRight } from "../../icons/icons";
 // import { TabItemUI } from "../tab-item";
-import { TabItem } from "../../tab-item";
+import { PhotoTabItem } from "../../photo-tab-item";
 
 import { TTabBarUIProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
@@ -64,7 +64,7 @@ export const TabBarUI: FC<TTabBarUIProps> = ({
               className={styles["tab-bar__item-link"]}
             >
               <li className={styles["tab-bar__item-link-item"]}>
-                <TabItem
+                <PhotoTabItem
                   key={item.id}
                   item={item}
                   index={index}

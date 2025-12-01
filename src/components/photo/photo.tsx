@@ -4,22 +4,26 @@ import { useGetUrlCode } from "../../hooks/useGetUrlCode";
 import { PhotoUI } from "../ui/photo";
 
 export const Photo: FC<TPhotoProps> = ({
+  itemId,
+  itemKind,
   photo,
   label,
-  nextPhotoId,
-  id,
-  type,
+  // nextPhotoId,
 }) => {
-  const url = useGetUrlCode();
+  const code = useGetUrlCode();
+  const url =
+    itemKind === "team"
+      ? `/${itemKind}/admins/${code}/${photo?.id}`
+      : `/${itemKind}/${code}/${photo?.id}`;
 
   return (
     <PhotoUI
-      id={id}
+      itemId={itemId}
+      itemKind={itemKind}
       photo={photo}
-      type={type}
       label={label}
-      nextPhotoId={nextPhotoId}
       url={url}
+      // nextPhotoId={nextPhotoId}
     />
   );
 };

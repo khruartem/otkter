@@ -16,10 +16,12 @@ import { reducer as tabsReducer } from "../features/tabs/tabsSlice";
 import { reducer as servicesReducer } from "../features/services/servicesSlice";
 import { reducer as socialsReducer } from "../features/socials/socialsSlice";
 import { reducer as teamsReducer } from "../features/teams/teamsSlice";
+import { reducer as _projectsReducer } from "../features/_projects/projectsSlice";
 
 const store = configureStore({
   reducer: {
     projects: projectsReducer,
+    _projects: _projectsReducer,
     projectsInfo: projectsInfoReducer,
     infos: infosReducer,
     photos: photosReducer,

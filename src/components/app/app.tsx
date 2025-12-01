@@ -3,8 +3,8 @@ import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { Main } from "../../pages/main";
 import { AllProjects } from "../../pages/all-projects";
 import { Modal } from "../modal";
-import { Slider } from "../slider";
-import { ProjectInfo } from "../../pages/project-info";
+import { PhotoSlider } from "../photo-slider";
+import { ProjectInfo } from "../../pages/project-info copy";
 import { ServiceInfo } from "../../pages/service-info";
 import { NotFound404 } from "../../pages/not-found-404";
 import { TeamInfo } from "../../pages/team-info";
@@ -36,7 +36,7 @@ export function App() {
                 }
               }}
             >
-              <Slider type="projects" />
+              <PhotoSlider type="projects" />
             </Modal>
           }
         />
@@ -55,7 +55,7 @@ export function App() {
                 }
               }}
             >
-              <Slider type="services" />
+              <PhotoSlider type="services" />
             </Modal>
           }
         />
@@ -74,7 +74,7 @@ export function App() {
                 }
               }}
             >
-              <Slider type="team" />
+              <PhotoSlider type="team" />
             </Modal>
           }
         />

@@ -14,8 +14,12 @@
   flex-direction: column;
 }
 
-.controls_gapped {
+.controls_large-gap {
   gap: 20px;
+}
+
+.controls_small-gap {
+  gap: 12px;
 }
 
 .extra-link {

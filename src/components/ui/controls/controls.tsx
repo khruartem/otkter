@@ -1,72 +1,80 @@
 import { FC } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import { Link } from "react-router-dom";
+import clsx from "clsx";
 
 import { Button } from "../../button";
 import { Telegram, TrickCircle, VK } from "../../icons/icons";
 import { Text } from "../../text";
 
 import { TControlsUIProps } from "./types";
+import { Colors, TControlsItem } from "../../../utils/types";
+
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./controls.module.css";
 import stylesLink from "../../link/link.module.css";
-import { Colors } from "../../../utils/types";
-import clsx from "clsx";
 
-export const ControlsUI: FC<TControlsUIProps> = ({ controls, isExtraLink }) => {
+export const ControlsUI: FC<TControlsUIProps> = ({
+  controls,
+  isExtraLink,
+  type,
+}) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
-  return (
+  const renderControls = (controls: TControlsItem[] | undefined) => {
+    return controls?.map(({ label, type, onClick, url, state, icon }) => {
+      switch (type) {
+        case "link":
+          return (
+            <Link
+              key={nanoid()}
+              className={stylesLink.link}
+              to={url}
+              state={state}
+            >
+              {label}
+            </Link>
+          );
+        case "button":
+          return (
+            <Button
+              key={nanoid()}
+              type="button"
+              disabled={false}
+              onClick={onClick}
+              className={clsx(
+                isMobile &&
+                  // (!controls[index+1]?.type || controls[index+1]?.type === "link") &&
+                  styles["button_max-width"],
+                isMobile && icon && styles["button_min-width"],
+                icon && styles.button_icon
+              )}
+            >
+              {icon === "telegram" && <Telegram mainColor={Colors.Light100} />}
+              {icon === "vk" && <VK mainColor={Colors.Light100} />}
+              {label}
+            </Button>
+          );
+      }
+    });
+  };
+
+  return controls?.length && controls.length > 1 && !isExtraLink ? (
     <div
       className={clsx(
         styles.controls,
         isMobile && styles.controls_mobile,
-        isMobile && controls?.length && styles.controls_mobile_group,
-        controls?.length && styles.controls_gapped
+        isMobile &&
+          controls?.length &&
+          type !== "services" &&
+          styles.controls_mobile_group,
+        type === "team" && styles["controls_large-gap"],
+        isMobile && type === "services" && styles["controls_small-gap"]
       )}
     >
-      {controls &&
-        controls.map(({ label, type, onClick, url, state, icon }) => {
-          switch (type) {
-            case "link":
-              return (
-                <Link
-                  key={nanoid()}
-                  className={stylesLink.link}
-                  to={url}
-                  state={state}
-                >
-                  {label}
-                </Link>
-              );
-            case "button":
-              return (
-                <Button
-                  key={nanoid()}
-                  type="button"
-                  disabled={false}
-                  onClick={onClick}
-                  className={clsx(
-                    isMobile &&
-                      controls?.length <= 1 &&
-                      styles["button_max-width"],
-                    isMobile &&
-                      controls?.length > 1 &&
-                      styles["button_min-width"],
-                    icon && styles.button_icon
-                  )}
-                >
-                  {icon === "telegram" && (
-                    <Telegram mainColor={Colors.Light100} />
-                  )}
-                  {icon === "vk" && <VK mainColor={Colors.Light100} />}
-                  {label}
-                </Button>
-              );
-          }
-        })}
+      {renderControls(controls)}
       {isExtraLink && (
         <div
           className={clsx(
@@ -94,5 +102,7 @@ export const ControlsUI: FC<TControlsUIProps> = ({ controls, isExtraLink }) => {
         </div>
       )}
     </div>
+  ) : (
+    renderControls(controls)
   );
 };

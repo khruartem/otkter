@@ -11,8 +11,8 @@ import { Colors } from "../../utils/types";
 import { useGetId } from "../../hooks/useGetId";
 import { useGetUrlCode } from "../../hooks/useGetUrlCode";
 import { useGetAdmin } from "../../hooks/useGetAdmin";
-import { useGetControls } from "../../hooks/useGetControls";
-import { useGetPhotos } from "../../hooks/useGetPhotos";
+import { useGetControls } from "../../hooks/delete/useGetControls";
+import { useGetPhotos } from "../../hooks/delete/useGetPhotos";
 
 export const TeamInfo: FC = () => {
   const [docReadyState, setDocReadyState] = useState<DocumentReadyState | null>(

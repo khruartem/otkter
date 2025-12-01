@@ -12,7 +12,8 @@ import styles from "./project-list.module.css";
 export const ProjectListUI = React.forwardRef<
   HTMLUListElement,
   TProjectListUIProps
->(({ projects, projectRef }, ref) => {
+// >(({ projects, projectRef }, ref) => {
+>(({ projects }, ref) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
@@ -21,7 +22,7 @@ export const ProjectListUI = React.forwardRef<
   const smallResolution = isTablet || isMobile;
 
   return (
-    <div ref={projectRef}>
+    // <div ref={projectRef} className={styles["project-list-wrapper"]}>
       <ul
         className={clsx(
           styles["project-list"],
@@ -35,6 +36,6 @@ export const ProjectListUI = React.forwardRef<
           return <Project key={nanoid()} project={project} />;
         })}
       </ul>
-    </div>
+    // </div>
   );
 });

@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { FC, useRef } from "react";
+import { HashLink } from "react-router-hash-link";
 
 import { Logo } from "../../../../components/icons";
 import { Menu } from "../../../../components/menu/menu";
@@ -10,7 +11,6 @@ import { Colors } from "../../../../utils/types";
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 
 import styles from "./header.module.css";
-import { HashLink } from "react-router-hash-link";
 
 export const HeaderUI: FC<THeaderUIProps> = ({
   url,

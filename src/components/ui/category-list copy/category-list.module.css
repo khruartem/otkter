@@ -1,0 +1,23 @@
+.category-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.category-list div:not(:first-child) {
+  margin-right: 3px;
+}
+
+.category-list div:last-child {
+  margin-right: 0;
+}
+
+/* Стили для разных разрешений экранов */
+.category-list_large-resolution {
+  left: 16px;
+}
+
+.category-list_small-resolution {
+  left: 0;
+}

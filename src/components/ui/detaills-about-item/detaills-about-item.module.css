@@ -1,0 +1,24 @@
+.detaills-about-item {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  column-gap: 12px;
+}
+
+.detaills-about-item__values {
+  display: block;
+  color: var(--dark100);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  text-transform: none;
+  list-style: disc;
+}
+
+.detaills-about-item__value {
+  margin-left: 20px;
+}

@@ -1,9 +1,14 @@
+.project-list-wrapper {
+  height: min-content;
+}
+
 .project-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  scroll-snap-align: center;
+  /* scroll-snap-align: center;
+  height: 100%; */
 }
 
 /* Стили для разных разрешений экранов */

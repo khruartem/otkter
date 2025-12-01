@@ -1,11 +1,10 @@
-import { TPhoto } from "../../../features/photos/photosSlice";
-import { TSectionType } from "../../../utils/types";
+import { TItemOTKind, TPhoto } from "../../../utils/types/common";
 
 export type TPhotoUIProps = {
-  id: number;
-  url: string;
-  photo: TPhoto | null;
+  itemId: number;
+  itemKind: TItemOTKind;
+  photo: TPhoto;
   label?: string;
-  nextPhotoId?: number;
-  type: TSectionType;
-}
+  url: string;
+  // nextPhotoId?: number;
+};
