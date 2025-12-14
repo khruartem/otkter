@@ -4,14 +4,18 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { TabBar } from "../tab-bar copy";
 
 import { TPhotoTabBarProps } from "./types";
+import { TTabBarCotextValue } from "../tab-bar copy/types";
 
-import { TEmployee } from "../../utils/types";
 import { TProject } from "../../utils/types/projects";
 import { TService } from "../../utils/types/services";
+import { TItemOTType } from "../../utils/types/common";
+import { isItemOT } from "../../utils/guards/is-item-ot";
+import { TEmployee } from "../../utils/types/team";
 
 export const PhotoTabBar: FC<TPhotoTabBarProps> = ({
   baseUrl,
   currentItem,
+  currentItemIndex,
   items,
   renderTab,
   className,
@@ -20,23 +24,25 @@ export const PhotoTabBar: FC<TPhotoTabBarProps> = ({
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [currentTab, setCurrentTab] = useState(currentItem);
-  const [currentIndex, setCurrentIndex] = useState<number>(
-    items.findIndex((element) => element.id === currentItem.id)
+  const [currentTab, setCurrentTab] = useState<TProject | TService | TEmployee>(
+    currentItem
   );
+  const [currentIndex, setCurrentIndex] = useState<number>(currentItemIndex);
 
   const handleTabClick = (
-    item: TProject | TService | TEmployee,
+    item: TProject | TService | TEmployee | TItemOTType,
     index: number
   ) => {
-    setCurrentTab(item);
-    setCurrentIndex(index);
-    navigate(
-      item.type === "team"
-        ? `/${item.type}/admins/${item.url}/`
-        : `/${item.kind}/${item.url}/`,
-      { ...location?.state, id: item.id, url: item.url }
-    );
+    if (isItemOT(item)) {
+      setCurrentTab(item);
+      setCurrentIndex(index);
+      navigate(
+        item.kind === "team"
+          ? `/${item.type}/admins/${item.url}/`
+          : `/${item.kind}/${item.url}/`,
+        { ...location?.state, id: item.id, url: item.url }
+      );
+    }
   };
 
   const handleSwitch: (index: number) => void = (index: number) => {
@@ -73,11 +79,12 @@ export const PhotoTabBar: FC<TPhotoTabBarProps> = ({
     }
   };
 
-  const contextValue = {
+  const contextValue: TTabBarCotextValue = {
     tabs: items,
     currentTab,
+    relativeToTitle: "rowed",
     currentIndex,
-    handleTabClick,
+    onTabClick: handleTabClick,
     renderTab,
     onSwitch: handleSwitch,
     tabsGap,

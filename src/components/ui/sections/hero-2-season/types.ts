@@ -2,7 +2,6 @@ import { TProject } from "../../../../utils/types/projects";
 
 export type THeroUIProps = {
   items: TProject[];
-  // currentItemIndex: number;
   currentPaginatorIndex: number;
   paginatorLength: number;
   onClickLeft: () => void;

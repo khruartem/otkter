@@ -8,7 +8,7 @@ import { useTabBarContext } from "../../hooks/useTabBarContext";
 
 export const TabItem: FC<TTabItemProps> = ({ tab, index }) => {
   const iconRef = useRef<HTMLLIElement>(null);
-  const { currentTab, renderTab, handleTabClick } = useTabBarContext();
+  const { currentTab, renderTab, onTabClick } = useTabBarContext();
 
   useEffect(() => {
     // if (current) scrollIntoElementView(iconRef, "smooth", "center");
@@ -26,6 +26,6 @@ export const TabItem: FC<TTabItemProps> = ({ tab, index }) => {
     tab,
     current: currentTab === tab,
     iconRef,
-    onClick: () => handleTabClick(tab, index),
+    onClick: () => onTabClick(tab, index),
   });
 };

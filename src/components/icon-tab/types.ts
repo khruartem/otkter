@@ -1,14 +1,14 @@
 import React, { ReactNode } from "react";
-import { TCardType } from "../../utils/types"
+import { TItemOTType } from "../../utils/types/common";
+import { TProject } from "../../utils/types/projects";
+import { TEmployee } from "../../utils/types";
+import { TService } from "../../utils/types/services";
 
 export type TIconTabProps = {
-  // type: TSectionType;
   titled?: boolean;
-  // notTitled?: boolean;
-  tab: TCardType;
+  tab: TProject | TEmployee | TService | TItemOTType;
   current: boolean;
-  // index: number;
   iconRef: React.RefObject<HTMLLIElement>;
   onClick: () => void;
   children: ReactNode;
-}
+};

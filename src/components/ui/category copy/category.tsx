@@ -7,14 +7,19 @@ import { TCategoryUIProps } from "./types";
 import styles from "./category.module.css";
 import clsx from "clsx";
 
-export const CategoryUI: FC<TCategoryUIProps> = ({ category, colors }) => {
+export const CategoryUI: FC<TCategoryUIProps> = ({
+  category,
+  colors,
+  className,
+}) => {
   return (
     <div
       className={clsx(
         styles.category,
         category?.text
           ? styles["category_with-text"]
-          : styles["category_without-text"]
+          : styles["category_without-text"],
+        className && className
       )}
       style={
         { "--categoty-background-color": colors.background } as CSSProperties

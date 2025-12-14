@@ -1,9 +1,5 @@
-// import { TSectionType } from "../../utils/types";
-import { TProject, TEmployee } from "../../utils/types/projects";
+import { TItemOT } from "../../utils/types/common";
 
 export type TShareProps = {
-  // id: number;
-  // type: TSectionType;
-  // title: string;
-  item: TProject | TEmployee;
-}
+  item: TItemOT;
+};

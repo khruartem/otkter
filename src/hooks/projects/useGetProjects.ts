@@ -1,5 +1,5 @@
 import { useSelector } from "../../services/store";
-import { getProjectsSelector } from "../../features/_projects/projectsSlice";
+import { getProjectsSelector } from "../../features/projects/projectsSlice";
 import { TProjectType } from "../../utils/types/projects";
 
 export const useGetProjects = (type?: TProjectType) => {

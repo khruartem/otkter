@@ -1,7 +1,15 @@
 import { TProjectsUrl, TProjectType } from "./projects";
 import { TServicesUrl, TServiceType } from "./services";
-import { TAdminsUrl, TEmployeeType } from "./team";
-import { Colors, TEmployee } from "../types";
+import { TAdminsUrl, TEmployee, TEmployeeType } from "./team";
+import { Colors } from "../types";
+
+export type TSocialsType = "telegram" | "vk";
+export type TSocials = {
+  id: number;
+  url: string;
+  type: TSocialsType;
+  onClick?: () => void;
+};
 
 // export type TControlsLocation = "main" | "info";
 type TControlsType = "button" | "link";

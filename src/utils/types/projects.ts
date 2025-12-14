@@ -1,8 +1,4 @@
 import { TItemOT, TUrlNotFound } from "./common";
-// import { TPhoto } from "../../features/photos/photosSlice";
-// import { TCardType, TProjectsUrl, TControlsItem } from "../types";
-
-// export type TEntity = TProject & TService & TEmployee;
 
 export type TProjectsUrl =
   | "unique-chronicle"

@@ -1,77 +1,39 @@
-import { ReactNode } from "react";
-import {
-  TCardType,
-  TProject,
-  TService,
-  TEmployee
-  // TContenSliderPadding,
-  // TContenSliderHeaderStyle,
-} from "../../utils/types";
-// import { TProject } from "../../utils/types/projects";
-// import { TService } from "../../utils/types/services";
-// import { TEmployee } from "../../utils/types/team";
-// import { TTabItemProps } from "../tab-item copy/types";
+import { ReactNode, SyntheticEvent } from "react";
+import { TItemOTType } from "../../utils/types/common";
+import { TProject } from "../../utils/types/projects";
+import { TService } from "../../utils/types/services";
+import { TTabBarCotextValue } from "../tab-bar copy/types";
+import { TEmployee } from "../../utils/types/team";
 
-// export interface IContentSliderItem {
-//   type: TCardType;
-// }
+export type TContentSliderTabBarProps = Pick<
+  TTabBarCotextValue,
+  "title" | "relativeToTitle" | "tabsGap" | "renderTab" | "className"
+>;
 
 export type TContentSliderProps = {
-  // id?: string;
+  tabBarProps: TContentSliderTabBarProps;
   items: TProject[] | TService[] | TEmployee[];
-  // title?: string;
-  firstTab?: TCardType;
-  lastTab?: TCardType;
-  renderTabBar: (props: {
-    baseUrl?: "team/admins" | "projects" | "services";
-    items?: TProject[] | TService[] | TEmployee[];
-    tabs: TCardType[];
-    currentTab: TCardType;
-    currentIndex: number;
-    previousIndex: number;
-    setCurrentTab: React.Dispatch<React.SetStateAction<TCardType>>;
-    setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
-    setPreviousIndex: React.Dispatch<React.SetStateAction<number>>;
-    // renderTab: (item: {
-    //   tab: TCardType;
-    //   current: boolean;
-    //   iconRef: React.RefObject<HTMLLIElement>;
-    //   onClick: () => void;
-    // }) => ReactNode;
-  }) => ReactNode;
-  // renderTab: (item: {
-  //   tab: TCardType;
-  //   current: boolean;
-  //   iconRef: React.RefObject<HTMLLIElement>;
-  //   onClick: () => void;
-  // }) => ReactNode;
-  // renderTab: (
-  //   value:
-  //     | Pick<TTabItemProps, "current" | "tab">
-  //     | {
-  //         onClick: () => void;
-  //         ref: React.RefObject<HTMLImageElement & HTMLLIElement>;
-  //       }
-  // ) => ReactNode;
+  firstTab?: TItemOTType;
+  lastTab?: TItemOTType;
   children?: ReactNode;
-  // renderContent: (
-  //   currenTab: TCardType,
-  //   currentIndex: number,
-  //   setCurrentTab: React.Dispatch<React.SetStateAction<TCardType>>,
-  //   setCurrentIndex: React.Dispatch<React.SetStateAction<number>>
-  // ) => ReactNode;
+  emptyStateContent?: ReactNode;
   renderItem: (item: {
-    type: TCardType;
+    type: TItemOTType;
     itemRef: React.RefObject<HTMLDivElement>;
     itemViewRef: (node?: Element | null | undefined) => void;
   }) => ReactNode;
-  // renderItem: (item: {
-  //   item: TProject | TService | TEmployee;
-  //   itemRef: React.RefObject<HTMLDivElement>;
-  //   itemViewRef: (node?: Element | null | undefined) => void;
-  // }) => ReactNode;
-  // padding?: TContenSliderPadding;
-  // paddingedTop?: boolean;
-  // decorated?: boolean;
-  // headerStyle: TContenSliderHeaderStyle;
+};
+
+export type TContentSliderContext = {
+  tabs: TItemOTType[];
+  currentTab: TItemOTType;
+  currentIndex: number;
+  previousIndex: number;
+  emptyStateContent?: ReactNode;
+  renderItem: (item: {
+    type: TItemOTType;
+    itemRef: React.RefObject<HTMLDivElement>;
+    itemViewRef: (node?: Element | null | undefined) => void;
+  }) => React.ReactNode;
+  onScrollItem: (e: SyntheticEvent<Element, Event>) => void;
 };

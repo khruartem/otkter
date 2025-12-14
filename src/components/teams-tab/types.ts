@@ -1,5 +1,8 @@
-import { TCardType } from "../../utils/types";
+import { TEmployee } from "../../utils/types";
+import { TItemOTType } from "../../utils/types/common";
+import { TProject } from "../../utils/types/projects";
+import { TService } from "../../utils/types/services";
 
 export type TTeamsTabProps = {
-  tab: TCardType;
+  tab: TItemOTType | TProject | TEmployee | TService;
 };

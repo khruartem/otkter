@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 import { Share } from "../../share copy";
 import { PhotoTabBar } from "../../photo-tab-bar";
-import { PhotoTabItem } from "../../photo-tab-item";
+import { PhotoTab } from "../../photo-tab";
 
 import { TInfoNavigationUIProps } from "./types";
 
@@ -13,6 +13,7 @@ import styles from "./info-navigation.module.css";
 
 export const InfoNavigationUI: FC<TInfoNavigationUIProps> = ({
   currentItem,
+  currentIndex,
   items,
   tabsGap,
   className,
@@ -43,8 +44,9 @@ export const InfoNavigationUI: FC<TInfoNavigationUIProps> = ({
         }
         items={items}
         currentItem={currentItem}
+        currentItemIndex={currentIndex}
         renderTab={(tabProps) => (
-          <PhotoTabItem key={currentItem.id} {...tabProps} />
+          <PhotoTab key={currentItem.id} {...tabProps} />
         )}
         className={clsx(
           styles["tabs-bar_info"],

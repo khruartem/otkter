@@ -12,15 +12,12 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import styles from "./employee.module.css";
 import { Link } from "react-router-dom";
 
-export const EmployeeUI: FC<TEmployeeUIProps> = ({
-  type,
-  employee,
-  socials,
-}) => {
+export const EmployeeUI: FC<TEmployeeUIProps> = ({ type, employee }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
-  const { id, name, occupation, occupationExtra, photo, icon, url } = employee;
+  const { id, title, shortText, extraText, image, icon, url, socials } =
+    employee;
 
   return (
     <>
@@ -35,13 +32,13 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
               styles.employee__photo_projects
             )}
             src={icon}
-            alt={`Фотография резидента Открытой территории ${name}`}
+            alt={`Фотография резидента Открытой территории ${title}`}
           />
           {/* <ImageUI
-            src={photo}
+            src={image}
             width={52}
             height={52}
-            alt={`Фотография резидента Открытой территории ${name}`}
+            alt={`Фотография резидента Открытой территории ${title}`}
             className={clsx(
               styles.employee__photo,
               styles.employee__photo_projects
@@ -58,7 +55,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
               textTransform={"none"}
               color={Colors.Nephritis120}
             >
-              {occupation}
+              {shortText}
             </Text>
             <Text
               as={"p"}
@@ -70,9 +67,9 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
               textTransform={"none"}
               color={Colors.Navy}
             >
-              {name}
+              {title}
             </Text>
-            {occupationExtra && (
+            {extraText && (
               <Text
                 as={"p"}
                 fontFamily="Roboto"
@@ -83,7 +80,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
                 textTransform={"none"}
                 color={Colors.Dark100}
               >
-                {occupationExtra}
+                {extraText}
               </Text>
             )}
           </div>
@@ -117,18 +114,18 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
                   loading="lazy"
                   width={270}
                   height={270}
-                  src={photo}
-                  alt={`Фото ${name}`}
+                  src={image}
+                  alt={`Фото ${title}`}
                   className={clsx(
                     styles.employee__photo,
                     styles.employee__photo_team
                   )}
                 />
                 {/* <ImageUI
-              src={photo}
+              src={image}
               width={270}
               height={270}
-              alt={`Фотография резидента Открытой территории ${name}`}
+              alt={`Фотография резидента Открытой территории ${title}`}
               className={clsx(
                 styles.employee__photo,
                 styles.employee__photo_team
@@ -145,7 +142,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
                     textTransform={"none"}
                     color={Colors.Navy}
                   >
-                    {name}
+                    {title}
                   </Text>
                   <Text
                     as={"p"}
@@ -157,7 +154,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
                     textTransform={"none"}
                     color={Colors.Dark100}
                   >
-                    {occupation}
+                    {shortText}
                   </Text>
                 </div>
               </div>
@@ -187,18 +184,18 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
                 loading="lazy"
                 width={270}
                 height={270}
-                src={photo}
-                alt={`Фото ${name}`}
+                src={image}
+                alt={`Фото ${title}`}
                 className={clsx(
                   styles.employee__photo,
                   styles.employee__photo_team
                 )}
               />
               {/* <ImageUI
-              src={photo}
+              src={image}
               width={270}
               height={270}
-              alt={`Фотография резидента Открытой территории ${name}`}
+              alt={`Фотография резидента Открытой территории ${title}`}
               className={clsx(
                 styles.employee__photo,
                 styles.employee__photo_team
@@ -215,7 +212,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
                   textTransform={"none"}
                   color={Colors.Navy}
                 >
-                  {name}
+                  {title}
                 </Text>
                 <Text
                   as={"p"}
@@ -227,7 +224,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({
                   textTransform={"none"}
                   color={Colors.Dark100}
                 >
-                  {occupation}
+                  {shortText}
                 </Text>
               </div>
             </div>

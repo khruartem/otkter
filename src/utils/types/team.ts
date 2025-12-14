@@ -1,4 +1,4 @@
-import { TItemOT, TUrlNotFound } from "./common";
+import { TItemOT, TSocials, TUrlNotFound } from "./common";
 
 export type TAdminsUrl =
   | "yakovlev"
@@ -13,4 +13,5 @@ export type TEmployee = TItemOT & {
   kind: "team";
   url: TAdminsUrl | TUrlNotFound;
   type: TEmployeeType;
+  socials?: TSocials[];
 };

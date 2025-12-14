@@ -1,15 +1,13 @@
 import { ReactNode } from "react";
-import { TCardType } from "../../../utils/types";
-// import { TCardType, TEmployee, TProject, TService } from "../../utils/types";
-// import { IContentSliderItem } from "../content-slider/types";
+import { TItemOTType } from "../../../utils/types/common";
 
 export type TContentSliderItemUIProps = {
-  tab: TCardType;
-  itemViewRef:(node?: Element | null | undefined) => void; 
-  // itemRef: RefObject<HTMLDivElement>;
+  tab: TItemOTType;
+  itemViewRef: (node?: Element | null | undefined) => void;
   renderItem: (item: {
-    type: TCardType;
+    type: TItemOTType;
     itemRef: React.RefObject<HTMLDivElement>;
     itemViewRef: (node?: Element | null | undefined) => void;
   }) => ReactNode;
+  children?: ReactNode;
 };

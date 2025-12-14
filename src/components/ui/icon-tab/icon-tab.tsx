@@ -1,11 +1,12 @@
 import React, { SyntheticEvent } from "react";
 import { Text } from "../../text";
-import { CardType, Colors } from "../../../utils/types";
+import { Colors, ItemOTType } from "../../../utils/types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import { TIconTabUIProps } from "./types";
 // import React from "react";
 import styles from "./icon-tab.module.css";
 import clsx from "clsx";
+import { TItemOTType } from "../../../utils/types/common";
 
 // export const IconTabUI: FC<TIconTabUIProps> = ({
 //   children,
@@ -83,7 +84,7 @@ export const IconTabUI = React.forwardRef<HTMLLIElement, TIconTabUIProps>(
             color={current ? Colors.Navy : Colors.Nephritis100}
             decorated={false}
           >
-            {CardType[tab]}
+            {ItemOTType[tab as TItemOTType]}
           </Text>
         </div>
       );

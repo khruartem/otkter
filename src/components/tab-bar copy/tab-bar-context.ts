@@ -1,8 +1,9 @@
 import { createContext } from "react";
 import { TTabBarCotextValue } from "./types";
 
-const defaultValue = {
+const initialValue = {
   tabs: [],
+  styleType: "rowed",
   currentTab: {
     id: 0,
     url: "not-found",
@@ -16,12 +17,12 @@ const defaultValue = {
     active: true,
   },
   currentIndex: 0,
-  handleTabClick: () => {},
-  renderTab: () => {},
-  onSwitch: () => {},
+  onTabClick: () => undefined,
+  renderTab: () => undefined,
+  onSwitch: () => undefined,
   tabsGap: "none",
 };
 
 export const TabBarContext = createContext<TTabBarCotextValue>(
-  defaultValue as TTabBarCotextValue
+  initialValue as unknown as TTabBarCotextValue
 );

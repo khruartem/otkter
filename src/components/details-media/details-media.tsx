@@ -21,18 +21,11 @@ export const DetailsMedia: FC<TDetailsMediaProps> = ({ details }) => {
     text: Colors.Dark100,
   };
 
-  function guardMedia(
-    value: string | string[] | TEmployee | TItemOT
-  ): value is TItemOT {
-    return (value as TItemOT).active !== undefined;
-  }
-
   return (
     <DetailsMediaUI
       details={details}
       categories={mediaCategories}
       categoriesColors={categoriesColors}
-      guardMedia={guardMedia}
     />
   );
 };

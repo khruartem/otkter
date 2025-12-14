@@ -9,9 +9,10 @@ export const TabBar: FC<TTabBarProps> = ({ contextValue }) => {
   return (
     <TabBarProvider value={contextValue}>
       <TabBarUI
+        title={contextValue?.title}
         onSwitch={contextValue.onSwitch}
         currentIndex={contextValue.currentIndex}
-        styleType={"rowed"}
+        relativeToTitle={contextValue.relativeToTitle}
         className={contextValue?.className}
       />
     </TabBarProvider>

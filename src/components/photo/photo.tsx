@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { TPhotoProps } from "./types";
-import { useGetUrlCode } from "../../hooks/useGetUrlCode";
+import { useGetCode } from "../../hooks/useGetCode";
 import { PhotoUI } from "../ui/photo";
 
 export const Photo: FC<TPhotoProps> = ({
@@ -10,7 +10,7 @@ export const Photo: FC<TPhotoProps> = ({
   label,
   // nextPhotoId,
 }) => {
-  const code = useGetUrlCode();
+  const code = useGetCode();
   const url =
     itemKind === "team"
       ? `/${itemKind}/admins/${code}/${photo?.id}`

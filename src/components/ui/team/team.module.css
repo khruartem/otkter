@@ -1,15 +1,4 @@
-/* .wrapper {
-  display: flex;
-  justify-content: center;
-} */
-
 .team {
-  /* scroll-snap-align: center; */
-  /* display: grid;
-  grid-template-rows: min-content;
-  grid-template-columns: var(--columns-count);
-  grid-auto-flow: row; */
-  /* scrollbar-width: none; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -34,11 +23,10 @@
   overflow-y: auto;
 }
 
-/* .team_faded {
-  background: linear-gradient(180deg, var(--light80) 0%, rgba(247, 247, 247, 0) 10%, rgba(247, 247, 247, 0) 50%, rgba(247, 247, 247, 0) 90%, var(--light80) 100%);
-} */
+.team_widthed {
+  min-width: calc(100% + 14px);
+}
 
-/* Стили для разных разрешений экранов */
-/* .team_mobile {
-  height: 486px;
-} */
+.group-list_artists {
+  padding-inline: 0;
+}

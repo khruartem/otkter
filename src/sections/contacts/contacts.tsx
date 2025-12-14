@@ -2,12 +2,16 @@ import { FC } from "react";
 
 import { ContactsUI } from "../../components/ui/sections/contacts";
 
+import { contactFunction } from "../../utils/contactFunction";
+import { yakovlev } from "../../utils/constants/team";
+
 import { useScrollOnMount } from "../../hooks/useScrollOnMount";
-import { useGetContactUs } from "../../hooks/useGetContactUs";
 
 export const Contacts: FC = () => {
-  const onContact = useGetContactUs();
+  const handleContact = () => {
+    contactFunction(yakovlev, "telegram");
+  };
   useScrollOnMount();
 
-  return <ContactsUI onContact={onContact} />;
+  return <ContactsUI onContact={handleContact} />;
 };

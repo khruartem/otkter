@@ -1,6 +1,6 @@
 import { TItemOT, TUrlNotFound } from "./common";
 
-export type TServicesUrl =
+export type TServiceType =
   | "open-sea"
   | "events"
   | "design"
@@ -9,19 +9,11 @@ export type TServicesUrl =
   | "lamp"
   | "smm";
 
-export type TServiceType =
-  | "all"
-  | "main"
-  | "open-sea"
-  | "events"
-  | "design"
-  | "master-class"
-  | "content"
-  | "lamp"
-  | "smm";
+export type TServicesUrl = TServiceType;
 
 export type TService = TItemOT & {
   kind: "services";
   url: TServicesUrl | TUrlNotFound;
+  order: number;
   type: TServiceType;
 };

@@ -26,4 +26,5 @@ export {
   Partners,
   Phone,
   Price,
+  CopyLink,
 } from "./icons";

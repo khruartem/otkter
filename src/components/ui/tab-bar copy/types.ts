@@ -24,7 +24,7 @@
 import { TTabBarStyle } from "../../../utils/types";
 
 export type TTabsProps = {
-  styleType: TTabBarStyle;
+  relativeToTitle: TTabBarStyle;
   title?: string;
   currentIndex: number;
   onSwitch: (arg: number) => void;

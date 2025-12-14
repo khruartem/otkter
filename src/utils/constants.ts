@@ -147,7 +147,7 @@ import amplitudePhotoIcon9 from "../assets/projects-photo/amplitude/icons/amplit
 import amplitudePhotoIcon10 from "../assets/projects-photo/amplitude/icons/amplitude_10.webp";
 
 // Обложки услуг
-import OT from "../assets/services/ot.webp";
+import OT from "../assets/services/open_sea.webp";
 import events from "../assets/services/events.webp";
 import design from "../assets/services/design.webp";
 import content from "../assets/services/content.webp";
@@ -175,7 +175,7 @@ import amplitudeIcon from "../assets/projects/icons/amplitude.webp";
 import eseninIcon from "../assets/projects/icons/esenin.webp";
 
 // Иконки для таб бара по услугам
-import OTIcon from "../assets/services/icons/ot.webp";
+import OTIcon from "../assets/services/icons/open_sea.webp";
 import eventsIcon from "../assets/services/icons/events.webp";
 import designIcon from "../assets/services/icons/design.webp";
 import contentIcon from "../assets/services/icons/content.webp";

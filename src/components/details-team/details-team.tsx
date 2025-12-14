@@ -2,8 +2,9 @@ import { FC } from "react";
 
 import { TDetailsTeamProps } from "./types";
 import { DetailsTeamUI } from "../ui/details-team";
-import { Colors, TEmployee } from "../../utils/types";
+import { Colors } from "../../utils/types";
 import { TItemOT } from "../../utils/types/common";
+import { TEmployee } from "../../utils/types/team";
 
 export const DetailsTeam: FC<TDetailsTeamProps> = ({
   detailsAdmins,
@@ -28,9 +29,9 @@ export const DetailsTeam: FC<TDetailsTeamProps> = ({
   };
 
   function guardEmployee(
-    value: string | string[] | TEmployee | TItemOT
+    value: string | string[] | TItemOT
   ): value is TEmployee {
-    return (value as TEmployee).occupation !== undefined;
+    return (value as TEmployee).kind === "team";
   }
 
   const categoriesColors = {

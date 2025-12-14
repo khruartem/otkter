@@ -1,16 +1,14 @@
 import { FC } from "react";
-import clsx from "clsx";
 
 import { Text } from "../../text";
-import { SocialUI } from "../social";
-import { Category } from "../../category";
 
 import { TShareUIProps } from "./types";
+
 import { Colors } from "../../../utils/types";
 
 import styles from "./share.module.css";
 
-export const ShareUI: FC<TShareUIProps> = ({ socials, copy, isCopied }) => {
+export const ShareUI: FC<TShareUIProps> = ({ children }) => {
   return (
     <div className={styles.share}>
       <Text
@@ -25,15 +23,7 @@ export const ShareUI: FC<TShareUIProps> = ({ socials, copy, isCopied }) => {
       >
         {"Поделиться"}
       </Text>
-      <SocialUI
-        socials={socials}
-        color={Colors.Light20}
-        hoverColor={Colors.Dark80}
-      />
-      <Category
-        category={copy}
-        className={clsx(styles.copy, isCopied && styles.copied)}
-      />
+      <div className={styles.share__buttons}>{children}</div>
     </div>
   );
 };

@@ -7,6 +7,8 @@ import { ItemOTCardUI } from "../item-ot-card";
 
 import { TDetailsMediaUIProps } from "./types";
 
+import { isMedia } from "../../../utils/guards/is-media";
+
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./details-media.module.css";
@@ -15,7 +17,6 @@ export const DetailsMediaUI: FC<TDetailsMediaUIProps> = ({
   details,
   categories,
   categoriesColors,
-  guardMedia,
 }) => {
   const { isTablet, isMobile } = useGetMediaQuery();
 
@@ -34,7 +35,7 @@ export const DetailsMediaUI: FC<TDetailsMediaUIProps> = ({
       >
         {details.map(({ value, url }) => (
           <>
-            {guardMedia(value) && (
+            {isMedia(value) && (
               <ItemOTCardUI item={value} url={{ to: url || "" }} />
             )}
           </>

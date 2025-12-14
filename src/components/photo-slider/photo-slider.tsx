@@ -4,25 +4,23 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { PhotoSliderUI } from "../ui/photo-slider";
 
 import { useGetPhotoId } from "../../hooks/useGetPhotoId";
-import { useGetPhotos } from "../../hooks/delete/useGetPhotos";
-import { useGetPhoto } from "../../hooks/useGetPhoto";
-import { useGetPhotoIndex } from "../../hooks/useGetPhotoIndex";
+import { useGetPhotos } from "../../hooks/useGetPhotos";
 import { TPhotoSliderProps } from "./types";
 import { useGetId } from "../../hooks/useGetId";
-import { useGetUrlCode } from "../../hooks/useGetUrlCode";
+import { useGetCode } from "../../hooks/useGetCode";
 
 export const PhotoSlider: FC<TPhotoSliderProps> = ({ type }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const id = useGetId();
+  const code = useGetCode();
   const photoId = useGetPhotoId();
-  const url = useGetUrlCode();
-  const urlTo = type === "team" ? `/${type}/admins/${url}` : `/${type}/${url}`;
+  const url = type === "team" ? `/${type}/admins/${code}` : `/${type}/${code}`;
 
   const photos = useGetPhotos(id, type);
-  const photo = useGetPhoto(id, photoId, type);
-  const photoIndex = useGetPhotoIndex(id, photoId, type);
+  const photo = photos?.find((photo) => photo.id === photoId);
+  const photoIndex = photos?.findIndex((photo) => photo.id === photoId);
 
   const [currentPhoto, setCurrentPhoto] = useState(photo!);
   const [currentIndex, setCurrentIndex] = useState(photoIndex!);
@@ -37,8 +35,8 @@ export const PhotoSlider: FC<TPhotoSliderProps> = ({ type }) => {
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
       // navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
-      navigate(`${urlTo}/${newPhoto.id}`, {
-        state: { id, type, url, ...location.state },
+      navigate(`${url}/${newPhoto.id}`, {
+        state: { id, type, url: code, ...location.state },
       });
     } else {
       const newPhoto = photos![newIndex];
@@ -46,8 +44,8 @@ export const PhotoSlider: FC<TPhotoSliderProps> = ({ type }) => {
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
       // navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
-      navigate(`${urlTo}/${newPhoto.id}`, {
-        state: { id, type, url, ...location.state },
+      navigate(`${url}/${newPhoto.id}`, {
+        state: { id, type, url: code, ...location.state },
       });
     }
   };
@@ -61,8 +59,8 @@ export const PhotoSlider: FC<TPhotoSliderProps> = ({ type }) => {
       setCurrentIndex(0);
       setCurrentPhoto(newPhoto);
       // navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
-      navigate(`${urlTo}/${newPhoto.id}`, {
-        state: { id, type, url, ...location.state },
+      navigate(`${url}/${newPhoto.id}`, {
+        state: { id, type, url: code, ...location.state },
       });
     } else {
       const newPhoto = photos![newIndex];
@@ -70,8 +68,8 @@ export const PhotoSlider: FC<TPhotoSliderProps> = ({ type }) => {
       setCurrentIndex(newIndex);
       setCurrentPhoto(newPhoto);
       // navigate(`/otkter/${type}/${id}/${newPhoto.id}`, {state: {id, type, ...location.state}});
-      navigate(`${urlTo}/${newPhoto.id}`, {
-        state: { id, type, url, ...location.state },
+      navigate(`${url}/${newPhoto.id}`, {
+        state: { id, type, url: code, ...location.state },
       });
     }
   };

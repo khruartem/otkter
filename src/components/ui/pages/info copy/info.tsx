@@ -14,34 +14,45 @@ import { ShowHistoryPreview } from "../../../show-history-preview";
 
 import { TInfoUIProps } from "./types";
 
-import { TControlsItem } from "../../../../utils/types/common";
-import { TShowHistoryItem } from "../../../../utils/types/projects";
+import { TEmployee } from "../../../../utils/types/team";
+import { TProject } from "../../../../utils/types/projects";
+import { TService } from "../../../../utils/types/services";
 
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 
 import styles from "./info.module.css";
 
-export const InfoUI: FC<TInfoUIProps> = ({ currentItem, items, color }) => {
+export const InfoUI: FC<TInfoUIProps> = ({
+  currentItem,
+  currentIndex,
+  items,
+  color,
+}) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
-  const renderInfoCTA = (
-    controls?: TControlsItem[],
-    showHistory?: TShowHistoryItem[]
-  ) => {
-    if (controls && !showHistory) {
-      return <Controls controls={controls} kind={currentItem.kind} />;
-    } else if (controls && showHistory) {
-      return (
-        <CtaUI controls={currentItem.controls} kind={currentItem.kind}>
-          <ShowHistoryPreview
-            history={currentItem.showHistory}
-            controls={currentItem.controls}
-          />
-        </CtaUI>
-      );
-    } else if (!controls && !showHistory) {
-      return undefined;
+  const renderInfoCTA = (item: TProject | TService | TEmployee) => {
+    if (item.kind === "projects") {
+      if (item?.controls && !item?.showHistory) {
+        return <Controls controls={item.controls} kind={item.kind} />;
+      } else if (item?.controls && item?.showHistory) {
+        return (
+          <CtaUI controls={item.controls} kind={item.kind}>
+            <ShowHistoryPreview
+              history={item.showHistory}
+              controls={item.controls}
+            />
+          </CtaUI>
+        );
+      } else if (!item?.controls && !item?.showHistory) {
+        return undefined;
+      }
+    } else {
+      if (item?.controls) {
+        return <Controls controls={item.controls} kind={item.kind} />;
+      } else {
+        return undefined;
+      }
     }
   };
 
@@ -55,6 +66,7 @@ export const InfoUI: FC<TInfoUIProps> = ({ currentItem, items, color }) => {
     >
       <InfoNavigationUI
         currentItem={currentItem}
+        currentIndex={currentIndex}
         items={items}
         tabsGap={clsx(
           isLarge && "1.012vw",
@@ -105,7 +117,11 @@ export const InfoUI: FC<TInfoUIProps> = ({ currentItem, items, color }) => {
                 extraTitle={currentItem.extraText}
                 color={color}
               />
-              {currentItem?.text && <InfoTextUI text={currentItem.text} />}
+              {currentItem?.text ? (
+                <InfoTextUI text={currentItem.text} />
+              ) : (
+                <InfoTextUI text={currentItem.shortText} />
+              )}
               {currentItem?.photos && (
                 <PhotoListUI
                   itemId={currentItem.id}
@@ -114,8 +130,7 @@ export const InfoUI: FC<TInfoUIProps> = ({ currentItem, items, color }) => {
                 />
               )}
             </div>
-            {!isLaptop &&
-              renderInfoCTA(currentItem?.controls, currentItem?.showHistory)}
+            {!isLaptop && renderInfoCTA(currentItem)}
           </div>
           {currentItem?.poster && (
             <InfoPosterUI
@@ -126,8 +141,7 @@ export const InfoUI: FC<TInfoUIProps> = ({ currentItem, items, color }) => {
               )}
             />
           )}
-          {isLaptop &&
-            renderInfoCTA(currentItem?.controls, currentItem?.showHistory)}
+          {isLaptop && renderInfoCTA(currentItem)}
         </div>
         {currentItem?.details && currentItem?.categories && (
           <DetailsGrid

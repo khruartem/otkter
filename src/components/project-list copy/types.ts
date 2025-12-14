@@ -1,7 +1,7 @@
-import { TCardType } from "../../utils/types";
+import { TItemOTType } from "../../utils/types/common";
 
 export type TProjectListProps = {
-  type: TCardType;
+  type: TItemOTType;
   // index: number;
   // setCurrentTab: React.Dispatch<React.SetStateAction<TCardType>>;
   // setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;

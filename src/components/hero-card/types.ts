@@ -4,8 +4,6 @@ export type THeroCardProps = {
   project: TProject;
   ticket?: boolean;
   index: number;
-  // current?: boolean;
-  // currentIndex: number;
   currentPaginatorIndex: number;
   onSwitch: (
     index: number,

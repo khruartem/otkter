@@ -1,5 +1,5 @@
-import { TSectionType } from "../../utils/types";
+import { TItemOTKind } from "../../utils/types/common";
 
 export type TPhotoSliderProps = {
-  type: TSectionType;
+  type: TItemOTKind;
 };

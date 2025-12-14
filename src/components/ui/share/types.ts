@@ -1,7 +1,5 @@
-import { Social, TCategory } from "../../../utils/types";
+import { ReactNode } from "react";
 
 export type TShareUIProps = {
-  socials: Social[];
-  copy: TCategory;
-  isCopied: boolean;
+  children: ReactNode;
 };

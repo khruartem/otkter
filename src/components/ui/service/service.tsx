@@ -2,7 +2,7 @@ import clsx from "clsx";
 import React from "react";
 
 import { Text } from "../../text";
-import { Controls } from "../../controls";
+import { Controls } from "../../controls copy";
 // import { ImageUI } from "../../image";
 
 import { Colors, FontSizes, lineHeights } from "../../../utils/types";
@@ -114,7 +114,9 @@ export const ServiceUI = React.forwardRef<
             {shortText}
           </Text>
         </div>
-        <Controls id={service.id} type="services" located="main" />
+        {service?.controls && (
+          <Controls controls={service.controls} kind={"services"} />
+        )}
       </div>
     </div>
   );

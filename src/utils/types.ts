@@ -126,7 +126,7 @@ export type TCardType =
   | TProjectTabMode
   | TTeamTabMode;
 
-export enum CardType {
+export enum ItemOTType {
   "open-sea" = "Открытое море",
   "master-class" = "Мастер-класс",
   "events" = "Организация мероприятий",
@@ -144,6 +144,7 @@ export enum CardType {
   "team" = "Команда",
   "services" = "Услуги",
   "main" = "Главная",
+  "hero" = "Херо",
 }
 
 export type TTabsGap = "large" | "middle" | "small" | "none" | string;

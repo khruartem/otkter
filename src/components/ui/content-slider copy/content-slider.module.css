@@ -1,31 +1,9 @@
-/* .content-slider__header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-} */
-
 .content-slider {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  /* padding-block: 80px; */
-  /* background-color: transparent; */
 }
-
-/* .content-slider_large-padding {
-  padding-block: 132px;
-}
-
-.content-slider_middle-padding {
-  padding-block: 80px;
-}
-
-.content-slider_small-padding {
-  padding-block-start: 72px;
-} */
 
 .content-slider_large-gap {
   gap: 60px;
@@ -34,53 +12,3 @@
 .content-slider_small-gap {
   gap: 44px;
 }
-
-/* .content-slider__header {
-  display: flex;
-  width: 100%;
-}
-
-.content-slider__header_rowed {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.content-slider__header_columned {
-  flex-direction: column;
-  align-items: center;
-}
-
-.content-slider__header_large-gap {
-  gap: 60px;
-}
-
-.content-slider__header_middle-gap {
-  gap: 44px;
-}
-
-.content-slider__header_small-gap {
-  gap: 20px;
-} */
-
-/* Стили для разных разрешений экранов */
-/* content-slider__header */
-/* .content-slider__header_large {
-  padding-inline: 8.13vw;
-}
-
-.content-slider__header_desktop {
-  padding-inline: 7.83vw;
-}
-
-.content-slider__header_laptop {
-  padding-inline: 4.10vw;
-}
-
-.content-slider__header_tablet {
-  padding-inline: 3.91vw;
-}
-
-.content-slider__header_mobile {
-  padding-inline: 3.86vw;
-} */

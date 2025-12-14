@@ -47,7 +47,14 @@ export const Info: FC<TInfoProps> = ({ currentItem, items }) => {
         url={`https://otkter.ru/projects/${url}`}
         previewImg={previewImg || ""}
       />
-      <InfoUI currentItem={currentItem} items={items} color={itemColor} />
+      <InfoUI
+        currentItem={currentItem}
+        currentIndex={items.findIndex(
+          (element) => element.id === currentItem.id
+        )}
+        items={items}
+        color={itemColor}
+      />
     </>
   ) : (
     <Preloader />

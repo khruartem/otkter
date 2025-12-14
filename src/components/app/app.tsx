@@ -5,9 +5,9 @@ import { AllProjects } from "../../pages/all-projects";
 import { Modal } from "../modal";
 import { PhotoSlider } from "../photo-slider";
 import { ProjectInfo } from "../../pages/project-info copy";
-import { ServiceInfo } from "../../pages/service-info";
+import { ServiceInfo } from "../../pages/service-info copy";
+import { EmployeeInfo } from "../../pages/employee-info";
 import { NotFound404 } from "../../pages/not-found-404";
-import { TeamInfo } from "../../pages/team-info";
 
 export function App() {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ export function App() {
         <Route path="/projects/all" element={<AllProjects />} />
         <Route path={"/projects/:code"} element={<ProjectInfo />} />
         <Route path={"/services/:code"} element={<ServiceInfo />} />
-        <Route path={"/team/admins/:code"} element={<TeamInfo />} />
+        <Route path={"/team/admins/:code"} element={<EmployeeInfo />} />
         <Route
           path={"/projects/:code/:photoId"}
           element={

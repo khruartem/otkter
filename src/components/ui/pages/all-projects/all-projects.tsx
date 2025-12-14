@@ -1,73 +1,27 @@
 import { FC } from "react";
 
 import { MainLayout } from "../../../../layouts/main-layout";
-
-// import { Projects } from "../../../../sections/projects";
-import { ContentSlider } from "../../../content-slider";
-import { useGetProjects } from "../../../../hooks/delete/useGetProjects";
-import { IconTab } from "../../../icon-tab";
-import { ProjectTab } from "../../../project-tab";
-// import { ProjectsUI } from "../../sections/projects";
-import { ProjectList } from "../../../project-list copy";
-import { IconTabBar } from "../../../icon-tab-bar";
-import clsx from "clsx";
-import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
-import { TTabsGap } from "../../../../utils/types";
-import { Partners } from "../../../../sections/partners";
-import { contactFunction } from "../../../../utils/contactFunction";
-import { Button } from "../../../button";
 import { Section } from "../../../section";
-// import { TCardType } from "../../../../utils/types";
-// import { TCardType } from "../../../../utils/types";
+import { ContentSlider } from "../../../content-slider";
+import { ProjectList } from "../../../project-list copy";
+import { Partners } from "../../../../sections/partners";
+import { SuggestProjectUI } from "../../suggest-project";
 
-// export const AllProjectsUI: FC = () => {
-//   return (
-//     <MainLayout withoutMediaQuery>
-//       <Projects type="all" />
-//     </MainLayout>
-//   );
-// };
+import { TAllProjectsUIProps } from "./types";
 
-export const AllProjectsUI: FC = () => {
-  const projects = useGetProjects("all");
+import styles from "./all-projects.module.css";
 
-  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
-    useGetMediaQuery();
-
+export const AllProjectsUI: FC<TAllProjectsUIProps> = ({
+  projects,
+  tabBarProps,
+}) => {
   return (
-    <MainLayout withoutMediaQuery>
+    <MainLayout withoutMediaQuery className={styles["main_all-projects"]}>
       <Section decoration={"half"} padding={"top"}>
-        <ContentSlider
-          items={projects}
+        {/* <ContentSlider
           firstTab="all"
-          renderTabBar={(props) => {
-            return (
-              <IconTabBar
-                {...props}
-                title="проекты"
-                styleType="columned"
-                renderTab={({ current, tab, iconRef, onClick }) => {
-                  return (
-                    <IconTab
-                      tab={tab}
-                      current={current}
-                      iconRef={iconRef}
-                      onClick={onClick}
-                    >
-                      <ProjectTab tab={tab} />
-                    </IconTab>
-                  );
-                }}
-                tabsGap={
-                  clsx(
-                    (isLarge || isDesktop || isLaptop) && "large",
-                    isTablet && "small",
-                    isMobile && "middle"
-                  ) as TTabsGap
-                }
-              />
-            );
-          }}
+          items={projects}
+          tabBarProps={tabBarProps}
           renderItem={({ type, itemRef, itemViewRef }) => (
             <ProjectList
               type={type}
@@ -75,9 +29,6 @@ export const AllProjectsUI: FC = () => {
               projectListViewRef={itemViewRef}
             />
           )}
-          // padding={isLarge ? "large" : "middle"}
-          // paddingedTop
-          // decorated
         >
           <Button
             type="button"
@@ -86,7 +37,23 @@ export const AllProjectsUI: FC = () => {
           >
             {"Предложить проект"}
           </Button>
-        </ContentSlider>
+        </ContentSlider> */}
+        <ContentSlider
+          firstTab="all"
+          items={projects}
+          tabBarProps={tabBarProps}
+          emptyStateContent={<SuggestProjectUI />}
+          renderItem={({ type, itemRef, itemViewRef }) => (
+            <>
+              <ProjectList
+                type={type}
+                projectListRef={itemRef}
+                projectListViewRef={itemViewRef}
+              />
+              {type === "all" && <SuggestProjectUI onlyButton />}
+            </>
+          )}
+        />
       </Section>
       <Partners />
     </MainLayout>

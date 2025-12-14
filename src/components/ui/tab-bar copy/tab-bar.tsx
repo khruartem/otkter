@@ -16,7 +16,7 @@ export const TabBarUI: FC<TTabsProps> = ({
   currentIndex,
   onSwitch,
   title,
-  styleType,
+  relativeToTitle,
   className,
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
@@ -83,8 +83,8 @@ export const TabBarUI: FC<TTabsProps> = ({
   return title ? (
     <div
       className={clsx(
-        styleType === "rowed" && rowedStyle,
-        styleType === "columned" && columnedStyle
+        relativeToTitle === "rowed" && rowedStyle,
+        relativeToTitle === "columned" && columnedStyle
       )}
     >
       <Title text={title} />

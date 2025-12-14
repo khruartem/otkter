@@ -1,0 +1,7 @@
+.main_all-projects {
+  margin-top: 60px;
+}
+
+header+.main_all-projects {
+  border-radius: 0;
+}

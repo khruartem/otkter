@@ -1,4 +1,3 @@
-// Список команды
 import {
   rudnitskiy,
   LA,
@@ -26,14 +25,14 @@ import heroPhoto3 from "../../assets/projects/hero/hero_3.avif";
 import heroPhoto4 from "../../assets/projects/hero/hero_4.avif";
 
 // Обложки проектов
-import uniqueChronicle from "../../assets/projects/chronicle.webp";
-import friendship from "../../assets/projects/friendship.webp";
-import openPlay from "../../assets/projects/play.webp";
-import mastership from "../../assets/projects/mastership.webp";
-import nikolayFilm from "../../assets/projects/nikolay.webp";
-import twoInWorld from "../../assets/projects/two.webp";
-import amplitude from "../../assets/projects/amplitude.webp";
-import esenin from "../../assets/projects/esenin.webp";
+import uniqueChronicleImage from "../../assets/projects/chronicle.webp";
+import friendshipImage from "../../assets/projects/friendship.webp";
+import openPlayImage from "../../assets/projects/play.webp";
+import mastershipImage from "../../assets/projects/mastership.webp";
+import nikolayImage from "../../assets/projects/nikolay.webp";
+import twoInWorldImage from "../../assets/projects/two.webp";
+import amplitudeImage from "../../assets/projects/amplitude.webp";
+import eseninImage from "../../assets/projects/esenin.webp";
 
 // Иконки для таб бара по проектам
 import uniqueChronicleIcon from "../../assets/projects/icons/chronicle.webp";
@@ -140,7 +139,7 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "unique-chronicle",
     title: "«Показ уникальной хроники. 1945»",
-    image: uniqueChronicle,
+    image: uniqueChronicleImage,
     previewImg: "/preview/preview_chronics.webp",
     poster: uniqueChroniclePoster,
     shortText:
@@ -259,7 +258,7 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "friendship",
     title: "«Нет уз святее товарищества»",
-    image: friendship,
+    image: friendshipImage,
     shortText:
       "Цель проведения конкурса — популяризация патриотизма средствами театрального искусства и сохранение социокультурных, духовно-нравственных, патриотических традиций.",
     text: "Цель проведения конкурса - популяризация патриотизма средствами театрального искусства и сохранение социокультурных, духовно-нравственных, патриотических традиций российского народа в контексте исторических событий, сохранение исторической памяти, патриотических ценностей, прославление подвигов участников СВО.",
@@ -310,7 +309,7 @@ export const projects: TProject[] = [
       {
         label: "Подробнее",
         type: "button",
-        onClick: () => contactFunction("admins", 1, "telegram"),
+        onClick: () => contactFunction(yakovlev, "telegram"),
         url: "#",
       },
     ],
@@ -329,7 +328,7 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "open-play",
     title: "«Открытая пьеса»",
-    image: openPlay,
+    image: openPlayImage,
     shortText:
       "Конкурс пьес молодых драматургов направлен на выявление и поддержку современных авторов, детских театральных студий, самодеятельных и профессиональных театров.",
     text: "Конкурс пьес молодых драматургов направлен на выявление и поддержку современных авторов, детских театральных студий, самодеятельных и профессиональных театров.",
@@ -376,7 +375,7 @@ export const projects: TProject[] = [
       {
         label: "Подробнее",
         type: "button",
-        onClick: () => contactFunction("admins", 1, "telegram"),
+        onClick: () => contactFunction(yakovlev, "telegram"),
         url: "#",
       },
     ],
@@ -395,7 +394,7 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "mastership",
     title: "«Ораторское мастерство как инструмент коммуникации»",
-    image: mastership,
+    image: mastershipImage,
     shortText:
       "Мастер-классы в рамках дополнительной общеобразовательной программы «Психология межличностного общения. Основы коммуникации» для ветеранов СВО.",
     text: "В сотрудничестве с Центром военно-патриотического воспитания «Вершина» Людмила Яковлева проводит мастер-классы по теме «Ораторское мастерство как инструмент коммуникации» в рамках программы переобучения, переподготовки и повышения квалификации обучающихся из числа участников СВО.",
@@ -449,7 +448,7 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "nikolay",
     title: "«О Николае II»",
-    image: nikolayFilm,
+    image: nikolayImage,
     shortText:
       "Документальный короткометражный фильм о Николае ll. Проект находится в стадии разработки и написания сценария. Уже собрана полноценная съёмочная группа. Проект нуждается в финансировании.",
     text: "Документальный короткометражный фильм о Николае ll. Проект находится в стадии разработки и написания сценария. Уже собрана полноценная съёмочная группа. Проект нуждается в финансировании.",
@@ -509,7 +508,7 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "two-in-world",
     title: "«Двое во всем мире»",
-    image: twoInWorld,
+    image: twoInWorldImage,
     shortText:
       "Героям суждено понять, что любовь - это великая сила, не знающая времени и расстояний, но требующая смелости.",
     text: "Героям суждено понять, что любовь - это великая сила, не знающая времени и расстояний, но требующая смелости. Спектакль-загадка о том, чему можно научиться у истории, как сложное становится простым и наоборот. По оригинальной пьесе Ольги Масловской.",
@@ -593,7 +592,7 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "esenin",
     title: "«Есенин. Жизнь в стихах»",
-    image: esenin,
+    image: eseninImage,
     shortText:
       "В исполнении артистов прозвучат стихи Сергея Есенина, а песни сольются с партией фортепиано, повествуя о мыслях, метаниях и надеждах навеки молодого, но мудрого душой поэта. Посвящено 130-летию со дня рождения Сергея Есенина.",
     text: "В 2025 году исполнится 130 лет со дня рождения Сергея Есенина. Творческое объединение «Открытая Территория» приглашает зрителей на поэтический спектакль «Есенин. Жизнь в стихах». В исполнении артистов прозвучат стихи, а песни сольются с партией фортепиано. Этот спектакль не про смерть, а про жизнь и загадочную русскую душу, отражённую в стихах Сергея Александровича.",
@@ -775,6 +774,20 @@ export const projects: TProject[] = [
           active: true,
         },
       },
+      {
+        type: "media",
+        value: {
+          id: 9,
+          title: "«Александр Блок “Авиатор”. Читает Дмитрий Мальцев»",
+          shortText: "ОТР",
+          extraText:
+            "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/aleksandr-blok-aviator-chitaet-dmitrii-malcev-akter-teatra-lenkom-marka-zaharova-i-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-95524.html?ysclid=miwz8ipxzb590732807",
+          image: eseninMedia3,
+          icon: eseninMediaIcon3,
+          main: false,
+          active: true,
+        },
+      },
     ],
     poster: eseninPoster,
     previewImg: "/preview/preview_esenin.webp",
@@ -907,7 +920,7 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "amplitude",
     title: "«Случительная амплитуда»",
-    image: amplitude,
+    image: amplitudeImage,
     shortText:
       "Спектакль-перформанс по поэтическому сборнику Анастасии Бондаревой.  В центре вечера - поэзия, переплетенная с человеческим миром и отраженная голосами артистов.",
     text: "Спектакль-перформанс по сборнику Анастасии Бондаревой. Поэзия сплетает человеческие чувства с голосами артистов. Музыкальное сопровождение становится моментом уединения с собой и с тишиной города. Странная жизнь носит нас в разные стороны, заставляя терять себя и вновь находить. Поэзия - это мост между потерей и находкой, разлукой и встречей, серым настоящим и вымышленным сиреневым будущим.",
@@ -964,7 +977,7 @@ export const projects: TProject[] = [
       },
       {
         type: "artists",
-        value: medvedev.getEmployee("Поэт"),
+        value: medvedev.getEmployee(),
       },
       {
         type: "artists",
@@ -978,11 +991,11 @@ export const projects: TProject[] = [
       },
       {
         type: "artists",
-        value: maksimova.getEmployee("Композитор, исполнитель"),
+        value: maksimova.getEmployee(),
       },
       {
         type: "artists",
-        value: kizenkov.getEmployee("Актер театра «Ленком Марка Захарова»"),
+        value: kizenkov.getEmployee(),
       },
       {
         type: "admins",

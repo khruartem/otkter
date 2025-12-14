@@ -58,7 +58,7 @@ export const ControlsUI: FC<TControlsUIProps> = ({
     });
   };
 
-  return extraInfo ? (
+  return (
     <div
       className={clsx(
         styles.controls,
@@ -71,10 +71,14 @@ export const ControlsUI: FC<TControlsUIProps> = ({
         isMobile && kind === "services" && styles["controls_small-gap"]
       )}
     >
-      {renderControls(controls)}
-      {extraInfo}
+      {extraInfo ? (
+        <>
+          {renderControls(controls)}
+          {extraInfo}
+        </>
+      ) : (
+        renderControls(controls)
+      )}
     </div>
-  ) : (
-    renderControls(controls)
   );
 };

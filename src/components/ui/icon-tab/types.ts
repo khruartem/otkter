@@ -1,15 +1,15 @@
 import { ReactNode } from "react";
-import { TCardType } from "../../../utils/types";
+import { TEmployee } from "../../../utils/types";
+import { TProject } from "../../../utils/types/projects";
+import { TService } from "../../../utils/types/services";
+import { TItemOTType } from "../../../utils/types/common";
 
 export type TIconTabUIProps = {
   children: ReactNode;
-  // type: TSectionType;
   titled?: boolean;
-  tab: TCardType;
+  tab: TProject | TEmployee | TService | TItemOTType;
   current: boolean;
-  // index: number;
   onClick: () => void;
-  // isMainPage: boolean;
   onMouseEnter: (
     e: React.SyntheticEvent,
     styleActive: string,

@@ -1,17 +1,21 @@
 import { TProject } from "../../utils/types/projects";
 import { TService } from "../../utils/types/services";
-import { TEmployee, TTabsGap } from "../../utils/types";
+import { TItemOTType } from "../../utils/types/common";
+import { TTabBarStyle, TTabsGap } from "../../utils/types";
+import { TEmployee } from "../../utils/types/team";
 
 export type TTabBarCotextValue = {
-  tabs: TProject[] | TService[] | TEmployee[];
-  currentTab: TProject | TService | TEmployee;
+  tabs: TProject[] | TService[] | TEmployee[] | TItemOTType[];
+  title?: string;
+  currentTab: TProject | TService | TEmployee | TItemOTType;
+  relativeToTitle: TTabBarStyle;
   currentIndex: number;
-  handleTabClick: (
-    item: TProject | TService | TEmployee,
+  onTabClick: (
+    item: TProject | TService | TEmployee | TItemOTType,
     index: number
   ) => void;
   renderTab: (item: {
-    tab: TProject | TService | TEmployee;
+    tab: TProject | TService | TEmployee | TItemOTType;
     current: boolean;
     iconRef: React.RefObject<HTMLLIElement>;
     onClick: () => void;
