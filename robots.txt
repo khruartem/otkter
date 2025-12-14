@@ -24,6 +24,7 @@ Allow: /team/admins/hrustalev/$
 Disallow: /assets/
 Disallow: /preview/
 Disallow: /errors/
+Disallow: /404.html
 Disallow: /projects/esenin/*
 Disallow: /projects/unique-chronicle/*
 Disallow: /projects/amplitude/*
