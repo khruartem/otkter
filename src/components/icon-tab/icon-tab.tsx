@@ -1,38 +1,41 @@
-import { FC } from "react";
+import { FC, SyntheticEvent } from "react";
+
 import { TIconTabProps } from "./types";
-import { useGetIconOnMouseEnter } from "../../hooks/useGetIconOnMouseEnter";
-import { useGetIconOnMouseLeave } from "../../hooks/useGetIconOnMouseLeave";
-// import { useGetIsMainPage } from "../../hooks/useGetIsMainPage";
+
 import { IconTabUI } from "../ui/icon-tab";
 
 export const IconTab: FC<TIconTabProps> = ({
-  // type,
   titled,
   tab,
   current,
-  // index,
   iconRef,
   onClick,
   children,
 }) => {
-  // const isMainPage = useGetIsMainPage();
+  const handlerIconMouseEnter = (
+    e: SyntheticEvent,
+    styleActive: string,
+    styleHover: string
+  ) => {
+    if (!e.currentTarget.classList.contains(styleActive))
+      e.currentTarget.classList.add(styleHover);
+  };
 
-  const onMouseEnter = useGetIconOnMouseEnter();
-  const onMouseLeave = useGetIconOnMouseLeave();
+  const handlerIconMouseLeave = (e: SyntheticEvent, styleHover: string) => {
+    if (e.currentTarget.classList.contains(styleHover))
+      e.currentTarget.classList.remove(styleHover);
+  };
 
   return (
     <IconTabUI
-      // type={type}
       titled={titled}
       tab={tab}
       current={current}
-      // index={index}
       onClick={onClick}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
+      onMouseEnter={handlerIconMouseEnter}
+      onMouseLeave={handlerIconMouseLeave}
       ref={iconRef}
-      // isMainPage={isMainPage}
-      >
+    >
       {children}
     </IconTabUI>
   );

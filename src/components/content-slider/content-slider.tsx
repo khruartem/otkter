@@ -73,12 +73,12 @@ import { ContentSliderUI } from "../ui/content-slider copy";
 import { TContentSliderContext, TContentSliderProps } from "./types";
 import { TTabBarCotextValue } from "../tab-bar copy/types";
 
-import { TEmployee } from "../../utils/types";
 import { onlyUnique } from "../../utils/onlyUnique";
 import { TProject } from "../../utils/types/projects";
 import { TService } from "../../utils/types/services";
 import { TItemOTType } from "../../utils/types/common";
 import { isItemOTType } from "../../utils/guards/is-item-ot-type";
+import { TEmployee } from "../../utils/types/team";
 
 export const ContentSlider: FC<TContentSliderProps> = ({
   items,

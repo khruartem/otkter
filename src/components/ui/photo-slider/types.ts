@@ -1,4 +1,4 @@
-import { TPhoto } from "../../../features/photos/photosSlice";
+import { TPhoto } from "../../../utils/types/common";
 
 export type TPhotoSliderUIProps = {
   photos: TPhoto[];

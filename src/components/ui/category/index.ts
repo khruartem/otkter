@@ -1,1 +1,0 @@
-export { CategoryUI } from "./category"; 

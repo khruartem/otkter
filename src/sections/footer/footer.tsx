@@ -3,16 +3,12 @@ import clsx from "clsx";
 import { Logo } from "../../components/icons";
 import { MainSocial } from "../../components/main-social";
 import { Text } from "../../components/text";
-import { useDesktopMediaQuery } from "../../hooks/useDesktopMediaQuery";
-import { useLaptopMediaQuery } from "../../hooks/useLaptopMediaQuery";
-import { useLargeScreenMediaQuery } from "../../hooks/useLargeScreenMediaQuery";
 
 import { Colors } from "../../utils/types";
 
+import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+
 import styles from "./footer.module.css";
-//import { socials } from "../../utils/constants";
-import { useTabletMediaQuery } from "../../hooks/useTabletMediaQuery";
-import { useMobileMediaQuery } from "../../hooks/useMobileMediaQuery";
 
 export const Footer = () => {
   return (
@@ -24,9 +20,7 @@ export const Footer = () => {
 };
 
 const LargeResolution = () => {
-  const isLarge = useLargeScreenMediaQuery();
-  const isDesktop = useDesktopMediaQuery();
-  const isLaptop = useLaptopMediaQuery();
+  const { isLarge, isDesktop, isLaptop } = useGetMediaQuery();
 
   return isLarge || isDesktop || isLaptop ? (
     <footer
@@ -93,8 +87,7 @@ const LargeResolution = () => {
 };
 
 const SmallResolution = () => {
-  const isTablet = useTabletMediaQuery();
-  const isMobile = useMobileMediaQuery();
+  const { isTablet, isMobile } = useGetMediaQuery();
 
   return isTablet || isMobile ? (
     <footer

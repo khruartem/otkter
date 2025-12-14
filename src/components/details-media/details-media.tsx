@@ -1,9 +1,10 @@
 import { FC } from "react";
 
-import { TDetailsMediaProps } from "./types";
-import { Colors, TEmployee } from "../../utils/types";
-import { TItemOT } from "../../utils/types/common";
 import { DetailsMediaUI } from "../ui/details-media";
+
+import { TDetailsMediaProps } from "./types";
+
+import { Colors } from "../../utils/types";
 
 export const DetailsMedia: FC<TDetailsMediaProps> = ({ details }) => {
   const mediaCategories = {

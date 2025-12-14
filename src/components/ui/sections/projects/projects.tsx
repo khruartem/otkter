@@ -8,6 +8,7 @@ import { Button } from "../../../../components/button";
 import { Title } from "../../../title";
 
 import { contactFunction } from "../../../../utils/contactFunction";
+import { yakovlev } from "../../../../utils/constants/team";
 
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 
@@ -26,7 +27,7 @@ export const ProjectsUI: FC = () => {
       contentDirection="column"
       className={clsx(
         (isLarge || isLaptop) && styles["section_large-gap"],
-        (isDesktop || isTablet || isMobile) && styles["section_small-gap"],
+        (isDesktop || isTablet || isMobile) && styles["section_small-gap"]
       )}
     >
       <Title text="проекты" />
@@ -34,7 +35,7 @@ export const ProjectsUI: FC = () => {
       <div className={styles["button-section"]}>
         <Button
           type="button"
-          onClick={() => contactFunction("admins", 1, "telegram")}
+          onClick={() => contactFunction(yakovlev, "telegram")}
           disabled={false}
         >
           {"Предложить проект"}

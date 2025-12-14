@@ -14,7 +14,7 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import styles from "./item-ot-card.module.css";
 
 export const ItemOTCardUI = forwardRef<HTMLAnchorElement, TItemOTCardUIProps>(
-  ({ item, url }, ref) => {
+  ({ item, url, target = "_top" }, ref) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
       useGetMediaQuery();
     const largeResolution = isLarge || isDesktop || isLaptop;
@@ -48,7 +48,7 @@ export const ItemOTCardUI = forwardRef<HTMLAnchorElement, TItemOTCardUIProps>(
             smallResolution && styles["item-card__link_small-resolution"]
           )}
           to={url.to}
-          target="_top"
+          target={target}
           state={
             url?.code && url?.from
               ? { id, url: url.code, type: url.from }

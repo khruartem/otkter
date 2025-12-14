@@ -1,10 +1,10 @@
 import { FC, memo, useEffect } from "react";
 import ReactDOM from "react-dom";
+import { useLocation } from "react-router-dom";
+
+import { ModalUI } from "../ui/modal";
 
 import { TModalProps } from "./types";
-import { ModalUI } from "../ui/modal";
-import { scrollToTop } from "../../utils/scrollToTop";
-import { useLocation } from "react-router-dom";
 
 const modalRoot = document.getElementById("root-modal");
 
@@ -14,7 +14,10 @@ export const Modal: FC<TModalProps> = memo(
     const isDirectLink = location.state ? false : true;
 
     useEffect(() => {
-      scrollToTop("instant");
+      window.scrollTo({
+        top: 0,
+        behavior: "instant",
+      });
       const handleEsc = (e: KeyboardEvent) => {
         if (e.key === "Escape") onClose();
       };

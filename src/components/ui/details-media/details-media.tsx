@@ -36,7 +36,11 @@ export const DetailsMediaUI: FC<TDetailsMediaUIProps> = ({
         {details.map(({ value, url }) => (
           <>
             {isMedia(value) && (
-              <ItemOTCardUI item={value} url={{ to: url || "" }} />
+              <ItemOTCardUI
+                item={value}
+                url={{ to: url || "" }}
+                target="_blank"
+              />
             )}
           </>
         ))}

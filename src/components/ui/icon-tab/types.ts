@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
-import { TEmployee } from "../../../utils/types";
 import { TProject } from "../../../utils/types/projects";
 import { TService } from "../../../utils/types/services";
 import { TItemOTType } from "../../../utils/types/common";
+import { TEmployee } from "../../../utils/types/team";
 
 export type TIconTabUIProps = {
   children: ReactNode;

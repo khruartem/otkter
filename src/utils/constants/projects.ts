@@ -126,11 +126,12 @@ const buyTicketsLinkChronics =
   "https://tickets.mos.ru/widget/visit?eventId=61367&agentId=museum56&date=2025-05-04";
 export const buyTicketsLinkEsenin =
   "https://bilet.mos.ru/event/348685257/?ysclid=mggoo1slsl352616465";
+export const buyTicketsLinkAmplitude =
+  "https://litgost.timepad.ru/event/3308697/";
 
 // Функции по проектам
 import { buyTickets } from "../buyTickets";
 import { contactFunction } from "../contactFunction";
-import { joinAmplitude } from "../joinAmplitude";
 import { TProject } from "../types/projects";
 
 export const projects: TProject[] = [
@@ -661,13 +662,12 @@ export const projects: TProject[] = [
       },
       {
         type: "media",
+        url: "https://severstolici.ru/na-sokole-projdet-neobychnyj-perfomans-v-pamyat-o-velikoj-otechestvennoj-vojne/",
         value: {
           id: 1,
           title:
             "«На Соколе пройдёт необычный перформанс в память о Великой Отечественной Войне»",
           shortText: "Север Столицы",
-          extraText:
-            "https://severstolici.ru/na-sokole-projdet-neobychnyj-perfomans-v-pamyat-o-velikoj-otechestvennoj-vojne/",
           image: eseninMedia1,
           icon: eseninMediaIcon1,
           main: false,
@@ -676,12 +676,11 @@ export const projects: TProject[] = [
       },
       {
         type: "media",
+        url: "https://www.mk.ru/culture/2025/08/09/esenin-zhizn-v-stikhakh-na-scene-razgovor-s-poetom.html",
         value: {
           id: 2,
           title: "«“Есенин. Жизнь в стихах”: на сцене разговор с поэтом»",
           shortText: "МК",
-          extraText:
-            "https://www.mk.ru/culture/2025/08/09/esenin-zhizn-v-stikhakh-na-scene-razgovor-s-poetom.html",
           image: eseninMedia2,
           icon: eseninMediaIcon2,
           main: false,
@@ -690,13 +689,12 @@ export const projects: TProject[] = [
       },
       {
         type: "media",
+        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/anton-delvig-skuchno-devushki-vesnoyu-zhit-odnoi-chitaet-anastasiya-murzyukova-uchitel-gbou-izmailovskaya-shkola-uchastnica-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-93680.html?ysclid=mhvx3pm69e825624474",
         value: {
           id: 3,
           title:
             "«Антон Дельвиг “Скучно, девушки, весною жить одной…” Читает Анастасия Мурзюкова»",
           shortText: "ОТР",
-          extraText:
-            "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/anton-delvig-skuchno-devushki-vesnoyu-zhit-odnoi-chitaet-anastasiya-murzyukova-uchitel-gbou-izmailovskaya-shkola-uchastnica-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-93680.html?ysclid=mhvx3pm69e825624474",
           image: eseninMedia3,
           icon: eseninMediaIcon3,
           main: false,
@@ -705,12 +703,11 @@ export const projects: TProject[] = [
       },
       {
         type: "media",
+        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/iosif-brodskii-ya-vas-lyubil-chitaet-leonid-strelnikov-akter-teatra-u-nikitskih-vorot-uchastnik-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-93881.html?ysclid=mhvx5wxp3r458815884",
         value: {
           id: 4,
           title: "«Иосиф Бродский “Я вас любил”. Читает Леонид Стрельников»",
           shortText: "ОТР",
-          extraText:
-            "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/iosif-brodskii-ya-vas-lyubil-chitaet-leonid-strelnikov-akter-teatra-u-nikitskih-vorot-uchastnik-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-93881.html?ysclid=mhvx5wxp3r458815884",
           image: eseninMedia3,
           icon: eseninMediaIcon3,
           main: false,
@@ -719,12 +716,12 @@ export const projects: TProject[] = [
       },
       {
         type: "media",
+        url: "https://vdnh.ru/news/4372/",
         value: {
           id: 5,
           title:
             "«ВДНХ примет участие в фестивале “Любой из нас хоть чуточку Есенин”",
           shortText: "ВДНХ афиша",
-          extraText: "https://vdnh.ru/news/4372/",
           image: eseninMedia4,
           icon: eseninMediaIcon4,
           main: false,
@@ -733,12 +730,11 @@ export const projects: TProject[] = [
       },
       {
         type: "media",
+        url: "https://kasimov.ryazan.gov.ru/news/249811/?ysclid=mhvxromis5822024291",
         value: {
           id: 6,
           title: `«Состоялся показ музыкально-поэтического спектакля "Есенин. Жизнь в стихах" режиссера Сергея Яковлева»`,
           shortText: "Касимовский муниципальный округ",
-          extraText:
-            "https://kasimov.ryazan.gov.ru/news/249811/?ysclid=mhvxromis5822024291",
           image: eseninMedia5,
           icon: eseninMediaIcon5,
           main: false,
@@ -747,12 +743,11 @@ export const projects: TProject[] = [
       },
       {
         type: "media",
+        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/konstantin-simonov-muzyka-chitaet-marat-rudnickii-zvukoinzhener-akter-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-94135.html?ysclid=mhvx8ht2f7201512498",
         value: {
           id: 7,
           title: "«Константин Симонов “Музыка”. Читает Марат Рудницкий»",
           shortText: "ОТР",
-          extraText:
-            "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/konstantin-simonov-muzyka-chitaet-marat-rudnickii-zvukoinzhener-akter-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-94135.html?ysclid=mhvx8ht2f7201512498",
           image: eseninMedia3,
           icon: eseninMediaIcon3,
           main: false,
@@ -761,13 +756,12 @@ export const projects: TProject[] = [
       },
       {
         type: "media",
+        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/aleksandr-blok-est-igra-ostorozhno-voiti-chitaet-alena-sinelnikova-prodyuser-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-94262.html?ysclid=mhar8iok8y582810998",
         value: {
           id: 8,
           title:
             "«Александр Блок “Есть игра: осторожно войти”. Читает Алена Синельникова»",
           shortText: "ОТР",
-          extraText:
-            "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/aleksandr-blok-est-igra-ostorozhno-voiti-chitaet-alena-sinelnikova-prodyuser-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-94262.html?ysclid=mhar8iok8y582810998",
           image: eseninMedia3,
           icon: eseninMediaIcon3,
           main: false,
@@ -776,12 +770,11 @@ export const projects: TProject[] = [
       },
       {
         type: "media",
+        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/aleksandr-blok-aviator-chitaet-dmitrii-malcev-akter-teatra-lenkom-marka-zaharova-i-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-95524.html?ysclid=miwz8ipxzb590732807",
         value: {
           id: 9,
           title: "«Александр Блок “Авиатор”. Читает Дмитрий Мальцев»",
           shortText: "ОТР",
-          extraText:
-            "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/aleksandr-blok-aviator-chitaet-dmitrii-malcev-akter-teatra-lenkom-marka-zaharova-i-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-95524.html?ysclid=miwz8ipxzb590732807",
           image: eseninMedia3,
           icon: eseninMediaIcon3,
           main: false,
@@ -1008,7 +1001,7 @@ export const projects: TProject[] = [
       {
         label: "Записаться",
         type: "button",
-        onClick: joinAmplitude,
+        onClick: () => buyTickets(buyTicketsLinkAmplitude),
         url: "#",
       },
     ],
