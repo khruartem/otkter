@@ -152,7 +152,8 @@
 
 .modal_mobile {
   padding-block: 3.86vw;
-  /* padding-inline: 3.86vw; */
+  padding-inline: 3.86vw;
+  max-height: 100dvh;
 }
 
 .modal__button_close_large-screen {

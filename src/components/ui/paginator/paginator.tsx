@@ -2,10 +2,12 @@ import { CSSProperties, FC } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import clsx from "clsx";
 
-import { PointUI } from "../point";
+import { Point } from "../../point";
 
 import { TPaginatorUIProps } from "./types";
 import { Colors } from "../../../utils/types";
+
+import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./paginator.module.css";
 
@@ -15,15 +17,21 @@ export const PaginatorUI: FC<TPaginatorUIProps> = ({
   currentColor = Colors.Light20,
   className,
 }) => {
+  const { isMobile } = useGetMediaQuery();
+
   return (
     <ul
-      className={clsx(styles.paginator, className)}
+      className={clsx(
+        styles.paginator,
+        isMobile && styles.paginator_widthed,
+        className
+      )}
       style={
         { "--color": color, "--current-color": currentColor } as CSSProperties
       }
     >
       {points.map((point) => {
-        return <PointUI key={nanoid()} current={point} />;
+        return <Point key={nanoid()} current={point} />;
       })}
     </ul>
   );
