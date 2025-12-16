@@ -24,8 +24,6 @@ export const MenuLinkUI: FC<TMenuLinkUIProps> = ({
   return (
     <HashLink
       to={`/${url}`}
-      // smooth
-      // target={openNewTab ? "_blank" : undefined}
       scroll={(el) => {
         el.scrollIntoView({
           block: "start",

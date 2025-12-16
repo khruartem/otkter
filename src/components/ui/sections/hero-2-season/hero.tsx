@@ -14,19 +14,10 @@ import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 
 import styles from "./hero.module.css";
 
-// export const HeroUI: FC<THeroUIProps> = ({
-//   items,
-//   currentItemIndex,
-//   currentPaginatorIndex,
-//   paginatorLength,
-//   onClickLeft,
-//   onClickRight,
-// }) => {
 export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
   (
     {
       items,
-      // currentItemIndex,
       currentPaginatorIndex,
       paginatorLength,
       onClickLeft,
@@ -40,7 +31,6 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
       useGetMediaQuery();
 
     const largeResolution = isLarge || isDesktop;
-    // const smallResolution = isLaptop || isTablet || isMobile;
 
     const eventClassList = clsx(
       styles.event,
@@ -56,7 +46,6 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
         id="hero"
         decoration="only-color"
         contentDirection={largeResolution ? "row" : "column"}
-        // padding={smallResolution ? "inline" : undefined}
         className={clsx(
           styles.section_paddinged,
           styles.section_decorated_background,
@@ -202,12 +191,10 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
               className={clsx(
                 styles["hero-card-list"],
                 isLarge && [
-                  // styles["hero-card-list_large"],
                   styles["hero-card-list_large-gap"],
                   styles["hero-card-list_large-margin"],
                 ],
                 isDesktop && [
-                  // styles["hero-card-list_desktop"],
                   styles["hero-card-list_large-gap"],
                   styles["hero-card-list_large-margin"],
                 ],
@@ -215,19 +202,16 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
                   styles["hero-card-list_large-padding"],
                   styles["hero-card-list_middle-gap"],
                   styles["hero-card-list_middle-margin"],
-                  // styles["hero-card-list_full-width"],
                 ],
                 isTablet && [
                   styles["hero-card-list_middle-padding"],
                   styles["hero-card-list_small-gap"],
                   styles["hero-card-list_small-margin"],
-                  // styles["hero-card-list_full-width"],
                 ],
                 isMobile && [
                   styles["hero-card-list_small-padding"],
                   styles["hero-card-list_small-gap"],
                   styles["hero-card-list_small-margin"],
-                  // styles["hero-card-list_full-width"],
                 ]
               )}
               style={
@@ -240,12 +224,10 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
                   e.currentTarget.scrollLeft !== 0 &&
                   (isLarge || isDesktop)
                 ) {
-                  if (isLarge)
-                    // e.currentTarget.parentElement?.parentElement?.classList.add(
-                    e.currentTarget?.classList.add(
-                      styles["hero-card-list_faded"],
-                      styles["hero-card-list_faded_large-card"]
-                    );
+                  e.currentTarget?.classList.add(
+                    styles["hero-card-list_faded"],
+                    styles["hero-card-list_faded_large-card"]
+                  );
                   if (isDesktop)
                     e.currentTarget?.classList.add(
                       styles["hero-card-list_faded"],
@@ -273,8 +255,6 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
                     project={item}
                     index={index}
                     ticket={item?.ticket}
-                    // current={index === currentItemIndex}
-                    // currentIndex={currentItemIndex}
                     currentPaginatorIndex={currentPaginatorIndex}
                     onSwitch={onSwitch}
                   />
@@ -311,10 +291,7 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
                   ? styles["event-list_columned"]
                   : styles["event-list_rowed"],
                 isLarge && styles["event-list_large"],
-                isDesktop && [
-                  styles["event-list_desktop"],
-                  // styles["event-list_limited-width"],
-                ],
+                isDesktop && [styles["event-list_desktop"]],
                 isLaptop && styles["event-list_laptop"],
                 isTablet && styles["event-list_tablet"],
                 isMobile && styles["event-list_mobile"]

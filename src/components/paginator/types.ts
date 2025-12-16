@@ -8,3 +8,9 @@ export type TPaginatorUIProps = {
   color?: Colors;
   currentColor?: Colors;
 };
+
+export type TPaginatorContextValue = {
+  paginatorRef: React.RefObject<HTMLUListElement> | null;
+  index: number;
+  length: number;
+};

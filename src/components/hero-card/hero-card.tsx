@@ -9,8 +9,6 @@ export const HeroCard: FC<THeroCardProps> = ({
   project,
   index,
   ticket,
-  // current,
-  // currentIndex,
   currentPaginatorIndex,
   onSwitch,
 }) => {
@@ -21,9 +19,6 @@ export const HeroCard: FC<THeroCardProps> = ({
   });
 
   useEffect(() => {
-    // if (current) {
-    //   cardRef.current?.scrollIntoView({behavior: "smooth", block: "center"});
-    // };
     onSwitch(index, currentPaginatorIndex, inView);
   });
 

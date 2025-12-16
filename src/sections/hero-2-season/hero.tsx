@@ -63,7 +63,6 @@ export const Hero = () => {
   return (
     <HeroUI
       items={heroProjects}
-      // currentItemIndex={currentItemIndex}
       currentPaginatorIndex={currentPaginatorIndex}
       paginatorLength={paginatorLength}
       onClickLeft={onClickLeft}
