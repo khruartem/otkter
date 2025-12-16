@@ -1,4 +1,4 @@
-import { CSSProperties, FC, forwardRef } from "react";
+import { CSSProperties, forwardRef } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import clsx from "clsx";
 
