@@ -1,0 +1,29 @@
+.photo-list-item {
+  aspect-ratio: 1 / 1;
+}
+
+/* Стили для разных разшерений экранов */
+.photo-list-item_large {
+  width: 5.83vw;
+  height: 5.83vw;
+}
+
+.photo-list-item_desktop {
+  width: 5.42vw;
+  height: 5.42vw;
+}
+
+.photo-list-item_laptop {
+  width: 7.23vw;
+  height: 7.23vw;
+}
+
+.photo-list-item_tablet {
+  width: 14.06vw;
+  height: 14.06vw;
+}
+
+.photo-list-item_mobile {
+  width: 15.46vw;
+  height: 15.46vw;
+}

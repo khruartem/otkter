@@ -1,18 +1,16 @@
 import { FC } from "react";
 import clsx from "clsx";
 
+import { PhotoListItem } from "../../photo-list-item";
 import { Photo } from "../../photo";
+import { MorePhoto } from "../../more-photo";
 
 import { TPhotoListUIProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./photo-list.module.css";
 
-export const PhotoListUI: FC<TPhotoListUIProps> = ({
-  itemId,
-  itemKind,
-  photos,
-}) => {
+export const PhotoListUI: FC<TPhotoListUIProps> = ({ photos }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
@@ -37,23 +35,15 @@ export const PhotoListUI: FC<TPhotoListUIProps> = ({
       {photos.map((photo, index) => {
         if (index < 4)
           return (
-            <Photo
-              key={photo.id}
-              itemId={itemId}
-              itemKind={itemKind}
-              photo={photo}
-            />
+            <PhotoListItem key={photo.id} photoId={photo.id}>
+              <Photo key={photo.id} src={photo.icon} />
+            </PhotoListItem>
           );
       })}
       {photos.length > 4 && (
-        <Photo
-          key={photos.length + 1}
-          itemId={itemId}
-          itemKind={itemKind}
-          photo={photos[4]}
-          // nextPhotoId={photos[4].id}
-          label={`+${photos.length - 4}`}
-        />
+        <PhotoListItem key={photos.length} photoId={photos[4].id}>
+          <MorePhoto />
+        </PhotoListItem>
       )}
     </ul>
   );

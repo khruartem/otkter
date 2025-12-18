@@ -7,7 +7,7 @@ import { InfoTextUI } from "../../info-text";
 import { InfoPosterUI } from "../../info-poster";
 import { Controls } from "../../../controls copy";
 import { MainLayout } from "../../../../layouts/main-layout";
-import { PhotoListUI } from "../../photo-list copy";
+import { PhotoList } from "../../../photo-list";
 import { DetailsGrid } from "../../../details-grid";
 import { CtaUI } from "../../cta";
 import { ShowHistoryPreview } from "../../../show-history-preview";
@@ -123,8 +123,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
                 <InfoTextUI text={currentItem.shortText} />
               )}
               {currentItem?.photos && (
-                <PhotoListUI
-                  itemId={currentItem.id}
+                <PhotoList
                   itemKind={currentItem.kind}
                   photos={currentItem.photos}
                 />

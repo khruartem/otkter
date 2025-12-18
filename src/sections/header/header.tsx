@@ -15,7 +15,7 @@ export const Header: FC<THeaderProps> = ({ animation }) => {
   useEffect(() => {
     // location.state = { ...location.state };
     switch (location.state?.type) {
-      case "project":
+      case "projects":
         if (location.state?.id) {
           setUrl(`/#projects-${location.state?.id}`);
         } else {

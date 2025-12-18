@@ -26,11 +26,12 @@ export const Info: FC<TInfoProps> = ({ currentItem, items }) => {
 
   useEffect(() => {
     // Проброс стейта дальше или формирование
-    if (location.state) {
-      location.state = { ...location.state, id: main ? id : 0 };
-    } else {
-      location.state = { id: main ? id : 0, type: kind };
-    }
+    // if (location.state) {
+    //   location.state = { ...location.state, id: main ? id : 0 };
+    // } else {
+    //   location.state = { id: main ? id : 0, type: kind };
+    // }
+    location.state = { ...location.state, id: main ? id : 0, type: kind };
 
     document.body.style.backgroundColor = Colors.Light60;
 

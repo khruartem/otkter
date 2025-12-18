@@ -1,29 +1,26 @@
 import { FC } from "react";
-import { TPhotoProps } from "./types";
-import { useGetCode } from "../../hooks/useGetCode";
+
 import { PhotoUI } from "../ui/photo";
 
-export const Photo: FC<TPhotoProps> = ({
-  itemId,
-  itemKind,
-  photo,
-  label,
-  // nextPhotoId,
-}) => {
-  const code = useGetCode();
-  const url =
-    itemKind === "team"
-      ? `/${itemKind}/admins/${code}/${photo?.id}`
-      : `/${itemKind}/${code}/${photo?.id}`;
+import { TPhotoProps } from "./types";
 
-  return (
-    <PhotoUI
-      itemId={itemId}
-      itemKind={itemKind}
-      photo={photo}
-      label={label}
-      url={url}
-      // nextPhotoId={nextPhotoId}
-    />
-  );
+import { TItemOTKind } from "../../utils/types/common";
+
+import { usePhotoListContext } from "../../hooks/usePhotoListContext";
+
+export const Photo: FC<TPhotoProps> = ({ src }) => {
+  const { itemKind } = usePhotoListContext();
+
+  const setAlt = (itemKind: TItemOTKind) => {
+    switch (itemKind) {
+      case "projects":
+        return "проекта";
+      case "services":
+        return "услуги";
+      case "team":
+        return "члена команды";
+    }
+  };
+
+  return <PhotoUI src={src} alt={`Фото ${setAlt(itemKind)}`} />;
 };

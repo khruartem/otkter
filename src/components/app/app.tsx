@@ -12,6 +12,11 @@ import { NotFound404 } from "../../pages/not-found-404";
 export function App() {
   const navigate = useNavigate();
   const location = useLocation();
+  const handleCloseModal = () => {
+    return location.state?.url
+      ? navigate(`${location.state?.url}`)
+      : navigate("/");
+  };
 
   return (
     <>
@@ -24,18 +29,7 @@ export function App() {
         <Route
           path={"/projects/:code/:photoId"}
           element={
-            <Modal
-              type="close"
-              onClose={() => {
-                if (location.state?.url) {
-                  navigate(`/projects/${location.state?.url}/`, {
-                    state: { ...location.state },
-                  });
-                } else {
-                  navigate("/");
-                }
-              }}
-            >
+            <Modal type="close" onClose={handleCloseModal}>
               <PhotoSlider type="projects" />
             </Modal>
           }
@@ -43,18 +37,7 @@ export function App() {
         <Route
           path={"/services/:code/:photoId"}
           element={
-            <Modal
-              type="close"
-              onClose={() => {
-                if (location.state?.url) {
-                  navigate(`/services/${location.state?.url}/`, {
-                    state: { ...location.state },
-                  });
-                } else {
-                  navigate("/");
-                }
-              }}
-            >
+            <Modal type="close" onClose={handleCloseModal}>
               <PhotoSlider type="services" />
             </Modal>
           }
@@ -64,15 +47,16 @@ export function App() {
           element={
             <Modal
               type="close"
-              onClose={() => {
-                if (location.state?.url) {
-                  navigate(`/team/admins/${location.state?.url}/`, {
-                    state: { ...location.state },
-                  });
-                } else {
-                  navigate("/");
-                }
-              }}
+              // onClose={() => {
+              //   if (location.state?.url) {
+              //     navigate(`/team/admins/${location.state?.url}/`, {
+              //       state: { ...location.state },
+              //     });
+              //   } else {
+              //     navigate("/");
+              //   }
+              // }}
+              onClose={handleCloseModal}
             >
               <PhotoSlider type="team" />
             </Modal>
