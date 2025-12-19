@@ -4,6 +4,10 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.info-details_without-media>div {
+  height: fit-content;
+}
+
 .info-details_one-block {
   grid-template-columns: 1fr;
 }

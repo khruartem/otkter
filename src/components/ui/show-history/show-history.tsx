@@ -53,7 +53,7 @@ export const ShowHistoryUI: FC<TShowHistoryUIProps> = ({
         <ul
           className={clsx(
             styles["past-shows"],
-            scrollStyle.scrolled,
+            !isMobile && scrollStyle.scrolled,
             isLarge && [
               styles["past-shows_column-gap-large"],
               styles["past-shows_row-gap-large"],

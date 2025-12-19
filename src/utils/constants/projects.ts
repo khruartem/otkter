@@ -125,7 +125,7 @@ import eseninMediaIcon5 from "../../assets/projects/media/icons/esenin_5.avif";
 const buyTicketsLinkChronics =
   "https://tickets.mos.ru/widget/visit?eventId=61367&agentId=museum56&date=2025-05-04";
 export const buyTicketsLinkEsenin =
-  "https://bilet.mos.ru/event/348685257/?ysclid=mggoo1slsl352616465";
+  "https://russpass.ru/event/692da2016fb0bf1b94a43efe?date=2025-12-25";
 export const buyTicketsLinkAmplitude =
   "https://litgost.timepad.ru/event/3308697/";
 
@@ -202,6 +202,46 @@ export const projects: TProject[] = [
       {
         type: "admins",
         value: sinelnikova.getEmployee("Продюсер"),
+      },
+      {
+        type: "media",
+        url: "https://severstolici.ru/na-sokole-projdet-neobychnyj-perfomans-v-pamyat-o-velikoj-otechestvennoj-vojne/",
+        value: {
+          id: 1,
+          title:
+            "«На Соколе пройдёт необычный перформанс в память о Великой Отечественной Войне»",
+          shortText: "Север Столицы",
+          image: eseninMedia1,
+          icon: eseninMediaIcon1,
+          main: false,
+          active: true,
+        },
+      },
+      {
+        type: "media",
+        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/iosif-brodskii-ya-vas-lyubil-chitaet-leonid-strelnikov-akter-teatra-u-nikitskih-vorot-uchastnik-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-93881.html?ysclid=mhvx5wxp3r458815884",
+        value: {
+          id: 4,
+          title: "«Иосиф Бродский “Я вас любил”. Читает Леонид Стрельников»",
+          shortText: "ОТР",
+          image: eseninMedia3,
+          icon: eseninMediaIcon3,
+          main: false,
+          active: true,
+        },
+      },
+      {
+        type: "media",
+        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/konstantin-simonov-muzyka-chitaet-marat-rudnickii-zvukoinzhener-akter-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-94135.html?ysclid=mhvx8ht2f7201512498",
+        value: {
+          id: 7,
+          title: "«Константин Симонов “Музыка”. Читает Марат Рудницкий»",
+          shortText: "ОТР",
+          image: eseninMedia3,
+          icon: eseninMediaIcon3,
+          main: false,
+          active: true,
+        },
       },
     ],
     categories: {
@@ -618,25 +658,26 @@ export const projects: TProject[] = [
           "Есенин-центр",
           "КЦ «Москвич»",
           "Соворотка",
+          "Музей памяти семьи Николая II в усадьбе «Белая Дача»",
         ],
       },
       {
         icon: "address",
         type: "about",
         label: "Адрес",
-        value: "Москва, пер. Чернышевского, д. 4, стр. 2",
+        value: "д. 1А, мкр. Белая Дача, г. Котельники",
       },
       {
         icon: "date",
         type: "about",
         label: "Дата",
-        value: "20 октября, 19:00",
+        value: "25 декабря, 19:00",
       },
       {
         icon: "price",
         type: "about",
         label: "Цена",
-        value: "От 400 р.",
+        value: "2400 р.",
       },
       {
         type: "artists",
@@ -662,20 +703,6 @@ export const projects: TProject[] = [
       },
       {
         type: "media",
-        url: "https://severstolici.ru/na-sokole-projdet-neobychnyj-perfomans-v-pamyat-o-velikoj-otechestvennoj-vojne/",
-        value: {
-          id: 1,
-          title:
-            "«На Соколе пройдёт необычный перформанс в память о Великой Отечественной Войне»",
-          shortText: "Север Столицы",
-          image: eseninMedia1,
-          icon: eseninMediaIcon1,
-          main: false,
-          active: true,
-        },
-      },
-      {
-        type: "media",
         url: "https://www.mk.ru/culture/2025/08/09/esenin-zhizn-v-stikhakh-na-scene-razgovor-s-poetom.html",
         value: {
           id: 2,
@@ -683,33 +710,6 @@ export const projects: TProject[] = [
           shortText: "МК",
           image: eseninMedia2,
           icon: eseninMediaIcon2,
-          main: false,
-          active: true,
-        },
-      },
-      {
-        type: "media",
-        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/anton-delvig-skuchno-devushki-vesnoyu-zhit-odnoi-chitaet-anastasiya-murzyukova-uchitel-gbou-izmailovskaya-shkola-uchastnica-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-93680.html?ysclid=mhvx3pm69e825624474",
-        value: {
-          id: 3,
-          title:
-            "«Антон Дельвиг “Скучно, девушки, весною жить одной…” Читает Анастасия Мурзюкова»",
-          shortText: "ОТР",
-          image: eseninMedia3,
-          icon: eseninMediaIcon3,
-          main: false,
-          active: true,
-        },
-      },
-      {
-        type: "media",
-        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/iosif-brodskii-ya-vas-lyubil-chitaet-leonid-strelnikov-akter-teatra-u-nikitskih-vorot-uchastnik-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-93881.html?ysclid=mhvx5wxp3r458815884",
-        value: {
-          id: 4,
-          title: "«Иосиф Бродский “Я вас любил”. Читает Леонид Стрельников»",
-          shortText: "ОТР",
-          image: eseninMedia3,
-          icon: eseninMediaIcon3,
           main: false,
           active: true,
         },
@@ -743,37 +743,23 @@ export const projects: TProject[] = [
       },
       {
         type: "media",
-        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/konstantin-simonov-muzyka-chitaet-marat-rudnickii-zvukoinzhener-akter-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-94135.html?ysclid=mhvx8ht2f7201512498",
-        value: {
-          id: 7,
-          title: "«Константин Симонов “Музыка”. Читает Марат Рудницкий»",
-          shortText: "ОТР",
-          image: eseninMedia3,
-          icon: eseninMediaIcon3,
-          main: false,
-          active: true,
-        },
-      },
-      {
-        type: "media",
-        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/aleksandr-blok-est-igra-ostorozhno-voiti-chitaet-alena-sinelnikova-prodyuser-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-94262.html?ysclid=mhar8iok8y582810998",
-        value: {
-          id: 8,
-          title:
-            "«Александр Блок “Есть игра: осторожно войти”. Читает Алена Синельникова»",
-          shortText: "ОТР",
-          image: eseninMedia3,
-          icon: eseninMediaIcon3,
-          main: false,
-          active: true,
-        },
-      },
-      {
-        type: "media",
         url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/aleksandr-blok-aviator-chitaet-dmitrii-malcev-akter-teatra-lenkom-marka-zaharova-i-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-95524.html?ysclid=miwz8ipxzb590732807",
         value: {
           id: 9,
           title: "«Александр Блок “Авиатор”. Читает Дмитрий Мальцев»",
+          shortText: "ОТР",
+          image: eseninMedia3,
+          icon: eseninMediaIcon3,
+          main: false,
+          active: true,
+        },
+      },
+      {
+        type: "media",
+        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/ivan-bunin-uchan-su-chitaet-sergei-yakovlev-glava-tvorcheskogo-obedineniya-otkrytaya-territoriya-akter-teatra-lenkom-marka-zaharova-i-teatra-nacii-95828.html?ysclid=mj9xfgc0l8935203416",
+        value: {
+          id: 10,
+          title: "«Иван Бунин “Учан-Су”. Читает Сергей Яковлев»",
           shortText: "ОТР",
           image: eseninMedia3,
           icon: eseninMediaIcon3,
@@ -993,6 +979,34 @@ export const projects: TProject[] = [
       {
         type: "admins",
         value: yakovlev.getEmployee("Режиссер-постановщик"),
+      },
+      {
+        type: "media",
+        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/aleksandr-blok-est-igra-ostorozhno-voiti-chitaet-alena-sinelnikova-prodyuser-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-94262.html?ysclid=mhar8iok8y582810998",
+        value: {
+          id: 8,
+          title:
+            "«Александр Блок “Есть игра: осторожно войти”. Читает Алена Синельникова»",
+          shortText: "ОТР",
+          image: eseninMedia3,
+          icon: eseninMediaIcon3,
+          main: false,
+          active: true,
+        },
+      },
+      {
+        type: "media",
+        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/anton-delvig-skuchno-devushki-vesnoyu-zhit-odnoi-chitaet-anastasiya-murzyukova-uchitel-gbou-izmailovskaya-shkola-uchastnica-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-93680.html?ysclid=mhvx3pm69e825624474",
+        value: {
+          id: 3,
+          title:
+            "«Антон Дельвиг “Скучно, девушки, весною жить одной…” Читает Анастасия Мурзюкова»",
+          shortText: "ОТР",
+          image: eseninMedia3,
+          icon: eseninMediaIcon3,
+          main: false,
+          active: true,
+        },
       },
     ],
     poster: amplitudePoster,

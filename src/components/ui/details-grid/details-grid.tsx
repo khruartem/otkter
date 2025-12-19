@@ -18,6 +18,7 @@ export const DetailsGridUI: FC<TDetailsGridUIProps> = ({
     <div
       className={clsx(
         styles["info-details"],
+        !media && styles["info-details_without-media"],
         !team && !media && styles["info-details_one-block"],
         (isLarge || isDesktop) && styles["info-details_large-gap"],
         isLaptop && [
