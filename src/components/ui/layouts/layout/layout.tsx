@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { FC } from "react";
 
 import { Header } from "../../../../sections/header";
+import { HeaderAnimated } from "../../../../sections/header-animated/header-animated";
 import { Footer } from "../../../../sections/footer";
 
 import { TLayoutUIProps } from "./types";
@@ -14,12 +15,13 @@ export const LayoutUI: FC<TLayoutUIProps> = ({
   children,
   className,
   noPadding,
+  animatedHeader,
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
   return (
     <>
-      <Header />
+      {animatedHeader ? <HeaderAnimated /> : <Header />}
       <main
         className={clsx(
           styles.main,

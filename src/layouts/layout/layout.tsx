@@ -10,7 +10,11 @@ export const Layout: FC<TLayoutProps> = ({ children }) => {
   const { layout } = usePageContext();
 
   return (
-    <LayoutUI noPadding={layout.noPadding} className={layout.className}>
+    <LayoutUI
+      noPadding={layout.noPadding}
+      className={layout.className}
+      animatedHeader={layout.animatedHeader}
+    >
       {children}
     </LayoutUI>
   );
