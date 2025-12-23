@@ -1,19 +1,23 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import clsx from "clsx";
 
+import { Page } from "../../page";
 import { InfoUI } from "../../../components/ui/pages/info copy";
-import { Preloader } from "../../../components/ui/preloader";
-import { SEO } from "../../../components/seo";
 
 import { TInfoProps } from "./types";
+
 import { Colors } from "../../../utils/types";
+import { TPageLayout, TPageSEO } from "../../page/type";
 
-export const Info: FC<TInfoProps> = ({ currentItem, items }) => {
-  const [docReadyState, setDocReadyState] = useState<DocumentReadyState | null>(
-    null
-  );
+import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
+import styles from "../../ui/pages/info copy/info.module.css";
+
+export const Info: FC<TInfoProps> = ({ items, currentItem }) => {
   const location = useLocation();
+
+  const { isLaptop, isDesktop } = useGetMediaQuery();
 
   const { id, kind, title, shortText, previewImg, url, main } = currentItem;
 
@@ -25,29 +29,30 @@ export const Info: FC<TInfoProps> = ({ currentItem, items }) => {
       : Colors.Navy;
 
   useEffect(() => {
-    // Проброс стейта дальше или формирование
-    // if (location.state) {
-    //   location.state = { ...location.state, id: main ? id : 0 };
-    // } else {
-    //   location.state = { id: main ? id : 0, type: kind };
-    // }
     location.state = { ...location.state, id: main ? id : 0, type: kind };
 
     document.body.style.backgroundColor = Colors.Light60;
+  }, [id, kind, location, main]);
 
-    setDocReadyState(document.readyState);
-  }, [main, location, id, kind]);
+  const seo: TPageSEO = {
+    title,
+    description: shortText,
+    siteName: title,
+    url: `https://otkter.ru/projects/${url}`,
+    previewImg: previewImg || "",
+  };
 
-  return docReadyState === "complete" || docReadyState === "interactive" ? (
-    <>
-      <SEO
-        title={title}
-        ogTitle={kind}
-        description={shortText}
-        siteName={title}
-        url={`https://otkter.ru/projects/${url}`}
-        previewImg={previewImg || ""}
-      />
+  const layout: TPageLayout = {
+    noPadding: false,
+    className: clsx(
+      !currentItem?.details &&
+        (isLaptop || isDesktop) &&
+        styles["main_info-details"]
+    ),
+  };
+
+  return (
+    <Page seo={seo} layout={layout}>
       <InfoUI
         currentItem={currentItem}
         currentIndex={items.findIndex(
@@ -56,8 +61,6 @@ export const Info: FC<TInfoProps> = ({ currentItem, items }) => {
         items={items}
         color={itemColor}
       />
-    </>
-  ) : (
-    <Preloader />
+    </Page>
   );
 };

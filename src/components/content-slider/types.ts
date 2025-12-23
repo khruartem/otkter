@@ -37,3 +37,8 @@ export type TContentSliderContext = {
   }) => React.ReactNode;
   onScrollItem: (e: SyntheticEvent<Element, Event>) => void;
 };
+
+export type TContentSliderPoviderProps = {
+  children: ReactNode;
+  value: TContentSliderContext;
+};

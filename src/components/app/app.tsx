@@ -45,19 +45,7 @@ export function App() {
         <Route
           path={"/team/admins/:code/:photoId"}
           element={
-            <Modal
-              type="close"
-              // onClose={() => {
-              //   if (location.state?.url) {
-              //     navigate(`/team/admins/${location.state?.url}/`, {
-              //       state: { ...location.state },
-              //     });
-              //   } else {
-              //     navigate("/");
-              //   }
-              // }}
-              onClose={handleCloseModal}
-            >
+            <Modal type="close" onClose={handleCloseModal}>
               <PhotoSlider type="team" />
             </Modal>
           }

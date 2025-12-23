@@ -6,7 +6,6 @@ import { InfoNavigationUI } from "../../info-navigation";
 import { InfoTextUI } from "../../info-text";
 import { InfoPosterUI } from "../../info-poster";
 import { Controls } from "../../../controls copy";
-import { MainLayout } from "../../../../layouts/main-layout";
 import { PhotoList } from "../../../photo-list";
 import { DetailsGrid } from "../../../details-grid";
 import { CtaUI } from "../../cta";
@@ -57,13 +56,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
   };
 
   return (
-    <MainLayout
-      className={clsx(
-        !currentItem?.details &&
-          (isLaptop || isDesktop) &&
-          styles["main_info-details"]
-      )}
-    >
+    <>
       <InfoNavigationUI
         currentItem={currentItem}
         currentIndex={currentIndex}
@@ -149,6 +142,6 @@ export const InfoUI: FC<TInfoUIProps> = ({
           />
         )}
       </div>
-    </MainLayout>
+    </>
   );
 };

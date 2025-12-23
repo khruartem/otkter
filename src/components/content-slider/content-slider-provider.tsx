@@ -1,11 +1,8 @@
-import { FC, ReactNode } from "react";
-import { TContentSliderContext } from "./types";
+import { FC } from "react";
+
 import { ContentSliderContext } from "./content-slider-context";
 
-type TContentSliderPoviderProps = {
-  children: ReactNode;
-  value: TContentSliderContext;
-};
+import { TContentSliderPoviderProps } from "./types";
 
 export const ContentSliderPovider: FC<TContentSliderPoviderProps> = ({
   children,

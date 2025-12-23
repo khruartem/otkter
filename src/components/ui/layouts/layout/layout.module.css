@@ -1,0 +1,37 @@
+.main {
+  width: 100%;
+}
+
+.main_paddinged-large {
+  padding-top: calc(60px + 24px);
+}
+
+.main_paddinged-small {
+  padding-top: calc(60px + 12px);
+}
+
+/* Стили для разных разрешений экранов */
+.main_lagre {
+  padding-inline: 8.13vw;
+  padding-bottom: 4.38vw;
+}
+
+.main_desktop {
+  padding-inline: 7.83vw;
+  padding-bottom: 4.10vw;
+}
+
+.main_laptop {
+  padding-inline: 4.10vw;
+  padding-bottom: 8.20vw;
+}
+
+.main_tablet {
+  padding-inline: 3.91vw;
+  padding-bottom: 8.85vw;
+}
+
+.main_mobile {
+  padding-inline: 3.86vw;
+  padding-bottom: 16.43vw;
+}
