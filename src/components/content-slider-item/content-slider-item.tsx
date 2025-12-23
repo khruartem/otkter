@@ -50,6 +50,7 @@ import { TContentSliderItemProps } from "./types";
 import { lockScroll } from "../../utils/lockScroll";
 
 import { useContentSliderContext } from "../../hooks/useContentSliderContext";
+import { TItemOTType } from "../../utils/types/common";
 
 export const ContentSliderItem: FC<TContentSliderItemProps> = ({ tab }) => {
   const {
@@ -65,10 +66,11 @@ export const ContentSliderItem: FC<TContentSliderItemProps> = ({ tab }) => {
     threshold: 0,
   });
 
-  const renderEmptyStateContent = (content: ReactNode) => {
-    const renderCondition = (itemRef.current?.clientHeight || 0) < 528 * 3;
-    if (renderCondition) {
+  const renderEmptyStateContent = (tab: TItemOTType, content: ReactNode) => {
+    if (tab !== "all") {
       return content;
+    } else {
+      return undefined;
     }
   };
 
@@ -91,7 +93,7 @@ export const ContentSliderItem: FC<TContentSliderItemProps> = ({ tab }) => {
       renderItem={renderItem}
       ref={itemRef}
     >
-      {renderEmptyStateContent(emptyStateContent)}
+      {renderEmptyStateContent(currentTab, emptyStateContent)}
     </ContentSliderItemUI>
   );
 };

@@ -38,7 +38,7 @@ export const PhotoTabBar: FC<TPhotoTabBarProps> = ({
       setCurrentIndex(index);
       navigate(
         item.kind === "team"
-          ? `/team/admins/${item.url}/`
+          ? `/${item.kind}/admins/${item.url}/`
           : `/${item.kind}/${item.url}/`,
         { ...location?.state, id: item.id, url: item.url }
       );

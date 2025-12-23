@@ -34,7 +34,7 @@ export const AllProjects: FC = () => {
     ) as TTabsGap,
     relativeToTitle: "columned",
     renderTab: (item) => (
-      <IconTab titled {...item}>
+      <IconTab {...item}>
         <ProjectTab tab={item.tab} />
       </IconTab>
     ),
