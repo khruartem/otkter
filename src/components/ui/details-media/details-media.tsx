@@ -18,7 +18,7 @@ export const DetailsMediaUI: FC<TDetailsMediaUIProps> = ({
   categories,
   categoriesColors,
 }) => {
-  const { isTablet, isMobile } = useGetMediaQuery();
+  const { isDesktop, isLaptop, isTablet, isMobile } = useGetMediaQuery();
 
   return (
     <DetailsGridItemUI className={styles["details-grid-item_media"]}>
@@ -40,6 +40,10 @@ export const DetailsMediaUI: FC<TDetailsMediaUIProps> = ({
                 item={value}
                 url={{ to: url || "" }}
                 target="_blank"
+                className={clsx(
+                  isDesktop && styles["item-ot-card_desktop_media"],
+                  isLaptop && styles["item-ot-card_laptop_media"]
+                )}
               />
             )}
           </>

@@ -1,0 +1,18 @@
+.item-ot-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-ot-list_large-gap {
+  gap: 24px;
+}
+
+.item-ot-list_medium-gap {
+  gap: 20px;
+}
+
+.item-ot-list_small-gap {
+  gap: 12px;
+}

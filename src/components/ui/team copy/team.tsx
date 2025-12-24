@@ -1,12 +1,15 @@
 import React from "react";
 import clsx from "clsx";
 import { CSSProperties } from "react";
-import { nanoid } from "@reduxjs/toolkit";
 
-import { EmployeeUI } from "../employee";
 import { GroupListUI } from "../group-list";
+import { ItemOTListUI } from "../items-ot-list";
+import { EmployeeUI } from "../employee";
 
 import { TTeamUIProps } from "./types";
+
+import { TEmployee } from "../../../utils/types/team";
+
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./team.module.css";
@@ -14,8 +17,7 @@ import scrollStyle from "../../../styles/scroll.module.css";
 
 export const TeamUI = React.forwardRef<HTMLUListElement, TTeamUIProps>(
   ({ team, type, teamRef, containerHeight }, ref) => {
-    const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
-      useGetMediaQuery();
+    const { isMobile } = useGetMediaQuery();
 
     const setFade = () => {
       if (type === "artists") return true;
@@ -33,15 +35,24 @@ export const TeamUI = React.forwardRef<HTMLUListElement, TTeamUIProps>(
             scrollStyle.scrolled
         )}
       >
-        <ul
+        <ItemOTListUI
+          itemsOT={team}
+          renderItemOT={(itemOt, key) => (
+            <EmployeeUI
+              key={key}
+              type={"team"}
+              employee={itemOt as TEmployee}
+            />
+          )}
           className={clsx(
-            styles.team,
-            (type === "artists" || isMobile) && styles["team_overflowed-y"],
-            (isLarge || isDesktop) && styles["team_large-gap"],
-            isLaptop && styles["team_middle-gap"],
-            (isTablet || isMobile) && styles["team_small-gap"],
-            !isMobile && [scrollStyle.scrolled, styles.team_widthed],
-            // !isMobile && styles["team_no-scrollbar"]
+            styles["item-ot-list_team"],
+            (type === "artists" || isMobile) &&
+              styles["item-ot-list_team_overflowed-y"],
+            type === "artists" &&
+              !isMobile && [
+                scrollStyle.scrolled,
+                styles["item-ot-list_team_scrolled"],
+              ]
           )}
           style={
             {
@@ -49,13 +60,7 @@ export const TeamUI = React.forwardRef<HTMLUListElement, TTeamUIProps>(
             } as CSSProperties
           }
           ref={ref}
-        >
-          {team.map((employee) => {
-            return (
-              <EmployeeUI key={nanoid()} type={"team"} employee={employee} />
-            );
-          })}
-        </ul>
+        />
       </GroupListUI>
     );
   }

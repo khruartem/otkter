@@ -97,7 +97,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({ type, employee }) => {
               className={clsx(
                 styles.employee,
                 styles.employee_team,
-                isLarge && styles["employee_team_large-screen"],
+                isLarge && styles.employee_team_large,
                 isDesktop && styles.employee_team_desktop,
                 isLaptop && styles.employee_team_laptop,
                 isTablet && styles.employee_team_tablet,
@@ -167,7 +167,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({ type, employee }) => {
             className={clsx(
               styles.employee,
               styles.employee_team,
-              isLarge && styles["employee_team_large-screen"],
+              isLarge && styles.employee_team_large,
               isDesktop && styles.employee_team_desktop,
               isLaptop && styles.employee_team_laptop,
               isTablet && styles.employee_team_tablet,

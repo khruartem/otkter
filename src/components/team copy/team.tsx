@@ -1,6 +1,6 @@
 import { FC, memo, useEffect, useState } from "react";
 
-import { TeamUI } from "../ui/team";
+import { TeamUI } from "../ui/team copy";
 
 import { TTeamProps } from "./type";
 

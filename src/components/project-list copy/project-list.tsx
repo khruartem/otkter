@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { ProjectListUI } from "../ui/project-list";
+import { ProjectListUI } from "../ui/project-list copy";
 import { GroupListUI } from "../ui/group-list";
 
 import { TProjectListProps } from "./types";

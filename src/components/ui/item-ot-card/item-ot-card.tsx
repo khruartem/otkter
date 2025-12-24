@@ -14,7 +14,7 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import styles from "./item-ot-card.module.css";
 
 export const ItemOTCardUI = forwardRef<HTMLAnchorElement, TItemOTCardUIProps>(
-  ({ item, url, target = "_top" }, ref) => {
+  ({ item, url, target = "_top", className }, ref) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
       useGetMediaQuery();
     const largeResolution = isLarge || isDesktop || isLaptop;
@@ -28,12 +28,11 @@ export const ItemOTCardUI = forwardRef<HTMLAnchorElement, TItemOTCardUIProps>(
       <li
         key={id}
         className={clsx(
-          styles["item-card"],
-          !active && styles["item-card_inactive"],
-          !isMobile && styles["item-card_animated"],
-          isLarge && styles["item-card_large"],
-          isDesktop && styles["item-card_desktop"],
-          isTablet && styles["item-card_tablet"]
+          styles["item-ot-card"],
+          isTablet && styles["item-ot-card_tablet"],
+          !active && styles["item-ot-card_inactive"],
+          !isMobile && styles["item-ot-card_animated"],
+          className && className
         )}
         style={
           {
@@ -43,9 +42,9 @@ export const ItemOTCardUI = forwardRef<HTMLAnchorElement, TItemOTCardUIProps>(
       >
         <Link
           className={clsx(
-            styles["item-card__link"],
-            largeResolution && styles["item-card__link_large-resolution"],
-            smallResolution && styles["item-card__link_small-resolution"]
+            styles["item-ot-card__link"],
+            largeResolution && styles["item-ot-card__link_large-resolution"],
+            smallResolution && styles["item-ot-card__link_small-resolution"]
           )}
           to={url.to}
           target={target}
@@ -58,20 +57,20 @@ export const ItemOTCardUI = forwardRef<HTMLAnchorElement, TItemOTCardUIProps>(
         >
           <div
             className={clsx(
-              styles["item-card__top"],
-              largeResolution && styles["item-card__top_large-resolution"],
-              smallResolution && styles["item-card__top_small-resolution"],
-              isTablet && styles["item-card__top_widthed"]
+              styles["item-ot-card__top"],
+              largeResolution && styles["item-ot-card__top_large-resolution"],
+              smallResolution && styles["item-ot-card__top_small-resolution"],
+              isTablet && styles["item-ot-card__top_widthed"]
             )}
           >
             <div
               className={clsx(
-                styles["item-card__image-container"],
-                isLarge && styles["item-card__image_large"],
-                isDesktop && styles["item-card__image_desktop"],
-                isLaptop && styles["item-card__image_laptop"],
-                isTablet && styles["item-card__image_tablet"],
-                isMobile && styles["item-card__image_mobile"]
+                styles["item-ot-card__image-container"],
+                isLarge && styles["item-ot-card__image_large"],
+                isDesktop && styles["item-ot-card__image_desktop"],
+                isLaptop && styles["item-ot-card__image_laptop"],
+                isTablet && styles["item-ot-card__image_tablet"],
+                isMobile && styles["item-ot-card__image_mobile"]
               )}
             >
               <img
@@ -91,12 +90,12 @@ export const ItemOTCardUI = forwardRef<HTMLAnchorElement, TItemOTCardUIProps>(
                   isMobile && "57.97vw"
                 )}
                 className={clsx(
-                  styles["item-card__image"],
-                  isLarge && styles["item-card__image_large"],
-                  isDesktop && styles["item-card__image_desktop"],
-                  isLaptop && styles["item-card__image_laptop"],
-                  isTablet && styles["item-card__image_tablet"],
-                  isMobile && styles["item-card__image_mobile"]
+                  styles["item-ot-card__image"],
+                  isLarge && styles["item-ot-card__image_large"],
+                  isDesktop && styles["item-ot-card__image_desktop"],
+                  isLaptop && styles["item-ot-card__image_laptop"],
+                  isTablet && styles["item-ot-card__image_tablet"],
+                  isMobile && styles["item-ot-card__image_mobile"]
                 )}
                 src={image}
                 alt="Изображение проекта"
@@ -119,12 +118,12 @@ export const ItemOTCardUI = forwardRef<HTMLAnchorElement, TItemOTCardUIProps>(
                 isMobile && "57.97vw"
               )}
               className={clsx(
-                styles["item-card__image"],
-                isLarge && styles["item-card__image_large"],
-                isDesktop && styles["item-card__image_desktop"],
-                isLaptop && styles["item-card__image_laptop"],
-                isTablet && styles["item-card__image_tablet"],
-                isMobile && styles["item-card__image_mobile"]
+                styles["item-ot-card__image"],
+                isLarge && styles["item-ot-card__image_large"],
+                isDesktop && styles["item-ot-card__image_desktop"],
+                isLaptop && styles["item-ot-card__image_laptop"],
+                isTablet && styles["item-ot-card__image_tablet"],
+                isMobile && styles["item-ot-card__image_mobile"]
               )}
             /> */}
             </div>
@@ -150,9 +149,10 @@ export const ItemOTCardUI = forwardRef<HTMLAnchorElement, TItemOTCardUIProps>(
           </div>
           <div
             className={clsx(
-              styles["item-card__bottom"],
-              largeResolution && styles["item-card__bottom_large-resolution"],
-              smallResolution && styles["item-card__bottom_small-resolution"]
+              styles["item-ot-card__bottom"],
+              largeResolution &&
+                styles["item-ot-card__bottom_large-resolution"],
+              smallResolution && styles["item-ot-card__bottom_small-resolution"]
             )}
           >
             <Text
@@ -176,7 +176,7 @@ export const ItemOTCardUI = forwardRef<HTMLAnchorElement, TItemOTCardUIProps>(
               lineHeight={28}
               textTransform={"none"}
               color={Colors.Dark100}
-              classNameExtra={styles["item-card__short-text"]}
+              classNameExtra={styles["item-ot-card__short-text"]}
             >
               {shortText}
             </Text>

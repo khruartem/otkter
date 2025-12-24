@@ -2,17 +2,17 @@ import { FC, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import clsx from "clsx";
 
-import { Page } from "../../page";
-import { InfoUI } from "../../../components/ui/pages/info copy";
+import { Page } from "../../components/page";
+import { InfoUI } from "../../components/ui/pages/info copy";
 
 import { TInfoProps } from "./types";
 
-import { Colors } from "../../../utils/types";
-import { TPageLayout, TPageSEO } from "../../page/type";
+import { Colors } from "../../utils/types";
+import { TPageLayout, TPageSEO } from "../../components/page/type";
 
-import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
+import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 
-import styles from "../../ui/pages/info copy/info.module.css";
+import styles from "../../components/ui/pages/info copy/info.module.css";
 
 export const Info: FC<TInfoProps> = ({ items, currentItem }) => {
   const location = useLocation();

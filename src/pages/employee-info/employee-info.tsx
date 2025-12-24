@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { Info } from "../../components/pages/info";
+import { Info } from "../info";
 import { NotFound404 } from "../not-found-404";
 
 import { useGetId } from "../../hooks/useGetId";

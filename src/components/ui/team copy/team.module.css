@@ -1,0 +1,15 @@
+.item-ot-list_team {
+  height: var(--height);
+}
+
+.item-ot-list_team_overflowed-y {
+  overflow-y: auto;
+}
+
+.item-ot-list_team_scrolled {
+  min-width: calc(100% + 14px);
+}
+
+.group-list_artists {
+  padding-inline: 0;
+}
