@@ -9,12 +9,14 @@ import {
 import { reducer as projectsReducer } from "../features/projects/projectsSlice";
 import { reducer as servicesReducer } from "../features/services/servicesSlice";
 import { reducer as teamReducer } from "../features/team/teamSlice";
+import { reducer as merchReducer } from "../features/merch/merchSlice";
 
 const store = configureStore({
   reducer: {
     projects: projectsReducer,
     services: servicesReducer,
     team: teamReducer,
+    merch: merchReducer,
   },
 });
 

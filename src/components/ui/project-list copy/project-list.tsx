@@ -25,7 +25,7 @@ export const ProjectListUI = React.forwardRef<
         <Project key={key} project={itemOT as TProject} />
       )}
       className={clsx(
-        (isTablet || isMobile) && styles["item-ot-list_project-list"]
+        (isTablet || isMobile) && styles["item-ot-list_projects"]
       )}
       ref={ref}
     />

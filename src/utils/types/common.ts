@@ -11,12 +11,10 @@ export type TSocials = {
   onClick?: () => void;
 };
 
-// export type TControlsLocation = "main" | "info";
 type TControlsType = "button" | "link";
 export type TControlsItem = {
   label: string;
   type: TControlsType;
-  // located: TControlsLocation;
   onClick: () => void;
   url: string;
   state?: object;
@@ -73,11 +71,10 @@ export type TCategoryIcon =
   | "attention";
 export type TCategories = {
   attention: boolean;
-  // colors: TCategoryColors;
   categoryList: TCategory[];
 };
 
-export type TItemOTKind = "projects" | "services" | "team";
+export type TItemOTKind = "projects" | "services" | "team" | "merch";
 export type TItemOTType = TProjectType | TServiceType | TEmployeeType;
 export type TItemOT = {
   id: number;
@@ -95,10 +92,4 @@ export type TItemOT = {
   controls?: TControlsItem[];
   main: boolean;
   active: boolean;
-  // type: TCardType;
-  // kind: TItemOTKind;
-  // url: TItemOTUrl;
-  // details: TDetails[]; - projects
-  // order?: number; - projects
-  // categories: TCategories; - projects
 };

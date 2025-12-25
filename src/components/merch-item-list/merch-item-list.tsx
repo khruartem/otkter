@@ -1,9 +1,13 @@
-// import { FC } from "react";
+import { FC } from "react";
 
-// import { TMerchItemListProps } from "./types";
+import { MerchItemListUI } from "../ui/merch-item-list";
 
-// export const MerchItemList: FC<TMerchItemListProps> = () => {
-//   const merchItems = useGetMerchItems();
+import { TMerchItemListProps } from "./types";
 
-//   return <MerchItemListUI merchItems={merchItems} />;
-// };
+import { useGetMerchItems } from "../../hooks/merch/useGetMerchItems";
+
+export const MerchItemList: FC<TMerchItemListProps> = () => {
+  const merchItems = useGetMerchItems("all");
+
+  return <MerchItemListUI merchItems={merchItems} />;
+};
