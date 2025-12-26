@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { ItemOTListUI } from "../items-ot-list";
-import { MerchItemUI } from "../merch-item";
+import { MerchItem } from "../../merch-item";
 
 import { TMerchItemListUIProps } from "./types";
 
@@ -14,7 +14,7 @@ export const MerchItemListUI: FC<TMerchItemListUIProps> = ({ merchItems }) => {
     <ItemOTListUI
       itemsOT={merchItems}
       renderItemOT={(itemOT, key) => (
-        <MerchItemUI key={key} item={itemOT as TMerch} />
+        <MerchItem key={key} item={itemOT as TMerch} />
       )}
       className={styles["item-ot-list_merch"]}
     />

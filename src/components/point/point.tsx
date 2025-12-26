@@ -3,7 +3,7 @@ import { FC, useEffect } from "react";
 import { PointUI } from "../ui/point";
 
 import { TPointProps } from "./types";
-import { usePaginatorContext } from "../../hooks/usePaginatorContext";
+import { usePaginatorContext } from "../../hooks/contexts/usePaginatorContext";
 
 export const Point: FC<TPointProps> = ({ current }) => {
   const { paginatorRef, index, length } = usePaginatorContext();

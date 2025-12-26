@@ -4,7 +4,7 @@ import { LayoutUI } from "../../components/ui/layouts/layout";
 
 import { TLayoutProps } from "./types";
 
-import { usePageContext } from "../../hooks/usePageContext";
+import { usePageContext } from "../../hooks/contexts/usePageContext";
 
 export const Layout: FC<TLayoutProps> = ({ children }) => {
   const { layout } = usePageContext();

@@ -6,7 +6,7 @@ import { TPhotoProps } from "./types";
 
 import { TItemOTKind } from "../../utils/types/common";
 
-import { usePhotoListContext } from "../../hooks/usePhotoListContext";
+import { usePhotoListContext } from "../../hooks/contexts/usePhotoListContext";
 
 export const Photo: FC<TPhotoProps> = ({ src }) => {
   const { itemKind } = usePhotoListContext();

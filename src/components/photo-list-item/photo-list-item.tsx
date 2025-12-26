@@ -7,7 +7,7 @@ import { TPhotoListItemProps } from "./types";
 import { TItemOTUrl } from "../../utils/types/common";
 
 import { useGetCode } from "../../hooks/useGetCode";
-import { usePhotoListContext } from "../../hooks/usePhotoListContext";
+import { usePhotoListContext } from "../../hooks/contexts/usePhotoListContext";
 
 export const PhotoListItem: FC<TPhotoListItemProps> = ({
   photoId,

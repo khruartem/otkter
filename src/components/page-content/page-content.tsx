@@ -1,4 +1,4 @@
-import { usePageContext } from "../../hooks/usePageContext";
+import { usePageContext } from "../../hooks/contexts/usePageContext";
 import { PageContentUI } from "../ui/page-content";
 
 export default function PageContent() {

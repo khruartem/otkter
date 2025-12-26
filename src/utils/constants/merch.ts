@@ -13,6 +13,14 @@ export const merchItems: TMerch[] = [
     kind: "merch",
     url: "regular-t-shirt-light",
     type: "cloths",
+    categories: {
+      attention: false,
+      categoryList: [
+        {
+          text: "Новинка",
+        },
+      ],
+    },
     title: "Футболка творца Открытой Территории",
     shortText:
       "Буквальная униформа всех наших творцов, призывающая объединять творческих людей. Плотный хлопок и контрастный взрыв фирменной айдентики.",

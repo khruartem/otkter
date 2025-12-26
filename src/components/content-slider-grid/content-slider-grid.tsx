@@ -54,7 +54,7 @@ import { FC } from "react";
 
 import { ContentSliderGridUI } from "../ui/content-slider-grid";
 
-import { useContentSliderContext } from "../../hooks/useContentSliderContext";
+import { useContentSliderContext } from "../../hooks/contexts/useContentSliderContext";
 
 export const ContentSliderGrid: FC = () => {
   const { tabs, onScrollItem } = useContentSliderContext();

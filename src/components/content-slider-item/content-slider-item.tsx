@@ -7,7 +7,7 @@ import { TContentSliderItemProps } from "./types";
 
 import { lockScroll } from "../../utils/lockScroll";
 
-import { useContentSliderContext } from "../../hooks/useContentSliderContext";
+import { useContentSliderContext } from "../../hooks/contexts/useContentSliderContext";
 import { TItemOTType } from "../../utils/types/common";
 
 export const ContentSliderItem: FC<TContentSliderItemProps> = ({ tab }) => {

@@ -4,7 +4,7 @@ import { TTabItemProps } from "./types";
 
 import { lockScroll } from "../../utils/lockScroll";
 
-import { useTabBarContext } from "../../hooks/useTabBarContext";
+import { useTabBarContext } from "../../hooks/contexts/useTabBarContext";
 
 export const TabItem: FC<TTabItemProps> = ({ tab, index }) => {
   const iconRef = useRef<HTMLLIElement>(null);

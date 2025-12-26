@@ -311,6 +311,7 @@ export enum Colors {
   Light30 = "#E6E6E6",
   Light20 = "#BFBFBF",
   Orange100 = "#FB8200",
+  Error100 = "#E70000",
   None = "transparent",
 }
 
