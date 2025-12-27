@@ -8,14 +8,19 @@
   background-color: var(--categoty-background-color);
 }
 
-.category_with-text {
+.category_icon-and-text {
   padding-left: 12px;
   padding-right: 16px;
   padding-block: 6px;
 }
 
-.category_without-text {
+.category_only-icon {
   padding: 8px;
+}
+
+.category_only-text {
+  padding-inline: 24px;
+  padding-block: 10px;
 }
 
 .category__text {

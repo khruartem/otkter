@@ -23,5 +23,5 @@ export type TextProps = {
   margin?: string;
   padding?: string;
   width?: number | string;
-  classNameExtra?: string;
+  className?: string;
 };

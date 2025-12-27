@@ -103,7 +103,7 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
             textTransform="uppercase"
             color={Colors.Navy}
             decorated
-            classNameExtra={clsx(
+            className={clsx(
               styles.title,
               isTablet || isMobile
                 ? styles["title_large-height"]

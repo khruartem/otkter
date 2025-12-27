@@ -85,7 +85,7 @@ export const ServiceUI = React.forwardRef<
             lineHeight={isLarge ? 48 : 40}
             textTransform={"none"}
             color={Colors.Navy}
-            classNameExtra={clsx(
+            className={clsx(
               styles["service__title"],
               (isTablet || isMobile) && styles["service__title_paddinged"],
               isTablet && styles["service__title_tablet"],
@@ -103,7 +103,7 @@ export const ServiceUI = React.forwardRef<
             lineHeight={shortTextLineHeight}
             color={Colors.Dark100}
             textTransform={"none"}
-            classNameExtra={clsx(
+            className={clsx(
               (isLaptop || isTablet || isMobile) &&
                 styles["service__text_overflowed"],
               isLaptop && styles["service__text_laptop"],

@@ -1,0 +1,44 @@
+.merch-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.merch-item__top {
+  background-color: var(--light80);
+  height: 384px;
+  padding: 20px;
+  border-radius: 40px;
+  position: relative;
+}
+
+.merch-item__bottom {
+  padding-inline: 20px;
+  padding-block-end: 20px;
+  max-height: 148px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Стили для разных разрешений экранов */
+.merch-item_large {
+  width: 20vw;
+}
+
+.merch-item_desktop {
+  width: 26.93vw;
+}
+
+.merch-item_laptop {
+  width: 29.30vw;
+}
+
+.merch-item_tablet {
+  width: 45.31vw;
+}
+
+.merch-item_mobile {
+  width: 100%;
+}

@@ -38,7 +38,7 @@ export const InfoTitleUI: FC<TInfoTitleUIProps> = ({
             lineHeight={largeResolution ? 48 : 40}
             textTransform={"none"}
             color={color}
-            classNameExtra={clsx(
+            className={clsx(
               (isLarge || isDesktop || isLaptop) && styles.title
             )}
           >
@@ -53,7 +53,7 @@ export const InfoTitleUI: FC<TInfoTitleUIProps> = ({
             lineHeight={largeResolution ? 32 : 20}
             textTransform={"none"}
             color={Colors.Nephritis100}
-            classNameExtra={clsx(
+            className={clsx(
               styles["extra-title"],
               (isDesktop || isLaptop || isMobile) &&
                 styles["extra-title_not-bordered"]
@@ -72,7 +72,7 @@ export const InfoTitleUI: FC<TInfoTitleUIProps> = ({
           lineHeight={largeResolution ? 48 : 40}
           textTransform={"none"}
           color={color}
-          classNameExtra={clsx(
+          className={clsx(
             (isLarge || isDesktop || isLaptop) && styles.title
           )}
         >

@@ -176,7 +176,7 @@ export const ItemOTCardUI = forwardRef<HTMLAnchorElement, TItemOTCardUIProps>(
               lineHeight={28}
               textTransform={"none"}
               color={Colors.Dark100}
-              classNameExtra={styles["item-ot-card__short-text"]}
+              className={styles["item-ot-card__short-text"]}
             >
               {shortText}
             </Text>

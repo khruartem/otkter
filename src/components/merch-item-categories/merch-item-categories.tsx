@@ -1,12 +1,15 @@
 import { FC } from "react";
+
+import { MerchItemCategoriesUI } from "../ui/merch-item-categories";
+
 import { Colors } from "../../utils/types";
+
 import { useMerchItemCotext } from "../../hooks/contexts/useMerchItemCotext";
-import { CategoryListUI } from "../ui/category-list copy";
 
 export const MerchItemCategories: FC = () => {
   const item = useMerchItemCotext();
 
-  const categoriesColors = {
+  const colors = {
     icon: Colors.Light100,
     background: Colors.Error100,
     text: Colors.Light100,
@@ -14,7 +17,7 @@ export const MerchItemCategories: FC = () => {
 
   return (
     item?.categories && (
-      <CategoryListUI categories={item.categories} colors={categoriesColors} />
+      <MerchItemCategoriesUI categories={item.categories} colors={colors} />
     )
   );
 };

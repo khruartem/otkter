@@ -7,6 +7,7 @@ import { Projects } from "../../../../sections/projects copy";
 import { Services } from "../../../../sections/services copy";
 import { Teams } from "../../../../sections/teams copy";
 import { Contacts } from "../../../../sections/contacts";
+import { MerchItemList } from "../../../merch-item-list";
 
 export const MainUI: FC = () => {
   return (
@@ -18,6 +19,7 @@ export const MainUI: FC = () => {
       <Teams />
       <Contacts />
       <Partners />
+      <MerchItemList type="all" />
     </>
   );
 };

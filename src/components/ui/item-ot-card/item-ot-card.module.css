@@ -59,13 +59,10 @@
   z-index: 1;
   border-radius: 100px;
   padding: 4px;
-  background-color: var(--light60);
-}
-
-.category-list_projects label {
   font-family: Roboto, serif;
   font-size: 16px;
   line-height: 28px;
+  background-color: var(--light60);
 }
 
 /* item-ot-card__bottom */

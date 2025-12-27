@@ -6,8 +6,8 @@ import { TMerchItemListProps } from "./types";
 
 import { useGetMerchItems } from "../../hooks/merch/useGetMerchItems";
 
-export const MerchItemList: FC<TMerchItemListProps> = () => {
-  const merchItems = useGetMerchItems("all");
+export const MerchItemList: FC<TMerchItemListProps> = ({ type }) => {
+  const merchItems = useGetMerchItems(type);
 
   return <MerchItemListUI merchItems={merchItems} />;
 };

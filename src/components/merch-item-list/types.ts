@@ -1,6 +1,7 @@
+import { TMerchType } from "../../utils/types/merch";
+
 export type TMerchItemListProps = {
-  merchItemListRef: React.RefObject<HTMLDivElement> | undefined;
-  merchItemListViewRef:
-    | ((node?: Element | null | undefined) => void)
-    | undefined;
+  type: TMerchType;
+  merchItemListRef?: React.RefObject<HTMLDivElement>;
+  merchItemListViewRef?: (node?: Element | null | undefined) => void;
 };

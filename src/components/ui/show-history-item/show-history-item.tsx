@@ -38,7 +38,7 @@ export const ShowHistoryItemUI: FC<TShowHistoryItemUIProps> = ({
         lineHeight={28}
         textTransform={"none"}
         color={current ? Colors.Nephritis100 : Colors.Light20}
-        classNameExtra={styles.where}
+        className={styles.where}
       >
         {where}
       </Text>

@@ -4,11 +4,10 @@ import { Page } from "../../components/page";
 import { MainUI } from "../../components/ui/pages/main";
 
 import { TPageLayout, TPageSEO } from "../../components/page/type";
-import { Colors } from "../../utils/types";
 
 export const Main: FC = () => {
   useEffect(() => {
-    document.body.style.backgroundColor = Colors.Light80;
+    document.body.removeAttribute("style");
   }, []);
 
   const seo: TPageSEO = {

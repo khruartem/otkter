@@ -1,0 +1,15 @@
+.merch-item__colors-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20px);
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+.merch-item__colors-list li {
+  transition: translate 200ms;
+}
+
+.merch-item__colors-list li:hover~li {
+  translate: 20px;
+}

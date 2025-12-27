@@ -6,6 +6,8 @@ import { TMerchItemTitleUIProps } from "./types";
 
 import { Colors } from "../../../utils/types";
 
+import styles from "./merch-item-title.module.css";
+
 export const MerchItemTitleUI: FC<TMerchItemTitleUIProps> = ({ title }) => {
   return (
     <Text
@@ -16,6 +18,7 @@ export const MerchItemTitleUI: FC<TMerchItemTitleUIProps> = ({ title }) => {
       lineHeight={32}
       textTransform={"none"}
       color={Colors.Navy}
+      className={styles["merch-item__title"]}
     >
       {title}
     </Text>

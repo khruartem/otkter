@@ -26,7 +26,7 @@ export const InfoTextUI: FC<TInfoTextUIProps> = ({ text }) => {
       lineHeight={smallResolution ? 24 : 32}
       textTransform={"none"}
       color={Colors.Dark100}
-      classNameExtra={clsx(
+      className={clsx(
         styles["info-text"],
         isLarge && styles["info-text_large"],
         isDesktop && styles["info-text_desktop"],

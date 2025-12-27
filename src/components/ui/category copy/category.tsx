@@ -12,13 +12,25 @@ export const CategoryUI: FC<TCategoryUIProps> = ({
   colors,
   className,
 }) => {
+  const setCategoryStyle = (text?: string, icon?: string) => {
+    if (text && icon) {
+      return styles["category_icon-and-text"];
+    }
+
+    if (!text && icon) {
+      return styles["category_only-icon"];
+    }
+
+    if (text && !icon) {
+      return styles["category_only-text"];
+    }
+  };
+
   return (
     <div
       className={clsx(
         styles.category,
-        category?.text
-          ? styles["category_with-text"]
-          : styles["category_without-text"],
+        setCategoryStyle(category?.text, category?.icon),
         className && className
       )}
       style={
