@@ -2,29 +2,12 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-}
-
-.merch-item__top {
-  background-color: var(--light80);
-  height: 384px;
-  padding: 20px;
-  border-radius: 40px;
-  position: relative;
-}
-
-.merch-item__bottom {
-  padding-inline: 20px;
-  padding-block-end: 20px;
-  max-height: 148px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 /* Стили для разных разрешений экранов */
 .merch-item_large {
   width: 20vw;
+  max-width: 384px;
 }
 
 .merch-item_desktop {

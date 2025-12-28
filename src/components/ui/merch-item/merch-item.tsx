@@ -1,11 +1,8 @@
 import { FC } from "react";
 import clsx from "clsx";
 
-import { MerchItemCategories } from "../../merch-item-categories";
-import { MerchItemColors } from "../../merch-item-colors";
-import { MerchItemImage } from "../../merch-item-image";
-import { MerchItemTitle } from "../../merch-item-title";
-import { MerchItemPrice } from "../../merch-item-price";
+import { MerchItemTopUI } from "../merch-item-top";
+import { MerchItemBottomUI } from "../merch-item-bottom";
 
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
@@ -26,15 +23,8 @@ export const MerchItemUI: FC = () => {
         isMobile && styles["merch-item_mobile"]
       )}
     >
-      <div className={styles["merch-item__top"]}>
-        <MerchItemCategories />
-        <MerchItemColors />
-        <MerchItemImage />
-      </div>
-      <div className={styles["merch-item__bottom"]}>
-        <MerchItemTitle />
-        <MerchItemPrice />
-      </div>
+      <MerchItemTopUI />
+      <MerchItemBottomUI />
     </div>
   );
 };
