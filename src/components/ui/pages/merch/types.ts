@@ -1,6 +1,5 @@
-import { TPageLayout } from "../../../page/type";
-import { TSEOUIProps } from "../../seo/types";
+import { TPageLayout, TPageSEO } from "../../../page/type";
 
 export type TMerchUIProps = {
-  pageProps: { seo: TSEOUIProps; layout: TPageLayout };
+  pageProps: { seo: TPageSEO; layout: TPageLayout };
 };
