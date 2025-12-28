@@ -1,7 +1,6 @@
 import { FC } from "react";
 
-import { Info } from "../info";
-import { NotFound404 } from "../not-found-404";
+import { InfoRenderer } from "../info-renderer";
 
 import { useGetId } from "../../hooks/useGetId";
 import { useGetTeams } from "../../hooks/team/useGetTeams";
@@ -12,9 +11,5 @@ export const EmployeeInfo: FC = () => {
   const teams = useGetTeams("admins")!;
   const employee = useGetEmployee(employeeId);
 
-  return employee ? (
-    <Info currentItem={employee} items={teams} />
-  ) : (
-    <NotFound404 />
-  );
+  return <InfoRenderer items={teams} currentItem={employee} />;
 };

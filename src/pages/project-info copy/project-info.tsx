@@ -1,7 +1,6 @@
 import { FC } from "react";
 
-import { Info } from "../info";
-import { NotFound404 } from "../not-found-404";
+import { InfoRenderer } from "../info-renderer";
 
 import { useGetId } from "../../hooks/useGetId";
 import { useGetProject } from "../../hooks/projects/useGetProject";
@@ -14,9 +13,5 @@ export const ProjectInfo: FC = () => {
   const sortedProjects = useSortAsc(projects, "order");
   const project = useGetProject(projectId);
 
-  return project ? (
-    <Info currentItem={project} items={sortedProjects} />
-  ) : (
-    <NotFound404 />
-  );
+  return <InfoRenderer items={sortedProjects} currentItem={project} />;
 };

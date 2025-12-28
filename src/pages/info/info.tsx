@@ -1,8 +1,6 @@
 import { FC, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import clsx from "clsx";
 
-import { Page } from "../../components/page";
 import { InfoUI } from "../../components/ui/pages/info copy";
 
 import { TInfoProps } from "./types";
@@ -10,14 +8,8 @@ import { TInfoProps } from "./types";
 import { Colors } from "../../utils/types";
 import { TPageLayout, TPageSEO } from "../../components/page/type";
 
-import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
-
-import styles from "../../components/ui/pages/info copy/info.module.css";
-
 export const Info: FC<TInfoProps> = ({ items, currentItem }) => {
   const location = useLocation();
-
-  const { isLaptop, isDesktop } = useGetMediaQuery();
 
   const { id, kind, title, shortText, previewImg, url, main } = currentItem;
 
@@ -44,23 +36,15 @@ export const Info: FC<TInfoProps> = ({ items, currentItem }) => {
 
   const layout: TPageLayout = {
     noPadding: false,
-    className: clsx(
-      !currentItem?.details &&
-        (isLaptop || isDesktop) &&
-        styles["main_info-details"]
-    ),
   };
 
   return (
-    <Page seo={seo} layout={layout}>
-      <InfoUI
-        currentItem={currentItem}
-        currentIndex={items.findIndex(
-          (element) => element.id === currentItem.id
-        )}
-        items={items}
-        color={itemColor}
-      />
-    </Page>
+    <InfoUI
+      currentItem={currentItem}
+      currentIndex={items.findIndex((element) => element.id === currentItem.id)}
+      items={items}
+      color={itemColor}
+      pageProps={{ seo, layout }}
+    />
   );
 };

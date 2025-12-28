@@ -1,9 +1,5 @@
-// import React from "react";
+import { TPageLayout, TPageSEO } from "../../../page/type";
 
-// export type TMainUIProps = {
-//   aboutRef: React.RefObject<HTMLElement>;
-//   servicesRef: React.RefObject<HTMLElement>;
-//   projectsRef: React.RefObject<HTMLElement>;
-//   teamsRef: React.RefObject<HTMLElement>;
-//   contactsRef: React.RefObject<HTMLElement>;
-// };
+export type TMainUIProps = {
+  pageProps: { seo: TPageSEO; layout: TPageLayout };
+};

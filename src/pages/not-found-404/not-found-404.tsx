@@ -1,14 +1,11 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Preloader } from "../../components/ui/preloader";
 import { ErrorUI } from "../../components/ui/pages/error";
 
-export const NotFound404: FC = () => {
-  const [docReadyState, setDocReadyState] = useState<DocumentReadyState | null>(
-    null
-  );
+import { TPageLayout, TPageSEO } from "../../components/page/type";
 
+export const NotFound404: FC = () => {
   const navigate = useNavigate();
 
   const title = "Страница не найдена";
@@ -19,18 +16,25 @@ export const NotFound404: FC = () => {
     navigate("/");
   };
 
-  useEffect(() => {
-    setDocReadyState(document.readyState);
-  }, [docReadyState]);
+  const seo: TPageSEO = {
+    title,
+    description: text,
+    siteName: title,
+    url: "https://otkter.ru/",
+    previewImg: "/preview/preview.webp",
+  };
 
-  return docReadyState ? (
+  const layout: TPageLayout = {
+    noPadding: false,
+  };
+
+  return (
     <ErrorUI
       title={title}
       text={text}
       buttonLabel={buttonLabel}
       onButtonClick={handleClick}
+      pageProps={{ seo, layout }}
     />
-  ) : (
-    <Preloader />
   );
 };

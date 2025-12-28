@@ -20,15 +20,20 @@ import { TService } from "../../../../utils/types/services";
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 
 import styles from "./info.module.css";
+import { Page } from "../../../page";
+import { Section } from "../../../section";
 
 export const InfoUI: FC<TInfoUIProps> = ({
   currentItem,
   currentIndex,
   items,
   color,
+  pageProps,
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
+
+  const { seo, layout } = pageProps;
 
   const renderInfoCTA = (item: TProject | TService | TEmployee) => {
     if (item.kind === "projects") {
@@ -56,92 +61,104 @@ export const InfoUI: FC<TInfoUIProps> = ({
   };
 
   return (
-    <>
-      <InfoNavigationUI
-        currentItem={currentItem}
-        currentIndex={currentIndex}
-        items={items}
-        tabsGap={clsx(
-          isLarge && "1.012vw",
-          isDesktop && "0.857vw",
-          isLaptop && "1.0635vw",
-          isTablet && "6.0274vw",
-          isMobile && "1.69vw"
-        )}
-      />
-      <div
-        className={clsx(
-          styles["info-content"],
-          (isLarge || isDesktop) && styles["info-content_middle-gap"],
-          isLaptop && styles["info-content_small-gap"],
-          (isTablet || isMobile) && styles["info-content_large-gap"]
-        )}
-      >
+    <Page
+      seo={seo}
+      layout={{
+        ...layout,
+        className: clsx(
+          !currentItem?.details &&
+            (isLaptop || isDesktop) &&
+            styles["main_info-details"]
+        ),
+      }}
+    >
+      <Section>
+        <InfoNavigationUI
+          currentItem={currentItem}
+          currentIndex={currentIndex}
+          items={items}
+          tabsGap={clsx(
+            isLarge && "1.012vw",
+            isDesktop && "0.857vw",
+            isLaptop && "1.0635vw",
+            isTablet && "6.0274vw",
+            isMobile && "1.69vw"
+          )}
+        />
         <div
           className={clsx(
-            styles["info-about"],
-            isLaptop && styles["info-about_laptop"],
-            (isTablet || isMobile) && styles["info-about_small-resolution"]
+            styles["info-content"],
+            (isLarge || isDesktop) && styles["info-content_middle-gap"],
+            isLaptop && styles["info-content_small-gap"],
+            (isTablet || isMobile) && styles["info-content_large-gap"]
           )}
         >
           <div
             className={clsx(
-              styles["info-core"],
-              isLarge && styles["info-core_lagre"],
-              isDesktop && styles["info-core_desktop"],
-              isLaptop && styles["info-core_laptop"],
-              isLaptop &&
-                !currentItem?.poster &&
-                styles["info-core_laptop_spaned"],
-              isTablet && styles["info-core_tablet"],
-              isMobile && styles["info-core_mobile"]
+              styles["info-about"],
+              isLaptop && styles["info-about_laptop"],
+              (isTablet || isMobile) && styles["info-about_small-resolution"]
             )}
           >
             <div
               className={clsx(
-                styles["info-description"],
-                isLarge
-                  ? styles["info-description_large-resolution"]
-                  : styles["info-description_small-resolution"]
+                styles["info-core"],
+                isLarge && styles["info-core_lagre"],
+                isDesktop && styles["info-core_desktop"],
+                isLaptop && styles["info-core_laptop"],
+                isLaptop &&
+                  !currentItem?.poster &&
+                  styles["info-core_laptop_spaned"],
+                isTablet && styles["info-core_tablet"],
+                isMobile && styles["info-core_mobile"]
               )}
             >
-              <InfoTitleUI
-                title={currentItem.title}
-                extraTitle={currentItem.extraText}
-                color={color}
-              />
-              {currentItem?.text ? (
-                <InfoTextUI text={currentItem.text} />
-              ) : (
-                <InfoTextUI text={currentItem.shortText} />
-              )}
-              {currentItem?.photos && (
-                <PhotoList
-                  itemKind={currentItem.kind}
-                  photos={currentItem.photos}
+              <div
+                className={clsx(
+                  styles["info-description"],
+                  isLarge
+                    ? styles["info-description_large-resolution"]
+                    : styles["info-description_small-resolution"]
+                )}
+              >
+                <InfoTitleUI
+                  title={currentItem.title}
+                  extraTitle={currentItem.extraText}
+                  color={color}
                 />
-              )}
+                {currentItem?.text ? (
+                  <InfoTextUI text={currentItem.text} />
+                ) : (
+                  <InfoTextUI text={currentItem.shortText} />
+                )}
+                {currentItem?.photos && (
+                  <PhotoList
+                    itemKind={currentItem.kind}
+                    photos={currentItem.photos}
+                  />
+                )}
+              </div>
+              {!isLaptop && renderInfoCTA(currentItem)}
             </div>
-            {!isLaptop && renderInfoCTA(currentItem)}
+            {currentItem?.poster && (
+              <InfoPosterUI
+                poster={currentItem.poster}
+                className={clsx(
+                  currentItem.kind === "services" &&
+                    styles["info-poster_services"]
+                )}
+              />
+            )}
+            {isLaptop && renderInfoCTA(currentItem)}
           </div>
-          {currentItem?.poster && (
-            <InfoPosterUI
-              poster={currentItem.poster}
-              className={clsx(
-                currentItem.kind === "services" &&
-                  styles["info-poster_services"]
-              )}
+          {currentItem?.details && currentItem?.categories && (
+            <DetailsGrid
+              details={currentItem.details}
+              categories={currentItem.categories}
             />
           )}
-          {isLaptop && renderInfoCTA(currentItem)}
         </div>
-        {currentItem?.details && currentItem?.categories && (
-          <DetailsGrid
-            details={currentItem.details}
-            categories={currentItem.categories}
-          />
-        )}
-      </div>
-    </>
+      </Section>
+    </Page>
   );
 };

@@ -1,6 +1,5 @@
 import { FC, useEffect } from "react";
 
-import { Page } from "../../components/page";
 import { MainUI } from "../../components/ui/pages/main";
 
 import { TPageLayout, TPageSEO } from "../../components/page/type";
@@ -25,9 +24,5 @@ export const Main: FC = () => {
     animatedHeader: true,
   };
 
-  return (
-    <Page seo={seo} layout={layout}>
-      <MainUI />
-    </Page>
-  );
+  return <MainUI pageProps={{ seo, layout }} />;
 };

@@ -1,29 +1,35 @@
 import { FC } from "react";
+import clsx from "clsx";
 
-import { Header } from "../../../../sections/header";
+import { Page } from "../../../page";
+import { Section } from "../../../section";
+import { Button } from "../../../button";
+import { Error } from "../../../icons/icons";
 import { Text } from "../../../text";
 
 import { TErrorUIProps } from "./types";
-import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
+
 import { Colors } from "../../../../utils/types";
 
+import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
+
 import styles from "./error.module.css";
-import { Error } from "../../../icons/icons";
-import { Button } from "../../../button";
-import clsx from "clsx";
 
 export const ErrorUI: FC<TErrorUIProps> = ({
   title,
   text,
   buttonLabel,
   onButtonClick,
+  pageProps,
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
+
+  const { seo, layout } = pageProps;
+
   return (
-    <>
-      <Header />
-      <main className={styles.error__main}>
+    <Page seo={seo} layout={{ ...layout, className: styles.main_error }}>
+      <Section padding={"top"}>
         <div
           className={clsx(
             styles.error__content,
@@ -80,7 +86,7 @@ export const ErrorUI: FC<TErrorUIProps> = ({
             {buttonLabel}
           </Button>
         </div>
-      </main>
-    </>
+      </Section>
+    </Page>
   );
 };

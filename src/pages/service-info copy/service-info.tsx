@@ -1,7 +1,6 @@
 import { FC } from "react";
 
-import { Info } from "../info";
-import { NotFound404 } from "../not-found-404";
+import { InfoRenderer } from "../info-renderer";
 
 import { useGetId } from "../../hooks/useGetId";
 import { useGetServices } from "../../hooks/services/useGetServices";
@@ -14,9 +13,5 @@ export const ServiceInfo: FC = () => {
   const sortedServices = useSortAsc(services, "order");
   const service = useGetService(serviceId);
 
-  return service ? (
-    <Info currentItem={service} items={sortedServices} />
-  ) : (
-    <NotFound404 />
-  );
+  return <InfoRenderer items={sortedServices} currentItem={service} />;
 };

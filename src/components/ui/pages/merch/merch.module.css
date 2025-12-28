@@ -1,0 +1,19 @@
+.main_large-margin {
+  margin-block-end: 60px;
+}
+
+.main_small-margin {
+  margin-block-end: 44px;
+}
+
+.section_merch {
+  padding-block: 132px;
+}
+
+.section_large-gap {
+  gap: 60px;
+}
+
+.section_small-gap {
+  gap: 44px;
+}

@@ -13,7 +13,7 @@ export const MerchItemUI: FC = () => {
     useGetMediaQuery();
 
   return (
-    <div
+    <li
       className={clsx(
         styles["merch-item"],
         isLarge && styles["merch-item_large"],
@@ -25,6 +25,6 @@ export const MerchItemUI: FC = () => {
     >
       <MerchItemTopUI />
       <MerchItemBottomUI />
-    </div>
+    </li>
   );
 };

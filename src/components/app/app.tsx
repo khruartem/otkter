@@ -8,6 +8,7 @@ import { ProjectInfo } from "../../pages/project-info copy";
 import { ServiceInfo } from "../../pages/service-info copy";
 import { EmployeeInfo } from "../../pages/employee-info";
 import { NotFound404 } from "../../pages/not-found-404";
+import { Merch } from "../../pages/merch";
 
 export function App() {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ export function App() {
       <Routes>
         <Route path={"/"} element={<Main />} />
         <Route path="/projects/all" element={<AllProjects />} />
+        <Route path="/merch" element={<Merch />} />
         <Route path={"/projects/:code"} element={<ProjectInfo />} />
         <Route path={"/services/:code"} element={<ServiceInfo />} />
         <Route path={"/team/admins/:code"} element={<EmployeeInfo />} />

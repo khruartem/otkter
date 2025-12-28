@@ -2,7 +2,6 @@ import { FC, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import clsx from "clsx";
 
-import { Page } from "../../components/page";
 import { AllProjectsUI } from "../../components/ui/pages/all-projects";
 import { IconTab } from "../../components/icon-tab";
 import { ProjectTab } from "../../components/project-tab";
@@ -13,8 +12,6 @@ import { TPageLayout, TPageSEO } from "../../components/page/type";
 
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 import { useGetProjects } from "../../hooks/projects/useGetProjects";
-
-import styles from "../../components/ui/pages/all-projects/all-projects.module.css";
 
 export const AllProjects: FC = () => {
   const location = useLocation();
@@ -54,12 +51,13 @@ export const AllProjects: FC = () => {
 
   const layout: TPageLayout = {
     noPadding: true,
-    className: styles["main_all-projects"],
   };
 
   return (
-    <Page seo={seo} layout={layout}>
-      <AllProjectsUI projects={projects} tabBarProps={tabBarProps} />
-    </Page>
+    <AllProjectsUI
+      projects={projects}
+      tabBarProps={tabBarProps}
+      pageProps={{ seo, layout }}
+    />
   );
 };
