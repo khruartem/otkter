@@ -5,4 +5,5 @@ export type TCtaUIProps = {
   controls: TControlsItem[];
   kind: TItemOTKind;
   children: ReactNode;
+  className?: string;
 };

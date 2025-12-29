@@ -1,13 +1,8 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 
 import { TabBarContext } from "./tab-bar-context";
 
-import { TTabBarCotextValue } from "./types";
-
-type TTabBarProviderProps = {
-  children: ReactNode;
-  value: TTabBarCotextValue;
-};
+import { TTabBarProviderProps } from "./types";
 
 export const TabBarProvider: FC<TTabBarProviderProps> = ({
   value,

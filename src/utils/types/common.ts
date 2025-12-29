@@ -2,6 +2,7 @@ import { TProjectsUrl, TProjectType } from "./projects";
 import { TServicesUrl, TServiceType } from "./services";
 import { TAdminsUrl, TEmployee, TEmployeeType } from "./team";
 import { Colors } from "../types";
+import { TMerchUrl } from "./merch";
 
 export type TSocialsType = "telegram" | "vk";
 export type TSocials = {
@@ -26,6 +27,7 @@ export type TItemOTUrl =
   | TProjectsUrl
   | TServicesUrl
   | TAdminsUrl
+  | TMerchUrl
   | TUrlNotFound;
 
 export type TPhoto = {

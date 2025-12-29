@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: column;
   gap: 64px;
-  overflow-y: hidden;
   height: 100%;
+  overflow-y: hidden;
 }
 
 .past-shows-block_limited-heigh {
@@ -47,15 +47,15 @@
 
 .past-shows_faded::before {
   content: "";
+  position: absolute;
+  /* top: 23%; */
+  bottom: 0;
+  left: 0;
   display: block;
   width: 100%;
   /* height: 79%; */
   height: 15%;
-  position: absolute;
   background: linear-gradient(360deg, #FDFDFD 0%, rgba(253, 253, 253, 0) 100%);
-  /* top: 23%; */
-  bottom: 0;
-  left: 0;
 }
 
 .show-history-item_width {
@@ -63,44 +63,20 @@
 }
 
 /* Стили для разных разрешений экранов */
-/* modal_show-history */
-.modal_show-history_large {
-  padding-inline: 8.12vw;
-  padding-bottom: 5.21vw;
-}
-
-.modal_show-history_desktop {
-  padding-inline: 7.83vw;
-  padding-bottom: 4.39vw;
-}
-
-.modal_show-history_laptop {
-  padding: 4.10vw;
-}
-
-.modal_show-history_tablet {
-  padding: 3.91vw;
-}
-
-.modal_show-history_mobile {
-  padding-inline: 3.86vw;
-  padding-block: 5.80vw;
-}
-
 /* show-history */
 .show-history_large {
   padding-block-start: 3.33vw;
 }
 
 .show-history_laptop {
-  height: 74.61vw;
   justify-content: space-between;
+  height: 74.61vw;
   overflow-y: auto;
 }
 
 .show-history_tablet {
-  height: 99.48vw;
   justify-content: space-between;
+  height: 99.48vw;
   overflow-y: auto;
 }
 
@@ -123,4 +99,9 @@
 
 .show-history-item_mobile {
   width: 100%;
+}
+
+/* cta */
+.cta_desktop {
+  flex-direction: row;
 }

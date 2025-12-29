@@ -1,6 +1,9 @@
-import { getEmployeeSelector } from "../../features/team/teamSlice";
-import { RootState, useSelector } from "../../services/store";
+import { useGetEmployeeById } from "./useGetEmployeeById";
+import { useGetEmployeeByUrl } from "./useGetEmployeeByUrl";
 
-export const useGetEmployee = (id: number) => {
-  return useSelector((state: RootState) => getEmployeeSelector(state, id));
+export const useGetEmployee = (id?: number) => {
+  const foundEmployeeById = useGetEmployeeById(id);
+  const foundEmployeeByUrl = useGetEmployeeByUrl();
+
+  return id ? foundEmployeeById : foundEmployeeByUrl;
 };

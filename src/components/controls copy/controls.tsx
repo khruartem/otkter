@@ -5,11 +5,21 @@ import { FreeUI } from "../ui/free";
 
 import { TControlsProps } from "./types";
 
-import { useGetId } from "../../hooks/useGetId";
+import { useGetCode } from "../../hooks/useGetCode";
 
 export const Controls: FC<TControlsProps> = ({ controls, kind }) => {
-  const extraInfo =
-    useGetId() === 1 && kind === "services" ? <FreeUI /> : undefined;
+  const serviceUrl = useGetCode();
+  const extraInfo = serviceUrl === "open-sea" ? <FreeUI /> : undefined;
 
-  return <ControlsUI controls={controls} extraInfo={extraInfo} kind={kind} />;
+  return (
+    <ControlsUI
+      controls={
+        serviceUrl === "open-sea" || serviceUrl === "lamp"
+          ? controls.filter((control) => control.type === "button")
+          : controls
+      }
+      extraInfo={extraInfo}
+      kind={kind}
+    />
+  );
 };

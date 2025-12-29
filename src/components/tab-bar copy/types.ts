@@ -3,6 +3,7 @@ import { TService } from "../../utils/types/services";
 import { TItemOTType } from "../../utils/types/common";
 import { TTabBarStyle, TTabsGap } from "../../utils/types";
 import { TEmployee } from "../../utils/types/team";
+import { ReactNode } from "react";
 
 export type TTabBarCotextValue = {
   tabs: TProject[] | TService[] | TEmployee[] | TItemOTType[];
@@ -27,4 +28,9 @@ export type TTabBarCotextValue = {
 
 export type TTabBarProps = {
   contextValue: TTabBarCotextValue;
+};
+
+export type TTabBarProviderProps = {
+  children: ReactNode;
+  value: TTabBarCotextValue;
 };

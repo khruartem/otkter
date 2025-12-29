@@ -36,27 +36,18 @@ export const InfoUI: FC<TInfoUIProps> = ({
   const { seo, layout } = pageProps;
 
   const renderInfoCTA = (item: TProject | TService | TEmployee) => {
-    if (item.kind === "projects") {
-      if (item?.controls && !item?.showHistory) {
-        return <Controls controls={item.controls} kind={item.kind} />;
-      } else if (item?.controls && item?.showHistory) {
-        return (
-          <CtaUI controls={item.controls} kind={item.kind}>
-            <ShowHistoryPreview
-              history={item.showHistory}
-              controls={item.controls}
-            />
-          </CtaUI>
-        );
-      } else if (!item?.controls && !item?.showHistory) {
-        return undefined;
-      }
+    if (item.kind === "projects" && item?.controls) {
+      return (
+        <CtaUI controls={item.controls} kind={"projects"}>
+          {item.kind === "projects" && item?.showHistory && (
+            <ShowHistoryPreview history={item.showHistory} />
+          )}
+        </CtaUI>
+      );
     } else {
-      if (item?.controls) {
-        return <Controls controls={item.controls} kind={item.kind} />;
-      } else {
-        return undefined;
-      }
+      return (
+        item?.controls && <Controls controls={item.controls} kind={item.kind} />
+      );
     }
   };
 

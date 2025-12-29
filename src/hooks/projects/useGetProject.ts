@@ -1,6 +1,9 @@
-import { getProjectSelector } from "../../features/projects/projectsSlice";
-import { useSelector, RootState } from "../../services/store";
+import { useGetProjectById } from "./useGetProjectById";
+import { useGetProjectByUrl } from "./useGetProjectByUrl";
 
-export const useGetProject = (id: number) => {
-  return useSelector((state: RootState) => getProjectSelector(state, id));
+export const useGetProject = (id?: number) => {
+  const foundProjectById = useGetProjectById(id);
+  const foundProjectByUrl = useGetProjectByUrl();
+
+  return id ? foundProjectById : foundProjectByUrl;
 };

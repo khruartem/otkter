@@ -89,7 +89,11 @@ export const ShowHistoryUI: FC<TShowHistoryUIProps> = ({
           ))}
         </ul>
       </div>
-      <CtaUI controls={controls} kind="projects">
+      <CtaUI
+        controls={controls}
+        kind="projects"
+        className={clsx(isDesktop && styles["cta_desktop"])}
+      >
         <ShowHistoryItemUI current item={currentShow} />
       </CtaUI>
     </div>

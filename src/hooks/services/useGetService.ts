@@ -1,6 +1,9 @@
-import { getServiceSelector } from "../../features/services/servicesSlice";
-import { useSelector, RootState } from "../../services/store";
+import { useGetServiceById } from "./useGetServiceById";
+import { useGetServiceByUrl } from "./useGetServiceByUrl";
 
-export const useGetService = (id: number) => {
-  return useSelector((state: RootState) => getServiceSelector(state, id));
+export const useGetService = (id?: number) => {
+  const foundServiceById = useGetServiceById(id);
+  const foundServiceByUrl = useGetServiceByUrl();
+
+  return id ? foundServiceById : foundServiceByUrl;
 };
