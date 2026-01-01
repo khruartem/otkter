@@ -1,7 +1,7 @@
 name: CI -> Deploy to My website
 on:
   push:
-    branches: [gh-pages]
+    branches: [feature/refactoring]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,8 +10,8 @@ jobs:
         working-directory: ./
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Symfony
-        run: ls
+      - name: Install dependencies and build
+        run: npm run build
       # Here is the deployment action
       - name: Upload from public_html via FTP
         uses: airvzxf/ftp-deployment-action@latest
