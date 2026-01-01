@@ -1,7 +1,7 @@
-name: CI -> Deploy to My website
+name: CI -> Deploy to hosting
 on:
   push:
-    branches: [feature/refactoring]
+    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,4 +22,5 @@ jobs:
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local_dir: "./dist"
-          remote_dir: "/deploy"
+          remote_dir: "/otkter.ru/docs"
+          delete: true
