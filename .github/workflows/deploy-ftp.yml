@@ -1,7 +1,7 @@
 name: CI -> Deploy to My website
 on:
   push:
-    branches: [main, feature/refactoring]
+    branches: [gh-pages]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,5 +19,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_dir: "./dist"
+          local_dir: "./"
           remote_dir: "/home/otk6969608/deploy"
