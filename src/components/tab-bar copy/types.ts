@@ -4,19 +4,20 @@ import { TItemOTType } from "../../utils/types/common";
 import { TTabBarStyle, TTabsGap } from "../../utils/types";
 import { TEmployee } from "../../utils/types/team";
 import { ReactNode } from "react";
+import { TMerch } from "../../utils/types/merch";
 
 export type TTabBarCotextValue = {
-  tabs: TProject[] | TService[] | TEmployee[] | TItemOTType[];
+  tabs: TProject[] | TService[] | TEmployee[] | TItemOTType[] | TMerch[];
   title?: string;
-  currentTab: TProject | TService | TEmployee | TItemOTType;
+  currentTab: TProject | TService | TEmployee | TItemOTType | TMerch;
   relativeToTitle: TTabBarStyle;
   currentIndex: number;
   onTabClick: (
-    item: TProject | TService | TEmployee | TItemOTType,
+    item: TProject | TService | TEmployee | TItemOTType | TMerch,
     index: number
   ) => void;
   renderTab: (item: {
-    tab: TProject | TService | TEmployee | TItemOTType;
+    tab: TProject | TService | TEmployee | TItemOTType | TMerch;
     current: boolean;
     iconRef: React.RefObject<HTMLLIElement>;
     onClick: () => void;

@@ -7,6 +7,7 @@ type TItemOTCardUIUrl = {
 };
 
 export type TItemOTCardUIProps = {
+  id?: string;
   item: TItemOT;
   url: TItemOTCardUIUrl;
   target?: React.HTMLAttributeAnchorTarget;

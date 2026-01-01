@@ -11,6 +11,7 @@ import { TService } from "../../utils/types/services";
 import { TItemOTType } from "../../utils/types/common";
 import { isItemOT } from "../../utils/guards/is-item-ot";
 import { TEmployee } from "../../utils/types/team";
+import { TMerch } from "../../utils/types/merch";
 
 export const PhotoTabBar: FC<TPhotoTabBarProps> = ({
   baseUrl,
@@ -24,13 +25,13 @@ export const PhotoTabBar: FC<TPhotoTabBarProps> = ({
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [currentTab, setCurrentTab] = useState<TProject | TService | TEmployee>(
-    currentItem
-  );
+  const [currentTab, setCurrentTab] = useState<
+    TProject | TService | TEmployee | TMerch
+  >(currentItem);
   const [currentIndex, setCurrentIndex] = useState<number>(currentItemIndex);
 
   const handleTabClick = (
-    item: TProject | TService | TEmployee | TItemOTType,
+    item: TProject | TService | TEmployee | TItemOTType | TMerch,
     index: number
   ) => {
     if (isItemOT(item)) {

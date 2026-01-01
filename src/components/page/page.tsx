@@ -4,7 +4,6 @@ import { Preloader } from "../ui/preloader/preloader.tsx";
 import { PageProvider } from "./page-provider.tsx";
 import { SEO } from "../seo";
 import { Layout } from "../../layouts/layout";
-import { ScrollToTop } from "../scroll-to-top";
 
 import { TPageProps } from "./type.ts";
 
@@ -22,7 +21,6 @@ export const Page: FC<TPageProps> = ({ seo, children, layout }) => {
       <PageProvider value={pageContextValue}>
         <SEO />
         <Layout>
-          <ScrollToTop />
           <PageContent />
         </Layout>
       </PageProvider>

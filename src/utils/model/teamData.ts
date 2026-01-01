@@ -22,7 +22,7 @@ export class Employee implements IEmployee {
         }
       : {
           ...this.employee,
-          extraText: occupationExtra,
+          // extraText: occupationExtra,
         };
   }
 }

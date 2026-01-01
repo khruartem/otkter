@@ -22,6 +22,7 @@ import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 import styles from "./info.module.css";
 import { Page } from "../../../page";
 import { Section } from "../../../section";
+import { TMerch } from "../../../../utils/types/merch";
 
 export const InfoUI: FC<TInfoUIProps> = ({
   currentItem,
@@ -35,7 +36,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
 
   const { seo, layout } = pageProps;
 
-  const renderInfoCTA = (item: TProject | TService | TEmployee) => {
+  const renderInfoCTA = (item: TProject | TService | TEmployee | TMerch) => {
     if (item.kind === "projects" && item?.controls) {
       return (
         <CtaUI controls={item.controls} kind={"projects"}>
@@ -114,7 +115,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
               >
                 <InfoTitleUI
                   title={currentItem.title}
-                  extraTitle={currentItem.extraText}
+                  extraTitle={currentItem?.extraText}
                   color={color}
                 />
                 {currentItem?.text ? (

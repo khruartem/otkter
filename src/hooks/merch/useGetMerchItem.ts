@@ -1,6 +1,9 @@
-import { getMerchItemSelector } from "../../features/merch/merchSlice";
-import { useSelector, RootState } from "../../services/store";
+import { useGetMerchItemById } from "./useGetMerchById";
+import { useGetMerchItemByUrl } from "./useGetMerchItemByUrl";
 
-export const useGetMerchItem = (id: number) => {
-  return useSelector((state: RootState) => getMerchItemSelector(state, id));
+export const useGetMerchItem = (id?: number) => {
+  const foundMerchItemById = useGetMerchItemById(id);
+  const foundMerchItemByUrl = useGetMerchItemByUrl();
+
+  return id ? foundMerchItemById : foundMerchItemByUrl;
 };

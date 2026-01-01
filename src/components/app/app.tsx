@@ -9,6 +9,7 @@ import { ServiceInfo } from "../../pages/service-info copy";
 import { EmployeeInfo } from "../../pages/employee-info";
 import { NotFound404 } from "../../pages/not-found-404";
 import { Merch } from "../../pages/merch";
+import { ScrollToTop } from "../scroll-to-top";
 
 export function App() {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export function App() {
   };
 
   return (
-    <>
+    <ScrollToTop>
       <Routes>
         <Route path={"/"} element={<Main />} />
         <Route path="/projects/all" element={<AllProjects />} />
@@ -54,7 +55,7 @@ export function App() {
         />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
-    </>
+    </ScrollToTop>
   );
 }
 

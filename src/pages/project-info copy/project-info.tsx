@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import { InfoRenderer } from "../info-renderer";
+import { Info } from "../info";
 
 import { useGetProject } from "../../hooks/projects/useGetProject";
 import { useGetProjects } from "../../hooks/projects/useGetProjects";
@@ -11,5 +12,13 @@ export const ProjectInfo: FC = () => {
   const sortedProjects = useSortAsc(projects, "order");
   const project = useGetProject();
 
-  return <InfoRenderer items={sortedProjects} currentItem={project} />;
+  return (
+    <InfoRenderer
+      items={sortedProjects}
+      currentItem={project}
+      render={(items, currentItem) => (
+        <Info items={items} currentItem={currentItem} />
+      )}
+    />
+  );
 };

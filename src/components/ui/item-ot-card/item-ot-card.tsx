@@ -14,19 +14,20 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import styles from "./item-ot-card.module.css";
 
 export const ItemOTCardUI = forwardRef<HTMLAnchorElement, TItemOTCardUIProps>(
-  ({ item, url, target = "_top", className }, ref) => {
+  ({ id, item, url, target = "_top", className }, ref) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
       useGetMediaQuery();
     const largeResolution = isLarge || isDesktop || isLaptop;
     const smallResolution = isTablet || isMobile;
 
-    const { id, title, image, shortText, active, categories } = item;
+    const { title, image, shortText, active, categories } = item;
     const attention = categories?.attention;
     const itemColor = attention ? Colors.Orange100 : Colors.Nephritis100;
 
     return (
       <li
-        key={id}
+        id={id}
+        key={item.id}
         className={clsx(
           styles["item-ot-card"],
           isTablet && styles["item-ot-card_tablet"],
@@ -50,7 +51,7 @@ export const ItemOTCardUI = forwardRef<HTMLAnchorElement, TItemOTCardUIProps>(
           target={target}
           state={
             url?.code && url?.from
-              ? { id, url: url.code, type: url.from }
+              ? { id: item.id, url: url.code, type: url.from }
               : undefined
           }
           ref={ref}

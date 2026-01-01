@@ -4,14 +4,15 @@ import { TProject } from "../../utils/types/projects";
 import { TService } from "../../utils/types/services";
 import { TItemOTType } from "../../utils/types/common";
 import { TEmployee } from "../../utils/types/team";
+import { TMerch } from "../../utils/types/merch";
 
 export type TPhotoTabBarProps = {
   baseUrl: "team/admins" | "projects" | "services";
-  currentItem: TProject | TService | TEmployee;
+  currentItem: TProject | TService | TEmployee | TMerch;
   currentItemIndex: number;
-  items: TProject[] | TService[] | TEmployee[];
+  items: TProject[] | TService[] | TEmployee[] | TMerch[];
   renderTab: (item: {
-    tab: TProject | TService | TEmployee | TItemOTType;
+    tab: TProject | TService | TEmployee | TItemOTType | TMerch;
     current: boolean;
     iconRef: React.RefObject<HTMLLIElement>;
     onClick: () => void;
