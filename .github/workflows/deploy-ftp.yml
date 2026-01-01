@@ -10,6 +10,8 @@ jobs:
         working-directory: ./
     steps:
       - uses: actions/checkout@v4
+      - name: Setup Symfony
+        run: cd ~\dev\otkter\
       # Here is the deployment action
       - name: Upload from public_html via FTP
         uses: airvzxf/ftp-deployment-action@latest
@@ -17,5 +19,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_dir: "dist"
+          local_dir: "./dist"
           remote_dir: "/home/otk6969608/deploy"
