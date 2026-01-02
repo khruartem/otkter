@@ -3,13 +3,13 @@ import clsx from "clsx";
 
 import { ImageUI } from "../../image";
 
-import { TInfoPosterUIProps } from "./types";
+import { TPosterUIProps } from "./types";
 
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
-import styles from "./info-poster.module.css";
+import styles from "./poster.module.css";
 
-export const InfoPosterUI: FC<TInfoPosterUIProps> = ({ poster, className }) => {
+export const PosterUI: FC<TPosterUIProps> = ({ poster, className }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
@@ -31,13 +31,13 @@ export const InfoPosterUI: FC<TInfoPosterUIProps> = ({ poster, className }) => {
         isMobile && "117.15vw"
       )}
       className={clsx(
-        styles["info-poster"],
-        isLarge && styles["info-poster_large"],
-        isDesktop && styles["info-poster_desktop"],
-        isLaptop && styles["info-poster_laptop"],
-        isTablet && styles["info-poster_tablet"],
-        isMobile && styles["info-poster_mobile"],
-        (isTablet || isMobile) && styles["info-poster_margined"],
+        styles["poster"],
+        isLarge && styles["poster_large"],
+        isDesktop && styles["poster_desktop"],
+        isLaptop && styles["poster_laptop"],
+        isTablet && styles["poster_tablet"],
+        isMobile && styles["poster_mobile"],
+        (isTablet || isMobile) && styles["poster_margined"],
         className && className
       )}
     />

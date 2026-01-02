@@ -2,16 +2,21 @@ import { FC, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import { InfoUI } from "../../components/ui/pages/info copy";
+import { InfoProvider } from "./info-provider";
 
-import { TInfoProps } from "./types";
+import { TInfoContextValue, TInfoProps } from "./types";
+import { TPageLayout, TPageSEO } from "../../components/page/type";
 
 import { Colors } from "../../utils/types";
-import { TPageLayout, TPageSEO } from "../../components/page/type";
 
 export const Info: FC<TInfoProps> = ({ items, currentItem }) => {
   const location = useLocation();
 
   const { id, kind, title, shortText, previewImg, url, main } = currentItem;
+
+  const currentIndex = items.findIndex(
+    (element) => element.id === currentItem.id
+  );
 
   const itemColor =
     currentItem.kind === "projects"
@@ -19,12 +24,6 @@ export const Info: FC<TInfoProps> = ({ items, currentItem }) => {
         ? Colors.Orange100
         : Colors.Navy
       : Colors.Navy;
-
-  useEffect(() => {
-    location.state = { ...location.state, id: main ? id : 0, type: kind };
-
-    document.body.style.backgroundColor = Colors.Light60;
-  }, [id, kind, location, main]);
 
   const seo: TPageSEO = {
     title,
@@ -38,13 +37,22 @@ export const Info: FC<TInfoProps> = ({ items, currentItem }) => {
     noPadding: false,
   };
 
+  const infoContextValue: TInfoContextValue = {
+    items,
+    currentItem,
+    currentIndex,
+    itemColor,
+  };
+
+  useEffect(() => {
+    location.state = { ...location.state, id: main ? id : 0, type: kind };
+
+    document.body.style.backgroundColor = Colors.Light60;
+  }, [id, kind, location, main]);
+
   return (
-    <InfoUI
-      currentItem={currentItem}
-      currentIndex={items.findIndex((element) => element.id === currentItem.id)}
-      items={items}
-      color={itemColor}
-      pageProps={{ seo, layout }}
-    />
+    <InfoProvider value={infoContextValue}>
+      <InfoUI currentItem={currentItem} pageProps={{ seo, layout }} />
+    </InfoProvider>
   );
 };

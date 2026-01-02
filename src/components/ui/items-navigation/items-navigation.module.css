@@ -1,19 +1,19 @@
-.info-navigation {
-  width: 100%;
+.item-navigation {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
 }
 
-.info-navigation_columned {
+.item-navigation_columned {
   flex-direction: column-reverse;
 }
 
-.info-navigation_padding-large {
+.item-navigation_padding-large {
   padding-block: 36px;
 }
 
-.info-navigation_padding-small {
+.item-navigation_padding-small {
   padding-block: 24px;
 }
 
@@ -22,12 +22,12 @@
 }
 
 /* Стили для разных разрешений экранов */
-/* info-navigation */
-.info-navigation_tablet {
+/* item-navigation */
+.item-navigation_tablet {
   gap: 7.81vw;
 }
 
-.info-navigation_mobile {
+.item-navigation_mobile {
   gap: 5.80vw;
   padding-block-start: 0;
   padding-block-end: 24px;

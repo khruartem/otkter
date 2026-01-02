@@ -39,11 +39,6 @@
   flex-direction: column;
 }
 
-.info-poster_services {
-  object-fit: cover;
-  object-position: center;
-}
-
 /* Стили для разных разрешений экранов */
 /* info-about */
 .info-about_small-resolution {

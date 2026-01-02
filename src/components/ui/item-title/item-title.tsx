@@ -3,15 +3,15 @@ import clsx from "clsx";
 
 import { Text } from "../../text";
 
-import { TInfoTitleUIProps } from "./types";
+import { TItemTitleUIProps } from "./types";
 
 import { Colors } from "../../../utils/types";
 
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
-import styles from "./info-title.module.css";
+import styles from "./item-title.module.css";
 
-export const InfoTitleUI: FC<TInfoTitleUIProps> = ({
+export const ItemTitleUI: FC<TItemTitleUIProps> = ({
   title,
   extraTitle,
   color,
@@ -24,9 +24,9 @@ export const InfoTitleUI: FC<TInfoTitleUIProps> = ({
       {extraTitle ? (
         <div
           className={clsx(
-            styles["title-container"],
+            styles["item-title-container"],
             (isDesktop || isLaptop || isMobile) &&
-              styles["title-container_columned"]
+              styles["item-title-container_columned"]
           )}
         >
           <Text
@@ -39,7 +39,7 @@ export const InfoTitleUI: FC<TInfoTitleUIProps> = ({
             textTransform={"none"}
             color={color}
             className={clsx(
-              (isLarge || isDesktop || isLaptop) && styles.title
+              (isLarge || isDesktop || isLaptop) && styles["item-title"]
             )}
           >
             {title}
@@ -54,9 +54,9 @@ export const InfoTitleUI: FC<TInfoTitleUIProps> = ({
             textTransform={"none"}
             color={Colors.Nephritis100}
             className={clsx(
-              styles["extra-title"],
+              styles["item-extra-title"],
               (isDesktop || isLaptop || isMobile) &&
-                styles["extra-title_not-bordered"]
+                styles["item-extra-title_not-bordered"]
             )}
           >
             {extraTitle}
@@ -73,7 +73,7 @@ export const InfoTitleUI: FC<TInfoTitleUIProps> = ({
           textTransform={"none"}
           color={color}
           className={clsx(
-            (isLarge || isDesktop || isLaptop) && styles.title
+            (isLarge || isDesktop || isLaptop) && styles["item-title"]
           )}
         >
           {title}

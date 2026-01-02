@@ -3,15 +3,15 @@ import clsx from "clsx";
 
 import { Text } from "../../text";
 
-import { TInfoTextUIProps } from "./types";
+import { TItemTextUIProps } from "./types";
 
 import { Colors } from "../../../utils/types";
 
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
-import styles from "./info-text.module.css";
+import styles from "./item-text.module.css";
 
-export const InfoTextUI: FC<TInfoTextUIProps> = ({ text }) => {
+export const ItemTextUI: FC<TItemTextUIProps> = ({ text }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
   const smallResolution = isDesktop || isTablet || isMobile;
@@ -27,10 +27,10 @@ export const InfoTextUI: FC<TInfoTextUIProps> = ({ text }) => {
       textTransform={"none"}
       color={Colors.Dark100}
       className={clsx(
-        styles["info-text"],
-        isLarge && styles["info-text_large"],
-        isDesktop && styles["info-text_desktop"],
-        isLaptop && styles["info-text_laptop"]
+        styles["item-text"],
+        isLarge && styles["item-text_large"],
+        isDesktop && styles["item-text_desktop"],
+        isLaptop && styles["item-text_laptop"]
       )}
     >
       {text}

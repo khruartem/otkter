@@ -5,13 +5,13 @@ import { Share } from "../../share copy";
 import { PhotoTabBar } from "../../photo-tab-bar";
 import { PhotoTab } from "../../photo-tab";
 
-import { TInfoNavigationUIProps } from "./types";
+import { TItemsNavigationUIProps } from "./types";
 
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
-import styles from "./info-navigation.module.css";
+import styles from "./items-navigation.module.css";
 
-export const InfoNavigationUI: FC<TInfoNavigationUIProps> = ({
+export const ItemsNavigationUI: FC<TItemsNavigationUIProps> = ({
   currentItem,
   currentIndex,
   items,
@@ -24,13 +24,13 @@ export const InfoNavigationUI: FC<TInfoNavigationUIProps> = ({
   return (
     <div
       className={clsx(
-        styles["info-navigation"],
-        isLarge && styles["info-navigation_padding-large"],
+        styles["item-navigation"],
+        isLarge && styles["item-navigation_padding-large"],
         (isDesktop || isLaptop || isTablet) &&
-          styles["info-navigation_padding-small"],
-        (isTablet || isMobile) && styles["info-navigation_columned"],
-        isTablet && styles["info-navigation_tablet"],
-        isMobile && styles["info-navigation_mobile"],
+          styles["item-navigation_padding-small"],
+        (isTablet || isMobile) && styles["item-navigation_columned"],
+        isTablet && styles["item-navigation_tablet"],
+        isMobile && styles["item-navigation_mobile"],
         className && className
       )}
       style={{ "--tabs-gap": tabsGap } as CSSProperties}

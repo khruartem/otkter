@@ -1,56 +1,27 @@
 import { FC } from "react";
 import clsx from "clsx";
 
-import { InfoTitleUI } from "../../info-title";
-import { InfoNavigationUI } from "../../info-navigation";
-import { InfoTextUI } from "../../info-text";
-import { InfoPosterUI } from "../../info-poster";
-import { Controls } from "../../../controls copy";
-import { PhotoList } from "../../../photo-list";
-import { DetailsGrid } from "../../../details-grid";
-import { CtaUI } from "../../cta";
-import { ShowHistoryPreview } from "../../../show-history-preview";
+import { Page } from "../../../page";
+import { Section } from "../../../section";
+import { InfoNavigation } from "../../../info-navigation";
+import { InfoTitle } from "../../../info-title";
+import { InfoText } from "../../../info-text";
+import { InfoPhotoList } from "../../../info-photo-list";
+import { InfoCTA } from "../../../info-cta";
+import { InfoPoster } from "../../../info-poster";
+import { InfoDetails } from "../../../info-details";
 
 import { TInfoUIProps } from "./types";
-
-import { TEmployee } from "../../../../utils/types/team";
-import { TProject } from "../../../../utils/types/projects";
-import { TService } from "../../../../utils/types/services";
 
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 
 import styles from "./info.module.css";
-import { Page } from "../../../page";
-import { Section } from "../../../section";
-import { TMerch } from "../../../../utils/types/merch";
 
-export const InfoUI: FC<TInfoUIProps> = ({
-  currentItem,
-  currentIndex,
-  items,
-  color,
-  pageProps,
-}) => {
+export const InfoUI: FC<TInfoUIProps> = ({ currentItem, pageProps }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
   const { seo, layout } = pageProps;
-
-  const renderInfoCTA = (item: TProject | TService | TEmployee | TMerch) => {
-    if (item.kind === "projects" && item?.controls) {
-      return (
-        <CtaUI controls={item.controls} kind={"projects"}>
-          {item.kind === "projects" && item?.showHistory && (
-            <ShowHistoryPreview history={item.showHistory} />
-          )}
-        </CtaUI>
-      );
-    } else {
-      return (
-        item?.controls && <Controls controls={item.controls} kind={item.kind} />
-      );
-    }
-  };
 
   return (
     <Page
@@ -65,18 +36,7 @@ export const InfoUI: FC<TInfoUIProps> = ({
       }}
     >
       <Section>
-        <InfoNavigationUI
-          currentItem={currentItem}
-          currentIndex={currentIndex}
-          items={items}
-          tabsGap={clsx(
-            isLarge && "1.012vw",
-            isDesktop && "0.857vw",
-            isLaptop && "1.0635vw",
-            isTablet && "6.0274vw",
-            isMobile && "1.69vw"
-          )}
-        />
+        <InfoNavigation />
         <div
           className={clsx(
             styles["info-content"],
@@ -113,42 +73,16 @@ export const InfoUI: FC<TInfoUIProps> = ({
                     : styles["info-description_small-resolution"]
                 )}
               >
-                <InfoTitleUI
-                  title={currentItem.title}
-                  extraTitle={currentItem?.extraText}
-                  color={color}
-                />
-                {currentItem?.text ? (
-                  <InfoTextUI text={currentItem.text} />
-                ) : (
-                  <InfoTextUI text={currentItem.shortText} />
-                )}
-                {currentItem?.photos && (
-                  <PhotoList
-                    itemKind={currentItem.kind}
-                    photos={currentItem.photos}
-                  />
-                )}
+                <InfoTitle />
+                <InfoText />
+                <InfoPhotoList />
               </div>
-              {!isLaptop && renderInfoCTA(currentItem)}
+              {!isLaptop && <InfoCTA />}
             </div>
-            {currentItem?.poster && (
-              <InfoPosterUI
-                poster={currentItem.poster}
-                className={clsx(
-                  currentItem.kind === "services" &&
-                    styles["info-poster_services"]
-                )}
-              />
-            )}
-            {isLaptop && renderInfoCTA(currentItem)}
+            <InfoPoster />
+            {isLaptop && <InfoCTA />}
           </div>
-          {currentItem?.details && currentItem?.categories && (
-            <DetailsGrid
-              details={currentItem.details}
-              categories={currentItem.categories}
-            />
-          )}
+          <InfoDetails />
         </div>
       </Section>
     </Page>
