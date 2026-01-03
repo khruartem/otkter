@@ -19,7 +19,7 @@ export const AllProjects: FC = () => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
-  const projects = useGetProjects("all");
+  const projects = useGetProjects();
 
   const tabBarProps: TContentSliderTabBarProps = {
     title: "проекты",

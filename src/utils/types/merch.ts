@@ -4,11 +4,19 @@ import { TItemOT, TUrlNotFound } from "./common";
 export type TMerchUrl =
   | "regular-t-shirt-light"
   | "regular-t-shirt-navy"
-  | "regular-t-shirt-nephritis";
+  | "regular-t-shirt-nephritis"
+  | "thermos-steel";
 
 export type TMerchType = "all" | "cloths" | "souvenirs";
 
+export type TMerchParams = {
+  name: string;
+  values: TMerchSize[] | TMerchVolume[];
+};
+
 export type TMerchSize = "XS" | "S" | "M" | "L" | "XL" | "XXL";
+
+export type TMerchVolume = "500мл";
 
 export type TMerchColor = {
   hex: Colors;
@@ -19,6 +27,7 @@ export type TMerchColors = {
   Navy: TMerchColor;
   Nephritis: TMerchColor;
   Light: TMerchColor;
+  Steel: TMerchColor;
 };
 
 export type TMerchCurrency = "₽";
@@ -33,6 +42,6 @@ export type TMerch = TItemOT & {
   url: TMerchUrl | TUrlNotFound;
   type: TMerchType;
   price: TMerchPrice;
-  sizes?: TMerchSize[];
+  params: TMerchParams;
   colors?: TMerchColor[];
 };

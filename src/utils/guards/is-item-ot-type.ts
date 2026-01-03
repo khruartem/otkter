@@ -16,6 +16,8 @@ const itemOTTypes: TItemOTType[] = [
   "admins",
   "artists",
   "hero",
+  "cloths",
+  "souvenirs",
 ];
 
 export function isItemOTType(item: unknown): item is TItemOTType {

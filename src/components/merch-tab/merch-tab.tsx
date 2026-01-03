@@ -1,10 +1,10 @@
 import { FC } from "react";
-import { TProjectTabProps } from "./types";
+import { TMerchTabProps } from "./types";
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 import { Colors } from "../../utils/types";
-import { Play, Contest, ShortFilm, All, MasterClass } from "../icons";
+import { All, Cloths, Souvenirs } from "../icons";
 
-export const ProjectTab: FC<TProjectTabProps> = ({ tab }) => {
+export const MerchTab: FC<TMerchTabProps> = ({ tab }) => {
   const { isTablet, isMobile } = useGetMediaQuery();
 
   return (
@@ -18,8 +18,8 @@ export const ProjectTab: FC<TProjectTabProps> = ({ tab }) => {
           activeColor={Colors.Navy}
         />
       )}
-      {tab === "play" && (
-        <Play
+      {tab === "cloths" && (
+        <Cloths
           mainColor={Colors.Nephritis100}
           hoverColor={
             isTablet || isMobile ? Colors.Nephritis100 : Colors.Nephritis120
@@ -27,26 +27,8 @@ export const ProjectTab: FC<TProjectTabProps> = ({ tab }) => {
           activeColor={Colors.Navy}
         />
       )}
-      {tab === "contest" && (
-        <Contest
-          mainColor={Colors.Nephritis100}
-          hoverColor={
-            isTablet || isMobile ? Colors.Nephritis100 : Colors.Nephritis120
-          }
-          activeColor={Colors.Navy}
-        />
-      )}
-      {tab === "short-film" && (
-        <ShortFilm
-          mainColor={Colors.Nephritis100}
-          hoverColor={
-            isTablet || isMobile ? Colors.Nephritis100 : Colors.Nephritis120
-          }
-          activeColor={Colors.Navy}
-        />
-      )}
-      {tab === "master-class" && (
-        <MasterClass
+      {tab === "souvenirs" && (
+        <Souvenirs
           mainColor={Colors.Nephritis100}
           hoverColor={
             isTablet || isMobile ? Colors.Nephritis100 : Colors.Nephritis120

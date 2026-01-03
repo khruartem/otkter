@@ -4,6 +4,7 @@ import { TProject } from "../../utils/types/projects";
 import { TService } from "../../utils/types/services";
 import { TTabBarCotextValue } from "../tab-bar copy/types";
 import { TEmployee } from "../../utils/types/team";
+import { TMerch } from "../../utils/types/merch";
 
 export type TContentSliderTabBarProps = Pick<
   TTabBarCotextValue,
@@ -12,7 +13,7 @@ export type TContentSliderTabBarProps = Pick<
 
 export type TContentSliderProps = {
   tabBarProps: TContentSliderTabBarProps;
-  items: TProject[] | TService[] | TEmployee[];
+  items: TProject[] | TService[] | TEmployee[] | TMerch[];
   firstTab?: TItemOTType;
   lastTab?: TItemOTType;
   children?: ReactNode;

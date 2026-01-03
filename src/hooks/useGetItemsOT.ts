@@ -3,10 +3,15 @@ import { useGetMerchItems } from "./merch/useGetMerchItems";
 import { useGetProjects } from "./projects/useGetProjects";
 import { useGetServices } from "./services/useGetServices";
 import { useGetTeams } from "./team/useGetTeams";
+import { useSortAsc } from "./useSortAsc";
 
 export const useGetItemsOT = (kind?: TItemOTKind) => {
   const projects = useGetProjects();
+  const sortedProjects = useSortAsc(projects, "order");
+
   const services = useGetServices();
+  const sortedServices = useSortAsc(services, "order");
+
   const admins = useGetTeams("admins");
   const merch = useGetMerchItems();
   const itemsOT = [...projects, ...services, ...admins, ...merch];
@@ -16,9 +21,9 @@ export const useGetItemsOT = (kind?: TItemOTKind) => {
   } else {
     switch (kind) {
       case "projects":
-        return projects;
+        return sortedProjects;
       case "services":
-        return services;
+        return sortedServices;
       case "team":
         return admins;
       case "merch":

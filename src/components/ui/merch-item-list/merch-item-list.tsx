@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { forwardRef } from "react";
 
 import { ItemOTListUI } from "../items-ot-list";
 import { MerchItem } from "../../merch-item";
@@ -9,7 +9,10 @@ import { TMerch } from "../../../utils/types/merch";
 
 import styles from "./merch-item-list.module.css";
 
-export const MerchItemListUI: FC<TMerchItemListUIProps> = ({ merchItems }) => {
+export const MerchItemListUI = forwardRef<
+  HTMLUListElement,
+  TMerchItemListUIProps
+>(({ merchItems }, ref) => {
   return (
     <ItemOTListUI
       itemsOT={merchItems}
@@ -17,6 +20,7 @@ export const MerchItemListUI: FC<TMerchItemListUIProps> = ({ merchItems }) => {
         <MerchItem key={key} item={itemOT as TMerch} />
       )}
       className={styles["item-ot-list_merch"]}
+      ref={ref}
     />
   );
-};
+});

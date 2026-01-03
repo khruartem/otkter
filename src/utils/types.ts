@@ -145,6 +145,8 @@ export enum ItemOTType {
   "services" = "Услуги",
   "main" = "Главная",
   "hero" = "Херо",
+  "cloths" = "Одежда",
+  "souvenirs" = "Сувениры",
 }
 
 export type TTabsGap = "large" | "middle" | "small" | "none" | string;

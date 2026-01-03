@@ -6,9 +6,5 @@ import { TEmployee } from "../../utils/types/team";
 
 export type TInfoRendererProps = {
   currentItem?: TProject | TService | TEmployee | TMerch;
-  items: TProject[] | TService[] | TEmployee[] | TMerch[];
-  render: (
-    items: TProject[] | TService[] | TEmployee[] | TMerch[],
-    currentItem: TProject | TService | TEmployee | TMerch
-  ) => ReactNode;
+  render: (currentItem: TProject | TService | TEmployee | TMerch) => ReactNode;
 };

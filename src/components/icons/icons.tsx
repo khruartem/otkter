@@ -852,3 +852,63 @@ export const Ticket = ({ mainColor, onClick }: TTicketProps) => {
     </svg>
   );
 };
+
+export const Cloths = ({
+  mainColor,
+  hoverColor = undefined,
+  activeColor = undefined,
+  onClick = undefined,
+  onMouseEnter = undefined,
+  onMouseLeave = undefined,
+  className = undefined,
+}: TTabProps) => {
+  return (
+    <svg
+      className={clsx(styles.tab, className)}
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+    >
+      <path d="M10.667 4C11.403 4.0002 11.9777 4.61313 12.2188 5.30859C12.761 6.87477 14.2494 8 16 8C17.7506 7.99998 19.239 6.87477 19.7812 5.30859C20.0223 4.61311 20.597 4.00016 21.333 4H22.667C26.3487 4.0002 29.333 6.98522 29.333 10.667V13.333C29.333 14.8056 28.1396 15.9998 26.667 16H25.333V21.333C25.333 25.0148 22.3487 27.9998 18.667 28H13.333C9.65124 27.9998 6.66699 25.0148 6.66699 21.333V16H5.33301C3.86038 15.9998 2.66699 14.8057 2.66699 13.333V10.667C2.66699 6.98519 5.65124 4.00015 9.33301 4H10.667ZM16.0498 12.5C14.1998 12.5001 12.7004 13.9997 12.7002 15.8496C12.7002 17.6997 14.1997 19.2001 16.0498 19.2002C17.9 19.2002 19.4004 17.6998 19.4004 15.8496C19.4002 13.9996 17.8998 12.5 16.0498 12.5Z" />
+    </svg>
+  );
+};
+
+export const Souvenirs = ({
+  mainColor,
+  hoverColor = undefined,
+  activeColor = undefined,
+  onClick = undefined,
+  onMouseEnter = undefined,
+  onMouseLeave = undefined,
+  className = undefined,
+}: TTabProps) => {
+  return (
+    <svg
+      className={clsx(styles.tab, className)}
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+    >
+      <path d="M13.333 4C18.3613 4 20.8754 4.00044 22.4375 5.5625C23.0765 6.20154 23.4497 7.00078 23.6729 8.06543C27.6159 8.56055 30.667 11.9227 30.667 16C30.667 20.0772 27.6158 23.4384 23.6729 23.9336C23.4497 24.9988 23.0768 25.7982 22.4375 26.4375C20.8754 27.9996 18.3613 28 13.333 28C8.3051 28 5.79156 27.9994 4.22949 26.4375C2.66739 24.8754 2.66699 22.3613 2.66699 17.333V14.667C2.66699 9.63868 2.66739 7.1246 4.22949 5.5625C5.79156 4.00057 8.3051 4 13.333 4ZM23.957 10.8242C23.9975 11.912 24 13.1796 24 14.667V17.333C24 18.8198 23.9974 20.0873 23.957 21.1748C26.2789 20.5977 28 18.5004 28 16C28 13.4995 26.2791 11.4012 23.957 10.8242ZM13.3496 12.5C11.4998 12.5002 10.0002 13.9998 10 15.8496C10 17.6996 11.4996 19.2 13.3496 19.2002C15.1998 19.2002 16.7002 17.6998 16.7002 15.8496C16.7 13.9996 15.1996 12.5 13.3496 12.5Z" />
+    </svg>
+  );
+};

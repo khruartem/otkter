@@ -2,7 +2,7 @@ import { TProjectsUrl, TProjectType } from "./projects";
 import { TServicesUrl, TServiceType } from "./services";
 import { TAdminsUrl, TEmployee, TEmployeeType } from "./team";
 import { Colors } from "../types";
-import { TMerchUrl } from "./merch";
+import { TMerchType, TMerchUrl } from "./merch";
 
 export type TSocialsType = "telegram" | "vk";
 export type TSocials = {
@@ -77,7 +77,11 @@ export type TCategories = {
 };
 
 export type TItemOTKind = "projects" | "services" | "team" | "merch";
-export type TItemOTType = TProjectType | TServiceType | TEmployeeType;
+export type TItemOTType =
+  | TProjectType
+  | TServiceType
+  | TEmployeeType
+  | TMerchType;
 export type TItemOT = {
   id: number;
   title: string;

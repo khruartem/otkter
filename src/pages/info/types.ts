@@ -7,7 +7,6 @@ import { Colors } from "../../utils/types";
 
 export type TInfoProps = {
   currentItem: TProject | TService | TEmployee | TMerch;
-  items: TProject[] | TService[] | TEmployee[] | TMerch[];
 };
 
 export type TInfoContextValue = {

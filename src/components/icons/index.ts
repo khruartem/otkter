@@ -27,4 +27,6 @@ export {
   Phone,
   Price,
   CopyLink,
+  Cloths,
+  Souvenirs,
 } from "./icons";

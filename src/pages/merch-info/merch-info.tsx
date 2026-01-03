@@ -1,34 +1,26 @@
-// import { FC } from "react";
-// import { useGetMerchItems } from "../../hooks/merch/useGetMerchItems";
-// import { useGetMerchItem } from "../../hooks/merch/useGetMerchItem";
-// import { InfoRenderer } from "../info-renderer";
-// import { Info } from "../info";
-// import { TPageLayout, TPageSEO } from "../../components/page/type";
-
 import { FC } from "react";
 import { TMerchInfoProps } from "./types";
+import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+import clsx from "clsx";
+import { TTabsGap } from "../../utils/types";
+import { IconTab } from "../../components/icon-tab";
+import { TContentSliderTabBarProps } from "../../components/content-slider/types";
+import { TPageLayout, TPageSEO } from "../../components/page/type";
 
-// export const MerchInfo: FC = () => {
-//   const merchItems = useGetMerchItems();
-//   const merchItem = useGetMerchItem();
+export const MerchInfo: FC<TMerchInfoProps> = ({ currentItem }) => {
+  const { title, shortText, type, url } = currentItem;
 
-//   const {title, } = merchItem;
+  const seo: TPageSEO = {
+    title,
+    description: shortText,
+    siteName: title,
+    url: `https://otkter.ru/${type}/${url}`,
+    previewImg: "/preview/preview_merch.webp",
+  };
 
-//   const seo: TPageSEO = {
-//       title,
-//       description: shortText,
-//       siteName: title,
-//       url: `https://otkter.ru/projects/${url}`,
-//       previewImg: previewImg || "",
-//     };
+  const layout: TPageLayout = {
+    noPadding: false,
+  };
 
-//     const layout: TPageLayout = {
-//       noPadding: false,
-//     };
-
-//   return <MerchInfoUI item={merchItem} pageProps={{seo, layout}} />;
-// };
-
-export const MerchInfo: FC<TMerchInfoProps> = () => {
   return undefined;
 };
