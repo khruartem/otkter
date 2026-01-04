@@ -1,17 +1,13 @@
 import { FC, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { TabBar } from "../tab-bar copy";
+import { TabBar } from "../tab-bar";
 
 import { TPhotoTabBarProps } from "./types";
-import { TTabBarCotextValue } from "../tab-bar copy/types";
+import { TTabBarCotextValue } from "../tab-bar/types";
 
-import { TProject } from "../../utils/types/projects";
-import { TService } from "../../utils/types/services";
-import { TItemOTType } from "../../utils/types/common";
+import { TItemOT, TItemOTType } from "../../utils/types/common";
 import { isItemOT } from "../../utils/guards/is-item-ot";
-import { TEmployee } from "../../utils/types/team";
-import { TMerch } from "../../utils/types/merch";
 
 export const PhotoTabBar: FC<TPhotoTabBarProps> = ({
   baseUrl,
@@ -25,15 +21,10 @@ export const PhotoTabBar: FC<TPhotoTabBarProps> = ({
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [currentTab, setCurrentTab] = useState<
-    TProject | TService | TEmployee | TMerch
-  >(currentItem);
+  const [currentTab, setCurrentTab] = useState<TItemOT>(currentItem);
   const [currentIndex, setCurrentIndex] = useState<number>(currentItemIndex);
 
-  const handleTabClick = (
-    item: TProject | TService | TEmployee | TItemOTType | TMerch,
-    index: number
-  ) => {
+  const handleTabClick = (item: TItemOT | TItemOTType, index: number) => {
     if (isItemOT(item)) {
       setCurrentTab(item);
       setCurrentIndex(index);

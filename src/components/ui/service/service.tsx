@@ -2,7 +2,7 @@ import clsx from "clsx";
 import React from "react";
 
 import { Text } from "../../text";
-import { Controls } from "../../controls copy";
+import { Controls } from "../../controls";
 // import { ImageUI } from "../../image";
 
 import { Colors, FontSizes, lineHeights } from "../../../utils/types";

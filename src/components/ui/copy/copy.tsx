@@ -2,7 +2,7 @@ import { FC } from "react";
 import clsx from "clsx";
 
 import { CopyLink } from "../../icons";
-import { CategoryUI } from "../category copy";
+import { CategoryUI } from "../category";
 
 import { TCopyUIProps } from "./types";
 

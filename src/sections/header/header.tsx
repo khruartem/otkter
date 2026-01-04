@@ -1,8 +1,7 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-// import { HeaderUI } from "../../components/ui/sections/header";
-import { HeaderUI } from "../../components/ui/sections/header copy";
+import { HeaderUI } from "../../components/ui/sections/header";
 import { THeaderProps } from "./types";
 
 export const Header: FC<THeaderProps> = ({ animation }) => {

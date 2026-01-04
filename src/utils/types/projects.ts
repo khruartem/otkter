@@ -1,5 +1,7 @@
 import { TItemOT, TUrlNotFound } from "./common";
 
+export type TProjectsKind = "projects";
+
 export type TProjectsUrl =
   | "unique-chronicle"
   | "friendship"
@@ -27,7 +29,7 @@ export type TShowHistoryItem = {
 };
 
 export type TProject = TItemOT & {
-  kind: "projects";
+  kind: TProjectsKind;
   url: TProjectsUrl | TUrlNotFound;
   type: TProjectType;
   order?: number;

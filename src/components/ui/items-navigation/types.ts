@@ -1,13 +1,10 @@
 import { TTabsGap } from "../../../utils/types";
-import { TMerch } from "../../../utils/types/merch";
-import { TProject } from "../../../utils/types/projects";
-import { TService } from "../../../utils/types/services";
-import { TEmployee } from "../../../utils/types/team";
+import { TItemOT } from "../../../utils/types/common";
 
 export type TItemsNavigationUIProps = {
-  currentItem: TProject | TService | TEmployee | TMerch;
+  currentItem: TItemOT;
   currentIndex: number;
-  items: TProject[] | TService[] | TEmployee[] | TMerch[];
+  items: TItemOT[];
   className?: string;
   tabsGap: TTabsGap;
 };

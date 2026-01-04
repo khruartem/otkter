@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { Link } from "react-router-dom";
 
 import { Section } from "../../../section";
-import { ProjectList } from "../../../../components/project-list copy";
+import { ProjectList } from "../../../project-list";
 import { Button } from "../../../../components/button";
 import { Title } from "../../../title";
 

@@ -6,7 +6,6 @@ import { Text } from "../../text";
 import { TIconTabUIProps } from "./types";
 
 import { Colors, ItemOTType } from "../../../utils/types";
-import { TItemOTType } from "../../../utils/types/common";
 
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
@@ -50,7 +49,6 @@ export const IconTabUI = React.forwardRef<HTMLLIElement, TIconTabUIProps>(
         <div
           className={clsx(
             styles["tab-wrapper"],
-            // styles.tab_labeled,
             current && [styles["tab-wrapper_active"], styles.tab_active]
           )}
           onClick={onClick}
@@ -77,7 +75,7 @@ export const IconTabUI = React.forwardRef<HTMLLIElement, TIconTabUIProps>(
             color={current ? Colors.Navy : Colors.Nephritis100}
             decorated={false}
           >
-            {ItemOTType[tab as TItemOTType]}
+            {ItemOTType[tab]}
           </Text>
         </div>
       );

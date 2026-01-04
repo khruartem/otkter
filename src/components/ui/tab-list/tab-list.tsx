@@ -1,51 +1,34 @@
-import { FC, memo } from "react";
-import { nanoid } from "@reduxjs/toolkit";
+import { CSSProperties, FC } from "react";
 import clsx from "clsx";
-
-import { TabUI } from "../tab";
 
 import { TTabListUIProps } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
-import { TServicesTabMode, TTeamTabMode } from "../../../utils/types";
 
 import styles from "./tab-list.module.css";
+import { TabItem } from "../../tab-item";
 
-export const TabListUI: FC<TTabListUIProps> = memo(
-  ({
-    tabs,
-    currentTab,
-    onTabClick,
-    onMouseEnter,
-    onMouseLeave,
-    iconRefs,
-    isMainPage,
-  }) => {
-    const { isMobile } = useGetMediaQuery();
+export const TabListUI: FC<TTabListUIProps> = ({ tabs, tabsGap }) => {
+  const { isMobile } = useGetMediaQuery();
 
-    return (
-      <ul
-        className={clsx(
-          styles["tab-list"],
-          isMobile && tabs.length >= 4 && styles["tab-list_paddinged"],
-          isMobile && styles["tab-list_margined"]
-        )}
-      >
-        {tabs.map((tab) => {
-          const iconRef = iconRefs.find((icon) => icon.type === tab)?.ref;
-          return (
-            <TabUI
-              tab={tab}
-              isMainPage={isMainPage}
-              current={tab === currentTab ? true : false}
-              onClick={() => onTabClick(tab as TServicesTabMode & TTeamTabMode)}
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-              key={nanoid()}
-              ref={iconRef}
-            />
-          );
-        })}
-      </ul>
-    );
-  }
-);
+  return (
+    <ul
+      className={clsx(
+        styles["tab-list"],
+        isMobile && styles["tab-list_widthed"],
+        tabsGap === "large" && styles["tab-list_large-gap"],
+        tabsGap === "middle" && styles["tab-list_middle-gap"],
+        tabsGap === "small" && styles["tab-list_small-gap"],
+        tabsGap === "none" && styles["tab-list_no-gap"]
+      )}
+      style={
+        {
+          "--tabs-gap": tabsGap,
+        } as CSSProperties
+      }
+    >
+      {tabs.map((tab, index) => {
+        return <TabItem key={index} tab={tab} index={index} />;
+      })}
+    </ul>
+  );
+};

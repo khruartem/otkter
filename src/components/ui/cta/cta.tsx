@@ -1,7 +1,7 @@
 import { FC } from "react";
 import clsx from "clsx";
 
-import { Controls } from "../../controls copy";
+import { Controls } from "../../controls";
 
 import { TCtaUIProps } from "./types";
 

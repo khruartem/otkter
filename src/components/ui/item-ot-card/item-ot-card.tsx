@@ -3,7 +3,7 @@ import { CSSProperties, forwardRef } from "react";
 import { Link } from "react-router-dom";
 
 import { Text } from "../../text";
-import { CategoryListUI } from "../category-list copy";
+import { CategoryListUI } from "../category-list";
 // import { ImageUI } from "../../image";
 
 import { TItemOTCardUIProps } from "./types";

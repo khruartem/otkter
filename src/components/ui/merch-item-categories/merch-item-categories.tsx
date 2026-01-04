@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { TMerchItemCategoriesUIProps } from "./types";
-import { CategoryListUI } from "../category-list copy";
+import { CategoryListUI } from "../category-list";
 import styles from "./merch-item-categories.module.css";
 
 export const MerchItemCategoriesUI: FC<TMerchItemCategoriesUIProps> = ({

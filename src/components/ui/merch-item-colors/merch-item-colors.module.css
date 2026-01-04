@@ -6,10 +6,11 @@
   right: 40px;
 }
 
-.merch-item__colors-list li {
+/* Анимация при ховере */
+/* .merch-item__colors-list li {
   transition: translate 200ms;
 }
 
 .merch-item__colors-list li:hover~li {
   translate: 20px;
-}
+} */

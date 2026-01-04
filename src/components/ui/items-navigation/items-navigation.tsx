@@ -1,7 +1,7 @@
 import { CSSProperties, FC } from "react";
 import clsx from "clsx";
 
-import { Share } from "../../share copy";
+import { Share } from "../../share";
 import { PhotoTabBar } from "../../photo-tab-bar";
 import { PhotoTab } from "../../photo-tab";
 

@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { PhotoListProvider } from "./photo-list-provider";
-import { PhotoListUI } from "../ui/photo-list copy";
+import { PhotoListUI } from "../ui/photo-list";
 
 import { TPhotoListProps } from "./types";
 

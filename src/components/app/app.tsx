@@ -1,15 +1,15 @@
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 
+import { ScrollToTop } from "../scroll-to-top";
 import { Main } from "../../pages/main";
 import { AllProjects } from "../../pages/all-projects";
 import { Modal } from "../modal";
 import { PhotoSlider } from "../photo-slider";
-import { ProjectInfo } from "../../pages/project-info copy";
-import { ServiceInfo } from "../../pages/service-info copy";
-import { EmployeeInfo } from "../../pages/employee-info";
+import { Project } from "../../pages/project";
+import { Service } from "../../pages/service";
+import { Employee } from "../../pages/employee";
 import { NotFound404 } from "../../pages/not-found-404";
 import { Merch } from "../../pages/merch";
-import { ScrollToTop } from "../scroll-to-top";
 
 export function App() {
   const navigate = useNavigate();
@@ -26,9 +26,9 @@ export function App() {
         <Route path={"/"} element={<Main />} />
         <Route path="/projects/all" element={<AllProjects />} />
         <Route path="/merch" element={<Merch />} />
-        <Route path={"/projects/:code"} element={<ProjectInfo />} />
-        <Route path={"/services/:code"} element={<ServiceInfo />} />
-        <Route path={"/team/admins/:code"} element={<EmployeeInfo />} />
+        <Route path={"/projects/:code"} element={<Project />} />
+        <Route path={"/services/:code"} element={<Service />} />
+        <Route path={"/team/admins/:code"} element={<Employee />} />
         <Route
           path={"/projects/:code/:photoId"}
           element={

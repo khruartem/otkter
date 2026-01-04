@@ -1,11 +1,9 @@
 import { Colors } from "../types";
 import { TItemOT, TUrlNotFound } from "./common";
 
-export type TMerchUrl =
-  | "regular-t-shirt-light"
-  | "regular-t-shirt-navy"
-  | "regular-t-shirt-nephritis"
-  | "thermos-steel";
+export type TMerchKind = "merch";
+
+export type TMerchUrl = "t-shirt-artist" | "thermos";
 
 export type TMerchType = "all" | "cloths" | "souvenirs";
 
@@ -38,7 +36,7 @@ export type TMerchPrice = {
 };
 
 export type TMerch = TItemOT & {
-  kind: "merch";
+  kind: TMerchKind;
   url: TMerchUrl | TUrlNotFound;
   type: TMerchType;
   price: TMerchPrice;

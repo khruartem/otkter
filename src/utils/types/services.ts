@@ -1,5 +1,7 @@
 import { TItemOT, TUrlNotFound } from "./common";
 
+export type TServicesKind = "services";
+
 export type TServiceType =
   | "open-sea"
   | "events"
@@ -12,7 +14,7 @@ export type TServiceType =
 export type TServicesUrl = TServiceType;
 
 export type TService = TItemOT & {
-  kind: "services";
+  kind: TServicesKind;
   url: TServicesUrl | TUrlNotFound;
   order: number;
   type: TServiceType;

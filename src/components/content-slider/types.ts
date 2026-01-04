@@ -1,10 +1,6 @@
 import { ReactNode, SyntheticEvent } from "react";
-import { TItemOTType } from "../../utils/types/common";
-import { TProject } from "../../utils/types/projects";
-import { TService } from "../../utils/types/services";
-import { TTabBarCotextValue } from "../tab-bar copy/types";
-import { TEmployee } from "../../utils/types/team";
-import { TMerch } from "../../utils/types/merch";
+import { TItemOT, TItemOTType } from "../../utils/types/common";
+import { TTabBarCotextValue } from "../tab-bar/types";
 
 export type TContentSliderTabBarProps = Pick<
   TTabBarCotextValue,
@@ -13,7 +9,7 @@ export type TContentSliderTabBarProps = Pick<
 
 export type TContentSliderProps = {
   tabBarProps: TContentSliderTabBarProps;
-  items: TProject[] | TService[] | TEmployee[] | TMerch[];
+  items: TItemOT[];
   firstTab?: TItemOTType;
   lastTab?: TItemOTType;
   children?: ReactNode;

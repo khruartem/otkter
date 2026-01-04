@@ -1,18 +1,14 @@
 import { FC, SyntheticEvent, useState } from "react";
 
 import { ContentSliderPovider } from "./content-slider-provider";
-import { ContentSliderUI } from "../ui/content-slider copy";
+import { ContentSliderUI } from "../ui/content-slider";
 
 import { TContentSliderContext, TContentSliderProps } from "./types";
-import { TTabBarCotextValue } from "../tab-bar copy/types";
+import { TTabBarCotextValue } from "../tab-bar/types";
 
 import { onlyUnique } from "../../utils/onlyUnique";
-import { TProject } from "../../utils/types/projects";
-import { TService } from "../../utils/types/services";
-import { TItemOTType } from "../../utils/types/common";
+import { TItemOT, TItemOTType } from "../../utils/types/common";
 import { isItemOTType } from "../../utils/guards/is-item-ot-type";
-import { TEmployee } from "../../utils/types/team";
-import { TMerch } from "../../utils/types/merch";
 
 export const ContentSlider: FC<TContentSliderProps> = ({
   items,
@@ -25,7 +21,7 @@ export const ContentSlider: FC<TContentSliderProps> = ({
 }) => {
   const tabsUnsorted = items.map((item) => {
     return item.type;
-  }) as TItemOTType[];
+  });
 
   const tabs = tabsUnsorted.filter(onlyUnique);
 
@@ -36,10 +32,7 @@ export const ContentSlider: FC<TContentSliderProps> = ({
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [previousIndex, setPreviousIndex] = useState<number>(0);
 
-  const handleTabClick = (
-    item: TProject | TEmployee | TService | TItemOTType | TMerch,
-    index: number
-  ) => {
+  const handleTabClick = (item: TItemOT | TItemOTType, index: number) => {
     if (isItemOTType(item)) {
       setPreviousIndex(currentIndex);
       setCurrentTab(item);

@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 import { Section } from "../../../section";
 import { ContentSlider } from "../../../../components/content-slider";
-import { Team } from "../../../team copy";
+import { Team } from "../../../team";
 
 import { TTeamsUIProps } from "./types";
 

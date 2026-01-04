@@ -1,8 +1,8 @@
-import { TProjectsUrl, TProjectType } from "./projects";
-import { TServicesUrl, TServiceType } from "./services";
-import { TAdminsUrl, TEmployee, TEmployeeType } from "./team";
+import { TProjectsKind, TProjectsUrl, TProjectType } from "./projects";
+import { TServicesKind, TServicesUrl, TServiceType } from "./services";
+import { TAdminsUrl, TEmployee, TEmployeeType, TTeamKind } from "./team";
 import { Colors } from "../types";
-import { TMerchType, TMerchUrl } from "./merch";
+import { TMerchKind, TMerchType, TMerchUrl } from "./merch";
 
 export type TSocialsType = "telegram" | "vk";
 export type TSocials = {
@@ -76,7 +76,11 @@ export type TCategories = {
   categoryList: TCategory[];
 };
 
-export type TItemOTKind = "projects" | "services" | "team" | "merch";
+export type TItemOTKind =
+  | TProjectsKind
+  | TServicesKind
+  | TTeamKind
+  | TMerchKind;
 export type TItemOTType =
   | TProjectType
   | TServiceType
@@ -84,6 +88,9 @@ export type TItemOTType =
   | TMerchType;
 export type TItemOT = {
   id: number;
+  kind: TItemOTKind;
+  url: TItemOTUrl;
+  type: TItemOTType;
   title: string;
   shortText: string;
   extraText?: string;

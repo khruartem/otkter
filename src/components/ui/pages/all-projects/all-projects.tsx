@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Page } from "../../../page";
 import { Section } from "../../../section";
 import { ContentSlider } from "../../../content-slider";
-import { ProjectList } from "../../../project-list copy";
+import { ProjectList } from "../../../project-list";
 import { Partners } from "../../../../sections/partners";
 import { SuggestProjectUI } from "../../suggest-project";
 

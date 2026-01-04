@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { InfoUI } from "../../components/ui/pages/info copy";
+import { InfoUI } from "../../components/ui/pages/info";
 import { InfoProvider } from "./info-provider";
 
 import { TInfoContextValue, TInfoProps } from "./types";
@@ -29,13 +29,6 @@ export const Info: FC<TInfoProps> = ({ currentItem }) => {
     (element) => element.id === currentItem.id
   );
 
-  const itemColor =
-    currentItem.kind === "projects"
-      ? currentItem.categories?.attention
-        ? Colors.Orange100
-        : Colors.Navy
-      : Colors.Navy;
-
   const seo: TPageSEO = {
     title,
     description: shortText,
@@ -52,7 +45,6 @@ export const Info: FC<TInfoProps> = ({ currentItem }) => {
     items,
     currentItem,
     currentIndex,
-    itemColor,
   };
 
   useEffect(() => {

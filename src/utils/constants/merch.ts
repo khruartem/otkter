@@ -1,10 +1,12 @@
 import { Colors } from "../types";
 import { TMerch, TMerchColors } from "../types/merch";
+import { contactFunction } from "../contactFunction";
+import { yakovlev } from "./team";
 
 // Футболки
 import tShirtRegWhiteFront from "../../assets/merch/tshirts/tshirt_reg_white_front.avif";
 // import tShirtRegWhiteBack from "../../assets/merch/tshirts/tshirt_reg_white_back.avif";
-import tShirtRegNavyFront from "../../assets/merch/tshirts/tshirt_reg_navy_front.avif";
+// import tShirtRegNavyFront from "../../assets/merch/tshirts/tshirt_reg_navy_front.avif";
 // import tShirtRegNavyBack from "../../assets/merch/tshirts/tshirt_reg_navy_back.avif";
 
 // Термосы
@@ -21,7 +23,7 @@ export const merchItems: TMerch[] = [
   {
     id: 1,
     kind: "merch",
-    url: "regular-t-shirt-light",
+    url: "t-shirt-artist",
     type: "cloths",
     title: "Футболка творца Открытой Территории",
     shortText:
@@ -37,37 +39,23 @@ export const merchItems: TMerch[] = [
       name: "Размеры",
       values: ["XS", "S", "M", "L", "XL", "XXL"],
     },
-    colors: [merchColors.Light],
+    colors: [merchColors.Light, merchColors.Navy],
+    controls: [
+      {
+        label: "Telegram",
+        type: "button",
+        onClick: () => contactFunction(yakovlev, "telegram"),
+        url: "#",
+        icon: "telegram",
+      },
+    ],
     main: true,
     active: true,
   },
   {
     id: 2,
     kind: "merch",
-    url: "regular-t-shirt-navy",
-    type: "cloths",
-    title: "Футболка творца Открытой Территории",
-    shortText:
-      "Буквальная униформа всех наших творцов, призывающая объединять творческих людей. Плотный хлопок и контрастный взрыв фирменной айдентики.",
-    image: tShirtRegNavyFront,
-    icon: "",
-    photos: [],
-    price: {
-      value: 2000,
-      currency: "₽",
-    },
-    params: {
-      name: "Размеры",
-      values: ["XS", "S", "M", "L", "XL", "XXL"],
-    },
-    colors: [merchColors.Navy],
-    main: true,
-    active: true,
-  },
-  {
-    id: 3,
-    kind: "merch",
-    url: "thermos-steel",
+    url: "thermos",
     type: "souvenirs",
     categories: {
       attention: false,
@@ -92,6 +80,15 @@ export const merchItems: TMerch[] = [
       values: ["500мл"],
     },
     colors: [merchColors.Steel],
+    controls: [
+      {
+        label: "Telegram",
+        type: "button",
+        onClick: () => contactFunction(yakovlev, "telegram"),
+        url: "#",
+        icon: "telegram",
+      },
+    ],
     main: true,
     active: true,
   },

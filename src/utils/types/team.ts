@@ -1,5 +1,7 @@
 import { TItemOT, TSocials, TUrlNotFound } from "./common";
 
+export type TTeamKind = "team";
+
 export type TAdminsUrl =
   | "yakovlev"
   | "LA"
@@ -10,7 +12,7 @@ export type TAdminsUrl =
 export type TEmployeeType = "admins" | "artists";
 
 export type TEmployee = TItemOT & {
-  kind: "team";
+  kind: TTeamKind;
   url: TAdminsUrl | TUrlNotFound;
   type: TEmployeeType;
   socials?: TSocials[];

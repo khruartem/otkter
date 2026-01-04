@@ -1,9 +1,15 @@
-import { TItemOTType } from "../../utils/types/common";
-import { TMerch } from "../../utils/types/merch";
-import { TProject } from "../../utils/types/projects";
-import { TService } from "../../utils/types/services";
-import { TEmployee } from "../../utils/types/team";
+// import { TItemOTType } from "../../utils/types/common";
+// import { TMerch } from "../../utils/types/merch";
+// import { TProject } from "../../utils/types/projects";
+// import { TService } from "../../utils/types/services";
+// import { TEmployee } from "../../utils/types/team";
+
+// export type TProjectTabProps = {
+//   tab: TProject | TService | TEmployee | TItemOTType | TMerch;
+// };
+
+import { TProject, TProjectType } from "../../utils/types/projects";
 
 export type TProjectTabProps = {
-  tab: TProject | TService | TEmployee | TItemOTType | TMerch;
+  tab: TProject | TProjectType;
 };

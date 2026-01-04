@@ -1,9 +1,9 @@
 import { FC } from "react";
 
-import { CategoryListUI } from "../category-list copy";
+import { CategoryListUI } from "../category-list";
 
 import { TDetailsGridContentUIProps } from "./types";
-import { TCategoryListUIProps } from "../category-list copy/types";
+import { TCategoryListUIProps } from "../category-list/types";
 
 import styles from "./details-grid-content.module.css";
 import clsx from "clsx";

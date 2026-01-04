@@ -9,9 +9,11 @@ import { ProjectTab } from "../../components/project-tab";
 import { TContentSliderTabBarProps } from "../../components/content-slider/types";
 import { TTabsGap } from "../../utils/types";
 import { TPageLayout, TPageSEO } from "../../components/page/type";
+import { TProject, TProjectType } from "../../utils/types/projects";
 
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 import { useGetProjects } from "../../hooks/projects/useGetProjects";
+import { TItemOTType } from "../../utils/types/common";
 
 export const AllProjects: FC = () => {
   const location = useLocation();
@@ -31,8 +33,13 @@ export const AllProjects: FC = () => {
     ) as TTabsGap,
     relativeToTitle: "columned",
     renderTab: (item) => (
-      <IconTab {...item}>
-        <ProjectTab tab={item.tab} />
+      <IconTab
+        tab={item.tab as TItemOTType}
+        current={item.current}
+        iconRef={item.iconRef}
+        onClick={item.onClick}
+      >
+        <ProjectTab tab={item.tab as TProject | TProjectType} />
       </IconTab>
     ),
   };

@@ -1,9 +1,5 @@
-import { TProject } from "../types/projects";
-import { TService } from "../types/services";
-import { TEmployee } from "../types/team";
+import { TItemOT } from "../types/common";
 
-export function isItemOT(
-  item: unknown
-): item is TProject | TService | TEmployee {
-  return (item as TProject | TService | TEmployee).kind !== undefined;
+export function isItemOT(item: unknown): item is TItemOT {
+  return (item as TItemOT).kind !== undefined;
 }
