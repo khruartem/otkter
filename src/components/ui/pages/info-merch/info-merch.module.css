@@ -1,0 +1,25 @@
+.merch-info-characteristics {
+  display: grid;
+  padding-block-start: 40px;
+  width: 100%;
+}
+
+.merch-info-characteristics_columned {
+  grid-template-columns: 1fr 1fr;
+}
+
+.merch-info-characteristics_rowed {
+  grid-template-rows: 1fr 1fr;
+}
+
+.merch-info-characteristics_large-gap {
+  gap: 24px;
+}
+
+.merch-info-characteristics_middle-gap {
+  gap: 20px;
+}
+
+.merch-info-characteristics_small-gap {
+  gap: 12px;
+}

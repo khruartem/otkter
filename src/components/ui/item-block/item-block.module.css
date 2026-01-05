@@ -1,0 +1,9 @@
+.item-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: min-content;
+  border-radius: 40px;
+  padding: 24px;
+  background-color: var(--light80);
+}
