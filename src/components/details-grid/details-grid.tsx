@@ -6,7 +6,8 @@ import { DetailsTeam } from "../details-team";
 import { DetailsMedia } from "../details-media";
 
 import { TDetailsGridProps } from "./types";
-import { TDetails, TDetailsType } from "../../utils/types/common";
+
+import { TDetails, TDetailsType } from "../../utils/types/details";
 
 export const DetailsGrid: FC<TDetailsGridProps> = ({ details, categories }) => {
   const findDetails = (details: TDetails[], type: TDetailsType) => {

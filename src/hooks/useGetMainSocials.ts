@@ -1,4 +1,4 @@
-import { TSocials } from "../utils/types/common";
+import { TSocials } from "../utils/types/socials";
 
 export const useGetMainSocials = (telegramUrl?: string, vkUrl?: string) => {
   const mainSocials: TSocials[] = [

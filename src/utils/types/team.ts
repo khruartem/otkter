@@ -1,4 +1,5 @@
-import { TItemOT, TSocials, TUrlNotFound } from "./common";
+import { TItemOT, TUrlNotFound } from "./item-ot";
+import { TSocials } from "./socials";
 
 export type TTeamKind = "team";
 

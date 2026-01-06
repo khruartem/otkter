@@ -13,6 +13,7 @@ import { MerchInfoColors } from "../../../merch-info-colors";
 
 import styles from "./info-merch.module.css";
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
+import { MerchInfoPoster } from "../../../merch-info-poster";
 
 export const InfoMerchUI: FC<TInfoMerchUIProps> = ({
   currentItem,
@@ -54,6 +55,7 @@ export const InfoMerchUI: FC<TInfoMerchUIProps> = ({
           <MerchInfoParams />
           <MerchInfoColors />
         </div>
+        <MerchInfoPoster />
       </Section>
     </Page>
   );

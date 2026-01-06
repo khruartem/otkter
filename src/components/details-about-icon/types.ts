@@ -1,4 +1,4 @@
-import { TDetailsIcon } from "../../utils/types/common";
+import { TDetailsIcon } from "../../utils/types/item-ot";
 
 export type TDetailsAboutIconProps = {
   icon: TDetailsIcon;

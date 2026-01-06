@@ -1,4 +1,4 @@
-import { TItemOT, TItemOTType } from "../../utils/types/common";
+import { TItemOT, TItemOTType } from "../../utils/types/item-ot";
 import { TTabBarStyle, TTabsGap } from "../../utils/types";
 import { ReactNode } from "react";
 

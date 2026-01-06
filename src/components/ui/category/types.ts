@@ -1,4 +1,4 @@
-import { TCategoryColors, TCategory } from "../../../utils/types/common";
+import { TCategory, TCategoryColors } from "../../../utils/types/categories";
 
 export type TCategoryUIProps = {
   category: TCategory;

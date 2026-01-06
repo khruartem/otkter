@@ -10,7 +10,7 @@ import { TContentSliderTabBarProps } from "../../components/content-slider/types
 
 import { TTabsGap } from "../../utils/types";
 import { TMerchType } from "../../utils/types/merch";
-import { TItemOTType } from "../../utils/types/common";
+import { TItemOTType } from "../../utils/types/item-ot";
 
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 import { useGetMerchItems } from "../../hooks/merch/useGetMerchItems";

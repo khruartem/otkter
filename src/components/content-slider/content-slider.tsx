@@ -7,7 +7,7 @@ import { TContentSliderContext, TContentSliderProps } from "./types";
 import { TTabBarCotextValue } from "../tab-bar/types";
 
 import { onlyUnique } from "../../utils/onlyUnique";
-import { TItemOT, TItemOTType } from "../../utils/types/common";
+import { TItemOT, TItemOTType } from "../../utils/types/item-ot";
 import { isItemOTType } from "../../utils/guards/is-item-ot-type";
 
 export const ContentSlider: FC<TContentSliderProps> = ({

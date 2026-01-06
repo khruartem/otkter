@@ -9,7 +9,7 @@ import { TContentSliderTabBarProps } from "../../components/content-slider/types
 
 import { TTabsGap } from "../../utils/types";
 import { TEmployee, TEmployeeType } from "../../utils/types/team";
-import { TItemOTType } from "../../utils/types/common";
+import { TItemOTType } from "../../utils/types/item-ot";
 
 import { useGetTeams } from "../../hooks/team/useGetTeams";
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";

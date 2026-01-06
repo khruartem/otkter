@@ -1,5 +1,5 @@
 import { Colors } from "../types";
-import { TItemOT, TUrlNotFound } from "./common";
+import { TItemOT, TUrlNotFound } from "./item-ot";
 
 export type TMerchKind = "merch";
 

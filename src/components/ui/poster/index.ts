@@ -1,1 +1,0 @@
-export { PosterUI } from "./poster";

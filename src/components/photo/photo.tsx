@@ -4,7 +4,7 @@ import { PhotoUI } from "../ui/photo";
 
 import { TPhotoProps } from "./types";
 
-import { TItemOTKind } from "../../utils/types/common";
+import { TItemOTKind } from "../../utils/types/item-ot";
 
 import { usePhotoListContext } from "../../hooks/contexts/usePhotoListContext";
 

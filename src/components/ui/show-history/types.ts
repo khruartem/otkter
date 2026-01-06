@@ -1,4 +1,4 @@
-import { TControlsItem } from "../../../utils/types/common";
+import { TControlsItem } from "../../../utils/types/controls";
 import { TShowHistoryItem } from "../../../utils/types/projects";
 
 export type TShowHistoryUIProps = {

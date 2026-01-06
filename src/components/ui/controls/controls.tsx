@@ -8,7 +8,7 @@ import { Telegram, VK } from "../../icons/icons";
 
 import { TControlsUIProps } from "./types";
 import { Colors } from "../../../utils/types";
-import { TControlsItem } from "../../../utils/types/common";
+import { TControlsItem } from "../../../utils/types/controls";
 
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 

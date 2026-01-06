@@ -6,7 +6,7 @@ import { TabBar } from "../tab-bar";
 import { TPhotoTabBarProps } from "./types";
 import { TTabBarCotextValue } from "../tab-bar/types";
 
-import { TItemOT, TItemOTType } from "../../utils/types/common";
+import { TItemOT, TItemOTType } from "../../utils/types/item-ot";
 import { isItemOT } from "../../utils/guards/is-item-ot";
 
 export const PhotoTabBar: FC<TPhotoTabBarProps> = ({

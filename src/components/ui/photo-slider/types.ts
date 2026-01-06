@@ -1,4 +1,4 @@
-import { TPhoto } from "../../../utils/types/common";
+import { TPhoto } from "../../../utils/types/photo";
 
 export type TPhotoSliderUIProps = {
   photos: TPhoto[];

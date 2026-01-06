@@ -1,5 +1,5 @@
 import { ReactNode, SyntheticEvent } from "react";
-import { TItemOT, TItemOTType } from "../../utils/types/common";
+import { TItemOT, TItemOTType } from "../../utils/types/item-ot";
 import { TTabBarCotextValue } from "../tab-bar/types";
 
 export type TContentSliderTabBarProps = Pick<

@@ -1,10 +1,5 @@
-import {
-  TCategories,
-  TCategoryColors,
-  TDetails,
-  TItemOT,
-} from "../../../utils/types/common";
-import { TEmployee } from "../../../utils/types/team";
+import { TCategories, TCategoryColors } from "../../../utils/types/categories";
+import { TDetails } from "../../../utils/types/details";
 
 export type TDetailsTeamUIProps = {
   detailsAdmins?: TDetails[];
@@ -12,5 +7,4 @@ export type TDetailsTeamUIProps = {
   categoriesAdmins: TCategories;
   categoriesArtists: TCategories;
   categoriesColors: TCategoryColors;
-  guardEmployee(value: string | string[] | TItemOT): value is TEmployee;
 };

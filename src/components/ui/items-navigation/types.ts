@@ -1,5 +1,5 @@
 import { TTabsGap } from "../../../utils/types";
-import { TItemOT } from "../../../utils/types/common";
+import { TItemOT } from "../../../utils/types/item-ot";
 
 export type TItemsNavigationUIProps = {
   currentItem: TItemOT;

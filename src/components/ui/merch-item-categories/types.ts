@@ -1,4 +1,4 @@
-import { TCategories, TCategoryColors } from "../../../utils/types/common";
+import { TCategories, TCategoryColors } from "../../../utils/types/categories";
 
 export type TMerchItemCategoriesUIProps = {
   categories: TCategories;

@@ -4,7 +4,7 @@ import { PhotoListItemUI } from "../ui/photo-list-item";
 
 import { TPhotoListItemProps } from "./types";
 
-import { TItemOTUrl } from "../../utils/types/common";
+import { TItemOTUrl } from "../../utils/types/item-ot";
 
 import { useGetCode } from "../../hooks/useGetCode";
 import { usePhotoListContext } from "../../hooks/contexts/usePhotoListContext";

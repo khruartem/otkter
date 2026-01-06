@@ -1,4 +1,4 @@
-import { TItemOT, TUrlNotFound } from "./common";
+import { TItemOT, TUrlNotFound } from "./item-ot";
 
 export type TServicesKind = "services";
 

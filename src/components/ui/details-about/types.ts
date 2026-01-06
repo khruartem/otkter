@@ -1,8 +1,5 @@
-import {
-  TCategories,
-  TCategoryColors,
-  TDetails,
-} from "../../../utils/types/common";
+import { TCategories, TCategoryColors } from "../../../utils/types/categories";
+import { TDetails } from "../../../utils/types/details";
 
 export type TDetailsAboutUIProps = {
   details: TDetails[];

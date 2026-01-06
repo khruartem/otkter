@@ -5,7 +5,9 @@ import { DetailsGridContentUI } from "../details-grid-content";
 import { EmployeeUI } from "../employee";
 
 import { TDetailsTeamUIProps } from "./types";
-import { TDetails } from "../../../utils/types/common";
+
+import { TDetails } from "../../../utils/types/details";
+import { TEmployee } from "../../../utils/types/team";
 
 export const DetailsTeamUI: FC<TDetailsTeamUIProps> = ({
   detailsAdmins,
@@ -13,17 +15,12 @@ export const DetailsTeamUI: FC<TDetailsTeamUIProps> = ({
   categoriesAdmins,
   categoriesArtists,
   categoriesColors,
-  guardEmployee,
 }) => {
   const renderTeamDetails = (details: TDetails[]) => {
     return (
       <>
         {details.map(({ value }) => (
-          <>
-            {guardEmployee(value) && (
-              <EmployeeUI type={"projects"} employee={value} />
-            )}
-          </>
+          <EmployeeUI type={"projects"} employee={value as TEmployee} />
         ))}
       </>
     );

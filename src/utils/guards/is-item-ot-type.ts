@@ -1,4 +1,4 @@
-import { TItemOTType } from "../types/common";
+import { TItemOTType } from "../types/item-ot";
 
 const itemOTTypes: TItemOTType[] = [
   "main",

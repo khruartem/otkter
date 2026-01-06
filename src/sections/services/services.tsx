@@ -10,7 +10,7 @@ import { TContentSliderTabBarProps } from "../../components/content-slider/types
 import { TTabsGap } from "../../utils/types";
 
 import { TService, TServiceType } from "../../utils/types/services";
-import { TItemOTType } from "../../utils/types/common";
+import { TItemOTType } from "../../utils/types/item-ot";
 
 import { useSortAsc } from "../../hooks/useSortAsc";
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";

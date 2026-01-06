@@ -7,7 +7,10 @@ import { ItemOTCardUI } from "../item-ot-card";
 
 import { TDetailsMediaUIProps } from "./types";
 
-import { isMedia } from "../../../utils/guards/is-media";
+import {
+  TMediaDetails,
+  TMediaDetailsValue,
+} from "../../../utils/types/details";
 
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
@@ -33,20 +36,16 @@ export const DetailsMediaUI: FC<TDetailsMediaUIProps> = ({
             styles["details-grid-item__content_media_gapped"]
         )}
       >
-        {details.map(({ value, url }) => (
-          <>
-            {isMedia(value) && (
-              <ItemOTCardUI
-                item={value}
-                url={{ to: url || "" }}
-                target="_blank"
-                className={clsx(
-                  isDesktop && styles["item-ot-card_desktop_media"],
-                  isLaptop && styles["item-ot-card_laptop_media"]
-                )}
-              />
+        {(details as TMediaDetails[]).map(({ value, url }) => (
+          <ItemOTCardUI
+            item={value as TMediaDetailsValue}
+            url={{ to: url }}
+            target="_blank"
+            className={clsx(
+              isDesktop && styles["item-ot-card_desktop_media"],
+              isLaptop && styles["item-ot-card_laptop_media"]
             )}
-          </>
+          />
         ))}
       </DetailsGridContentUI>
     </DetailsGridItemUI>

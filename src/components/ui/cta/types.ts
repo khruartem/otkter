@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-import { TControlsItem, TItemOTKind } from "../../../utils/types/common";
+import { TItemOTKind } from "../../../utils/types/item-ot";
+import { TControlsItem } from "../../../utils/types/controls";
 
 export type TCtaUIProps = {
   controls: TControlsItem[];

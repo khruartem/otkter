@@ -1,4 +1,4 @@
-import { TItemOT } from "../../utils/types/common";
+import { TItemOT } from "../../utils/types/item-ot";
 
 export type TShareProps = {
   item: TItemOT;

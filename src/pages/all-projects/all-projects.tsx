@@ -13,7 +13,7 @@ import { TProject, TProjectType } from "../../utils/types/projects";
 
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 import { useGetProjects } from "../../hooks/projects/useGetProjects";
-import { TItemOTType } from "../../utils/types/common";
+import { TItemOTType } from "../../utils/types/item-ot";
 
 export const AllProjects: FC = () => {
   const location = useLocation();

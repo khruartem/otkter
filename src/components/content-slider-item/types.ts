@@ -1,4 +1,4 @@
-import { TItemOTType } from "../../utils/types/common";
+import { TItemOTType } from "../../utils/types/item-ot";
 
 export type TContentSliderItemProps = {
   tab: TItemOTType;

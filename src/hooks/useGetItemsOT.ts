@@ -1,4 +1,4 @@
-import { TItemOTKind } from "../utils/types/common";
+import { TItemOTKind } from "../utils/types/item-ot";
 import { useGetMerchItems } from "./merch/useGetMerchItems";
 import { useGetProjects } from "./projects/useGetProjects";
 import { useGetServices } from "./services/useGetServices";

@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { TItemOT } from "../../utils/types/common";
+import { TItemOT } from "../../utils/types/item-ot";
 
 export type TInfoRendererProps = {
   currentItem?: TItemOT;

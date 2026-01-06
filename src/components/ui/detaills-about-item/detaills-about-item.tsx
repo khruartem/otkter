@@ -5,7 +5,7 @@ import { Text } from "../../text";
 
 import { TDetailsAboutItemUIProps } from "./types";
 import { Colors, TEmployee } from "../../../utils/types";
-import { TItemOT } from "../../../utils/types/common";
+import { TItemOT } from "../../../utils/types/item-ot";
 
 import styles from "./detaills-about-item.module.css";
 

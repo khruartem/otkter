@@ -1,4 +1,4 @@
-import { TItemOT, TItemOTUrl } from "../../../utils/types/common";
+import { TItemOTCard, TItemOTUrl } from "../../../utils/types/item-ot";
 
 type TItemOTCardUIUrl = {
   to: string;
@@ -8,7 +8,7 @@ type TItemOTCardUIUrl = {
 
 export type TItemOTCardUIProps = {
   id?: string;
-  item: TItemOT;
+  item: TItemOTCard;
   url: TItemOTCardUIUrl;
   target?: React.HTMLAttributeAnchorTarget;
   className?: string;

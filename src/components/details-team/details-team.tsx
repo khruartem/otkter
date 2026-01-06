@@ -1,10 +1,10 @@
 import { FC } from "react";
 
-import { TDetailsTeamProps } from "./types";
 import { DetailsTeamUI } from "../ui/details-team";
+
+import { TDetailsTeamProps } from "./types";
+
 import { Colors } from "../../utils/types";
-import { TItemOT } from "../../utils/types/common";
-import { TEmployee } from "../../utils/types/team";
 
 export const DetailsTeam: FC<TDetailsTeamProps> = ({
   detailsAdmins,
@@ -28,12 +28,6 @@ export const DetailsTeam: FC<TDetailsTeamProps> = ({
     ],
   };
 
-  function guardEmployee(
-    value: string | string[] | TItemOT
-  ): value is TEmployee {
-    return (value as TEmployee).kind === "team";
-  }
-
   const categoriesColors = {
     icon: Colors.Light100,
     background: Colors.Light100,
@@ -47,7 +41,6 @@ export const DetailsTeam: FC<TDetailsTeamProps> = ({
       categoriesAdmins={categoriesAdmins}
       categoriesArtists={categoriesArtists}
       categoriesColors={categoriesColors}
-      guardEmployee={guardEmployee}
     />
   );
 };

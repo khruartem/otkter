@@ -1,3 +1,7 @@
-import { TDetails } from "../../../utils/types/common";
+import { TAboutDetailsValue } from "../../../utils/types/details";
 
-export type TDetailsAboutItemUIProps = Omit<TDetails, "type">;
+export type TDetailsAboutItemUIProps = {
+  icon: string;
+  label: string;
+  value: TAboutDetailsValue;
+};

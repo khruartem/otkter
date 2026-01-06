@@ -1,4 +1,4 @@
-export type TPosterUIProps = {
+export type TItemPosterUIProps = {
   poster: string;
   className?: string;
 };

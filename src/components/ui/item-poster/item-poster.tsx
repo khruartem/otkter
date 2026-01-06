@@ -3,13 +3,13 @@ import clsx from "clsx";
 
 import { ImageUI } from "../../image";
 
-import { TPosterUIProps } from "./types";
+import { TItemPosterUIProps } from "./types";
 
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
-import styles from "./poster.module.css";
+import styles from "./item-poster.module.css";
 
-export const PosterUI: FC<TPosterUIProps> = ({ poster, className }) => {
+export const ItemPosterUI: FC<TItemPosterUIProps> = ({ poster, className }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 

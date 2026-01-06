@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { TItemOTType } from "../../../utils/types/common";
+import { TItemOTType } from "../../../utils/types/item-ot";
 
 export type TIconTabUIProps = {
   children: ReactNode;
