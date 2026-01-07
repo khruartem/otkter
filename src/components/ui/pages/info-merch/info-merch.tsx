@@ -21,41 +21,78 @@ export const InfoMerchUI: FC<TInfoMerchUIProps> = ({
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
+  const largeResolution = isLarge || isDesktop;
+  const smallResolution = isLaptop || isTablet || isMobile;
+
   const { seo, layout } = pageProps;
 
   return (
     <Page seo={seo} layout={layout}>
-      <Section>
+      <Section
+        decoration={"half"}
+        className={clsx(
+          styles["merch-info"],
+          largeResolution && styles["merch-info_large-gap"],
+          smallResolution && styles["merch-info_small-gap"]
+        )}
+      >
         <Share item={currentItem} />
-        <MerchInfoTitle />
-        <MerchInfoText />
-        <MerchInfoControls />
-        <MerchInfoPrice />
         <div
           className={clsx(
-            styles["merch-info-characteristics"],
-            (isLarge || isDesktop) && [
-              styles["merch-info-characteristics_columned"],
-              styles["merch-info-characteristics_large-gap"],
-            ],
-            isLaptop && [
-              styles["merch-info-characteristics_columned"],
-              styles["merch-info-characteristics_middle-gap"],
-            ],
-            isTablet && [
-              styles["merch-info-characteristics_columned"],
-              styles["merch-info-characteristics_small-gap"],
-            ],
-            isMobile && [
-              styles["merch-info-characteristics_rowed"],
-              styles["merch-info-characteristics_small-gap"],
-            ]
+            styles["merch-info__content"],
+            (isTablet || isMobile) && styles["merch-info__content_gapped"]
           )}
         >
-          <MerchInfoParams />
-          <MerchInfoColors />
+          <MerchInfoPoster />
+          <div
+            className={clsx(
+              styles["merch-info__about"],
+              largeResolution && styles["merch-info__about_large-gap"],
+              smallResolution && styles["merch-info__about_small-gap"]
+            )}
+          >
+            <div
+              className={clsx(
+                styles["merch-info__core"],
+                isLarge && styles["merch-info__core_heighted"],
+                (isLarge || isDesktop || isLaptop) &&
+                  styles["merch-info__core_large-gap"],
+                (isTablet || isMobile) && styles["merch-info__core_small-gap"]
+              )}
+            >
+              <MerchInfoTitle />
+              <MerchInfoText />
+              <div
+                className={clsx(
+                  styles["merch-info__characteristics"],
+                  largeResolution && [
+                    styles["merch-info__characteristics_columned"],
+                    styles["merch-info__characteristics_large-gap"],
+                  ],
+                  isLaptop && [
+                    styles["merch-info__characteristics_columned"],
+                    styles["merch-info-characteristics_middle-gap"],
+                  ],
+                  isTablet && [
+                    styles["merch-info__characteristics_columned"],
+                    styles["merch-info__characteristics_small-gap"],
+                  ],
+                  isMobile && [
+                    styles["merch-info__characteristics_rowed"],
+                    styles["merch-info__characteristics_small-gap"],
+                  ]
+                )}
+              >
+                <MerchInfoParams />
+                <MerchInfoColors />
+              </div>
+            </div>
+            <div className={styles["merch-info__cta"]}>
+              <MerchInfoControls />
+              <MerchInfoPrice />
+            </div>
+          </div>
         </div>
-        <MerchInfoPoster />
       </Section>
     </Page>
   );

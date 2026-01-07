@@ -1,25 +1,94 @@
-.merch-info-characteristics {
+/* merch-info */
+.merch-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.merch-info_large-gap {
+  gap: 36px;
+}
+
+.merch-info_small-gap {
+  gap: 24px;
+}
+
+/* merch-info__content */
+.merch-info__content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.merch-info__content_gapped {
+  gap: 40px;
+  justify-content: unset;
+}
+
+/* merch-info__about */
+.merch-info__about {
+  display: flex;
+  flex-direction: column;
+}
+
+.merch-info__about_large-gap {
+  gap: 68px;
+}
+
+.merch-info__about_small-gap {
+  gap: 60px;
+}
+
+/* merch-info__core */
+.merch-info__core {
+  display: flex;
+  flex-direction: column;
+}
+
+.merch-info__core_heighted {
+  height: 27.71vw;
+}
+
+.merch-info__core_large-gap {
+  gap: 24px;
+}
+
+.merch-info__core_small-gap {
+  gap: 12px;
+}
+
+/* merch-info__characteristics */
+.merch-info__characteristics {
   display: grid;
   padding-block-start: 40px;
   width: 100%;
 }
 
-.merch-info-characteristics_columned {
+.merch-info__characteristics_columned {
   grid-template-columns: 1fr 1fr;
 }
 
-.merch-info-characteristics_rowed {
+.merch-info__characteristics_rowed {
   grid-template-rows: 1fr 1fr;
 }
 
-.merch-info-characteristics_large-gap {
+.merch-info__characteristics_large-gap {
   gap: 24px;
 }
 
-.merch-info-characteristics_middle-gap {
+.merch-info__characteristics_middle-gap {
   gap: 20px;
 }
 
-.merch-info-characteristics_small-gap {
+.merch-info__characteristics_small-gap {
   gap: 12px;
+}
+
+/* merch-info__cta */
+.merch-info__cta {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
 }

@@ -1,5 +1,56 @@
+.merch-info-poster {
+  display: flex;
+  flex-direction: column;
+}
+
+.merch-info-poster_large-gap {
+  gap: 24px;
+}
+
+.merch-info-poster_small-gap {
+  gap: 20px;
+}
+
+.merch-item__image_info {
+  width: 100%;
+  position: relative;
+  border: 1px var(--light30) solid;
+}
+
 .merch-info-photo-list {
   display: flex;
   flex-direction: row;
   gap: 12px;
+}
+
+.merch-info-photo-list-item {
+  opacity: 0.3;
+}
+
+.merch-info-photo-list-item_active {
+  opacity: 1;
+}
+
+/* Стили для разных разрешений эканов */
+.merch-item__image_info_large {
+  width: 27.08vw;
+  height: 34.38vw;
+}
+
+.merch-item__image_info_desktop {
+  width: 34.11vw;
+  height: 43.34vw;
+}
+
+.merch-item__image_info_laptop {
+  width: 37.11vw;
+  height: 47.07vw;
+}
+
+.merch-item__image_info_tablet {
+  height: 116.93vw;
+}
+
+.merch-item__image_info_mobile {
+  height: 117.15vw;
 }

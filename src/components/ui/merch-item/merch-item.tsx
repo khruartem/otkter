@@ -3,6 +3,9 @@ import clsx from "clsx";
 import { Link } from "react-router-dom";
 
 import { MerchItemTopUI } from "../merch-item-top";
+import { MerchItemCategories } from "../../merch-item-categories";
+import { MerchItemColors } from "../../merch-item-colors";
+import { MerchItemImage } from "../../merch-item-image";
 import { MerchItemBottomUI } from "../merch-item-bottom";
 
 import { TMerchItemUIProps } from "./types";
@@ -27,7 +30,11 @@ export const MerchItemUI: FC<TMerchItemUIProps> = ({ url }) => {
       )}
     >
       <Link to={url}>
-        <MerchItemTopUI />
+        <MerchItemTopUI>
+          <MerchItemCategories />
+          <MerchItemColors />
+          <MerchItemImage />
+        </MerchItemTopUI>
         <MerchItemBottomUI />
       </Link>
     </li>

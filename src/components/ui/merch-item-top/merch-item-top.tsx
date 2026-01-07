@@ -1,15 +1,16 @@
 import { FC } from "react";
+import clsx from "clsx";
 
-import { MerchItemCategories } from "../../merch-item-categories";
-import { MerchItemColors } from "../../merch-item-colors";
-import { MerchItemImage } from "../../merch-item-image";
+import { TMerchItemTopUIProps } from "./types";
 
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./merch-item-top.module.css";
-import clsx from "clsx";
 
-export const MerchItemTopUI: FC = () => {
+export const MerchItemTopUI: FC<TMerchItemTopUIProps> = ({
+  children,
+  className,
+}) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
@@ -21,12 +22,11 @@ export const MerchItemTopUI: FC = () => {
         isDesktop && styles["merch-item__top_desktop"],
         isLaptop && styles["merch-item__top_laptop"],
         isTablet && styles["merch-item__top_tablet"],
-        isMobile && styles["merch-item__top_mobile"]
+        isMobile && styles["merch-item__top_mobile"],
+        className && className
       )}
     >
-      <MerchItemCategories />
-      <MerchItemColors />
-      <MerchItemImage />
+      {children}
     </div>
   );
 };

@@ -13,8 +13,8 @@ export const MerchInfoPoster: FC = () => {
     photos ? photos[0].source : poster
   );
 
-  const handleChangePhoto = (photo: string) => {
-    setCurrentPhoto(photo);
+  const handleChangePhoto = (source: string) => {
+    setCurrentPhoto(source);
   };
 
   return (
