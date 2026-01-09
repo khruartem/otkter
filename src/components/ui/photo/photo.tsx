@@ -1,8 +1,6 @@
 import { FC } from "react";
 import clsx from "clsx";
 
-import { ImageUI } from "../../image";
-
 import { TPhotoUIProps } from "./types";
 
 import styles from "./photo.module.css";
@@ -14,7 +12,8 @@ export const PhotoUI: FC<TPhotoUIProps> = ({
   className,
 }) => {
   return (
-    <ImageUI
+    <img
+      loading="lazy"
       src={src}
       alt={alt}
       width={"100%"}

@@ -5,9 +5,9 @@ import { yakovlev } from "./team";
 
 // Футболки
 import tShirtRegWhiteFront from "../../assets/merch/tshirts/tshirt_reg_white_front.avif";
-// import tShirtRegWhiteBack from "../../assets/merch/tshirts/tshirt_reg_white_back.avif";
-// import tShirtRegNavyFront from "../../assets/merch/tshirts/tshirt_reg_navy_front.avif";
-// import tShirtRegNavyBack from "../../assets/merch/tshirts/tshirt_reg_navy_back.avif";
+import tShirtRegWhiteBack from "../../assets/merch/tshirts/tshirt_reg_white_back.avif";
+import tShirtRegNavyFront from "../../assets/merch/tshirts/tshirt_reg_navy_front.avif";
+import tShirtRegNavyBack from "../../assets/merch/tshirts/tshirt_reg_navy_back.avif";
 
 // Термосы
 import thermosSteel from "../../assets/merch/thermos/thermos_steel.avif";
@@ -30,7 +30,28 @@ export const merchItems: TMerch[] = [
       "Буквальная униформа всех наших творцов, призывающая объединять творческих людей. Плотный хлопок и контрастный взрыв фирменной айдентики.",
     image: tShirtRegWhiteFront,
     icon: "",
-    // photos: [],
+    photos: [
+      {
+        id: 1,
+        source: tShirtRegWhiteFront,
+        icon: tShirtRegWhiteFront,
+      },
+      {
+        id: 2,
+        source: tShirtRegWhiteBack,
+        icon: tShirtRegWhiteBack,
+      },
+      {
+        id: 3,
+        source: tShirtRegNavyFront,
+        icon: tShirtRegNavyFront,
+      },
+      {
+        id: 4,
+        source: tShirtRegNavyBack,
+        icon: tShirtRegNavyBack,
+      },
+    ],
     price: {
       value: 2000,
       currency: "₽",

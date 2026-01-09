@@ -1,4 +1,5 @@
 import { FC } from "react";
+import clsx from "clsx";
 
 import { Text } from "../../text";
 
@@ -8,7 +9,11 @@ import { Colors } from "../../../utils/types";
 
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
-export const ItemPriceUI: FC<TItemPriceUIProps> = ({ value, currency }) => {
+export const ItemPriceUI: FC<TItemPriceUIProps> = ({
+  value,
+  currency,
+  className,
+}) => {
   const { isLarge, isDesktop } = useGetMediaQuery();
   const largeResolution = isLarge || isDesktop;
 
@@ -21,8 +26,9 @@ export const ItemPriceUI: FC<TItemPriceUIProps> = ({ value, currency }) => {
       lineHeight={largeResolution ? 44 : 40}
       textTransform={"none"}
       color={Colors.Nephritis100}
+      className={clsx(className && className)}
     >
-      {`${value}${currency}`}
+      {`${value} ${currency}`}
     </Text>
   );
 };

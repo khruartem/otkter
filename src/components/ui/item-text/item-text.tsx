@@ -11,7 +11,7 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./item-text.module.css";
 
-export const ItemTextUI: FC<TItemTextUIProps> = ({ text }) => {
+export const ItemTextUI: FC<TItemTextUIProps> = ({ text, className }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
   const smallResolution = isDesktop || isTablet || isMobile;
@@ -30,7 +30,8 @@ export const ItemTextUI: FC<TItemTextUIProps> = ({ text }) => {
         styles["item-text"],
         isLarge && styles["item-text_large"],
         isDesktop && styles["item-text_desktop"],
-        isLaptop && styles["item-text_laptop"]
+        isLaptop && styles["item-text_laptop"],
+        className && className
       )}
     >
       {text}

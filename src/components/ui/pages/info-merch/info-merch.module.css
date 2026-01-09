@@ -12,6 +12,26 @@
   gap: 24px;
 }
 
+.merch-info_large-margin {
+  margin-block-end: 60px;
+}
+
+.merch-info_small-margin {
+  margin-block-end: 44px;
+}
+
+.merch-info_large-padding {
+  padding-block-start: 132px;
+}
+
+.merch-info_middle-padding {
+  padding-block-start: 108px;
+}
+
+.merch-info_small-padding {
+  padding-block-start: 80px;
+}
+
 /* merch-info__navigation */
 .merch-info__navigation {
   display: flex;
@@ -41,6 +61,11 @@
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.merch-info__about_gapped {
+  gap: 60px;
+  justify-content: unset;
 }
 
 /* merch-info__core */
@@ -98,36 +123,27 @@
 }
 
 /* Стили для разных разрешений экранов */
-/* merch-info__content */
-.merch-info__content_large {
-  height: 34.38vw;
-}
-
-.merch-info__content_desktop {
-  height: 43.34vw;
-}
-
-.merch-info__content_laptop {
-  height: 47.07vw;
-}
-
-.merch-info__content_tablet {
-  height: 116.93vw;
-}
-
-.merch-info__content_mobile {
-  height: 117.15vw;
-}
-
 /* merch-info__about */
 .merch-info__about_large {
   width: 48.33vw;
+  height: 34.38vw;
 }
 
 .merch-info__about_desktop {
   width: 41.29vw;
+  height: 43.34vw;
 }
 
 .merch-info__about_laptop {
   width: 44.04vw;
+  height: 64.45vw;
+}
+
+/* merch-info__cta */
+.merch-info__cta_mobile {
+  justify-content: center;
+}
+
+.merch-info__cta_mobile button {
+  width: 100%;
 }

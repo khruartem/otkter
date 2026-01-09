@@ -25,7 +25,12 @@ export const MerchInfoPosterUI: FC<TMerchInfoPosterUIProps> = ({
         styles["merch-info-poster"],
         (isLarge || isDesktop) && styles["merch-info-poster_large-gap"],
         (isLaptop || isTablet || isMobile) &&
-          styles["merch-info-poster_small-gap"]
+          styles["merch-info-poster_small-gap"],
+        isLarge && styles["merch-info-poster_large"],
+        isDesktop && styles["merch-info-poster_desktop"],
+        isLaptop && styles["merch-info-poster_laptop"],
+        isTablet && styles["merch-info-poster_tablet"],
+        isMobile && styles["merch-info-poster_mobile"]
       )}
     >
       <MerchItemTopUI
@@ -49,18 +54,31 @@ export const MerchInfoPosterUI: FC<TMerchInfoPosterUIProps> = ({
         />
       </MerchItemTopUI>
       {photos && onChangePhoto && (
-        <ul className={styles["merch-info-photo-list"]}>
+        <ul
+          className={clsx(
+            styles["merch-info-photo-list"],
+            isLarge && styles["merch-info-photo-list_large"],
+            isDesktop && styles["merch-info-photo-list_desktop"],
+            isLaptop && styles["merch-info-photo-list_laptop"],
+            isTablet && styles["merch-info-photo-list_tablet"],
+            isMobile && styles["merch-info-photo-list_mobile"]
+          )}
+        >
           {photos.map(({ source }) => (
-            <PhotoUI
-              src={source}
-              alt="Фото мерча"
-              onClick={() => onChangePhoto(source)}
+            <li
               className={clsx(
                 styles["merch-info-photo-list-item"],
-                source === currentPhoto &&
-                  styles["merch-info-photo-list-item_active"]
+                source === currentPhoto
+                  ? styles["merch-info-photo-list-item_active"]
+                  : styles["merch-info-photo-list-item_inactive"]
               )}
-            />
+            >
+              <PhotoUI
+                src={source}
+                alt="Фото мерча"
+                onClick={() => onChangePhoto(source)}
+              />
+            </li>
           ))}
         </ul>
       )}

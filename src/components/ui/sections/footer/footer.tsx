@@ -5,12 +5,13 @@ import { Logo } from "../../../../components/icons";
 import { MainSocial } from "../../../../components/main-social";
 import { Text } from "../../../../components/text";
 
+import { TFooterUIProps } from "./types";
+
 import { Colors } from "../../../../utils/types";
 
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 
 import styles from "./footer.module.css";
-import { TFooterUIProps } from "./types";
 
 export const FooterUI: FC<TFooterUIProps> = ({ year }) => {
   return (
@@ -116,15 +117,10 @@ const SmallResolution: FC<TFooterUIProps> = ({ year }) => {
             isMobile && styles["footer__contact-info_columned"]
           )}
         >
-          <div
-            className={clsx(
-              styles.footer__contacts
-              //isLarge && styles["footer__contacts_large-screen"]
-            )}
-          >
+          <div className={clsx(styles.footer__contacts)}>
             <Text
               fontFamily="Roboto"
-              textAlign={isMobile ? "left" : "right"}
+              textAlign={"left"}
               fontSize={14}
               fontWeight={400}
               lineHeight={24}

@@ -1,5 +1,7 @@
+/* merch-info-poster */
 .merch-info-poster {
   display: flex;
+  width: 100%;
   flex-direction: column;
 }
 
@@ -11,6 +13,7 @@
   gap: 20px;
 }
 
+/* merch-item__top_info */
 .merch-item__top_info {
   position: relative;
   display: flex;
@@ -24,37 +27,81 @@
   padding-inline: 0;
 }
 
+/* merch-item__image_info */
 .merch-item__image_info {
   width: 100%;
 }
 
+/* merch-info-photo-list */
 .merch-info-photo-list {
   display: flex;
+  height: 112px;
   flex-direction: row;
   gap: 12px;
 }
 
+/* merch-info-photo-list-item */
 .merch-info-photo-list-item {
+  border-radius: 50%;
+  background-color: var(--light80);
+  overflow: hidden;
+}
+
+.merch-info-photo-list-item img {
+  transition: transform .4s;
+}
+
+.merch-info-photo-list-item_inactive {
   opacity: 0.3;
+}
+
+.merch-info-photo-list-item_inactive img {
+  transform: none;
 }
 
 .merch-info-photo-list-item_active {
   opacity: 1;
 }
 
+.merch-info-photo-list-item_active img {
+  transform: scale(1.2);
+}
+
 /* Стили для разных разрешений эканов */
-.merch-item__image_info_large {
+/* merch-info-poster */
+.merch-info-poster_large {
   width: 27.08vw;
+  height: 41.46vw;
+}
+
+.merch-info-poster_desktop {
+  width: 34.10vw;
+  height: 52.40vw;
+}
+
+.merch-info-poster_laptop {
+  width: 37.11vw;
+  height: 56.84vw;
+}
+
+.merch-info-poster_tablet {
+  height: 134.11vw;
+}
+
+.merch-info-poster_mobile {
+  height: 141.17vw;
+}
+
+/* merch-item__image_info */
+.merch-item__image_info_large {
   height: 27.08vw;
 }
 
 .merch-item__image_info_desktop {
-  width: 34.10vw;
   height: 34.135vw;
 }
 
 .merch-item__image_info_laptop {
-  width: 37.11vw;
   height: 37.086vw;
 }
 
@@ -64,4 +111,25 @@
 
 .merch-item__image_info_mobile {
   height: 92.211vw;
+}
+
+/* merch-info-photo-list */
+.merch-info-photo-list_large {
+  height: 5.83vw;
+}
+
+.merch-info-photo-list_desktop {
+  height: 7.32vw;
+}
+
+.merch-info-photo-list_laptop {
+  height: 7.81vw;
+}
+
+.merch-info-photo-list_tablet {
+  height: 14.58vw;
+}
+
+.merch-info-photo-list_mobile {
+  height: 19.32vw;
 }

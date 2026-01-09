@@ -33,8 +33,16 @@ export const InfoMerchUI: FC<TInfoMerchUIProps> = ({
         padding={"all"}
         className={clsx(
           styles["merch-info"],
-          largeResolution && styles["merch-info_large-gap"],
-          smallResolution && styles["merch-info_small-gap"]
+          largeResolution && [
+            styles["merch-info_large-gap"],
+            styles["merch-info_large-padding"],
+          ],
+          smallResolution && styles["merch-info_small-gap"],
+          (isLarge || isLaptop) && styles["merch-info_large-margin"],
+          (isDesktop || isTablet || isMobile) &&
+            styles["merch-info_small-margin"],
+          (isLaptop || isTablet) && styles["merch-info_middle-padding"],
+          isMobile && styles["merch-info_small-padding"]
         )}
       >
         <div className={styles["merch-info__navigation"]}>
@@ -57,7 +65,8 @@ export const InfoMerchUI: FC<TInfoMerchUIProps> = ({
               styles["merch-info__about"],
               isLarge && styles["merch-info__about_large"],
               isDesktop && styles["merch-info__about_desktop"],
-              isLaptop && styles["merch-info__about_laptop"]
+              isLaptop && styles["merch-info__about_laptop"],
+              (isTablet || isMobile) && styles["merch-info__about_gapped"]
             )}
           >
             <div
@@ -96,7 +105,12 @@ export const InfoMerchUI: FC<TInfoMerchUIProps> = ({
                 <MerchInfoColors />
               </div>
             </div>
-            <div className={styles["merch-info__cta"]}>
+            <div
+              className={clsx(
+                styles["merch-info__cta"],
+                isMobile && styles["merch-info__cta_mobile"]
+              )}
+            >
               <MerchInfoControls />
               <MerchInfoPrice />
             </div>
