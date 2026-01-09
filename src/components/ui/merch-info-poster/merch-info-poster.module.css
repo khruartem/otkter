@@ -11,10 +11,21 @@
   gap: 20px;
 }
 
+.merch-item__top_info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border: 1px var(--light30) solid;
+  padding-block: 0;
+}
+
+.merch-item__top_info_no-padding {
+  padding-inline: 0;
+}
+
 .merch-item__image_info {
   width: 100%;
-  position: relative;
-  border: 1px var(--light30) solid;
 }
 
 .merch-info-photo-list {
@@ -34,23 +45,23 @@
 /* Стили для разных разрешений эканов */
 .merch-item__image_info_large {
   width: 27.08vw;
-  height: 34.38vw;
+  height: 27.08vw;
 }
 
 .merch-item__image_info_desktop {
-  width: 34.11vw;
-  height: 43.34vw;
+  width: 34.10vw;
+  height: 34.135vw;
 }
 
 .merch-item__image_info_laptop {
   width: 37.11vw;
-  height: 47.07vw;
+  height: 37.086vw;
 }
 
 .merch-item__image_info_tablet {
-  height: 116.93vw;
+  height: 92.125vw;
 }
 
 .merch-item__image_info_mobile {
-  height: 117.15vw;
+  height: 92.211vw;
 }

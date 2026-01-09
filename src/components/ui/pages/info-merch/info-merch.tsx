@@ -30,25 +30,34 @@ export const InfoMerchUI: FC<TInfoMerchUIProps> = ({
     <Page seo={seo} layout={layout}>
       <Section
         decoration={"half"}
+        padding={"all"}
         className={clsx(
           styles["merch-info"],
           largeResolution && styles["merch-info_large-gap"],
           smallResolution && styles["merch-info_small-gap"]
         )}
       >
-        <Share item={currentItem} />
+        <div className={styles["merch-info__navigation"]}>
+          <Share item={currentItem} />
+        </div>
         <div
           className={clsx(
             styles["merch-info__content"],
-            (isTablet || isMobile) && styles["merch-info__content_gapped"]
+            (isTablet || isMobile) && styles["merch-info__content_gapped"],
+            isLarge && styles["merch-info__content_large"],
+            isDesktop && styles["merch-info__content_desktop"],
+            isLaptop && styles["merch-info__content_laptop"],
+            isTablet && styles["merch-info__content_tablet"],
+            isMobile && styles["merch-info__content_mobile"]
           )}
         >
           <MerchInfoPoster />
           <div
             className={clsx(
               styles["merch-info__about"],
-              largeResolution && styles["merch-info__about_large-gap"],
-              smallResolution && styles["merch-info__about_small-gap"]
+              isLarge && styles["merch-info__about_large"],
+              isDesktop && styles["merch-info__about_desktop"],
+              isLaptop && styles["merch-info__about_laptop"]
             )}
           >
             <div

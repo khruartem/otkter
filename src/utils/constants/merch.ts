@@ -30,7 +30,7 @@ export const merchItems: TMerch[] = [
       "Буквальная униформа всех наших творцов, призывающая объединять творческих людей. Плотный хлопок и контрастный взрыв фирменной айдентики.",
     image: tShirtRegWhiteFront,
     icon: "",
-    photos: [],
+    // photos: [],
     price: {
       value: 2000,
       currency: "₽",
@@ -42,7 +42,7 @@ export const merchItems: TMerch[] = [
     colors: [merchColors.Light, merchColors.Navy],
     controls: [
       {
-        label: "Telegram",
+        label: "Заказать",
         type: "button",
         onClick: () => contactFunction(yakovlev, "telegram"),
         url: "#",
@@ -70,7 +70,7 @@ export const merchItems: TMerch[] = [
       "Городской аксессуар, призванный наполнять теплом и творческой энергией. Нержавеющая сталь, ситечко, компактный формат.",
     image: thermosSteel,
     icon: "",
-    photos: [],
+    // photos: [],
     price: {
       value: 2000,
       currency: "₽",
@@ -82,7 +82,7 @@ export const merchItems: TMerch[] = [
     colors: [merchColors.Steel],
     controls: [
       {
-        label: "Telegram",
+        label: "Заказать",
         type: "button",
         onClick: () => contactFunction(yakovlev, "telegram"),
         url: "#",

@@ -28,7 +28,12 @@ export const MerchInfoPosterUI: FC<TMerchInfoPosterUIProps> = ({
           styles["merch-info-poster_small-gap"]
       )}
     >
-      <MerchItemTopUI>
+      <MerchItemTopUI
+        className={clsx(
+          styles["merch-item__top_info"],
+          isMobile && styles["merch-item__top_info_no-padding"]
+        )}
+      >
         <MerchInfoCategories />
         <MerchItemImageUI
           src={currentPhoto}

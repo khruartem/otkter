@@ -16,7 +16,7 @@ export const InfoMerch: FC<TInfoMerchProps> = ({ currentItem }) => {
   };
 
   const layout: TPageLayout = {
-    noPadding: false,
+    noPadding: true,
   };
 
   const infoMerchContextValue = {

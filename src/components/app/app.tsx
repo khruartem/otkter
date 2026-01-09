@@ -10,6 +10,7 @@ import { Service } from "../../pages/service";
 import { Employee } from "../../pages/employee";
 import { NotFound404 } from "../../pages/not-found-404";
 import { Merch } from "../../pages/merch";
+import { MerchItem } from "../../pages/merch-item";
 
 export function App() {
   const navigate = useNavigate();
@@ -29,6 +30,7 @@ export function App() {
         <Route path={"/projects/:code"} element={<Project />} />
         <Route path={"/services/:code"} element={<Service />} />
         <Route path={"/team/admins/:code"} element={<Employee />} />
+        <Route path={"/merch/:type/:code"} element={<MerchItem />} />
         <Route
           path={"/projects/:code/:photoId"}
           element={
