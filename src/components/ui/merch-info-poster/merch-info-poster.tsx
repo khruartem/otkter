@@ -64,8 +64,9 @@ export const MerchInfoPosterUI: FC<TMerchInfoPosterUIProps> = ({
             isMobile && styles["merch-info-photo-list_mobile"]
           )}
         >
-          {photos.map(({ source }) => (
+          {photos.map(({ id, source }) => (
             <li
+              key={id}
               className={clsx(
                 styles["merch-info-photo-list-item"],
                 source === currentPhoto

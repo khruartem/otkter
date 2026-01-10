@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { nanoid } from "@reduxjs/toolkit";
 
 import { TItemParamsUIProps } from "./types";
 
@@ -8,7 +9,9 @@ export const ItemParamsUI: FC<TItemParamsUIProps> = ({ params }) => {
   return (
     <ul className={styles["param-list"]}>
       {params.map((param) => (
-        <li className={styles["param-list-item"]}>{param}</li>
+        <li key={nanoid()} className={styles["param-list-item"]}>
+          {param}
+        </li>
       ))}
     </ul>
   );
