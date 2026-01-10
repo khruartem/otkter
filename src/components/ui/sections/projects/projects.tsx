@@ -40,7 +40,7 @@ export const ProjectsUI: FC = () => {
         >
           {"Предложить проект"}
         </Button>
-        <Link to={"/projects/all"} className={stylesLink.link}>
+        <Link to={"/projects/all/"} className={stylesLink.link}>
           {"Все проекты"}
         </Link>
       </div>

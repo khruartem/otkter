@@ -22,7 +22,7 @@ export const Header: FC<THeaderProps> = ({ animation }) => {
         }
         break;
       case "all-projects":
-        setUrl("/projects/all");
+        setUrl("/projects/all/");
         break;
       case "services":
         setUrl("/#services");
@@ -31,7 +31,7 @@ export const Header: FC<THeaderProps> = ({ animation }) => {
         setUrl("/#team");
         break;
       case "merch":
-        setUrl("/merch");
+        setUrl("/merch/");
         break;
       default:
         setUrl("/");
