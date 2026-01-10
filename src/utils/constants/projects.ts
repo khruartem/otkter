@@ -114,13 +114,6 @@ import eseninMedia3 from "../../assets/projects/media/esenin_3.avif";
 import eseninMedia4 from "../../assets/projects/media/esenin_4.avif";
 import eseninMedia5 from "../../assets/projects/media/esenin_5.avif";
 
-// СМИ Есенин икноки
-import eseninMediaIcon1 from "../../assets/projects/media/icons/esenin_1.avif";
-import eseninMediaIcon2 from "../../assets/projects/media/icons/esenin_2.avif";
-import eseninMediaIcon3 from "../../assets/projects/media/icons/esenin_3.avif";
-import eseninMediaIcon4 from "../../assets/projects/media/icons/esenin_4.avif";
-import eseninMediaIcon5 from "../../assets/projects/media/icons/esenin_5.avif";
-
 // Ссылки по проектам
 const buyTicketsLinkChronics =
   "https://tickets.mos.ru/widget/visit?eventId=61367&agentId=museum56&date=2025-05-04";
@@ -212,8 +205,6 @@ export const projects: TProject[] = [
             "«На Соколе пройдёт необычный перформанс в память о Великой Отечественной Войне»",
           shortText: "Север Столицы",
           image: eseninMedia1,
-          icon: eseninMediaIcon1,
-          main: false,
           active: true,
         },
       },
@@ -225,8 +216,6 @@ export const projects: TProject[] = [
           title: "«Иосиф Бродский “Я вас любил”. Читает Леонид Стрельников»",
           shortText: "ОТР",
           image: eseninMedia3,
-          icon: eseninMediaIcon3,
-          main: false,
           active: true,
         },
       },
@@ -238,8 +227,6 @@ export const projects: TProject[] = [
           title: "«Константин Симонов “Музыка”. Читает Марат Рудницкий»",
           shortText: "ОТР",
           image: eseninMedia3,
-          icon: eseninMediaIcon3,
-          main: false,
           active: true,
         },
       },
@@ -709,8 +696,6 @@ export const projects: TProject[] = [
           title: "«“Есенин. Жизнь в стихах”: на сцене разговор с поэтом»",
           shortText: "МК",
           image: eseninMedia2,
-          icon: eseninMediaIcon2,
-          main: false,
           active: true,
         },
       },
@@ -723,8 +708,6 @@ export const projects: TProject[] = [
             "«ВДНХ примет участие в фестивале “Любой из нас хоть чуточку Есенин”",
           shortText: "ВДНХ афиша",
           image: eseninMedia4,
-          icon: eseninMediaIcon4,
-          main: false,
           active: true,
         },
       },
@@ -736,8 +719,6 @@ export const projects: TProject[] = [
           title: `«Состоялся показ музыкально-поэтического спектакля "Есенин. Жизнь в стихах" режиссера Сергея Яковлева»`,
           shortText: "Касимовский муниципальный округ",
           image: eseninMedia5,
-          icon: eseninMediaIcon5,
-          main: false,
           active: true,
         },
       },
@@ -749,8 +730,6 @@ export const projects: TProject[] = [
           title: "«Александр Блок “Авиатор”. Читает Дмитрий Мальцев»",
           shortText: "ОТР",
           image: eseninMedia3,
-          icon: eseninMediaIcon3,
-          main: false,
           active: true,
         },
       },
@@ -762,8 +741,6 @@ export const projects: TProject[] = [
           title: "«Иван Бунин “Учан-Су”. Читает Сергей Яковлев»",
           shortText: "ОТР",
           image: eseninMedia3,
-          icon: eseninMediaIcon3,
-          main: false,
           active: true,
         },
       },
@@ -989,8 +966,6 @@ export const projects: TProject[] = [
             "«Александр Блок “Есть игра: осторожно войти”. Читает Алена Синельникова»",
           shortText: "ОТР",
           image: eseninMedia3,
-          icon: eseninMediaIcon3,
-          main: false,
           active: true,
         },
       },
@@ -1003,8 +978,6 @@ export const projects: TProject[] = [
             "«Антон Дельвиг “Скучно, девушки, весною жить одной…” Читает Анастасия Мурзюкова»",
           shortText: "ОТР",
           image: eseninMedia3,
-          icon: eseninMediaIcon3,
-          main: false,
           active: true,
         },
       },
