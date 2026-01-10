@@ -1,88 +1,14 @@
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  scrollbar-width: none;
-}
-
-.wrapper_widthed {
-  width: 100%;
-}
-
 .content-slider {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  flex-direction: row;
-  overflow-x: scroll;
-  scrollbar-width: none;
 }
 
-/* Стили для разных разрешений экранов */
-/* wrapper */
-.wrapper_large-screen_team {
-  width: 32.97vw;
+.content-slider_large-gap {
+  gap: 60px;
 }
 
-.wrapper_large-screen_services {
-  width: 41.25vw;
+.content-slider_small-gap {
+  gap: 44px;
 }
-
-.wrapper_large-screen_projects {
-  width: 69.58vw;
-}
-
-.wrapper_desktop_team {
-  width: 41.95vw;
-}
-
-.wrapper_desktop_services {
-  width: 43.63vw;
-}
-
-.wrapper_desktop_projects {
-  width: 41.29vw;
-}
-
-.wrapper_laptop_team {
-  width: 55.57vw;
-}
-
-.wrapper_laptop_services {
-  width: 55.86vw;
-}
-
-.wrapper_laptop_projects {
-  width: 60.55vw;
-}
-
-/* content-slider */
-.content-slider_large-screen {
-  gap: 0.83vw;
-}
-
-.content-slider_desktop {
-  gap: 0.29vw;
-}
-
-.content-slider_laptop {
-  gap: 0;
-}
-
-.content-slider_tablet {
-  gap: 2px;
-}
-
-.content-slider_mobile {
-  display: block;
-  width: calc(100% - 120px);
-}
-
-/* .content-slider_mobile div {
-  width: max-content;
-  max-width: none;
-  display: flex;
-  flex-direction: row;
-  gap: 2px;
-  padding-left: 8px;
-} */

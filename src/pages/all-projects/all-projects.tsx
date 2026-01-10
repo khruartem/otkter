@@ -1,39 +1,70 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import clsx from "clsx";
 
-import { Preloader } from "../../components/ui/preloader";
 import { AllProjectsUI } from "../../components/ui/pages/all-projects";
-import { Colors } from "../../utils/types";
-import { SEO } from "../../components/seo";
+import { IconTab } from "../../components/icon-tab";
+import { ProjectTab } from "../../components/project-tab";
+
+import { TContentSliderTabBarProps } from "../../components/content-slider/types";
+import { TTabsGap } from "../../utils/types";
+import { TPageLayout, TPageSEO } from "../../components/page/type";
+import { TProject, TProjectType } from "../../utils/types/projects";
+
+import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+import { useGetProjects } from "../../hooks/projects/useGetProjects";
+import { TItemOTType } from "../../utils/types/item-ot";
 
 export const AllProjects: FC = () => {
   const location = useLocation();
-  const [docReadyState, setDocReadyState] = useState<DocumentReadyState | null>(
-    null
-  );
+
+  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
+    useGetMediaQuery();
+
+  const projects = useGetProjects();
+
+  const tabBarProps: TContentSliderTabBarProps = {
+    title: "проекты",
+    tabsGap: clsx(
+      isLarge && "large",
+      (isDesktop || isMobile) && "middle",
+      isLaptop && "none",
+      isTablet && "small"
+    ) as TTabsGap,
+    relativeToTitle: "columned",
+    renderTab: (item) => (
+      <IconTab
+        tab={item.tab as TItemOTType}
+        current={item.current}
+        iconRef={item.iconRef}
+        onClick={item.onClick}
+      >
+        <ProjectTab tab={item.tab as TProject | TProjectType} />
+      </IconTab>
+    ),
+  };
 
   useEffect(() => {
-    location.state = { id: 0, type: "project" };
-    setDocReadyState(document.readyState);
-    // window.onscroll = () => window.location.hash = "";
-    document.body.style.backgroundColor = Colors.Light60;
-    // return () => {
-    //   document.body.style.backgroundColor = Colors.Light80;
-    // };
-  }, [docReadyState, location]);
+    location.state = { id: 0, type: "projects" };
+  }, [location]);
 
-  return docReadyState ? (
-    <>
-      <SEO
-        title={"Все проекты"}
-        description={"Все проекты Открытой территориии."}
-        siteName={"Все проекты"}
-        url={`https://otkter.ru/projects/all`}
-        previewImg={"/preview/preview.webp"}
-      />
-      <AllProjectsUI />
-    </>
-  ) : (
-    <Preloader />
+  const seo: TPageSEO = {
+    title: "Все проекты",
+    description: "Все проекты Открытой территориии.",
+    siteName: "Все проекты",
+    url: "https://otkter.ru/projects/all",
+    previewImg: "/preview/preview.webp",
+  };
+
+  const layout: TPageLayout = {
+    noPadding: true,
+  };
+
+  return (
+    <AllProjectsUI
+      projects={projects}
+      tabBarProps={tabBarProps}
+      pageProps={{ seo, layout }}
+    />
   );
 };

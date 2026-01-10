@@ -1,0 +1,8 @@
+.merch-item__bottom {
+  padding-inline: 20px;
+  padding-block-end: 20px;
+  max-height: 148px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

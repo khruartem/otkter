@@ -1,0 +1,13 @@
+.content-slider__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--tabs-count), 100vw);
+  column-gap: 10px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+/* Стили для разных разрешений экранов */
+/* .content-slider__grid_mobile {
+  padding-right: 3.86vw;
+} */

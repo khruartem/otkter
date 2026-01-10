@@ -1,8 +1,9 @@
-import { TEmployee, TEmployeesType } from "../../../utils/types";
+import { TItemOTType } from "../../../utils/types/item-ot";
+import { TEmployee } from "../../../utils/types/team";
 
 export type TTeamUIProps = {
   team: TEmployee[];
-  type: TEmployeesType;
+  type: TItemOTType;
   teamRef: React.RefObject<HTMLDivElement>;
   // columnsCount: number;
   containerHeight?: string;

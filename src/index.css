@@ -2,28 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display:ital,wght@1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Serif+4:ital,wght@1,300&family=Unbounded:wght@200..900&display=swap');
 
 :root {
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
 	--navy: #0B3954;
-  --nephritis100: #2ECC71;
-  --nephritis120: #21AA58;
-  --dark100: #4F4F4F;
-  --dark80: #939393;
-  --light100: #FFFFFF;
-  --light80: #F7F7F7;
-  --light60: #FDFDFD;
-  --light30: #E6E6E6;
-  --light20: #BFBFBF;
+	--nephritis100: #2ECC71;
+	--nephritis120: #21AA58;
+	--dark100: #4F4F4F;
+	--dark80: #939393;
+	--light100: #FFFFFF;
+	--light80: #F7F7F7;
+	--light60: #FDFDFD;
+	--light30: #E6E6E6;
+	--light20: #BFBFBF;
 	--orange100: #FB8200;
+	text-rendering: optimizeLegibility;
+	font-synthesis: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+div#root {
+	width: 100%;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 	max-width: 100%;
 }
 
@@ -108,11 +111,11 @@ mark,
 audio,
 video {
 	margin: 0;
+	border: 0;
 	padding: 0;
+	vertical-align: baseline;
 	font: inherit;
 	font-size: 100%;
-	vertical-align: baseline;
-	border: 0;
 }
 
 article,
@@ -135,26 +138,28 @@ html {
 }
 
 a {
-  text-decoration: inherit;
+	text-decoration: inherit;
 }
 
 body {
-  margin: 0;
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	align-items: center;
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0;
 	padding: 0;
 	font: inherit;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 	font-style: normal;
-  background-color: var(--light80);
+	background-color: var(--light80);
 }
 
 button {
-	appearance: none;
-	padding: 0;
 	border: none;
+	padding: 0;
 	background-color: transparent;
+	appearance: none;
 }
 
 ol,

@@ -1,7 +1,11 @@
 .paginator {
   display: flex;
   flex-direction: row;
-  gap: 6px;
-  position: absolute;
-  top: 97%;
+  gap: 4px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.paginator_widthed {
+  max-width: calc(100vw - 2 * 16px - 202px - 2 * 60px);
 }

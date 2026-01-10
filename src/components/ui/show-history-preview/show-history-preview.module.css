@@ -1,0 +1,62 @@
+.show-history-preview {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 24px;
+  overflow-x: hidden;
+  cursor: pointer;
+}
+
+.show-history-preview::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  display: block;
+  width: 65%;
+  height: 60px;
+  background: linear-gradient(270deg, rgba(253, 253, 253, 0) 0%, #FDFDFD 100%);
+}
+
+.show-history-preview-item {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: calc(237px + 24px + 1px);
+}
+
+.show-history-preview-item::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 48px;
+  background-color: var(--light30);
+}
+
+.show-history-preview-item span:first-child {
+  max-width: calc(100% - 24px);
+}
+
+/* Стили для разных разрешений экранов */
+/* modal_show-history */
+.modal_show-history_large {
+  padding-bottom: 5.21vw;
+  padding-inline: 8.12vw;
+}
+
+.modal_show-history_desktop {
+  padding-bottom: 4.39vw;
+  padding-inline: 7.83vw;
+}
+
+.modal_show-history_laptop {
+  padding: 4.10vw;
+}
+
+.modal_show-history_tablet {
+  padding: 3.91vw;
+}
+
+.modal_show-history_mobile {
+  padding-inline: 3.86vw;
+  padding-block: 5.80vw;
+}

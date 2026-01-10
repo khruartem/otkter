@@ -1,32 +1,31 @@
 import { FC } from "react";
 
 import { ProjectListUI } from "../ui/project-list";
+import { GroupListUI } from "../ui/group-list";
 
-import { useGetProjects } from "../../hooks/useGetProjects";
 import { TProjectListProps } from "./types";
-import { useGetViewRefByType } from "../../hooks/useGetViewRefByType";
+
+import { TProject, TProjectType } from "../../utils/types/projects";
+
+import { useGetProjects } from "../../hooks/projects/useGetProjects";
 import { useSortAsc } from "../../hooks/useSortAsc";
 import { useSortDesc } from "../../hooks/useSortDesc";
 
 export const ProjectList: FC<TProjectListProps> = ({
   type,
-  projectRef,
-  projectsViewRefs,
+  projectListRef,
+  projectListViewRef,
 }) => {
-  const projects = useGetProjects(type);
-  const projectViewRef = useGetViewRefByType(projectsViewRefs || [], type);
-  // const sortedActiveProjects = [...projects].sort((a, b) => {
-  //   return Number(b.isActive) - Number(a.isActive);
-  // });
-  const sortedActiveProjects = useSortDesc(projects, "isActive");
-  const sortedOrderedProjects = useSortAsc(projects, "order");
-  //const projectViewRef = projectsViewRefs?.find(projectsViewRef => projectsViewRef.type === type)?.ref;
+  const projects = useGetProjects(type as TProjectType);
 
-  return (
-    <ProjectListUI
-      projects={type === "main" ? sortedOrderedProjects : sortedActiveProjects}
-      projectRef={projectRef}
-      ref={projectViewRef}
-    />
+  const sortedActiveProjects = useSortDesc<TProject>(projects, "active");
+  const sortedOrderedProjects = useSortAsc<TProject>(projects, "order");
+
+  return type === "main" ? (
+    <ProjectListUI projects={sortedOrderedProjects} />
+  ) : (
+    <GroupListUI ref={projectListRef}>
+      <ProjectListUI projects={sortedActiveProjects} ref={projectListViewRef} />
+    </GroupListUI>
   );
 };

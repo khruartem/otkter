@@ -5,4 +5,5 @@ export type TImageUIProps = {
   wrapperClassName?: string;
   src: string;
   alt?: string;
+  onClick?: () => void;
 };

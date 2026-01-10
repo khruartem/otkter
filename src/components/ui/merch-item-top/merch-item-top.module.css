@@ -1,0 +1,28 @@
+.merch-item__top {
+  position: relative;
+  height: 384px;
+  border-radius: 40px;
+  padding-inline: 20px;
+  background-color: var(--light80);
+}
+
+/* Стили для разных разрешений экранов */
+.merch-item__top_large {
+  padding-block: 1.04vw;
+}
+
+.merch-item__top_desktop {
+  padding-block: 2.05vw;
+}
+
+.merch-item__top_laptop {
+  padding-block: 6.05vw;
+}
+
+.merch-item__top_tablet {
+  padding-block: 4.95vw;
+}
+
+.merch-item__top_mobile {
+  padding-block: 5.07vw;
+}

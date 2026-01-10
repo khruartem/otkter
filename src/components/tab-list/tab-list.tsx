@@ -2,28 +2,10 @@ import { FC } from "react";
 
 import { TabListUI } from "../ui/tab-list";
 
-import { TTabListProps } from "./types";
-import { useGetIsMainPage } from "../../hooks/useGetIsMainPage";
+import { useTabBarContext } from "../../hooks/contexts/useTabBarContext";
 
-export const TabList: FC<TTabListProps> = ({
-  tabs,
-  currentTab,
-  onTabClick,
-  onMouseEnter,
-  onMouseLeave,
-  iconRefs,
-}) => {
-  const isMain = useGetIsMainPage();
+export const TabList: FC = () => {
+  const { tabs, tabsGap } = useTabBarContext();
 
-  return (
-    <TabListUI
-      tabs={tabs}
-      currentTab={currentTab}
-      onTabClick={onTabClick}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      iconRefs={iconRefs}
-      isMainPage={isMain}
-    />
-  );
+  return <TabListUI tabs={tabs} tabsGap={tabsGap} />;
 };

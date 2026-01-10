@@ -14,15 +14,12 @@
   flex-direction: column;
 }
 
-.controls_gapped {
+.controls_large-gap {
   gap: 20px;
 }
 
-.extra-link {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
+.controls_small-gap {
+  gap: 12px;
 }
 
 .button_max-width {
@@ -70,23 +67,3 @@
 /* .button_mobile_icon {
   width: min-content;
 } */
-
-.extra-link_large-screen {
-  margin-left: 2.08vw;
-}
-
-.extra-link_desktop {
-  margin-left: 1.17vw;
-}
-
-.extra-link_laptop {
-  margin-left: 3.91vw;
-}
-
-.extra-link_tablet {
-  margin-left: 2.08vw;
-}
-
-.extra-link_mobile {
-  margin-top: 3.86vw;
-}

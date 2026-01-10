@@ -3,18 +3,18 @@ import { useLocation } from "react-router-dom";
 
 import { HeaderUI } from "../../components/ui/sections/header";
 
-export const Header: FC = () => {
+import { THeaderProps } from "./types";
+
+export const Header: FC<THeaderProps> = ({ animation }) => {
   const location = useLocation();
 
-  console.log(location)
   const headerRef = useRef<HTMLHeadingElement>(null);
 
   const [url, setUrl] = useState("");
 
   useEffect(() => {
-    // location.state = { ...location.state };
     switch (location.state?.type) {
-      case "project":
+      case "projects":
         if (location.state?.id) {
           setUrl(`/#projects-${location.state?.id}`);
         } else {
@@ -29,6 +29,9 @@ export const Header: FC = () => {
         break;
       case "team":
         setUrl("/#team");
+        break;
+      case "merch":
+        setUrl("/merch");
         break;
       default:
         setUrl("/");
@@ -47,6 +50,7 @@ export const Header: FC = () => {
       url={url}
       headerRef={headerRef}
       onClickLogo={onClickLogo}
+      animation={animation}
     />
   );
 };

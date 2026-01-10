@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { TService } from "../../utils/types";
 import { findById } from "../../utils/findById";
-import { services } from "../../utils/constants";
+import { services } from "../../utils/constants/services";
+import { TService } from "../../utils/types/services";
 
 type TServicesState = {
   services: TService[];
 };
 
 const initialState: TServicesState = {
-  services: services,
+  services,
 };
 
 const servicesSlice = createSlice({
@@ -17,34 +17,13 @@ const servicesSlice = createSlice({
   initialState,
   reducers: {},
   selectors: {
-    getAllServicesSelector: (state: TServicesState) => state.services,
-    getMainServicesSelector: (state: TServicesState) => {
-      return state.services.filter((service) => service.isMain === true);
-    },
-    getServicesSelector: (state: TServicesState, type: "all" | "main") => {
-      switch (type) {
-        case "all":
-          return servicesSlice.getSelectors().getAllServicesSelector(state);
-        case "main":
-          return servicesSlice.getSelectors().getMainServicesSelector(state);
-      }
-    },
-    getServiceTitleSelector: (state: TServicesState, id: number) => {
-      return (findById(state.services, id) as TService)?.title;
-    },
+    getServicesSelector: (state: TServicesState) => state.services,
     getServiceSelector: (state: TServicesState, id: number) => {
-      return findById(state.services, id) as TService;
-    },
-    getServiceShortTextSelector: (state: TServicesState, id: number) => {
-      return (findById(state.services, id) as TService)?.shortText;
+      return findById(state.services, id);
     },
   },
 });
 
 export const reducer = servicesSlice.reducer;
-export const {
-  getServicesSelector,
-  getServiceTitleSelector,
-  getServiceSelector,
-  getServiceShortTextSelector,
-} = servicesSlice.selectors;
+export const { getServicesSelector, getServiceSelector } =
+  servicesSlice.selectors;

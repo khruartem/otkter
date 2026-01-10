@@ -1,3 +1,3 @@
 export type TPointUIProps = {
-  current?: boolean;
-}
+  current: boolean;
+};

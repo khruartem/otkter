@@ -1,9 +1,4 @@
-import { TProject, TService } from "../utils/types";
-
-export const useSortDesc = (
-  array: TProject[] & TService[],
-  key: keyof (TProject & TService)
-) => {
+export const useSortDesc = <T>(array: T[], key: keyof T) => {
   return [...array].sort((a, b) => {
     if (
       (a[key] !== null && b[key] !== null) ||

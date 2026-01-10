@@ -3,6 +3,18 @@
   flex-direction: row;
 }
 
+.photo-list_large-padding {
+  padding-block-start: 52px;
+}
+
+.photo-list_middle-padding {
+  padding-block-start: 48px;
+}
+
+.photo-list_small-padding {
+  padding-block-start: 24px;
+}
+
 /* Стили для разных разшерений экранов */
 .photo-list_large-resolution {
   gap: 24px;

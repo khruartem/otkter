@@ -19,18 +19,18 @@ export const Text = ({
   margin = "0",
   padding = "0",
   width = 0,
-  classNameExtra = undefined
+  className = undefined
 }: TextProps) => {
   // const className = `${clsx(styles["text"], {
   //   [styles["text_decorated"]]: decorated,
-  // })} ${classNameExtra}`;
+  // })} ${className}`;
 
   return (
     <Tag
       className={clsx(
         styles["text"],
         decorated && styles.text_decorated,
-        classNameExtra && classNameExtra
+        className && className
       )}
       style={
         {

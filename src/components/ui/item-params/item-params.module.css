@@ -1,0 +1,23 @@
+.param-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.param-list-item {
+  border-radius: 80px;
+  padding-inline: 24px;
+  padding-block: 10px;
+  color: var(--dark100);
+  font-family: "Unbounded", serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  text-transform: uppercase;
+  background-color: var(--light100);
+}

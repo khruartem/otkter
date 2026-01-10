@@ -1,10 +1,13 @@
 import React from "react";
 import clsx from "clsx";
-import { nanoid } from "@reduxjs/toolkit";
 
+import { ItemOTListUI } from "../items-ot-list";
 import { Project } from "../../project";
 
 import { TProjectListUIProps } from "./types";
+
+import { TProject } from "../../../utils/types/projects";
+
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./project-list.module.css";
@@ -12,29 +15,19 @@ import styles from "./project-list.module.css";
 export const ProjectListUI = React.forwardRef<
   HTMLUListElement,
   TProjectListUIProps
->(({ projects, projectRef }, ref) => {
-  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
-    useGetMediaQuery();
-
-  const largeResolution = isLarge || isDesktop;
-  const mediumResolution = isLaptop;
-  const smallResolution = isTablet || isMobile;
+>(({ projects }, ref) => {
+  const { isTablet, isMobile } = useGetMediaQuery();
 
   return (
-    <div ref={projectRef}>
-      <ul
-        className={clsx(
-          styles["project-list"],
-          largeResolution && styles["project-list_large-resolution"],
-          mediumResolution && styles["project-list_medium-resolution"],
-          smallResolution && styles["project-list_small-resolution"]
-        )}
-        ref={ref}
-      >
-        {projects.map((project) => {
-          return <Project key={nanoid()} project={project} />;
-        })}
-      </ul>
-    </div>
+    <ItemOTListUI
+      itemsOT={projects}
+      renderItemOT={(itemOT, key) => (
+        <Project key={key} project={itemOT as TProject} />
+      )}
+      className={clsx(
+        (isTablet || isMobile) && styles["item-ot-list_projects"]
+      )}
+      ref={ref}
+    />
   );
 });

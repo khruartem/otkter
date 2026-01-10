@@ -1,7 +1,6 @@
-import { TTeamSocials } from "../../features/socials/socialsSlice";
-import { IEmployee, Employee } from "../../model/teamData";
-import { TControls } from "../../features/controls/controlsSlice";
+import { IEmployee, Employee } from "../model/teamData";
 import { contactFunction } from "../contactFunction";
+import { TEmployee } from "../types/team";
 
 // Фото команды (основные)
 // Админы
@@ -60,8 +59,6 @@ import larinaIcon from "../../assets/team/icons/larina.webp";
 import medvedevIcon from "../../assets/team/icons/medvedev.webp";
 import maksimovaIcon from "../../assets/team/icons/maksimova.webp";
 import kizenkovIcon from "../../assets/team/icons/kizenkov.webp";
-import { TEmployees, TTeamTabMode } from "../types";
-import { TPhotos } from "../../features/photos/photosSlice";
 
 // Фото команды (для биографии)
 // Админы
@@ -129,592 +126,582 @@ import hrustslevPoster from "../../assets/team/posters/hrustalev.avif";
 // Админы
 export const yakovlev: IEmployee = new Employee({
   id: 1,
-  name: "Сергей Яковлев",
-  type: "admins",
-  photo: yakovlevPhoto,
-  icon: yakovlevIcon,
-  image: yakovlevPoster,
+  kind: "team",
   url: "yakovlev",
-  biography:
-    "Один из основателей «Открытой Территории», главный режиссёр. Директор детско-юношеской театральной студии «Открытое Море». В 2013 закончил ВТУ им. М. С. Щепкина (курс Бэйлиса-Иванова). В труппе театра «Ленком Марка Захарова» с 2015 года, актёр Театра Наций – с 2023. В «Ленкоме»: Голубков – «Бег» и др. В Театре Наций: Вронский – «Каренина. Процесс» В Театре Эстрады: Диего-Маурисьо – «Ложь во спасение».",
+  title: "Сергей Яковлев",
+  image: yakovlevPhoto,
+  shortText: "Глава творческого объединения",
+  extraText: "Глава творческого объединения",
+  text: "Один из основателей «Открытой Территории», главный режиссёр. Директор детско-юношеской театральной студии «Открытое Море». В 2013 закончил ВТУ им. М. С. Щепкина (курс Бэйлиса-Иванова). В труппе театра «Ленком Марка Захарова» с 2015 года, актёр Театра Наций – с 2023. В «Ленкоме»: Голубков – «Бег» и др. В Театре Наций: Вронский – «Каренина. Процесс» В Театре Эстрады: Диего-Маурисьо – «Ложь во спасение».",
+  type: "admins",
+  main: true,
+  active: true,
+  icon: yakovlevIcon,
+  poster: yakovlevPoster,
+  socials: [
+    {
+      id: 1,
+      url: "https://t.me/yakovlevsergeyy1",
+      type: "telegram",
+    },
+    {
+      id: 2,
+      url: "https://vk.com/seryoga_yakovlev",
+      type: "vk",
+    },
+  ],
+  photos: [
+    {
+      id: 39,
+      source: yakovlevPhoto1,
+      icon: yakovlevPhotoIcon1,
+    },
+    {
+      id: 40,
+      source: yakovlevPhoto2,
+      icon: yakovlevPhotoIcon2,
+    },
+    {
+      id: 41,
+      source: yakovlevPhoto3,
+      icon: yakovlevPhotoIcon3,
+    },
+    {
+      id: 42,
+      source: yakovlevPhoto4,
+      icon: yakovlevPhotoIcon4,
+    },
+    {
+      id: 43,
+      source: yakovlevPhoto5,
+      icon: yakovlevPhotoIcon5,
+    },
+    {
+      id: 44,
+      source: yakovlevPhoto6,
+      icon: yakovlevPhotoIcon6,
+    },
+    {
+      id: 45,
+      source: yakovlevPhoto7,
+      icon: yakovlevPhotoIcon7,
+    },
+  ],
+  controls: [
+    {
+      label: "Telegram",
+      type: "button",
+      onClick: () => contactFunction(yakovlev, "telegram"),
+      url: "#",
+      icon: "telegram",
+    },
+    {
+      label: "VK",
+      type: "button",
+      onClick: () => contactFunction(yakovlev, "vk"),
+      url: "#",
+      icon: "vk",
+    },
+  ],
 });
 export const LA: IEmployee = new Employee({
   id: 2,
-  name: "Людмила Яковлева",
-  type: "admins",
-  photo: LAPhoto,
-  icon: LAIcon,
-  image: LAPoster,
+  kind: "team",
   url: "LA",
-  biography:
-    "Одна из основателей «Открытой Территорией». Помимо художественного руководства творческим объединением, руководит детско-юношеской театральной студией «Открытое Море» («КаЛиТка»), которую основала в 1995 году, и театром «ЛАМП». Преподаватель актерского мастерства, автор и ведущая актерско-психологических тренингов. Режиссер театральных постановок, автор рассказов в жанре фантастического реализма.",
+  title: "Людмила Яковлева",
+  image: LAPhoto,
+  shortText: "Художественный руководитель",
+  extraText: "Художественный руководитель",
+  text: "Одна из основателей «Открытой Территорией». Помимо художественного руководства творческим объединением, руководит детско-юношеской театральной студией «Открытое Море» («КаЛиТка»), которую основала в 1995 году, и театром «ЛАМП». Преподаватель актерского мастерства, автор и ведущая актерско-психологических тренингов. Режиссер театральных постановок, автор рассказов в жанре фантастического реализма.",
+  type: "admins",
+  main: true,
+  active: true,
+  icon: LAIcon,
+  poster: LAPoster,
+  socials: [
+    {
+      id: 3,
+      url: "https://t.me/otkmore",
+      type: "telegram",
+    },
+    {
+      id: 4,
+      url: "https://vk.com/id58249512",
+      type: "vk",
+    },
+  ],
+  photos: [
+    {
+      id: 46,
+      source: LAPhoto1,
+      icon: LAPhotoIcon1,
+    },
+    {
+      id: 47,
+      source: LAPhoto2,
+      icon: LAPhotoIcon2,
+    },
+    {
+      id: 48,
+      source: LAPhoto3,
+      icon: LAPhotoIcon3,
+    },
+    {
+      id: 49,
+      source: LAPhoto4,
+      icon: LAPhotoIcon4,
+    },
+    {
+      id: 50,
+      source: LAPhoto5,
+      icon: LAPhotoIcon5,
+    },
+    {
+      id: 51,
+      source: LAPhoto6,
+      icon: LAPhotoIcon6,
+    },
+    {
+      id: 52,
+      source: LAPhoto7,
+      icon: LAPhotoIcon7,
+    },
+  ],
+  controls: [
+    {
+      label: "Telegram",
+      type: "button",
+      onClick: () => contactFunction(LA, "telegram"),
+      url: "#",
+      icon: "telegram",
+    },
+    {
+      label: "VK",
+      type: "button",
+      onClick: () => contactFunction(LA, "vk"),
+      url: "#",
+      icon: "vk",
+    },
+  ],
 });
 export const sinelnikova: IEmployee = new Employee({
   id: 3,
-  name: "Алена Синельникова",
-  type: "admins",
-  photo: sinelnikovaPhoto,
-  icon: sinelnikovaIcon,
-  image: sinelnikovaPoster,
+  kind: "team",
   url: "sinelnikova",
-  biography:
-    "Занимается продвижением как всего объединения, так и отдельных творческих проектов. Выступает продюсером театральных постановок объединения. В 2025 году окончила Финансовый университет при Правительстве по направлению «Реклама и связи с общественностью». В сфере творчества и культуры более 5 лет. Опыт коммуникации и PR включает в себя креативные индустрии, сферу моды и красоты.",
+  title: "Алена Синельникова",
+  image: sinelnikovaPhoto,
+  shortText: "PR-директор",
+  extraText: "PR-директор",
+  text: "Занимается продвижением как всего объединения, так и отдельных творческих проектов. Выступает продюсером театральных постановок объединения. В 2025 году окончила Финансовый университет при Правительстве по направлению «Реклама и связи с общественностью». В сфере творчества и культуры более 5 лет. Опыт коммуникации и PR включает в себя креативные индустрии, сферу моды и красоты.",
+  type: "admins",
+  main: true,
+  active: true,
+  icon: sinelnikovaIcon,
+  poster: sinelnikovaPoster,
+  socials: [
+    {
+      id: 5,
+      url: "https://t.me/si_alyo",
+      type: "telegram",
+    },
+    {
+      id: 6,
+      url: "https://vk.com/blessedbyamisteryoflove",
+      type: "vk",
+    },
+  ],
+  photos: [
+    {
+      id: 53,
+      source: sinelnikovaPhoto1,
+      icon: sinelnikovaPhotoIcon1,
+    },
+    {
+      id: 54,
+      source: sinelnikovaPhoto2,
+      icon: sinelnikovaPhotoIcon2,
+    },
+    {
+      id: 55,
+      source: sinelnikovaPhoto3,
+      icon: sinelnikovaPhotoIcon3,
+    },
+    {
+      id: 56,
+      source: sinelnikovaPhoto4,
+      icon: sinelnikovaPhotoIcon4,
+    },
+    {
+      id: 57,
+      source: sinelnikovaPhoto5,
+      icon: sinelnikovaPhotoIcon5,
+    },
+    {
+      id: 58,
+      source: sinelnikovaPhoto6,
+      icon: sinelnikovaPhotoIcon6,
+    },
+    {
+      id: 59,
+      source: sinelnikovaPhoto7,
+      icon: sinelnikovaPhotoIcon7,
+    },
+  ],
+  controls: [
+    {
+      label: "Telegram",
+      type: "button",
+      onClick: () => contactFunction(sinelnikova, "telegram"),
+      url: "#",
+      icon: "telegram",
+    },
+    {
+      label: "VK",
+      type: "button",
+      onClick: () => contactFunction(sinelnikova, "vk"),
+      url: "#",
+      icon: "vk",
+    },
+  ],
 });
 export const aspek: IEmployee = new Employee({
   id: 4,
-  name: "Арсений Аспек",
-  type: "admins",
-  photo: aspekPhoto,
-  icon: aspekIcon,
-  image: aspekPoster,
+  kind: "team",
   url: "aspek",
-  biography:
-    "Один из основателей «Открытой Территории», главный дизайнер, специалист в сфере айдентики и UX/UI. Закончил первый факультет Рекламы в России (Московский гуманитарный университет). Дизайнер в международном рекламном агентстве, автор множества логотипов, фирменных стилей, сайтов и мобильных приложений. Граффити-райтер, леттерист.",
+  title: "Арсений Аспек",
+  image: aspekPhoto,
+  shortText: "Арт-директор",
+  extraText: "Арт-директор",
+  text: "Один из основателей «Открытой Территории», главный дизайнер, специалист в сфере айдентики и UX/UI. Закончил первый факультет Рекламы в России (Московский гуманитарный университет). Дизайнер в международном рекламном агентстве, автор множества логотипов, фирменных стилей, сайтов и мобильных приложений. Граффити-райтер, леттерист.",
+  type: "admins",
+  main: true,
+  active: true,
+  icon: aspekIcon,
+  poster: aspekPoster,
+  socials: [
+    {
+      id: 7,
+      url: "https://t.me/Chronostheone",
+      type: "telegram",
+    },
+    {
+      id: 8,
+      url: "https://vk.com/kronosas",
+      type: "vk",
+    },
+  ],
+  controls: [
+    {
+      label: "Telegram",
+      type: "button",
+      onClick: () => contactFunction(aspek, "telegram"),
+      url: "#",
+      icon: "telegram",
+    },
+    {
+      label: "VK",
+      type: "button",
+      onClick: () => contactFunction(aspek, "vk"),
+      url: "#",
+      icon: "vk",
+    },
+  ],
 });
 export const hrustalev: IEmployee = new Employee({
   id: 5,
-  name: "Артем Хрусталев",
-  type: "admins",
-  photo: hrustalevPhoto,
-  icon: hrustalevIcon,
-  image: hrustslevPoster,
+  kind: "team",
   url: "hrustalev",
-  biography:
-    "Занимается разработкой и поддержкой сайта Открытой Территории. Закончил факультет кибернетики по направлению: информационная безопасность (РТУ МИРЭА). Руководитель направления системной аналитики в ведущей российской металлургической компании.",
+  title: "Артем Хрусталев",
+  image: hrustalevPhoto,
+  shortText: "Технический директор",
+  extraText: "Технический директор",
+  text: "Занимается разработкой и поддержкой сайта Открытой Территории. Закончил факультет кибернетики по направлению: информационная безопасность (РТУ МИРЭА). Руководитель направления системной аналитики в ведущей российской металлургической компании.",
+  type: "admins",
+  main: true,
+  active: true,
+  icon: hrustalevIcon,
+  poster: hrustslevPoster,
+  socials: [
+    {
+      id: 9,
+      url: "https://t.me/khruartem",
+      type: "telegram",
+    },
+    {
+      id: 10,
+      url: "https://vk.com/khruartem",
+      type: "vk",
+    },
+  ],
+  controls: [
+    {
+      label: "Telegram",
+      type: "button",
+      onClick: () => contactFunction(hrustalev, "telegram"),
+      url: "#",
+      icon: "telegram",
+    },
+    {
+      label: "VK",
+      type: "button",
+      onClick: () => contactFunction(hrustalev, "vk"),
+      url: "#",
+      icon: "vk",
+    },
+  ],
 });
 
 // Творцы
 export const sokolovskiy: IEmployee = new Employee({
   id: 6,
-  name: "Кирилл Соколовский",
-  type: "artists",
-  photo: sokolovskiyPhoto,
-  icon: sokolovskiyIcon,
-  image: sokolovskiyPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Кирилл Соколовский",
+  image: sokolovskiyPhoto,
+  shortText: "Поэт",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: sokolovskiyIcon,
 });
 export const ivanova: IEmployee = new Employee({
   id: 7,
-  name: "Екатерина Иванова",
-  type: "artists",
-  photo: ivanovaPhoto,
-  icon: ivanovaIcon,
-  image: ivanovaPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Екатерина Иванова",
+  image: ivanovaPhoto,
+  shortText: "Певица, артистка театра «Ленком Марка Захарова»",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: ivanovaIcon,
 });
 export const avramenko: IEmployee = new Employee({
   id: 8,
-  name: "Анастасия Авраменко",
-  type: "artists",
-  photo: avramenkoPhoto,
-  image: avramenkoPhoto,
-  icon: avramenkoIcon,
+  kind: "team",
   url: "not-found",
+  title: "Анастасия Авраменко",
+  image: avramenkoPhoto,
+  shortText: "Режиссёр, фотограф",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: avramenkoIcon,
 });
 export const maltcev: IEmployee = new Employee({
   id: 9,
-  name: "Дмитрий Мальцев",
-  type: "artists",
-  photo: maltcevPhoto,
-  icon: maltcevIcon,
-  image: maltcevPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Дмитрий Мальцев",
+  image: maltcevPhoto,
+  shortText: "Актёр театра «Ленком Марка Захарова»",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: maltcevIcon,
 });
 export const bondareva: IEmployee = new Employee({
   id: 10,
-  name: "Анастасия Бондарева",
-  type: "artists",
-  photo: bondarevaPhoto,
-  icon: bondarevaIcon,
-  image: bondarevaPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Анастасия Бондарева",
+  image: bondarevaPhoto,
+  shortText: "Поэт",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: bondarevaIcon,
 });
 export const agafonov: IEmployee = new Employee({
   id: 11,
-  name: "Марк Агафонов",
-  type: "artists",
-  photo: agafonovPhoto,
-  icon: agafonovIcon,
-  image: agafonovPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Марк Агафонов",
+  image: agafonovPhoto,
+  shortText: "Режиссёр, фотограф, видеограф",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: agafonovIcon,
 });
 export const knysh: IEmployee = new Employee({
   id: 12,
-  name: "Олег Кныш",
-  type: "artists",
-  photo: knyshPhoto,
-  icon: knyshIcon,
-  image: knyshPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Олег Кныш",
+  image: knyshPhoto,
+  shortText: "Актёр театра «Ленком Марка Захарова»",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: knyshIcon,
 });
 export const rudnitskiy: IEmployee = new Employee({
   id: 13,
-  name: "Марат Рудницкий",
-  type: "artists",
-  photo: rudnitskiyPhoto,
-  icon: rudnitskiyIcon,
-  image: rudnitskiyPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Марат Рудницкий",
+  image: rudnitskiyPhoto,
+  shortText: "Актёр, музыкант, звукотехник, инженер телецентра «Останкино»",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: rudnitskiyIcon,
 });
 export const strelnikov: IEmployee = new Employee({
   id: 14,
-  name: "Леонид Стрельников",
-  type: "artists",
-  photo: strelnikovPhoto,
-  icon: strelnikovIcon,
-  image: strelnikovPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Леонид Стрельников",
+  image: strelnikovPhoto,
+  shortText: "Актёр театра у Никитских ворот и театра «Ленком Марка Захарова»",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: strelnikovIcon,
 });
 export const maslovskaya: IEmployee = new Employee({
   id: 15,
-  name: "Ольга Масловская",
-  type: "artists",
-  photo: maslovskayaPhoto,
-  icon: maslovskayaIcon,
-  image: maslovskayaPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Ольга Масловская",
+  image: maslovskayaPhoto,
+  shortText: "Драматург",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: maslovskayaIcon,
 });
 export const karaya: IEmployee = new Employee({
   id: 16,
-  name: "Мария Карая",
-  type: "artists",
-  photo: karayaPhoto,
-  icon: karayaIcon,
-  image: karayaPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Мария Карая",
+  image: karayaPhoto,
+  shortText: "Актриса театра «Ленком Марка Захарова»",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: karayaIcon,
 });
 export const torzhkova: IEmployee = new Employee({
   id: 17,
-  name: "Дарья Торжкова",
-  type: "artists",
-  photo: torzhkovaPhoto,
-  icon: torzhkovaIcon,
-  image: torzhkovaPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Дарья Торжкова",
+  image: torzhkovaPhoto,
+  shortText: "Актриса",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: torzhkovaIcon,
 });
 export const murzukova: IEmployee = new Employee({
   id: 18,
-  name: "Настя Мурзюкова",
-  type: "artists",
-  photo: murzukovaPhoto,
-  icon: murzukovaIcon,
-  image: murzukovaPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Настя Мурзюкова",
+  image: murzukovaPhoto,
+  shortText: "Актриса, выпускница Московской Духовной Академии, педагог",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: murzukovaIcon,
 });
 export const hvostikova: IEmployee = new Employee({
   id: 19,
-  name: "Юлия Хвостикова",
-  type: "artists",
-  photo: hvostikovaPhoto,
-  icon: hvostikovaIcon,
-  image: hvostikovaPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Юлия Хвостикова",
+  image: hvostikovaPhoto,
+  shortText: "Актриса",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: hvostikovaIcon,
 });
 export const tensik: IEmployee = new Employee({
   id: 20,
-  name: "Елена Тенсик",
-  type: "artists",
-  photo: tensikPhoto,
-  icon: tensikIcon,
-  image: tensikPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Елена Тенсик",
+  image: tensikPhoto,
+  shortText:
+    "Журналист, радиоведущая, театральный критик, педагог, арт-терапевт и актриса",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: tensikIcon,
 });
 export const larina: IEmployee = new Employee({
   id: 21,
-  name: "Елена Ларина",
-  type: "artists",
-  photo: larinaPhoto,
-  icon: larinaIcon,
-  image: larinaPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Елена Ларина",
+  image: larinaPhoto,
+  shortText: "Артистка хора театра «Ленком Марка Захарова»",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: larinaIcon,
 });
 export const medvedev: IEmployee = new Employee({
   id: 22,
-  name: "Андрей Медведев",
-  type: "artists",
-  photo: medvedevPhoto,
-  icon: medvedevIcon,
-  image: medvedevPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Андрей Медведев",
+  image: medvedevPhoto,
+  shortText: "Поэт",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: medvedevIcon,
 });
 export const maksimova: IEmployee = new Employee({
   id: 23,
-  name: "Арина Максимова",
-  type: "artists",
-  photo: maksimovaPhoto,
-  icon: maksimovaIcon,
-  image: maksimovaPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Арина Максимова",
+  image: maksimovaPhoto,
+  shortText: "Композитор, исполнитель",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: maksimovaIcon,
 });
 export const kizenkov: IEmployee = new Employee({
   id: 24,
-  name: "Алексей Кизенков",
-  type: "artists",
-  photo: kizenkovPhoto,
-  icon: kizenkovIcon,
-  image: kizenkovPhoto,
+  kind: "team",
   url: "not-found",
+  title: "Алексей Кизенков",
+  image: kizenkovPhoto,
+  shortText: "Актер театра «Ленком Марка Захарова»",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: kizenkovIcon,
 });
 
-// Соц. сети команды
-export const teamsSocials: TTeamSocials[] = [
-  {
-    teamType: "admins",
-    teamSocials: [
-      {
-        id: 1,
-        socials: [
-          {
-            id: 1,
-            url: "https://t.me/yakovlevsergeyy1",
-            type: "telegram",
-          },
-          {
-            id: 2,
-            url: "https://vk.com/seryoga_yakovlev",
-            type: "vk",
-          },
-        ],
-      },
-      {
-        id: 2,
-        socials: [
-          {
-            id: 3,
-            url: "https://t.me/otkmore",
-            type: "telegram",
-          },
-          {
-            id: 4,
-            url: "https://vk.com/id58249512",
-            type: "vk",
-          },
-        ],
-      },
-      {
-        id: 3,
-        socials: [
-          {
-            id: 5,
-            url: "https://t.me/Chronostheone",
-            type: "telegram",
-          },
-          {
-            id: 6,
-            url: "https://vk.com/kronosas",
-            type: "vk",
-          },
-        ],
-      },
-      {
-        id: 4,
-        socials: [
-          {
-            id: 7,
-            url: "https://t.me/si_alyo",
-            type: "telegram",
-          },
-          {
-            id: 8,
-            url: "https://vk.com/blessedbyamisteryoflove",
-            type: "vk",
-          },
-        ],
-      },
-      {
-        id: 5,
-        socials: [
-          {
-            id: 9,
-            url: "https://t.me/khruartem",
-            type: "telegram",
-          },
-          {
-            id: 10,
-            url: "https://vk.com/khruartem",
-            type: "vk",
-          },
-        ],
-      },
-    ],
-  },
-];
-
-// Табы в разделе "Команда"
-export const teamsTabs: TTeamTabMode[] = ["admins", "artists"];
-
 // Команды в разделе "Команда"
-export const teams: TEmployees = {
-  administrators: {
-    employees: [
-      yakovlev.getEmployee("Глава творческого объединения"),
-      LA.getEmployee("Художественный руководитель"),
-      aspek.getEmployee("Арт-директор"),
-      sinelnikova.getEmployee("PR-директор"),
-      hrustalev.getEmployee("Технический директор"),
-    ],
-  },
-  artists: [
-    {
-      employees: [
-        sokolovskiy.getEmployee("Поэт"),
-        ivanova.getEmployee("Певица, артистка театра «Ленком Марка Захарова»"),
-        avramenko.getEmployee("Режиссёр, фотограф"),
-        maltcev.getEmployee("Актёр театра «Ленком Марка Захарова»"),
-        bondareva.getEmployee("Поэт"),
-        agafonov.getEmployee("Режиссёр, фотограф, видеограф"),
-        knysh.getEmployee("Актёр театра «Ленком Марка Захарова»"),
-        rudnitskiy.getEmployee(
-          "Актёр, звукорежиссер, инженер телецентра «Останкино»"
-        ),
-        strelnikov.getEmployee(
-          "Актёр театра у Никитских ворот и театра «Ленком Марка Захарова»"
-        ),
-        maslovskaya.getEmployee("Драматург"),
-        karaya.getEmployee("Актриса театра «Ленком Марка Захарова»"),
-        torzhkova.getEmployee("Актриса"),
-        murzukova.getEmployee(
-          "Актриса, выпускница Московской Духовной Академии, педагог"
-        ),
-        hvostikova.getEmployee("Актриса"),
-        tensik.getEmployee(
-          "Журналист, радиоведущая, театральный критик, педагог, арт-терапевт и актриса"
-        ),
-      ],
-    },
-  ],
-};
-
-// Списки фоток для страниц биографии
-export const teamPhotos: TPhotos[] = [
-  {
-    id: 1,
-    photos: [
-      {
-        id: 39,
-        source: yakovlevPhoto1,
-        icon: yakovlevPhotoIcon1,
-      },
-      {
-        id: 40,
-        source: yakovlevPhoto2,
-        icon: yakovlevPhotoIcon2,
-      },
-      {
-        id: 41,
-        source: yakovlevPhoto3,
-        icon: yakovlevPhotoIcon3,
-      },
-      {
-        id: 42,
-        source: yakovlevPhoto4,
-        icon: yakovlevPhotoIcon4,
-      },
-      {
-        id: 43,
-        source: yakovlevPhoto5,
-        icon: yakovlevPhotoIcon5,
-      },
-      {
-        id: 44,
-        source: yakovlevPhoto6,
-        icon: yakovlevPhotoIcon6,
-      },
-      {
-        id: 45,
-        source: yakovlevPhoto7,
-        icon: yakovlevPhotoIcon7,
-      },
-    ],
-  },
-  {
-    id: 2,
-    photos: [
-      {
-        id: 46,
-        source: LAPhoto1,
-        icon: LAPhotoIcon1,
-      },
-      {
-        id: 47,
-        source: LAPhoto2,
-        icon: LAPhotoIcon2,
-      },
-      {
-        id: 48,
-        source: LAPhoto3,
-        icon: LAPhotoIcon3,
-      },
-      {
-        id: 49,
-        source: LAPhoto4,
-        icon: LAPhotoIcon4,
-      },
-      {
-        id: 50,
-        source: LAPhoto5,
-        icon: LAPhotoIcon5,
-      },
-      {
-        id: 51,
-        source: LAPhoto6,
-        icon: LAPhotoIcon6,
-      },
-      {
-        id: 52,
-        source: LAPhoto7,
-        icon: LAPhotoIcon7,
-      },
-    ],
-  },
-  {
-    id: 3,
-    photos: [
-      {
-        id: 53,
-        source: sinelnikovaPhoto1,
-        icon: sinelnikovaPhotoIcon1,
-      },
-      {
-        id: 54,
-        source: sinelnikovaPhoto2,
-        icon: sinelnikovaPhotoIcon2,
-      },
-      {
-        id: 55,
-        source: sinelnikovaPhoto3,
-        icon: sinelnikovaPhotoIcon3,
-      },
-      {
-        id: 56,
-        source: sinelnikovaPhoto4,
-        icon: sinelnikovaPhotoIcon4,
-      },
-      {
-        id: 57,
-        source: sinelnikovaPhoto5,
-        icon: sinelnikovaPhotoIcon5,
-      },
-      {
-        id: 58,
-        source: sinelnikovaPhoto6,
-        icon: sinelnikovaPhotoIcon6,
-      },
-      {
-        id: 59,
-        source: sinelnikovaPhoto7,
-        icon: sinelnikovaPhotoIcon7,
-      },
-    ],
-  },
-];
-
-// Набор управляющих кнопок для страниц биографии
-// Админы
-export const teamControls: TControls[] = [
-  {
-    id: 1,
-    controls: [
-      {
-        label: "Telegram",
-        type: "button",
-        located: "info",
-        onClick: () => contactFunction("admins", 1, "telegram"),
-        url: "#",
-        icon: "telegram",
-      },
-      {
-        label: "VK",
-        type: "button",
-        located: "info",
-        onClick: () => contactFunction("admins", 1, "vk"),
-        url: "#",
-        icon: "vk",
-      },
-    ],
-  },
-  {
-    id: 2,
-    controls: [
-      {
-        label: "Telegram",
-        type: "button",
-        located: "info",
-        onClick: () => contactFunction("admins", 2, "telegram"),
-        url: "#",
-        icon: "telegram",
-      },
-      {
-        label: "VK",
-        type: "button",
-        located: "info",
-        onClick: () => contactFunction("admins", 2, "vk"),
-        url: "#",
-        icon: "vk",
-      },
-    ],
-  },
-  {
-    id: 3,
-    controls: [
-      {
-        label: "Telegram",
-        type: "button",
-        located: "info",
-        onClick: () => contactFunction("admins", 4, "telegram"),
-        url: "#",
-        icon: "telegram",
-      },
-      {
-        label: "VK",
-        type: "button",
-        located: "info",
-        onClick: () => contactFunction("admins", 4, "vk"),
-        url: "#",
-        icon: "vk",
-      },
-    ],
-  },
-  {
-    id: 4,
-    controls: [
-      {
-        label: "Telegram",
-        type: "button",
-        located: "info",
-        onClick: () => contactFunction("admins", 3, "telegram"),
-        url: "#",
-        icon: "telegram",
-      },
-      {
-        label: "VK",
-        type: "button",
-        located: "info",
-        onClick: () => contactFunction("admins", 3, "vk"),
-        url: "#",
-        icon: "vk",
-      },
-    ],
-  },
-  {
-    id: 5,
-    controls: [
-      {
-        label: "Telegram",
-        type: "button",
-        located: "info",
-        onClick: () => contactFunction("admins", 5, "telegram"),
-        url: "#",
-        icon: "telegram",
-      },
-      {
-        label: "VK",
-        type: "button",
-        located: "info",
-        onClick: () => contactFunction("admins", 5, "vk"),
-        url: "#",
-        icon: "vk",
-      },
-    ],
-  },
+export const teams: TEmployee[] = [
+  yakovlev.getEmployee(),
+  LA.getEmployee(),
+  sinelnikova.getEmployee(),
+  aspek.getEmployee(),
+  hrustalev.getEmployee(),
+  sokolovskiy.getEmployee(),
+  ivanova.getEmployee(),
+  avramenko.getEmployee(),
+  maltcev.getEmployee(),
+  bondareva.getEmployee(),
+  agafonov.getEmployee(),
+  knysh.getEmployee(),
+  rudnitskiy.getEmployee(),
+  strelnikov.getEmployee(),
+  maslovskaya.getEmployee(),
+  karaya.getEmployee(),
+  torzhkova.getEmployee(),
+  murzukova.getEmployee(),
+  hvostikova.getEmployee(),
+  tensik.getEmployee(),
 ];

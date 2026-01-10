@@ -1,1 +1,0 @@
-export { DetailsUI } from "./details";

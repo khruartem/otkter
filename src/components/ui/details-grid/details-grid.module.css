@@ -1,0 +1,46 @@
+.info-details {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr 1fr;
+}
+
+.info-details_without-media>div {
+  height: fit-content;
+}
+
+.info-details_one-block {
+  grid-template-columns: 1fr;
+}
+
+.info-details_columed {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-details_large-gap {
+  gap: 24px;
+}
+
+.info-details_middle-gap {
+  gap: 20px;
+}
+
+.info-details_small-gap {
+  gap: 12px;
+}
+
+.info-details_xl-padding {
+  padding-block-start: 80px;
+}
+
+.info-details_l-padding {
+  padding-block-start: 60px;
+}
+
+.info-details_m-padding {
+  padding-block-start: 56px;
+}
+
+.info-details_s-padding {
+  padding-block-start: 40px;
+}

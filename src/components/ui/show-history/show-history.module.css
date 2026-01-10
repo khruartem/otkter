@@ -1,0 +1,107 @@
+.show-history {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  width: 100%;
+  height: 100%;
+}
+
+.past-shows-block {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.past-shows-block_limited-heigh {
+  height: 100%;
+}
+
+.past-shows-block_positioned {
+  position: relative;
+}
+
+.past-shows {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+
+.past-shows_column-gap-large {
+  column-gap: 24px;
+}
+
+.past-shows_column-gap-small {
+  column-gap: 20px;
+}
+
+.past-shows_row-gap-large {
+  row-gap: 60px;
+}
+
+.past-shows_row-gap-small {
+  row-gap: 32px;
+}
+
+.past-shows_faded::before {
+  content: "";
+  position: absolute;
+  /* top: 23%; */
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  /* height: 79%; */
+  height: 15%;
+  background: linear-gradient(360deg, #FDFDFD 0%, rgba(253, 253, 253, 0) 100%);
+}
+
+.show-history-item_width {
+  overflow-x: hidden;
+}
+
+/* Стили для разных разрешений экранов */
+/* show-history */
+.show-history_large {
+  padding-block-start: 3.33vw;
+}
+
+.show-history_laptop {
+  justify-content: space-between;
+  height: 74.61vw;
+  overflow-y: auto;
+}
+
+.show-history_tablet {
+  justify-content: space-between;
+  height: 99.48vw;
+  overflow-y: auto;
+}
+
+/* show-history-item */
+.show-history-item_large {
+  width: 20vw;
+}
+
+.show-history-item_desktop {
+  width: 19.76vw;
+}
+
+.show-history-item_laptop {
+  width: 29.29vw;
+}
+
+.show-history-item_tablet {
+  width: 44.66vw;
+}
+
+.show-history-item_mobile {
+  width: 100%;
+}
+
+/* cta */
+.cta_desktop {
+  flex-direction: row;
+}

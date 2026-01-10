@@ -121,9 +121,46 @@ export type TCardType =
   | "projects"
   | "team"
   | "services"
+  | "main"
   | TServicesTabMode
   | TProjectTabMode
   | TTeamTabMode;
+
+export enum ItemOTType {
+  "open-sea" = "Открытое море",
+  "master-class" = "Мастер-класс",
+  "events" = "Организация мероприятий",
+  "design" = "Студия дизайна «Открытый Глаз»",
+  "content" = "Контент и производство видеоматериалов",
+  "lamp" = "ЛАМП",
+  "smm" = "SMM, PR и продвижение",
+  "all" = "Все",
+  "play" = "Спектакль",
+  "contest" = "Конкурс",
+  "short-film" = "Короткий метр",
+  "admins" = "Руководители",
+  "artists" = "Творцы",
+  "projects" = "Проекты",
+  "team" = "Команда",
+  "services" = "Услуги",
+  "main" = "Главная",
+  "hero" = "Херо",
+  "cloths" = "Одежда",
+  "souvenirs" = "Сувениры",
+}
+
+export type TTabsGap = "large" | "middle" | "small" | "none" | string;
+
+export type TContenSliderPadding = "large" | "middle" | "small";
+
+// export type TContenSliderHeaderStyle = "rowed" | "columned";
+export type TTabBarStyle = "rowed" | "columned";
+
+export type TSectionPadding = "block" | "inline" | "none" | "all" | "top";
+
+export type TSectionDecoration = "full" | "half" | "only-color";
+
+export type TSectionContentDirection = "row" | "column";
 
 export type TCard = {
   id: number;
@@ -276,8 +313,15 @@ export enum Colors {
   Light30 = "#E6E6E6",
   Light20 = "#BFBFBF",
   Orange100 = "#FB8200",
+  Error100 = "#E70000",
   None = "transparent",
 }
+
+export type TCategoryColors = {
+  categoryIconColor?: Colors;
+  categotyBackgroundColor: Colors;
+  categotyTextColor: Colors;
+};
 
 export type FlexDirections = "row" | "column";
 export type FlexAligns =
@@ -301,7 +345,7 @@ export type TRadii = 0 | 40 | 100 | 200 | 400 | 500 | 800 | "none";
 export type Fonts = "" | "Unbounded" | "Roboto" | "inherit";
 export type textAligns = "center" | "left" | "right";
 export type FontSizes = 0 | 14 | 16 | 18 | 20 | 28 | 32 | 36 | 56 | 72;
-export type FontWeights = 0 | 400 | 500 | 700 | "inherit";
+export type FontWeights = 0 | 400 | 500 | 600 | 700 | "inherit";
 export type lineHeights =
   | 0
   | 20

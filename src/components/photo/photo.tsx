@@ -1,25 +1,26 @@
 import { FC } from "react";
-import { TPhotoProps } from "./types";
-import { useGetUrlCode } from "../../hooks/useGetUrlCode";
+
 import { PhotoUI } from "../ui/photo";
 
-export const Photo: FC<TPhotoProps> = ({
-  photo,
-  label,
-  nextPhotoId,
-  id,
-  type,
-}) => {
-  const url = useGetUrlCode();
+import { TPhotoProps } from "./types";
 
-  return (
-    <PhotoUI
-      id={id}
-      photo={photo}
-      type={type}
-      label={label}
-      nextPhotoId={nextPhotoId}
-      url={url}
-    />
-  );
+import { TItemOTKind } from "../../utils/types/item-ot";
+
+import { usePhotoListContext } from "../../hooks/contexts/usePhotoListContext";
+
+export const Photo: FC<TPhotoProps> = ({ src }) => {
+  const { itemKind } = usePhotoListContext();
+
+  const setAlt = (itemKind: TItemOTKind) => {
+    switch (itemKind) {
+      case "projects":
+        return "проекта";
+      case "services":
+        return "услуги";
+      case "team":
+        return "члена команды";
+    }
+  };
+
+  return <PhotoUI src={src} alt={`Фото ${setAlt(itemKind)}`} />;
 };

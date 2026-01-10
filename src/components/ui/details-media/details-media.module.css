@@ -1,0 +1,23 @@
+.details-grid-item_media {
+  grid-column-end: span 2;
+}
+
+.details-grid-item__content_media {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+  justify-content: center;
+}
+
+.details-grid-item__content_media_gapped {
+  gap: 80px;
+}
+
+/* Стили для разных разрешений экранов */
+.item-ot-card_desktop_media {
+  width: 40vw;
+}
+
+.item-ot-card_laptop_media {
+  width: 43.55vw;
+}

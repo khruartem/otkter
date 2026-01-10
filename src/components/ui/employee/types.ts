@@ -1,7 +1,7 @@
-import { Social, TCardType, TEmployee } from "../../../utils/types";
+import { TItemOTKind } from "../../../utils/types/item-ot";
+import { TEmployee } from "../../../utils/types/team";
 
 export type TEmployeeUIProps = {
-  type: Extract<TCardType, "projects" | "team">;
+  type: Extract<TItemOTKind, "projects" | "team">;
   employee: TEmployee;
-  socials?: Social[];
-}
+};

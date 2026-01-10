@@ -1,7 +1,10 @@
-import { TProjectTabMode, TProjectViewRef } from "../../utils/types";
+import { TItemOTType } from "../../utils/types/item-ot";
 
 export type TProjectListProps = {
-  type: TProjectTabMode | "main";
-  projectRef?: React.RefObject<HTMLDivElement>;
-  projectsViewRefs?: TProjectViewRef[];
+  type: TItemOTType;
+  // index: number;
+  // setCurrentTab: React.Dispatch<React.SetStateAction<TCardType>>;
+  // setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
+  projectListRef?: React.RefObject<HTMLDivElement>;
+  projectListViewRef?: (node?: Element | null | undefined) => void;
 };

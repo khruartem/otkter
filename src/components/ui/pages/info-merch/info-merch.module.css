@@ -1,0 +1,149 @@
+/* merch-info */
+.merch-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.merch-info_large-gap {
+  gap: 36px;
+}
+
+.merch-info_small-gap {
+  gap: 24px;
+}
+
+.merch-info_large-margin {
+  margin-block-end: 60px;
+}
+
+.merch-info_small-margin {
+  margin-block-end: 44px;
+}
+
+.merch-info_large-padding {
+  padding-block-start: 132px;
+}
+
+.merch-info_middle-padding {
+  padding-block-start: 108px;
+}
+
+.merch-info_small-padding {
+  padding-block-start: 80px;
+}
+
+/* merch-info__navigation */
+.merch-info__navigation {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/* merch-info__content */
+.merch-info__content {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.merch-info__content_gapped {
+  gap: 40px;
+  justify-content: unset;
+}
+
+/* merch-info__about */
+.merch-info__about {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.merch-info__about_gapped {
+  gap: 60px;
+  justify-content: unset;
+}
+
+/* merch-info__core */
+.merch-info__core {
+  display: flex;
+  flex-direction: column;
+}
+
+.merch-info__core_heighted {
+  height: 27.71vw;
+}
+
+.merch-info__core_large-gap {
+  gap: 24px;
+}
+
+.merch-info__core_small-gap {
+  gap: 12px;
+}
+
+/* merch-info__characteristics */
+.merch-info__characteristics {
+  display: grid;
+  padding-block-start: 40px;
+  width: 100%;
+}
+
+.merch-info__characteristics_columned {
+  grid-template-columns: 1fr 1fr;
+}
+
+.merch-info__characteristics_rowed {
+  grid-template-rows: 1fr 1fr;
+}
+
+.merch-info__characteristics_large-gap {
+  gap: 24px;
+}
+
+.merch-info__characteristics_middle-gap {
+  gap: 20px;
+}
+
+.merch-info__characteristics_small-gap {
+  gap: 12px;
+}
+
+/* merch-info__cta */
+.merch-info__cta {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Стили для разных разрешений экранов */
+/* merch-info__about */
+.merch-info__about_large {
+  width: 48.33vw;
+  height: 34.38vw;
+}
+
+.merch-info__about_desktop {
+  width: 41.29vw;
+  height: 43.34vw;
+}
+
+.merch-info__about_laptop {
+  width: 44.04vw;
+  height: 64.45vw;
+}
+
+/* merch-info__cta */
+.merch-info__cta_mobile {
+  justify-content: center;
+}
+
+.merch-info__cta_mobile button {
+  width: 100%;
+}

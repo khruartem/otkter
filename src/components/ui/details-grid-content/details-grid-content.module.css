@@ -1,0 +1,13 @@
+/* details-grid-item__content */
+.details-grid-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* category-list */
+.category-list_details-default {
+  font-family: Unbounded, serif;
+  font-size: 14px;
+  line-height: 20px;
+}

@@ -1,41 +1,15 @@
-.wrapper {
-  display: flex;
-  justify-content: center;
-  /* --webkit-transform: translate3d(0,0,0); */
-}
-
-.team {
-  width: fit-content;
+.item-ot-list_team {
   height: var(--height);
-  scroll-snap-align: center;
-  /* display: grid;
-  grid-template-rows: min-content;
-  grid-template-columns: var(--columns-count);
-  grid-auto-flow: row; */
-  /* scrollbar-width: none; */
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
 
-.team_large-gap {
-  gap: 24px;
-}
-
-.team_small-gap {
-  gap: 12px;
-}
-
-.team_overflowed-y {
+.item-ot-list_team_overflowed-y {
   overflow-y: auto;
 }
 
-.team_faded {
-  background: linear-gradient(180deg, var(--light80) 0%, rgba(247, 247, 247, 0) 10%, rgba(247, 247, 247, 0) 50%, rgba(247, 247, 247, 0) 90%, var(--light80) 100%);
+.item-ot-list_team_scrolled {
+  min-width: calc(100% + 14px);
 }
 
-/* Стили для разных разрешений экранов */
-/* .team_mobile {
-  height: 486px;
-} */
+.group-list_artists {
+  padding-inline: 0;
+}

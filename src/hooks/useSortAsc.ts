@@ -1,8 +1,6 @@
-import { TProject, TService } from "../utils/types";
-
-export const useSortAsc = (
-  array: TProject[] & TService[],
-  key: keyof (TProject & TService)
+export const useSortAsc = <T>(
+  array: T[],
+  key: keyof T
 ) => {
   return [...array].sort((a, b) => {
     if (

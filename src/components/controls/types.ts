@@ -1,8 +1,7 @@
-import { TControlsType } from "../../features/controls/controlsSlice";
-import { TControlsLocation } from "../../utils/types";
+import { TItemOTKind } from "../../utils/types/item-ot";
+import { TControlsItem } from "../../utils/types/controls";
 
 export type TControlsProps = {
-  id: number;
-  located: TControlsLocation;
-  type: TControlsType;
-}
+  controls: TControlsItem[];
+  kind: TItemOTKind;
+};

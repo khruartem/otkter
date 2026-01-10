@@ -1,12 +1,19 @@
 import { FC } from "react";
 
+import { PhotoListProvider } from "./photo-list-provider";
 import { PhotoListUI } from "../ui/photo-list";
 
 import { TPhotoListProps } from "./types";
-import { useGetPhotos } from "../../hooks/useGetPhotos";
 
-export const PhotoList: FC<TPhotoListProps> = ({ id, type }) => {
-  const photos = useGetPhotos(id, type);
+export const PhotoList: FC<TPhotoListProps> = ({ itemKind, photos }) => {
+  const photoListContextValue = {
+    itemKind,
+    photos,
+  };
 
-  return <PhotoListUI id={id} photos={photos!} type={type} />;
+  return (
+    <PhotoListProvider value={photoListContextValue}>
+      <PhotoListUI photos={photos} />
+    </PhotoListProvider>
+  );
 };

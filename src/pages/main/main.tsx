@@ -1,35 +1,28 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 
 import { MainUI } from "../../components/ui/pages/main";
-import { Preloader } from "../../components/ui/preloader";
 
-import { Colors } from "../../utils/types";
-import { SEO } from "../../components/seo";
+import { TPageLayout, TPageSEO } from "../../components/page/type";
 
 export const Main: FC = () => {
-  const [docReadyState, setDocReadyState] = useState<DocumentReadyState | null>(
-    null
-  );
-
   useEffect(() => {
-    document.body.style.backgroundColor = Colors.Light80;
-    setDocReadyState(document.readyState);
+    document.body.removeAttribute("style");
   }, []);
 
-  return docReadyState === "complete" || docReadyState === "interactive" ? (
-    <>
-      <SEO
-        title={"Открытая территория"}
-        ogTitle={"Экосистема творческих возможностей"}
-        description={"Экосистема творческих возможностей"}
-        ogDescription={"Объединяем творцов из разных сфер"}
-        siteName={"Открытая территория"}
-        url={"https://otkter.ru/"}
-        previewImg={"/preview/preview.webp"}
-      />
-      <MainUI />
-    </>
-  ) : (
-    <Preloader />
-  );
+  const seo: TPageSEO = {
+    title: "Открытая территория",
+    ogTitle: "Экосистема творческих возможностей",
+    description: "Экосистема творческих возможностей",
+    ogDescription: "Объединяем творцов из разных сфер",
+    siteName: "Открытая территория",
+    url: "https://otkter.ru/",
+    previewImg: "/preview/preview.webp",
+  };
+
+  const layout: TPageLayout = {
+    noPadding: true,
+    animatedHeader: true,
+  };
+
+  return <MainUI pageProps={{ seo, layout }} />;
 };

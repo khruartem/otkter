@@ -1,34 +1,27 @@
 import { FC, useEffect, useRef } from "react";
 
-import { TabItemUI } from "../ui/tab-item";
-
 import { TTabItemProps } from "./types";
-import { scrollIntoElementView } from "../../utils/scrollIntoElementView";
 
-export const TabItem: FC<TTabItemProps> = ({
-  item,
-  current,
-  index,
-  setCurrentItem,
-  setIndex
-}) => {
-  const iconRef = useRef<HTMLImageElement>(null);
+import { lockScroll } from "../../utils/lockScroll";
 
-  const onClick = () => {
-    setCurrentItem(item);
-    setIndex(index);
-  };
+import { useTabBarContext } from "../../hooks/contexts/useTabBarContext";
+
+export const TabItem: FC<TTabItemProps> = ({ tab, index }) => {
+  const iconRef = useRef<HTMLLIElement>(null);
+  const { currentTab, renderTab, onTabClick } = useTabBarContext();
 
   useEffect(() => {
-    if (current) scrollIntoElementView(iconRef, "smooth", "center");
-  });
+    if (currentTab === tab) {
+      iconRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      lockScroll();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentTab]);
 
-  return (
-    <TabItemUI
-      image={item.icon}
-      current={current}
-      ref={iconRef}
-      onClick={onClick}
-    />
-  );
+  return renderTab({
+    tab,
+    current: currentTab === tab,
+    iconRef,
+    onClick: () => onTabClick(tab, index),
+  });
 };

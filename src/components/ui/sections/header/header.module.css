@@ -1,46 +1,21 @@
 .header {
-  /* display: flex; */
-  /* width: 100vw;
-  height: 60px; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   z-index: 10;
-  /* border-bottom-left-radius: var(--header-radius, 40px);
-  border-bottom-right-radius: var(--header-radius, 40px); */
-}
-
-.header_rounded {
-  border-bottom-left-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 60px;
   border-bottom-right-radius: 40px;
-}
-
-.header_not-rounded {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 40px;
+  background-color: var(--light60);
+  transition: background-color 1.2s;
 }
 
 .header_colored {
-  background-color: var(--header-bc-color, #FDFDFD);
-}
-
-.header_not-colored {
-  background-color: transparent;
-}
-
-.header__wrapper {
-  display: flex;
-  width: 100vw;
-  height: 60px;
-  align-items: center;
-  background-color: var(--light60);
-  justify-content: center;
-  /* position: sticky;
-  top: 0;
-  z-index: 10; */
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+  background-color: var(--nephritis100);
 }
 
 .logo {
@@ -52,60 +27,49 @@
   flex-direction: row;
 }
 
+.header__links {
+  display: flex;
+  flex-direction: row;
+}
+
 .react-navigation {
+  position: absolute;
+  top: 59px;
+  left: 0;
   height: var(--navigation-height, 0);
   overflow-y: hidden;
+  background-color: var(--light80);
   transition: var(--navigation-transition, unset);
   interpolate-size: allow-keywords;
-  background-color: var(--light80);
-  position: absolute;
-  left: 0;
-  top: 60px;
-  /* z-index: 10; */
-  /* position: sticky;
-  top: 0; */
 }
 
 .react-navigation::after {
   content: "";
   display: block;
   width: 100vw;
-  /* height: calc(100dvh - 60px);
-  background-color: var(--light80); */
   height: 100dvh;
   background-color: var(--light80);
-  position: relative;
-  top: -60px;
-  
-  z-index: 1;
 }
 
 /* Стили для разных разрешений экранов */
-/* header */
-/* .header_mobile {
+/* header__wrapper */
+.header_mobile {
   justify-content: space-between;
-  padding-left: 3.86vw;
   padding-right: 7.25vw;
-} */
-
-/* header__wrapper */ 
-.header__wrapper_mobile {
-  justify-content: space-between;
   padding-left: 3.86vw;
-  padding-right: 7.25vw;
 }
 
 /* header__navigation */
 .header__navigation_small-resolution {
-  align-items: center;
-  gap: 52px;
   flex-direction: row-reverse;
+  align-items: center;
+  gap: 38px;
 }
 
 .header__navigation_laptop {
-  margin-left: 50.20vw;
+  margin-left: 38.2vw;
 }
 
 .header__navigation_tablet {
-  margin-left: 36.72vw;
+  margin-left: 20.72vw;
 }

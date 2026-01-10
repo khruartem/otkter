@@ -49,7 +49,7 @@
 }
 
 /* Стили для разных разрещений экранов */
-.employee_team_large-screen {
+.employee_team_large {
   width: 15.73vw;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .employee_team_laptop {
-  width: 29.30vw;
+  width: 29.29vw;
 }
 
 .employee_team_tablet {

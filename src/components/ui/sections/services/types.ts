@@ -1,6 +1,7 @@
-import { TServiceRef, TServiceViewRef } from "../../../../utils/types";
+import { TService } from "../../../../utils/types/services";
+import { TContentSliderTabBarProps } from "../../../content-slider/types";
 
 export type TServicesUIProps = {
-  servicesRefs: TServiceRef[];
-  servicesViewRefs: TServiceViewRef[];
+  services: TService[];
+  tabBarProps: TContentSliderTabBarProps;
 };

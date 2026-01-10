@@ -1,0 +1,25 @@
+.suggest-project {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  background-color: var(--light80);
+}
+
+.suggest-project__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 519px;
+  gap: 32px;
+}
+
+/* Стили для разных разрешений экранов */
+.suggest-project_mobile {
+  padding-inline: 4.83vw;
+}

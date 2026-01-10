@@ -5,8 +5,8 @@
   gap: 12px;
 }
 
-.copied {
-  opacity: 1;
-  visibility: visible;
-  z-index: 2;
+.share__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
 }

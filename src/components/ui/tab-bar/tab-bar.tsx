@@ -1,94 +1,96 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
 import clsx from "clsx";
 
 import { ArrowLeft, ArrowRight } from "../../icons/icons";
-// import { TabItemUI } from "../tab-item";
-import { TabItem } from "../../tab-item";
+import { Title } from "../../title";
+import { TabList } from "../../tab-list";
 
-import { TTabBarUIProps } from "./types";
+import { TTabsProps } from "./types";
+
+import { Colors } from "../../../utils/types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
-import { Colors, TEmployee, TProject, TService } from "../../../utils/types";
 
 import styles from "./tab-bar.module.css";
 
-export const TabBarUI: FC<TTabBarUIProps> = ({
-  current,
-  type,
-  index,
-  items,
+export const TabBarUI: FC<TTabsProps> = ({
+  currentIndex,
   onSwitch,
-  setCurrentItem,
-  setIndex,
-  location,
+  title,
+  relativeToTitle,
+  className,
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
-  return (
-    <div
-      className={clsx(
-        styles["tab-bar"],
-        isLarge && styles["tab-bar_large-screen"],
-        isDesktop && styles["tab-bar_desktop"],
-        isLaptop && styles["tab-bar_laptop"],
-        (isTablet || isMobile) && styles["tab-bar_small-resolution"]
-      )}
-    >
-      <ArrowLeft
-        mainColor={Colors.Nephritis100}
-        hoverColor={Colors.Nephritis120}
-        activeColor={Colors.Navy}
-        onClick={() => onSwitch(index - 1)}
-      />
-      <ul
+  const rowedStyle = clsx(
+    styles["tab-bar-wrapper"],
+    (isLarge || isDesktop || isLaptop) && styles["tab-bar-wrapper_rowed"],
+    (isTablet || isMobile) && [
+      styles["tab-bar-wrapper_columned"],
+      styles["tab-bar-wrapper_small-gap"],
+    ],
+    isLarge && styles["tab-bar-wrapper_large"],
+    isDesktop && styles["tab-bar-wrapper_desktop"],
+    isLaptop && styles["tab-bar-wrapper_laptop"],
+    isTablet && styles["tab-bar-wrapper_tablet"],
+    isMobile && styles["tab-bar-wrapper_mobile"]
+  );
+
+  const columnedStyle = clsx(
+    styles["tab-bar-wrapper"],
+    styles["tab-bar-wrapper_columned"],
+    isLarge && styles["tab-bar-wrapper_large"],
+    isDesktop && styles["tab-bar-wrapper_desktop"],
+    isLaptop && styles["tab-bar-wrapper_laptop"],
+    isTablet && styles["tab-bar-wrapper_tablet"],
+    isMobile && styles["tab-bar-wrapper_mobile"],
+    (isLarge || isLaptop) && styles["tab-bar-wrapper_large-gap"],
+    (isDesktop || isTablet || isMobile) && styles["tab-bar-wrapper_middle-gap"]
+  );
+
+  const renderTabBar = () => {
+    return (
+      <div
         className={clsx(
-          styles["tab-bar__items"],
-          isLarge && styles["tab-bar__items_large-screen"],
-          isDesktop && styles["tab-bar__items_desktop"],
-          isLaptop && styles["tab-bar__items_laptop"],
-          isTablet && styles["tab-bar__items_tablet"],
-          isMobile && styles["tab-bar__items_mobile"]
+          styles["tab-bar"],
+          !className
+            ? [
+                isLarge && styles["tab-bar_large"],
+                isDesktop && styles["tab-bar_desktop"],
+                isLaptop && styles["tab-bar_laptop"],
+                (isTablet || isMobile) && styles["tab-bar_widthed"],
+              ]
+            : className
         )}
       >
-        {items.map((item, index) => {
-          return (
-            <Link
-              key={item.id}
-              to={
-                type === "team"
-                  ? `/${type}/admins/${item.url}/`
-                  : `/${type}/${item.url}/`
-              }
-              state={{ ...location?.state, id: item.id, url: item.url }}
-              className={styles["tab-bar__item-link"]}
-            >
-              <li className={styles["tab-bar__item-link-item"]}>
-                <TabItem
-                  key={item.id}
-                  item={item}
-                  index={index}
-                  current={item.id === current.id}
-                  setCurrentItem={
-                    setCurrentItem as (
-                      value: React.SetStateAction<
-                        TProject | TService | TEmployee
-                      >
-                    ) => void
-                  }
-                  setIndex={setIndex}
-                />
-              </li>
-            </Link>
-          );
-        })}
-      </ul>
-      <ArrowRight
-        mainColor={Colors.Nephritis100}
-        hoverColor={Colors.Nephritis120}
-        activeColor={Colors.Navy}
-        onClick={() => onSwitch(index + 1)}
-      />
+        <ArrowLeft
+          mainColor={Colors.Nephritis100}
+          hoverColor={Colors.Nephritis120}
+          activeColor={Colors.Navy}
+          onClick={() => onSwitch(currentIndex - 1)}
+        />
+        <TabList />
+        <ArrowRight
+          mainColor={Colors.Nephritis100}
+          hoverColor={Colors.Nephritis120}
+          activeColor={Colors.Navy}
+          onClick={() => onSwitch(currentIndex + 1)}
+        />
+      </div>
+    );
+  };
+
+  return title ? (
+    <div
+      className={clsx(
+        relativeToTitle === "rowed" && rowedStyle,
+        relativeToTitle === "columned" && columnedStyle
+      )}
+    >
+      <Title text={title} />
+      {renderTabBar()}
     </div>
+  ) : (
+    renderTabBar()
   );
 };

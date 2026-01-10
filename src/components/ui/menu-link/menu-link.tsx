@@ -9,10 +9,13 @@ import styles from "./menu-link.module.css";
 import clsx from "clsx";
 
 export const MenuLinkUI: FC<TMenuLinkUIProps> = ({
+  id,
   openNewTab,
   link,
   onClick,
-  location
+  location,
+  className,
+  style,
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
@@ -23,22 +26,23 @@ export const MenuLinkUI: FC<TMenuLinkUIProps> = ({
 
   return (
     <HashLink
+      id={id}
       to={`/${url}`}
-      // smooth
-      // target={openNewTab ? "_blank" : undefined}
       scroll={(el) => {
         el.scrollIntoView({
           block: "start",
-          behavior: openNewTab ? "instant" : "smooth"
+          behavior: openNewTab ? "instant" : "smooth",
         });
       }}
       state={location?.state}
       className={clsx(
         styles["menu__link"],
         largeResolution && styles["menu__link_large-resolution"],
-        smallResolution && styles["menu__link_small-resolution"]
+        smallResolution && styles["menu__link_small-resolution"],
+        className && className
       )}
       onClick={onClick}
+      style={style}
     >
       {name}
     </HashLink>

@@ -5,4 +5,5 @@ export type TModalProps = {
   children: ReactNode;
   type: TModalType; 
   onClose: () => void;
+  className?: string;
 }

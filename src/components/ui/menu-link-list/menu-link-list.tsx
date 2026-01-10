@@ -7,6 +7,8 @@ import { TMenuLinkListUI } from "./types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./menu-link-list.module.css";
+import { MerchLink } from "../../merch-link";
+import { Colors } from "../../../utils/types";
 
 export const MenuLinkListUI: FC<TMenuLinkListUI> = ({ links, onClick }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
@@ -27,13 +29,14 @@ export const MenuLinkListUI: FC<TMenuLinkListUI> = ({ links, onClick }) => {
         isMobile && styles["menu__link-list_mobile"]
       )}
     >
-      {links.map(link => {
+      {links.map((link) => {
         return (
           <li key={link.id}>
             <MenuLink link={link} onClick={onClick} />
           </li>
         );
       })}
+      {isMobile && <MerchLink color={Colors.Nephritis100} />}
     </ul>
   );
 };

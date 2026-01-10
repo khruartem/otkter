@@ -1,13 +1,41 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 
-import { TPaginatorUIProps } from "./types";
+import { TPaginatorContextValue, TPaginatorUIProps } from "./types";
 
 import { PaginatorUI } from "../ui/paginator";
+import { PaginatorProvider } from "./paginator-provider";
 
-export const Paginator: FC<TPaginatorUIProps> = ({ index, length }) => {
-  const points: boolean[] = new Array(length);
+export const Paginator: FC<TPaginatorUIProps> = ({
+  index,
+  length,
+  defaultLength,
+  color,
+  currentColor,
+  className,
+}) => {
+  const points: boolean[] = new Array(
+    length === Infinity ? defaultLength : length
+  );
   points.fill(false);
   points[index] = true;
 
-  return <PaginatorUI points={points} />;
+  const paginatorRef = useRef<HTMLUListElement>(null);
+
+  const paginatorContextValue: TPaginatorContextValue = {
+    paginatorRef,
+    index,
+    length,
+  };
+
+  return (
+    <PaginatorProvider value={paginatorContextValue}>
+      <PaginatorUI
+        points={points}
+        className={className}
+        color={color}
+        currentColor={currentColor}
+        ref={paginatorRef}
+      />
+    </PaginatorProvider>
+  );
 };

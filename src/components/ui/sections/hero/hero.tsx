@@ -1,7 +1,8 @@
 import clsx from "clsx";
 
-import { Text } from "../../../../components/text";
-import { Video } from "../../../../components/video";
+import { Section } from "../../../section";
+import { Text } from "../../../text";
+import { Video } from "../../../video";
 
 import { Colors } from "../../../../utils/types";
 
@@ -17,32 +18,33 @@ export const HeroUI = () => {
   const smallResolution = isLaptop || isTablet || isMobile;
 
   return (
-    <section
+    <Section
+      id="hero"
+      decoration="only-color"
+      contentDirection={largeResolution ? "row" : "column"}
+      padding={smallResolution ? "all" : undefined}
       className={clsx(
-        styles.hero,
-        largeResolution && styles.hero_rowed,
-        smallResolution && styles.hero_columned,
-        isLarge && styles["hero_large-screen"],
-        isDesktop && styles.hero_desktop,
-        isLaptop && styles.hero_laptop,
-        isTablet && styles.hero_tablet,
-        isMobile && styles.hero_mobile
+        largeResolution && [styles["section_xs-gap"], styles.section_justified],
+        smallResolution && styles.section_columned_reversed,
+        isLaptop && styles["section_l-gap"],
+        isTablet && [styles["section_m-gap"], styles.section_tablet],
+        isMobile && [styles["section_s-gap"], styles.section_mobile]
       )}
     >
       <div
         className={clsx(
-          styles.hero__content,
-          isLarge && styles["hero__content_large-gap"],
-          !isLarge && styles["hero__content_small-gap"],
+          styles.content,
+          isLarge && styles["content_large-gap"],
+          !isLarge && styles["content_small-gap"],
           (isLaptop || isTablet || isMobile) &&
-            styles["hero__content_large-width"]
+            styles["content_large-width"]
         )}
       >
         <div
           className={clsx(
-            styles["hero__main-info"],
-            !isMobile && styles["hero__main-info_large-gap"],
-            isMobile && styles["hero__main-info_small-gap"]
+            styles["main-info"],
+            !isMobile && styles["main-info_large-gap"],
+            isMobile && styles["main-info_small-gap"]
           )}
         >
           <Text
@@ -55,11 +57,11 @@ export const HeroUI = () => {
             textTransform="uppercase"
             color={Colors.Navy}
             decorated
-            classNameExtra={clsx(
-              styles.hero__title,
+            className={clsx(
+              styles.title,
               isTablet || isMobile
-                ? styles["hero__title_large-height"]
-                : styles["hero__title_small-height"]
+                ? styles["title_large-height"]
+                : styles["title_small-height"]
             )}
           >
             {"наша миссия"}
@@ -88,18 +90,18 @@ export const HeroUI = () => {
         </div>
         <div
           className={clsx(
-            styles["hero__extra-info"],
-            isLarge && styles["hero__extra-info_large-screen"],
-            isDesktop && styles["hero__extra-info_desktop"],
-            isLaptop && styles["hero__extra-info_laptop"],
-            isTablet && styles["hero__extra-info_tablet"],
-            isMobile && styles["hero__extra-info_mobile"],
-            (isLarge || isDesktop) && styles["hero__extra-info_large-gap"],
-            (isLaptop || isMobile) && styles["hero__extra-info_middle-gap"],
-            isTablet && styles["hero__extra-info_middle-gap"]
+            styles["extra-info"],
+            isLarge && styles["extra-info_large-screen"],
+            isDesktop && styles["extra-info_desktop"],
+            isLaptop && styles["extra-info_laptop"],
+            isTablet && styles["extra-info_tablet"],
+            isMobile && styles["extra-info_mobile"],
+            (isLarge || isDesktop) && styles["extra-info_large-gap"],
+            (isLaptop || isMobile) && styles["extra-info_middle-gap"],
+            isTablet && styles["extra-info_middle-gap"]
           )}
         >
-          <div className={styles.hero__stat}>
+          <div className={styles.stat}>
             <Text
               as={"p"}
               fontFamily="Unbounded"
@@ -127,8 +129,8 @@ export const HeroUI = () => {
           </div>
           <div
             className={clsx(
-              styles.hero__stat,
-              (isLarge || isLaptop) && styles.hero__stat_gapped
+              styles.stat,
+              (isLarge || isLaptop) && styles.stat_gapped
             )}
           >
             <Text
@@ -156,7 +158,7 @@ export const HeroUI = () => {
               {"занимаемся искусством"}
             </Text>
           </div>
-          <div className={styles.hero__stat}>
+          <div className={styles.stat}>
             <Text
               as={"p"}
               fontFamily="Unbounded"
@@ -185,6 +187,6 @@ export const HeroUI = () => {
         </div>
       </div>
       <Video />
-    </section>
+    </Section>
   );
 };

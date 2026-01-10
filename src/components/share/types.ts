@@ -1,6 +1,5 @@
-import { TSectionType } from "../../utils/types";
+import { TItemOT } from "../../utils/types/item-ot";
 
 export type TShareProps = {
-  id: number;
-  type: TSectionType;
-}
+  item: TItemOT;
+};

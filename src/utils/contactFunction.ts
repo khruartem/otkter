@@ -1,19 +1,15 @@
-import { teamsSocials } from "./constants/team";
-
-import { SocialTypes, TEmployeesType } from "./types";
+import { IEmployee } from "./model/teamData";
 
 export const contactFunction = (
-  type: TEmployeesType,
-  id: number,
-  socialsType: SocialTypes
+  employee: IEmployee,
+  socials: "telegram" | "vk"
 ) => {
-  const socials = teamsSocials.find(
-    (teamsSocial) => teamsSocial.teamType === type
-  )?.teamSocials;
-  const contact = socials?.find((social) => social.id === id);
-  const url = contact?.socials.find(
-    (social) => social.type === socialsType
-  )?.url;
+  const emloyeeToContact = employee.getEmployee();
 
-  window.open(url || "", "_blank");
+  if (emloyeeToContact?.socials) {
+    const url = emloyeeToContact.socials.find(
+      (social) => social.type === socials
+    )?.url;
+    window.open(url || "", "_blank");
+  }
 };

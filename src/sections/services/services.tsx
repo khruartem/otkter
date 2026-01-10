@@ -1,120 +1,48 @@
-import { FC, useRef } from "react";
-import { useInView } from "react-intersection-observer";
+import { FC } from "react";
+import clsx from "clsx";
 
-import { SliderSectionUI } from "../../components/ui/sections/slider-section";
+import { ServicesUI } from "../../components/ui/sections/services";
+import { IconTab } from "../../components/icon-tab";
+import { ServiceTab } from "../../components/service-tab";
 
-import { useScrollOnMount } from "../../hooks/useScrollOnMount";
+import { TContentSliderTabBarProps } from "../../components/content-slider/types";
 
-import { TServiceRef, TServiceViewRef } from "../../utils/types";
+import { TTabsGap } from "../../utils/types";
+
+import { TService, TServiceType } from "../../utils/types/services";
+import { TItemOTType } from "../../utils/types/item-ot";
+
+import { useSortAsc } from "../../hooks/useSortAsc";
+import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
+import { useGetServices } from "../../hooks/services/useGetServices";
 
 export const Services: FC = () => {
-  const openSeaRef = useRef<HTMLDivElement>(null);
-  const eventsRef = useRef<HTMLDivElement>(null);
-  const designRef = useRef<HTMLDivElement>(null);
-  const contenRef = useRef<HTMLDivElement>(null);
-  const masterClassRef = useRef<HTMLDivElement>(null);
-  const lampRef = useRef<HTMLDivElement>(null);
-  const smmRef = useRef<HTMLDivElement>(null);
+  const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
+    useGetMediaQuery();
 
-  const servicesRefs: TServiceRef[] = [
-    {
-      ref: openSeaRef,
-      type: "open-sea",
-    },
-    {
-      ref: eventsRef,
-      type: "events",
-    },
-    {
-      ref: designRef,
-      type: "design",
-    },
-    {
-      ref: contenRef,
-      type: "content",
-    },
-    {
-      ref: masterClassRef,
-      type: "master-class",
-    },
-    {
-      ref: lampRef,
-      type: "lamp",
-    },
-    {
-      ref: smmRef,
-      type: "smm",
-    },
-  ];
+  const servicesUnsorted = useGetServices();
+  const services = useSortAsc(servicesUnsorted, "order");
 
-  const [openSeaViewRef, inViewOpenSea] = useInView({
-    threshold: 0,
-  });
-  const [eventsViewRef, inViewEvents] = useInView({
-    threshold: 0,
-  });
-  const [designViewRef, inViewDesign] = useInView({
-    threshold: 0,
-  });
-  const [contenViewRef, inViewContent] = useInView({
-    threshold: 0,
-  });
-  const [masterClassViewRef, inViewMasterClass] = useInView({
-    threshold: 0,
-  });
-  const [lampViewRef, inViewLamp] = useInView({
-    threshold: 0,
-  });
-  const [smmViewRef, inViewSmm] = useInView({
-    threshold: 0,
-  });
+  const tabBarProps: TContentSliderTabBarProps = {
+    title: "услуги",
+    relativeToTitle: "rowed",
+    tabsGap: clsx(
+      isLarge && "large",
+      (isDesktop || isMobile) && "middle",
+      isLaptop && "none",
+      isTablet && "small"
+    ) as TTabsGap,
+    renderTab: (item) => (
+      <IconTab
+        tab={item.tab as TItemOTType}
+        current={item.current}
+        iconRef={item.iconRef}
+        onClick={item.onClick}
+      >
+        <ServiceTab tab={item.tab as TService | TServiceType} />
+      </IconTab>
+    ),
+  };
 
-  const servicesViewRefs: TServiceViewRef[] = [
-    {
-      ref: openSeaViewRef,
-      inView: inViewOpenSea,
-      type: "open-sea",
-    },
-    {
-      ref: eventsViewRef,
-      inView: inViewEvents,
-      type: "events",
-    },
-    {
-      ref: designViewRef,
-      inView: inViewDesign,
-      type: "design",
-    },
-    {
-      ref: contenViewRef,
-      inView: inViewContent,
-      type: "content",
-    },
-    {
-      ref: masterClassViewRef,
-      inView: inViewMasterClass,
-      type: "master-class",
-    },
-    {
-      ref: lampViewRef,
-      inView: inViewLamp,
-      type: "lamp",
-    },
-    {
-      ref: smmViewRef,
-      inView: inViewSmm,
-      type: "smm",
-    },
-  ];
-
-  useScrollOnMount();
-
-  return (
-    <SliderSectionUI
-      id={"services"}
-      type={"services"}
-      sectionRefs={servicesRefs}
-      sectionViewRefs={servicesViewRefs}
-    />
-  );
+  return <ServicesUI services={services} tabBarProps={tabBarProps} />;
 };

@@ -1,11 +1,6 @@
-import { TEmployee, TProject, TService } from "../../utils/types";
+import { TItemOT, TItemOTType } from "../../utils/types/item-ot";
 
 export type TTabItemProps = {
-  item: TProject | TService | TEmployee;
+  tab: TItemOT | TItemOTType;
   index: number;
-  current: boolean;
-  setCurrentItem: (
-    value: React.SetStateAction<TProject | TService | TEmployee>
-  ) => void;
-  setIndex: (value: React.SetStateAction<number>) => void;
 };

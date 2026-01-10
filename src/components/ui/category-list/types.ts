@@ -1,6 +1,7 @@
-import { TCategories } from "../../../features/categories/categoriesSlice";
+import { TCategories, TCategoryColors } from "../../../utils/types/categories";
 
-export type CategoryListUIProps = {
+export type TCategoryListUIProps = {
   categories: TCategories;
-  positioned?: boolean;
+  colors: TCategoryColors;
+  className?: string;
 };

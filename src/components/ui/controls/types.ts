@@ -1,6 +1,9 @@
-import { TControlsItem } from "../../../utils/types";
+import { ReactNode } from "react";
+import { TItemOTKind } from "../../../utils/types/item-ot";
+import { TControlsItem } from "../../../utils/types/controls";
 
 export type TControlsUIProps = {
-  controls: TControlsItem[] | undefined;
-  isExtraLink: boolean;
-}
+  controls: TControlsItem[];
+  extraInfo?: ReactNode;
+  kind: TItemOTKind;
+};

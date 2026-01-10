@@ -1,103 +1,55 @@
-import clsx from "clsx";
 import { CSSProperties, FC } from "react";
 
-import { Play, TrickCircle } from "../../icons/icons";
-import { Attention, Contest, MasterClass, ShortFilm } from "../../icons";
-import { Text } from "../../text";
+import { CategoryIconUI } from "../category-icon";
 
 import { TCategoryUIProps } from "./types";
-import { Colors } from "../../../utils/types";
 
 import styles from "./category.module.css";
+import clsx from "clsx";
 
 export const CategoryUI: FC<TCategoryUIProps> = ({
-  category = undefined,
-  isAttention = false,
-  wrapper = false,
+  category,
   colors,
   className,
 }) => {
+  const setCategoryStyle = (text?: string, icon?: string) => {
+    if (text && icon) {
+      return styles["category_icon-and-text"];
+    }
+
+    if (!text && icon) {
+      return styles["category_only-icon"];
+    }
+
+    if (text && !icon) {
+      return styles["category_only-text"];
+    }
+  };
+
   return (
     <div
       className={clsx(
-        styles["category-wrapper"],
-        isAttention && styles["category-wrapper_attention"],
-        wrapper
-          ? styles["category-wrapper_colored"]
-          : styles["category-wrapper_transparent"],
-        category?.id === "circle" && styles["category-wrapper_copy"],
-        className
+        styles.category,
+        setCategoryStyle(category?.text, category?.icon),
+        className && className
       )}
+      style={
+        { "--categoty-background-color": colors.background } as CSSProperties
+      }
     >
-      <div
-        className={clsx(
-          styles.category,
-          isAttention && styles.category_attention
+      <>
+        {category?.icon && (
+          <CategoryIconUI icon={category.icon} color={colors.icon} />
         )}
-        style={
-          {
-            "--categoty-background-color": colors?.categotyBackgroundColor,
-          } as CSSProperties
-        }
-      >
-        {isAttention ? (
-          <Attention mainColor={Colors.Navy} />
-        ) : (
-          <>
-            {category?.id === "play" && (
-              <Play
-                mainColor={colors!.categoryIconColor!}
-                iconType="category"
-              />
-            )}
-            {category?.id === "contest" && (
-              <Contest
-                mainColor={colors!.categoryIconColor!}
-                iconType="category"
-              />
-            )}
-            {category?.id === "master-class" && (
-              <MasterClass
-                mainColor={colors!.categoryIconColor!}
-                iconType="category"
-              />
-            )}
-            {category?.id === "short-film" && (
-              <ShortFilm
-                mainColor={colors!.categoryIconColor!}
-                iconType="category"
-              />
-            )}
-            {category?.id === "artists" && null}
-            {category?.id === "admins" && null}
-            {category?.id === "info" && null}
-            {category?.id === "circle" && (
-              <TrickCircle
-                mainColor={Colors.Nephritis120}
-                className={styles["trick-circle"]}
-              />
-            )}
-            <Text
-              as={"label"}
-              fontFamily={
-                category?.id === "artists" ||
-                category?.id === "admins" ||
-                category?.id === "info"
-                  ? "Unbounded"
-                  : "Roboto"
-              }
-              textAlign="center"
-              fontSize={category?.id === "circle" ? 18 : 16}
-              fontWeight={400}
-              lineHeight={28}
-              textTransform="none"
-              color={colors!.categotyTextColor}
-            >
-              {category!.name}
-            </Text>
-          </>
+        {category?.text && (
+          <label
+            className={styles.category__text}
+            style={{ "--categoty-text-color": colors.text } as CSSProperties}
+          >
+            {category.text}
+          </label>
         )}
-      </div>
+      </>
     </div>
   );
 };

@@ -1,31 +1,28 @@
 import { FC } from "react";
 
+import { Page } from "../../../page";
 import { About } from "../../../../sections/about";
-import { Footer } from "../../../../sections/footer";
-import { Header } from "../../../../sections/header";
-import { Hero } from "../../../../sections/hero";
+import { Hero } from "../../../../sections/hero-2-season";
 import { Partners } from "../../../../sections/partners";
 import { Projects } from "../../../../sections/projects";
 import { Services } from "../../../../sections/services";
 import { Teams } from "../../../../sections/teams";
 import { Contacts } from "../../../../sections/contacts";
 
-// import { TMainUIProps } from "./types";
+import { TMainUIProps } from "./types";
 
-export const MainUI: FC = () => {
+export const MainUI: FC<TMainUIProps> = ({ pageProps }) => {
+  const { seo, layout } = pageProps;
+
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Projects type="main" />
-        <Teams />
-        <Contacts />
-      </main>
+    <Page seo={seo} layout={layout}>
+      <Hero />
+      <About />
+      <Services />
+      <Projects />
+      <Teams />
+      <Contacts />
       <Partners />
-      <Footer />
-    </>
+    </Page>
   );
 };

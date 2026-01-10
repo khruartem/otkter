@@ -1,13 +1,25 @@
 import { FC } from "react";
 
 import { ControlsUI } from "../ui/controls";
-import { useGetControls } from "../../hooks/useGetControls";
+import { FreeUI } from "../ui/free";
+
 import { TControlsProps } from "./types";
-import { useGetId } from "../../hooks/useGetId";
 
-export const Controls: FC<TControlsProps> = ({ id, type, located }) => {
-  const controls = useGetControls(id, type, located);
-  const isExtraLink = useGetId() === 1 && type === "services" ? true : false;
+import { useGetCode } from "../../hooks/useGetCode";
 
-  return <ControlsUI controls={controls} isExtraLink={isExtraLink} />;
+export const Controls: FC<TControlsProps> = ({ controls, kind }) => {
+  const serviceUrl = useGetCode();
+  const extraInfo = serviceUrl === "open-sea" ? <FreeUI /> : undefined;
+
+  return (
+    <ControlsUI
+      controls={
+        serviceUrl === "open-sea" || serviceUrl === "lamp"
+          ? controls.filter((control) => control.type === "button")
+          : controls
+      }
+      extraInfo={extraInfo}
+      kind={kind}
+    />
+  );
 };

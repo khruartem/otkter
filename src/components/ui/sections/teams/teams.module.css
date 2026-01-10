@@ -1,0 +1,11 @@
+.teams-tab-bar_large {
+  gap: 40px;
+}
+
+.teams-tab-bar_desktop {
+  gap: 16px;
+}
+
+.teams-tab-bar_laptop {
+  gap: 16px;
+}

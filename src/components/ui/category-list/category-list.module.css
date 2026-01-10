@@ -1,12 +1,8 @@
 .category-list {
   display: flex;
   flex-direction: row;
-}
-
-.category-list_positioned {
-  position: absolute;
-  bottom: 0;
-  z-index: 1;
+  align-items: center;
+  gap: 4px;
 }
 
 .category-list div:not(:first-child) {

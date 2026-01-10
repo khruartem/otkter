@@ -1,1 +1,0 @@
-export { SliderUI } from "./slider";

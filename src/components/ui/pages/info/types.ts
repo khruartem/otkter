@@ -1,16 +1,7 @@
-import { Colors, TSectionType } from "../../../../utils/types";
+import { TItemOT } from "../../../../utils/types/item-ot";
+import { TPageLayout, TPageSEO } from "../../../page/type";
 
 export type TInfoUIProps = {
-  type: TSectionType;
-  id: number;
-  title: string;
-  extraTitle?: string;
-  text: string | string[];
-  poster?: string;
-  attention: boolean;
-  colorAttention?: Colors;
-  isEmployees: boolean;
-  isControls: boolean;
-  isPhotos: boolean;
-  isDetails: boolean;
+  currentItem: TItemOT;
+  pageProps: { seo: TPageSEO; layout: TPageLayout };
 };

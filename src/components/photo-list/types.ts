@@ -1,6 +1,18 @@
-import { TSectionType } from "../../utils/types";
+import { ReactNode } from "react";
+import { TItemOTKind } from "../../utils/types/item-ot";
+import { TPhoto } from "../../utils/types/photo";
 
 export type TPhotoListProps = {
-  id: number;
-  type: TSectionType;
-}
+  itemKind: TItemOTKind;
+  photos: TPhoto[];
+};
+
+export type TPhotoListContextValue = {
+  itemKind: TItemOTKind;
+  photos: TPhoto[];
+};
+
+export type TPhotoListProvider = {
+  value: TPhotoListContextValue;
+  children: ReactNode;
+};

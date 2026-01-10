@@ -13,21 +13,22 @@ import minpros from "../../assets/partners/minpros.png";
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 
 import styles from "./partners.module.css";
+import { Section } from "../../components/section";
 
 export const Partners = () => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
   return (
-    <section className={styles.partners}>
+    <Section id="partners">
       <ul
         className={clsx(
-          styles.partners__icons,
-          isLarge && styles["partners__icons_large-screen"],
-          isDesktop && styles.partners__icons_desktop,
-          isLaptop && styles.partners__icons_laptop,
-          isTablet && styles.partners__icons_tablet,
-          isMobile && styles.partners__icons_mobile
+          styles.partners,
+          isLarge && styles.partners_large,
+          isDesktop && styles.partners_desktop,
+          isLaptop && styles.partners_laptop,
+          isTablet && styles.partners_tablet,
+          isMobile && styles.partners_mobile
         )}
       >
         <li>
@@ -126,6 +127,6 @@ export const Partners = () => {
           />
         </li>
       </ul>
-    </section>
+    </Section>
   );
 };

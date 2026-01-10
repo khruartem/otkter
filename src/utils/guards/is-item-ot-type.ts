@@ -1,0 +1,25 @@
+import { TItemOTType } from "../types/item-ot";
+
+const itemOTTypes: TItemOTType[] = [
+  "main",
+  "open-sea",
+  "events",
+  "design",
+  "content",
+  "master-class",
+  "lamp",
+  "smm",
+  "all",
+  "play",
+  "contest",
+  "short-film",
+  "admins",
+  "artists",
+  "hero",
+  "cloths",
+  "souvenirs",
+];
+
+export function isItemOTType(item: unknown): item is TItemOTType {
+  return itemOTTypes.some((type) => type === (item as TItemOTType));
+}

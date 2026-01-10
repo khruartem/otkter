@@ -25,6 +25,29 @@
   fill: var(--active-color);
 }
 
+.copy {
+  width: 32px;
+  height: 32px;
+  margin: 14px;
+  cursor: pointer;
+}
+
+.copy:hover {
+  fill: var(--hover-color);
+}
+
+.copy:active {
+  fill: var(--active-color);
+}
+
+.copy:hover svg {
+  fill: var(--hover-color);
+}
+
+.copy:active svg {
+  fill: var(--active-color);
+}
+
 .nav {
   width: 32px;
   height: 32px;
@@ -47,9 +70,8 @@
 
 .arrow {
   box-sizing: content-box;
-  width: 32px;
+  min-width: 32px;
   height: 32px;
-  /* padding: 8px 14px 8px 10px; */
   padding: 14px;
   cursor: pointer;
 }
@@ -93,3 +115,8 @@
 .tab_hover {
   fill: var(--hover-color);
 } */
+
+.ticket {
+  width: 16px;
+  height: 16px;
+}

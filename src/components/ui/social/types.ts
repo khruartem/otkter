@@ -1,8 +1,9 @@
-import { Colors, Social } from "../../../utils/types";
+import { Colors } from "../../../utils/types";
+import { TSocials } from "../../../utils/types/socials";
 
 export type TSocialProps = {
-  socials: Social[];
+  socials: TSocials[];
   color?: Colors;
   hoverColor?: Colors;
   activeColor?: Colors;
-} 
+};

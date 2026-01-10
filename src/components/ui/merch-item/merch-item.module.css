@@ -1,0 +1,27 @@
+.merch-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Стили для разных разрешений экранов */
+.merch-item_large {
+  width: 20vw;
+  max-width: 384px;
+}
+
+.merch-item_desktop {
+  width: 26.93vw;
+}
+
+.merch-item_laptop {
+  width: 29.29vw;
+}
+
+.merch-item_tablet {
+  width: 45.31vw;
+}
+
+.merch-item_mobile {
+  width: 100%;
+}

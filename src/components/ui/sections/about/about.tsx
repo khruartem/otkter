@@ -2,8 +2,10 @@ import { FC } from "react";
 import clsx from "clsx";
 
 // import { ImageUI } from "../../../image";
+import { Section } from "../../../section";
 import { Button } from "../../../button";
 import { Text } from "../../../text";
+import { Title } from "../../../title";
 
 import { TAboutUIProps } from "./types";
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
@@ -20,28 +22,24 @@ export const AboutUI: FC<TAboutUIProps> = (props) => {
     useGetMediaQuery();
 
   return (
-    <section
+    <Section
       id="about"
+      decoration="half"
       className={clsx(
         styles.about,
-        (isLarge || isDesktop) && [
-          styles.about_rowed,
-          styles["about_border-radius-large"],
-        ],
-        (isLaptop || isTablet || isMobile) && [
-          styles.about_columned,
-          styles["about_border-radius-small"],
-        ],
-        isLarge && styles["about_large-screen"],
+        (isLarge || isDesktop) && styles.about_rowed,
+        (isLaptop || isTablet || isMobile) && styles.about_columned,
+        isLarge && styles.about_large,
         isDesktop && styles.about_desktop,
         isLaptop && styles.about_laptop,
         isTablet && styles.about_tablet,
         isMobile && styles.about_mobile
       )}
+      unsetDefaultStyle
     >
       {(isLarge || isDesktop) && <LargeResolution {...props} />}
       {(isLaptop || isTablet || isMobile) && <SmallResolution {...props} />}
-    </section>
+    </Section>
   );
 };
 
@@ -65,7 +63,7 @@ const LargeResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
           className={clsx(
             styles.about__image,
             styles.about__image_oval,
-            isLarge && styles["about__image_oval_large-screen"],
+            isLarge && styles.about__image_oval_large,
             isDesktop && styles.about__image_oval_desktop
           )}
           src={aboutOval1}
@@ -79,11 +77,11 @@ const LargeResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
           className={clsx(
             styles.about__image,
             styles.about__image_oval,
-            isLarge && styles["about__image_oval_large-screen"],
+            isLarge && styles["about__image_oval_large"],
             isDesktop && styles.about__image_oval_desktop
           )}
           wrapperClassName={clsx(
-            isLarge && styles["about__image_oval_large-screen"],
+            isLarge && styles["about__image_oval_large"],
             isDesktop && styles.about__image_oval_desktop
           )}
         /> */}
@@ -94,7 +92,7 @@ const LargeResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
           className={clsx(
             styles.about__image,
             styles.about__image_orb,
-            isLarge && styles["about__image_orb_large-screen"],
+            isLarge && styles.about__image_orb_large,
             isDesktop && styles.about__image_orb_desktop
           )}
           src={aboutOrb}
@@ -108,11 +106,11 @@ const LargeResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
           className={clsx(
             styles.about__image,
             styles.about__image_orb,
-            isLarge && styles["about__image_orb_large-screen"],
+            isLarge && styles["about__image_orb_large"],
             isDesktop && styles.about__image_orb_desktop
           )}
           wrapperClassName={clsx(
-            isLarge && styles["about__image_orb_large-screen"],
+            isLarge && styles["about__image_orb_large"],
             isDesktop && styles.about__image_orb_desktop
           )}
         /> */}
@@ -123,21 +121,7 @@ const LargeResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
           styles["about__text-wrapper_large-gap"]
         )}
       >
-        <Text
-          as="h2"
-          fontFamily="Unbounded"
-          textAlign="center"
-          fontSize={56}
-          fontWeight={700}
-          lineHeight={80}
-          textTransform="uppercase"
-          color={Colors.Navy}
-          decorated
-          padding={"6.4px 26.4px"}
-          width={"fit-content"}
-        >
-          {"о нас"}
-        </Text>
+        <Title text="о нас" />
         <Text
           as="p"
           fontFamily="Roboto"
@@ -168,7 +152,7 @@ const LargeResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
         className={clsx(
           styles.about__image,
           styles.about__image_oval,
-          isLarge && styles["about__image_oval_large-screen"],
+          isLarge && styles.about__image_oval_large,
           isDesktop && styles.about__image_oval_desktop
         )}
         src={aboutOval2}
@@ -182,11 +166,11 @@ const LargeResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
         className={clsx(
           styles.about__image,
           styles.about__image_oval,
-          isLarge && styles["about__image_oval_large-screen"],
+          isLarge && styles["about__image_oval_large"],
           isDesktop && styles.about__image_oval_desktop
         )}
         wrapperClassName={clsx(
-          isLarge && styles["about__image_oval_large-screen"],
+          isLarge && styles["about__image_oval_large"],
           isDesktop && styles.about__image_oval_desktop
         )}
       /> */}
@@ -368,21 +352,7 @@ const SmallResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
           (isTablet || isMobile) && styles["about__text-wrapper_small-gap"]
         )}
       >
-        <Text
-          as="h2"
-          fontFamily="Unbounded"
-          textAlign="center"
-          fontSize={36}
-          fontWeight={700}
-          lineHeight={44}
-          textTransform="uppercase"
-          color={Colors.Navy}
-          decorated
-          padding={"10.4px 22.4px"}
-          width={"fit-content"}
-        >
-          {"о нас"}
-        </Text>
+        <Title text="о нас" />
         <Text
           as="p"
           fontFamily="Roboto"

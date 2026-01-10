@@ -1,34 +1,38 @@
 import { FC } from "react";
 import clsx from "clsx";
 
-import { CategoryListUIProps } from "./types";
-import { Category } from "../../category";
-import { nanoid } from "@reduxjs/toolkit";
+import { CategoryUI } from "../category";
+
+import { TCategoryListUIProps } from "./types";
+
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./category-list.module.css";
 
-export const CategoryListUI: FC<CategoryListUIProps> = ({ categories, positioned = false }) => {
-  const { attention, categoryList } = categories;
+export const CategoryListUI: FC<TCategoryListUIProps> = ({
+  categories,
+  colors,
+  className,
+}) => {
+  const { categoryList } = categories;
 
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
   const largeResolution = isLarge || isDesktop || isLaptop;
   const smallResolution = isTablet || isMobile;
-  
+
   return (
     <div
       className={clsx(
         styles["category-list"],
-        positioned && styles["category-list_positioned"],
         largeResolution && styles["category-list_large-resolution"],
-        smallResolution && styles["category-list_small-resolution"]
+        smallResolution && styles["category-list_small-resolution"],
+        className && className
       )}
     >
-      {attention && <Category isAttention />}
-      {categoryList.map((item) => {
-        return <Category key={nanoid()} category={item} />;
+      {categoryList.map((category, index) => {
+        return <CategoryUI key={index} category={category} colors={colors} />;
       })}
     </div>
   );

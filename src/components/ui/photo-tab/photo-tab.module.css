@@ -1,0 +1,23 @@
+.tab-item {
+  min-width: 44px;
+  height: 44px;
+  opacity: 0.3;
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+
+.tab-item:not(.tab-item_current):hover {
+  opacity: 0.8;
+}
+
+.tab-item_current {
+  opacity: 1;
+}
+
+.tab-item-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  object-fit: cover;
+  object-position: 60% 45%;
+}

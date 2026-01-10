@@ -1,7 +1,6 @@
 /* about */
 .about {
   display: grid;
-  background-color: var(--light60);
   align-items: center;
 }
 
@@ -16,13 +15,13 @@
 }
 
 .about_border-radius-large {
-  border-bottom-left-radius: 200px;
   border-bottom-right-radius: 200px;
+  border-bottom-left-radius: 200px;
 }
 
 .about_border-radius-small {
-  border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
 }
 
 /* about__image-wrapper */
@@ -64,13 +63,13 @@
 }
 
 .about__image_oval {
-  object-position: 60% 10%;
   object-fit: cover;
+  object-position: 60% 10%;
 }
 
 .about__image_orb {
-  object-position: 46% 46%;
   object-fit: cover;
+  object-position: 46% 46%;
 }
 
 /* about__text-wrapper */
@@ -99,36 +98,36 @@
 
 /* Стили для разных разрешений экранов */
 /* about */
-.about_large-screen {
-  padding: 0 8.13vw 4.79vw;
+.about_large {
   gap: 8.33vw;
+  padding: 0 8.13vw 4.79vw;
 }
 
 .about_desktop {
-  padding: 0 7.83vw 1.46vw;
   gap: 8.93vw;
+  padding: 0 7.83vw 1.46vw;
 }
 
 .about_laptop {
-  padding: 7.81vw 11.91vw;
   gap: 9.77vw;
+  padding: 7.81vw 11.91vw;
 }
 
 .about_tablet {
+  gap: 7.81vw;
   padding-bottom: 5.21vw;
   padding-inline: 11.72vw;
-  gap: 7.81vw;
 }
 
 .about_mobile {
-  padding-top: 9.66vw;
-  padding-bottom: 13.86vw;
-  padding-inline: 3.86vw;
   gap: 14.49vw;
+  padding-top: 9.66vw;
+  padding-bottom: 19.32vw;
+  padding-inline: 3.86vw;
 }
 
 /* about__image_oval */
-.about__image_oval_large-screen {
+.about__image_oval_large {
   width: 20vw;
   height: 30.21vw;
 }
@@ -154,7 +153,7 @@
 }
 
 /* about__image_orb */
-.about__image_orb_large-screen {
+.about__image_orb_large {
   width: 12.92vw;
   height: 12.92vw;
 }

@@ -1,8 +1,19 @@
-import { useSelector } from "react-redux";
-import { RootState } from "../services/store";
-import { getPhotosSelector } from "../features/photos/photosSlice";
-import { TSectionType } from "../utils/types";
+import { TItemOTKind } from "../utils/types/item-ot";
+import { useGetProject } from "./projects/useGetProject";
+import { useGetService } from "./services/useGetService";
+import { useGetEmployee } from "./team/useGetEmployee";
 
-export const useGetPhotos = (id: number, type: TSectionType) => {
-  return useSelector((state: RootState) => getPhotosSelector(state, id, type));
+export const useGetPhotos = (id: number, kind: TItemOTKind) => {
+  const project = useGetProject(id);
+  const service = useGetService(id);
+  const employee = useGetEmployee(id);
+
+  switch (kind) {
+    case "projects":
+      return project?.photos;
+    case "services":
+      return service?.photos;
+    case "team":
+      return employee?.photos;
+  }
 };

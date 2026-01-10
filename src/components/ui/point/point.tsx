@@ -1,12 +1,16 @@
 import { FC } from "react";
+import clsx from "clsx";
 
 import { TPointUIProps } from "./types";
 
 import styles from "./point.module.css";
-import clsx from "clsx";
 
-export const PointUI: FC<TPointUIProps> = ({ current = false }) => {
+export const PointUI: FC<TPointUIProps> = ({ current }) => {
   return (
-    <li className={clsx(styles.point, current && styles.point_current)}></li>
+    <li>
+      <div className={clsx(styles.point, current && styles.point_current)}>
+        {current}
+      </div>
+    </li>
   );
 };
