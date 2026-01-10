@@ -3,21 +3,19 @@
   top: 0;
   left: 0;
   z-index: 10;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 100%; */
+  width: 100vw;
   height: 60px;
-  background-color: var(--light60);
   border-bottom-right-radius: 40px;
   border-bottom-left-radius: 40px;
+  background-color: var(--light60);
   transition: background-color 1.2s;
 }
 
 .header_colored {
   background-color: var(--nephritis100);
-  /* background-color: transparent; */
 }
 
 .logo {
@@ -25,6 +23,11 @@
 }
 
 .header__navigation {
+  display: flex;
+  flex-direction: row;
+}
+
+.header__links {
   display: flex;
   flex-direction: row;
 }
@@ -42,9 +45,6 @@
 
 .react-navigation::after {
   content: "";
-  /* position: relative;
-  top: -60px;
-  z-index: 1; */
   display: block;
   width: 100vw;
   height: 100dvh;
@@ -52,7 +52,7 @@
 }
 
 /* Стили для разных разрешений экранов */
-/* header__wrapper */ 
+/* header__wrapper */
 .header_mobile {
   justify-content: space-between;
   padding-right: 7.25vw;
@@ -63,13 +63,13 @@
 .header__navigation_small-resolution {
   flex-direction: row-reverse;
   align-items: center;
-  gap: 52px;
+  gap: 38px;
 }
 
 .header__navigation_laptop {
-  margin-left: 50.20vw;
+  margin-left: 38.2vw;
 }
 
 .header__navigation_tablet {
-  margin-left: 36.72vw;
+  margin-left: 20.72vw;
 }

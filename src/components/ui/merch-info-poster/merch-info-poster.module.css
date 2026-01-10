@@ -1,8 +1,8 @@
 /* merch-info-poster */
 .merch-info-poster {
   display: flex;
-  width: 100%;
   flex-direction: column;
+  width: 100%;
 }
 
 .merch-info-poster_large-gap {
@@ -35,16 +35,18 @@
 /* merch-info-photo-list */
 .merch-info-photo-list {
   display: flex;
-  height: 112px;
   flex-direction: row;
   gap: 12px;
+  height: 112px;
 }
 
 /* merch-info-photo-list-item */
 .merch-info-photo-list-item {
   border-radius: 50%;
-  background-color: var(--light80);
   overflow: hidden;
+  background-color: var(--light80);
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
 }
 
 .merch-info-photo-list-item img {

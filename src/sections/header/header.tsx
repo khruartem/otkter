@@ -2,6 +2,7 @@ import { FC, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import { HeaderUI } from "../../components/ui/sections/header";
+
 import { THeaderProps } from "./types";
 
 export const Header: FC<THeaderProps> = ({ animation }) => {
@@ -12,7 +13,6 @@ export const Header: FC<THeaderProps> = ({ animation }) => {
   const [url, setUrl] = useState("");
 
   useEffect(() => {
-    // location.state = { ...location.state };
     switch (location.state?.type) {
       case "projects":
         if (location.state?.id) {
@@ -29,6 +29,9 @@ export const Header: FC<THeaderProps> = ({ animation }) => {
         break;
       case "team":
         setUrl("/#team");
+        break;
+      case "merch":
+        setUrl("/merch");
         break;
       default:
         setUrl("/");

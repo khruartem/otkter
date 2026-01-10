@@ -4,6 +4,7 @@ import { HashLink } from "react-router-hash-link";
 
 import { Logo } from "../../../icons";
 import { Menu } from "../../../menu/menu";
+import { MerchLink } from "../../../merch-link";
 import { MainSocial } from "../../../main-social";
 
 import { THeaderUIProps } from "./types";
@@ -37,9 +38,6 @@ export const HeaderUI: FC<THeaderUIProps> = ({
     <header
       className={clsx(
         styles.header,
-        // animation
-        // ? animation.animated && styles.header_animated
-        // : styles.header_colored,
         animation && !animation.animated && styles.header_colored,
         isMobile && styles.header_mobile
       )}
@@ -54,7 +52,6 @@ export const HeaderUI: FC<THeaderUIProps> = ({
           });
         }}
         onClick={onClickLogo}
-        // state={location?.state}
       >
         <Logo
           mainColor={Colors.Navy}
@@ -83,11 +80,19 @@ export const HeaderUI: FC<THeaderUIProps> = ({
             headerAnimation={animation}
           />
           {!isMobile && (
-            <MainSocial
-              color={setColor(animation, undefined, Colors.Navy)}
-              activeColor={setColor(animation, undefined, Colors.Navy)}
-              hoverColor={setColor(animation, undefined, Colors.Navy)}
-            />
+            <div className={styles["header__links"]}>
+              <MerchLink
+                color={
+                  setColor(animation, Colors.Nephritis100, Colors.Navy) ||
+                  Colors.Nephritis100
+                }
+              />
+              <MainSocial
+                color={setColor(animation, undefined, Colors.Navy)}
+                activeColor={setColor(animation, undefined, Colors.Navy)}
+                hoverColor={setColor(animation, undefined, Colors.Navy)}
+              />
+            </div>
           )}
         </div>
       ) : (

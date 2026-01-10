@@ -3,14 +3,27 @@ import { TMerch, TMerchColors } from "../types/merch";
 import { contactFunction } from "../contactFunction";
 import { yakovlev } from "./team";
 
-// Футболки
-import tShirtRegWhiteFront from "../../assets/merch/tshirts/tshirt_reg_white_front.avif";
-import tShirtRegWhiteBack from "../../assets/merch/tshirts/tshirt_reg_white_back.avif";
-import tShirtRegNavyFront from "../../assets/merch/tshirts/tshirt_reg_navy_front.avif";
-import tShirtRegNavyBack from "../../assets/merch/tshirts/tshirt_reg_navy_back.avif";
+// Фото футболки творца
+import tShirtArtisitsWhiteFrontPhoto from "../../assets/merch/tshirts/tshirt_reg_white_front.avif";
+import tShirtArtistsWhiteBackPhoto from "../../assets/merch/tshirts/tshirt_reg_white_back.avif";
+import tShirtArtistsNavyFrontPhoto from "../../assets/merch/tshirts/tshirt_reg_navy_front.avif";
+import tShirtArtistsNavyBackPhoto from "../../assets/merch/tshirts/tshirt_reg_navy_back.avif";
 
-// Термосы
-import thermosSteel from "../../assets/merch/thermos/thermos_steel.avif";
+// Иконки футболки творца
+import tShirtArtisitsWhiteFrontIcon from "../../assets/merch/tshirts/icons/tshirt_reg_white_front.avif";
+import tShirtArtistsWhiteBackIcon from "../../assets/merch/tshirts/icons/tshirt_reg_white_back.avif";
+import tShirtArtistsNavyFrontIcon from "../../assets/merch/tshirts/icons/tshirt_reg_navy_front.avif";
+import tShirtArtistsNavyBackIcon from "../../assets/merch/tshirts/icons/tshirt_reg_navy_back.avif";
+
+// Фото термоса
+import thermosSteelMainPhoto from "../../assets/merch/thermos/thermos_steel.avif";
+import thermosSteelPhoto1 from "../../assets/merch/thermos/thermos_steel_photo_1.avif";
+import thermosSteelPhoto2 from "../../assets/merch/thermos/thermos_steel_photo_2.avif";
+
+// Иконки термоса
+import thermosSteelMainIcon from "../../assets/merch/thermos/icons/thermos_steel.avif";
+import thermosSteelIcon1 from "../../assets/merch/thermos/icons/thermos_steel_photo_1.avif";
+import thermosSteelIcon2 from "../../assets/merch/thermos/icons/thermos_steel_photo_2.avif";
 
 const merchColors: TMerchColors = {
   Navy: { hex: Colors.Navy, name: "Нави" },
@@ -28,28 +41,28 @@ export const merchItems: TMerch[] = [
     title: "Футболка творца Открытой Территории",
     shortText:
       "Буквальная униформа всех наших творцов, призывающая объединять творческих людей. Плотный хлопок и контрастный взрыв фирменной айдентики.",
-    image: tShirtRegWhiteFront,
+    image: tShirtArtisitsWhiteFrontPhoto,
     icon: "",
     photos: [
       {
         id: 1,
-        source: tShirtRegWhiteFront,
-        icon: tShirtRegWhiteFront,
+        source: tShirtArtisitsWhiteFrontPhoto,
+        icon: tShirtArtisitsWhiteFrontIcon,
       },
       {
         id: 2,
-        source: tShirtRegWhiteBack,
-        icon: tShirtRegWhiteBack,
+        source: tShirtArtistsWhiteBackPhoto,
+        icon: tShirtArtistsWhiteBackIcon,
       },
       {
         id: 3,
-        source: tShirtRegNavyFront,
-        icon: tShirtRegNavyFront,
+        source: tShirtArtistsNavyFrontPhoto,
+        icon: tShirtArtistsNavyFrontIcon,
       },
       {
         id: 4,
-        source: tShirtRegNavyBack,
-        icon: tShirtRegNavyBack,
+        source: tShirtArtistsNavyBackPhoto,
+        icon: tShirtArtistsNavyBackIcon,
       },
     ],
     price: {
@@ -89,9 +102,25 @@ export const merchItems: TMerch[] = [
     title: "Термос творца Открытой Территории",
     shortText:
       "Городской аксессуар, призванный наполнять теплом и творческой энергией. Нержавеющая сталь, ситечко, компактный формат.",
-    image: thermosSteel,
+    image: thermosSteelMainPhoto,
     icon: "",
-    // photos: [],
+    photos: [
+      {
+        id: 1,
+        source: thermosSteelMainPhoto,
+        icon: thermosSteelMainIcon,
+      },
+      {
+        id: 2,
+        source: thermosSteelPhoto1,
+        icon: thermosSteelIcon1,
+      },
+      {
+        id: 3,
+        source: thermosSteelPhoto2,
+        icon: thermosSteelIcon2,
+      },
+    ],
     price: {
       value: 2000,
       currency: "₽",
