@@ -7,7 +7,7 @@ export const MerchLink: FC<TMerchLinkProps> = ({ color }) => {
   const link = {
     id: 6,
     name: "Мерч",
-    url: "merch",
+    url: "merch/",
   };
 
   return <MerchLinkUI link={link} color={color} />;
