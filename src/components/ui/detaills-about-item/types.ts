@@ -1,7 +1,7 @@
-import { TAboutDetailsValue } from "../../../utils/types/details";
+import { TAboutDetailsValue, TDetailsIcon } from "../../../utils/types/details";
 
 export type TDetailsAboutItemUIProps = {
-  icon: string;
+  icon: TDetailsIcon;
   label: string;
   value: TAboutDetailsValue;
 };
