@@ -28,6 +28,10 @@ const pages = {
   sinelnikova: resolve(__dirname, "team/admins/sinelnikova/index.html"),
   aspek: resolve(__dirname, "team/admins/aspek/index.html"),
   hrustalev: resolve(__dirname, "team/admins/hrustalev/index.html"),
+  // Страницы мерча
+  merch: resolve(__dirname, "merch/index.html"),
+  tShirtArtists: resolve(__dirname, "merch/cloths/t-shirt-artist/index.html"),
+  thermos: resolve(__dirname, "merch/souvenirs/thermos/index.html"),
   // 404
   notFound: resolve(__dirname, "errors/404.html"),
 };
