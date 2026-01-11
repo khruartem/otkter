@@ -20,7 +20,7 @@ export const TeamUI = React.forwardRef<HTMLUListElement, TTeamUIProps>(
     const { isMobile } = useGetMediaQuery();
 
     const setFade = () => {
-      if (type === "artists") return true;
+      if (type === "artists" || (type === "admins" && isMobile)) return true;
       if (type === "admins") return false;
     };
 
