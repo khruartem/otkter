@@ -18,12 +18,17 @@ export const Share: FC<TShareProps> = ({ item }) => {
 
   const socials = useGetMainSocials(telegramUrl, VKUrl);
 
+  const handleFollowLink = (url: string) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <ShareUI>
       <SocialUI
         socials={socials}
         color={Colors.Light20}
         hoverColor={Colors.Dark80}
+        onFollowLink={handleFollowLink}
       />
       <Copy />
     </ShareUI>

@@ -40,11 +40,7 @@
   padding-block: 14px;
 }
 
-.button_icon a {
-  margin: 0;
-}
-
-.button_icon:hover a svg {
+.button_icon:hover svg {
   fill: currentColor;
 }
 
