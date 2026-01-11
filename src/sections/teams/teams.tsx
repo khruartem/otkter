@@ -38,6 +38,7 @@ export const Teams: FC = () => {
     relativeToTitle: "rowed",
     renderTab: (item) => (
       <IconTab
+        titled
         tab={item.tab as TItemOTType}
         current={item.current}
         iconRef={item.iconRef}

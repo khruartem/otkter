@@ -17,13 +17,13 @@ import tShirtArtistsNavyBackIcon from "../../assets/merch/tshirts/icons/tshirt_r
 
 // Фото термоса
 import thermosSteelMainPhoto from "../../assets/merch/thermos/thermos_steel.avif";
-import thermosSteelPhoto1 from "../../assets/merch/thermos/thermos_steel_photo_1.avif";
-import thermosSteelPhoto2 from "../../assets/merch/thermos/thermos_steel_photo_2.avif";
+// import thermosSteelPhoto1 from "../../assets/merch/thermos/thermos_steel_photo_1.avif";
+// import thermosSteelPhoto2 from "../../assets/merch/thermos/thermos_steel_photo_2.avif";
 
 // Иконки термоса
 import thermosSteelMainIcon from "../../assets/merch/thermos/icons/thermos_steel.avif";
-import thermosSteelIcon1 from "../../assets/merch/thermos/icons/thermos_steel_photo_1.avif";
-import thermosSteelIcon2 from "../../assets/merch/thermos/icons/thermos_steel_photo_2.avif";
+// import thermosSteelIcon1 from "../../assets/merch/thermos/icons/thermos_steel_photo_1.avif";
+// import thermosSteelIcon2 from "../../assets/merch/thermos/icons/thermos_steel_photo_2.avif";
 
 const merchColors: TMerchColors = {
   Navy: { hex: Colors.Navy, name: "Нави" },
@@ -109,16 +109,6 @@ export const merchItems: TMerch[] = [
         id: 1,
         source: thermosSteelMainPhoto,
         icon: thermosSteelMainIcon,
-      },
-      {
-        id: 2,
-        source: thermosSteelPhoto1,
-        icon: thermosSteelIcon1,
-      },
-      {
-        id: 3,
-        source: thermosSteelPhoto2,
-        icon: thermosSteelIcon2,
       },
     ],
     price: {
