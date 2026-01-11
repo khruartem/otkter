@@ -64,29 +64,28 @@ export const Telegram = ({
   mainColor,
   hoverColor,
   activeColor,
-  url,
+  onClick,
 }: TSocialProps) => {
   return (
-    <a href={url} target="_blank" className={styles.social}>
-      <svg
-        fill={mainColor}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 32 32"
-        //className={styles.social}
-        style={
-          {
-            "--hover-color": hoverColor,
-            "--active-color": activeColor,
-          } as CSSProperties
-        }
-      >
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M5.65 14.61c6.442-2.823 10.738-4.683 12.888-5.582C24.675 6.46 25.95 6.015 26.782 6c.182-.003.591.042.856.259.223.182.285.428.314.601.03.173.066.567.037.875-.332 3.514-1.771 12.041-2.503 15.977-.31 1.665-.92 2.223-1.51 2.278-1.284.119-2.259-.853-3.502-1.672-1.945-1.282-3.044-2.08-4.931-3.331-2.182-1.446-.768-2.24.476-3.54.325-.34 5.98-5.511 6.089-5.98.014-.059.026-.278-.103-.393-.13-.116-.32-.076-.457-.045-.196.045-3.303 2.11-9.322 6.196-.882.609-1.681.905-2.397.89-.789-.017-2.307-.449-3.435-.818-1.384-.452-2.484-.691-2.388-1.46.05-.4.598-.809 1.644-1.227Z"
-        />
-      </svg>
-    </a>
+    <svg
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+      className={styles.social}
+      onClick={onClick}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M5.65 14.61c6.442-2.823 10.738-4.683 12.888-5.582C24.675 6.46 25.95 6.015 26.782 6c.182-.003.591.042.856.259.223.182.285.428.314.601.03.173.066.567.037.875-.332 3.514-1.771 12.041-2.503 15.977-.31 1.665-.92 2.223-1.51 2.278-1.284.119-2.259-.853-3.502-1.672-1.945-1.282-3.044-2.08-4.931-3.331-2.182-1.446-.768-2.24.476-3.54.325-.34 5.98-5.511 6.089-5.98.014-.059.026-.278-.103-.393-.13-.116-.32-.076-.457-.045-.196.045-3.303 2.11-9.322 6.196-.882.609-1.681.905-2.397.89-.789-.017-2.307-.449-3.435-.818-1.384-.452-2.484-.691-2.388-1.46.05-.4.598-.809 1.644-1.227Z"
+      />
+    </svg>
   );
 };
 
@@ -94,25 +93,24 @@ export const VK = ({
   mainColor,
   hoverColor,
   activeColor,
-  url,
+  onClick,
 }: TSocialProps) => {
   return (
-    <a href={url} target="_blank" className={styles.social}>
-      <svg
-        fill={mainColor}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 32 32"
-        //className={styles.social}
-        style={
-          {
-            "--hover-color": hoverColor,
-            "--active-color": activeColor,
-          } as CSSProperties
-        }
-      >
-        <path d="M17.43 26C6.495 26 .26 18.492 0 6h5.477c.18 9.17 4.217 13.053 7.415 13.854V6h5.157v7.908c3.158-.34 6.475-3.944 7.595-7.908H30.8c-.86 4.885-4.458 8.489-7.016 9.97C26.343 17.17 30.44 20.314 32 26h-5.677c-1.219-3.804-4.257-6.747-8.274-7.147V26h-.62Z" />
-      </svg>
-    </a>
+    <svg
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      className={styles.social}
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+      onClick={onClick}
+    >
+      <path d="M17.43 26C6.495 26 .26 18.492 0 6h5.477c.18 9.17 4.217 13.053 7.415 13.854V6h5.157v7.908c3.158-.34 6.475-3.944 7.595-7.908H30.8c-.86 4.885-4.458 8.489-7.016 9.97C26.343 17.17 30.44 20.314 32 26h-5.677c-1.219-3.804-4.257-6.747-8.274-7.147V26h-.62Z" />
+    </svg>
   );
 };
 
