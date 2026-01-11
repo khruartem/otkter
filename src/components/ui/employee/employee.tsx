@@ -1,16 +1,15 @@
 import { FC } from "react";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
 import { Text } from "../../text";
-import { SocialUI } from "../social";
-// import { ImageUI } from "../../image";
+import { EmployeeSocials } from "../../employee-socials";
 
 import { TEmployeeUIProps } from "./types";
 import { Colors } from "../../../utils/types";
 import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 
 import styles from "./employee.module.css";
-import { Link } from "react-router-dom";
 
 export const EmployeeUI: FC<TEmployeeUIProps> = ({ type, employee }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
@@ -34,16 +33,6 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({ type, employee }) => {
             src={icon}
             alt={`Фотография резидента Открытой территории ${title}`}
           />
-          {/* <ImageUI
-            src={image}
-            width={52}
-            height={52}
-            alt={`Фотография резидента Открытой территории ${title}`}
-            className={clsx(
-              styles.employee__photo,
-              styles.employee__photo_projects
-            )}
-          /> */}
           <div className={styles.employee__info}>
             <Text
               as={"p"}
@@ -121,16 +110,6 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({ type, employee }) => {
                     styles.employee__photo_team
                   )}
                 />
-                {/* <ImageUI
-              src={image}
-              width={270}
-              height={270}
-              alt={`Фотография резидента Открытой территории ${title}`}
-              className={clsx(
-                styles.employee__photo,
-                styles.employee__photo_team
-              )}
-            /> */}
                 <div className={styles.employee__desc}>
                   <Text
                     as={"h3"}
@@ -158,8 +137,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({ type, employee }) => {
                   </Text>
                 </div>
               </div>
-
-              {socials && <SocialUI socials={socials} />}
+              {socials && <EmployeeSocials socials={socials} />}
             </li>
           </Link>
         ) : (
@@ -191,16 +169,6 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({ type, employee }) => {
                   styles.employee__photo_team
                 )}
               />
-              {/* <ImageUI
-              src={image}
-              width={270}
-              height={270}
-              alt={`Фотография резидента Открытой территории ${title}`}
-              className={clsx(
-                styles.employee__photo,
-                styles.employee__photo_team
-              )}
-            /> */}
               <div className={styles.employee__desc}>
                 <Text
                   as={"h3"}
@@ -228,7 +196,7 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({ type, employee }) => {
                 </Text>
               </div>
             </div>
-            {socials && <SocialUI socials={socials} />}
+            {socials && <EmployeeSocials socials={socials} />}
           </li>
         ))}
     </>

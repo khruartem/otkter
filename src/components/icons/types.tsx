@@ -22,7 +22,7 @@ export type TLogoProps = Pick<
 >;
 export type TSocialProps = Pick<
   TIconsProps,
-  "mainColor" | "hoverColor" | "activeColor" | "url"
+  "mainColor" | "hoverColor" | "activeColor" | "onClick"
 >;
 export type TNavProps = Pick<TIconsProps, "onClick">;
 export type TModalsProps = Pick<TIconsProps, "mainColor">;

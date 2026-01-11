@@ -13,6 +13,7 @@ export const SocialUI: FC<TSocialProps> = ({
   color = Colors.Nephritis100,
   hoverColor = Colors.Nephritis120,
   activeColor = Colors.Navy,
+  onFollowLink,
 }) => {
   return (
     <div className={styles.socialbar}>
@@ -25,7 +26,7 @@ export const SocialUI: FC<TSocialProps> = ({
                 mainColor={color}
                 hoverColor={hoverColor}
                 activeColor={activeColor}
-                url={url}
+                onClick={onFollowLink && (() => onFollowLink(url))}
               />
             );
           case "vk":
@@ -35,7 +36,7 @@ export const SocialUI: FC<TSocialProps> = ({
                 mainColor={color}
                 hoverColor={hoverColor}
                 activeColor={activeColor}
-                url={url}
+                onClick={onFollowLink && (() => onFollowLink(url))}
               />
             );
         }

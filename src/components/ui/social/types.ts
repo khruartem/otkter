@@ -6,4 +6,5 @@ export type TSocialProps = {
   color?: Colors;
   hoverColor?: Colors;
   activeColor?: Colors;
+  onFollowLink?: (url: string) => void;
 };

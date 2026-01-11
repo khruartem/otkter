@@ -32,9 +32,10 @@
 
 .button_icon {
   display: flex;
-  gap: 12px;
   flex-direction: row;
   align-items: center;
+  gap: 12px;
+  margin: 0;
   padding-left: 20px;
   padding-block: 14px;
 }
@@ -47,23 +48,19 @@
   fill: currentColor;
 }
 
+.button_icon svg {
+  margin: 0;
+}
+
 /* Стили для разных разрешений экранов */
 .controls_mobile {
-  width: 100%;
-  align-items: center;
   flex-direction: column;
-}
-
-/* .button_mobile {
+  align-items: center;
   width: 100%;
-} */
+}
 
 .controls_mobile_group {
-  width: 100%;
-  justify-content: flex-start;
   flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
 }
-
-/* .button_mobile_icon {
-  width: min-content;
-} */
