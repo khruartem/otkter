@@ -53,6 +53,8 @@ export const Info: FC<TInfoProps> = ({ currentItem }) => {
     document.body.style.backgroundColor = Colors.Light60;
   }, [id, kind, location, main]);
 
+  console.log(currentItem);
+
   return (
     <InfoProvider value={infoContextValue}>
       <InfoUI currentItem={currentItem} pageProps={{ seo, layout }} />

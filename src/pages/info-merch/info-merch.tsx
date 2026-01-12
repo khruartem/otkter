@@ -8,14 +8,14 @@ import { useLocation } from "react-router-dom";
 export const InfoMerch: FC<TInfoMerchProps> = ({ currentItem }) => {
   const location = useLocation();
 
-  const { title, shortText, type, url } = currentItem;
+  const { title, shortText, type, url, previewImg } = currentItem;
 
   const seo: TPageSEO = {
     title,
     description: shortText,
     siteName: title,
     url: `https://otkter.ru/merch/${type}/${url}`,
-    previewImg: "/preview/preview_merch.webp",
+    previewImg: previewImg || "/preview/preview_merch.webp",
   };
 
   const layout: TPageLayout = {

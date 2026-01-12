@@ -25,6 +25,10 @@ import thermosSteelMainIcon from "../../assets/merch/thermos/icons/thermos_steel
 // import thermosSteelIcon1 from "../../assets/merch/thermos/icons/thermos_steel_photo_1.avif";
 // import thermosSteelIcon2 from "../../assets/merch/thermos/icons/thermos_steel_photo_2.avif";
 
+// Превьюшки
+import tShirtArtisitsPreview from "../../assets/SEO/preview_tshirt_artists.webp";
+import thermosSteelPreview from "../../assets/SEO/preview_termos.webp";
+
 const merchColors: TMerchColors = {
   Navy: { hex: Colors.Navy, name: "Нави" },
   Nephritis: { hex: Colors.Nephritis100, name: "Нефрит" },
@@ -83,6 +87,7 @@ export const merchItems: TMerch[] = [
         icon: "telegram",
       },
     ],
+    previewImg: tShirtArtisitsPreview,
     main: true,
     active: true,
   },
@@ -129,6 +134,7 @@ export const merchItems: TMerch[] = [
         icon: "telegram",
       },
     ],
+    previewImg: thermosSteelPreview,
     main: true,
     active: true,
   },
