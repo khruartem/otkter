@@ -5,13 +5,25 @@ import { DetailsMediaUI } from "../ui/details-media";
 import { TDetailsMediaProps } from "./types";
 
 import { Colors } from "../../utils/types";
+import { TItemOTKind } from "../../utils/types/item-ot";
 
-export const DetailsMedia: FC<TDetailsMediaProps> = ({ details }) => {
+export const DetailsMedia: FC<TDetailsMediaProps> = ({ details, kind }) => {
+  const setCategoryText = (kind: TItemOTKind) => {
+    switch (kind) {
+      case "projects":
+        return "СМИ о спектакле";
+      case "team":
+      case "services":
+      case "merch":
+        return "Публикации в СМИ";
+    }
+  };
+
   const mediaCategories = {
     attention: false,
     categoryList: [
       {
-        text: "СМИ о спектакле",
+        text: setCategoryText(kind),
       },
     ],
   };

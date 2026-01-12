@@ -9,7 +9,11 @@ import { TDetailsGridProps } from "./types";
 
 import { TDetails, TDetailsType } from "../../utils/types/details";
 
-export const DetailsGrid: FC<TDetailsGridProps> = ({ details, categories }) => {
+export const DetailsGrid: FC<TDetailsGridProps> = ({
+  details,
+  categories,
+  kind,
+}) => {
   const findDetails = (details: TDetails[], type: TDetailsType) => {
     if (type === "about") {
       return details.filter((detail) => detail.type === type);
@@ -20,14 +24,19 @@ export const DetailsGrid: FC<TDetailsGridProps> = ({ details, categories }) => {
     }
   };
 
-  const detailsAbout = findDetails(details, "about") as TDetails[];
+  const detailsAbout = findDetails(details, "about");
   const detailsAdmins = findDetails(details, "admins");
   const detailsArtists = findDetails(details, "artists");
   const detailsMedia = findDetails(details, "media");
 
   return (
     <DetailsGridUI
-      about={<DetailsAbout details={detailsAbout} categories={categories} />}
+      about={
+        detailsAbout &&
+        categories && (
+          <DetailsAbout details={detailsAbout} categories={categories} />
+        )
+      }
       team={
         (detailsAdmins || detailsArtists) && (
           <DetailsTeam
@@ -36,7 +45,9 @@ export const DetailsGrid: FC<TDetailsGridProps> = ({ details, categories }) => {
           />
         )
       }
-      media={detailsMedia && <DetailsMedia details={detailsMedia} />}
+      media={
+        detailsMedia && <DetailsMedia details={detailsMedia} kind={kind} />
+      }
     />
   );
 };

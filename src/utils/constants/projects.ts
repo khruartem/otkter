@@ -733,17 +733,6 @@ export const projects: TProject[] = [
           active: true,
         },
       },
-      {
-        type: "media",
-        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/ivan-bunin-uchan-su-chitaet-sergei-yakovlev-glava-tvorcheskogo-obedineniya-otkrytaya-territoriya-akter-teatra-lenkom-marka-zaharova-i-teatra-nacii-95828.html?ysclid=mj9xfgc0l8935203416",
-        value: {
-          id: 10,
-          title: "«Иван Бунин “Учан-Су”. Читает Сергей Яковлев»",
-          shortText: "ОТР",
-          image: eseninMedia3,
-          active: true,
-        },
-      },
     ],
     poster: eseninPoster,
     previewImg: "/preview/preview_esenin.webp",
@@ -956,18 +945,6 @@ export const projects: TProject[] = [
       {
         type: "admins",
         value: yakovlev.getEmployee("Режиссер-постановщик"),
-      },
-      {
-        type: "media",
-        url: "https://otr-online.ru/programmy/specialnyy-proekt-otr-strana-poetov/aleksandr-blok-est-igra-ostorozhno-voiti-chitaet-alena-sinelnikova-prodyuser-tvorcheskogo-obedineniya-otkrytaya-territoriya-moskva-94262.html?ysclid=mhar8iok8y582810998",
-        value: {
-          id: 8,
-          title:
-            "«Александр Блок “Есть игра: осторожно войти”. Читает Алена Синельникова»",
-          shortText: "ОТР",
-          image: eseninMedia3,
-          active: true,
-        },
       },
       {
         type: "media",

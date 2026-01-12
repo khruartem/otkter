@@ -8,11 +8,11 @@ export const InfoDetails: FC = () => {
   const { currentItem } = useInfoContext();
 
   return (
-    currentItem?.details &&
-    currentItem?.categories && (
+    currentItem?.details && (
       <DetailsGrid
         details={currentItem.details}
         categories={currentItem.categories}
+        kind={currentItem.kind}
       />
     )
   );
