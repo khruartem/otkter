@@ -34,7 +34,7 @@ export const Info: FC<TInfoProps> = ({ currentItem }) => {
     description: shortText,
     siteName: title,
     url: `https://otkter.ru/projects/${url}`,
-    previewImg: previewImg || "",
+    previewImg: previewImg || "/preview/preview.webp",
   };
 
   const layout: TPageLayout = {
@@ -52,8 +52,6 @@ export const Info: FC<TInfoProps> = ({ currentItem }) => {
 
     document.body.style.backgroundColor = Colors.Light60;
   }, [id, kind, location, main]);
-
-  console.log(currentItem);
 
   return (
     <InfoProvider value={infoContextValue}>

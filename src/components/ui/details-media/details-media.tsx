@@ -1,5 +1,6 @@
 import { FC } from "react";
 import clsx from "clsx";
+import { nanoid } from "@reduxjs/toolkit";
 
 import { DetailsGridItemUI } from "../details-grid-item";
 import { DetailsGridContentUI } from "../details-grid-content";
@@ -38,6 +39,7 @@ export const DetailsMediaUI: FC<TDetailsMediaUIProps> = ({
       >
         {(details as TMediaDetails[]).map(({ value, url }) => (
           <ItemOTCardUI
+            key={nanoid()}
             item={value as TMediaDetailsValue}
             url={{ to: url }}
             target="_blank"

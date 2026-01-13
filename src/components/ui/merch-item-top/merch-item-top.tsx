@@ -16,6 +16,7 @@ export const MerchItemTopUI: FC<TMerchItemTopUIProps> = ({
 
   return (
     <div
+      id="background"
       className={clsx(
         styles["merch-item__top"],
         isLarge && styles["merch-item__top_large"],

@@ -21,7 +21,7 @@ export const NotFound404: FC = () => {
     description: text,
     siteName: title,
     url: "https://otkter.ru/",
-    previewImg: "/preview/preview.webp",
+    previewImg: "/preview/preview_404.webp",
   };
 
   const layout: TPageLayout = {
