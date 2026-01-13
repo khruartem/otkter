@@ -29,7 +29,7 @@ export const MerchItemUI: FC<TMerchItemUIProps> = ({ url }) => {
         isMobile && styles["merch-item_mobile"]
       )}
     >
-      <Link to={url}>
+      <Link className={styles["merch-item__link"]} to={url}>
         <MerchItemTopUI>
           <MerchItemCategories />
           <MerchItemColors />

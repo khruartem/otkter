@@ -1,4 +1,34 @@
+/* merch-item */
 .merch-item {
+  overflow: hidden;
+}
+
+.merch-item a>div:first-child {
+  transition: background-color .4s;
+}
+
+.merch-item:hover a>div:first-child {
+  background-color: var(--navy);
+}
+
+.merch-item img {
+  transition: transform .4s;
+}
+
+.merch-item:hover img {
+  transform: scale(1.1);
+}
+
+.merch-item p {
+  transition: color .4s;
+}
+
+.merch-item:hover p {
+  color: var(--nephritis120);
+}
+
+/* merch-item__link */
+.merch-item__link {
   display: flex;
   flex-direction: column;
   gap: 20px;
