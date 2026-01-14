@@ -7,11 +7,11 @@
 
 .service__image {
   display: block;
-  height: 100%;
   width: 100%;
-  object-position: 60% 40%;
-  object-fit: cover;
+  height: 100%;
   border-radius: 500px;
+  object-fit: cover;
+  object-position: 60% 40%;
 }
 
 .service__info {
@@ -55,61 +55,34 @@
 /* Стили для разных разрешений экранов */
 /* .service */
 .service_large {
-  gap: 8.33vw;
   grid-template-columns: 34.17vw 41.25vw;
   grid-template-rows: 26.04vw;
-  /* margin-left: 8.13vw; */
-  /* padding-bottom: 10px; */
+  gap: 8.33vw;
 }
 
 .service_desktop {
-  gap: 8.93vw;
   grid-template-columns: 34.11vw 41.29vw;
   grid-template-rows: 26.06vw;
-  /* margin-left: 7.83vw; */
-  /* padding-bottom: 10px; */
+  gap: 8.93vw;
 }
 
 .service_laptop {
-  gap: 3.91vw;
   grid-template-columns: 91.80vw;
   grid-template-rows: 57.81vw auto;
-  /* margin-left: 4.10vw; */
+  gap: 3.91vw;
 }
 
 .service_tablet {
-  gap: 2.60vw;
   grid-template-columns: 92.19vw;
   grid-template-rows: 57.29vw auto;
-  /* margin-left: 3.91vw; */
+  gap: 2.60vw;
 }
 
 .service_mobile {
-  gap: 4.83vw;
   grid-template-columns: 92.27vw;
   grid-template-rows: 57.97vw auto;
-  /* margin-left: 3.86vw; */
+  gap: 4.83vw;
 }
-
-/* .service_large:last-child {
-  margin-right: 8.13vw;
-}
-
-.service_desktop:last-child {
-  margin-right: 7.83vw;
-}
-
-.service_laptop:last-child {
-  margin-right: 4.10vw;
-}
-
-.service_tablet:last-child {
-  margin-right: 3.91vw;
-}
-
-.service_mobile:last-child {
-  margin-right: 3.86vw;
-} */
 
 /* service__info */
 .service__info_large {
@@ -119,24 +92,11 @@
 .service__info_desktop {
   justify-content: space-between;
   overflow-y: scroll;
-  /* gap: 24px; */
 }
 
 .service__info_desktop div:nth-child(2) {
   flex-wrap: nowrap;
 }
-
-/* .service__info_laptop {
-  gap: 24px;
-}
-
-.service__info_tablet {
-  gap: 24px;
-}
-
-.service__info_mobile {
-  gap: 24px;
-} */
 
 .service__info_mobile div:nth-child(2) {
   display: flex;
@@ -146,17 +106,14 @@
 
 /* service__text */
 .service__text_laptop {
-  /* overflow-y: hidden; */
   height: 18.75vw;
 }
 
 .service__text_tablet {
-  /* overflow-y: hidden; */
   height: 15.63vw;
 }
 
 .service__text_mobile {
-  /* overflow-y: hidden; */
   height: 52.17vw;
 }
 
