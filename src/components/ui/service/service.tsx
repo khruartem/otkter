@@ -3,7 +3,6 @@ import React from "react";
 
 import { Text } from "../../text";
 import { Controls } from "../../controls";
-// import { ImageUI } from "../../image";
 
 import { Colors, FontSizes, lineHeights } from "../../../utils/types";
 import { TServiceUIProps } from "./types";
@@ -51,15 +50,6 @@ export const ServiceUI = React.forwardRef<
         alt="Изображение услуги"
         ref={ref}
       />
-      {/* <div ref={ref} style={{ width: "100%", height: "100%" }}>
-        <ImageUI
-          src={image}
-          alt={`Изображение услуги ${title}`}
-          className={styles.service__image}
-          width={"100%"}
-          height={"100%"}
-        />
-      </div> */}
       <div
         className={clsx(
           styles.service__info,
@@ -80,7 +70,7 @@ export const ServiceUI = React.forwardRef<
             as={"h3"}
             fontFamily="Unbounded"
             textAlign="left"
-            fontSize={isLarge ? 32 : 28}
+            fontSize={isLarge ? 32 : "clamp(0rem, 0rem + 6.7633vw, 1.75rem)"}
             fontWeight={500}
             lineHeight={isLarge ? 48 : 40}
             textTransform={"none"}
