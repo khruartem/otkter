@@ -9,7 +9,7 @@ import { ProjectTab } from "../../components/project-tab";
 import { TContentSliderTabBarProps } from "../../components/content-slider/types";
 import { TTabsGap } from "../../utils/types";
 import { TPageLayout, TPageSEO } from "../../components/page/type";
-import { TProject, TProjectType } from "../../utils/types/projects";
+import { TProjectType } from "../../utils/types/projects";
 
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
 import { useGetProjects } from "../../hooks/projects/useGetProjects";
@@ -39,7 +39,7 @@ export const AllProjects: FC = () => {
         iconRef={item.iconRef}
         onClick={item.onClick}
       >
-        <ProjectTab tab={item.tab as TProject | TProjectType} />
+        <ProjectTab tab={item.tab as TProjectType} />
       </IconTab>
     ),
   };
