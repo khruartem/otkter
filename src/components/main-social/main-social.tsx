@@ -14,12 +14,17 @@ export const MainSocial: FC<TMainSocialProps> = ({
 }) => {
   const socials = useGetMainSocials();
 
+  const handleFollowLink = (url: string) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <SocialUI
       socials={socials}
       color={color}
       hoverColor={hoverColor}
       activeColor={activeColor}
+      onFollowLink={handleFollowLink}
     />
   );
 };
