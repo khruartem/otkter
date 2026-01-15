@@ -475,6 +475,11 @@ export const hrustalev: IEmployee = new Employee({
       url: "https://vk.com/khruartem",
       type: "vk",
     },
+    {
+      id: 11,
+      url: "https://github.com/khruartem",
+      type: "github",
+    },
   ],
   controls: [
     {
@@ -490,6 +495,13 @@ export const hrustalev: IEmployee = new Employee({
       onClick: () => contactFunction(hrustalev, "vk"),
       url: "#",
       icon: "vk",
+    },
+    {
+      label: "GitHub",
+      type: "button",
+      onClick: () => contactFunction(hrustalev, "github"),
+      url: "#",
+      icon: "github",
     },
   ],
 });

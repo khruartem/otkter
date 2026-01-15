@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import clsx from "clsx";
 
 import { Button } from "../../button";
-import { Telegram, VK } from "../../icons/icons";
+import { GitHub, Telegram, VK } from "../../icons";
 
 import { TControlsUIProps } from "./types";
 import { Colors } from "../../../utils/types";
@@ -51,6 +51,7 @@ export const ControlsUI: FC<TControlsUIProps> = ({
             >
               {icon === "telegram" && <Telegram mainColor={Colors.Light100} />}
               {icon === "vk" && <VK mainColor={Colors.Light100} />}
+              {icon === "github" && <GitHub mainColor={Colors.Light100} />}
               {label}
             </Button>
           );

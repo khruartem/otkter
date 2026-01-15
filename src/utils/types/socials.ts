@@ -1,4 +1,4 @@
-export type TSocialsType = "telegram" | "vk";
+export type TSocialsType = "telegram" | "vk" | "github";
 export type TSocials = {
   id: number;
   url: string;

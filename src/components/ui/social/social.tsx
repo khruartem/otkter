@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { Telegram, VK } from "../../icons/icons";
+import { GitHub, Telegram, VK } from "../../icons";
 
 import { TSocialProps } from "./types";
 
@@ -32,6 +32,16 @@ export const SocialUI: FC<TSocialProps> = ({
           case "vk":
             return (
               <VK
+                key={id}
+                mainColor={color}
+                hoverColor={hoverColor}
+                activeColor={activeColor}
+                onClick={onFollowLink && (() => onFollowLink(url))}
+              />
+            );
+          case "github":
+            return (
+              <GitHub
                 key={id}
                 mainColor={color}
                 hoverColor={hoverColor}

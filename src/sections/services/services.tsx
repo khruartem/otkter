@@ -9,7 +9,7 @@ import { TContentSliderTabBarProps } from "../../components/content-slider/types
 
 import { TTabsGap } from "../../utils/types";
 
-import { TService, TServiceType } from "../../utils/types/services";
+import { TServiceType } from "../../utils/types/services";
 import { TItemOTType } from "../../utils/types/item-ot";
 
 import { useSortAsc } from "../../hooks/useSortAsc";
@@ -34,12 +34,13 @@ export const Services: FC = () => {
     ) as TTabsGap,
     renderTab: (item) => (
       <IconTab
+        titled={false}
         tab={item.tab as TItemOTType}
         current={item.current}
         iconRef={item.iconRef}
         onClick={item.onClick}
       >
-        <ServiceTab tab={item.tab as TService | TServiceType} />
+        <ServiceTab tab={item.tab as TServiceType} />
       </IconTab>
     ),
   };

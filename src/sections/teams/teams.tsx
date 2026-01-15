@@ -8,7 +8,7 @@ import { TeamsTab } from "../../components/teams-tab";
 import { TContentSliderTabBarProps } from "../../components/content-slider/types";
 
 import { TTabsGap } from "../../utils/types";
-import { TEmployee, TEmployeeType } from "../../utils/types/team";
+import { TEmployeeType } from "../../utils/types/team";
 import { TItemOTType } from "../../utils/types/item-ot";
 
 import { useGetTeams } from "../../hooks/team/useGetTeams";
@@ -44,7 +44,7 @@ export const Teams: FC = () => {
         iconRef={item.iconRef}
         onClick={item.onClick}
       >
-        <TeamsTab tab={item.tab as TEmployee | TEmployeeType} />
+        <TeamsTab tab={item.tab as TEmployeeType} />
       </IconTab>
     ),
   };

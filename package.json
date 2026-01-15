@@ -1,5 +1,5 @@
 {
-  "name": "vite-project",
+  "name": "otkter",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -55,11 +55,24 @@
     "storybook": "^8.3.6",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.10.0",
-    "vite": "^5.4.9"
+    "vite": "^7.3.1"
   },
   "eslintConfig": {
     "extends": [
       "plugin:storybook/recommended"
     ]
-  }
+  },
+  "description": "Сайт творческого объединения Открытая территория.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khruartem/otkter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khruartem/otkter/issues"
+  },
+  "homepage": "https://github.com/khruartem/otkter#readme"
 }

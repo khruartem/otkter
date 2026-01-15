@@ -81,6 +81,10 @@ export const EmployeeUI: FC<TEmployeeUIProps> = ({ type, employee }) => {
             to={`/team/admins/${url}/`}
             target="_top"
             state={{ id, url, type: "team" }}
+            onClickCapture={(e) => {
+              if ((e.target as HTMLElement).id === "socials")
+                e.preventDefault();
+            }}
           >
             <li
               className={clsx(
