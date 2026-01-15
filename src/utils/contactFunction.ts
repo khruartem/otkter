@@ -1,9 +1,7 @@
 import { IEmployee } from "./model/teamData";
+import { TSocialsType } from "./types/socials";
 
-export const contactFunction = (
-  employee: IEmployee,
-  socials: "telegram" | "vk"
-) => {
+export const contactFunction = (employee: IEmployee, socials: TSocialsType) => {
   const emloyeeToContact = employee.getEmployee();
 
   if (emloyeeToContact?.socials) {

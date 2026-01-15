@@ -29,4 +29,5 @@ export {
   CopyLink,
   Cloths,
   Souvenirs,
+  GitHub,
 } from "./icons";
