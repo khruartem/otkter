@@ -1,7 +1,7 @@
 import { FC } from "react";
 import clsx from "clsx";
 
-import { ImageUI } from "../../image";
+// import { ImageUI } from "../../image";
 
 import { TItemPosterUIProps } from "./types";
 
@@ -14,7 +14,7 @@ export const ItemPosterUI: FC<TItemPosterUIProps> = ({ poster, className }) => {
     useGetMediaQuery();
 
   return (
-    <ImageUI
+    <img
       src={poster}
       alt="Постер"
       width={clsx(

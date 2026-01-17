@@ -1,6 +1,5 @@
 import { FC } from "react";
 import clsx from "clsx";
-import ReactDOM from "react-dom";
 
 import { CloseNav, OpenNav } from "../../icons";
 import { MenuLinkListUI } from "../menu-link-list";
@@ -17,7 +16,6 @@ export const MenuUI: FC<TMenuUIProps> = ({
   onOpen,
   onClose,
   onClickLink,
-  rootRef,
 }) => {
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
@@ -38,32 +36,29 @@ export const MenuUI: FC<TMenuUIProps> = ({
           <MenuLinkListUI links={navLinks} />
         </nav>
       )}
-      {smallResolution && rootRef && (
-        <>
+      {smallResolution && (
+        <div className={styles["menu-mobile-container"]}>
           {!isOpen ? (
             <OpenNav onClick={onOpen} />
           ) : (
             <CloseNav onClick={onClose} />
           )}
-          {isOpen &&
-            ReactDOM.createPortal(
-              <nav
-                className={clsx(
-                  styles["menu"],
-                  styles["menu_columed"],
-                  styles["menu_colored"],
-                  styles["menu_bordered"],
-                  isLaptop && styles["menu_laptop"],
-                  isTablet && styles["menu_tablet"],
-                  isMobile && styles["menu_mobile"]
-                )}
-              >
-                <MenuLinkListUI links={navLinks} onClick={onClickLink}/> 
-                {isMobile && <MainSocial />}
-              </nav>,
-              rootRef.current!
+          <nav
+            className={clsx(
+              styles["menu"],
+              styles["menu_columed"],
+              isOpen && [styles["menu_opened"], styles["menu_opened_mobile"]],
+              styles["menu_colored"],
+              styles["menu_bordered"],
+              isLaptop && styles["menu_laptop"],
+              isTablet && styles["menu_tablet"],
+              isMobile && styles["menu_mobile"]
             )}
-        </>
+          >
+            <MenuLinkListUI links={navLinks} onClick={onClickLink} />
+            {isMobile && <MainSocial />}
+          </nav>
+        </div>
       )}
     </>
   );

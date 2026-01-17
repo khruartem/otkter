@@ -1,9 +1,9 @@
 import clsx from "clsx";
-import { FC, useRef } from "react";
+import { FC } from "react";
 import { HashLink } from "react-router-hash-link";
 
 import { Logo } from "../../../icons";
-import { Menu } from "../../../menu/menu";
+import { Menu } from "../../../menu";
 import { MerchLink } from "../../../merch-link";
 import { MainSocial } from "../../../main-social";
 
@@ -18,13 +18,9 @@ import styles from "./header.module.css";
 export const HeaderUI: FC<THeaderUIProps> = ({
   url,
   animation,
-  headerRef,
   onClickLogo,
 }) => {
   const { isLaptop, isTablet, isMobile } = useGetMediaQuery();
-  const smallResolution = isLaptop || isTablet || isMobile;
-
-  const rootRef = useRef<HTMLDivElement>(null);
 
   const setColor = (
     animation?: THeaderAnimation,
@@ -41,7 +37,6 @@ export const HeaderUI: FC<THeaderUIProps> = ({
         animation && !animation.animated && styles.header_colored,
         isMobile && styles.header_mobile
       )}
-      ref={headerRef}
     >
       <HashLink
         to={url}
@@ -74,11 +69,7 @@ export const HeaderUI: FC<THeaderUIProps> = ({
             isTablet && styles.header__navigation_tablet
           )}
         >
-          <Menu
-            rootRef={smallResolution ? rootRef : undefined}
-            headerRef={smallResolution ? headerRef : undefined}
-            headerAnimation={animation}
-          />
+          <Menu headerAnimation={animation} />
           {!isMobile && (
             <div className={styles["header__links"]}>
               <MerchLink
@@ -96,18 +87,7 @@ export const HeaderUI: FC<THeaderUIProps> = ({
           )}
         </div>
       ) : (
-        <Menu
-          rootRef={rootRef}
-          headerRef={headerRef}
-          headerAnimation={animation}
-        />
-      )}
-      {smallResolution && (
-        <div
-          ref={rootRef}
-          id="react-navigation"
-          className={styles["react-navigation"]}
-        ></div>
+        <Menu headerAnimation={animation} />
       )}
     </header>
   );

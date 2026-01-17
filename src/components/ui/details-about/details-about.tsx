@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { nanoid } from "@reduxjs/toolkit";
 
 import { DetailsGridItemUI } from "../details-grid-item";
 import { DetailsAboutItemUI } from "../detaills-about-item";
@@ -25,7 +26,12 @@ export const DetailsAboutUI: FC<TDetailsAboutUIProps> = ({
         }}
       >
         {(details as TAboutDetails[]).map(({ icon, value, label }) => (
-          <DetailsAboutItemUI icon={icon} label={label} value={value} />
+          <DetailsAboutItemUI
+            key={nanoid()}
+            icon={icon}
+            label={label}
+            value={value}
+          />
         ))}
       </DetailsGridContentUI>
     </DetailsGridItemUI>

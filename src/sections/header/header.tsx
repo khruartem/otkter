@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import { HeaderUI } from "../../components/ui/sections/header";
@@ -7,8 +7,6 @@ import { THeaderProps } from "./types";
 
 export const Header: FC<THeaderProps> = ({ animation }) => {
   const location = useLocation();
-
-  const headerRef = useRef<HTMLHeadingElement>(null);
 
   const [url, setUrl] = useState("");
 
@@ -45,12 +43,5 @@ export const Header: FC<THeaderProps> = ({ animation }) => {
     }
   };
 
-  return (
-    <HeaderUI
-      url={url}
-      headerRef={headerRef}
-      onClickLogo={onClickLogo}
-      animation={animation}
-    />
-  );
+  return <HeaderUI url={url} onClickLogo={onClickLogo} animation={animation} />;
 };
