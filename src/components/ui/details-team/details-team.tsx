@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { nanoid } from "@reduxjs/toolkit";
 
 import { DetailsGridItemUI } from "../details-grid-item";
 import { DetailsGridContentUI } from "../details-grid-content";
@@ -20,7 +21,11 @@ export const DetailsTeamUI: FC<TDetailsTeamUIProps> = ({
     return (
       <>
         {details.map(({ value }) => (
-          <EmployeeUI type={"projects"} employee={value as TEmployee} />
+          <EmployeeUI
+            key={nanoid()}
+            type={"projects"}
+            employee={value as TEmployee}
+          />
         ))}
       </>
     );

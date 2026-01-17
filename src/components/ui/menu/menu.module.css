@@ -1,8 +1,8 @@
-body:has(.menu_columed) {
+/* body:has(.menu_opened) {
   overflow: hidden;
 }
 
-body:has(.menu_columed) main {
+body:has(.menu_opened) main {
   background-color: var(--light80);
   background-image: none;
   opacity: 1;
@@ -11,7 +11,27 @@ body:has(.menu_columed) main {
   width: 100%;
 }
 
+body:has(.menu_opened) main * {
+  opacity: 0;
+} */
+
+body:has(.menu_opened) {
+  overflow: hidden;
+}
+
+body:has(.menu_columed) main {
+  transition: background-color 0.4s ease-in-out;
+}
+
+body:has(.menu_opened) main {
+  background-color: var(--light80);
+}
+
 body:has(.menu_columed) main * {
+  transition: opacity 0.7s ease-in-out;
+}
+
+body:has(.menu_opened) main * {
   opacity: 0;
 }
 
@@ -28,12 +48,19 @@ body:has(.menu_columed) main * {
 .menu_columed {
   flex-direction: column;
   align-items: center;
-  height: calc(100vh - 60px - 16px);
+  height: 0;
+  transition: height 0.4s ease-in-out, padding 0.4s ease-in-out;
   width: 100vw;
   /* margin-top: 16px; */
   position: absolute;
-  top: 16px;
+  top: 70px;
   z-index: 2;
+  left: 0;
+  overflow: hidden;
+}
+
+.menu_opened {
+  height: calc(100dvh - 60px - 16px);
 }
 
 .menu_colored {
@@ -64,8 +91,10 @@ body:has(.menu_columed) main * {
 }
 
 .menu_mobile {
-  padding-top: 21.26vw;
-  height: calc(100dvh - 60px - 16px);
-  padding-bottom: calc(7.25vw + 14px);
   justify-content: space-between;
+}
+
+.menu_opened_mobile {
+  padding-top: 21.26vw;
+  padding-bottom: calc(7.25vw + 14px);
 }
