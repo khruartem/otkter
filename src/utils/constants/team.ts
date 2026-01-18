@@ -122,11 +122,6 @@ import sinelnikovaPoster from "../../assets/team/posters/sinelnikova.avif";
 import aspekPoster from "../../assets/team/posters/aspek.avif";
 import hrustslevPoster from "../../assets/team/posters/hrustalev.avif";
 
-// Постеры СМИ
-// Админы
-import MKMedia from "../../assets/projects/media/esenin_2.avif";
-import OTRMedia from "../../assets/projects/media/esenin_3.avif";
-
 // Список команды
 // Админы
 export const yakovlev: IEmployee = new Employee({
@@ -216,7 +211,7 @@ export const yakovlev: IEmployee = new Employee({
         id: 10,
         title: "«Иван Бунин “Учан-Су”. Читает Сергей Яковлев»",
         shortText: "ОТР",
-        image: OTRMedia,
+        image: "https://storage.yandexcloud.net/otkter-bucket/media/otr.avif",
         active: true,
       },
     },
@@ -227,7 +222,7 @@ export const yakovlev: IEmployee = new Employee({
         id: 2,
         title: "«“Есенин. Жизнь в стихах”: на сцене разговор с поэтом»",
         shortText: "МК",
-        image: MKMedia,
+        image: "https://storage.yandexcloud.net/otkter-bucket/media/mk.avif",
         active: true,
       },
     },
@@ -401,7 +396,7 @@ export const sinelnikova: IEmployee = new Employee({
         title:
           "«Александр Блок “Есть игра: осторожно войти”. Читает Алена Синельникова»",
         shortText: "ОТР",
-        image: OTRMedia,
+        image: "https://storage.yandexcloud.net/otkter-bucket/media/otr.avif",
         active: true,
       },
     },
