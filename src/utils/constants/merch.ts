@@ -3,32 +3,6 @@ import { TMerch, TMerchColors } from "../types/merch";
 import { contactFunction } from "../contactFunction";
 import { yakovlev } from "./team";
 
-// Фото футболки творца
-import tShirtArtisitsWhiteFrontPhoto from "../../assets/merch/tshirts/tshirt_reg_white_front.avif";
-import tShirtArtistsWhiteBackPhoto from "../../assets/merch/tshirts/tshirt_reg_white_back.avif";
-import tShirtArtistsNavyFrontPhoto from "../../assets/merch/tshirts/tshirt_reg_navy_front.avif";
-import tShirtArtistsNavyBackPhoto from "../../assets/merch/tshirts/tshirt_reg_navy_back.avif";
-
-// Иконки футболки творца
-import tShirtArtisitsWhiteFrontIcon from "../../assets/merch/tshirts/icons/tshirt_reg_white_front.avif";
-import tShirtArtistsWhiteBackIcon from "../../assets/merch/tshirts/icons/tshirt_reg_white_back.avif";
-import tShirtArtistsNavyFrontIcon from "../../assets/merch/tshirts/icons/tshirt_reg_navy_front.avif";
-import tShirtArtistsNavyBackIcon from "../../assets/merch/tshirts/icons/tshirt_reg_navy_back.avif";
-
-// Фото термоса
-import thermosSteelMainPhoto from "../../assets/merch/thermos/thermos_steel.avif";
-// import thermosSteelPhoto1 from "../../assets/merch/thermos/thermos_steel_photo_1.avif";
-// import thermosSteelPhoto2 from "../../assets/merch/thermos/thermos_steel_photo_2.avif";
-
-// Иконки термоса
-import thermosSteelMainIcon from "../../assets/merch/thermos/icons/thermos_steel.avif";
-// import thermosSteelIcon1 from "../../assets/merch/thermos/icons/thermos_steel_photo_1.avif";
-// import thermosSteelIcon2 from "../../assets/merch/thermos/icons/thermos_steel_photo_2.avif";
-
-// Превьюшки
-import tShirtArtisitsPreview from "../../assets/SEO/preview_tshirt_artists.webp";
-import thermosSteelPreview from "../../assets/SEO/preview_termos.webp";
-
 const merchColors: TMerchColors = {
   Navy: { hex: Colors.Navy, name: "Нави" },
   Nephritis: { hex: Colors.Nephritis100, name: "Нефрит" },
@@ -45,28 +19,33 @@ export const merchItems: TMerch[] = [
     title: "Футболка творца Открытой Территории",
     shortText:
       "Буквальная униформа всех наших творцов, призывающая объединять творческих людей. Плотный хлопок и контрастный взрыв фирменной айдентики.",
-    image: tShirtArtisitsWhiteFrontPhoto,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/merch/cloths/t_shirt_artists/original/t_shirt_artists_white_front.png",
     icon: "",
     photos: [
       {
         id: 1,
-        source: tShirtArtisitsWhiteFrontPhoto,
-        icon: tShirtArtisitsWhiteFrontIcon,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/merch/cloths/t_shirt_artists/original/t_shirt_artists_white_front.png",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/merch/cloths/t_shirt_artists/icons/t_shirt_artists_white_front.avif",
       },
       {
         id: 2,
-        source: tShirtArtistsWhiteBackPhoto,
-        icon: tShirtArtistsWhiteBackIcon,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/merch/cloths/t_shirt_artists/original/t_shirt_artists_white_back.png",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/merch/cloths/t_shirt_artists/icons/t_shirt_artists_white_back.avif",
       },
       {
         id: 3,
-        source: tShirtArtistsNavyFrontPhoto,
-        icon: tShirtArtistsNavyFrontIcon,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/merch/cloths/t_shirt_artists/original/t_shirt_artists_navy_front.png",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/merch/cloths/t_shirt_artists/icons/t_shirt_artists_navy_front.avif",
       },
       {
         id: 4,
-        source: tShirtArtistsNavyBackPhoto,
-        icon: tShirtArtistsNavyBackIcon,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/merch/cloths/t_shirt_artists/original/t_shirt_artists_navy_back.png",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/merch/cloths/t_shirt_artists/icons/t_shirt_artists_navy_back.avif",
       },
     ],
     price: {
@@ -87,7 +66,7 @@ export const merchItems: TMerch[] = [
         icon: "telegram",
       },
     ],
-    previewImg: tShirtArtisitsPreview,
+    previewImg: "/preview/preview_tshirt_artists.webp",
     main: true,
     active: true,
   },
@@ -107,13 +86,15 @@ export const merchItems: TMerch[] = [
     title: "Термос творца Открытой Территории",
     shortText:
       "Городской аксессуар, призванный наполнять теплом и творческой энергией. Нержавеющая сталь, ситечко, компактный формат.",
-    image: thermosSteelMainPhoto,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/merch/souvenirs/thermos_steel/original/thermos_steel.png",
     icon: "",
     photos: [
       {
         id: 1,
-        source: thermosSteelMainPhoto,
-        icon: thermosSteelMainIcon,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/merch/souvenirs/thermos_steel/original/thermos_steel.png",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/merch/souvenirs/thermos_steel/icons/thermos_steel.avif",
       },
     ],
     price: {
@@ -134,7 +115,7 @@ export const merchItems: TMerch[] = [
         icon: "telegram",
       },
     ],
-    previewImg: thermosSteelPreview,
+    previewImg: "/preview/preview_termos.webp",
     main: true,
     active: true,
   },
