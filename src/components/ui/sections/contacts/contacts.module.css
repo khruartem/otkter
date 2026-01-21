@@ -22,28 +22,28 @@
 
 /* Стили для разных разрешений экранов */
 .contacts_large {
-  background-image: url(../../../../assets/banner/banner_large-screen.webp);
+  background-image: url("https://storage.yandexcloud.net/otkter-bucket/banners/banner_large.webp");
   padding-inline: 27.60vw;
 }
 
 .constants_desktop {
-  background-image: url(../../../../assets/banner/banner_desktop.webp);
+  background-image: url("https://storage.yandexcloud.net/otkter-bucket/banners/banner_desktop.webp");
   padding-inline: 22.18vw;
 }
 
 .constants_laptop {
-  background-image: url(../../../../assets/banner/banner_laptop.webp);
+  background-image: url("https://storage.yandexcloud.net/otkter-bucket/banners/banner_laptop.webp");
   padding-top: 54.30vw;
   padding-inline: 12.89vw;
 }
 
 .constants_tablet {
-  background-image: url(../../../../assets/banner/banner_tablet.webp);
+  background-image: url("https://storage.yandexcloud.net/otkter-bucket/banners/banner_tablet.webp");
   padding-top: 67.19vw;
 }
 
 .constants_mobile {
-  background-image: url(../../../../assets/banner/banner_tablet.webp);
+  background-image: url("https://storage.yandexcloud.net/otkter-bucket/banners/banner_tablet.webp");
   padding-top: 77.29vw;
 }
 
