@@ -28,7 +28,7 @@ export const services: TService[] = [
       {
         label: "Записаться",
         type: "button",
-        onClick: () => contactFunction(LA, "telegram"),
+        onClick: () => contactFunction(LA.getEmployee(), "telegram"),
         url: "#",
       },
       {
@@ -127,7 +127,7 @@ export const services: TService[] = [
       {
         label: "Заказать",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
       },
     ],
@@ -153,7 +153,7 @@ export const services: TService[] = [
       {
         label: "Заказать",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
       },
     ],
@@ -179,7 +179,7 @@ export const services: TService[] = [
       {
         label: "Заказать",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
       },
     ],
@@ -205,7 +205,7 @@ export const services: TService[] = [
       {
         label: "Заказать",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
       },
     ],
@@ -231,7 +231,7 @@ export const services: TService[] = [
       {
         label: "Записаться",
         type: "button",
-        onClick: () => contactFunction(LA, "telegram"),
+        onClick: () => contactFunction(LA.getEmployee(), "telegram"),
         url: "#",
       },
       {
@@ -354,7 +354,7 @@ export const services: TService[] = [
       {
         label: "Заказать",
         type: "button",
-        onClick: () => contactFunction(sinelnikova, "telegram"),
+        onClick: () => contactFunction(sinelnikova.getEmployee(), "telegram"),
         url: "#",
       },
     ],

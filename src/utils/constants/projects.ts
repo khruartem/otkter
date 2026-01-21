@@ -251,7 +251,7 @@ export const projects: TProject[] = [
       {
         label: "Подробнее",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
       },
     ],
@@ -318,7 +318,7 @@ export const projects: TProject[] = [
       {
         label: "Подробнее",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
       },
     ],

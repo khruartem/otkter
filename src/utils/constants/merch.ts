@@ -61,7 +61,7 @@ export const merchItems: TMerch[] = [
       {
         label: "Заказать",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
         icon: "telegram",
       },
@@ -110,7 +110,7 @@ export const merchItems: TMerch[] = [
       {
         label: "Заказать",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
         icon: "telegram",
       },

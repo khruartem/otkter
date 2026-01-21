@@ -3,15 +3,16 @@ import { FC } from "react";
 import { ContactsUI } from "../../components/ui/sections/contacts";
 
 import { contactFunction } from "../../utils/contactFunction";
-import { yakovlev } from "../../utils/constants/team";
 
-import { useScrollOnMount } from "../../hooks/useScrollOnMount";
+import { useGetTeams } from "../../hooks/team/useGetTeams";
 
 export const Contacts: FC = () => {
+  const admins = useGetTeams("admins");
+  const yakovlev = admins.find((admin) => admin.url === "yakovlev")!;
+
   const handleContact = () => {
     contactFunction(yakovlev, "telegram");
   };
-  useScrollOnMount();
 
   return <ContactsUI onContact={handleContact} />;
 };
