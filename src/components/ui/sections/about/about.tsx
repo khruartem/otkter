@@ -1,7 +1,6 @@
 import { FC } from "react";
 import clsx from "clsx";
 
-// import { ImageUI } from "../../../image";
 import { Section } from "../../../section";
 import { Button } from "../../../button";
 import { Text } from "../../../text";
@@ -10,10 +9,6 @@ import { Title } from "../../../title";
 import { TAboutUIProps } from "./types";
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 import { Colors } from "../../../../utils/types";
-
-import aboutOval1 from "../../../../assets/sections-photo/about_oval_1.webp";
-import aboutOval2 from "../../../../assets/sections-photo/about_oval_2.webp";
-import aboutOrb from "../../../../assets/sections-photo/about_orb.webp";
 
 import styles from "./about.module.css";
 
@@ -33,7 +28,7 @@ export const AboutUI: FC<TAboutUIProps> = (props) => {
         isDesktop && styles.about_desktop,
         isLaptop && styles.about_laptop,
         isTablet && styles.about_tablet,
-        isMobile && styles.about_mobile
+        isMobile && styles.about_mobile,
       )}
       unsetDefaultStyle
     >
@@ -53,7 +48,7 @@ const LargeResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
           styles["about__image-wrapper"],
           styles["about__image-wrapper_columned"],
           styles["about__image-wrapper_aligned-end"],
-          styles["about__image-wrapper_large-gap"]
+          styles["about__image-wrapper_large-gap"],
         )}
       >
         <img
@@ -64,27 +59,13 @@ const LargeResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
             styles.about__image,
             styles.about__image_oval,
             isLarge && styles.about__image_oval_large,
-            isDesktop && styles.about__image_oval_desktop
+            isDesktop && styles.about__image_oval_desktop,
           )}
-          src={aboutOval1}
+          src={
+            "https://storage.yandexcloud.net/otkter-bucket/about/about_oval_1.webp"
+          }
           alt="Декоративное фото"
         />
-        {/* <ImageUI
-          src={aboutOval1}
-          alt="Декоративное фото"
-          width={clsx(isLarge && "20vw", isDesktop && "19.77vw")}
-          height={clsx(isLarge && "30.21vw", isDesktop && "29.87vw")}
-          className={clsx(
-            styles.about__image,
-            styles.about__image_oval,
-            isLarge && styles["about__image_oval_large"],
-            isDesktop && styles.about__image_oval_desktop
-          )}
-          wrapperClassName={clsx(
-            isLarge && styles["about__image_oval_large"],
-            isDesktop && styles.about__image_oval_desktop
-          )}
-        /> */}
         <img
           loading="lazy"
           width={clsx(isLarge && "12.92vw", isDesktop && "12.59vw")}
@@ -93,32 +74,18 @@ const LargeResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
             styles.about__image,
             styles.about__image_orb,
             isLarge && styles.about__image_orb_large,
-            isDesktop && styles.about__image_orb_desktop
+            isDesktop && styles.about__image_orb_desktop,
           )}
-          src={aboutOrb}
+          src={
+            "https://storage.yandexcloud.net/otkter-bucket/about/about_orb.webp"
+          }
           alt="Декоративное фото"
         />
-        {/* <ImageUI
-          src={aboutOrb}
-          alt="Декоративное фото"
-          width={clsx(isLarge && "12.92vw", isDesktop && "12.59vw")}
-          height={clsx(isLarge && "12.92vw", isDesktop && "12.59vw")}
-          className={clsx(
-            styles.about__image,
-            styles.about__image_orb,
-            isLarge && styles["about__image_orb_large"],
-            isDesktop && styles.about__image_orb_desktop
-          )}
-          wrapperClassName={clsx(
-            isLarge && styles["about__image_orb_large"],
-            isDesktop && styles.about__image_orb_desktop
-          )}
-        /> */}
       </div>
       <div
         className={clsx(
           styles["about__text-wrapper"],
-          styles["about__text-wrapper_large-gap"]
+          styles["about__text-wrapper_large-gap"],
         )}
       >
         <Title text="о нас" />
@@ -153,27 +120,13 @@ const LargeResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
           styles.about__image,
           styles.about__image_oval,
           isLarge && styles.about__image_oval_large,
-          isDesktop && styles.about__image_oval_desktop
+          isDesktop && styles.about__image_oval_desktop,
         )}
-        src={aboutOval2}
+        src={
+          "https://storage.yandexcloud.net/otkter-bucket/about/about_oval_2.webp"
+        }
         alt="Декоративное фото"
       />
-      {/* <ImageUI
-        src={aboutOval2}
-        alt="Декоративное фото"
-        width={clsx(isLarge && "20vw", isDesktop && "19.77vw")}
-        height={clsx(isLarge && "30.21vw", isDesktop && "29.87vw")}
-        className={clsx(
-          styles.about__image,
-          styles.about__image_oval,
-          isLarge && styles["about__image_oval_large"],
-          isDesktop && styles.about__image_oval_desktop
-        )}
-        wrapperClassName={clsx(
-          isLarge && styles["about__image_oval_large"],
-          isDesktop && styles.about__image_oval_desktop
-        )}
-      /> */}
     </>
   );
 };
@@ -187,7 +140,7 @@ const SmallResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
         className={clsx(
           styles["about__image-wrapper"],
           styles["about__image-wrapper_columned"],
-          styles["about__image-wrapper_aligned-center"]
+          styles["about__image-wrapper_aligned-center"],
         )}
       >
         <img
@@ -195,55 +148,31 @@ const SmallResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
           width={clsx(
             isLaptop && "16.80vw",
             isTablet && "22.40vw",
-            isMobile && "41.55vw"
+            isMobile && "41.55vw",
           )}
           height={clsx(
             isLaptop && "16.80vw",
             isTablet && "22.40vw",
-            isMobile && "41.55vw"
+            isMobile && "41.55vw",
           )}
           className={clsx(
             styles.about__image,
             styles.about__image_orb,
             isLaptop && styles.about__image_orb_laptop,
             isTablet && styles.about__image_orb_tablet,
-            isMobile && styles.about__image_orb_mobile
+            isMobile && styles.about__image_orb_mobile,
           )}
-          src={aboutOrb}
+          src={
+            "https://storage.yandexcloud.net/otkter-bucket/about/about_orb.webp"
+          }
           alt="Декоративное фото"
         />
-        {/* <ImageUI
-          src={aboutOrb}
-          alt="Декоративное фото"
-          width={clsx(
-            isLaptop && "16.80vw",
-            isTablet && "22.40vw",
-            isMobile && "41.55vw"
-          )}
-          height={clsx(
-            isLaptop && "16.80vw",
-            isTablet && "22.40vw",
-            isMobile && "41.55vw"
-          )}
-          className={clsx(
-            styles.about__image,
-            styles.about__image_orb,
-            isLaptop && styles.about__image_orb_laptop,
-            isTablet && styles.about__image_orb_tablet,
-            isMobile && styles.about__image_orb_mobile
-          )}
-          wrapperClassName={clsx(
-            isLaptop && styles.about__image_orb_laptop,
-            isTablet && styles.about__image_orb_tablet,
-            isMobile && styles.about__image_orb_mobile
-          )}
-        /> */}
         <div
           className={clsx(
             styles["about__image-wrapper"],
             styles["about__image-wrapper_rowed"],
             isLaptop && styles["about__image-wrapper_large-gap"],
-            (isTablet || isMobile) && styles["about__image-wrapper_small-gap"]
+            (isTablet || isMobile) && styles["about__image-wrapper_small-gap"],
           )}
         >
           <img
@@ -251,97 +180,49 @@ const SmallResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
             width={clsx(
               isLaptop && "29.30vw",
               isTablet && "37.50vw",
-              isMobile && "44.69vw"
+              isMobile && "44.69vw",
             )}
             height={clsx(
               isLaptop && "43.75vw",
               isTablet && "55.99vw",
-              isMobile && "66.67vw"
+              isMobile && "66.67vw",
             )}
             className={clsx(
               styles.about__image,
               styles.about__image_oval,
               isLaptop && styles.about__image_oval_laptop,
               isTablet && styles.about__image_oval_tablet,
-              isMobile && styles.about__image_oval_mobile
+              isMobile && styles.about__image_oval_mobile,
             )}
-            src={aboutOval2}
+            src={
+              "https://storage.yandexcloud.net/otkter-bucket/about/about_oval_2.webp"
+            }
             alt="Декоративное фото"
           />
-          {/* <ImageUI
-            src={aboutOval2}
-            alt="Декоративное фото"
-            width={clsx(
-              isLaptop && "29.30vw",
-              isTablet && "37.50vw",
-              isMobile && "44.69vw"
-            )}
-            height={clsx(
-              isLaptop && "43.75vw",
-              isTablet && "55.99vw",
-              isMobile && "66.67vw"
-            )}
-            className={clsx(
-              styles.about__image,
-              styles.about__image_oval,
-              isLaptop && styles.about__image_oval_laptop,
-              isTablet && styles.about__image_oval_tablet,
-              isMobile && styles.about__image_oval_mobile
-            )}
-            wrapperClassName={clsx(
-              isLaptop && styles.about__image_oval_laptop,
-              isTablet && styles.about__image_oval_tablet,
-              isMobile && styles.about__image_oval_mobile
-            )}
-          /> */}
           <img
             loading="lazy"
             width={clsx(
               isLaptop && "29.30vw",
               isTablet && "55.99vw",
-              isMobile && "66.67vw"
+              isMobile && "66.67vw",
             )}
             height={clsx(
               isLaptop && "43.75vw",
               isTablet && "37.50vw",
-              isMobile && "44.69vw"
+              isMobile && "44.69vw",
             )}
             className={clsx(
               styles.about__image,
               styles.about__image_oval,
               isLaptop && styles.about__image_oval_laptop,
               isTablet && styles.about__image_oval_tablet,
-              isMobile && styles.about__image_oval_mobile
+              isMobile && styles.about__image_oval_mobile,
             )}
-            src={aboutOval1}
+            src={
+              "https://storage.yandexcloud.net/otkter-bucket/about/about_oval_1.webp"
+            }
             alt="Декоративное фото"
           />
-          {/* <ImageUI
-            src={aboutOval1}
-            alt="Декоративное фото"
-            width={clsx(
-              isLaptop && "29.30vw",
-              isTablet && "55.99vw",
-              isMobile && "66.67vw"
-            )}
-            height={clsx(
-              isLaptop && "43.75vw",
-              isTablet && "37.50vw",
-              isMobile && "44.69vw"
-            )}
-            className={clsx(
-              styles.about__image,
-              styles.about__image_oval,
-              isLaptop && styles.about__image_oval_laptop,
-              isTablet && styles.about__image_oval_tablet,
-              isMobile && styles.about__image_oval_mobile
-            )}
-            wrapperClassName={clsx(
-              isLaptop && styles.about__image_oval_laptop,
-              isTablet && styles.about__image_oval_tablet,
-              isMobile && styles.about__image_oval_mobile
-            )}
-          /> */}
         </div>
       </div>
       <div
@@ -349,7 +230,7 @@ const SmallResolution: FC<TAboutUIProps> = ({ onButtonClick }) => {
           styles["about__text-wrapper"],
           styles["about__text-wrapper_aligned"],
           isLaptop && styles["about__text-wrapper_large-gap"],
-          (isTablet || isMobile) && styles["about__text-wrapper_small-gap"]
+          (isTablet || isMobile) && styles["about__text-wrapper_small-gap"],
         )}
       >
         <Title text="о нас" />

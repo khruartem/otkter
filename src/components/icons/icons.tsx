@@ -14,8 +14,8 @@ import {
   TErrorProps,
   TTicketProps,
 } from "./types";
+
 import { Colors } from "../../utils/types";
-//import { telegramUrl, vkUrl } from "../../utils/constants";
 
 import styles from "./icons.module.css";
 
@@ -287,7 +287,7 @@ export const Play = ({
       className={clsx(
         iconType === "tab" && styles.tab,
         iconType === "category" && styles.category,
-        className
+        className,
       )}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
@@ -322,7 +322,7 @@ export const Contest = ({
       className={clsx(
         iconType === "tab" && styles.tab,
         iconType === "category" && styles.category,
-        className
+        className,
       )}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
@@ -382,7 +382,7 @@ export const ShortFilm = ({
       className={clsx(
         iconType === "tab" && styles.tab,
         iconType === "category" && styles.category,
-        className
+        className,
       )}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
@@ -644,7 +644,7 @@ export const MasterClass = ({
       className={clsx(
         iconType === "tab" && styles.tab,
         iconType === "category" && styles.category,
-        className
+        className,
       )}
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
