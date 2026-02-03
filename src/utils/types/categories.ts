@@ -20,7 +20,8 @@ export type TCategoryIcon =
   | "artists"
   | "info"
   | "circle"
-  | "attention";
+  | "attention"
+  | "alert";
 
 export type TCategories = {
   attention: boolean;

@@ -12,11 +12,11 @@
 }
 
 .hero-card_regular-placer {
-  background-image: url(../../../assets/projects/backgrounds/placer.avif), var(--background-image);
+  background-image: url("https://storage.yandexcloud.net/otkter-bucket/hero/decorations/placers/placer.avif"), var(--background-image);
 }
 
 .hero-card_ticket-placer {
-  background-image: url(../../../assets/projects/backgrounds/placer_ticket.avif), var(--background-image);
+  background-image: url("https://storage.yandexcloud.net/otkter-bucket/hero/decorations/placers/placer_ticket.avif"), var(--background-image);
 }
 
 .hero-card_large-height {

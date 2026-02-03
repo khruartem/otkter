@@ -1,7 +1,9 @@
 import { FC, useState } from "react";
-import { TCopy } from "./types";
-import { Colors } from "../../utils/types";
+
 import { CopyUI } from "../ui/copy";
+
+import { Colors } from "../../utils/types";
+import { TAlert } from "../../utils/types/alert";
 
 export const Copy: FC = () => {
   const [isCopied, setIsCopied] = useState(false);
@@ -16,7 +18,7 @@ export const Copy: FC = () => {
     }, 1500);
   };
 
-  const copy: TCopy = {
+  const copy: TAlert = {
     category: {
       text: "Ссылка скопирована",
       icon: "circle",

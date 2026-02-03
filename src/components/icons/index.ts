@@ -30,4 +30,5 @@ export {
   Cloths,
   Souvenirs,
   GitHub,
+  Alert,
 } from "./icons";
