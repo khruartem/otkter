@@ -23,9 +23,13 @@ export const VpnChecker: FC = () => {
 
     getVpnStatus();
 
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       setIsVpnActive(false);
     }, 4000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   const vpnAlert: TAlert = {

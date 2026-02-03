@@ -1,13 +1,15 @@
 .vpn-checker {
   position: absolute;
   top: calc(100dvh - 60px - 47px);
-  left: calc(50% - 131px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
   z-index: 2;
   visibility: hidden;
   opacity: 0;
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  line-height: 28px;
+  font-family: "Unbounded", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
   transition: opacity 0.4s, visibility 0.4s;
 }
 
