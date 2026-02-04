@@ -31,4 +31,6 @@ export {
   Souvenirs,
   GitHub,
   Alert,
+  FilmToolz,
+  Kinopoisk,
 } from "./icons";

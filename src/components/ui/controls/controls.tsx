@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import clsx from "clsx";
 
 import { Button } from "../../button";
-import { GitHub, Telegram, VK } from "../../icons";
+import { FilmToolz, GitHub, Kinopoisk, Telegram, VK } from "../../icons";
 
 import { TControlsUIProps } from "./types";
 import { Colors } from "../../../utils/types";
@@ -46,12 +46,18 @@ export const ControlsUI: FC<TControlsUIProps> = ({
               className={clsx(
                 isMobile && styles["button_max-width"],
                 isMobile && icon && styles["button_min-width"],
-                icon && styles.button_icon
+                icon && styles.button_icon,
               )}
             >
               {icon === "telegram" && <Telegram mainColor={Colors.Light100} />}
               {icon === "vk" && <VK mainColor={Colors.Light100} />}
               {icon === "github" && <GitHub mainColor={Colors.Light100} />}
+              {icon === "film-toolz" && (
+                <FilmToolz mainColor={Colors.Light100} />
+              )}
+              {icon === "kinopoisk" && (
+                <Kinopoisk mainColor={Colors.Light100} />
+              )}
               {label}
             </Button>
           );
@@ -69,7 +75,7 @@ export const ControlsUI: FC<TControlsUIProps> = ({
           kind !== "services" &&
           styles.controls_mobile_group,
         kind === "team" && styles["controls_large-gap"],
-        isMobile && kind === "services" && styles["controls_small-gap"]
+        isMobile && kind === "services" && styles["controls_small-gap"],
       )}
     >
       {extraInfo ? (

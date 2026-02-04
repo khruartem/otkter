@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { GitHub, Telegram, VK } from "../../icons";
+import { FilmToolz, GitHub, Kinopoisk, Telegram, VK } from "../../icons";
 
 import { TSocialProps } from "./types";
 
@@ -42,6 +42,26 @@ export const SocialUI: FC<TSocialProps> = ({
           case "github":
             return (
               <GitHub
+                key={id}
+                mainColor={color}
+                hoverColor={hoverColor}
+                activeColor={activeColor}
+                onClick={onFollowLink && (() => onFollowLink(url))}
+              />
+            );
+          case "film-toolz":
+            return (
+              <FilmToolz
+                key={id}
+                mainColor={color}
+                hoverColor={hoverColor}
+                activeColor={activeColor}
+                onClick={onFollowLink && (() => onFollowLink(url))}
+              />
+            );
+          case "kinopoisk":
+            return (
+              <Kinopoisk
                 key={id}
                 mainColor={color}
                 hoverColor={hoverColor}

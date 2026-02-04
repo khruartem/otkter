@@ -31,6 +31,16 @@ export const yakovlev: IEmployee = new Employee({
       url: "https://vk.com/seryoga_yakovlev",
       type: "vk",
     },
+    {
+      id: 12,
+      url: "https://www.kinopoisk.ru/name/4025850/",
+      type: "kinopoisk",
+    },
+    {
+      id: 13,
+      url: "https://casting.filmtoolz.ru/3139792/?ysclid=ml5qvj26ga663124730",
+      type: "film-toolz",
+    },
   ],
   photos: [
     {
@@ -90,6 +100,20 @@ export const yakovlev: IEmployee = new Employee({
       onClick: () => contactFunction(yakovlev.getEmployee(), "vk"),
       url: "#",
       icon: "vk",
+    },
+    {
+      label: "Кинопоиск",
+      type: "button",
+      onClick: () => contactFunction(yakovlev.getEmployee(), "kinopoisk"),
+      url: "#",
+      icon: "kinopoisk",
+    },
+    {
+      label: "FilmToolz",
+      type: "button",
+      onClick: () => contactFunction(yakovlev.getEmployee(), "film-toolz"),
+      url: "#",
+      icon: "film-toolz",
     },
   ],
   details: [

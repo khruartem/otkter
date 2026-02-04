@@ -92,6 +92,62 @@ export const Telegram = ({
   );
 };
 
+export const FilmToolz = ({
+  mainColor,
+  hoverColor,
+  activeColor,
+  onClick,
+}: TSocialProps) => {
+  return (
+    <svg
+      id="socials"
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+      className={styles.social}
+      onClick={onClick}
+    >
+      <path
+        fillRule="evenodd"
+        d="m23.285 3.002.006.005.683 2.125.007-.001.239.743L8 11.062l17 .007-.053.07v.011l-.002.096v3.293l-.07.093v.003l-.352.467h-.003L16.375 25.89h8.57V30H6.764v-2.264l8.467-10.732.018.004 1.494-1.896-9.564.012-.002-.306v.001l-.005-2.7.001-.002V11.062h.013l-.037-.116-.004.002-.01-.046L6.028 7.48 6 7.46 22.964 2l.32 1.002ZM11.788 14.34l5.5-.007 1.727-2.516-5.287-.002-1.94 2.525Zm.146-8 2.425 1.87 5.233-1.675-2.637-1.812-5.02 1.617Z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+};
+
+export const Kinopoisk = ({
+  mainColor,
+  hoverColor,
+  activeColor,
+  onClick,
+}: TSocialProps) => {
+  return (
+    <svg
+      id="socials"
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+      className={styles.social}
+      onClick={onClick}
+    >
+      <path d="M4 3h5.491v7.167L14.758 3h6.593L12.6 11.766 29 3v6.091l-14.394 5.2L29 13.103v5.794L14.606 17.71 29 22.909V29l-16.4-8.766L21.35 29h-6.592L9.49 21.833V29H4V3Z" />
+    </svg>
+  );
+};
+
 export const GitHub = ({
   mainColor,
   hoverColor,
