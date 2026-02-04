@@ -11,6 +11,7 @@ import { Employee } from "../../pages/employee";
 import { NotFound404 } from "../../pages/not-found-404";
 import { Merch } from "../../pages/merch";
 import { MerchItem } from "../../pages/merch-item";
+import { VpnChecker } from "../vpn-checker";
 
 export function App() {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ export function App() {
 
   return (
     <ScrollToTop>
+      <VpnChecker />
       <Routes>
         <Route path={"/"} element={<Main />} />
         <Route path="/projects/all" element={<AllProjects />} />

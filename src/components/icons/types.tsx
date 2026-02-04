@@ -50,3 +50,4 @@ export type TCategotyProps = TTabProps &
   Partial<Pick<TIconsProps, "extraColor">>;
 export type TErrorProps = Pick<TIconsProps, "className">;
 export type TTicketProps = Pick<TIconsProps, "mainColor" | "onClick">;
+export type TAlertProps = Pick<TIconsProps, "mainColor" | "className">;

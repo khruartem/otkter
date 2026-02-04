@@ -18,102 +18,6 @@ import {
   strelnikov,
 } from "./team";
 
-// Фото для hero секции
-import heroPhoto1 from "../../assets/projects/hero/hero_1.avif";
-import heroPhoto2 from "../../assets/projects/hero/hero_2.avif";
-import heroPhoto3 from "../../assets/projects/hero/hero_3.avif";
-import heroPhoto4 from "../../assets/projects/hero/hero_4.avif";
-
-// Обложки проектов
-import uniqueChronicleImage from "../../assets/projects/chronicle.webp";
-import friendshipImage from "../../assets/projects/friendship.webp";
-import openPlayImage from "../../assets/projects/play.webp";
-import mastershipImage from "../../assets/projects/mastership.webp";
-import nikolayImage from "../../assets/projects/nikolay.webp";
-import twoInWorldImage from "../../assets/projects/two.webp";
-import amplitudeImage from "../../assets/projects/amplitude.webp";
-import eseninImage from "../../assets/projects/esenin.webp";
-
-// Иконки для таб бара по проектам
-import uniqueChronicleIcon from "../../assets/projects/icons/chronicle.webp";
-import friendshipIcon from "../../assets/projects/icons/friendship.webp";
-import openPlayIcon from "../../assets/projects/icons/play.webp";
-import mastershipIcon from "../../assets/projects/icons/mastership.webp";
-import nikolayFilmIcon from "../../assets/projects/icons/nikolay.webp";
-import twoInWorldIcon from "../../assets/projects/icons/two.webp";
-import amplitudeIcon from "../../assets/projects/icons/amplitude.webp";
-import eseninIcon from "../../assets/projects/icons/esenin.webp";
-
-// Фото Хроники
-import chronicsPhoto1 from "../../assets/projects-photo/chronics/chronics_1.webp";
-import chronicsPhoto2 from "../../assets/projects-photo/chronics/chronics_2.webp";
-import chronicsPhoto3 from "../../assets/projects-photo/chronics/chronics_3.webp";
-import chronicsPhoto4 from "../../assets/projects-photo/chronics/chronics_4.webp";
-import chronicsPhoto5 from "../../assets/projects-photo/chronics/chronics_5.webp";
-import chronicsPhoto6 from "../../assets/projects-photo/chronics/chronics_6.webp";
-
-// Фото Есенина
-import eseninPhoto1 from "../../assets/projects-photo/esenin/esenin_1.webp";
-import eseninPhoto2 from "../../assets/projects-photo/esenin/esenin_2.webp";
-import eseninPhoto3 from "../../assets/projects-photo/esenin/esenin_3.webp";
-import eseninPhoto4 from "../../assets/projects-photo/esenin/esenin_4.webp";
-import eseninPhoto5 from "../../assets/projects-photo/esenin/esenin_5.webp";
-import eseninPhoto6 from "../../assets/projects-photo/esenin/esenin_6.webp";
-import eseninPhoto7 from "../../assets/projects-photo/esenin/esenin_7.webp";
-
-// Иконки фото Амплитуды
-import amplitudePhoto1 from "../../assets/projects-photo/amplitude/amplitude_1.webp";
-import amplitudePhoto2 from "../../assets/projects-photo/amplitude/amplitude_2.webp";
-import amplitudePhoto3 from "../../assets/projects-photo/amplitude/amplitude_3.webp";
-import amplitudePhoto4 from "../../assets/projects-photo/amplitude/amplitude_4.webp";
-import amplitudePhoto5 from "../../assets/projects-photo/amplitude/amplitude_5.webp";
-import amplitudePhoto6 from "../../assets/projects-photo/amplitude/amplitude_6.webp";
-import amplitudePhoto7 from "../../assets/projects-photo/amplitude/amplitude_7.webp";
-import amplitudePhoto8 from "../../assets/projects-photo/amplitude/amplitude_8.webp";
-import amplitudePhoto9 from "../../assets/projects-photo/amplitude/amplitude_9.webp";
-import amplitudePhoto10 from "../../assets/projects-photo/amplitude/amplitude_10.webp";
-
-// Постеры по проектам
-import uniqueChroniclePoster from "../../assets/projects/posters/chronicle.png";
-import eseninPoster from "../../assets/projects/posters/esenin.png";
-import amplitudePoster from "../../assets/projects/posters/amplitude.png";
-
-// Иконки фото Хроники
-import chronicsPhotoIcon1 from "../../assets/projects-photo/chronics/icons/chronics_1.webp";
-import chronicsPhotoIcon2 from "../../assets/projects-photo/chronics/icons/chronics_2.webp";
-import chronicsPhotoIcon3 from "../../assets/projects-photo/chronics/icons/chronics_3.webp";
-import chronicsPhotoIcon4 from "../../assets/projects-photo/chronics/icons/chronics_4.webp";
-import chronicsPhotoIcon5 from "../../assets/projects-photo/chronics/icons/chronics_5.webp";
-import chronicsPhotoIcon6 from "../../assets/projects-photo/chronics/icons/chronics_6.webp";
-
-// Иконки фото Есенина
-import eseninPhotoIcon1 from "../../assets/projects-photo/esenin/icons/esenin_1.webp";
-import eseninPhotoIcon2 from "../../assets/projects-photo/esenin/icons/esenin_2.webp";
-import eseninPhotoIcon3 from "../../assets/projects-photo/esenin/icons/esenin_3.webp";
-import eseninPhotoIcon4 from "../../assets/projects-photo/esenin/icons/esenin_4.webp";
-import eseninPhotoIcon5 from "../../assets/projects-photo/esenin/icons/esenin_5.webp";
-import eseninPhotoIcon6 from "../../assets/projects-photo/esenin/icons/esenin_6.webp";
-import eseninPhotoIcon7 from "../../assets/projects-photo/esenin/icons/esenin_7.webp";
-
-// Иконки фото Амплитуды
-import amplitudePhotoIcon1 from "../../assets/projects-photo/amplitude/icons/amplitude_1.webp";
-import amplitudePhotoIcon2 from "../../assets/projects-photo/amplitude/icons/amplitude_2.webp";
-import amplitudePhotoIcon3 from "../../assets/projects-photo/amplitude/icons/amplitude_3.webp";
-import amplitudePhotoIcon4 from "../../assets/projects-photo/amplitude/icons/amplitude_4.webp";
-import amplitudePhotoIcon5 from "../../assets/projects-photo/amplitude/icons/amplitude_5.webp";
-import amplitudePhotoIcon6 from "../../assets/projects-photo/amplitude/icons/amplitude_6.webp";
-import amplitudePhotoIcon7 from "../../assets/projects-photo/amplitude/icons/amplitude_7.webp";
-import amplitudePhotoIcon8 from "../../assets/projects-photo/amplitude/icons/amplitude_8.webp";
-import amplitudePhotoIcon9 from "../../assets/projects-photo/amplitude/icons/amplitude_9.webp";
-import amplitudePhotoIcon10 from "../../assets/projects-photo/amplitude/icons/amplitude_10.webp";
-
-// СМИ Есенин
-import eseninMedia1 from "../../assets/projects/media/esenin_1.avif";
-import eseninMedia2 from "../../assets/projects/media/esenin_2.avif";
-import eseninMedia3 from "../../assets/projects/media/esenin_3.avif";
-import eseninMedia4 from "../../assets/projects/media/esenin_4.avif";
-import eseninMedia5 from "../../assets/projects/media/esenin_5.avif";
-
 // Ссылки по проектам
 const buyTicketsLinkChronics =
   "https://tickets.mos.ru/widget/visit?eventId=61367&agentId=museum56&date=2025-05-04";
@@ -133,9 +37,11 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "unique-chronicle",
     title: "«Показ уникальной хроники. 1945»",
-    image: uniqueChronicleImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/projects/main/chronicle.webp",
     previewImg: "/preview/preview_chronics.webp",
-    poster: uniqueChroniclePoster,
+    poster:
+      "https://storage.yandexcloud.net/otkter-bucket/projects/posters/chronicle.png",
     shortText:
       "В центре вечера — восстановленная плёнка, которая оживёт для вас и, как мы верим и надеемся, натолкнёт на размышления о Великой Отечественной войне.",
     text: "В центре вечера - восстановленная плёнка, которая оживёт для вас и, как мы верим и надеемся, натолкнёт на размышления о Великой Отечественной войне. Серьёзные и важные темы дискуссии воссоединятся с песнями военных лет и стихами, посвящёнными войне.",
@@ -143,7 +49,7 @@ export const projects: TProject[] = [
     main: true,
     active: true,
     order: 2,
-    icon: uniqueChronicleIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/chronicle.webp",
     details: [
       {
         type: "about",
@@ -204,7 +110,8 @@ export const projects: TProject[] = [
           title:
             "«На Соколе пройдёт необычный перформанс в память о Великой Отечественной Войне»",
           shortText: "Север Столицы",
-          image: eseninMedia1,
+          image:
+            "https://storage.yandexcloud.net/otkter-bucket/media/sever_stolicy.avif",
           active: true,
         },
       },
@@ -215,7 +122,7 @@ export const projects: TProject[] = [
           id: 4,
           title: "«Иосиф Бродский “Я вас любил”. Читает Леонид Стрельников»",
           shortText: "ОТР",
-          image: eseninMedia3,
+          image: "https://storage.yandexcloud.net/otkter-bucket/media/otr.avif",
           active: true,
         },
       },
@@ -226,7 +133,7 @@ export const projects: TProject[] = [
           id: 7,
           title: "«Константин Симонов “Музыка”. Читает Марат Рудницкий»",
           shortText: "ОТР",
-          image: eseninMedia3,
+          image: "https://storage.yandexcloud.net/otkter-bucket/media/otr.avif",
           active: true,
         },
       },
@@ -251,33 +158,39 @@ export const projects: TProject[] = [
     photos: [
       {
         id: 1,
-        source: chronicsPhoto1,
-        icon: chronicsPhotoIcon1,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/chronics/chronics_1.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/chronics/icons/chronics_1.webp",
       },
       {
         id: 2,
-        source: chronicsPhoto2,
-        icon: chronicsPhotoIcon2,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/chronics/chronics_2.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/chronics/icons/chronics_2.webp",
       },
       {
         id: 3,
-        source: chronicsPhoto3,
-        icon: chronicsPhotoIcon3,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/chronics/chronics_3.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/chronics/icons/chronics_3.webp",
       },
       {
         id: 4,
-        source: chronicsPhoto4,
-        icon: chronicsPhotoIcon4,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/chronics/chronics_4.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/chronics/icons/chronics_4.webp",
       },
       {
         id: 5,
-        source: chronicsPhoto5,
-        icon: chronicsPhotoIcon5,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/chronics/chronics_5.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/chronics/icons/chronics_5.webp",
       },
       {
         id: 6,
-        source: chronicsPhoto6,
-        icon: chronicsPhotoIcon6,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/chronics/chronics_6.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/chronics/icons/chronics_6.webp",
       },
     ],
   },
@@ -286,7 +199,8 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "friendship",
     title: "«Нет уз святее товарищества»",
-    image: friendshipImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/projects/main/friendship.webp",
     shortText:
       "Цель проведения конкурса — популяризация патриотизма средствами театрального искусства и сохранение социокультурных, духовно-нравственных, патриотических традиций.",
     text: "Цель проведения конкурса - популяризация патриотизма средствами театрального искусства и сохранение социокультурных, духовно-нравственных, патриотических традиций российского народа в контексте исторических событий, сохранение исторической памяти, патриотических ценностей, прославление подвигов участников СВО.",
@@ -294,7 +208,7 @@ export const projects: TProject[] = [
     main: false,
     active: false,
     order: 7,
-    icon: friendshipIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/friendship.webp",
     previewImg: "/preview/preview_friendship.webp",
     details: [
       {
@@ -337,7 +251,7 @@ export const projects: TProject[] = [
       {
         label: "Подробнее",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
       },
     ],
@@ -356,7 +270,8 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "open-play",
     title: "«Открытая пьеса»",
-    image: openPlayImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/projects/main/play.webp",
     shortText:
       "Конкурс пьес молодых драматургов направлен на выявление и поддержку современных авторов, детских театральных студий, самодеятельных и профессиональных театров.",
     text: "Конкурс пьес молодых драматургов направлен на выявление и поддержку современных авторов, детских театральных студий, самодеятельных и профессиональных театров.",
@@ -364,7 +279,7 @@ export const projects: TProject[] = [
     main: false,
     active: false,
     order: 8,
-    icon: openPlayIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/play.webp",
     previewImg: "/preview/preview_play.webp",
     details: [
       {
@@ -403,7 +318,7 @@ export const projects: TProject[] = [
       {
         label: "Подробнее",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
       },
     ],
@@ -422,7 +337,8 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "mastership",
     title: "«Ораторское мастерство как инструмент коммуникации»",
-    image: mastershipImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/projects/main/mastership.webp",
     shortText:
       "Мастер-классы в рамках дополнительной общеобразовательной программы «Психология межличностного общения. Основы коммуникации» для ветеранов СВО.",
     text: "В сотрудничестве с Центром военно-патриотического воспитания «Вершина» Людмила Яковлева проводит мастер-классы по теме «Ораторское мастерство как инструмент коммуникации» в рамках программы переобучения, переподготовки и повышения квалификации обучающихся из числа участников СВО.",
@@ -430,7 +346,7 @@ export const projects: TProject[] = [
     main: false,
     active: true,
     order: 9,
-    icon: mastershipIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/mastership.webp",
     details: [
       {
         icon: "organizers",
@@ -476,7 +392,8 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "nikolay",
     title: "«О Николае II»",
-    image: nikolayImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/projects/main/nikolay.webp",
     shortText:
       "Документальный короткометражный фильм о Николае ll. Проект находится в стадии разработки и написания сценария. Уже собрана полноценная съёмочная группа. Проект нуждается в финансировании.",
     text: "Документальный короткометражный фильм о Николае ll. Проект находится в стадии разработки и написания сценария. Уже собрана полноценная съёмочная группа. Проект нуждается в финансировании.",
@@ -484,7 +401,7 @@ export const projects: TProject[] = [
     main: true,
     active: true,
     order: 5,
-    icon: nikolayFilmIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/nikolay.webp",
     details: [
       {
         icon: "organizers",
@@ -536,7 +453,8 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "two-in-world",
     title: "«Двое во всем мире»",
-    image: twoInWorldImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/projects/main/two.webp",
     shortText:
       "Героям суждено понять, что любовь - это великая сила, не знающая времени и расстояний, но требующая смелости.",
     text: "Героям суждено понять, что любовь - это великая сила, не знающая времени и расстояний, но требующая смелости. Спектакль-загадка о том, чему можно научиться у истории, как сложное становится простым и наоборот. По оригинальной пьесе Ольги Масловской.",
@@ -544,7 +462,7 @@ export const projects: TProject[] = [
     main: true,
     active: true,
     order: 4,
-    icon: twoInWorldIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/two.webp",
     details: [
       {
         icon: "organizers",
@@ -620,7 +538,8 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "esenin",
     title: "«Есенин. Жизнь в стихах»",
-    image: eseninImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/projects/main/esenin.webp",
     shortText:
       "В исполнении артистов прозвучат стихи Сергея Есенина, а песни сольются с партией фортепиано, повествуя о мыслях, метаниях и надеждах навеки молодого, но мудрого душой поэта. Посвящено 130-летию со дня рождения Сергея Есенина.",
     text: "В 2025 году исполнится 130 лет со дня рождения Сергея Есенина. Творческое объединение «Открытая Территория» приглашает зрителей на поэтический спектакль «Есенин. Жизнь в стихах». В исполнении артистов прозвучат стихи, а песни сольются с партией фортепиано. Этот спектакль не про смерть, а про жизнь и загадочную русскую душу, отражённую в стихах Сергея Александровича.",
@@ -628,7 +547,7 @@ export const projects: TProject[] = [
     main: true,
     active: true,
     order: 1,
-    icon: eseninIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/esenin.avif",
     details: [
       {
         icon: "organizers",
@@ -695,7 +614,7 @@ export const projects: TProject[] = [
           id: 2,
           title: "«“Есенин. Жизнь в стихах”: на сцене разговор с поэтом»",
           shortText: "МК",
-          image: eseninMedia2,
+          image: "https://storage.yandexcloud.net/otkter-bucket/media/mk.avif",
           active: true,
         },
       },
@@ -707,7 +626,8 @@ export const projects: TProject[] = [
           title:
             "«ВДНХ примет участие в фестивале “Любой из нас хоть чуточку Есенин”",
           shortText: "ВДНХ афиша",
-          image: eseninMedia4,
+          image:
+            "https://storage.yandexcloud.net/otkter-bucket/media/vdnh.avif",
           active: true,
         },
       },
@@ -718,7 +638,8 @@ export const projects: TProject[] = [
           id: 6,
           title: `«Состоялся показ музыкально-поэтического спектакля "Есенин. Жизнь в стихах" режиссера Сергея Яковлева»`,
           shortText: "Касимовский муниципальный округ",
-          image: eseninMedia5,
+          image:
+            "https://storage.yandexcloud.net/otkter-bucket/media/kasimov.avif",
           active: true,
         },
       },
@@ -729,12 +650,13 @@ export const projects: TProject[] = [
           id: 9,
           title: "«Александр Блок “Авиатор”. Читает Дмитрий Мальцев»",
           shortText: "ОТР",
-          image: eseninMedia3,
+          image: "https://storage.yandexcloud.net/otkter-bucket/media/otr.avif",
           active: true,
         },
       },
     ],
-    poster: eseninPoster,
+    poster:
+      "https://storage.yandexcloud.net/otkter-bucket/projects/posters/esenin.png",
     previewImg: "/preview/preview_esenin.webp",
     controls: [
       {
@@ -756,38 +678,45 @@ export const projects: TProject[] = [
     photos: [
       {
         id: 7,
-        source: eseninPhoto1,
-        icon: eseninPhotoIcon1,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/esenin_1.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/icons/esenin_1.webp",
       },
       {
         id: 8,
-        source: eseninPhoto2,
-        icon: eseninPhotoIcon2,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/esenin_2.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/icons/esenin_2.webp",
       },
       {
         id: 9,
-        source: eseninPhoto3,
-        icon: eseninPhotoIcon3,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/esenin_3.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/icons/esenin_3.webp",
       },
       {
         id: 10,
-        source: eseninPhoto4,
-        icon: eseninPhotoIcon4,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/esenin_4.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/icons/esenin_4.webp",
       },
       {
         id: 11,
-        source: eseninPhoto5,
-        icon: eseninPhotoIcon5,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/esenin_5.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/icons/esenin_5.webp",
       },
       {
         id: 12,
-        source: eseninPhoto6,
-        icon: eseninPhotoIcon6,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/esenin_6.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/icons/esenin_6.webp",
       },
       {
         id: 13,
-        source: eseninPhoto7,
-        icon: eseninPhotoIcon7,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/esenin_7.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/esenin/icons/esenin_7.webp",
       },
     ],
     showHistory: [
@@ -865,7 +794,8 @@ export const projects: TProject[] = [
     kind: "projects",
     url: "amplitude",
     title: "«Случительная амплитуда»",
-    image: amplitudeImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/projects/main/amplitude.webp",
     shortText:
       "Спектакль-перформанс по поэтическому сборнику Анастасии Бондаревой.  В центре вечера - поэзия, переплетенная с человеческим миром и отраженная голосами артистов.",
     text: "Спектакль-перформанс по сборнику Анастасии Бондаревой. Поэзия сплетает человеческие чувства с голосами артистов. Музыкальное сопровождение становится моментом уединения с собой и с тишиной города. Странная жизнь носит нас в разные стороны, заставляя терять себя и вновь находить. Поэзия - это мост между потерей и находкой, разлукой и встречей, серым настоящим и вымышленным сиреневым будущим.",
@@ -873,7 +803,7 @@ export const projects: TProject[] = [
     main: true,
     active: true,
     order: 3,
-    icon: amplitudeIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/amplitude.avif",
     details: [
       {
         icon: "organizers",
@@ -954,12 +884,13 @@ export const projects: TProject[] = [
           title:
             "«Антон Дельвиг “Скучно, девушки, весною жить одной…” Читает Анастасия Мурзюкова»",
           shortText: "ОТР",
-          image: eseninMedia3,
+          image: "https://storage.yandexcloud.net/otkter-bucket/media/otr.avif",
           active: true,
         },
       },
     ],
-    poster: amplitudePoster,
+    poster:
+      "https://storage.yandexcloud.net/otkter-bucket/projects/posters/amplitude.png",
     previewImg: "/preview/preview_amplitude.webp",
     controls: [
       {
@@ -981,53 +912,63 @@ export const projects: TProject[] = [
     photos: [
       {
         id: 14,
-        source: amplitudePhoto1,
-        icon: amplitudePhotoIcon1,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/amplitude_1.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/icons/amplitude_1.webp",
       },
       {
         id: 15,
-        source: amplitudePhoto2,
-        icon: amplitudePhotoIcon2,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/amplitude_2.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/icons/amplitude_2.webp",
       },
       {
         id: 16,
-        source: amplitudePhoto3,
-        icon: amplitudePhotoIcon3,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/amplitude_3.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/icons/amplitude_3.webp",
       },
       {
         id: 17,
-        source: amplitudePhoto4,
-        icon: amplitudePhotoIcon4,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/amplitude_4.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/icons/amplitude_4.webp",
       },
       {
         id: 18,
-        source: amplitudePhoto5,
-        icon: amplitudePhotoIcon5,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/amplitude_5.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/icons/amplitude_5.webp",
       },
       {
         id: 19,
-        source: amplitudePhoto6,
-        icon: amplitudePhotoIcon6,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/amplitude_6.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/icons/amplitude_6.webp",
       },
       {
         id: 20,
-        source: amplitudePhoto7,
-        icon: amplitudePhotoIcon7,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/amplitude_7.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/icons/amplitude_7.webp",
       },
       {
         id: 21,
-        source: amplitudePhoto8,
-        icon: amplitudePhotoIcon8,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/amplitude_8.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/icons/amplitude_8.webp",
       },
       {
         id: 22,
-        source: amplitudePhoto9,
-        icon: amplitudePhotoIcon9,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/amplitude_9.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/icons/amplitude_9.webp",
       },
       {
         id: 23,
-        source: amplitudePhoto10,
-        icon: amplitudePhotoIcon10,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/amplitude_10.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/amplitude/icons/amplitude_10.webp",
       },
     ],
   },
@@ -1038,7 +979,8 @@ export const projects: TProject[] = [
     kind: "projects",
     title: "ЛАМПовый вечер «По следам»",
     shortText: "6 декабря | 16:00",
-    image: heroPhoto1,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/hero/december/lamp.avif",
     icon: "",
     main: false,
     active: true,
@@ -1050,7 +992,8 @@ export const projects: TProject[] = [
     kind: "projects",
     title: "Эфир на «ОТР»",
     shortText: "7 декабря | в течение дня",
-    image: heroPhoto2,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/hero/december/maltcev.avif",
     icon: "",
     main: false,
     active: true,
@@ -1062,7 +1005,8 @@ export const projects: TProject[] = [
     kind: "projects",
     title: "Эфир на «ОТР»",
     shortText: "17 декабря | в течение дня",
-    image: heroPhoto3,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/hero/december/yakovlev.avif",
     icon: "",
     main: false,
     active: true,
@@ -1074,7 +1018,8 @@ export const projects: TProject[] = [
     kind: "projects",
     title: "«Есенин. Жизнь в стихах»",
     shortText: "25 декабря | 19:00",
-    image: heroPhoto4,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/hero/december/esenin.avif",
     ticket: true,
     icon: "",
     main: false,
@@ -1087,7 +1032,8 @@ export const projects: TProject[] = [
     kind: "projects",
     title: "«Есенин. Жизнь в стихах»",
     shortText: "26 декабря | 19:00",
-    image: heroPhoto4,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/hero/december/esenin.avif",
     ticket: true,
     icon: "",
     main: false,

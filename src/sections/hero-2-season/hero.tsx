@@ -10,10 +10,8 @@ export const Hero = () => {
   const cardsRef = useRef<HTMLUListElement>(null);
   const cardWidth: number = 232;
 
-  // const defineIncriment = useGetIncriment(cardsRef, cardWidth, heroProjects);
   const defineIncriment = () => {
     const cardsContainerWidth = cardsRef.current?.clientWidth || 0;
-    // console.log(cardsContainerWidth)
     return Math.floor(cardsContainerWidth / cardWidth);
   };
 

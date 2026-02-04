@@ -4,11 +4,8 @@ import { Link } from "react-router-dom";
 
 import { Section } from "../../../section";
 import { ProjectList } from "../../../project-list";
-import { Button } from "../../../../components/button";
 import { Title } from "../../../title";
-
-import { contactFunction } from "../../../../utils/contactFunction";
-import { yakovlev } from "../../../../utils/constants/team";
+import { SuggestProjectButton } from "../../../suggest-project-button";
 
 import { useGetMediaQuery } from "../../../../hooks/useGetMediaQuery";
 
@@ -33,13 +30,7 @@ export const ProjectsUI: FC = () => {
       <Title text="проекты" />
       <ProjectList type="main" />
       <div className={styles["button-section"]}>
-        <Button
-          type="button"
-          onClick={() => contactFunction(yakovlev, "telegram")}
-          disabled={false}
-        >
-          {"Предложить проект"}
-        </Button>
+        <SuggestProjectButton />
         <Link to={"/projects/all/"} className={stylesLink.link}>
           {"Все проекты"}
         </Link>

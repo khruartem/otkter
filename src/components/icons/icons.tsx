@@ -13,9 +13,10 @@ import {
   TCopyLinkProps,
   TErrorProps,
   TTicketProps,
+  TAlertProps,
 } from "./types";
+
 import { Colors } from "../../utils/types";
-//import { telegramUrl, vkUrl } from "../../utils/constants";
 
 import styles from "./icons.module.css";
 
@@ -87,6 +88,62 @@ export const Telegram = ({
         clipRule="evenodd"
         d="M5.65 14.61c6.442-2.823 10.738-4.683 12.888-5.582C24.675 6.46 25.95 6.015 26.782 6c.182-.003.591.042.856.259.223.182.285.428.314.601.03.173.066.567.037.875-.332 3.514-1.771 12.041-2.503 15.977-.31 1.665-.92 2.223-1.51 2.278-1.284.119-2.259-.853-3.502-1.672-1.945-1.282-3.044-2.08-4.931-3.331-2.182-1.446-.768-2.24.476-3.54.325-.34 5.98-5.511 6.089-5.98.014-.059.026-.278-.103-.393-.13-.116-.32-.076-.457-.045-.196.045-3.303 2.11-9.322 6.196-.882.609-1.681.905-2.397.89-.789-.017-2.307-.449-3.435-.818-1.384-.452-2.484-.691-2.388-1.46.05-.4.598-.809 1.644-1.227Z"
       />
+    </svg>
+  );
+};
+
+export const FilmToolz = ({
+  mainColor,
+  hoverColor,
+  activeColor,
+  onClick,
+}: TSocialProps) => {
+  return (
+    <svg
+      id="socials"
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+      className={styles.social}
+      onClick={onClick}
+    >
+      <path
+        fillRule="evenodd"
+        d="m23.285 3.002.006.005.683 2.125.007-.001.239.743L8 11.062l17 .007-.053.07v.011l-.002.096v3.293l-.07.093v.003l-.352.467h-.003L16.375 25.89h8.57V30H6.764v-2.264l8.467-10.732.018.004 1.494-1.896-9.564.012-.002-.306v.001l-.005-2.7.001-.002V11.062h.013l-.037-.116-.004.002-.01-.046L6.028 7.48 6 7.46 22.964 2l.32 1.002ZM11.788 14.34l5.5-.007 1.727-2.516-5.287-.002-1.94 2.525Zm.146-8 2.425 1.87 5.233-1.675-2.637-1.812-5.02 1.617Z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+};
+
+export const Kinopoisk = ({
+  mainColor,
+  hoverColor,
+  activeColor,
+  onClick,
+}: TSocialProps) => {
+  return (
+    <svg
+      id="socials"
+      fill={mainColor}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      style={
+        {
+          "--hover-color": hoverColor,
+          "--active-color": activeColor,
+        } as CSSProperties
+      }
+      className={styles.social}
+      onClick={onClick}
+    >
+      <path d="M4 3h5.491v7.167L14.758 3h6.593L12.6 11.766 29 3v6.091l-14.394 5.2L29 13.103v5.794L14.606 17.71 29 22.909V29l-16.4-8.766L21.35 29h-6.592L9.49 21.833V29H4V3Z" />
     </svg>
   );
 };
@@ -287,7 +344,7 @@ export const Play = ({
       className={clsx(
         iconType === "tab" && styles.tab,
         iconType === "category" && styles.category,
-        className
+        className,
       )}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
@@ -322,7 +379,7 @@ export const Contest = ({
       className={clsx(
         iconType === "tab" && styles.tab,
         iconType === "category" && styles.category,
-        className
+        className,
       )}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
@@ -343,27 +400,6 @@ export const Contest = ({
   );
 };
 
-// export const MasterClass = ({ mainColor }: TCategotyProps) => {
-//   return (
-//     <svg
-//       fill={mainColor}
-//       xmlns="http://www.w3.org/2000/svg"
-//       viewBox="0 0 24 24"
-//       className={styles.category}
-//     >
-//       <g>
-//         <path d="M15.93 21.643a.631.631 0 0 1-.563.357.626.626 0 0 1-.278-.07L12 20.34l-3.09 1.59a.626.626 0 0 1-.277.07.631.631 0 0 1-.564-.357.653.653 0 0 1 .286-.878l3.014-1.556V17h1.262v2.209l3.014 1.556c.32.157.446.548.286.878ZM4 3v11.293C4 16.067 4.889 17 6.578 17h10.844c1.69 0 2.578-.933 2.578-2.707V3H4Zm12.427 6.141-2.8 2.455a1.08 1.08 0 0 1-.898.261 1.103 1.103 0 0 1-.765-.56l-.933-1.633-2.604 2.277A.626.626 0 0 1 8 12.1a.662.662 0 0 1-.516-.252.723.723 0 0 1 .09-.99l2.8-2.454a1.08 1.08 0 0 1 .897-.261c.32.056.596.261.765.56l.933 1.633 2.604-2.277a.645.645 0 0 1 .943.093.732.732 0 0 1-.09.99Z" />
-//         <path d="M21.302 3.5H2.698C2.316 3.5 2 3.16 2 2.75S2.316 2 2.698 2h18.604c.382 0 .698.34.698.75s-.316.75-.698.75Z" />
-//       </g>
-//       <defs>
-//         <clipPath id="a">
-//           <path d="M0 0h24v24H0z" />
-//         </clipPath>
-//       </defs>
-//     </svg>
-//   );
-// };
-
 export const ShortFilm = ({
   mainColor,
   iconType = "tab",
@@ -382,7 +418,7 @@ export const ShortFilm = ({
       className={clsx(
         iconType === "tab" && styles.tab,
         iconType === "category" && styles.category,
-        className
+        className,
       )}
       onClick={onClick}
       onMouseEnter={onMouseEnter}
@@ -644,7 +680,7 @@ export const MasterClass = ({
       className={clsx(
         iconType === "tab" && styles.tab,
         iconType === "category" && styles.category,
-        className
+        className,
       )}
       fill={mainColor}
       xmlns="http://www.w3.org/2000/svg"
@@ -745,6 +781,24 @@ export const TrickCircle = ({
       <path
         d="M12.5 2c-5.51 0-10 4.49-10 10s4.49 10 10 10 10-4.49 10-10-4.49-10-10-10Zm4.78 7.7-5.67 5.67a.75.75 0 0 1-1.06 0l-2.83-2.83a.754.754 0 0 1 0-1.06c.29-.29.77-.29 1.06 0l2.3 2.3 5.14-5.14c.29-.29.77-.29 1.06 0 .29.29.29.76 0 1.06Z"
         fill={mainColor}
+      />
+    </svg>
+  );
+};
+
+export const Alert = ({ mainColor, className }: TAlertProps) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      fill="none"
+      viewBox="0 0 32 32"
+      className={clsx(className && className)}
+    >
+      <path
+        fill={mainColor}
+        d="M16.005 2.67C8.657 2.67 2.67 8.657 2.67 16.005c0 7.348 5.987 13.335 13.335 13.335 7.348 0 13.335-5.988 13.335-13.335 0-7.348-5.988-13.335-13.335-13.335Zm-1 8c0-.546.453-1 1-1 .547 0 1 .454 1 1v6.668c0 .547-.453 1-1 1-.547 0-1-.453-1-1v-6.667Zm2.227 11.176c-.067.173-.16.306-.28.44-.134.12-.28.213-.44.28-.16.066-.334.106-.507.106s-.347-.04-.507-.106a1.54 1.54 0 0 1-.44-.28 1.377 1.377 0 0 1-.28-.44 1.327 1.327 0 0 1-.107-.507c0-.173.04-.347.107-.507.067-.16.16-.306.28-.44.133-.12.28-.213.44-.28.32-.133.694-.133 1.014 0 .16.067.306.16.44.28.12.134.213.28.28.44.066.16.106.334.106.507s-.04.347-.106.507Z"
       />
     </svg>
   );

@@ -7,6 +7,7 @@ import {
   ShortFilm,
   TrickCircle,
   Attention,
+  Alert,
 } from "../../icons";
 
 import { TCategoryIconUIProps } from "./types";
@@ -35,6 +36,7 @@ export const CategoryIconUI: FC<TCategoryIconUIProps> = ({ icon, color }) => {
           className={styles["category-icon_trick-circle"]}
         />
       )}
+      {icon === "alert" && <Alert mainColor={color} />}
     </>
   );
 };

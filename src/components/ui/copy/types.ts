@@ -1,7 +1,7 @@
-import { TCopy } from "../../copy/types";
+import { TAlert } from "../../../utils/types/alert";
 
 export type TCopyUIProps = {
-  copy: TCopy;
+  copy: TAlert;
   onCopy: () => void;
   isCopied: boolean;
 };

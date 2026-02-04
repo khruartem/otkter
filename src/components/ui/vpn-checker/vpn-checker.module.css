@@ -1,0 +1,20 @@
+.vpn-checker {
+  position: fixed;
+  top: calc(100dvh - 60px - 47px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  font-family: "Unbounded", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.vpn-checker_active {
+  z-index: 2;
+  visibility: visible;
+  opacity: 1;
+}

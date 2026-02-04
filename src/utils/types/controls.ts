@@ -1,3 +1,5 @@
+import { TSocialsType } from "./socials";
+
 type TControlsType = "button" | "link";
 export type TControlsItem = {
   label: string;
@@ -5,5 +7,5 @@ export type TControlsItem = {
   onClick: () => void;
   url: string;
   state?: object;
-  icon?: string;
+  icon?: TSocialsType;
 };

@@ -1,61 +1,5 @@
 import { TService } from "../types/services";
 
-// Обложки услуг
-import openSeaImage from "../../assets/services/open_sea.webp";
-import eventsImage from "../../assets/services/events.webp";
-import designImage from "../../assets/services/design.webp";
-import contentImage from "../../assets/services/content.webp";
-import masterClassesImage from "../../assets/services/master_class.webp";
-import lampImage from "../../assets/services/lamp.webp";
-import smmImage from "../../assets/services/smm.webp";
-
-// Иконки для таб бара по услугам
-import openSeaIcon from "../../assets/services/icons/open_sea.webp";
-import eventsIcon from "../../assets/services/icons/events.webp";
-import designIcon from "../../assets/services/icons/design.webp";
-import contentIcon from "../../assets/services/icons/content.webp";
-import masterClassesIcon from "../../assets/services/icons/master_class.webp";
-import lampIcon from "../../assets/services/icons/lamp.webp";
-import smmIcon from "../../assets/services/icons/smm.webp";
-
-// Фото ОТ
-import openSeaPhoto1 from "../../assets/services-photo/open-sea/openSeaPhoto1.png";
-import openSeaPhoto2 from "../../assets/services-photo/open-sea/openSeaPhoto2.png";
-import openSeaPhoto3 from "../../assets/services-photo/open-sea/openSeaPhoto3.png";
-import openSeaPhoto4 from "../../assets/services-photo/open-sea/openSeaPhoto4.png";
-import openSeaPhoto5 from "../../assets/services-photo/open-sea/openSeaPhoto5.png";
-
-// Фото ЛАМП
-import lampPhoto1 from "../../assets/services-photo/lamp/lampPhoto1.jpg";
-import lampPhoto2 from "../../assets/services-photo/lamp/lampPhoto2.jpg";
-import lampPhoto3 from "../../assets/services-photo/lamp/lampPhoto3.jpg";
-import lampPhoto4 from "../../assets/services-photo/lamp/lampPhoto4.jpg";
-import lampPhoto5 from "../../assets/services-photo/lamp/lampPhoto5.jpg";
-import lampPhoto6 from "../../assets/services-photo/lamp/lampPhoto6.jpg";
-import lampPhoto7 from "../../assets/services-photo/lamp/lampPhoto7.jpg";
-import lampPhoto8 from "../../assets/services-photo/lamp/lampPhoto8.jpg";
-import lampPhoto9 from "../../assets/services-photo/lamp/lampPhoto9.jpg";
-import lampPhoto10 from "../../assets/services-photo/lamp/lampPhoto10.jpg";
-
-// Иконки фото ОТ
-import openSeaPhotoIcon1 from "../../assets/services-photo/open-sea/icons/openSeaPhoto1.jpg";
-import openSeaPhotoIcon2 from "../../assets/services-photo/open-sea/icons/openSeaPhoto2.jpg";
-import openSeaPhotoIcon3 from "../../assets/services-photo/open-sea/icons/openSeaPhoto3.jpg";
-import openSeaPhotoIcon4 from "../../assets/services-photo/open-sea/icons/openSeaPhoto4.jpg";
-import openSeaPhotoIcon5 from "../../assets/services-photo/open-sea/icons/openSeaPhoto5.jpg";
-
-// Иконки фото ЛАМП
-import lampPhotoIcon1 from "../../assets/services-photo/lamp/icons/lampPhoto1.webp";
-import lampPhotoIcon2 from "../../assets/services-photo/lamp/icons/lampPhoto2.webp";
-import lampPhotoIcon3 from "../../assets/services-photo/lamp/icons/lampPhoto3.webp";
-import lampPhotoIcon4 from "../../assets/services-photo/lamp/icons/lampPhoto4.webp";
-import lampPhotoIcon5 from "../../assets/services-photo/lamp/icons/lampPhoto5.webp";
-import lampPhotoIcon6 from "../../assets/services-photo/lamp/icons/lampPhoto6.webp";
-import lampPhotoIcon7 from "../../assets/services-photo/lamp/icons/lampPhoto7.webp";
-import lampPhotoIcon8 from "../../assets/services-photo/lamp/icons/lampPhoto8.webp";
-import lampPhotoIcon9 from "../../assets/services-photo/lamp/icons/lampPhoto9.webp";
-import lampPhotoIcon10 from "../../assets/services-photo/lamp/icons/lampPhoto10.webp";
-
 // Команда
 // Админы
 import { yakovlev, sinelnikova, LA } from "./team";
@@ -71,18 +15,20 @@ export const services: TService[] = [
     title: "Театральная студия «Открытое Море»",
     shortText:
       "Театральная студия «Открытое Море» для детей и подростков дает возможность расширить свои горизонты через театр. Мы не слепо делаем из студийцев профессиональных актеров, а помогаем ребятам понять себя в этом мире. Наши ученики развивают личностные и индивидуальные качества, избавляясь от комплексов и зажимов через методы изучения актерского мастерства.",
-    image: openSeaImage,
-    poster: openSeaImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/services/main/open_sea.webp",
+    poster:
+      "https://storage.yandexcloud.net/otkter-bucket/services/posters/open_sea.webp",
     type: "open-sea",
     main: true,
     active: true,
     order: 1,
-    icon: openSeaIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/services/icons/open_sea.webp",
     controls: [
       {
         label: "Записаться",
         type: "button",
-        onClick: () => contactFunction(LA, "telegram"),
+        onClick: () => contactFunction(LA.getEmployee(), "telegram"),
         url: "#",
       },
       {
@@ -130,28 +76,33 @@ export const services: TService[] = [
     photos: [
       {
         id: 24,
-        source: openSeaPhoto1,
-        icon: openSeaPhotoIcon1,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/open_sea/open_sea_1.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/open_sea/icons/open_sea_1.webp",
       },
       {
         id: 25,
-        source: openSeaPhoto2,
-        icon: openSeaPhotoIcon2,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/open_sea/open_sea_2.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/open_sea/icons/open_sea_2.webp",
       },
       {
         id: 26,
-        source: openSeaPhoto3,
-        icon: openSeaPhotoIcon3,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/open_sea/open_sea_3.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/open_sea/icons/open_sea_3.webp",
       },
       {
         id: 27,
-        source: openSeaPhoto4,
-        icon: openSeaPhotoIcon4,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/open_sea/open_sea_4.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/open_sea/icons/open_sea_4.webp",
       },
       {
         id: 28,
-        source: openSeaPhoto5,
-        icon: openSeaPhotoIcon5,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/open_sea/open_sea_5.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/open_sea/icons/open_sea_5.webp",
       },
     ],
   },
@@ -162,19 +113,21 @@ export const services: TService[] = [
     title: "Организация мероприятий",
     shortText:
       "Организуем и проведем мероприятия любой сложности. Концерты, городские мероприятия, творческие вечера, фестивали, конкурсы, спектакли т. п.",
-    image: eventsImage,
-    poster: eventsImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/services/main/events.webp",
+    poster:
+      "https://storage.yandexcloud.net/otkter-bucket/services/posters/events.webp",
     previewImg: "/preview/preview_events.webp",
     type: "events",
     main: false,
     active: true,
     order: 3,
-    icon: eventsIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/services/icons/events.webp",
     controls: [
       {
         label: "Заказать",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
       },
     ],
@@ -186,19 +139,21 @@ export const services: TService[] = [
     title: "Студия дизайна «Открытый Глаз»",
     shortText:
       "Берем в работу задачи по графическому дизайну, айдентике, полиграфии, UX/UI и разработке сайтов.",
-    image: designImage,
-    poster: designImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/services/main/design.webp",
+    poster:
+      "https://storage.yandexcloud.net/otkter-bucket/services/posters/design.webp",
     previewImg: "/preview/preview_design.webp",
     type: "design",
     main: false,
     active: true,
     order: 4,
-    icon: designIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/services/icons/design.webp",
     controls: [
       {
         label: "Заказать",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
       },
     ],
@@ -210,19 +165,21 @@ export const services: TService[] = [
     title: "Контент и производство видеоматериалов",
     shortText:
       "Организация съемки мероприятий, в том числе интервью, подкастов, рилсов, репортажей, бэкстейджей, документальных фильмов, коротких метров или иных съемок. Обеспечивается полный цикл производства, от подготовительного до монтажно-тонировочного периода, и команда профессионалов (режиссер-постановщик, оператор-постановщик, гафер, звукорежиссёр, актеры и т.д.).",
-    image: contentImage,
-    poster: contentImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/services/main/content.webp",
+    poster:
+      "https://storage.yandexcloud.net/otkter-bucket/services/posters/content.webp",
     previewImg: "/preview/preview_content.webp",
     type: "content",
     main: false,
     active: true,
     order: 5,
-    icon: contentIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/services/icons/content.webp",
     controls: [
       {
         label: "Заказать",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
       },
     ],
@@ -234,19 +191,21 @@ export const services: TService[] = [
     title: "Проведение мастер-классов",
     shortText:
       "Проведем мастер-классы и треннинги по актерскому мастерству, ораторскому искусству.",
-    image: masterClassesImage,
-    poster: masterClassesImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/services/main/master_class.webp",
+    poster:
+      "https://storage.yandexcloud.net/otkter-bucket/services/posters/master_class.webp",
     previewImg: "/preview/preview_mc.webp",
     type: "master-class",
     main: false,
     active: true,
     order: 6,
-    icon: masterClassesIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/services/icons/master_class.webp",
     controls: [
       {
         label: "Заказать",
         type: "button",
-        onClick: () => contactFunction(yakovlev, "telegram"),
+        onClick: () => contactFunction(yakovlev.getEmployee(), "telegram"),
         url: "#",
       },
     ],
@@ -258,19 +217,21 @@ export const services: TService[] = [
     title: "Любительский театр «ЛАМП»",
     shortText:
       "Театр «ЛАМП» (Любители, Актеры, Музыканты, Писатели) собирает на сцене разных творческих людей. Здесь не важно, есть ли соответствующее образование или нет. Подойдёт для всех, кто хочет стать частью команды театра в любом проявлении. При театре есть семейные группы для совместного творчества родителей и их детей.",
-    image: lampImage,
-    poster: lampImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/services/main/lamp.webp",
+    poster:
+      "https://storage.yandexcloud.net/otkter-bucket/services/posters/lamp.webp",
     previewImg: "/preview/preview_lamp.webp",
     type: "lamp",
     main: true,
     active: true,
     order: 2,
-    icon: lampIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/services/icons/lamp.webp",
     controls: [
       {
         label: "Записаться",
         type: "button",
-        onClick: () => contactFunction(LA, "telegram"),
+        onClick: () => contactFunction(LA.getEmployee(), "telegram"),
         url: "#",
       },
       {
@@ -312,53 +273,63 @@ export const services: TService[] = [
     photos: [
       {
         id: 29,
-        source: lampPhoto1,
-        icon: lampPhotoIcon1,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/lamp_1.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/icons/lamp_1.webp",
       },
       {
         id: 30,
-        source: lampPhoto2,
-        icon: lampPhotoIcon2,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/lamp_2.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/icons/lamp_2.webp",
       },
       {
         id: 31,
-        source: lampPhoto3,
-        icon: lampPhotoIcon3,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/lamp_3.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/icons/lamp_3.webp",
       },
       {
         id: 32,
-        source: lampPhoto4,
-        icon: lampPhotoIcon4,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/lamp_4.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/icons/lamp_4.webp",
       },
       {
         id: 33,
-        source: lampPhoto5,
-        icon: lampPhotoIcon5,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/lamp_5.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/icons/lamp_5.webp",
       },
       {
         id: 34,
-        source: lampPhoto6,
-        icon: lampPhotoIcon6,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/lamp_6.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/icons/lamp_6.webp",
       },
       {
         id: 35,
-        source: lampPhoto7,
-        icon: lampPhotoIcon7,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/lamp_7.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/icons/lamp_7.webp",
       },
       {
         id: 36,
-        source: lampPhoto8,
-        icon: lampPhotoIcon8,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/lamp_8.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/icons/lamp_8.webp",
       },
       {
         id: 37,
-        source: lampPhoto9,
-        icon: lampPhotoIcon9,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/lamp_9.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/icons/lamp_9.webp",
       },
       {
         id: 38,
-        source: lampPhoto10,
-        icon: lampPhotoIcon10,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/lamp_10.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/services/photos/lamp/icons/lamp_10.webp",
       },
     ],
   },
@@ -369,19 +340,21 @@ export const services: TService[] = [
     title: "SMM, PR и продвижение",
     shortText:
       "Менеджмент социальных сетей (SMM - создание и управление контентом на платформах социальных медиа) и связи с общественностью (PR - формирование и поддержание положительного имиджа компании через взаимодействие с общественностью и медиа).",
-    image: smmImage,
-    poster: smmImage,
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/services/main/smm.webp",
+    poster:
+      "https://storage.yandexcloud.net/otkter-bucket/services/posters/smm.webp",
     previewImg: "/preview/preview_smm.webp",
     type: "smm",
     main: false,
     active: true,
     order: 7,
-    icon: smmIcon,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/services/icons/smm.webp",
     controls: [
       {
         label: "Заказать",
         type: "button",
-        onClick: () => contactFunction(sinelnikova, "telegram"),
+        onClick: () => contactFunction(sinelnikova.getEmployee(), "telegram"),
         url: "#",
       },
     ],
