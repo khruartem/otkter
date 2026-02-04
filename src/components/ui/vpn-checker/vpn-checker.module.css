@@ -1,5 +1,5 @@
 .vpn-checker {
-  position: absolute;
+  position: fixed;
   top: calc(100dvh - 60px - 47px);
   left: 50%;
   transform: translateX(-50%);

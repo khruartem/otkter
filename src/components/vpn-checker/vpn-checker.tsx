@@ -14,8 +14,11 @@ export const VpnChecker: FC = () => {
       try {
         const ip = (await getIPApi()).ip;
         const vpnStatus = await getVpnStatusApi(ip);
+        const countryCode = vpnStatus.location.country_code;
 
-        setIsVpnActive(vpnStatus.security.vpn);
+        if (countryCode !== "RU") {
+          setIsVpnActive(true);
+        }
       } catch (error) {
         console.error("Error fetching VPN status:", error);
       }
