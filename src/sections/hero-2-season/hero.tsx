@@ -34,11 +34,11 @@ export const Hero = () => {
   const onSwitch: (
     index: number,
     currentPaginatorIndex: number,
-    inView: boolean
+    inView: boolean,
   ) => void = (
     index: number,
     currentPaginatorIndex: number,
-    inView: boolean
+    inView: boolean,
   ) => {
     if (inView && index % defineIncriment() === 0) {
       const paginatorIndex = Math.floor(index / defineIncriment());
@@ -67,6 +67,7 @@ export const Hero = () => {
       onClickRight={onClickRight}
       cardWidth={cardWidth}
       onSwitch={onSwitch}
+      hideTabBar
       ref={cardsRef}
     />
   );
