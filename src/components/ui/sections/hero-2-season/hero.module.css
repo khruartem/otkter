@@ -117,12 +117,21 @@
 /* tab-bar */
 .tab-bar {
   display: flex;
+  height: 60px;
   flex-direction: row;
   align-items: center;
 }
 
 .tab-bar_justified {
   justify-content: space-between;
+}
+
+.tab-bar_large-padding {
+  padding-block: 18px;
+}
+
+.tab-bar_small-padding {
+  padding-block: 14px;
 }
 
 /* buttons */
