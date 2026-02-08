@@ -149,8 +149,8 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
             className={clsx(
               styles.specials,
               isLarge && styles["specials_large-gap"],
-              isDesktop && styles["specials_small-gap"],
-              (isLaptop || isTablet) && styles["specials_small-gap"],
+              (isDesktop || isTablet) && styles["specials_small-gap"],
+              isLaptop && styles["specials_middle-gap"],
             )}
           >
             <div
