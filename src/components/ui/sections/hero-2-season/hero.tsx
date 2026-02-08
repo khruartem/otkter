@@ -24,8 +24,9 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
       onClickRight,
       cardWidth,
       onSwitch,
+      hideTabBar,
     },
-    ref
+    ref,
   ) => {
     const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
       useGetMediaQuery();
@@ -38,7 +39,7 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
       isDesktop && styles["event_desktop"],
       isLaptop && styles["event_laptop"],
       isTablet && styles["event_tablet"],
-      isMobile && styles["event_mobile"]
+      isMobile && styles["event_mobile"],
     );
 
     return (
@@ -73,7 +74,7 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
             styles["section_xs-gap"],
             styles.section_mobile,
             styles.section_decorated_background_small,
-          ]
+          ],
         )}
       >
         <div
@@ -90,7 +91,7 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
             isDesktop && styles["tagline-info_desktop"],
             isLaptop && styles["tagline-info_laptop"],
             isTablet && styles["tagline-info_tablet"],
-            isMobile && styles["tagline-info_mobile"]
+            isMobile && styles["tagline-info_mobile"],
           )}
         >
           <Text
@@ -107,7 +108,7 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
               styles.title,
               isTablet || isMobile
                 ? styles["title_large-height"]
-                : styles["title_small-height"]
+                : styles["title_small-height"],
             )}
           >
             {"2 сезон"}
@@ -119,13 +120,13 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
             fontSize={clsx(
               (isLarge || isLaptop) && "72px",
               (isDesktop || isTablet) && "56px",
-              isMobile && "36px"
+              isMobile && "36px",
             )}
             fontWeight={700}
             lineHeight={clsx(
               (isLarge || isLaptop) && "100px",
               (isDesktop || isTablet) && "80px",
-              isMobile && "44px"
+              isMobile && "44px",
             )}
             textTransform="uppercase"
             color={Colors.Navy}
@@ -141,7 +142,7 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
             isDesktop && styles["month-info_desktop"],
             isLaptop && styles["month-info_laptop"],
             isTablet && styles["month-info_tablet"],
-            isMobile && styles["month-info_mobile"]
+            isMobile && styles["month-info_mobile"],
           )}
         >
           <div
@@ -149,7 +150,7 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
               styles.specials,
               isLarge && styles["specials_large-gap"],
               isDesktop && styles["specials_small-gap"],
-              (isLaptop || isTablet) && styles["specials_small-gap"]
+              (isLaptop || isTablet) && styles["specials_small-gap"],
             )}
           >
             <div
@@ -160,7 +161,7 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
                 isDesktop && styles["tab-bar_desktop"],
                 isLaptop && styles["tab-bar_laptop"],
                 isTablet && styles["tab-bar_tablet"],
-                isMobile && styles["tab-bar_mobile"]
+                isMobile && styles["tab-bar_mobile"],
               )}
             >
               <Text
@@ -175,17 +176,19 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
               >
                 {"особые события"}
               </Text>
-              <div className={styles.buttons}>
-                <ArrowLeft mainColor={Colors.Navy} onClick={onClickLeft} />
-                <Paginator
-                  index={currentPaginatorIndex}
-                  length={paginatorLength}
-                  defaultLength={items.length}
-                  color={Colors.Navy}
-                  currentColor={Colors.Light100}
-                />
-                <ArrowRight mainColor={Colors.Navy} onClick={onClickRight} />
-              </div>
+              {!hideTabBar && (
+                <div className={styles.buttons}>
+                  <ArrowLeft mainColor={Colors.Navy} onClick={onClickLeft} />
+                  <Paginator
+                    index={currentPaginatorIndex}
+                    length={paginatorLength}
+                    defaultLength={items.length}
+                    color={Colors.Navy}
+                    currentColor={Colors.Light100}
+                  />
+                  <ArrowRight mainColor={Colors.Navy} onClick={onClickRight} />
+                </div>
+              )}
             </div>
             <ul
               className={clsx(
@@ -212,7 +215,7 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
                   styles["hero-card-list_small-padding"],
                   styles["hero-card-list_small-gap"],
                   styles["hero-card-list_small-margin"],
-                ]
+                ],
               )}
               style={
                 {
@@ -226,23 +229,23 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
                 ) {
                   e.currentTarget?.classList.add(
                     styles["hero-card-list_faded"],
-                    styles["hero-card-list_faded_large-card"]
+                    styles["hero-card-list_faded_large-card"],
                   );
                   if (isDesktop)
                     e.currentTarget?.classList.add(
                       styles["hero-card-list_faded"],
-                      styles["hero-card-list_faded_small-card"]
+                      styles["hero-card-list_faded_small-card"],
                     );
                 } else {
                   if (isLarge)
                     e.currentTarget?.classList.remove(
                       styles["hero-card-list_faded"],
-                      styles["hero-card-list_faded_large-card"]
+                      styles["hero-card-list_faded_large-card"],
                     );
                   if (isDesktop)
                     e.currentTarget?.classList.remove(
                       styles["hero-card-list_faded"],
-                      styles["hero-card-list_faded_small-card"]
+                      styles["hero-card-list_faded_small-card"],
                     );
                 }
               }}
@@ -269,7 +272,7 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
               isDesktop && styles.regulars_desktop,
               isLaptop && styles.regulars_laptop,
               isTablet && styles.regulars_tablet,
-              isMobile && styles.regulars_mobile
+              isMobile && styles.regulars_mobile,
             )}
           >
             <Text
@@ -294,7 +297,7 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
                 isDesktop && [styles["event-list_desktop"]],
                 isLaptop && styles["event-list_laptop"],
                 isTablet && styles["event-list_tablet"],
-                isMobile && styles["event-list_mobile"]
+                isMobile && styles["event-list_mobile"],
               )}
             >
               <li className={eventClassList}>
@@ -354,5 +357,5 @@ export const HeroUI = forwardRef<HTMLUListElement, THeroUIProps>(
         </div>
       </Section>
     );
-  }
+  },
 );

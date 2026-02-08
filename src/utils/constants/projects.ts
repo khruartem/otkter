@@ -589,7 +589,7 @@ export const projects: TProject[] = [
         type: "artists",
         value: maltcev.getEmployee(
           "Сергей Есенин",
-          "Артист театра «Ленком Марка Захарова»"
+          "Артист театра «Ленком Марка Захарова»",
         ),
       },
       {
@@ -600,7 +600,7 @@ export const projects: TProject[] = [
         type: "artists",
         value: larina.getEmployee(
           "Фортепиано",
-          "Артистка хора театра «Ленком Марка Захарова»"
+          "Артистка хора театра «Ленком Марка Захарова»",
         ),
       },
       {
@@ -861,7 +861,7 @@ export const projects: TProject[] = [
       {
         type: "artists",
         value: rudnitskiy.getEmployee(
-          "Актёр, звукорежиссер, инженер телецентра «Останкино»"
+          "Актёр, звукорежиссер, инженер телецентра «Останкино»",
         ),
       },
       {
@@ -978,63 +978,9 @@ export const projects: TProject[] = [
     type: "hero",
     kind: "projects",
     title: "ЛАМПовый вечер «По следам»",
-    shortText: "6 декабря | 16:00",
+    shortText: "28 февраля | 17:00",
     image:
       "https://storage.yandexcloud.net/otkter-bucket/hero/december/lamp.avif",
-    icon: "",
-    main: false,
-    active: true,
-  },
-  {
-    id: 10,
-    url: "not-found",
-    type: "hero",
-    kind: "projects",
-    title: "Эфир на «ОТР»",
-    shortText: "7 декабря | в течение дня",
-    image:
-      "https://storage.yandexcloud.net/otkter-bucket/hero/december/maltcev.avif",
-    icon: "",
-    main: false,
-    active: true,
-  },
-  {
-    id: 11,
-    url: "not-found",
-    type: "hero",
-    kind: "projects",
-    title: "Эфир на «ОТР»",
-    shortText: "17 декабря | в течение дня",
-    image:
-      "https://storage.yandexcloud.net/otkter-bucket/hero/december/yakovlev.avif",
-    icon: "",
-    main: false,
-    active: true,
-  },
-  {
-    id: 12,
-    url: "not-found",
-    type: "hero",
-    kind: "projects",
-    title: "«Есенин. Жизнь в стихах»",
-    shortText: "25 декабря | 19:00",
-    image:
-      "https://storage.yandexcloud.net/otkter-bucket/hero/december/esenin.avif",
-    ticket: true,
-    icon: "",
-    main: false,
-    active: true,
-  },
-  {
-    id: 13,
-    url: "not-found",
-    type: "hero",
-    kind: "projects",
-    title: "«Есенин. Жизнь в стихах»",
-    shortText: "26 декабря | 19:00",
-    image:
-      "https://storage.yandexcloud.net/otkter-bucket/hero/december/esenin.avif",
-    ticket: true,
     icon: "",
     main: false,
     active: true,

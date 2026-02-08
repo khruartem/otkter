@@ -9,7 +9,8 @@ export type THeroUIProps = {
   onSwitch: (
     index: number,
     currentPaginatorIndex: number,
-    inView: boolean
+    inView: boolean,
   ) => void;
   cardWidth: number;
+  hideTabBar?: boolean;
 };
