@@ -1,14 +1,14 @@
 .hero-card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   gap: 4px;
   width: 232px;
   border-radius: 40px;
   padding: 20px;
-  justify-content: flex-end;
-  background-size: contain, cover;
   background-repeat: no-repeat;
   background-position: bottom, center;
+  background-size: contain, cover;
 }
 
 .hero-card_regular-placer {
@@ -17,6 +17,7 @@
 
 .hero-card_ticket-placer {
   background-image: url("https://storage.yandexcloud.net/otkter-bucket/hero/decorations/placers/placer_ticket.avif"), var(--background-image);
+  cursor: pointer;
 }
 
 .hero-card_large-height {
