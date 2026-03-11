@@ -22,7 +22,7 @@ import {
 const buyTicketsLinkChronics =
   "https://tickets.mos.ru/widget/visit?eventId=61367&agentId=museum56&date=2025-05-04";
 export const buyTicketsLinkEsenin =
-  "https://russpass.ru/event/692da2016fb0bf1b94a43efe?date=2025-12-25";
+  "https://www.ticketland.ru/doma-kultury/centr-kultury-i-iskusstva-meridian/spektakl-esenin-zhizn-v-stikhakh/";
 export const buyTicketsLinkAmplitude =
   "https://litgost.timepad.ru/event/3308697/";
 
@@ -565,25 +565,26 @@ export const projects: TProject[] = [
           "КЦ «Москвич»",
           "Соворотка",
           "Музей памяти семьи Николая II в усадьбе «Белая Дача»",
+          "КЦ «Меридиан»",
         ],
       },
       {
         icon: "address",
         type: "about",
         label: "Адрес",
-        value: "д. 1А, мкр. Белая Дача, г. Котельники",
+        value: "г. Москва, Профсоюзная улица, дом 61",
       },
       {
         icon: "date",
         type: "about",
         label: "Дата",
-        value: "25 декабря, 19:00",
+        value: "10 апреля, 16:00",
       },
       {
         icon: "price",
         type: "about",
         label: "Цена",
-        value: "2400 р.",
+        value: "от 700 р.",
       },
       {
         type: "artists",
@@ -784,8 +785,14 @@ export const projects: TProject[] = [
       {
         date: "26 декабря, 19:00",
         premiere: false,
-        current: true,
+        current: false,
         where: "Москва, Есенин-центр",
+      },
+      {
+        date: "10 апреля, 16:00",
+        premiere: false,
+        current: true,
+        where: "Москва, КЦ Меридиан",
       },
     ],
   },
@@ -977,11 +984,12 @@ export const projects: TProject[] = [
     url: "not-found",
     type: "hero",
     kind: "projects",
-    title: "ЛАМПовый вечер «По следам»",
-    shortText: "28 февраля | 17:00",
+    title: "«Есенин. Жизнь в стихах»",
+    shortText: "10 апреля | 16:00",
     image:
-      "https://storage.yandexcloud.net/otkter-bucket/hero/december/lamp.avif",
+      "https://storage.yandexcloud.net/otkter-bucket/hero/december/esenin.avif",
     icon: "",
+    ticket: true,
     main: false,
     active: true,
   },
