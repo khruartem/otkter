@@ -17,6 +17,9 @@
 
 .hero-card_ticket-placer {
   background-image: url("https://storage.yandexcloud.net/otkter-bucket/hero/decorations/placers/placer_ticket.avif"), var(--background-image);
+}
+
+.hero-card_ticket-placer svg {
   cursor: pointer;
 }
 
