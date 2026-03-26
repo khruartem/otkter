@@ -8,7 +8,7 @@ import {
   bondareva,
   kizenkov,
   knysh,
-  larina,
+  obmelyuhina,
   maksimova,
   maltcev,
   maslovskaya,
@@ -599,7 +599,7 @@ export const projects: TProject[] = [
       },
       {
         type: "artists",
-        value: larina.getEmployee(
+        value: obmelyuhina.getEmployee(
           "Фортепиано",
           "Артистка хора театра «Ленком Марка Захарова»",
         ),

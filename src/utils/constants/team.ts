@@ -676,6 +676,19 @@ export const kizenkov: IEmployee = new Employee({
   active: true,
   icon: "https://storage.yandexcloud.net/otkter-bucket/team/icons/kizenkov.webp",
 });
+export const obmelyuhina: IEmployee = new Employee({
+  id: 25,
+  kind: "team",
+  url: "not-found",
+  title: "Анастасия Обмелюхина",
+  image:
+    "https://storage.yandexcloud.net/otkter-bucket/team/main/obmelyuhina.webp",
+  shortText: "Музыкант",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: "https://storage.yandexcloud.net/otkter-bucket/team/icons/obmelyuhina.webp",
+});
 
 // Команды в разделе "Команда"
 export const teams: TEmployee[] = [
@@ -699,4 +712,5 @@ export const teams: TEmployee[] = [
   murzukova.getEmployee(),
   hvostikova.getEmployee(),
   tensik.getEmployee(),
+  obmelyuhina.getEmployee(),
 ];
