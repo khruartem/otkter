@@ -1,11 +1,11 @@
 import { FC, memo, useEffect, useState } from "react";
+import clsx from "clsx";
 
 import { TeamUI } from "../ui/team";
 
 import { TTeamProps } from "./type";
 
 import { useGetMediaQuery } from "../../hooks/useGetMediaQuery";
-import clsx from "clsx";
 
 export const Team: FC<TTeamProps> = memo(
   ({ team, teamRef, teamViewRef, type, minTeamLength }) => {
