@@ -987,7 +987,7 @@ export const projects: TProject[] = [
     title: "«На крыльях пегаса»",
     shortText: "16 мая | 20:00",
     image:
-      "https://storage.yandexcloud.net/otkter-bucket/hero/may/pegas.webp",
+      "https://storage.yandexcloud.net/otkter-bucket/hero/may/original/pegas.png",
     icon: "",
     ticket: false,
     main: false,
