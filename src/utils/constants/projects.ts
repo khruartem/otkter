@@ -1116,7 +1116,7 @@ export const projects: TProject[] = [
     ],
     poster:
       "https://storage.yandexcloud.net/otkter-bucket/projects/posters/pegasus.webp",
-    previewImg: "/preview/preview_all.webp",
+    previewImg: "https://otkter.ru/preview/preview_all.webp",
     controls: [
       {
         label: "Записаться",

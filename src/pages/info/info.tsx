@@ -33,8 +33,8 @@ export const Info: FC<TInfoProps> = ({ currentItem }) => {
     title,
     description: shortText,
     siteName: title,
-    url: `https://otkter.ru/projects/${url}`,
-    previewImg: previewImg || "/preview/preview.webp",
+    url: `https://otkter.ru/projects/${url}/`,
+    previewImg: previewImg || "https://otkter.ru/preview/preview.webp",
   };
 
   const layout: TPageLayout = {
