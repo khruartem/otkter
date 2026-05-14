@@ -689,6 +689,70 @@ export const obmelyuhina: IEmployee = new Employee({
   active: true,
   icon: "https://storage.yandexcloud.net/otkter-bucket/team/icons/obmelyuhina.webp",
 });
+export const goryachev: IEmployee = new Employee({
+  id: 26,
+  kind: "team",
+  url: "not-found",
+  title: "Лев Горячев",
+  image:
+    "https://storage.yandexcloud.net/otkter-bucket/team/main/goryachev.webp",
+  shortText: "Артист театра «Ленком Марка Захарова»",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: "https://storage.yandexcloud.net/otkter-bucket/team/icons/goryachev.webp",
+});
+export const rysin: IEmployee = new Employee({
+  id: 27,
+  kind: "team",
+  url: "not-found",
+  title: "Иван Рысин",
+  image: "https://storage.yandexcloud.net/otkter-bucket/team/main/unknown.webp",
+  shortText: "Артист театра «Ленком Марка Захарова»",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: "https://storage.yandexcloud.net/otkter-bucket/team/icons/unknown.webp",
+});
+export const sorokvasha: IEmployee = new Employee({
+  id: 28,
+  kind: "team",
+  url: "not-found",
+  title: "Анна Сорокваша",
+  image:
+    "https://storage.yandexcloud.net/otkter-bucket/team/main/sorokvasha.webp",
+  shortText: "Иллюстратор",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: "https://storage.yandexcloud.net/otkter-bucket/team/icons/sorokvasha.webp",
+});
+export const sharpaev: IEmployee = new Employee({
+  id: 29,
+  kind: "team",
+  url: "not-found",
+  title: "Илья Шарпаев",
+  image:
+    "https://storage.yandexcloud.net/otkter-bucket/team/main/sharapaev.webp",
+  shortText: "Актер",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: "https://storage.yandexcloud.net/otkter-bucket/team/icons/sharapaev.webp",
+});
+export const sinelnikov: IEmployee = new Employee({
+  id: 30,
+  kind: "team",
+  url: "not-found",
+  title: "Максим Синельников",
+  image:
+    "https://storage.yandexcloud.net/otkter-bucket/team/main/sinelnikov.webp",
+  shortText: "Актер",
+  type: "artists",
+  main: true,
+  active: true,
+  icon: "https://storage.yandexcloud.net/otkter-bucket/team/icons/sinelnikov.webp",
+});
 
 // Команды в разделе "Команда"
 export const teams: TEmployee[] = [

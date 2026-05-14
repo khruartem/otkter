@@ -14,6 +14,7 @@ const pages = {
   twoInWorld: resolve(__dirname, "projects/two-in-world/index.html"),
   esenin: resolve(__dirname, "projects/esenin/index.html"),
   amplitude: resolve(__dirname, "projects/amplitude/index.html"),
+  pegasus: resolve(__dirname, "projects/pegasus/index.html"),
   // Страницы услуг
   OT: resolve(__dirname, "services/open-sea/index.html"),
   events: resolve(__dirname, "services/events/index.html"),
