@@ -16,6 +16,13 @@ import {
   murzukova,
   sokolovskiy,
   strelnikov,
+  goryachev,
+  rysin,
+  larina,
+  aspek,
+  sorokvasha,
+  sharpaev,
+  sinelnikov,
 } from "./team";
 
 // Ссылки по проектам
@@ -25,6 +32,8 @@ export const buyTicketsLinkEsenin =
   "https://www.ticketland.ru/doma-kultury/centr-kultury-i-iskusstva-meridian/spektakl-esenin-zhizn-v-stikhakh/";
 export const buyTicketsLinkAmplitude =
   "https://litgost.timepad.ru/event/3308697/";
+export const buyTicketsLinkPegasus =
+  "https://bilet.mos.ru/event/631755257/";
 
 // Функции по проектам
 import { buyTickets } from "../buyTickets";
@@ -400,7 +409,7 @@ export const projects: TProject[] = [
     type: "short-film",
     main: true,
     active: true,
-    order: 5,
+    order: 6,
     icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/nikolay.webp",
     details: [
       {
@@ -461,7 +470,7 @@ export const projects: TProject[] = [
     type: "play",
     main: true,
     active: true,
-    order: 4,
+    order: 5,
     icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/two.webp",
     details: [
       {
@@ -809,7 +818,7 @@ export const projects: TProject[] = [
     type: "play",
     main: true,
     active: true,
-    order: 3,
+    order: 4,
     icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/amplitude.avif",
     details: [
       {
@@ -981,6 +990,153 @@ export const projects: TProject[] = [
   },
   {
     id: 9,
+    kind: "projects",
+    url: "pegasus",
+    title: "«На крыльях Пегаса»",
+    image:
+      "https://storage.yandexcloud.net/otkter-bucket/projects/main/original/pegasus.png",
+    shortText:
+      "В рамках ежегодной акции «Ночь в музее» наша команда создала литературно-музыкальную композицию и квест, посвящённый жизни Сергея Есенина.",
+    text: "В рамках ежегодной акции «Ночь в музее» наша команда создала литературно-музыкальную композицию и квест, посвящённый жизни Сергея Есенина. Композиция поделена на две дополняющие друг друга части, отражающие внутренний мир поэта: то полный надежд, то смятений. В перерыве участники получат «паспорта путешественников» и отправятся на квест по Москве, чтобы погрузиться в историю поэта и найти загадочного «крылатого спутника».",
+    type: "play",
+    main: true,
+    active: true,
+    order: 3,
+    icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/pegasus.webp",
+    details: [
+      {
+        icon: "organizers",
+        type: "about",
+        label: "Организатор",
+        value: "Творческое объединение «Открытая Территория»",
+      },
+      {
+        icon: "partners",
+        type: "about",
+        label: "Партнеры",
+        value: "Московский государственный музей С. А. Есенина",
+      },
+      {
+        icon: "address",
+        type: "about",
+        label: "Адрес",
+        value: "Большой Строченовский пер., 24, стр. 2",
+      },
+      {
+        icon: "date",
+        type: "about",
+        label: "Дата и время",
+        value: "16 мая, 20:00 и 21:30",
+      },
+      {
+        icon: "price",
+        type: "about",
+        label: "Цена",
+        value: "Бесплатно",
+      },
+      {
+        type: "artists",
+        value: maltcev.getEmployee(
+          "Актёр",
+          "Артист театра «Ленком Марка Захарова»",
+        ),
+      },
+      {
+        type: "artists",
+        value: goryachev.getEmployee(
+          "Актёр",
+          "Артист театра «Ленком Марка Захарова»",
+        ),
+      },
+      {
+        type: "artists",
+        value: rysin.getEmployee(
+          "Актёр, фортепиано",
+          "Артист театра «Ленком Марка Захарова»",
+        ),
+      },
+      {
+        type: "artists",
+        value: rudnitskiy.getEmployee(
+          "Актёр",
+          "Артист театра «ЛАМП»",
+        ),
+      },
+      {
+        type: "artists",
+        value: larina.getEmployee(
+          "Фортепиано",
+          "Артистка хора театра «Ленком Марка Захарова»",
+        ),
+      },
+      {
+        type: "admins",
+        value: yakovlev.getEmployee("Режиссер-постановщик"),
+      },
+      {
+        type: "admins",
+        value: sinelnikova.getEmployee("Автор проекта, продюсер"),
+      },
+      {
+        type: "admins",
+        value: aspek.getEmployee("Дизайнер"),
+      },
+      {
+        type: "admins",
+        value: sorokvasha.getEmployee("Иллюстратор"),
+      },
+      {
+        type: "admins",
+        value: LA.getEmployee("Координатор квестовой части"),
+      },
+      {
+        type: "admins",
+        value: torzhkova.getEmployee("Координатор квестовой части"),
+      },
+      {
+        type: "admins",
+        value: sharpaev.getEmployee("Координатор квестовой части"),
+      },
+      {
+        type: "admins",
+        value: sinelnikov.getEmployee("Координатор квестовой части"),
+      },
+      {
+        type: "media",
+        url: "https://rg.ru/2026/05/13/reg-cfo/ne-spitsia-poshli-na-vystavku.html",
+        value: {
+          id: 10,
+          title:
+            "«“Ночь в музее” пройдет с 16 на 17 мая: повод прикоснуться к прекрасному»",
+          shortText: "Российская газета",
+          image: "https://storage.yandexcloud.net/otkter-bucket/media/rg.webp",
+          active: true,
+        },
+      },
+    ],
+    poster:
+      "https://storage.yandexcloud.net/otkter-bucket/projects/posters/pegasus.webp",
+    previewImg: "/preview/preview_all.webp",
+    controls: [
+      {
+        label: "Записаться",
+        type: "button",
+        onClick: () => buyTickets(buyTicketsLinkPegasus),
+        url: "#",
+      },
+    ],
+    categories: {
+      attention: false,
+      categoryList: [
+        {
+          text: "Спектакль",
+          icon: "play",
+        },
+      ],
+    },
+  },
+  {
+    id: 10,
     url: "not-found",
     type: "hero",
     kind: "projects",

@@ -10,7 +10,8 @@ export type TProjectsUrl =
   | "nikolay"
   | "two-in-world"
   | "esenin"
-  | "amplitude";
+  | "amplitude"
+  | "pegasus";
 
 export type TProjectType =
   | "all"
