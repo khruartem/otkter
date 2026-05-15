@@ -1145,7 +1145,7 @@ export const projects: TProject[] = [
     image:
       "https://storage.yandexcloud.net/otkter-bucket/hero/may/original/pegas.png",
     icon: "",
-    ticket: false,
+    ticket: buyTicketsLinkPegasus,
     main: false,
     active: true,
   },

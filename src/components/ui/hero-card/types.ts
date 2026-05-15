@@ -2,6 +2,6 @@ import { TProject } from "../../../utils/types/projects";
 
 export type THeroCardUIProps = {
   project: TProject;
-  ticket?: boolean;
+  ticket?: string;
   onTicketClick?: () => void;
 };

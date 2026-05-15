@@ -1,9 +1,11 @@
 import { FC, useEffect } from "react";
-import { buyTickets } from "../../utils/buyTickets";
-import { buyTicketsLinkEsenin } from "../../utils/constants/projects";
-import { HeroCardUI } from "../ui/hero-card";
-import { THeroCardProps } from "./types";
 import { useInView } from "react-intersection-observer";
+
+import { HeroCardUI } from "../ui/hero-card";
+
+import { THeroCardProps } from "./types";
+
+import { buyTickets } from "../../utils/buyTickets";
 
 export const HeroCard: FC<THeroCardProps> = ({
   project,
@@ -12,7 +14,7 @@ export const HeroCard: FC<THeroCardProps> = ({
   currentPaginatorIndex,
   onSwitch,
 }) => {
-  const onTicketClick = () => buyTickets(buyTicketsLinkEsenin);
+  const onTicketClick = ticket ? () => buyTickets(ticket) : undefined;
 
   const [cardViewRef, inView] = useInView({
     threshold: 1,
