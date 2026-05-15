@@ -48,7 +48,7 @@ export const projects: TProject[] = [
     title: "«Показ уникальной хроники. 1945»",
     image:
       "https://storage.yandexcloud.net/otkter-bucket/projects/main/chronicle.webp",
-    previewImg: "/preview/preview_chronics.webp",
+    previewImg: "preview_chronics.webp",
     poster:
       "https://storage.yandexcloud.net/otkter-bucket/projects/posters/chronicle.png",
     shortText:
@@ -218,7 +218,7 @@ export const projects: TProject[] = [
     active: false,
     order: 7,
     icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/friendship.webp",
-    previewImg: "/preview/preview_friendship.webp",
+    previewImg: "preview_friendship.webp",
     details: [
       {
         icon: "organizers",
@@ -289,7 +289,7 @@ export const projects: TProject[] = [
     active: false,
     order: 8,
     icon: "https://storage.yandexcloud.net/otkter-bucket/projects/icons/play.webp",
-    previewImg: "/preview/preview_play.webp",
+    previewImg: "preview_play.webp",
     details: [
       {
         icon: "organizers",
@@ -385,7 +385,7 @@ export const projects: TProject[] = [
         value: "Каждую третью субботу месяца",
       },
     ],
-    previewImg: "/preview/preview_mastership.webp",
+    previewImg: "preview_mastership.webp",
     categories: {
       attention: false,
       categoryList: [
@@ -443,7 +443,7 @@ export const projects: TProject[] = [
         value: sinelnikova.getEmployee("Генеральный продюсер"),
       },
     ],
-    previewImg: "/preview/preview_nikolai.webp",
+    previewImg: "preview_nikolai.webp",
     categories: {
       attention: true,
       categoryList: [
@@ -531,7 +531,7 @@ export const projects: TProject[] = [
         value: sinelnikova.getEmployee("Продюсер"),
       },
     ],
-    previewImg: "/preview/preview_two.webp",
+    previewImg: "preview_two.webp",
     categories: {
       attention: false,
       categoryList: [
@@ -667,7 +667,7 @@ export const projects: TProject[] = [
     ],
     poster:
       "https://storage.yandexcloud.net/otkter-bucket/projects/posters/esenin.png",
-    previewImg: "/preview/preview_esenin.webp",
+    previewImg: "preview_esenin.webp",
     controls: [
       {
         label: "Купить билет",
@@ -907,7 +907,7 @@ export const projects: TProject[] = [
     ],
     poster:
       "https://storage.yandexcloud.net/otkter-bucket/projects/posters/amplitude.png",
-    previewImg: "/preview/preview_amplitude.webp",
+    previewImg: "preview_amplitude.webp",
     controls: [
       {
         label: "Записаться",
@@ -1116,7 +1116,7 @@ export const projects: TProject[] = [
     ],
     poster:
       "https://storage.yandexcloud.net/otkter-bucket/projects/posters/pegasus.webp",
-    previewImg: "pegasus.jpg",
+    previewImg: "preview_pegasus.jpg",
     controls: [
       {
         label: "Записаться",
