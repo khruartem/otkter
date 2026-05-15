@@ -26,7 +26,7 @@ export const Info: FC<TInfoProps> = ({ currentItem }) => {
     | TMerch[];
 
   const currentIndex = items.findIndex(
-    (element) => element.id === currentItem.id
+    (element) => element.id === currentItem.id,
   );
 
   const seo: TPageSEO = {
@@ -34,7 +34,9 @@ export const Info: FC<TInfoProps> = ({ currentItem }) => {
     description: shortText,
     siteName: title,
     url: `https://otkter.ru/projects/${url}/`,
-    previewImg: previewImg || "https://otkter.ru/preview/preview.webp",
+    previewImg: previewImg
+      ? `https://otkter.ru/preview/${previewImg}`
+      : "https://otkter.ru/preview/preview.webp",
   };
 
   const layout: TPageLayout = {
