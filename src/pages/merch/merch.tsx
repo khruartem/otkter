@@ -48,7 +48,7 @@ export const Merch: FC = () => {
     description: "Магазин мерча Открытой территории",
     siteName: "Мерч",
     url: "https://otkter.ru/merch",
-    previewImg: "/preview/preview_merch.webp",
+    previewImg: "https://otkter.ru/preview/preview_merch.webp",
   };
 
   const layout: TPageLayout = {

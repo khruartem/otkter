@@ -117,7 +117,7 @@ export const services: TService[] = [
       "https://storage.yandexcloud.net/otkter-bucket/services/main/events.webp",
     poster:
       "https://storage.yandexcloud.net/otkter-bucket/services/posters/events.webp",
-    previewImg: "/preview/preview_events.webp",
+    previewImg: "preview_events.webp",
     type: "events",
     main: false,
     active: true,
@@ -143,7 +143,7 @@ export const services: TService[] = [
       "https://storage.yandexcloud.net/otkter-bucket/services/main/design.webp",
     poster:
       "https://storage.yandexcloud.net/otkter-bucket/services/posters/design.webp",
-    previewImg: "/preview/preview_design.webp",
+    previewImg: "preview_design.webp",
     type: "design",
     main: false,
     active: true,
@@ -169,7 +169,7 @@ export const services: TService[] = [
       "https://storage.yandexcloud.net/otkter-bucket/services/main/content.webp",
     poster:
       "https://storage.yandexcloud.net/otkter-bucket/services/posters/content.webp",
-    previewImg: "/preview/preview_content.webp",
+    previewImg: "preview_content.webp",
     type: "content",
     main: false,
     active: true,
@@ -195,7 +195,7 @@ export const services: TService[] = [
       "https://storage.yandexcloud.net/otkter-bucket/services/main/master_class.webp",
     poster:
       "https://storage.yandexcloud.net/otkter-bucket/services/posters/master_class.webp",
-    previewImg: "/preview/preview_mc.webp",
+    previewImg: "preview_mc.webp",
     type: "master-class",
     main: false,
     active: true,
@@ -221,7 +221,7 @@ export const services: TService[] = [
       "https://storage.yandexcloud.net/otkter-bucket/services/main/lamp.webp",
     poster:
       "https://storage.yandexcloud.net/otkter-bucket/services/posters/lamp.webp",
-    previewImg: "/preview/preview_lamp.webp",
+    previewImg: "preview_lamp.webp",
     type: "lamp",
     main: true,
     active: true,
@@ -344,7 +344,7 @@ export const services: TService[] = [
       "https://storage.yandexcloud.net/otkter-bucket/services/main/smm.webp",
     poster:
       "https://storage.yandexcloud.net/otkter-bucket/services/posters/smm.webp",
-    previewImg: "/preview/preview_smm.webp",
+    previewImg: "preview_smm.webp",
     type: "smm",
     main: false,
     active: true,

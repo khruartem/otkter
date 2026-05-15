@@ -16,7 +16,7 @@ export const Main: FC = () => {
     ogDescription: "Объединяем творцов из разных сфер",
     siteName: "Открытая территория",
     url: "https://otkter.ru/",
-    previewImg: "/preview/preview.webp",
+    previewImg: "https://otkter.ru/preview/preview.webp",
   };
 
   const layout: TPageLayout = {

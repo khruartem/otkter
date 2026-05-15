@@ -17,6 +17,7 @@ export const yakovlev: IEmployee = new Employee({
   type: "admins",
   main: true,
   active: true,
+  previewImg: "preview_yakovlev.webp",
   icon: "https://storage.yandexcloud.net/otkter-bucket/team/icons/yakovlev.avif",
   poster:
     "https://storage.yandexcloud.net/otkter-bucket/team/posters/yafovlev.avif",
@@ -153,6 +154,7 @@ export const LA: IEmployee = new Employee({
   type: "admins",
   main: true,
   active: true,
+  previewImg: "preview_LA.webp",
   icon: "https://storage.yandexcloud.net/otkter-bucket/team/icons/LA.avif",
   poster: "https://storage.yandexcloud.net/otkter-bucket/team/posters/LA.avif",
   socials: [
@@ -241,6 +243,7 @@ export const sinelnikova: IEmployee = new Employee({
   type: "admins",
   main: true,
   active: true,
+  previewImg: "preview_sinelnikova.webp",
   icon: "https://storage.yandexcloud.net/otkter-bucket/team/icons/sinelnikova.webp",
   poster:
     "https://storage.yandexcloud.net/otkter-bucket/team/posters/sinelnikova.avif",
@@ -343,6 +346,7 @@ export const aspek: IEmployee = new Employee({
   type: "admins",
   main: true,
   active: true,
+  previewImg: "preview_aspek.webp",
   icon: "https://storage.yandexcloud.net/otkter-bucket/team/icons/aspek.webp",
   poster:
     "https://storage.yandexcloud.net/otkter-bucket/team/posters/aspek.avif",
@@ -388,6 +392,7 @@ export const hrustalev: IEmployee = new Employee({
   type: "admins",
   main: true,
   active: true,
+  previewImg: "preview_hrustalev.webp",
   icon: "https://storage.yandexcloud.net/otkter-bucket/team/icons/hrustalev.webp",
   poster:
     "https://storage.yandexcloud.net/otkter-bucket/team/posters/hrustalev.avif",

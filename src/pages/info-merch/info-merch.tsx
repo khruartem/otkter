@@ -15,7 +15,9 @@ export const InfoMerch: FC<TInfoMerchProps> = ({ currentItem }) => {
     description: shortText,
     siteName: title,
     url: `https://otkter.ru/merch/${type}/${url}`,
-    previewImg: previewImg || "/preview/preview_merch.webp",
+    previewImg: previewImg
+      ? `https://otkter.ru/preview/${previewImg}`
+      : "https://otkter.ru/preview/preview_merch.webp",
   };
 
   const layout: TPageLayout = {
