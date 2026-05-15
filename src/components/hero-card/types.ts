@@ -2,7 +2,7 @@ import { TProject } from "../../utils/types/projects";
 
 export type THeroCardProps = {
   project: TProject;
-  ticket?: boolean;
+  ticket?: string;
   index: number;
   currentPaginatorIndex: number;
   onSwitch: (

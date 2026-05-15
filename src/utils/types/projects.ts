@@ -34,6 +34,6 @@ export type TProject = TItemOT & {
   url: TProjectsUrl | TUrlNotFound;
   type: TProjectType;
   order?: number;
-  ticket?: boolean;
+  ticket?: string;
   showHistory?: TShowHistoryItem[];
 };
