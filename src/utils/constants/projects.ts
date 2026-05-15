@@ -32,8 +32,7 @@ export const buyTicketsLinkEsenin =
   "https://www.ticketland.ru/doma-kultury/centr-kultury-i-iskusstva-meridian/spektakl-esenin-zhizn-v-stikhakh/";
 export const buyTicketsLinkAmplitude =
   "https://litgost.timepad.ru/event/3308697/";
-export const buyTicketsLinkPegasus =
-  "https://bilet.mos.ru/event/631755257/";
+export const buyTicketsLinkPegasus = "https://bilet.mos.ru/event/631755257/";
 
 // Функции по проектам
 import { buyTickets } from "../buyTickets";
@@ -1057,10 +1056,7 @@ export const projects: TProject[] = [
       },
       {
         type: "artists",
-        value: rudnitskiy.getEmployee(
-          "Актёр",
-          "Артист театра «ЛАМП»",
-        ),
+        value: rudnitskiy.getEmployee("Актёр", "Артист театра «ЛАМП»"),
       },
       {
         type: "artists",
@@ -1116,7 +1112,7 @@ export const projects: TProject[] = [
     ],
     poster:
       "https://storage.yandexcloud.net/otkter-bucket/projects/posters/pegasus.webp",
-    previewImg: "preview_pegasus.jpg",
+    previewImg: "preview_pegasus.webp",
     controls: [
       {
         label: "Записаться",
@@ -1134,6 +1130,20 @@ export const projects: TProject[] = [
         },
       ],
     },
+    // showHistory: [
+    //   {
+    //     where: "Дом-музей Есенина",
+    //     premiere: false,
+    //     current: true,
+    //     date: "16 мая, 21:00",
+    //   },
+    //   {
+    //     where: "Дом-музей Есенина",
+    //     premiere: true,
+    //     current: true,
+    //     date: "16 мая, 20:00",
+    //   },
+    // ],
   },
   {
     id: 10,
