@@ -1,13 +1,18 @@
 .show-history-preview {
   position: relative;
+  flex-direction: row;
+  justify-content: flex-start;
   display: flex;
-  flex-direction: row-reverse;
   gap: 24px;
+}
+
+.show-history-preview_blured {
   overflow-x: hidden;
+  justify-content: flex-end;
   cursor: pointer;
 }
 
-.show-history-preview::after {
+.show-history-preview_blured::after {
   content: "";
   position: absolute;
   left: -5px;
@@ -21,10 +26,9 @@
   display: flex;
   flex-direction: row;
   gap: 24px;
-  width: calc(237px + 24px + 1px);
 }
 
-.show-history-preview-item::before {
+.show-history-preview-item:not(:first-child):before {
   content: "";
   display: block;
   width: 1px;
@@ -32,8 +36,17 @@
   background-color: var(--light30);
 }
 
-.show-history-preview-item span:first-child {
+.show-history-preview-item_widthed {
+  width: calc(237px + 24px + 1px);
+}
+
+.show-history-preview-item_widthed span:first-child {
   max-width: calc(100% - 24px);
+}
+
+.show-history-preview-item_premiere span:first-child::after {
+  content: " • Премьера";
+  color: var(--orange100);
 }
 
 /* Стили для разных разрешений экранов */

@@ -1130,20 +1130,20 @@ export const projects: TProject[] = [
         },
       ],
     },
-    // showHistory: [
-    //   {
-    //     where: "Дом-музей Есенина",
-    //     premiere: false,
-    //     current: true,
-    //     date: "16 мая, 21:00",
-    //   },
-    //   {
-    //     where: "Дом-музей Есенина",
-    //     premiere: true,
-    //     current: true,
-    //     date: "16 мая, 20:00",
-    //   },
-    // ],
+    showHistory: [
+      {
+        where: "Дом-музей Есенина",
+        premiere: true,
+        current: true,
+        date: "16 мая, 20:00",
+      },
+      {
+        where: "Дом-музей Есенина",
+        premiere: false,
+        current: true,
+        date: "16 мая, 21:00",
+      },
+    ],
   },
   {
     id: 10,
