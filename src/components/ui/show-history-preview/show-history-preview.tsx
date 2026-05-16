@@ -21,20 +21,34 @@ export const ShowHistoryPreviewUI: FC<TShowHistoryPreviewUIProps> = ({
   const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
     useGetMediaQuery();
 
+  const moreThanTwoItems = history.length > 2;
+
   return (
     <>
       {isMobile ? (
         <ShowHistoryItemUI item={current} onClick={onOpenModal} current />
       ) : (
-        <ul className={styles["show-history-preview"]} onClick={onOpenModal}>
+        <ul
+          className={clsx(
+            styles["show-history-preview"],
+            (moreThanTwoItems || isTablet) && styles["show-history-preview_blured"],
+          )}
+          onClick={moreThanTwoItems ? onOpenModal : undefined}
+        >
           {history.map((item) => (
-            <li className={styles["show-history-preview-item"]}>
+            <li
+              className={clsx(
+                styles["show-history-preview-item"],
+                item.premiere && styles["show-history-preview-item_premiere"],
+                moreThanTwoItems && styles["show-history-preview-item_widthed"],
+              )}
+            >
               <ShowHistoryItemUI item={item} current={item.current} />
             </li>
           ))}
         </ul>
       )}
-      {showModal && (
+      {showModal && moreThanTwoItems && (
         <Modal
           type={"close"}
           onClose={onCloseModal}
@@ -43,7 +57,7 @@ export const ShowHistoryPreviewUI: FC<TShowHistoryPreviewUIProps> = ({
             isDesktop && styles["modal_show-history_desktop"],
             isLaptop && styles["modal_show-history_laptop"],
             isTablet && styles["modal_show-history_tablet"],
-            isMobile && styles["modal_show-history_mobile"]
+            isMobile && styles["modal_show-history_mobile"],
           )}
         >
           <ShowHistory history={history} />
