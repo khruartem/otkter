@@ -1144,6 +1144,50 @@ export const projects: TProject[] = [
         date: "16 мая, 21:00",
       },
     ],
+    photos: [
+      {
+        id: 24,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/pegasus_1.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/icons/pegasus_1.webp",
+      },
+      {
+        id: 25,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/pegasus_2.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/icons/pegasus_2.webp",
+      },
+      {
+        id: 26,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/pegasus_3.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/icons/pegasus_3.webp",
+      },
+      {
+        id: 27,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/pegasus_4.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/icons/pegasus_4.webp",
+      },
+      {
+        id: 28,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/pegasus_5.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/icons/pegasus_5.webp",
+      },
+      {
+        id: 29,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/pegasus_6.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/icons/pegasus_6.webp",
+      },
+      {
+        id: 30,
+        source:
+          "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/pegasus_7.webp",
+        icon: "https://storage.yandexcloud.net/otkter-bucket/projects/photos/pegasus/icons/pegasus_7.webp",
+      },
+    ],
   },
   {
     id: 10,
