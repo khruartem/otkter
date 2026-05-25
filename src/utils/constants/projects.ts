@@ -1203,4 +1203,16 @@ export const projects: TProject[] = [
     main: false,
     active: true,
   },
+  {
+    id: 11,
+    url: "not-found",
+    type: "hero",
+    kind: "projects",
+    title: "«Вы меня слышите?»",
+    shortText: "6 июня | 16:00",
+    image: "https://storage.yandexcloud.net/otkter-bucket/hero/june/hear.webp",
+    icon: "",
+    main: false,
+    active: true,
+  },
 ];
