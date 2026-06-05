@@ -1,50 +1,105 @@
-# React + TypeScript + Vite
+# Открытая территория
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Сайт-хаб для творческого объединения "Открытая Территория"** — центральная площадка для представления объединения, проектов и услуг
 
-Currently, two official plugins are available:
+[![JavaScript](https://img.shields.io/badge/JavaScript-65.1%-F7DF1E?style=flat-square&logo=javascript)](package.json)
+[![TypeScript](https://img.shields.io/badge/TypeScript-24.7%-3178C6?style=flat-square&logo=typescript)](package.json)
+[![HTML](https://img.shields.io/badge/HTML-6%-E34C26?style=flat-square&logo=html5)](package.json)
+[![CSS](https://img.shields.io/badge/CSS-3.6%-563D7C?style=flat-square&logo=css3)](package.json)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[🌐 Посетить сайт](#развёртывание) • [📦 Исходный код](#структура-проекта) • [🚀 Начало-работы](#быстрый-старт)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## О проекте
 
-- Configure the top-level `parserOptions` property like this:
+"Открытая Территория" — это творческое объединение, объединяющее талантливых людей в различных сферах искусства и творчества. Данный сайт служит центральной информационной площадкой объединения, где можно узнать об истории и ценностях проекта, ознакомиться с текущими инициативами, услугами и возможностями сотрудничества.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Сайт содержит:
+- **Информацию об объединении** — история, миссия и ценности "Открытой Территории"
+- **Портфолио проектов** — полный каталог реализованных и текущих творческих проектов
+- **Услуги объединения** — описание предоставляемых услуг и возможностей сотрудничества
+- **Контактную информацию** — способы связи и взаимодействия с командой
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### ✨ Ключевые особенности
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- 🎨 **Современный UI/UX дизайн** — отзывчивый интерфейс с плавными анимациями
+- ⚡ **Высокая производительность** — оптимизация для быстрой загрузки
+- 📱 **Полностью адаптивный** — отлично работает на всех устройствах
+- 📝 **MDX поддержка** — возможность использования React компонентов в markdown
+- 🎯 **Современный стек** — JavaScript и TypeScript для надежной разработки
+- ♿ **Доступность** — заботимся о юзабилити для всех пользователей
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+---
+
+## Стек технологий
+
+| Слой | Технология |
+|------|-----------|
+| **Язык** | JavaScript + TypeScript |
+| **Разметка** | HTML + MDX |
+| **Стили** | CSS |
+
+### Композиция кода
+
+- JavaScript: 65.1%
+- TypeScript: 24.7%
+- HTML: 6%
+- CSS: 3.6%
+- MDX: 0.6%
+
+---
+
+## 🚀 Быстрый старт
+
+### Требования
+
+- Node.js 18+
+- npm или yarn
+
+### Установка
+
+1. Клонируйте репозиторий: `git clone https://github.com/khruartem/otkter.git && cd otkter`
+2. Установите зависимости: `npm install`
+3. Запустите локальный сервер: `npm run dev`
+
+### Команды разработки
+
+- `npm run dev` — разработка с горячей перезагрузкой
+- `npm run build` — сборка для продакшена
+- `npm run preview` — предпросмотр собранного приложения
+- `npm run lint` — проверка кода на ошибки
+
+---
+
+## 📁 Структура проекта
+
+otkter/ ├── src/ — исходный код приложения │   ├── components/ — переиспользуемые компоненты │   ├── pages/ — страницы приложения │   ├── styles/ — глобальные стили │   └── main.js — точка входа ├── public/ — статические ресурсы ├── package.json — зависимости и скрипты ├── vite.config.js — конфигурация сборки └── README.md — этот файл
+
+---
+
+## 🌐 Развёртывание
+
+Проект готов к развёртыванию на различных хостинг-платформах. Используйте стандартные команды сборки для подготовки приложения к продакшену.
+
+---
+
+## 📝 Лицензия
+
+Этот проект создан для творческого объединения "Открытая Территория".
+
+---
+
+## 👨‍💻 Разработчик
+
+Проект разработан и поддерживается [@khruartem](https://github.com/khruartem)
+
+---
+
+## 📞 Связь
+
+Для вопросов и предложений обратитесь к организатору проекта через GitHub Issues.
+
+---
+
+**Создано с ❤️ для Открытой Территории**
