@@ -2,7 +2,7 @@ import { CSSProperties, forwardRef } from "react";
 import clsx from "clsx";
 
 import { Text } from "../../text";
-import { Ticket } from "../../icons";
+import { Ticket, TrickCircle } from "../../icons";
 
 import { THeroCardUIProps } from "./types";
 import { Colors } from "../../../utils/types";
@@ -12,8 +12,9 @@ import { useGetMediaQuery } from "../../../hooks/useGetMediaQuery";
 import styles from "./hero-card.module.css";
 
 export const HeroCardUI = forwardRef<HTMLLIElement, THeroCardUIProps>(
-  ({ project, ticket, onTicketClick }, ref) => {
-    const { isLarge, isDesktop, isLaptop, isTablet, isMobile } = useGetMediaQuery();
+  ({ project, ticket, finished, onTicketClick }, ref) => {
+    const { isLarge, isDesktop, isLaptop, isTablet, isMobile } =
+      useGetMediaQuery();
 
     const { title, shortText, image } = project;
 
@@ -22,10 +23,16 @@ export const HeroCardUI = forwardRef<HTMLLIElement, THeroCardUIProps>(
         className={clsx(
           styles["hero-card"],
           project.title.length > 17
-            ? styles["hero-card_ticket-placer"]
-            : styles["hero-card_regular-placer"],
+            ? finished
+              ? styles["hero-card_ticket-placer_finished"]
+              : styles["hero-card_ticket-placer"]
+            : finished
+              ? styles["hero-card_regular-placer_finished"]
+              : styles["hero-card_regular-placer"],
           (isLarge || isLaptop) && styles["hero-card_large-height"],
-          (isDesktop || isTablet || isMobile) && styles["hero-card_small-height"],
+          (isDesktop || isTablet || isMobile) &&
+            styles["hero-card_small-height"],
+          finished && styles["hero-card_finished"],
         )}
         style={
           {
@@ -35,35 +42,41 @@ export const HeroCardUI = forwardRef<HTMLLIElement, THeroCardUIProps>(
         ref={ref}
       >
         <div>
-        {ticket && (
-          <Ticket mainColor={Colors.Orange100} onClick={onTicketClick} />
-        )}
-        <Text
-          as={"p"}
-          fontFamily="Roboto"
-          textAlign="left"
-          fontSize={14}
-          fontWeight={400}
-          lineHeight={24}
-          textTransform={"none"}
-          color={Colors.Dark100}
-        >
-          {shortText}
-        </Text>
-        <Text
-          as={"h3"}
-          fontFamily="Unbounded"
-          textAlign="left"
-          fontSize={16}
-          fontWeight={600}
-          lineHeight={24}
-          textTransform={"none"}
-          color={Colors.Navy}
-        >
-          {title}
-        </Text>
+          {ticket && !finished && (
+            <Ticket mainColor={Colors.Orange100} onClick={onTicketClick} />
+          )}
+          {finished && (
+            <TrickCircle
+              mainColor={Colors.Nephritis100}
+              extraColor={Colors.Light100}
+            />
+          )}
+          <Text
+            as={"p"}
+            fontFamily="Roboto"
+            textAlign="left"
+            fontSize={14}
+            fontWeight={400}
+            lineHeight={24}
+            textTransform={"none"}
+            color={Colors.Dark100}
+          >
+            {finished ? "Завершено" : shortText}
+          </Text>
+          <Text
+            as={"h3"}
+            fontFamily="Unbounded"
+            textAlign="left"
+            fontSize={16}
+            fontWeight={600}
+            lineHeight={24}
+            textTransform={"none"}
+            color={Colors.Navy}
+          >
+            {title}
+          </Text>
         </div>
       </li>
     );
-  }
+  },
 );

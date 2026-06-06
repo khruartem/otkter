@@ -1,4 +1,6 @@
 .hero-card {
+  --overlay: linear-gradient(rgba(46, 204, 113, 0.5), rgba(46, 204, 113, 0.5));
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -7,8 +9,8 @@
   border-radius: 40px;
   padding: 20px;
   background-repeat: no-repeat;
-  background-position: bottom, center;
-  background-size: contain, cover;
+  background-position: bottom, center, center;
+  background-size: contain, cover, cover;
 }
 
 .hero-card_regular-placer {
@@ -17,6 +19,14 @@
 
 .hero-card_ticket-placer {
   background-image: url("https://storage.yandexcloud.net/otkter-bucket/hero/decorations/placers/placer_ticket.avif"), var(--background-image);
+}
+
+.hero-card_regular-placer_finished {
+  background-image: url("https://storage.yandexcloud.net/otkter-bucket/hero/decorations/placers/placer.avif"), var(--overlay), var(--background-image);
+}
+
+.hero-card_ticket-placer_finished {
+  background-image: url("https://storage.yandexcloud.net/otkter-bucket/hero/decorations/placers/placer_ticket.avif"), var(--overlay), var(--background-image);
 }
 
 .hero-card_ticket-placer svg {
@@ -29,4 +39,13 @@
 
 .hero-card_small-height {
   height: 200px;
+}
+
+.hero-card_finished>div>* {
+  color: var(--dark80);
+}
+
+.hero-card svg {
+  width: 16px;
+  height: 16px;
 }
