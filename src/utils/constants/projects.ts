@@ -1196,6 +1196,7 @@ export const projects: TProject[] = [
     kind: "projects",
     title: "«На крыльях пегаса»",
     shortText: "16 мая | 20:00",
+    startTs: "2026-05-16 20:00",
     image:
       "https://storage.yandexcloud.net/otkter-bucket/hero/may/original/pegas.png",
     icon: "",
@@ -1210,6 +1211,7 @@ export const projects: TProject[] = [
     kind: "projects",
     title: "«Вы меня слышите?»",
     shortText: "6 июня | 16:00",
+    startTs: "2026-06-06 16:00",
     image: "https://storage.yandexcloud.net/otkter-bucket/hero/june/hear.webp",
     icon: "",
     main: false,

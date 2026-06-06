@@ -35,5 +35,6 @@ export type TProject = TItemOT & {
   type: TProjectType;
   order?: number;
   ticket?: string;
+  startTs?: string;
   showHistory?: TShowHistoryItem[];
 };
