@@ -7,6 +7,7 @@ import { TSocialProps } from "./types";
 import { Colors } from "../../../utils/types";
 
 import styles from "./social.module.css";
+import clsx from "clsx";
 
 export const SocialUI: FC<TSocialProps> = ({
   socials,
@@ -14,9 +15,10 @@ export const SocialUI: FC<TSocialProps> = ({
   hoverColor = Colors.Nephritis120,
   activeColor = Colors.Navy,
   onFollowLink,
+  className,
 }) => {
   return (
-    <div className={styles.socialbar}>
+    <div className={clsx(styles.socialbar, className && className)}>
       {socials.map(({ id, url, type }) => {
         switch (type) {
           case "telegram":
