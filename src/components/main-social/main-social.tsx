@@ -11,6 +11,7 @@ export const MainSocial: FC<TMainSocialProps> = ({
   color = Colors.Nephritis100,
   hoverColor = Colors.Nephritis120,
   activeColor = Colors.Navy,
+  className,
 }) => {
   const socials = useGetMainSocials();
 
@@ -25,6 +26,7 @@ export const MainSocial: FC<TMainSocialProps> = ({
       hoverColor={hoverColor}
       activeColor={activeColor}
       onFollowLink={handleFollowLink}
+      className={className}
     />
   );
 };

@@ -31,7 +31,7 @@ const LargeResolution: FC<TFooterUIProps> = ({ year }) => {
         styles.footer,
         isLarge && styles["footer_large-screen"],
         isDesktop && styles.footer_desktop,
-        isLaptop && styles.footer_laptop
+        isLaptop && styles.footer_laptop,
       )}
     >
       <div className={clsx(styles.footer__upper, styles.footer__upper_rowed)}>
@@ -45,15 +45,10 @@ const LargeResolution: FC<TFooterUIProps> = ({ year }) => {
           className={clsx(
             styles["footer__contact-info"],
             styles["footer__contact-info_rowed"],
-            styles["footer__contact-info_small-gap"]
+            styles["footer__contact-info_small-gap"],
           )}
         >
-          <div
-            className={clsx(
-              styles.footer__contacts,
-              isLarge && styles["footer__contacts_large-screen"]
-            )}
-          >
+          <div className={styles.footer__contacts}>
             <Text
               fontFamily="Roboto"
               textAlign="right"
@@ -63,13 +58,16 @@ const LargeResolution: FC<TFooterUIProps> = ({ year }) => {
               textTransform="none"
               color={Colors.Light100}
             >
-              {"Позвоните нам"}
+              {"Свяжитесь с нами"}
             </Text>
             <a href={"tel:+79167569505"} className={styles.footer__link}>
               {"8 (916) 756-95-05"}
             </a>
+            <a href={"mailto:hello@otkter.ru"} className={styles.footer__link}>
+              {"hello@otkter.ru"}
+            </a>
           </div>
-          <MainSocial />
+          <MainSocial className={styles.socialbar_footer} />
         </div>
       </div>
       <div className={styles.footer__lower}>
@@ -97,7 +95,7 @@ const SmallResolution: FC<TFooterUIProps> = ({ year }) => {
       className={clsx(
         styles.footer,
         isTablet && styles.footer_tablet,
-        isMobile && styles.footer_mobile
+        isMobile && styles.footer_mobile,
       )}
     >
       <div
@@ -114,10 +112,15 @@ const SmallResolution: FC<TFooterUIProps> = ({ year }) => {
             styles["footer__contact-info"],
             isTablet && styles["footer__contact-info_rowed"],
             isTablet && styles["footer__contact-info_large-gap"],
-            isMobile && styles["footer__contact-info_columned"]
+            isMobile && styles["footer__contact-info_columned"],
           )}
         >
-          <div className={clsx(styles.footer__contacts)}>
+          <div
+            className={clsx(
+              styles.footer__contacts,
+              styles["footer__contacts_small-resolution"],
+            )}
+          >
             <Text
               fontFamily="Roboto"
               textAlign={"left"}
@@ -127,13 +130,16 @@ const SmallResolution: FC<TFooterUIProps> = ({ year }) => {
               textTransform="none"
               color={Colors.Light100}
             >
-              {"Позвоните нам"}
+              {"Свяжитесь с нами"}
             </Text>
             <a href={"tel:+79167569505"} className={styles.footer__link}>
               {"8 (916) 756-95-05"}
             </a>
+            <a href={"mailto:hello@otkter.ru"} className={styles.footer__link}>
+              {"hello@otkter.ru"}
+            </a>
           </div>
-          <MainSocial />
+          <MainSocial className={styles.socialbar_footer} />
         </div>
       </div>
       <div className={styles.footer__lower}>
