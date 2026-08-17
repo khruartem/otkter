@@ -40,7 +40,7 @@ jobs:
       - name: Install dependencies and build
         run: |
           npm install
-          npm run build:production
+          npm run build
       # Here is the deployment action
       - name: Upload from dist via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
