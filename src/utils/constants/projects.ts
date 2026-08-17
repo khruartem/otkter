@@ -29,7 +29,7 @@ import {
 const buyTicketsLinkChronics =
   "https://tickets.mos.ru/widget/visit?eventId=61367&agentId=museum56&date=2025-05-04";
 export const buyTicketsLinkEsenin =
-  "https://www.ticketland.ru/doma-kultury/centr-kultury-i-iskusstva-meridian/spektakl-esenin-zhizn-v-stikhakh/";
+  "https://biletof.com/action/?ra=20043&frame=1&action=11787&place=47";
 export const buyTicketsLinkAmplitude =
   "https://litgost.timepad.ru/event/3308697/";
 export const buyTicketsLinkPegasus = "https://bilet.mos.ru/event/631755257/";
@@ -580,13 +580,13 @@ export const projects: TProject[] = [
         icon: "address",
         type: "about",
         label: "Адрес",
-        value: "г. Москва, Профсоюзная улица, дом 61",
+        value: "РДК Ногинск, ул. Текстилей, 31",
       },
       {
         icon: "date",
         type: "about",
         label: "Дата",
-        value: "10 апреля, 16:00",
+        value: "06 октября, 19:00",
       },
       {
         icon: "price",
@@ -799,8 +799,14 @@ export const projects: TProject[] = [
       {
         date: "10 апреля, 16:00",
         premiere: false,
-        current: true,
+        current: false,
         where: "Москва, КЦ Меридиан",
+      },
+      {
+        date: "06 октября, 19:00",
+        premiere: false,
+        current: true,
+        where: "РДК Ногинск",
       },
     ],
   },
