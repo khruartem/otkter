@@ -674,6 +674,12 @@ export const projects: TProject[] = [
         onClick: () => buyTickets(buyTicketsLinkEsenin),
         url: "#",
       },
+      {
+        label: "Сайт спектакля",
+        type: "link",
+        onClick: () => {},
+        url: "https://esenin-play.otkter.ru/",
+      },
     ],
     categories: {
       attention: false,
